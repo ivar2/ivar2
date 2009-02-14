@@ -69,7 +69,7 @@ local post = {
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!kr (.+)$"] = function(self, src, dest, msg)
-		msg = chasen.sparse(msg)
+		msg = chasen.sparse(msg:gsub('%s', '\n'))
 		msg = utils.split(msg, '\n')
 
 		-- chop of the last bit.
@@ -82,10 +82,14 @@ return {
 		local output = ''
 
 		for k, data in next, msg do
-			if(data[4] == '未知語' or data[4] == '記号-アルファベット') then
+			if(data[4] == '未知語') then
+				output = output..' '..data[1]
+			elseif(data[4] == '記号-アルファベット') then
 				output = output..data[1]
+			elseif(data[1] == 'EOS') then
+				output = output .. ' '
 			else
-				output = output..data[2]
+				output = output..' '..data[2]
 			end
 		end
 
