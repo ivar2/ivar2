@@ -19,6 +19,7 @@ local alarm = function(self, src, dest, time, msg)
 		if(timer ~= os.time()) then
 			local timers = self.timers
 			if(timers) then
+				local src = 'Alarm:'.. self:srctonick(src)
 				for index, timerData in pairs(timers) do
 					if(timerData.name == src) then
 						table.remove(timers, index)
