@@ -187,16 +187,17 @@ handlers['230'] = function(self, data)
 	end
 
 	-- Cheat ratings...
-	if(rating == '0') then rating = 1000 end
-	if(temp == '0') then temp = 1000 end
-	if(review == '0') then review = 1000 end
+	local total = 300
+	if(rating == '0') then total = total - 100 end
+	if(temp == '0') then total = total - 100 end
+	if(review == '0') then total = total - 100 end
 
 	local out = string.format(
 		'%s (%s till %s) %s, %s/%s episodes, %.2f rating / %s | http://anidb.net/a%s',
 		title,
 		os.date('%d.%m.%y', airStart), airEnd,
 		type, min, max,
-		(rating + temp + review) / 300,
+		(rating + temp + review) / total,
 		table.concat(cats, ', '), aid
 	)
 
