@@ -12,7 +12,9 @@ local ip = socket.dns.toip(host)
 local destination
 local message
 local session
-local type
+
+local db = 'lua modules/anidb_db.lua %q'
+
 local amask = string.format(
 	'%02X%02X%02X%02X%02X',
 
@@ -143,7 +145,7 @@ handlers['200'] = function(self, data)
 		session = data:match'(%S+)'
 	end
 
-	local succ, err, handler = sendrecv(self, 'ANIME %s=%s&amask=%s&s=%s', type, message, amask, session)
+	local succ, err, handler = sendrecv(self, 'ANIME aid=%s&amask=%s&s=%s', message, amask, session)
 	if(not succ) then
 		if(handler == 'send') then
 			self:privmsg(destination, 'Fetching information from AniDB failed. :(')
@@ -228,13 +230,33 @@ end
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!anidb (.+)$"] = function(self, src, dest, msg)
-		type = 'aname'
 		local num = tonumber(msg)
 		if(num) then
 			msg = num
-			type = 'aid'
-		end
+		else
+			local search = utils.shell(db:format(msg))
+			local matches = {}
 
+			for aid, title in search:gmatch'(%d+)|(.-)\031' do
+				table.insert(matches, {aid, title})
+			end
+
+			if(#matches == 0) then
+				return self:privmsg(dest, 'No matches found. :(')
+			elseif(#matches == 1) then
+				msg = matches[1][1]
+			elseif(#matches > 5) then
+				return self:privmsg(dest, 'You search returned too many hits (%d).', #matches)
+			else
+				local out = {}
+				for _, data in next, matches do
+					local aid, title = data[1], data[2]
+					table.insert(out, string.format('\002[%s]\002 %s', aid, title))
+				end
+
+				return self:privmsg(dest, 'Multiple hits: %s', table.concat(out, ', '))
+			end
+		end
 
 		-- we should have a timer here, but...
 		if(cache[msg]) then
