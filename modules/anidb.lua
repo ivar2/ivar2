@@ -13,7 +13,7 @@ local destination
 local message
 local session
 
-local db = 'lua modules/anidb_db.lua %q'
+local db = 'lua data/anidb_db.lua %q'
 
 local amask = string.format(
 	'%02X%02X%02X%02X%02X',
