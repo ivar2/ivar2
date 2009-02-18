@@ -9,7 +9,10 @@ local port = 9000
 local ip = socket.dns.toip(host)
 
 -- AniDB related vars
+local destination
+local message
 local session
+local type
 local amask = string.format(
 	'%02X%02X%02X%02X%02X',
 
@@ -39,117 +42,207 @@ local mergeCatInfo = function(cats, weight)
 	return out
 end
 
-local doLogin = function(self)
-	local sent, err = udp:send(string.format('AUTH user=%s&pass=%s&protover=3&client=ivartre&clientver=0&enc=utf-8', self.config.anidbUser, self.config.anidbPassword))
-	if(err) then
-		return nil, err
+-- Reply handlers.
+local handlers = {}
+
+local _fmt = function(self, fmt, ...)
+	if(select('#', ...) > 0) then
+		local succ, err = pcall(string.format, fmt, ...)
+		if(not succ) then
+			self:log('ERROR', 'Failed string.format: ' .. tostring(err) .. ' Traceback' .. debug.traceback())
+
+			return
+		end
+
+		fmt = err
 	end
 
+	return fmt
+end
+
+local send = function(self, fmt, ...)
+	fmt = _fmt(self, fmt, ...)
+
+	if(fmt) then
+		local sent, err = udp:send(fmt)
+		if(err) then
+			return nil, err
+		else
+			return true
+		end
+	end
+end
+
+local recv = function(self)
 	local reply, err = udp:receive()
 	if(err) then
 		return nil, err
 	end
 
-	local id, msg = reply:match'(%d+) (.*)'
-	if(id == '200') then
-		session = msg:match'(%S+)'
-		return true
+	return true, reply
+end
+
+local sendrecv = function(self, fmt, ...)
+	local succ, err  = send(self, fmt, ...)
+
+	if(succ) then
+		local succ, err = recv()
+
+		if(succ) then
+			local id, data = err:match'(%d+) (.*)'
+			if(handlers[id]) then
+				local succ, err = handlers[id](self, data)
+				if(not succ) then
+					print('Handler failed!', id, err)
+				elseif(err) then
+					self:privmsg(destination, err)
+				end
+			else
+				print('Unknown handler id', id, data)
+			end
+		else
+			return nil, err, 'receive'
+		end
 	else
-		print('WHAT?!', id, msg)
-		return nil, msg, id
+		return nil, err, 'send'
+	end
+
+	return true
+end
+
+local doLogin = function(self)
+	local succ, err, handler = sendrecv(self, 'AUTH user=%s&pass=%s&protover=3&client=ivartre&clientver=0&enc=utf-8', self.config.anidbUser, self.config.anidbPassword)
+	if(not succ) then
+		if(handler == 'send') then
+			self:privmsg(destination, 'AniDB login failed.. :(')
+		elseif(handler == 'receive') then
+			self:privmsg(destination, 'AniDB reply failed. :(')
+		end
+
+		return nil, err
+	else
+		return true
 	end
 end
 
-local handlers = {
-	-- 501 LOGIN FIRST
-	['501'] = function(self)
-		local succ, err = doLogin(self)
-		if(not succ) then
-			print('Login failed!', tostring(err))
-			return nil, err
+-- 501 LOGIN FIRST
+handlers['501'] = function(self)
+	local succ, err = doLogin(self)
+	if(not succ) then
+		print('Login failed!', tostring(err))
+		return nil, err
+	end
+
+	return true
+end
+
+-- 200 LOGIN ACCEPTED
+-- Send data.
+handlers['200'] = function(self, data)
+	if(data) then
+		session = data:match'(%S+)'
+	end
+
+	local succ, err, handler = sendrecv(self, 'ANIME %s=%s&amask=%s&s=%s', type, message, amask, session)
+	if(not succ) then
+		if(handler == 'send') then
+			self:privmsg(destination, 'Fetching information from AniDB failed. :(')
+		elseif(handler == 'receive') then
+			self:privmsg(destination, 'AniDB reply failed. :(')
 		end
 
+		return nil, err
+	else
 		return true
-	end,
-	-- 230 ANIME
-	['230'] = function(self, msg, data)
-		data = data:match'\n(.*)\n'
-		local aid, year, type, catlist, catweight, romaji, kanji, max, min, startDate, endDate, rating, temp, review = unpack(utils.split(data, '|'))
-		local cats = mergeCatInfo(utils.split(catlist, ','), utils.split(catweight, ','))
+	end
+end
 
-		-- Convert endDate:
-		if(endDate == '0') then
-			endDate = '?'
-		else
-			endDate = os.date('%d.%m.%y', endDate)
-		end
+-- 230 ANIME
+handlers['230'] = function(self, data)
+	data = data:match'\n(.*)\n'
+	-- LINE OF DOOM!
+	local aid, year, type, catlist, catweight, romaji, kanji, max, min, airStart, airEnd, rating, temp, review = unpack(utils.split(data, '|'))
+	local cats = mergeCatInfo(utils.split(catlist, ','), utils.split(catweight, ','))
 
-		local title
-		-- Convert titles:
-		if(romaji == '') then
-			title = kanji
-		elseif(kanji == '') then
-			title = romaji
-		else
-			title = string.format('%s // %s', romaji, kanji)
-		end
+	-- Convert airEnd:
+	if(airEnd == '0') then
+		airEnd = '?'
+	else
+		airEnd = os.date('%d.%m.%y', airEnd)
+	end
 
-		-- Convert episode.
-		if(max == '0') then
-			max = '?'
-		end
+	local title
+	-- Convert titles:
+	if(romaji == '') then
+		title = kanji
+	elseif(kanji == '') then
+		title = romaji
+	else
+		title = string.format('%s // %s', romaji, kanji)
+	end
 
-		-- Cheat ratings...
-		if(rating == '0') then rating = 1000 end
-		if(temp == '0') then temp = 1000 end
-		if(review== '0') then review = 1000 end
+	-- Convert episode.
+	if(max == '0') then
+		max = '?'
+	end
 
-		local out = string.format(
-			'%s (%s till %s) %s, %s/%s episodes, %.2f rating / %s | http://anidb.net/a%s',
-			title,
-			os.date('%d.%m.%y', startDate), endDate,
-			type, min, max,
-			(rating + temp + review) / 300,
-			table.concat(cats, ', '), aid
-		)
+	-- Cheat ratings...
+	if(rating == '0') then rating = 1000 end
+	if(temp == '0') then temp = 1000 end
+	if(review == '0') then review = 1000 end
 
-		cache[msg] = out
-		return true, out
-	end,
-	-- 330 NO SUCH ANIME
-	['330'] = function(self)
-		return true, 'No such anime. :('
-	end,
+	local out = string.format(
+		'%s (%s till %s) %s, %s/%s episodes, %.2f rating / %s | http://anidb.net/a%s',
+		title,
+		os.date('%d.%m.%y', airStart), airEnd,
+		type, min, max,
+		(rating + temp + review) / 300,
+		table.concat(cats, ', '), aid
+	)
 
-	-- 504 CLIENT BANNED
-	['504'] = function(self, msg)
-		return nil, msg
-	end,
-	-- 506 INVALID SESSION
-	['506'] = function(self)
-		local succ, err = doLogin(self)
-		if(not succ) then
-			print('Login failed!', tostring(err))
-			return nil, err
-		end
+	cache[message] = out
+	return true, out
+end
 
-		return true
-	end,
-}
+-- 330 NO SUCH ANIME
+handlers['330'] = function(self)
+	return true, 'No such anime. :('
+end
+
+-- 504 CLIENT BANNED
+handlers['504'] = function(self, msg)
+	return nil, msg
+end
+
+-- 506 INVALID SESSION
+handlers['506'] = function(self)
+	local succ, err = doLogin(self)
+	if(not succ) then
+		print('Login failed!', tostring(err))
+		return nil, err
+	end
+
+	return true
+end
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!anidb (.+)$"] = function(self, src, dest, msg)
-		-- we should have a timer here, but...
-		local type = 'aname'
+		type = 'aname'
 		local num = tonumber(msg)
 		if(num) then
 			msg = num
 			type = 'aid'
 		end
 
+
+		-- we should have a timer here, but...
 		if(cache[msg]) then
+			self:log('INFO', 'Fetching [%s] AniDB information from cache.', msg)
 			return self:privmsg(dest, cache[msg])
 		end
+
+		destination = dest
+		message = msg
 
 		if(not udp) then
 			udp = self.AniDBudp or socket.udp()
@@ -161,34 +254,8 @@ return {
 		if(not session) then
 			local succ, err = handlers['501'](self)
 			if(not succ) then return self:privmsg(dest, 'AniDB login failed. :(') end
-		end
-
-		local sent, err = udp:send(string.format('ANIME %s=%s&amask=%s&s=%s', type, msg, amask, session))
-		if(err) then
-			self:privmsg(dest, 'Fetching information from AniDB failed. :(')
-			print('Fetch failed', tostring(err))
-
-			return
-		end
-
-		local reply, err = udp:receive()
-		if(err) then
-			self:privmsg(dest, 'AniDB reply failed. :(')
-			print('Receive failed.', err)
-
-			return
-		end
-
-		local id, data = reply:match'(%d+) (.*)'
-		if(handlers[id]) then
-			local succ, err = handlers[id](self, msg, data)
-			if(not succ) then
-				print('Handler failed!', err)
-			else
-				self:privmsg(dest, err, id, data)
-			end
 		else
-			print('Unknown handler id', id, data)
+			handlers['200'](self)
 		end
 	end,
 }
