@@ -21,7 +21,7 @@ return {
 			local new = db[src][dest]:gsub(match, replace, flag)
 			if(new ~= db[src][dest]) then
 				db[src][dest] = new
-				self:privmsg(dest, "%s meant: %s", src, new)
+				self:msg(dest, src, "%s meant: %s", src, new)
 			end
 		end
 	end,
@@ -37,7 +37,7 @@ return {
 
 			local new = db[target][dest]:gsub(match, replace, flag)
 			if(new ~= db[target][dest]) then
-				self:privmsg(dest, "%s thought %s meant: %s", src, target, new)
+				self:msg(dest, src, "%s thought %s meant: %s", src, target, new)
 			end
 		end
 	end,
