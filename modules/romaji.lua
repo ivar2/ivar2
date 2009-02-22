@@ -108,6 +108,6 @@ return {
 			output = output:gsub(find, replace)
 		end
 
-		self:privmsg(dest, 'In romaji: %s', output)
+		self:msg(dest, src, 'In romaji: %s', output)
 	end
 }
