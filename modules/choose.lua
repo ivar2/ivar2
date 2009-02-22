@@ -24,9 +24,9 @@ return {
 		local seed = math.random(1, #arr)
 
 		if(#arr == 1 or i == 1) then
-			self:privmsg(dest, "（　´_ゝ`）ﾌｰﾝ")
+			self:msg(dest, src, "（　´_ゝ`）ﾌｰﾝ")
 		else
-			self:privmsg(dest, "%s: %s", src:match"^([^!]+)", ltrim(arr[seed]))
+			self:msg(dest, src, "%s: %s", src:match"^([^!]+)", ltrim(arr[seed]))
 		end
 	end
 }
