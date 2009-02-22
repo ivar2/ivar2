@@ -10,6 +10,7 @@ local ip = socket.dns.toip(host)
 
 -- AniDB related vars
 local destination
+local source
 local message
 local session
 
@@ -97,7 +98,7 @@ local sendrecv = function(self, fmt, ...)
 				if(not succ) then
 					print('Handler failed!', id, err)
 				elseif(err) then
-					self:privmsg(destination, err)
+					self:msg(destination, err)
 				end
 			else
 				print('Unknown handler id', id, data)
@@ -116,9 +117,9 @@ local doLogin = function(self)
 	local succ, err, handler = sendrecv(self, 'AUTH user=%s&pass=%s&protover=3&client=ivartre&clientver=0&enc=utf-8', self.config.anidbUser, self.config.anidbPassword)
 	if(not succ) then
 		if(handler == 'send') then
-			self:privmsg(destination, 'AniDB login failed.. :(')
+			self:msg(destination, source, 'AniDB login failed.. :(')
 		elseif(handler == 'receive') then
-			self:privmsg(destination, 'AniDB reply failed. :(')
+			self:msg(destination, source, 'AniDB reply failed. :(')
 		end
 
 		return nil, err
@@ -148,9 +149,9 @@ handlers['200'] = function(self, data)
 	local succ, err, handler = sendrecv(self, 'ANIME aid=%s&amask=%s&s=%s', message, amask, session)
 	if(not succ) then
 		if(handler == 'send') then
-			self:privmsg(destination, 'Fetching information from AniDB failed. :(')
+			self:msg(destination, source, 'Fetching information from AniDB failed. :(')
 		elseif(handler == 'receive') then
-			self:privmsg(destination, 'AniDB reply failed. :(')
+			self:msg(destination, source, 'AniDB reply failed. :(')
 		end
 
 		return nil, err
@@ -242,11 +243,11 @@ return {
 			end
 
 			if(#matches == 0) then
-				return self:privmsg(dest, 'No matches found. :(')
+				return self:msg(dest, src, 'No matches found. :(')
 			elseif(#matches == 1) then
 				msg = matches[1][1]
 			elseif(#matches > 5) then
-				return self:privmsg(dest, 'You search returned too many hits (%d).', #matches)
+				return self:msg(dest, src, 'You search returned too many hits (%d).', #matches)
 			else
 				local out = {}
 				for _, data in next, matches do
@@ -254,17 +255,18 @@ return {
 					table.insert(out, string.format('\002[%s]\002 %s', aid, title))
 				end
 
-				return self:privmsg(dest, 'Multiple hits: %s', table.concat(out, ', '))
+				return self:msg(dest, src, 'Multiple hits: %s', table.concat(out, ', '))
 			end
 		end
 
 		-- we should have a timer here, but...
 		if(cache[msg]) then
 			self:log('INFO', 'Fetching [%s] AniDB information from cache.', msg)
-			return self:privmsg(dest, cache[msg])
+			return self:msg(dest, src, cache[msg])
 		end
 
 		destination = dest
+		source = src
 		message = msg
 
 		if(not udp) then
@@ -276,7 +278,7 @@ return {
 
 		if(not session) then
 			local succ, err = handlers['501'](self)
-			if(not succ) then return self:privmsg(dest, 'AniDB login failed. :(') end
+			if(not succ) then return self:msg(dest, src, 'AniDB login failed. :(') end
 		else
 			handlers['200'](self)
 		end
