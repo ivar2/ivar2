@@ -1,5 +1,5 @@
 local func = function(self, data)
-	self:privmsg(data.dst, '%s: %s.', data.nick, data.msg)
+	self:msg(data.dst, data.src, '%s: %s.', data.nick, data.msg)
 end
 
 local alarm = function(self, src, dest, time, msg)
@@ -35,6 +35,7 @@ local alarm = function(self, src, dest, time, msg)
 			table.insert(timers, {
 				nick = nick,
 				dst = dest,
+				src = src,
 				msg = (#msg > 0 and msg) or 'Timer finished',
 
 				name = 'Alarm:' .. nick,
