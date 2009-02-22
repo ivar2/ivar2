@@ -191,7 +191,7 @@ return {
 				end
 			end
 
-			if(#out > 0) then self:privmsg(dest, table.concat(out, " ")) end
+			if(#out > 0) then self:msg(dest, src, table.concat(out, " ")) end
 		end
 	end,
 }
