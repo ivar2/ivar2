@@ -7,10 +7,10 @@ return {
 		for title, station, airtime, eta in content:gmatch('<tr.->\n<td>.-</td>\n<td>(.-)<a name="%d+"></a></td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->(.-)</td>\n') do
 			local lower = title:lower()
 			if(lower:match(msg)) then
-				return self:privmsg(dest,"%s airs on %s on %s (ETA: %s)", title, station, airtime, eta:sub(1,-2))
+				return self:msg(dest, src, "%s airs on %s on %s (ETA: %s)", title, station, airtime, eta:sub(1,-2))
 			end
 		end
 
-		return self:privmsg(dest, "The requested anime does not currently air, or you just simply failed.")
+		self:msg(dest, src, "The requested anime does not currently air, or you just simply failed.")
 	end,
 }
