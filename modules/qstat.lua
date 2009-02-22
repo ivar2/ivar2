@@ -39,12 +39,12 @@ return {
 				for k, v in ipairs(data.players) do
 					table.insert(out, ("%s: %s"):format(v.player, v.frag))
 				end
-				self:privmsg(dest, "%s: ping: %i, players: %s/%s, map: %s [%s] - %s", data.hostname, ping, #data.players, data.maxclients, data.mapname, data.gamename, table.concat(out, ", "))
+				self:msg(dest, src, "%s: ping: %i, players: %s/%s, map: %s [%s] - %s", data.hostname, ping, #data.players, data.maxclients, data.mapname, data.gamename, table.concat(out, ", "))
 			else
-				self:privmsg(dest, "%s: ping: %i, players: %s/%s, map: %s [%s]", data.hostname, ping, #data.players, data.maxclients, data.mapname, data.gamename)
+				self:msg(dest, src, "%s: ping: %i, players: %s/%s, map: %s [%s]", data.hostname, ping, #data.players, data.maxclients, data.mapname, data.gamename)
 			end
 		else
-			self:privmsg(dest, 'unable to connect.')
+			self:msg(dest, src, 'unable to connect.')
 		end
 	end,
 	["^:(%S+) PRIVMSG (%S+) :!ws (.+)$"] = function(self, src, dest, msg)
@@ -78,12 +78,12 @@ return {
 				for k, v in ipairs(data.players) do
 					table.insert(out, ("%s: %s"):format(v.player, v.frag))
 				end
-				self:privmsg(dest, "%s: ping: %i, players: %s/%s, map: %s [%s] - %s", data['sv_hostname']:gsub('%^%d+', ''), ping, data.clients, data['sv_maxclients'], data.mapname, data['g_gametype'], table.concat(out, ", "))
+				self:msg(dest, src, "%s: ping: %i, players: %s/%s, map: %s [%s] - %s", data['sv_hostname']:gsub('%^%d+', ''), ping, data.clients, data['sv_maxclients'], data.mapname, data['g_gametype'], table.concat(out, ", "))
 			else
-				self:privmsg(dest, "%s: ping: %i, players: %s/%s, map: %s [%s]", data['sv_hostname']:gsub('%^%d+', ''), ping, data.clients, data['sv_maxclients'], data.mapname, data['g_gametype'])
+				self:msg(dest, src, "%s: ping: %i, players: %s/%s, map: %s [%s]", data['sv_hostname']:gsub('%^%d+', ''), ping, data.clients, data['sv_maxclients'], data.mapname, data['g_gametype'])
 			end
 		else
-			self:privmsg(dest, 'unable to connect.')
+			self:msg(dest, src, 'unable to connect.')
 		end
 	end,
 }
