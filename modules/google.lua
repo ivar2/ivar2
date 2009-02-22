@@ -53,11 +53,11 @@ local handler = function(self, src, dest, msg)
 				end
 
 				if(#arr ~= 0) then
-					return self:privmsg(dest, table.concat(arr, " || "))
+					return self:msg(dest, src, table.concat(arr, " || "))
 				end
 
 				if(#arr == 0) then
-					self:privmsg(dest, "jack shit found...")
+					self:msg(dest, src, "jack shit found...")
 				end
 			end
 		end
