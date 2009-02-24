@@ -30,7 +30,7 @@ local patterns = {
 	--	"%f[%S]([%w_-%%%.]+[%w_-%%]%.(%a%a+))",
 }
 
-local danbooru = function(body, path)
+local danbooru = function(path)
 	local path = path['path']
 
 	if(path and path:match'/data/([^%.]+)') then
@@ -45,10 +45,19 @@ local danbooru = function(body, path)
 	end
 end
 
-local iiTitle = {
+local iiHost = {
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
-	['s3.amazonaws.com'] = function(body, path)
+	['open.spotify.com'] = function(path)
+		local path = path['path']
+
+		if(path and path:match'/(%w+)/(.+)') then
+			local type, id = path:match'/(%w+)/(.+)'
+
+			return string.format('spotify:%s:%s', type, id)
+		end
+	end,
+	['s3.amazonaws.com'] = function(path)
 		local path = path['path']
 
 		if(path and path:match'/danbooru/([^%.]+)') then
@@ -86,6 +95,9 @@ local getTitle = function(url, offset)
 
 	-- evil title of doom!
 	if(kiraiTitle[host]) then return "Blacklisted domain (acies sucks!)" end
+	if(iiHost[host]) then
+		return iiHost[host](path)
+	end
 
 	local body, status, headers = utils.http(url)
 	if(body) then
@@ -108,16 +120,11 @@ local getTitle = function(url, offset)
 			end
 		end
 
-		local title
-		if(iiTitle[host]) then
-			title = iiTitle[host](body, path)
-		else
-			title = body:match"<[tT][iI][tT][lL][eE]>(.-)</[tT][iI][tT][lL][eE]>"
+		local title = body:match"<[tT][iI][tT][lL][eE]>(.-)</[tT][iI][tT][lL][eE]>"
 
-			if(title) then
-				for _, pattern in ipairs(patterns) do
-					title = title:gsub(pattern, '<snip />')
-				end
+		if(title) then
+			for _, pattern in ipairs(patterns) do
+				title = title:gsub(pattern, '<snip />')
 			end
 		end
 
