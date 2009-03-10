@@ -46,6 +46,9 @@ local danbooru = function(path)
 end
 
 local iiHost = {
+	-- do nothing
+	['eu.wowarmory.com'] = function() end,
+
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
 	['open.spotify.com'] = function(path)
