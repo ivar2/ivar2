@@ -77,10 +77,11 @@ local iiHost = {
 }
 
 local kiraiTitle = {
-	['sexy-lena.com'] = true, -- fap fap fap fap
-	['unsere-nackte-pyjamaparty.net'] = true,
-	['johnsrevenge.com'] = true,
-	['tapuz.me2you.co.il'] = true,
+	['sexy%-lena%.com'] = true, -- fap fap fap fap
+	['unsere%-nackte%-pyjamaparty%.net'] = true,
+	['johnsrevenge%.com'] = true,
+	['tapuz%.me2you%.co%.il'] = true,
+	['.-%mybrute.com'] = true,
 }
 
 local renameCharset = {
@@ -96,8 +97,12 @@ local getTitle = function(url, offset)
 	local path = parse(url)
 	local host = path['host']:gsub('^www%.', '')
 
-	-- evil title of doom!
-	if(kiraiTitle[host]) then return "Blacklisted domain (acies sucks!)" end
+	for k, v in next, kiraiTitle do
+		if(host:match(k)) then
+			return 'Blacklisted domain.'
+		end
+	end
+
 	if(iiHost[host]) then
 		return iiHost[host](path)
 	end
