@@ -99,7 +99,7 @@ return {
 					local url = ('http://finance.google.com/finance/converter?a=%s&from=%s&to=%s'):format(val, from, to)
 					local content, status = utils.http(url)
 					if(status == 200) then
-						local data = content:match'<td id="currency_converter_result" align=left>\n(.-)</span>'
+						local data = content:match'<div id=currency_converter_result>(.-)</span>'
 						data = utils.decodeHTML(data:gsub('<.->', '')):gsub('  ', ' ')
 						if(data) then
 							output = data
