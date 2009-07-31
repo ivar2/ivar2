@@ -82,6 +82,8 @@ local kiraiTitle = {
 	['johnsrevenge%.com'] = true,
 	['tapuz%.me2you%.co%.il'] = true,
 	['.-%mybrute.com'] = true,
+	['marie%-gets%-deflowered.com'] = true,
+	['whycindywhy%.com'] = true,
 }
 
 local renameCharset = {
@@ -98,7 +100,7 @@ local getTitle = function(url, offset)
 	local host = path['host']:gsub('^www%.', '')
 
 	for k, v in next, kiraiTitle do
-		if(host:match(k)) then
+		if(host:lower():match(k)) then
 			return 'Blacklisted domain.'
 		end
 	end
