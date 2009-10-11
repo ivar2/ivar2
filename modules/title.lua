@@ -41,6 +41,10 @@ local danbooru = function(path)
 			local tags = xml:match'tags="([^"]+)'
 
 			return string.format('http://danbooru.donmai.us/post/show/%s/ - %s', id, tags)
+		elseif(s == 503) then
+			return string.format('http://danbooru.donmai.us/post?tags=md5:%s', md5)
+		else
+			return string.format('Server returned: %d', s)
 		end
 	end
 end
