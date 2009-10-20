@@ -88,6 +88,7 @@ local kiraiTitle = {
 	['.-%mybrute.com'] = true,
 	['marie%-gets%-deflowered.com'] = true,
 	['whycindywhy%.com'] = true,
+	['.-%.labrute%.fr'] = true,
 }
 
 local renameCharset = {
