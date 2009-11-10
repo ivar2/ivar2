@@ -89,6 +89,8 @@ local kiraiTitle = {
 	['marie%-gets%-deflowered.com'] = true,
 	['whycindywhy%.com'] = true,
 	['.-%.labrute%.fr'] = true,
+	['.-%.PetiteMarion%.com'] = true,
+	['.-%.claravenger.com'] = true¸
 }
 
 local renameCharset = {
@@ -197,7 +199,7 @@ end
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :(.+)$"] = function(self, src, dest, msg)
-		if(self:srctonick(src) == self.config.nick or msg:sub(1,1) == '!') then return end
+		if(self:srctonick(src) == self.config.nick or msg:sub(1,1) == '!' or self:srctonick(src):match"^CIA") then return end
 		urls, found = {}, 0
 		for key, msg in pairs(utils.split(msg, " ")) do
 			for _, pattern in ipairs(patterns) do
