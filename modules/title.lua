@@ -158,7 +158,7 @@ local getTitle = function(url, offset)
 			title = utils.decodeHTML(title)
 			title = title:gsub("[%s%s]+", " ")
 
-			if(#url >= 100) then
+			if(#url >= 105) then
 				local short = utils.x0(url)
 				if(short ~= url) then
 					title = "Downgraded URL: " ..short.." - "..title
