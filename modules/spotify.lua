@@ -13,12 +13,13 @@ local getinfo = function(str, type, hash)
 	-- Hacks, we like them!
 	local old = socket.http.USERAGENT
 	socket.http.USERAGENT = 'Otravi/1.0'
-	local content = utils.http(string.format("http://open.spotify.com/%s/%s", type, hash))
+	local url = string.format("http://open.spotify.com/%s/%s", type, hash)
+	local content = utils.http(url)
 	socket.http.USERAGENT = old
 
 	local info = content:match"<title>(.-)</title>"
 	if(content) then
-		return info
+		return string.format("%s - %s", info, url)
 	end
 end
 
