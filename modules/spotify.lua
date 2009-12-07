@@ -25,7 +25,6 @@ end
 local found = 0
 local uris
 local gsubit = function(str, type, hash)
-	print(str, type, hash)
 	found = found + 1
 
 	local total = 1
