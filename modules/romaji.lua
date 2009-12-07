@@ -1,5 +1,12 @@
 require'chasen'
 
+local ltrim = function(r, s)
+	if s == nil then
+		s, r = r, "%s+"
+	end
+	return (string.gsub(s, "^" .. r, ""))
+end
+
 local pre = {
 	['キャ'] = 'kya', ['キュ'] = 'kyu', ['キョ'] = 'kyo',
 	['シャ'] = 'sha', ['シュ'] = 'shu', ['ショ'] = 'sho',
@@ -109,6 +116,6 @@ return {
 			output = output:gsub(find, replace)
 		end
 
-		self:msg(dest, src, 'In romaji: %s', output)
+		self:msg(dest, src, 'In romaji: %s', ltrim(output))
 	end
 }
