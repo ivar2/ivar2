@@ -55,13 +55,18 @@ local iiHost = {
 
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
-	['open.spotify.com'] = function(path)
+	['open.spotify.com'] = function(path, url)
 		local path = path['path']
 
 		if(path and path:match'/(%w+)/(.+)') then
 			local type, id = path:match'/(%w+)/(.+)'
+			local old = socket.http.USERAGENT
+			socket.http.USERAGENT = 'Otravi/1.0'
+			local content = utils.http(url)
+			socket.http.USERAGENT = old
+			local title = content:match"<title>(.-)</title>"
 
-			return string.format('spotify:%s:%s', type, id)
+			return string.format('%s: spotify:%s:%s', title, type, id)
 		end
 	end,
 	['s3.amazonaws.com'] = function(path)
@@ -90,7 +95,8 @@ local kiraiTitle = {
 	['whycindywhy%.com'] = true,
 	['.-%.labrute%.fr'] = true,
 	['.-%.PetiteMarion%.com'] = true,
-	['.-%.claravenger.com'] = true
+	['.-%.claravenger%.com'] = true,
+	['ihatestacy%.com'] = true,
 }
 
 local renameCharset = {
@@ -113,7 +119,7 @@ local getTitle = function(url, offset)
 	end
 
 	if(iiHost[host]) then
-		return iiHost[host](path)
+		return iiHost[host](path, url)
 	end
 
 	local body, status, headers = utils.http(url)
