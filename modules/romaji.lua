@@ -87,7 +87,7 @@ return {
 
 		for k, data in next, msg do
 			if(data[4] == '未知語') then
-				output = output..' '..data[1]
+				output = output .. data[1]
 			elseif(data[4] == '記号-アルファベット') then
 				output = output..data[1]
 			elseif(data[1] == 'EOS') then
