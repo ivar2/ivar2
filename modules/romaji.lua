@@ -1,10 +1,7 @@
 require'chasen'
 
-local ltrim = function(r, s)
-	if s == nil then
-		s, r = r, "%s+"
-	end
-	return (string.gsub(s, "^" .. r, ""))
+local trim = function(s)
+	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
 local pre = {
@@ -81,7 +78,7 @@ local post = {
 return {
 	["^:(%S+) PRIVMSG (%S+) :!kr (.+)$"] = function(self, src, dest, msg)
 		msg = chasen.sparse(msg:gsub('%s', '\n'))
-		msg = utils.split(msg, '\n')
+		msg = utils.split(msg:gsub("　", " "), '\n')
 
 		-- chop of the last bit.
 		table.remove(msg)
@@ -116,6 +113,6 @@ return {
 			output = output:gsub(find, replace)
 		end
 
-		self:msg(dest, src, 'In romaji: %s', ltrim(output))
+		self:msg(dest, src, 'In romaji: %s', trim(output):gsub("[%s%s]+", " "))
 	end
 }
