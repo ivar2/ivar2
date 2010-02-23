@@ -97,6 +97,7 @@ local kiraiTitle = {
 	['.-%.PetiteMarion%.com'] = true,
 	['.-%.claravenger%.com'] = true,
 	['ihatestacy%.com'] = true,
+	['.-%.nimp.org'] = true,
 }
 
 local renameCharset = {
