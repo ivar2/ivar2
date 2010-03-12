@@ -18,7 +18,14 @@ local monthName = {
 local handleDate = function(str)
 	if(str ~= '') then
 		local month, day, year = str:match('([^/]+)/([^/]+)/([^/]+)')
-		return string.format('%s.%s.%s', day, monthName[month], year:sub(-2))
+		if(month and day and year) then
+			return string.format('%s.%s.%s', day, monthName[month], year:sub(-2))
+		end
+
+		local month, year = str:match('([^/]+)/([^/]+)')
+		if(month and year) then
+			return string.format('%s.%s.%s', '??', monthName[month], year:sub(-2))
+		end
 	else
 		return '?'
 	end
@@ -87,7 +94,7 @@ local handle = function(self, src, dest, msg)
 			local output = out(data)
 
 			if(out) then
-				self:msg(dest, src, "%s: %s", src:match"^([^!]+)", output)
+				self:msg(dest, src, "%s", output)
 			else
 				self:msg(dest, src, "%s: %s", 'haste', 'I blew up :(')
 			end
