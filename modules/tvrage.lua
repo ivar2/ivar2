@@ -26,6 +26,8 @@ local handleDate = function(str)
 		if(month and year) then
 			return string.format('%s.%s.%s', '??', monthName[month], year:sub(-2))
 		end
+
+		return str
 	else
 		return '?'
 	end
@@ -86,6 +88,7 @@ end
 local handle = function(self, src, dest, msg)
 	local url = ('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(socket.url.escape(msg))
 	local content, status = utils.http(url)
+
 	if(status == 200) then
 		if(content:sub(1,15) == 'No Show Results') then
 			self:msg(dest, src, "%s: %s", src:match"^([^!]+)", 'Invalid show? :(')
