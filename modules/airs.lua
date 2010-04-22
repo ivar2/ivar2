@@ -6,7 +6,7 @@ return {
 		msg = msg:lower()
 		for title, station, airtime, eta in content:gmatch('<tr.->\n<td>.-</td>\n<td>(.-)<a name="%d+"></a></td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->(.-)</td>\n') do
 			local lower = title:lower()
-			if(lower:match(msg)) then
+			if(lower:find(msg, 1, true)) then
 				return self:msg(dest, src, "%s airs on %s on %s (ETA: %s)", title, station, airtime, eta:sub(1,-2))
 			end
 		end
