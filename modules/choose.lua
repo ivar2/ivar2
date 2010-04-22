@@ -10,7 +10,7 @@ local reply = {
 	'（　´_ゝ`）ﾌｰﾝ',
 }
 
-math.randomseed(os.time())
+math.randomseed(os.time() % 1e5)
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!choose (.+)$"] = function(self, src, dest, msg)
