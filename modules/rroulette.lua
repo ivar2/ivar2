@@ -33,7 +33,7 @@ return {
 		else
 			local all = {}
 			for k, v in rr:pairs() do
-				table.insert(all, {nick = k, deaths = v})
+				table.insert(all, {nick = k, deaths = tonumber(v)})
 			end
 
 			table.sort(all, function(a,b) return a.deaths > b.deaths end)
