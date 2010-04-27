@@ -18,9 +18,8 @@ local rr = tc.hdbnew()
 local chamberReset = function(self, data)
 	rr:open('data/rr', rr.OWRITER + rr.OCREAT)
 
-	local n = rr[data.nick]
-	rr[data.nick] = n - (n - getBullet(n)) / 10 % 10 * 10 + 60
-
+	local n = rr[data.dest]
+	rr[data.dest] = 60 + math.random(1,6)
 	rr:close()
 end
 
@@ -29,14 +28,21 @@ return {
 		rr:open('data/rr', rr.OWRITER + rr.OCREAT)
 		local nick = self:srctonick(src)
 
+		-- kinda depricated.
 		if(not rr[nick]) then
-			rr[nick] = 60 + math.random(1,6)
+			rr[nick] = 0
 		end
 
-		local bullet = getBullet(rr[nick])
-		local chamber = getChamber(rr[nick])
+		if(not rr[dest]) then
+			rr[dest] = 60 + math.random(1,6)
+		end
+
+		local bullet = getBullet(rr[dest])
+		local chamber = getChamber(rr[dest])
 		local deaths = getDeaths(rr[nick])
 		local seed = math.random(1, chamber)
+
+		print(bullet, chamber, seed)
 
 		if(seed == bullet) then
 			bullet = math.random(1, 6)
@@ -52,7 +58,7 @@ return {
 			local timers = self.timers or {}
 			self.timers = timers
 
-			local src = 'Russian Roulette:' .. nick
+			local src = 'Russian Roulette:' .. dest
 			for index, timerData in pairs(timers) do
 				if(timerData.name == src) then
 					table.remove(timers, index)
@@ -61,18 +67,19 @@ return {
 			end
 
 			table.insert(timers, {
-				nick = nick,
+				dest = dest,
 
-				name = 'Russian Roulette:' .. nick,
+				name = 'Russian Roulette:' .. dest,
 				oneCall = true,
-				callTime = os.time() + (5 * 60),
+				callTime = os.time() + (3 * 60),
 				func = chamberReset,
 			})
 
-			self:privmsg(dest, 'Click, %s tries left.', chamber)
+			self:privmsg(dest, 'Click.', chamber)
 		end
 
-		rr[nick] = (deaths * 100) + (chamber * 10) + bullet
+		rr[dest] = (chamber * 10) + bullet
+		rr[nick] = (deaths * 100)
 
 		rr:close()
 	end,
@@ -90,7 +97,9 @@ return {
 		else
 			local all = {}
 			for k, v in rr:pairs() do
-				table.insert(all, {nick = k, deaths = getDeaths(v)})
+				if(k:sub(1,1) ~= '#') then
+					table.insert(all, {nick = k, deaths = getDeaths(v)})
+				end
 			end
 
 			table.sort(all, function(a,b) return a.deaths > b.deaths end)
