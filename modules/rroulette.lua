@@ -15,6 +15,14 @@ local getDeaths = function(n)
 end
 
 local rr = tc.hdbnew()
+local chamberReset = function(self, data)
+	rr:open('data/rr', rr.OWRITER + rr.OCREAT)
+
+	local n = rr[data.nick]
+	rr[data.nick] = n - (n - getBullet(n)) / 10 % 10 * 10 + 60
+
+	rr:close()
+end
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!rr$"] = function(self, src, dest, msg)
@@ -41,6 +49,26 @@ return {
 				bullet = chamber
 			end
 
+			local timers = self.timers or {}
+			self.timers = timers
+
+			local src = 'Russian Roulette:' .. nick
+			for index, timerData in pairs(timers) do
+				if(timerData.name == src) then
+					table.remove(timers, index)
+					break
+				end
+			end
+
+			table.insert(timers, {
+				nick = nick,
+
+				name = 'Russian Roulette:' .. nick,
+				oneCall = true,
+				callTime = os.time() + (5 * 60),
+				func = chamberReset,
+			})
+
 			self:privmsg(dest, 'Click, %s tries left.', chamber)
 		end
 
@@ -50,11 +78,10 @@ return {
 	end,
 
 	["^:(%S+) PRIVMSG (%S+) :!rrstats ?(.*)$"] = function(self, src, dest, nick)
-		do return self:privmsg(dest, 'Be back later') end
-		rr:open('data/rr', rr.OREADER + rr.OCREAT)
+		rr:open('data/rr')
 		if(#nick > 0) then
 			nick = nick:match'^%s*(.*%S)' or ''
-			local data = rr[nick] and getDeaths(nick)
+			local data = rr[nick] and getDeaths(rr[nick])
 			if(not data) then
 				self:privmsg(dest, '%s has no deaths.', nick)
 			else
@@ -63,12 +90,12 @@ return {
 		else
 			local all = {}
 			for k, v in rr:pairs() do
-				table.insert(all, {nick = k, deaths = tonumber(v)})
+				table.insert(all, {nick = k, deaths = getDeaths(v)})
 			end
 
 			table.sort(all, function(a,b) return a.deaths > b.deaths end)
 			local tmp = {}
-			for i=1, math.min(#all, 3) do
+			for i=1, math.min(#all, 5) do
 				table.insert(tmp, string.format('%s (%s)', all[i].nick, all[i].deaths))
 			end
 
