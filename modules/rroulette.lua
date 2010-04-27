@@ -2,29 +2,59 @@ require'tokyocabinet'
 local tc = tokyocabinet
 math.randomseed(os.time() % 1e5)
 
+local getBullet = function(n)
+	return n % 10
+end
+
+local getChamber = function(n)
+	return (n - getBullet(n)) / 10 % 10
+end
+
+local getDeaths = function(n)
+	return (n - (n % 100)) / 100
+end
+
 local rr = tc.hdbnew()
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!rr$"] = function(self, src, dest, msg)
-		local seed = math.random(1, 6)
-		local bullet = math.random(1,6)
+		rr:open('data/rr', rr.OWRITER + rr.OCREAT)
+		local nick = self:srctonick(src)
+
+		if(not rr[nick]) then
+			rr[nick] = 60 + math.random(1,6)
+		end
+
+		local bullet = getBullet(rr[nick])
+		local chamber = getChamber(rr[nick])
+		local deaths = getDeaths(rr[nick])
+		local seed = math.random(1, chamber)
 
 		if(seed == bullet) then
-			rr:open('data/rr', rr.OWRITER + rr.OCREAT)
-			local nick = self:srctonick(src)
-			rr[nick] = (rr[nick] or 0) + 1
-			rr:close()
-			self:send('KICK %s %s :%s', dest, self:srctonick(src), 'BANG!')
+			bullet = math.random(1, 6)
+			chamber = 6
+			deaths = deaths + 1
+			self:send('KICK %s %s :%s', dest, nick, 'BANG!')
 		else
-			self:privmsg(dest, 'Click!')
+			chamber = chamber - 1
+			if(bullet > chamber) then
+				bullet = chamber
+			end
+
+			self:privmsg(dest, 'Click.', chamber)
 		end
+
+		rr[nick] = (deaths * 100) + (chamber * 10) + bullet
+
+		rr:close()
 	end,
 
 	["^:(%S+) PRIVMSG (%S+) :!rrstats ?(.*)$"] = function(self, src, dest, nick)
-		rr:open('data/rr', rr.OWRITER + rr.OCREAT)
+		do return self:privmsg(dest, 'Be back later') end
+		rr:open('data/rr', rr.OREADER + rr.OCREAT)
 		if(#nick > 0) then
 			nick = nick:match'^%s*(.*%S)' or ''
-			local data = rr[nick]
+			local data = rr[nick] and getDeaths(nick)
 			if(not data) then
 				self:privmsg(dest, '%s has no deaths.', nick)
 			else
