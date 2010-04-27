@@ -41,7 +41,7 @@ return {
 				bullet = chamber
 			end
 
-			self:privmsg(dest, 'Click.', chamber)
+			self:privmsg(dest, 'Click, %s tries left.', chamber)
 		end
 
 		rr[nick] = (deaths * 100) + (chamber * 10) + bullet
