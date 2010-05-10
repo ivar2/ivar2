@@ -42,8 +42,6 @@ return {
 		local deaths = getDeaths(rr[nick])
 		local seed = math.random(1, chamber)
 
-		print(bullet, chamber, seed)
-
 		if(seed == bullet) then
 			bullet = math.random(1, 6)
 			chamber = 6
