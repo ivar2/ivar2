@@ -75,7 +75,7 @@ return {
 				func = chamberReset,
 			})
 
-			self:privmsg(dest, 'Click.', chamber)
+			self:privmsg(dest, 'Click. %d/6', chamber)
 		end
 
 		rr[dest] = (chamber * 10) + bullet
