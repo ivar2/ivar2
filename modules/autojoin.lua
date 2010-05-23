@@ -1,20 +1,13 @@
--- Expects a autojoin table in the config file.
---
--- Example:
--- config = {
---      ...
---      autojoin = {
---           '#chan1', '#chan2',
---      }
---      ...
--- }
-
 return {
 	['^:%S+ 376'] = function(self)
-		if(self.config.autojoin) then
-			for _, chan in next, self.config.autojoin do
+		if(self.config.channels) then
+			for chan, chanData in next, self.config.channels do
 				self:log('INFO', 'Automatically joining %s', chan)
-				self:send('JOIN %s', chan)
+				if(type(chanData) == 'table' and chanData.password) then
+					self:send('JOIN %s %s', chan, chanData.password)
+				else
+					self:send('JOIN %s', chan)
+				end
 			end
 		end
 	end
