@@ -8,6 +8,7 @@ end
 local reply = {
 	'┗(＾0＾)┓))(( ┏(＾0＾)┛',
 	'（　´_ゝ`）ﾌｰﾝ',
+	'（　°‿‿°）',
 }
 
 math.randomseed(os.time() % 1e5)
