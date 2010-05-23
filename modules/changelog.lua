@@ -38,11 +38,5 @@ return {
 			local entry = cl[1]
 			self:msg(dest, src, '%s: (%d/%d) %s %s | %s', src:match'^([^!]+)', 1, total, getModuleString(entry.files), entry.time, entry.log)
 		end
-		--[[
-		if(#arr == 1 or i == 1) then
-			self:msg(dest, src, reply[math.random(1, #reply)])
-		else
-			self:msg(dest, src, "%s: %s", src:match"^([^!]+)", ltrim(arr[seed]))
-		end]]
 	end
 }
