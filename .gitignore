@@ -1,2 +1,5 @@
-ivar2.lua
-data/x0.tch
+bot-*.lua
+data/x0
+data/rr
+
+modules/spam*.lua
