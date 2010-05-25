@@ -13,14 +13,16 @@ return {
 		end
 
 		local relative = {}
+		local nor = {'sekund', 'sekunder', 'minutt', 'minutter', 'time', 'timer', 'dag', 'dager', 'måned', 'måneder', 'år', 'år'}
 		for i=#order, 1, -1 do
 			local field = order[i]
 			local d = diff[field]
 			if(d > 0) then
-				table.insert(relative, string.format('%d %s', d, field .. (d ~= 1 and 's' or '')))
+				local L = (d ~= 1 and i * 2) or (i * 2) - 1
+				table.insert(relative, string.format('%d %s', d, nor[L]))
 			end
 		end
 
-		self:msg(dest, src, 'Only %s left.', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+		self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
 	end,
 }
