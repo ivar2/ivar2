@@ -34,7 +34,7 @@ do
 
 		name = src,
 		-- doesn't matter if we overflow on the day.
-		callTime = os.time{year = today.month, month = today.month, day = today.day + 1, hour = 0},
+		callTime = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0},
 		func = function(self, data)
 			-- one second less because... it might.. DRIFT!
 			data.callTime = data.callTime + 86399
