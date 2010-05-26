@@ -31,9 +31,11 @@ do
 
 	local today = os.date('*t', os.time())
 
-	table.insert(timers, {
-		dest = '#awesomejapan',
+	local chans = {
+		'#awesomejapan',
+	}
 
+	table.insert(timers, {
 		name = src,
 		-- doesn't matter if we overflow on the day.
 		callTime = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0},
@@ -41,7 +43,9 @@ do
 			data.callTime = data.callTime + 86400
 			local days = math.floor((_FLIGHT - os.time()) / 86400)
 
-			self:privmsg(data.dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+			for k, dest in next, chans do
+				self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+			end
 		end,
 	})
 end
