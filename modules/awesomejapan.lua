@@ -1,5 +1,7 @@
+local _FLIGHT = os.time{year = 2010; month = 6; day = 30; hour = 11;}
+
 local getDiff = function()
-	local _END = os.date('*t', os.time{year = 2010; month = 6; day = 30; hour = 11;})
+	local _END = os.date('*t', _FLIGHT)
 	local _NOW = os.date('*t', os.time())
 	local _MAX = {60,60,24,os.date('*t',os.time{year=_NOW.year,month=_NOW.month+1,day=0}).day,12}
 
@@ -36,9 +38,10 @@ do
 		-- doesn't matter if we overflow on the day.
 		callTime = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0},
 		func = function(self, data)
-			-- one second less because... it might.. DRIFT!
-			data.callTime = data.callTime + 86399
-			self:privmsg(data.dest, 'Bare %s dager til the awesome guyz drar til Japan!', getDiff().day)
+			data.callTime = data.callTime + 86400
+			local days = math.floor((_FLIGHT - os.time()) / 86400)
+
+			self:privmsg(data.dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
 		end,
 	})
 end
