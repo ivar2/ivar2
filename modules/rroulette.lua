@@ -69,7 +69,7 @@ return {
 
 				name = 'Russian Roulette:' .. dest,
 				oneCall = true,
-				callTime = os.time() + (3 * 60),
+				callTime = os.time() + (15 * 60),
 				func = chamberReset,
 			})
 
