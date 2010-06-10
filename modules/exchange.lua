@@ -88,7 +88,7 @@ local function run(untrusted_code)
 end
 
 local exchange = function(self, src, dest, val, from, to)
-	from = from:gsub(' [tToO]+', '')
+	from = from:gsub(' [tT]?[oO]?[iI]?[nN]?', '')
 	local output
 
 	if(cc[from:upper()] and cc[to:upper()] and from:upper() ~= to:upper()) then
