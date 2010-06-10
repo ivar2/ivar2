@@ -31,10 +31,6 @@ do
 
 	local today = os.date('*t', os.time())
 
-	local chans = {
-		'#awesomejapan',
-	}
-
 	table.insert(timers, {
 		name = src,
 		-- doesn't matter if we overflow on the day.
@@ -43,8 +39,11 @@ do
 			data.callTime = data.callTime + 86400
 			local days = math.floor((_FLIGHT - os.time()) / 86400)
 
-			for k, dest in next, chans do
-				self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+
+			if(self.config.awesomejapan) then
+				for k, dest in next, self.config.awesomejapan do
+					self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+				end
 			end
 		end,
 	})
