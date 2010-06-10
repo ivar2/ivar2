@@ -3,6 +3,13 @@ local _FLIGHT = os.time{year = 2010; month = 6; day = 30; hour = 11;}
 local getDiff = function()
 	local _END = os.date('*t', _FLIGHT)
 	local _NOW = os.date('*t', os.time())
+
+	local flipped
+	if(os.time(_END) < os.time(_NOW)) then
+		flipped = true
+		_END, _NOW = _NOW, _END
+	end
+
 	local _MAX = {60,60,24,os.date('*t',os.time{year=_NOW.year,month=_NOW.month+1,day=0}).day,12}
 
 	local diff = {}
@@ -13,7 +20,7 @@ local getDiff = function()
 		if(carry) then diff[v] = diff[v] + _MAX[i] end
 	end
 
-	return diff
+	return diff, flipped
 end
 
 do
@@ -37,12 +44,23 @@ do
 		callTime = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0},
 		func = function(self, data)
 			data.callTime = data.callTime + 86400
-			local days = math.floor((_FLIGHT - os.time()) / 86400)
+			local _NOW = os.time()
 
+			local days, flipped
+			if(_FLIGHT < _NOW) then
+				flipped = true
+				days = math.floor((_NOW - _FLIGHT) / 86400)
+			else
+				days = math.floor((_FLIGHT - _NOW) / 86400)
+			end
 
 			if(self.config.awesomejapan) then
 				for k, dest in next, self.config.awesomejapan do
-					self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+					if(flipped) then
+						self:privmsg(dest, 'Bare %s dager siden awesome guys dro til Japan! *tease*', days)
+					else
+						self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+					end
 				end
 			end
 		end,
@@ -55,7 +73,7 @@ return {
 		local nor = {'sekund', 'sekunder', 'minutt', 'minutter', 'time', 'timer', 'dag', 'dager', 'måned', 'måneder', 'år', 'år'}
 		local order = {'sec','min','hour','day','month','year'}
 
-		local diff = getDiff()
+		local diff, flipped = getDiff()
 		for i=#order, 1, -1 do
 			local field = order[i]
 			local d = diff[field]
@@ -65,6 +83,10 @@ return {
 			end
 		end
 
-		self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+		if(flipped) then
+			self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+		else
+			self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+		end
 	end,
 }
