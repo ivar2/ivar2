@@ -121,8 +121,12 @@ local getTitle = function(url, offset)
 	end
 
 	if(iiHost[host]) then
-		return iiHost[host](path, url)
+		local title = iiHost[host](path, url)
+		if(title) then
+			return title
+		end
 	end
+
 
 	local body, status, headers = utils.http(url)
 	if(body) then
