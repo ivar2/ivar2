@@ -103,8 +103,10 @@ local exchange = function(self, src, dest, val, from, to)
 	if(cc[from:upper()] and cc[to:upper()] and from:upper() ~= to:upper()) then
 		local success, val, err = run('return [['..val..']]')
 		if(not err) then
-			if(type(val) == 'string') then
+			if(type(val) == 'string' and not tonumber(val)) then
 				val = add(string.byte(val, 1, #val))
+			else
+				val = tonumber(val)
 			end
 
 			if(tonumber(val) and val > 0 and val ~= math.huge and val ~= (0/0)) then
