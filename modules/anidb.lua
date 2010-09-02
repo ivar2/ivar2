@@ -247,7 +247,7 @@ return {
 			elseif(#matches == 1) then
 				msg = matches[1][1]
 			elseif(#matches > 5) then
-				return self:msg(dest, src, 'You search returned too many hits (%d).', #matches)
+				return self:msg(dest, src, 'Your search returned too many hits (%d).', #matches)
 			else
 				local out = {}
 				for _, data in next, matches do
