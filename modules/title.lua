@@ -176,6 +176,8 @@ local gsubit = function(url)
 		return
 	end
 
+	-- Strip out the anchors.
+	url = url:gsub('#.+', '')
 	if(not urls[url]) then
 		urls[url] = {
 			n = found,
