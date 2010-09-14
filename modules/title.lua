@@ -85,22 +85,6 @@ local iiHost = {
 	end,
 }
 
-local kiraiTitle = {
-	['sexy%-lena%.com'] = true, -- fap fap fap fap
-	['unsere%-nackte%-pyjamaparty%.net'] = true,
-	['johnsrevenge%.com'] = true,
-	['tapuz%.me2you%.co%.il'] = true,
-	['.-%mybrute.com'] = true,
-	['marie%-gets%-deflowered.com'] = true,
-	['whycindywhy%.com'] = true,
-	['.-%.labrute%.fr'] = true,
-	['.-%.PetiteMarion%.com'] = true,
-	['.-%.claravenger%.com'] = true,
-	['ihatestacy%.com'] = true,
-	['.-%.nimp.org'] = true,
-	['.-screwyouemily%.com'] = true,
-}
-
 local renameCharset = {
 	['x-sjis'] = 'sjis',
 }
@@ -113,12 +97,6 @@ local validProtocols = {
 local getTitle = function(url, offset)
 	local path = parse(url)
 	local host = path['host']:gsub('^www%.', '')
-
-	for k, v in next, kiraiTitle do
-		if(host:lower():match(k)) then
-			return 'Blacklisted domain.'
-		end
-	end
 
 	if(iiHost[host]) then
 		local title = iiHost[host](path, url)
