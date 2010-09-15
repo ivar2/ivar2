@@ -18,8 +18,8 @@ local getinfo = function(str, type, hash)
 	socket.http.USERAGENT = old
 
 	local info = content:match"<title>(.-)</title>"
-	if(content) then
-		return string.format("%s - %s", info, url)
+	if(info) then
+		return string.format("%s - %s", info:gsub('%s%-%s[Ss]potify',''), url)
 	end
 end
 
