@@ -49,12 +49,13 @@ return {
 		if(not src:match"quakenet%.org") then return end
 		self:privmsg("Q@CServe.quakenet.org", "CHALLENGE")
 	end,
-	["^:(%S+) NOTICE (%S+) :CHALLENGE (%S+)"] = function(self, src, dest, challenge)
-		if(src == "Q!TheQBot@CServe.quakenet.org") then
-			local user, pass_hash = self.config.QAuthUser, self.config.QAuthMD5Hash
-			local key = md5.sumhexa(("%s:%s"):format(user:lower(), pass_hash))
+	[":Q!TheQBot@CServe%.quakenet%.org NOTICE (%S+) :CHALLENGE (%S+)"] = function(self, dest, challenge)
+		local user, pass_hash = self.config.QAuthUser, self.config.QAuthMD5Hash
+		local key = md5.sumhexa(("%s:%s"):format(user:lower(), pass_hash))
 
-			self:privmsg("Q@CServe.quakenet.org", "CHALLENGEAUTH %s %s %s", user, hmac(key, challenge), "HMAC-MD5")
-		end
+		self:privmsg("Q@CServe.quakenet.org", "CHALLENGEAUTH %s %s %s", user, hmac(key, challenge), "HMAC-MD5")
+	end,
+	[":Q!TheQBot@CServe%.quakenet%.org NOTICE (%S+) :You are now logged in as (%S+)."] = function(self, dest, qauth)
+		self:send("MODE %s :%s", self.config.nick, 'x')
 	end,
 }
