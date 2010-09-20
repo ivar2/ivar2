@@ -1,4 +1,5 @@
 require'socket.url'
+local date = require'date'
 
 local monthName = {
 	Jan = '01',
@@ -37,10 +38,56 @@ local handleGenres = function(str)
 	return str:gsub(' |', ',')
 end
 
-local handleEpisode = function(str)
+local handleEpisode = function(str, raw)
 	local num, name, date = str:match('([^%^]+)%^([^%^]+)%^([^%^]+)')
 
-	return string.format('%s %s', num, handleDate(date))
+	if(raw) then
+		return num, name, date
+	else
+		return string.format('%s %s', num, handleDate(date))
+	end
+end
+
+local handleAirtime = function(rfc)
+	local year, month, day, hour, minute, seconds, offset = rfc:match('([^%-]+)%-([^%-]+)%-([^T]+)T([^:]+):([^:]+):([^%-%+]+)(.*)$')
+
+	year = tonumber(year)
+	month = tonumber(month)
+	day = tonumber(day)
+	hour = tonumber(hour)
+	minute = tonumber(minute)
+
+	-- lua doesn't have any issues with HORRIBLE WRAPPING OF DOOMS!
+	-- so feeding it 26 or something retarded as hour works fine.
+	if(offset ~= 'Z') then
+		local flag, oh, om = offset:match('([%+%-])([^:]):(.*)$')
+		if(flag == '-') then
+			hour = hour + oh
+			minute = minute + oh
+		else
+			hour = hour - oh
+			minute = minute - oh
+		end
+	end
+
+	if(year and month and day) then
+		local airTime = {
+			year = year,
+			month = month,
+			day = day,
+			-- We should really compare date to date -u and fetch the offset, by why do
+			-- that when we can use a HACK!
+			hour = hour + 2,
+			minute = minute,
+		}
+
+		local relTime = date.relativeTimeShort(os.time(airTime))
+		if(relTime) then
+			return relTime
+		end
+	end
+
+	return 'In the future!'
 end
 
 local handleData = function(str)
@@ -76,6 +123,10 @@ local out = function(data)
 
 	if(data['Next Episode']) then
 		output = output .. ' | Next: ' .. handleEpisode(data['Next Episode'])
+
+		if(data['RFC3339']) then
+			output = output .. ' (' .. handleAirtime(data['RFC3339']) .. ')'
+		end
 	end
 
 	if(data['Show URL']) then
