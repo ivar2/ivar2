@@ -125,7 +125,7 @@ local out = function(data)
 		output = output .. ' | Next: ' .. handleEpisode(data['Next Episode'])
 
 		if(data['RFC3339']) then
-			output = output .. ' (' .. handleAirtime(data['RFC3339']) .. ')'
+			output = output .. ' (ETA: ' .. handleAirtime(data['RFC3339']) .. ')'
 		end
 	end
 
