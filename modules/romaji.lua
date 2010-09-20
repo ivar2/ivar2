@@ -4,6 +4,13 @@ local trim = function(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
+-- Odd shit acies does.
+local odd = {
+	['ぁ'] = 'a', ['ぃ'] = 'i', ['ぅ'] = 'u', ['ぇ'] = 'e', ['ぉ'] = 'o',
+	['ゃ'] = 'ャ', ['ゅ'] = 'ュ' ['ょ'] = 'ョ',
+	['ゎ'] = 'わ', ['ゑ'] = 'ヱ', ['ゕ'] = 'か', ['ゖ'] = 'け',
+}
+
 local pre = {
 	['キャ'] = 'kya', ['キュ'] = 'kyu', ['キョ'] = 'kyo',
 	['シャ'] = 'sha', ['シュ'] = 'shu', ['ショ'] = 'sho',
@@ -106,7 +113,9 @@ return {
 			end
 		end
 
-		print(output)
+		for find, replace in next, odd do
+			output = output:gsub(find, replace)
+		end
 
 		for find, replace in next, pre do
 			output = output:gsub(find, replace)
