@@ -64,6 +64,7 @@ local katakana = {
 
 	[' 。'] = '.',
 	['、'] = ',',
+	['(ッ) '] = '%1',
 
 	-- hmm...
 	['ァ'] = 'a', ['ィ'] = 'i', ['ゥ'] = 'u', ['ェ'] = 'e', ['ォ'] = 'o',
@@ -83,11 +84,15 @@ return {
 		-- chop of the last bit.
 		table.remove(msg)
 
+		for k, data in ipairs(msg) do
+			print(data)
+		end
 		for i=1,#msg do
 			msg[i] = utils.split(msg[i], '\t')
 		end
 
 		local output = ''
+
 
 		for k, data in next, msg do
 			if(data[4] == '未知語') then
@@ -100,6 +105,8 @@ return {
 				output = output..' '..data[2]
 			end
 		end
+
+		print(output)
 
 		for find, replace in next, pre do
 			output = output:gsub(find, replace)
