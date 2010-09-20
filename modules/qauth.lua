@@ -56,6 +56,8 @@ return {
 		self:privmsg("Q@CServe.quakenet.org", "CHALLENGEAUTH %s %s %s", user, hmac(key, challenge), "HMAC-MD5")
 	end,
 	[":Q!TheQBot@CServe%.quakenet%.org NOTICE (%S+) :You are now logged in as (%S+)."] = function(self, dest, qauth)
-		self:send("MODE %s :%s", self.config.nick, 'x')
+		if(self.config.QAuthHideHost) then
+			self:send("MODE %s :%s", self.config.nick, 'x')
+		end
 	end,
 }
