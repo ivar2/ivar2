@@ -9,7 +9,7 @@ math.randomseed(os.time() % 1e5)
 
 return {
 	["^:(%S+) PRIVMSG (%S+) :!roll (.+)$"] = function(self, src, dest, msg)
-		local a,b = unpack(utils.split(msg, "%s*"))
+		local a,b = unpack(utils.split(msg, "%s+"))
 		a, b = tonumber(a), tonumber(b)
 
 		local nick = self:srctonick(src)
