@@ -19,7 +19,7 @@ return {
 		elseif(a and a > 1) then
 			seed = math.random(1, a)
 		else
-			return self:msg(dest, src '%s: %s', nick, 'I will suffocate you with a pillow in your sleep')
+			return self:msg(dest, src, '%s: %s', nick, 'I will suffocate you with a pillow in your sleep')
 		end
 
 		self:msg(dest, src, "%s: %s", nick, seed)
