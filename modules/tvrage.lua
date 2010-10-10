@@ -60,7 +60,7 @@ local handleAirtime = function(rfc)
 	-- lua doesn't have any issues with HORRIBLE WRAPPING OF DOOMS!
 	-- so feeding it 26 or something retarded as hour works fine.
 	if(offset ~= 'Z') then
-		local flag, oh, om = offset:match('([%+%-])([^:]):(.*)$')
+		local flag, oh, om = offset:match('([%+%-])([^:]+):(.*)$')
 		if(flag == '-') then
 			hour = hour + oh
 			minute = minute + oh
