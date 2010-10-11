@@ -103,7 +103,7 @@ local handleData = function(str)
 end
 
 local out = function(data)
-	local output = string.format('%s', data['Show Name'])
+	local output = string.format('%s', utils.decodeHTML(data['Show Name']))
 
 	if(data['Started'] and data['Ended']) then
 		output = output .. string.format(' (%s till %s)', handleDate(data['Started']), handleDate(data['Ended']))
