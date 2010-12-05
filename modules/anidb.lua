@@ -14,7 +14,7 @@ local source
 local message
 local session
 
-local db = 'lua data/anidb_db.lua %q'
+local db = 'data/anidb_db.lua'
 
 local amask = string.format(
 	'%02X%02X%02X%02X%02X',
