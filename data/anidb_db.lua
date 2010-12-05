@@ -84490,4 +84490,4 @@ end
 
 table.sort(output, function(a,b) return a.weight > b.weight end)
 
-print(serialize(output))
+return serialize(output))
