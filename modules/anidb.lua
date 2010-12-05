@@ -256,7 +256,7 @@ return {
 					end
 				end
 
-				return self:msg(dest, src, 'Multiple hits: %s', table.concat(out, ', '))
+				return self:msg(dest, src, 'Multiple hits: %s', table.concat(out, ' '))
 			end
 		end
 
