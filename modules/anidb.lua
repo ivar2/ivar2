@@ -236,23 +236,24 @@ return {
 			msg = num
 		else
 			local search = utils.shell(db:format(msg))
-			local matches = {}
-
-			for aid, title in search:gmatch'(%d+)|(.-)\031' do
-				table.insert(matches, {aid, title})
-			end
+			local matches = loadstring('return ' .. search)
 
 			if(#matches == 0) then
 				return self:msg(dest, src, 'No matches found. :(')
-			elseif(#matches == 1) then
-				msg = matches[1][1]
-			elseif(#matches > 5) then
-				return self:msg(dest, src, 'Your search returned too many hits (%d).', #matches)
+			elseif(matches[1].weight == 1000) then
+				msg = matches[1].aid
 			else
+				local n = 15
 				local out = {}
-				for _, data in next, matches do
-					local aid, title = data[1], data[2]
-					table.insert(out, string.format('\002[%s]\002 %s', aid, title))
+				for i=1, #matches do
+					local match = matches[i]
+					local aid = match.aid
+					local title = match.title
+
+					n = n + #title + #tostring(aid) + 2
+					if(n > utils.limit) then
+						table.insert(out, string.format('\002[%s]\002 %s', aid, title))
+					end
 				end
 
 				return self:msg(dest, src, 'Multiple hits: %s', table.concat(out, ', '))
