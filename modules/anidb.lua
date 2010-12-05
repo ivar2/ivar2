@@ -235,7 +235,7 @@ return {
 		if(num) then
 			msg = num
 		else
-			local search = utils.shell(db:format(msg))
+			local search = loadfile(db) (msg)
 			local matches = loadstring('return ' .. search) ()
 
 			if(#matches == 0) then
