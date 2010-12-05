@@ -250,7 +250,7 @@ return {
 					local aid = match.aid
 					local title = match.title
 
-					n = n + #title + #tostring(aid) + 2
+					n = n + #title + #tostring(aid) + 4
 					if(n > utils.limit) then
 						table.insert(out, string.format('\002[%s]\002 %s', aid, title))
 					end
