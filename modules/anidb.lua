@@ -240,7 +240,7 @@ return {
 
 			if(#matches == 0) then
 				return self:msg(dest, src, 'No matches found. :(')
-			elseif(matches[1].weight == 1000) then
+			elseif(matches[1].weight == 1000 or matches[1] and not matches[2]) then
 				msg = matches[1].aid
 			else
 				local n = 15
