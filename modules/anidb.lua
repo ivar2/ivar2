@@ -236,7 +236,7 @@ return {
 			msg = num
 		else
 			local search = utils.shell(db:format(msg))
-			local matches = loadstring('return ' .. search)
+			local matches = loadstring('return ' .. search) ()
 
 			if(#matches == 0) then
 				return self:msg(dest, src, 'No matches found. :(')
