@@ -712,8 +712,8 @@ local animeTitles = {
   ["main"] = "Fruits Basket",
   ["syn"] = {
    [1] = "เสน่ห์สาวข้าวปั้น",
-   [2] = "Cesta de frutas",
-   [3] = "Cesta de Frutas",
+   [2] = "Cesta de Frutas",
+   [3] = "Cesta de frutas",
    [4] = "Furuba",
    [5] = "Giỏ Trái Cây",
    [6] = "Meyve Sepeti",
@@ -1896,7 +1896,7 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "Sol Bianca  L`eredità Perduta",
+   [1] = "Sol Bianca L`eredità Perduta",
    [2] = "Sol Bianca - The Legacy",
    [3] = "Sol Bianca - The Legacy",
    [4] = "Sol Bianca: Сокровища погибших планет",
@@ -2209,8 +2209,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "센과 치히로의 행방불명",
    [2] = "Avanture male Chihiro",
-   [3] = "A Viagem de Chihiro",
-   [4] = "A viagem de Chihiro",
+   [3] = "A viagem de Chihiro",
+   [4] = "A Viagem de Chihiro",
    [5] = "Cesta do fantazie",
    [6] = "Cesta do fantázie",
    [7] = "Chihiro Og Heksene",
@@ -2480,8 +2480,8 @@ local animeTitles = {
    [1] = "As Guerreiras Mágicas de Rayearth",
    [2] = "Guerreiras Mágicas de Rayearth",
    [3] = "Las Guerreras Mágicas",
-   [4] = "Magic Knight Rayearth",
-   [5] = "Magic Knight RayEarth",
+   [4] = "Magic Knight RayEarth",
+   [5] = "Magic Knight Rayearth",
    [6] = "Magic Knight Rayearth",
    [7] = "Wojowniczki z Krainy Marze&#324;",
    [8] = "魔法騎士(マジックナイト)レイアース",
@@ -2528,8 +2528,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "おたくのビデオ",
    [2] = "Otaku no Video",
-   [3] = "Otaku no Video",
-   [4] = "Otaku No Video",
+   [3] = "Otaku No Video",
+   [4] = "Otaku no Video",
    [5] = "Otaku no Video",
    },
   },
@@ -2568,8 +2568,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "ハンター×ハンター",
    [2] = "Hunter X Hunter",
-   [3] = "Hunter x Hunter",
-   [4] = "Hunter X Hunter",
+   [3] = "Hunter X Hunter",
+   [4] = "Hunter x Hunter",
    [5] = "Hunter X Hunter",
    [6] = "ฮันเตอร์ x ฮันเตอร์",
    [7] = "القناص",
@@ -2754,15 +2754,15 @@ local animeTitles = {
   ["official"] = {
    [1] = "이누야샤",
    [2] = "อินุยาฉะ เทพอสูร จิ้งจอกเงิน",
-   [3] = "Inuyasha",
-   [4] = "InuYasha",
+   [3] = "InuYasha",
+   [4] = "Inuyasha",
    [5] = "InuYasha",
-   [6] = "Inuyasha",
+   [6] = "InuYasha",
    [7] = "Inuyasha",
-   [8] = "InuYasha",
-   [9] = "InuYasha",
+   [8] = "Inuyasha",
+   [9] = "Inuyasha",
    [10] = "Inuyasha",
-   [11] = "Inuyasha",
+   [11] = "InuYasha",
    [12] = "Inuyasha",
    [13] = "Inu Yasha",
    [14] = "إينوياشا",
@@ -2798,9 +2798,9 @@ local animeTitles = {
    [3] = "Megaman",
    [4] = "Megaman",
    [5] = "Megaman NT Warrior",
-   [6] = "Megaman NT Warrior",
+   [6] = "MegaMan NT Warrior",
    [7] = "Megaman NT Warrior",
-   [8] = "MegaMan NT Warrior",
+   [8] = "Megaman NT Warrior",
    [9] = "MegaMan NT Warrior",
    [10] = "MegaMan: NT Warrior",
    [11] = "MegaMan: NT Warrior",
@@ -3301,9 +3301,9 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "ヴァンドレッド",
-   [2] = "VanDread",
+   [2] = "Vandread",
    [3] = "VanDread",
-   [4] = "Vandread",
+   [4] = "VanDread",
    [5] = "Vandread",
    [6] = "Вандред",
    },
@@ -3358,9 +3358,9 @@ local animeTitles = {
    [3] = "机动战舰抚子",
    },
   ["official"] = {
-   [1] = "Martian Successor Nadesico",
+   [1] = "Martian Successor NADESICO",
    [2] = "Martian Successor Nadesico",
-   [3] = "Martian Successor NADESICO",
+   [3] = "Martian Successor Nadesico",
    [4] = "機動戦艦ナデシコ",
    },
   },
@@ -3898,9 +3898,9 @@ local animeTitles = {
    [1] = "مقاتلوا الشوارع ألفا",
    },
   ["official"] = {
-   [1] = "STREET FIGHTER ALPHA",
+   [1] = "Street Fighter Alpha",
    [2] = "Street Fighter Alpha",
-   [3] = "Street Fighter Alpha",
+   [3] = "STREET FIGHTER ALPHA",
    [4] = "Street Fighter Alpha - Le film",
    [5] = "Street Fighter Alpha - The Movie",
    [6] = "Street Fighter Alpha - The Movie",
@@ -3917,7 +3917,7 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "북두의 권 -  세기말구세주전설",
+   [1] = "북두의 권 - 세기말구세주전설",
    [2] = "Fist of the North Star",
    [3] = "Fist of the North Star (1986)",
    [4] = "Ken le survivant - Le film",
@@ -4038,7 +4038,7 @@ local animeTitles = {
    [11] = "Ковбой Бібоп: Фільм",
    },
   ["official"] = {
-   [1] = "카우보이 비밥 -  천국의 문",
+   [1] = "카우보이 비밥 - 천국의 문",
    [2] = "Cowboy Bebop - A film",
    [3] = "Cowboy Bebop - Der Film",
    [4] = "Cowboy Bebop - Il Film",
@@ -4046,7 +4046,7 @@ local animeTitles = {
    [6] = "Cowboy Bebop - Le film",
    [7] = "Cowboy Bebop - O Filme",
    [8] = "Cowboy Bebop - O Filme",
-   [9] = "Cowboy Bebop -  palkkionmetsästäjät",
+   [9] = "Cowboy Bebop - palkkionmetsästäjät",
    [10] = "Cowboy Bebop: Pukając do nieba bram",
    [11] = "Cowboy Bebop - The Movie",
    [12] = "Kauboipeitus",
@@ -4304,8 +4304,8 @@ local animeTitles = {
    [17] = "Dragon Ball",
    [18] = "Dragon Ball",
    [19] = "Drakonų kovos",
-   [20] = "Zmajeva kugla",
-   [21] = "Zmajeva Kugla",
+   [20] = "Zmajeva Kugla",
+   [21] = "Zmajeva kugla",
    [22] = "دراقون بول",
    [23] = "龍珠",
    [24] = "龙珠",
@@ -4953,8 +4953,8 @@ local animeTitles = {
    [2] = "Square of the Moon: The Night is Coming!",
    },
   ["official"] = {
-   [1] = "Square of the moon",
-   [2] = "Square of the Moon",
+   [1] = "Square of the Moon",
+   [2] = "Square of the moon",
    [3] = "夜が来る! Square of the MOON",
    },
   },
@@ -5639,7 +5639,7 @@ local animeTitles = {
  [308] = {
   ["short"] = {
    },
-  ["main"] = "Seijun Kango Gakuin Shinjin Nurse \"Yumi\" Chigyaku  no Kango Jisshuu",
+  ["main"] = "Seijun Kango Gakuin Shinjin Nurse \"Yumi\" Chigyaku no Kango Jisshuu",
   ["syn"] = {
    [1] = "Innocent Nurse Academy",
    [2] = "Nurse School",
@@ -6299,8 +6299,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Cyber City OEDO 808",
    [2] = "Cyber City Oedo 808",
-   [3] = "Cyber City OEDO 808",
-   [4] = "Cyber City Oedo 808",
+   [3] = "Cyber City Oedo 808",
+   [4] = "Cyber City OEDO 808",
    [5] = "サイバーシティOEDO808",
    },
   },
@@ -7716,8 +7716,8 @@ local animeTitles = {
   ["short"] = {
    [1] = "YUA",
    [2] = "yua1",
-   [3] = "yua tv1",
-   [4] = "YUA TV1",
+   [3] = "YUA TV1",
+   [4] = "yua tv1",
    },
   ["main"] = "Taiho Shichau zo: You`re Under Arrest (1996)",
   ["syn"] = {
@@ -8838,8 +8838,8 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "G-Taste",
-   [2] = "G-taste",
+   [1] = "G-taste",
+   [2] = "G-Taste",
    [3] = "G-taste",
    },
   },
@@ -10125,11 +10125,11 @@ local animeTitles = {
    [4] = "Beyblade",
    [5] = "Beyblade",
    [6] = "Beyblade",
-   [7] = "Beyblade",
+   [7] = "BeyBlade",
    [8] = "Beyblade",
    [9] = "Beyblade",
    [10] = "Beyblade",
-   [11] = "BeyBlade",
+   [11] = "Beyblade",
    [12] = "Beyblade",
    [13] = "Beyblade",
    [14] = "Beyblade",
@@ -10550,8 +10550,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "ドラゴンピンク",
-   [2] = "Dragon Pink",
-   [3] = "Dragon PinK",
+   [2] = "Dragon PinK",
+   [3] = "Dragon Pink",
    },
   },
  [624] = {
@@ -11746,9 +11746,9 @@ local animeTitles = {
    [3] = "Shinchan",
    [4] = "Shin Chan",
    [5] = "Shin Chan",
-   [6] = "Shin-Chan",
+   [6] = "Shin-chan",
    [7] = "Shin-Chan",
-   [8] = "Shin-chan",
+   [8] = "Shin-Chan",
    [9] = "Shin-Chan",
    [10] = "שין צ`אן",
    [11] = "蠟筆小新",
@@ -16313,7 +16313,7 @@ local animeTitles = {
    [1] = "Princess Army Wedding Combat!",
    },
   ["official"] = {
-   [1] = "ぷりんせすARMY -  ウェディング★COMBAT -",
+   [1] = "ぷりんせすARMY - ウェディング★COMBAT -",
    [2] = "Princess Army -Wedding Combat-",
    },
   },
@@ -19554,8 +19554,9 @@ local animeTitles = {
    },
   ["main"] = "Nasu: Andalusia no Natsu",
   ["syn"] = {
-   [1] = "Nasu - The Summer of Andalusia",
-   [2] = "Nasu - Un été en Andalousie",
+   [1] = "Nasu: Lato w Andaluzji",
+   [2] = "Nasu - The Summer of Andalusia",
+   [3] = "Nasu - Un été en Andalousie",
    },
   ["official"] = {
    [1] = "El Verano de Andalucia",
@@ -20774,17 +20775,18 @@ local animeTitles = {
    [3] = "Cuore",
    },
   ["official"] = {
-   [1] = "From the Appenines to the Andes",
-   [2] = "Marco",
+   [1] = "엄마찾아 삼만리",
+   [2] = "From the Appenines to the Andes",
    [3] = "Marco",
    [4] = "Marco",
    [5] = "Marco",
-   [6] = "Marco dagli Appennini alle Ande",
-   [7] = "Marco, De los Apeninos a los Andes",
-   [8] = "Markó",
-   [9] = "وداعاً ماركو",
-   [10] = "הלב",
-   [11] = "母をたずねて三千里",
+   [6] = "Marco",
+   [7] = "Marco dagli Appennini alle Ande",
+   [8] = "Marco, De los Apeninos a los Andes",
+   [9] = "Markó",
+   [10] = "وداعاً ماركو",
+   [11] = "הלב",
+   [12] = "母をたずねて三千里",
    },
   },
  [1384] = {
@@ -21991,7 +21993,7 @@ local animeTitles = {
    [1] = "Digimon Tamers - Runaway Digimon Express",
    },
   ["official"] = {
-   [1] = "デジモンテイマーズ  暴走デジモン特急",
+   [1] = "デジモンテイマーズ 暴走デジモン特急",
    },
   },
  [1476] = {
@@ -22778,7 +22780,7 @@ local animeTitles = {
  [1537] = {
   ["short"] = {
    },
-  ["main"] = "Miracle Giants Domu-kun",
+  ["main"] = "Miracle Giants Doumu-kun",
   ["syn"] = {
    },
   ["official"] = {
@@ -24099,8 +24101,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Niklaas, der Junge aus Flandern",
-   [2] = "The Dog of Flanders",
-   [3] = "THE DOG OF FLANDERS",
+   [2] = "THE DOG OF FLANDERS",
+   [3] = "The Dog of Flanders",
    [4] = "بائع الحليب",
    [5] = "Собачье сердце",
    },
@@ -24875,8 +24877,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "ディシプリン",
    [2] = "Discipline",
-   [3] = "Discipline",
-   [4] = "discipline",
+   [3] = "discipline",
+   [4] = "Discipline",
    [5] = "Discipline - The Hentai Academy",
    },
   },
@@ -30415,7 +30417,7 @@ local animeTitles = {
   ["syn"] = {
    [1] = "School Rumble 1",
    [2] = "School Rumble TV",
-   [3] = "معركة  المدرسة",
+   [3] = "معركة المدرسة",
    [4] = "Школьный переполох",
    [5] = "喧嚣学园",
    },
@@ -35807,8 +35809,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "He is my master",
-   [2] = "He is My Master",
-   [3] = "He is my Master",
+   [2] = "He is my Master",
+   [3] = "He is My Master",
    [4] = "我的主人",
    [5] = "これが私の御主人様",
    },
@@ -38716,16 +38718,17 @@ local animeTitles = {
   ["official"] = {
    [1] = "あひるのクワック",
    [2] = "Alfréd a kacsa",
-   [3] = "Alfred J. Kwak",
+   [3] = "Alfred J. Kvack",
    [4] = "Alfred J. Kwak",
    [5] = "Alfred J. Kwak",
    [6] = "Alfred J. Kwak",
    [7] = "Alfred J. Kwak",
-   [8] = "Alfred Jonatan Kwak",
-   [9] = "Niente paura c`è Alfred",
-   [10] = "آلفرد كواك",
-   [11] = "שאלתיאל קוואק",
-   [12] = "Ο Άλφρεντ το Παπί",
+   [8] = "Alfred J. Kwak",
+   [9] = "Alfred Jonatan Kwak",
+   [10] = "Niente paura c`è Alfred",
+   [11] = "آلفرد كواك",
+   [12] = "שאלתיאל קוואק",
+   [13] = "Ο Άλφρεντ το Παπί",
    },
   },
  [2874] = {
@@ -39056,7 +39059,7 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Legend of the Condor Hero II",
-   [2] = "神鵰俠侶 II  襄陽風雲",
+   [2] = "神鵰俠侶 II 襄陽風雲",
    },
   },
  [2908] = {
@@ -39423,7 +39426,7 @@ local animeTitles = {
    },
   ["main"] = "Eiga Beast Wars Second Chou Seimeitai Transformers Lio Convoy Kiki Ippatsu!",
   ["syn"] = {
-   [1] = "Beast  Wars Second Lio Convoy Special",
+   [1] = "Beast Wars Second Lio Convoy Special",
    [2] = "Movie Beast Wars Second: Super Lifeform Transformers - Lio Convoy`s Close Call!",
    },
   ["official"] = {
@@ -41407,10 +41410,10 @@ local animeTitles = {
    [2] = "BLOOD+",
    [3] = "Blood+",
    [4] = "BLOOD+",
-   [5] = "BLOOD+",
+   [5] = "Blood+",
    [6] = "BLOOD+",
    [7] = "Blood+",
-   [8] = "Blood+",
+   [8] = "BLOOD+",
    [9] = "BLOOD+",
    [10] = "BLOOD+",
    [11] = "Кровь+",
@@ -43004,8 +43007,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Origine",
    [2] = "Origine",
-   [3] = "Origin - Spirits of the past",
-   [4] = "Origin - Spirits of the Past",
+   [3] = "Origin - Spirits of the Past",
+   [4] = "Origin - Spirits of the past",
    [5] = "Origin: Spirits of the Past",
    [6] = "الأصل : أرواح الماضي",
    [7] = "Исток",
@@ -43786,8 +43789,8 @@ local animeTitles = {
    [1] = "ボイン",
    },
   ["official"] = {
-   [1] = "boin",
-   [2] = "Boin",
+   [1] = "Boin",
+   [2] = "boin",
    },
   },
  [3448] = {
@@ -46021,6 +46024,7 @@ local animeTitles = {
   },
  [3636] = {
   ["short"] = {
+   [1] = "wataru",
    },
   ["main"] = "Mashin Eiyuuden Wataru",
   ["syn"] = {
@@ -48070,9 +48074,9 @@ local animeTitles = {
    [4] = "En busca de la ciudad tesoro",
    [5] = "Hazine Şehri",
    [6] = "Tekkonkinkreet",
-   [7] = "TekkonKinkreet",
+   [7] = "Tekkonkinkreet",
    [8] = "Tekkonkinkreet",
-   [9] = "Tekkonkinkreet",
+   [9] = "TekkonKinkreet",
    [10] = "Tekkonkinkreet",
    [11] = "Tekkonkinkreet - A Cidade do Tesouro",
    [12] = "TEKKONKINKREET - Preto e Branco",
@@ -48817,7 +48821,7 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Pretty Sammy Magical Girl Club",
    [2] = "Sasami Magical Girl Club",
-   [3] = "Sasami -Mahou Shoujo Club-  1",
+   [3] = "Sasami -Mahou Shoujo Club- 1",
    [4] = "Tenchi Muyo: Sasami Magical Girl Club",
    [5] = "砂沙美☆魔法少女クラブ",
    },
@@ -49074,6 +49078,7 @@ local animeTitles = {
    },
   ["main"] = "Ichigo 100% Original DVD Animation",
   ["syn"] = {
+   [1] = "Strawberry 100% OVA",
    },
   ["official"] = {
    [1] = "いちご100% オリジナルDVDアニメーション",
@@ -49096,10 +49101,10 @@ local animeTitles = {
    [1] = "ナナ",
    [2] = "나나",
    [3] = "นานะ",
-   [4] = "NANA",
+   [4] = "Nana",
    [5] = "Nana",
    [6] = "Nana",
-   [7] = "Nana",
+   [7] = "NANA",
    [8] = "Nana",
    [9] = "Nana",
    [10] = "Nana",
@@ -49507,7 +49512,7 @@ local animeTitles = {
    [4] = "Gundam SEED DESTINY FINAL PLUS ~The Chosen Future~",
    },
   ["official"] = {
-   [1] = "Mobile Suit Gundam SEED DESTINY  Final Plus: The Chosen Future",
+   [1] = "Mobile Suit Gundam SEED DESTINY Final Plus: The Chosen Future",
    [2] = "機動戦士ガンダムSEED DESTINY FINAL PLUS 『選ばれた未来』",
    },
   },
@@ -50671,7 +50676,7 @@ local animeTitles = {
    [5] = "Glass`s Fleet",
    [6] = "Glass`s Naval Fleet",
    [7] = "Naval Fleet of Glass",
-   [8] = "The Legend of The  Glass Fleet",
+   [8] = "The Legend of The Glass Fleet",
    [9] = "玻璃舰队",
    },
   ["official"] = {
@@ -52217,8 +52222,8 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Bal Ve Yonca 2",
    [2] = "Hachimitsu to Kuroba II",
-   [3] = "Honey And Clover 2",
-   [4] = "Honey and Clover 2",
+   [3] = "Honey and Clover 2",
+   [4] = "Honey And Clover 2",
    [5] = "Honey and Clover II",
    [6] = "Honey & Clover 2",
    [7] = "Honey & Clover 2",
@@ -53043,8 +53048,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Mars, el exterminador",
-   [2] = "Mars The Terminator",
-   [3] = "Mars the Terminator",
+   [2] = "Mars the Terminator",
+   [3] = "Mars The Terminator",
    [4] = "神世紀伝 マーズ",
    },
   },
@@ -53107,11 +53112,11 @@ local animeTitles = {
    [1] = "디그레이맨",
    [2] = "ดีเกรย์แมน",
    [3] = "D.Gray-man",
-   [4] = "D.Gray-man",
-   [5] = "D.Gray-Man",
+   [4] = "D.Gray-Man",
+   [5] = "D.Gray-man",
    [6] = "D.Gray-Man",
-   [7] = "D.Gray-man",
-   [8] = "D.Gray-Man",
+   [7] = "D.Gray-Man",
+   [8] = "D.Gray-man",
    [9] = "D.Gray-man",
    [10] = "دي جراي مان",
    },
@@ -55930,7 +55935,7 @@ local animeTitles = {
  [4823] = {
   ["short"] = {
    },
-  ["main"] = "Anejiru The Animation: Shirakawa Sanshimai ni Omakase",
+  ["main"] = "Anejiru The Animation: Shirakawa San Shimai ni Omakase",
   ["syn"] = {
    },
   ["official"] = {
@@ -56291,11 +56296,11 @@ local animeTitles = {
    [5] = "虐杀姬",
    },
   ["official"] = {
-   [1] = "MURDER PRINCESS",
+   [1] = "Murder Princess",
    [2] = "Murder Princess",
    [3] = "Murder Princess",
    [4] = "Murder Princess",
-   [5] = "Murder Princess",
+   [5] = "MURDER PRINCESS",
    [6] = "الأميرة القاتلة",
    },
   },
@@ -56404,7 +56409,7 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Krankenhausnachtschicht - Yu Yagami",
-   [2] = "Night Shift Nurses: Yagami  Yu",
+   [2] = "Night Shift Nurses: Yagami Yu",
    [3] = "アニメ 八神優",
    },
   },
@@ -56750,8 +56755,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Brama piekieł",
    [2] = "Darker than Black",
-   [3] = "Darker Than Black",
-   [4] = "Darker than Black",
+   [3] = "Darker than Black",
+   [4] = "Darker Than Black",
    [5] = "Darker than BLACK -흑의 계약자-",
    [6] = "Darker than BLACK ‐黒の契約者‐",
    },
@@ -57073,7 +57078,7 @@ local animeTitles = {
    [4] = "蔚蓝的灵柩",
    },
   ["official"] = {
-   [1] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่  11 ตอน ปริศนามหาขุมทรัพย์โจรสลัด",
+   [1] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 11 ตอน ปริศนามหาขุมทรัพย์โจรสลัด",
    [2] = "Detektiv Conan - 11.Film: Die azurblaue Piratenflagge",
    [3] = "名探偵コナン 紺碧の棺(ジョリー・ロジャー)",
    },
@@ -58892,8 +58897,8 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "Aria the OVA: Arietta",
-   [2] = "Aria The OVA: Arietta",
+   [1] = "Aria The OVA: Arietta",
+   [2] = "Aria the OVA: Arietta",
    },
   },
  [5116] = {
@@ -60165,7 +60170,7 @@ local animeTitles = {
    },
   ["main"] = "Money Wars: Nerawareta Waterfront Keikaku",
   ["syn"] = {
-   [1] = "マネーウオーズ  狙われたウォーターフロント計画",
+   [1] = "マネーウオーズ 狙われたウォーターフロント計画",
    },
   ["official"] = {
    [1] = "マネーウォーズ 狙われたウォーターフロント計画",
@@ -61043,7 +61048,7 @@ local animeTitles = {
    },
   ["main"] = "Blue Drop: Tenshi-tachi no Gikyoku",
   ["syn"] = {
-   [1] = "BLUE DROP  ～ 天使们的戏曲",
+   [1] = "BLUE DROP ～ 天使们的戏曲",
    [2] = "Синяя капля: Драма ангелов",
    },
   ["official"] = {
@@ -62605,7 +62610,7 @@ local animeTitles = {
    [2] = "Goodbye Teacher Despair Extreme",
    [3] = "So Long Mr. Despair Extreme",
    [4] = "Прощай, безрадостный сенсей II: Финиш",
-   [5] = "绝望老师 第2季  ～俗",
+   [5] = "绝望老师 第2季 ～俗",
    },
   ["official"] = {
    [1] = "俗・さよなら絶望先生",
@@ -62701,7 +62706,7 @@ local animeTitles = {
   ["main"] = "Special A",
   ["syn"] = {
    [1] = "S.A Special A-Class",
-   [2] = "S・A  特优生",
+   [2] = "S・A 特优生",
    },
   ["official"] = {
    [1] = "S・A ～スペシャル・エー～",
@@ -63266,7 +63271,7 @@ local animeTitles = {
  [5677] = {
   ["short"] = {
    },
-  ["main"] = "Yami no Teiou:  Kyuuketsuki Dracula",
+  ["main"] = "Yami no Teiou: Kyuuketsuki Dracula",
   ["syn"] = {
    },
   ["official"] = {
@@ -63694,7 +63699,7 @@ local animeTitles = {
  [5742] = {
   ["short"] = {
    },
-  ["main"] = "Ginga Tansa 2100 Toshi: Border Planet",
+  ["main"] = "Ginga Tansa 2100-nen: Border Planet",
   ["syn"] = {
    [1] = "Ginga Tansa Nisenhyaku-nen: Border Planet",
    },
@@ -64603,6 +64608,7 @@ local animeTitles = {
    },
   ["main"] = "Junk Story",
   ["syn"] = {
+   [1] = "Tetsukuzu Monogatari",
    },
   ["official"] = {
    [1] = "JUNK STORY 鉄屑物語",
@@ -66579,7 +66585,7 @@ local animeTitles = {
    [4] = "铁腕巴迪_DECODE_02",
    },
   ["official"] = {
-   [1] = "Birdy the Mighty: Decode (2009)",
+   [1] = "Birdy the Mighty: Decode (2)",
    [2] = "鉄腕バーディー DECODE:02",
    },
   },
@@ -67331,7 +67337,7 @@ local animeTitles = {
    },
   ["main"] = "Mahou Shoujo Ai San: The Anime",
   ["syn"] = {
-   [1] = "Magical Girl  Ai S2",
+   [1] = "Magical Girl Ai S2",
    [2] = "Magical Girl Ai Season 2",
    },
   ["official"] = {
@@ -67804,11 +67810,12 @@ local animeTitles = {
  [6278] = {
   ["short"] = {
    },
-  ["main"] = "Storm Rider - Clash of Evils",
+  ["main"] = "Fengyun Jue: Storm Rider - Clash of Evils",
   ["syn"] = {
+   [1] = "Storm Rider: Clash of Evils",
    },
   ["official"] = {
-   [1] = "風雲決",
+   [1] = "風雲決 STORM RIDER - CLASH OF EVILS",
    },
   },
  [6280] = {
@@ -67975,8 +67982,9 @@ local animeTitles = {
  [6298] = {
   ["short"] = {
    },
-  ["main"] = "The Olympic Adventures of Fuwa",
+  ["main"] = "Fuwa Aoyun Manyou Ji",
   ["syn"] = {
+   [1] = "The Olympic Adventures of Fuwa",
    },
   ["official"] = {
    [1] = "福娃奥运漫游记",
@@ -68322,7 +68330,7 @@ local animeTitles = {
   ["main"] = "Elementhunters",
   ["syn"] = {
    [1] = "Element Hunters",
-   [2] = "صائدو  العناصر",
+   [2] = "صائدو العناصر",
    [3] = "元素獵人",
    },
   ["official"] = {
@@ -69781,12 +69789,12 @@ local animeTitles = {
    },
   ["main"] = "Red Line",
   ["syn"] = {
-   [1] = "MAKSIMALUS GREITIS",
-   [2] = "Redline",
-   [3] = "الخط الأحمر",
+   [1] = "Redline",
+   [2] = "الخط الأحمر",
    },
   ["official"] = {
-   [1] = "Red Line",
+   [1] = "MAKSIMALUS GREITIS",
+   [2] = "Red Line",
    },
   },
  [6531] = {
@@ -75569,9 +75577,10 @@ local animeTitles = {
  [7136] = {
   ["short"] = {
    },
-  ["main"] = "Kanojo x Kanojo x Kanojo: Sanshimai to no DokiDoki Kyoudou Seikatsu",
+  ["main"] = "Kanojo x Kanojo x Kanojo: San Shimai to no DokiDoki Kyoudou Seikatsu",
   ["syn"] = {
-   [1] = "Girlfriend x3 ~Exciting Co-ed Life with Three Sisters~",
+   [1] = "Dziewczyna x Dziewczyna x Dziewczyna x - Podniecające życie z trzema siostrami",
+   [2] = "Girlfriend x3 ~Exciting Co-ed Life with Three Sisters~",
    },
   ["official"] = {
    [1] = "彼女×彼女×彼女～三姉妹とのドキドキ共同生活～",
@@ -76539,6 +76548,7 @@ local animeTitles = {
  [7238] = {
   ["short"] = {
    [1] = "arakawa",
+   [2] = "autb",
    },
   ["main"] = "Arakawa Under the Bridge",
   ["syn"] = {
@@ -78975,7 +78985,7 @@ local animeTitles = {
  [7507] = {
   ["short"] = {
    },
-  ["main"] = "Tezuka Osamu no Buddha:  Akai Sabaku yo! Utsukushiku",
+  ["main"] = "Tezuka Osamu no Buddha: Akai Sabaku yo! Utsukushiku",
   ["syn"] = {
    },
   ["official"] = {
@@ -80097,11 +80107,11 @@ local animeTitles = {
    },
   ["main"] = "Sora no Otoshimono Forte",
   ["syn"] = {
-   [1] = "Heaven`s Lost Property Forte",
-   [2] = "Падшая с Небес: Ангел прихоти - Сильнейшая",
+   [1] = "Падшая с Небес: Ангел прихоти - Сильнейшая",
    },
   ["official"] = {
    [1] = "そらのおとしものf (フォルテ)",
+   [2] = "Heaven`s Lost Property - Forte",
    },
   },
  [7629] = {
@@ -80921,6 +80931,7 @@ local animeTitles = {
    },
   ["main"] = "Yumekui Merry",
   ["syn"] = {
+   [1] = "Merry Nightmare",
    },
   ["official"] = {
    [1] = "夢喰いメリー",
@@ -81037,6 +81048,7 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Agricultural Girls!",
    [2] = "Agriculture Girls!",
+   [3] = "Farmerki!",
    },
   ["official"] = {
    [1] = "農業ムスメ!",
@@ -82531,6 +82543,7 @@ local animeTitles = {
  [7899] = {
   ["short"] = {
    [1] = "arakawa2",
+   [2] = "autb2",
    },
   ["main"] = "Arakawa Under the Bridge 2",
   ["syn"] = {
@@ -83416,7 +83429,7 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "一輪者  ICHIRIN-SHA",
+   [1] = "一輪者 ICHIRIN-SHA",
    },
   },
  [8000] = {
@@ -84274,11 +84287,11 @@ local animeTitles = {
  [8102] = {
   ["short"] = {
    },
-  ["main"] = "Take Moon",
+  ["main"] = "Carnival Phantasm",
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "Take Moon",
+   [1] = "カーニバル・ファンタズム",
    },
   },
  [8103] = {
@@ -84394,6 +84407,173 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "映画クレヨンしんちゃん 嵐を呼ぶ黄金のスパイ大作戦",
+   },
+  },
+ [8117] = {
+  ["short"] = {
+   },
+  ["main"] = "Nekogami Yaoyorozu",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "猫神やおよろず",
+   },
+  },
+ [8118] = {
+  ["short"] = {
+   },
+  ["main"] = "Hime Gal Paradise: Maji de Koisuru 5 Byou Mae-ssu!? no Maki",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "姫ギャル♥パラダイス～まぢで恋する5秒前ッスー!?の巻～",
+   },
+  },
+ [8119] = {
+  ["short"] = {
+   },
+  ["main"] = "Ore-sama Kingdom: Gelande de Love Choco no Maki",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "オレ様キングダム～ゲレンデde（デ）ラブチョコ♥の巻～",
+   },
+  },
+ [8120] = {
+  ["short"] = {
+   },
+  ["main"] = "Jiu Se Lu",
+  ["syn"] = {
+   [1] = "A Deer of Nine Colors",
+   },
+  ["official"] = {
+   [1] = "九色鹿",
+   },
+  },
+ [8121] = {
+  ["short"] = {
+   },
+  ["main"] = "Meitantei Conan: Chinmoku no Quarter",
+  ["syn"] = {
+   [1] = "Detective Conan: Quarter of Silence",
+   },
+  ["official"] = {
+   [1] = "名探偵コナン 沈黙の15分(クォーター)",
+   },
+  },
+ [8122] = {
+  ["short"] = {
+   },
+  ["main"] = "Hulu Xiongdi",
+  ["syn"] = {
+   [1] = "Calabash Brothers",
+   [2] = "Hyoutan Douji",
+   },
+  ["official"] = {
+   [1] = "ひょうたん童子",
+   [2] = "葫芦兄弟",
+   },
+  },
+ [8123] = {
+  ["short"] = {
+   },
+  ["main"] = "Hulu Xiao Jin Gang",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "ヒョウタン小金剛",
+   [2] = "葫芦小金刚",
+   },
+  },
+ [8126] = {
+  ["short"] = {
+   },
+  ["main"] = "Gintama (2011)",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "銀魂 (2011)",
+   },
+  },
+ [8127] = {
+  ["short"] = {
+   },
+  ["main"] = "Floating Material",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "Floating Material",
+   },
+  },
+ [8128] = {
+  ["short"] = {
+   },
+  ["main"] = "Wana: Hakudaku Mamire no Houkago",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "輪罠（わな）～白濁まみれの放課後～",
+   },
+  },
+ [8129] = {
+  ["short"] = {
+   },
+  ["main"] = "Pankunchi",
+  ["syn"] = {
+   [1] = "ぱんくんち",
+   },
+  ["official"] = {
+   [1] = "PANKUNCHI",
+   },
+  },
+ [8130] = {
+  ["short"] = {
+   },
+  ["main"] = "Hayate no Gotoku! (2011)",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "ハヤテのごとく! (2011)",
+   },
+  },
+ [8131] = {
+  ["short"] = {
+   },
+  ["main"] = "Phi Brain: Kami no Puzzle",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "ファイ・ブレイン 神のパズル",
+   },
+  },
+ [8132] = {
+  ["short"] = {
+   },
+  ["main"] = "Fairy Tail (2011)",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "Fairy Tail (2011)",
+   },
+  },
+ [8133] = {
+  ["short"] = {
+   },
+  ["main"] = "Hyouge Mono",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "へうげもの",
+   },
+  },
+ [8134] = {
+  ["short"] = {
+   },
+  ["main"] = "Saint Seiya: The Lost Canvas - Meiou Shinwa 2",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "聖闘士星矢 THE LOST CANVAS 冥王神話 2",
    },
   },
 }
