@@ -84637,7 +84637,7 @@ local insertOrCreate = function(tbl, aid, weight)
 end
 
 local matches = {}
-local search = (...):lower()
+local search = (...):lower():gsub('([-?]+)', '%%%1')
 -- Search, lol!
 for aid, adata in next, animeTitles do
 	if(search == adata.main:lower()) then
