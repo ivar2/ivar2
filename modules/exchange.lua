@@ -101,6 +101,7 @@ local exchange = function(self, src, dest, val, from, to)
 	local output
 
 	if(cc[from:upper()] and cc[to:upper()] and from:upper() ~= to:upper()) then
+		val = val:gsub(',', '.')
 		local success, val, err = run('return [['..val..']]')
 		if(not err) then
 			if(type(val) == 'string' and not tonumber(val)) then
