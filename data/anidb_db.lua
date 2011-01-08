@@ -2212,8 +2212,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "센과 치히로의 행방불명",
    [2] = "Avanture male Chihiro",
-   [3] = "A viagem de Chihiro",
-   [4] = "A Viagem de Chihiro",
+   [3] = "A Viagem de Chihiro",
+   [4] = "A viagem de Chihiro",
    [5] = "Cesta do fantazie",
    [6] = "Cesta do fantázie",
    [7] = "Chihiro Og Heksene",
@@ -2571,9 +2571,9 @@ local animeTitles = {
   ["official"] = {
    [1] = "ハンター×ハンター",
    [2] = "Hunter X Hunter",
-   [3] = "Hunter x Hunter",
+   [3] = "Hunter X Hunter",
    [4] = "Hunter X Hunter",
-   [5] = "Hunter X Hunter",
+   [5] = "Hunter x Hunter",
    [6] = "ฮันเตอร์ x ฮันเตอร์",
    [7] = "القناص",
    },
@@ -2757,16 +2757,16 @@ local animeTitles = {
   ["official"] = {
    [1] = "이누야샤",
    [2] = "อินุยาฉะ เทพอสูร จิ้งจอกเงิน",
-   [3] = "InuYasha",
+   [3] = "Inuyasha",
    [4] = "Inuyasha",
    [5] = "InuYasha",
-   [6] = "Inuyasha",
-   [7] = "InuYasha",
-   [8] = "Inuyasha",
+   [6] = "InuYasha",
+   [7] = "Inuyasha",
+   [8] = "InuYasha",
    [9] = "Inuyasha",
    [10] = "Inuyasha",
-   [11] = "InuYasha",
-   [12] = "Inuyasha",
+   [11] = "Inuyasha",
+   [12] = "InuYasha",
    [13] = "Inu Yasha",
    [14] = "إينوياشا",
    [15] = "אינויאשה",
@@ -2800,11 +2800,11 @@ local animeTitles = {
    [2] = "ร็อกแมน EXE",
    [3] = "Megaman",
    [4] = "Megaman",
-   [5] = "MegaMan NT Warrior",
-   [6] = "Megaman NT Warrior",
-   [7] = "Megaman NT Warrior",
+   [5] = "Megaman NT Warrior",
+   [6] = "MegaMan NT Warrior",
+   [7] = "MegaMan NT Warrior",
    [8] = "Megaman NT Warrior",
-   [9] = "MegaMan NT Warrior",
+   [9] = "Megaman NT Warrior",
    [10] = "MegaMan: NT Warrior",
    [11] = "MegaMan: NT Warrior",
    [12] = "מגה מן: לוחם הרשת",
@@ -3901,8 +3901,8 @@ local animeTitles = {
    [1] = "مقاتلوا الشوارع ألفا",
    },
   ["official"] = {
-   [1] = "Street Fighter Alpha",
-   [2] = "STREET FIGHTER ALPHA",
+   [1] = "STREET FIGHTER ALPHA",
+   [2] = "Street Fighter Alpha",
    [3] = "Street Fighter Alpha",
    [4] = "Street Fighter Alpha - Le film",
    [5] = "Street Fighter Alpha - The Movie",
@@ -4497,10 +4497,11 @@ local animeTitles = {
    [16] = "Naruto",
    [17] = "Naruto",
    [18] = "Naruto",
-   [19] = "ناروتو",
-   [20] = "נארוטו",
-   [21] = "Наруто",
+   [19] = "Naruto",
+   [20] = "ناروتو",
+   [21] = "נארוטו",
    [22] = "Наруто",
+   [23] = "Наруто",
    },
   },
  [240] = {
@@ -4730,8 +4731,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "โมบิลสูท กันดั้มซี้ด",
    [2] = "Mobile Suit Gundam Seed",
-   [3] = "Mobile Suit Gundam SEED",
-   [4] = "Mobile Suit Gundam Seed",
+   [3] = "Mobile Suit Gundam Seed",
+   [4] = "Mobile Suit Gundam SEED",
    [5] = "Mobile Suit Gundam SEED",
    [6] = "机动战士高达SEED",
    [7] = "機動戦士ガンダムSEED",
@@ -4956,8 +4957,8 @@ local animeTitles = {
    [2] = "Square of the Moon: The Night is Coming!",
    },
   ["official"] = {
-   [1] = "Square of the moon",
-   [2] = "Square of the Moon",
+   [1] = "Square of the Moon",
+   [2] = "Square of the moon",
    [3] = "夜が来る! Square of the MOON",
    },
   },
@@ -5195,8 +5196,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Agent Aika",
    [2] = "AIKa",
-   [3] = "AIKa",
-   [4] = "Aika",
+   [3] = "Aika",
+   [4] = "AIKa",
    },
   },
  [281] = {
@@ -5510,8 +5511,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Key - O Ídolo Metálico",
    [2] = "Key - The Metal Idol",
-   [3] = "KEY THE METAL IDOL",
-   [4] = "Key the Metal Idol",
+   [3] = "Key the Metal Idol",
+   [4] = "KEY THE METAL IDOL",
    },
   },
  [303] = {
@@ -5539,8 +5540,8 @@ local animeTitles = {
    [9] = "Min granne Totoro",
    [10] = "Min nabo Totoro",
    [11] = "Min nabo Totoro",
-   [12] = "Mi vecino Totoro",
-   [13] = "Mi Vecino Totoro",
+   [12] = "Mi Vecino Totoro",
+   [13] = "Mi vecino Totoro",
    [14] = "Mój sąsiad Totoro",
    [15] = "Moj sosed Totoro",
    [16] = "Moj Susjed Totoro",
@@ -6303,9 +6304,9 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Cyber City Oedo 808",
-   [2] = "Cyber City Oedo 808",
+   [2] = "Cyber City OEDO 808",
    [3] = "Cyber City OEDO 808",
-   [4] = "Cyber City OEDO 808",
+   [4] = "Cyber City Oedo 808",
    [5] = "サイバーシティOEDO808",
    },
   },
@@ -10126,7 +10127,7 @@ local animeTitles = {
   ["official"] = {
    [1] = "เบย์เบลด ศึกลูกข่างสะท้านฟ้า",
    [2] = "Beibleidai",
-   [3] = "BeyBlade",
+   [3] = "Beyblade",
    [4] = "Beyblade",
    [5] = "Beyblade",
    [6] = "Beyblade",
@@ -10137,7 +10138,7 @@ local animeTitles = {
    [11] = "Beyblade",
    [12] = "Beyblade",
    [13] = "Beyblade",
-   [14] = "Beyblade",
+   [14] = "BeyBlade",
    [15] = "Beyblade",
    [16] = "بي بليد",
    [17] = "בייבלייד",
@@ -11258,8 +11259,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Texhnolyze",
-   [2] = "TEXHNOLYZE",
-   [3] = "Texhnolyze",
+   [2] = "Texhnolyze",
+   [3] = "TEXHNOLYZE",
    },
   },
  [674] = {
@@ -14616,8 +14617,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "バイオ·ハンター",
    [2] = "BioHunter",
-   [3] = "Biohunter",
-   [4] = "BioHunter",
+   [3] = "BioHunter",
+   [4] = "Biohunter",
    },
   },
  [915] = {
@@ -16361,10 +16362,11 @@ local animeTitles = {
   ["main"] = "The Supergal",
   ["syn"] = {
    [1] = "Rumic World 2",
-   [2] = "The Choujo",
-   [3] = "Марис Сильнейшая",
-   [4] = "高橋留美子傑作 るーみっくわーるど ザ・超女(スーパーギャル)",
-   [5] = "高橋留美子のザ・超女",
+   [2] = "Superdziewczyna Maris",
+   [3] = "The Choujo",
+   [4] = "Марис Сильнейшая",
+   [5] = "高橋留美子傑作 るーみっくわーるど ザ・超女(スーパーギャル)",
+   [6] = "高橋留美子のザ・超女",
    },
   ["official"] = {
    [1] = "Maris the Chojo",
@@ -17092,10 +17094,11 @@ local animeTitles = {
    [1] = "Saiyuki Reload",
    },
   ["official"] = {
-   [1] = "ไซยูกิ สี่แสบฝ่าแดนทมิฬ",
-   [2] = "Saiyuki Reload",
-   [3] = "Saiyuki - Reload",
-   [4] = "最遊記RELOAD",
+   [1] = "최유기 리로드",
+   [2] = "ไซยูกิ สี่แสบฝ่าแดนทมิฬ",
+   [3] = "Saiyuki Reload",
+   [4] = "Saiyuki - Reload",
+   [5] = "最遊記RELOAD",
    },
   },
  [1082] = {
@@ -17181,6 +17184,7 @@ local animeTitles = {
    [1] = "アヴェンジャー",
    [2] = "Avenger",
    [3] = "Мститель",
+   [4] = "复仇天使",
    },
   },
  [1088] = {
@@ -17410,8 +17414,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Dragon Quest: Adventure of Dai",
-   [2] = "Dragon Quest - Las Aventuras de Fly",
-   [3] = "Dragon Quest - Las aventuras de Fly",
+   [2] = "Dragon Quest - Las aventuras de Fly",
+   [3] = "Dragon Quest - Las Aventuras de Fly",
    [4] = "Fly",
    [5] = "Fly",
    [6] = "Fly, o Pequeno Guerreiro",
@@ -17718,8 +17722,8 @@ local animeTitles = {
    [2] = "Hack//Gift",
    },
   ["official"] = {
-   [1] = ".hack//gift",
-   [2] = ".hack//GIFT",
+   [1] = ".hack//GIFT",
+   [2] = ".hack//gift",
    },
   },
  [1136] = {
@@ -21730,6 +21734,7 @@ local animeTitles = {
    },
   ["main"] = "Gegege no Kitarou (1996)",
   ["syn"] = {
+   [1] = "Spooky Kitaro 4",
    },
   ["official"] = {
    [1] = "ゲゲゲの鬼太郎 (1996)",
@@ -22524,9 +22529,9 @@ local animeTitles = {
    [1] = "Patlabor: The Original Series",
    },
   ["official"] = {
-   [1] = "Mobile Police Patlabor",
-   [2] = "OVA1 פאטלייבור",
-   [3] = "Patlabor la police mobile",
+   [1] = "OVA1 פאטלייבור",
+   [2] = "Patlabor la police mobile",
+   [3] = "Patlabor the Mobile Police Early Days",
    [4] = "機動警察パトレイバー",
    },
   },
@@ -23003,8 +23008,8 @@ local animeTitles = {
    [1] = "Clamp Harikalar Diyarında",
    },
   ["official"] = {
-   [1] = "Clamp in Wonderland",
-   [2] = "CLAMP IN WONDERLAND",
+   [1] = "CLAMP IN WONDERLAND",
+   [2] = "Clamp in Wonderland",
    },
   },
  [1551] = {
@@ -23488,8 +23493,8 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "Compiler",
-   [2] = "COMPILER",
+   [1] = "COMPILER",
+   [2] = "Compiler",
    },
   },
  [1590] = {
@@ -24890,8 +24895,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "ディシプリン",
-   [2] = "Discipline",
-   [3] = "discipline",
+   [2] = "discipline",
+   [3] = "Discipline",
    [4] = "Discipline",
    [5] = "Discipline - The Hentai Academy",
    },
@@ -27746,6 +27751,7 @@ local animeTitles = {
   ["short"] = {
    [1] = "Laserion",
    [2] = "Lazerion",
+   [3] = "lezarion",
    },
   ["main"] = "Video Senshi Lezarion",
   ["syn"] = {
@@ -30007,7 +30013,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "คินนิคุแมน จอมพลัง ภาค 2",
-   [2] = "キン肉マンII世 second generations (2002)",
+   [2] = "Ultimate Muscle - The Kinnikuman Legacy",
+   [3] = "キン肉マンII世 second generations (2002)",
    },
   },
  [2131] = {
@@ -30660,7 +30667,7 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Munto 2: Beyond the Walls of Time",
-   [2] = "MUNTO 時の壁をこえて",
+   [2] = "MUNTO 時の壁を越えて",
    },
   },
  [2182] = {
@@ -30711,11 +30718,12 @@ local animeTitles = {
   ["official"] = {
    [1] = "스트레인저 무황인담",
    [2] = "Sword of the Stranger",
-   [3] = "Sword of the Stranger",
+   [3] = "Sword of the stranger",
    [4] = "Sword of the Stranger",
-   [5] = "Võõra mõõk",
-   [6] = "سيف الغريب",
-   [7] = "ストレンヂア -無皇刃譚-",
+   [5] = "Sword of the Stranger",
+   [6] = "Võõra mõõk",
+   [7] = "سيف الغريب",
+   [8] = "ストレンヂア -無皇刃譚-",
    },
   },
  [2186] = {
@@ -30736,8 +30744,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "기동전사 건담 씨드 데스티니",
    [2] = "โมบิลสูท กันดั้มซี้ด เดสทินี่",
-   [3] = "Mobile Suit Gundam Seed Destiny",
-   [4] = "Mobile Suit Gundam SEED Destiny",
+   [3] = "Mobile Suit Gundam SEED Destiny",
+   [4] = "Mobile Suit Gundam Seed Destiny",
    [5] = "机动战士高达SEED Destiny",
    [6] = "機動戦士ガンダムSEED DESTINY",
    },
@@ -35825,9 +35833,9 @@ local animeTitles = {
    [8] = "这是我的主人",
    },
   ["official"] = {
-   [1] = "He is my master",
+   [1] = "He is my Master",
    [2] = "He is My Master",
-   [3] = "He is my Master",
+   [3] = "He is my master",
    [4] = "我的主人",
    [5] = "これが私の御主人様",
    },
@@ -38007,8 +38015,8 @@ local animeTitles = {
    [4] = "Нелюбимый",
    },
   ["official"] = {
-   [1] = "LOVELESS",
-   [2] = "Loveless",
+   [1] = "Loveless",
+   [2] = "LOVELESS",
    },
   },
  [2816] = {
@@ -39684,6 +39692,7 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Naruto 2. Film : Gelel Taşı Efsanesi",
    [2] = "NARUTO THE MOVIE Vol.2",
+   [3] = "Наруто - Филм 2 - Легендата за камъка Гелел",
    },
   ["official"] = {
    [1] = "นารูโตะ นินจาจอมคาถา เดอะมูฟวี่ ศึกครั้งใหญ่! ผจญนครปีศาจใต้พิภพ",
@@ -41430,15 +41439,15 @@ local animeTitles = {
    [3] = "+دم",
    },
   ["official"] = {
-   [1] = "Blood+",
-   [2] = "BLOOD+",
-   [3] = "BLOOD+",
+   [1] = "BLOOD+",
+   [2] = "Blood+",
+   [3] = "Blood+",
    [4] = "BLOOD+",
    [5] = "BLOOD+",
    [6] = "Blood+",
-   [7] = "Blood+",
-   [8] = "BLOOD+",
-   [9] = "Blood+",
+   [7] = "BLOOD+",
+   [8] = "Blood+",
+   [9] = "BLOOD+",
    [10] = "BLOOD+",
    [11] = "Кровь+",
    },
@@ -42605,8 +42614,8 @@ local animeTitles = {
    [1] = "페이트 스테이 나이트",
    [2] = "フェイト/ステイナイト",
    [3] = "มหาสงครามจอกศักดิ์สิทธิ์",
-   [4] = "Fate/Stay Night",
-   [5] = "Fate/stay night",
+   [4] = "Fate/stay night",
+   [5] = "Fate/Stay Night",
    [6] = "命運守護夜",
    },
   },
@@ -43032,8 +43041,8 @@ local animeTitles = {
   ["official"] = {
    [1] = "Origine",
    [2] = "Origine",
-   [3] = "Origin - Spirits of the Past",
-   [4] = "Origin - Spirits of the past",
+   [3] = "Origin - Spirits of the past",
+   [4] = "Origin - Spirits of the Past",
    [5] = "Origin: Spirits of the Past",
    [6] = "الأصل : أرواح الماضي",
    [7] = "Исток",
@@ -43311,7 +43320,8 @@ local animeTitles = {
    [3] = "Ognistooka Shana",
    [4] = "Shakugan no Shana",
    [5] = "Shana",
-   [6] = "灼眼のシャナ",
+   [6] = "شانا",
+   [7] = "灼眼のシャナ",
    },
   },
  [3411] = {
@@ -47445,13 +47455,13 @@ local animeTitles = {
  [3996] = {
   ["short"] = {
    },
-  ["main"] = "Papillon Rose",
+  ["main"] = "Papillon Rose: New Season",
   ["syn"] = {
    [1] = "内衣战士蝴蝶玫瑰",
    [2] = "玫瑰文胸的季节",
    },
   ["official"] = {
-   [1] = "パピヨンローゼ",
+   [1] = "パピヨンローゼ New Season",
    },
   },
  [3997] = {
@@ -47520,8 +47530,8 @@ local animeTitles = {
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "Chocchan`s Story",
-   [2] = "Chocchan`s story",
+   [1] = "Chocchan`s story",
+   [2] = "Chocchan`s Story",
    [3] = "チョッちゃん物語",
    },
   },
@@ -48103,8 +48113,8 @@ local animeTitles = {
    [6] = "Tekkonkinkreet",
    [7] = "Tekkonkinkreet",
    [8] = "Tekkonkinkreet",
-   [9] = "TekkonKinkreet",
-   [10] = "Tekkonkinkreet",
+   [9] = "Tekkonkinkreet",
+   [10] = "TekkonKinkreet",
    [11] = "Tekkonkinkreet - A Cidade do Tesouro",
    [12] = "TEKKONKINKREET - Preto e Branco",
    [13] = "Tekkon Kinkreet - Soli contro tutti",
@@ -49133,8 +49143,8 @@ local animeTitles = {
    [5] = "Nana",
    [6] = "Nana",
    [7] = "Nana",
-   [8] = "NANA",
-   [9] = "Nana",
+   [8] = "Nana",
+   [9] = "NANA",
    [10] = "Nana",
    [11] = "Nana",
    },
@@ -52252,8 +52262,8 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Bal Ve Yonca 2",
    [2] = "Hachimitsu to Kuroba II",
-   [3] = "Honey and Clover 2",
-   [4] = "Honey And Clover 2",
+   [3] = "Honey And Clover 2",
+   [4] = "Honey and Clover 2",
    [5] = "Honey and Clover II",
    [6] = "Honey & Clover 2",
    [7] = "Honey & Clover 2",
@@ -53142,13 +53152,13 @@ local animeTitles = {
   ["official"] = {
    [1] = "디그레이맨",
    [2] = "ดีเกรย์แมน",
-   [3] = "D.Gray-Man",
-   [4] = "D.Gray-Man",
-   [5] = "D.Gray-man",
+   [3] = "D.Gray-man",
+   [4] = "D.Gray-man",
+   [5] = "D.Gray-Man",
    [6] = "D.Gray-man",
-   [7] = "D.Gray-man",
-   [8] = "D.Gray-man",
-   [9] = "D.Gray-Man",
+   [7] = "D.Gray-Man",
+   [8] = "D.Gray-Man",
+   [9] = "D.Gray-man",
    [10] = "دي جراي مان",
    },
   },
@@ -53509,9 +53519,10 @@ local animeTitles = {
   ["main"] = "Tengen Toppa Gurren Lagann",
   ["syn"] = {
    [1] = "Gurren-Lagann",
-   [2] = "Гуррен Лаганн: Прорыв!",
-   [3] = "Гуррен Лаганн - прочь из этого мира",
-   [4] = "天元突破 红莲之眼",
+   [2] = "Pokořitel nebes Gurren-Lagann",
+   [3] = "Гуррен Лаганн: Прорыв!",
+   [4] = "Гуррен Лаганн - прочь из этого мира",
+   [5] = "天元突破 红莲之眼",
    },
   ["official"] = {
    [1] = "천원돌파 그렌라간",
@@ -55864,6 +55875,7 @@ local animeTitles = {
    },
   ["main"] = "Tokumu Sousakan Rei & Fuko",
   ["syn"] = {
+   [1] = "特務捜査官レイ＆風子",
    },
   ["official"] = {
    [1] = "Rei & Fuko, Special Duty Agent",
@@ -56330,10 +56342,10 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Murder Princess",
-   [2] = "Murder Princess",
+   [2] = "MURDER PRINCESS",
    [3] = "Murder Princess",
    [4] = "Murder Princess",
-   [5] = "MURDER PRINCESS",
+   [5] = "Murder Princess",
    [6] = "الأميرة القاتلة",
    },
   },
@@ -56787,8 +56799,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "Brama piekieł",
-   [2] = "Darker than Black",
-   [3] = "Darker Than Black",
+   [2] = "Darker Than Black",
+   [3] = "Darker than Black",
    [4] = "Darker than Black",
    [5] = "Darker than BLACK -흑의 계약자-",
    [6] = "Darker than BLACK ‐黒の契約者‐",
@@ -61281,9 +61293,10 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Macross Frontier Deculture Edition",
    [2] = "Macross Frontier Yakku Deculture Edition",
-   [3] = "Макрос F",
-   [4] = "Макросс F",
-   [5] = "Макросс Фронтир",
+   [3] = "Macross Fufonfia",
+   [4] = "Макрос F",
+   [5] = "Макросс F",
+   [6] = "Макросс Фронтир",
    },
   ["official"] = {
    [1] = "마크로스 프론티어",
@@ -61354,9 +61367,9 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "아리아 디 오리지네이션",
-   [2] = "Aria the Origination",
+   [2] = "ARIA The ORIGINATION",
    [3] = "Aria the Origination",
-   [4] = "ARIA The ORIGINATION",
+   [4] = "Aria the Origination",
    },
   },
  [5426] = {
@@ -62352,8 +62365,8 @@ local animeTitles = {
    [4] = "女神异闻录 -圣洁之魂-",
    },
   ["official"] = {
-   [1] = "PERSONA -trinity soul-",
-   [2] = "Persona -trinity soul-",
+   [1] = "Persona -trinity soul-",
+   [2] = "PERSONA -trinity soul-",
    },
   },
  [5546] = {
@@ -62784,7 +62797,8 @@ local animeTitles = {
    [1] = "Vampire Knight",
    [2] = "Vampire Knight",
    [3] = "Vampire Knight",
-   [4] = "ヴァンパイア騎士",
+   [4] = "Vampire Knight",
+   [5] = "ヴァンパイア騎士",
    },
   },
  [5587] = {
@@ -63625,7 +63639,7 @@ local animeTitles = {
  [5724] = {
   ["short"] = {
    },
-  ["main"] = "Houkago 2: Saiyuri",
+  ["main"] = "Houkago 2: Sayuri",
   ["syn"] = {
    },
   ["official"] = {
@@ -66153,6 +66167,7 @@ local animeTitles = {
  [6075] = {
   ["short"] = {
    [1] = "nam",
+   [2] = "nanoha movie 1st",
    },
   ["main"] = "Mahou Shoujo Lyrical Nanoha The Movie 1st",
   ["syn"] = {
@@ -66309,8 +66324,9 @@ local animeTitles = {
    },
   ["main"] = "Kodomo no Jikan: Ni Gakki",
   ["syn"] = {
-   [1] = "وقت الأطفال 2",
-   [2] = "小萝莉的时间2学期OVA",
+   [1] = "Kodomo no Jikan: Drugi Semestr",
+   [2] = "وقت الأطفال 2",
+   [3] = "小萝莉的时间2学期OVA",
    },
   ["official"] = {
    [1] = "こどものじかん 2学期",
@@ -66560,8 +66576,9 @@ local animeTitles = {
    [3] = "Ga-Rei-Zero",
    [4] = "garei zero",
    [5] = "Га-Рей Зеро",
-   [6] = "Пожиратели Духов: Зеро",
-   [7] = "食灵～零",
+   [6] = "Екзорсисти: ЗЕРО",
+   [7] = "Пожиратели Духов: Зеро",
+   [8] = "食灵～零",
    },
   ["official"] = {
    [1] = "Ga-Rei: Zero",
@@ -67435,13 +67452,13 @@ local animeTitles = {
    },
   ["main"] = "Ride Back",
   ["syn"] = {
-   [1] = "RideBack",
-   [2] = "Ride Back",
-   [3] = "رايد باك",
-   [4] = "背骑少女",
+   [1] = "Ride Back",
+   [2] = "رايد باك",
+   [3] = "背骑少女",
    },
   ["official"] = {
    [1] = "ライドバック",
+   [2] = "RideBack",
    },
   },
  [6236] = {
@@ -68067,11 +68084,11 @@ local animeTitles = {
  [6303] = {
   ["short"] = {
    },
-  ["main"] = "Ai no Kusabi (2010)",
+  ["main"] = "Ai no Kusabi (2011)",
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "間の楔 (2010)",
+   [1] = "間の楔 (2011)",
    },
   },
  [6304] = {
@@ -68762,8 +68779,8 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "つみきのいえ",
-   [2] = "La Maison en Petits Cubes",
-   [3] = "La Maison en petits cubes",
+   [2] = "La Maison en petits cubes",
+   [3] = "La Maison en Petits Cubes",
    },
   },
  [6396] = {
@@ -68820,8 +68837,9 @@ local animeTitles = {
    [5] = "龙珠·改",
    },
   ["official"] = {
-   [1] = "Dragon Ball Z Kai",
-   [2] = "ドラゴンボール改",
+   [1] = "Dragon Ball Kai",
+   [2] = "Dragon Ball Z Kai",
+   [3] = "ドラゴンボール改",
    },
   },
  [6400] = {
@@ -71511,6 +71529,8 @@ local animeTitles = {
    },
   ["main"] = "Doraemon: Nobita no Ningyo Daikaisen",
   ["syn"] = {
+   [1] = "Doraemon 2010",
+   [2] = "Nobita and the Great Mermaid Battle",
    },
   ["official"] = {
    [1] = "ドラえもん のび太の人魚大海戦",
@@ -72116,9 +72136,10 @@ local animeTitles = {
   ["main"] = "Working!!",
   ["syn"] = {
    [1] = "Muncind",
-   [2] = "working",
-   [3] = "Работаю!!",
-   [4] = "迷糊餐厅",
+   [2] = "Wagnaria!!",
+   [3] = "working",
+   [4] = "Работаю!!",
+   [5] = "迷糊餐厅",
    },
   ["official"] = {
    [1] = "WORKING!!",
@@ -74623,6 +74644,7 @@ local animeTitles = {
    [1] = "Ibara no Ou",
    [2] = "ملك الشوك",
    [3] = "Король Терний",
+   [4] = "Кралят на тръните",
    },
   ["official"] = {
    [1] = "King of Thorn",
@@ -76408,7 +76430,8 @@ local animeTitles = {
    [1] = "The Disappearance of Haruhi Suzumiya",
    [2] = "The Vanishment of Haruhi Suzumiya",
    [3] = "Zniknięcie Haruhi Suzumiyi",
-   [4] = "Исчезновение Харухи Судзумии",
+   [4] = "Зникнення Судзумії Харухі",
+   [5] = "Исчезновение Харухи Судзумии",
    },
   ["official"] = {
    [1] = "涼宮ハルヒの消失",
@@ -76640,13 +76663,13 @@ local animeTitles = {
    },
   ["main"] = "Yojouhan Shinwa Taikei",
   ["syn"] = {
-   [1] = "The Tatami Galaxy",
-   [2] = "Yojou-Han Shinwa Taikei",
-   [3] = "Легенды комнаты на 4,5 татами",
-   [4] = "四叠半神话大系",
+   [1] = "Yojou-Han Shinwa Taikei",
+   [2] = "Легенды комнаты на 4,5 татами",
+   [3] = "四叠半神话大系",
    },
   ["official"] = {
-   [1] = "四畳半神話大系",
+   [1] = "The Tatami Galaxy",
+   [2] = "四畳半神話大系",
    },
   },
  [7244] = {
@@ -76807,7 +76830,8 @@ local animeTitles = {
    [2] = "Pokemon: Movie 13",
    },
   ["official"] = {
-   [1] = "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク",
+   [1] = "Pokemon - Zoroark: Master of Illusions",
+   [2] = "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク",
    },
   },
  [7258] = {
@@ -77930,7 +77954,8 @@ local animeTitles = {
    [6] = "大神與七位夥伴",
    },
   ["official"] = {
-   [1] = "オオカミさんと七人の仲間たち",
+   [1] = "Okamisan",
+   [2] = "オオカミさんと七人の仲間たち",
    },
   },
  [7382] = {
@@ -78492,7 +78517,8 @@ local animeTitles = {
    },
   ["main"] = "Digimon Savers 3D: Digital World Kiki Ippatsu!",
   ["syn"] = {
-   [1] = "Спасатели дигимонов 3D: Цифровой мир в опасности!",
+   [1] = "Digimon Savers 3D - A Close Call for the Digital World",
+   [2] = "Спасатели дигимонов 3D: Цифровой мир в опасности!",
    },
   ["official"] = {
    [1] = "デジモンセイバーズ3D デジタルワールド危機イッパツ!",
@@ -78882,6 +78908,7 @@ local animeTitles = {
   ["main"] = "Shinryaku! Ika Musume",
   ["syn"] = {
    [1] = "The Invader Comes From the Bottom of the Sea!",
+   [2] = "侵略！乌贼娘",
    },
   ["official"] = {
    [1] = "Squid Girl",
@@ -79087,7 +79114,9 @@ local animeTitles = {
   ["syn"] = {
    [1] = "Girl Demon Zakuro",
    [2] = "Otome Yokai Zakuro",
-   [3] = "おとめ妖怪ざくろ",
+   [3] = "Гранатовая Демоница Закуро",
+   [4] = "おとめ妖怪ざくろ",
+   [5] = "妖怪少女石榴",
    },
   ["official"] = {
    [1] = "おとめ妖怪 ざくろ",
@@ -79249,6 +79278,7 @@ local animeTitles = {
   ["main"] = "Kuragehime",
   ["syn"] = {
    [1] = "Jellyfish Princess",
+   [2] = "海月姬",
    },
   ["official"] = {
    [1] = "Princess Jellyfish",
@@ -79261,8 +79291,9 @@ local animeTitles = {
    },
   ["main"] = "Seitokai Yakuindomo",
   ["syn"] = {
-   [1] = "Члены школьного совета",
-   [2] = "妄想学生会",
+   [1] = "Student Council Staff Members",
+   [2] = "Члены школьного совета",
+   [3] = "妄想学生会",
    },
   ["official"] = {
    [1] = "生徒会役員共",
@@ -79614,7 +79645,8 @@ local animeTitles = {
    },
   ["main"] = "Kami nomi zo Shiru Sekai",
   ["syn"] = {
-   [1] = "Que sa volonté soit faite",
+   [1] = "bangumi",
+   [2] = "Que sa volonté soit faite",
    },
   ["official"] = {
    [1] = "The World God Only Knows",
@@ -80573,7 +80605,7 @@ local animeTitles = {
  [7677] = {
   ["short"] = {
    },
-  ["main"] = "Yubisaki Annainin Shirudaku Settai Okawari Sanhaime",
+  ["main"] = "Yubisaki Annainin Shirudaku Settai Okawari Sanbai-me",
   ["syn"] = {
    },
   ["official"] = {
@@ -80983,7 +81015,8 @@ local animeTitles = {
    },
   ["main"] = "Yumekui Merry",
   ["syn"] = {
-   [1] = "Merry Nightmare",
+   [1] = "Dream Eater Merry",
+   [2] = "Merry Nightmare",
    },
   ["official"] = {
    [1] = "夢喰いメリー",
@@ -81001,6 +81034,8 @@ local animeTitles = {
   },
  [7727] = {
   ["short"] = {
+   [1] = "Infinite Stratos",
+   [2] = "IS",
    },
   ["main"] = "IS: Infinite Stratos",
   ["syn"] = {
@@ -81073,11 +81108,12 @@ local animeTitles = {
  [7736] = {
   ["short"] = {
    },
-  ["main"] = "Beelzebub",
+  ["main"] = "Beelzebub: Hirotta Akachan wa Daimaou!?",
   ["syn"] = {
+   [1] = "Beelzebub: The Baby I Picked Up Is the Great Demon King!?",
    },
   ["official"] = {
-   [1] = "べるぜバブ",
+   [1] = "べるぜバブ 拾った赤ちゃんは大魔王!?",
    },
   },
  [7737] = {
@@ -82534,7 +82570,8 @@ local animeTitles = {
   ["main"] = "Fortune Arterial: Akai Yakusoku",
   ["syn"] = {
    [1] = "Fortune Arterial: Red Promise",
-   [2] = "フォーチュン アテリアル 赤い約束",
+   [2] = "Развилка Фортуны: Обещание, Связавшее Нас",
+   [3] = "フォーチュン アテリアル 赤い約束",
    },
   ["official"] = {
    [1] = "FORTUNE ARTERIAL 赤い約束",
@@ -82896,11 +82933,11 @@ local animeTitles = {
  [7934] = {
   ["short"] = {
    },
-  ["main"] = "Beelzebub (2011)",
+  ["main"] = "Beelzebub",
   ["syn"] = {
    },
   ["official"] = {
-   [1] = "べるぜバブ (2011)",
+   [1] = "べるぜバブ",
    },
   },
  [7935] = {
@@ -83145,10 +83182,10 @@ local animeTitles = {
    },
   ["main"] = "Gekijouban Macross F: Sayonara no Tsubasa",
   ["syn"] = {
+   [1] = "Macross Frontier: The Wings of Goodbye",
    },
   ["official"] = {
-   [1] = "Macross Frontier: The Wings of Goodbye",
-   [2] = "劇場版 マクロスF 恋離飛翼～サヨナラノツバサ～",
+   [1] = "劇場版 マクロスF 恋離飛翼～サヨナラノツバサ～",
    },
   },
  [7960] = {
@@ -83224,7 +83261,8 @@ local animeTitles = {
    },
   ["main"] = "Seikon no Qwaser: Jotei no Shouzou",
   ["syn"] = {
-   [1] = "Seikon no Qwaser OVA",
+   [1] = "성흔의 퀘이서: 여제의 초상",
+   [2] = "Seikon no Qwaser OVA",
    },
   ["official"] = {
    [1] = "聖痕のクェイサー 女帝の肖像",
@@ -83267,6 +83305,7 @@ local animeTitles = {
    },
   ["main"] = "Toaru Kagaku no Railgun OVA",
   ["syn"] = {
+   [1] = "科学电磁炮 ova",
    },
   ["official"] = {
    [1] = "とある科学の超電磁砲(レールガン) OVA",
@@ -83616,6 +83655,7 @@ local animeTitles = {
    },
   ["main"] = "Kimi ni Todoke (2011)",
   ["syn"] = {
+   [1] = "Kimi ni Todoke: From Me to You 2nd Season",
    },
   ["official"] = {
    [1] = "君に届け (2011)",
@@ -83727,6 +83767,7 @@ local animeTitles = {
   ["main"] = "Moshidora",
   ["syn"] = {
    [1] = "Drucker in the Dug-Out",
+   [2] = "What if a Female Manager of a High School Baseball Team Read Drucker`s `Management`?",
    },
   ["official"] = {
    [1] = "もしドラ",
@@ -84068,7 +84109,8 @@ local animeTitles = {
   ["main"] = "Mahou Shoujo Madoka Magika",
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
-   [2] = "Puella Magi Madoka Magica",
+   [2] = "Mahou Shoujo Madoka★Magica",
+   [3] = "Puella Magi Madoka Magica",
    },
   ["official"] = {
    [1] = "魔法少女まどか★マギカ",
@@ -84386,6 +84428,7 @@ local animeTitles = {
   },
  [8106] = {
   ["short"] = {
+   [1] = "30sai",
    },
   ["main"] = "30-sai no Hoken Taiiku",
   ["syn"] = {
@@ -84648,6 +84691,7 @@ local animeTitles = {
    },
   ["main"] = "Showa Monogatari TV",
   ["syn"] = {
+   [1] = "The story of Showa",
    },
   ["official"] = {
    [1] = "昭和物語 TV",
@@ -84689,7 +84733,8 @@ local animeTitles = {
    },
   ["main"] = "Yuu Gi Ou! Zexal",
   ["syn"] = {
-   [1] = "遊戯王 Zexal",
+   [1] = "Yu-Gi-Oh! Zexal",
+   [2] = "遊戯王 Zexal",
    },
   ["official"] = {
    [1] = "遊戯王ゼアル",
@@ -84723,6 +84768,7 @@ local animeTitles = {
    },
   ["official"] = {
    [1] = "たんすわらし.",
+   [2] = "Drawer Hobs",
    },
   },
  [8144] = {
@@ -84876,6 +84922,7 @@ local animeTitles = {
    },
   ["main"] = "Naruto x UT",
   ["syn"] = {
+   [1] = "Naruto Shippuuden OVA: Sage Naruto vs Sasuke",
    },
   ["official"] = {
    [1] = "NARUTO×UT",
@@ -85066,6 +85113,239 @@ local animeTitles = {
    [1] = "ぬらりひょんの孫 2",
    },
   },
+ [8178] = {
+  ["short"] = {
+   },
+  ["main"] = "Sweet Home: H na Oneesan wa Suki Desu ka?",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "Sweet Home～Hなお姉さんは好きですか？～",
+   },
+  },
+ [8179] = {
+  ["short"] = {
+   },
+  ["main"] = "Mayo Chiki!",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "まよチキ!",
+   },
+  },
+ [8180] = {
+  ["short"] = {
+   },
+  ["main"] = "Ikoku Meiro no Croisee",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "異国迷路のクロワーゼ",
+   },
+  },
+ [8181] = {
+  ["short"] = {
+   },
+  ["main"] = "Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "あの日見た花の名前を僕達はまだ知らない。",
+   },
+  },
+ [8182] = {
+  ["short"] = {
+   },
+  ["main"] = "DD Hokuto no Ken",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "DD北斗之拳",
+   },
+  },
+ [8184] = {
+  ["short"] = {
+   },
+  ["main"] = "Towa no Kuon",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "トワノクオン",
+   },
+  },
+ [8186] = {
+  ["short"] = {
+   },
+  ["main"] = "Zoku Naniwa Yuukyouden",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "続なにわ遊侠伝",
+   },
+  },
+ [8187] = {
+  ["short"] = {
+   },
+  ["main"] = "Naniwa Yuukyouden: Kanketsu-hen",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "なにわ遊侠伝: 完結篇",
+   },
+  },
+ [8188] = {
+  ["short"] = {
+   },
+  ["main"] = "Naniwa Yuukyouden: Chou Gokudou! Yoru no Bat wa Manrui-hen",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "なにわ遊侠伝: 超極道!夜のバットはマン塁篇",
+   },
+  },
+ [8189] = {
+  ["short"] = {
+   },
+  ["main"] = "Naniwa Yuukyouden: Kyouretsu! Ana ga Attara Iretai-hen",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "なにわ遊侠伝: 強烈!アナがあったら入れたい篇",
+   },
+  },
+ [8190] = {
+  ["short"] = {
+   },
+  ["main"] = "Naniwa Yuukyouden: Nekketsu!! Bakushou Mankai-hen",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "なにわ遊侠伝: 熱血!!爆笑マン開篇",
+   },
+  },
+ [8191] = {
+  ["short"] = {
+   },
+  ["main"] = "Ultra Nyan: Hoshizora kara Maiorita Fushigi Neko",
+  ["syn"] = {
+   [1] = "Ultra Nyan: Extraordinary Cat who Descended from the Starry Sky",
+   },
+  ["official"] = {
+   [1] = "ウルトラニャン 星空から舞い降りたふしぎネコ",
+   },
+  },
+ [8192] = {
+  ["short"] = {
+   },
+  ["main"] = "Ultra Nyan 2: Happy Daisakusen",
+  ["syn"] = {
+   [1] = "Ultra Nyan 2: The Great Happy Operation",
+   },
+  ["official"] = {
+   [1] = "ウルトラニャン2 ハッピー大作戦",
+   },
+  },
+ [8205] = {
+  ["short"] = {
+   },
+  ["main"] = "Sacred Seven",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "セイクリッドセブン",
+   },
+  },
+ [8207] = {
+  ["short"] = {
+   },
+  ["main"] = "Osamu Kara Kidoutai S.A.C. Solid State Society 3D",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "攻殻機動隊 S.A.C. SOLID STATE SOCIETY 3D",
+   },
+  },
+ [8209] = {
+  ["short"] = {
+   },
+  ["main"] = "Romangeun Eobsda",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "로망은 없다",
+   },
+  },
+ [8211] = {
+  ["short"] = {
+   },
+  ["main"] = "Usagi Drop",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "うさぎドロップ",
+   },
+  },
+ [8204] = {
+  ["short"] = {
+   },
+  ["main"] = "Seitokai Yakuindomo (2011)",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "生徒会役員共 (2011)",
+   },
+  },
+ [8206] = {
+  ["short"] = {
+   },
+  ["main"] = "Dog Days",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "DOG DAYS",
+   },
+  },
+ [8208] = {
+  ["short"] = {
+   },
+  ["main"] = "Otona Joshi no Anime Time",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "大人女子のアニメタイム",
+   },
+  },
+ [8210] = {
+  ["short"] = {
+   },
+  ["main"] = "No.6",
+  ["syn"] = {
+   [1] = "No. 6",
+   },
+  ["official"] = {
+   [1] = "NO.6",
+   },
+  },
+ [8201] = {
+  ["short"] = {
+   },
+  ["main"] = "Hamster Club",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "ハムスター倶楽部",
+   },
+  },
+ [8203] = {
+  ["short"] = {
+   },
+  ["main"] = "Sengoku Basara Gekijouban",
+  ["syn"] = {
+   },
+  ["official"] = {
+   [1] = "戦国BASARA 劇場版",
+   },
+  },
 }
 local serialize = setmetatable({
 	boolean = function(self, b)
@@ -85110,7 +85390,7 @@ local scores = {
 	official = 1,
 }
 
-local THRESHOLD = 250
+local THRESHOLD = 100
 local insertOrCreate = function(tbl, aid, weight)
 	weight = math.floor(weight)
 	if(weight < THRESHOLD) then return end
