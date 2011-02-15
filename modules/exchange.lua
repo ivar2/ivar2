@@ -111,7 +111,7 @@ local exchange = function(self, src, dest, val, from, to)
 			end
 
 			if(tonumber(val) and val > 0 and val ~= math.huge and val ~= (0/0)) then
-				local url = ('http://finance.google.com/finance/converter?a=%s&from=%s&to=%s'):format(val, from, to)
+				local url = ('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(val, from, to)
 				local content, status = utils.http(url)
 				if(status == 200) then
 					local data = content:match'<div id=currency_converter_result>(.-)</span>'
