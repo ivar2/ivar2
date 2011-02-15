@@ -71,13 +71,13 @@ local handleAirtime = function(rfc)
 	end
 
 	if(year and month and day) then
+		local currentTime = os.time()
+		local localOffset = os.date('%H', currentTime) - os.date('!%H', currentTime)
 		local airTime = {
 			year = year,
 			month = month,
 			day = day,
-			-- We should really compare date to date -u and fetch the offset, by why do
-			-- that when we can use a HACK!
-			hour = hour + 2,
+			hour = hour + localOffset,
 			minute = minute,
 		}
 
