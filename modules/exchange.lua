@@ -73,15 +73,6 @@ local cc = {
 	["ZAR"] = "South African Rand (ZAR)",
 }
 
-local add = function(...)
-	local t = 0
-	for i=1, select('#', ...) do
-		t = t + select(i, ...)
-	end
-
-	return t
-end
-
 -- make environment
 local _X = setmetatable({
 	math = math,
@@ -102,15 +93,9 @@ local exchange = function(self, src, dest, val, from, to)
 
 	if(cc[from:upper()] and cc[to:upper()] and from:upper() ~= to:upper()) then
 		val = val:gsub(',', '.')
-		local success, val, err = run('return [['..val..']]')
+		local success, val, err = run('return '..val)
 		if(not err) then
-			if(type(val) == 'string' and not tonumber(val)) then
-				val = add(string.byte(val, 1, #val))
-			else
-				val = tonumber(val)
-			end
-
-			if(tonumber(val) and val > 0 and val ~= math.huge and val ~= (0/0)) then
+			if(type(val) == 'number' and val > 0 and val ~= math.huge and val ~= (0/0)) then
 				local url = ('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(val, from, to)
 				local content, status = utils.http(url)
 				if(status == 200) then
