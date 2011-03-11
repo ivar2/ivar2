@@ -12,6 +12,7 @@ local reply = {
 	'（　°∀°）',
 	' (　´〰`)',
 	'○|￣|＿',
+	'ಠ_ಠ',
 }
 
 math.randomseed(os.time() % 1e5)
