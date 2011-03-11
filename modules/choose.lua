@@ -20,7 +20,18 @@ math.randomseed(os.time() % 1e5)
 return {
 	["^:(%S+) PRIVMSG (%S+) :!choose (.+)$"] = function(self, src, dest, msg)
 		local hax = {}
-		local arr = utils.split(msg, ",[%s]?")
+		local http = msg:match("^%s*(http://%S*)")
+		local arr
+		if(http) then
+			local content, status = utils.http(http)
+			if(content) then
+				arr = utils.split(content, '[\n\r]+')
+			else
+				arr = {}
+			end
+		else
+			arr = utils.split(msg, ",[%s]?")
+		end
 
 		for k, v in pairs(arr) do
 			hax[v] = true
