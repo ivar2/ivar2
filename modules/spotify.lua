@@ -19,6 +19,7 @@ local getinfo = function(str, type, hash)
 
 	local info = content:match"<title>(.-)</title>"
 	if(info) then
+		info = utils.decodeHTML(info)
 		return string.format("%s - %s", info:gsub('%s%-%s[Ss]potify',''), url)
 	end
 end
