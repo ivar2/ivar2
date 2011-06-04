@@ -97,7 +97,7 @@ local alarm = function(self, src, dest, time, msg)
 				nick = nick,
 				dst = dest,
 				src = src,
-				msg = (#msg > 0 and msg) or 'Timer finished',
+				msg = (#msg > 0 and msg) or 'Timer finished.',
 
 				name = id,
 				func = func,
