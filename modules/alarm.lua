@@ -71,13 +71,20 @@ local alarm = function(self, src, dest, time, msg)
 		local min = time:match'(%d+)m'
 		local sec = time:match'(%d+)s'
 
-		if(hour) then timer = timer + (hour * 60 * 60) end
-		if(min) then timer = timer + (min * 60) end
-		if(sec) then timer = timer + sec end
+		local duration = 0
+		if(hour) then duration = duration + (hour * 60 * 60) end
+		if(min) then duration = duration + (min * 60) end
+		if(sec) then duration = duration + sec end
 
+		-- 60 days or more?
+		local nick = self:srctonick(src)
+		if(duration >= (60 * 60 * 24 * 60)) then
+			return self:msg(dest, src, "%s: :'(", nick)
+		end
+
+		timer = timer + duration
 		if(timer ~= os.time()) then
 			local timers = self.timers
-			local nick = self:srctonick(src)
 			local id = 'Alarm:' .. nick
 			if(timers) then
 				for index, timerData in pairs(timers) do
