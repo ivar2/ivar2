@@ -8,7 +8,7 @@ local alarm = function(self, src, dest, time, msg)
 	else
 		local timer = os.time()
 
-		local hour = time:match'(%d+)h'
+		local hour = time:match'(%d+)[ht]'
 		local min = time:match'(%d+)m'
 		local sec = time:match'(%d+)s'
 
