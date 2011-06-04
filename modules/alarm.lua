@@ -18,10 +18,11 @@ local alarm = function(self, src, dest, time, msg)
 
 		if(timer ~= os.time()) then
 			local timers = self.timers
+			local nick = self:srctonick(src)
+			local id = 'Alarm:' .. nick
 			if(timers) then
-				local src = 'Alarm:'.. self:srctonick(src)
 				for index, timerData in pairs(timers) do
-					if(timerData.name == src) then
+					if(timerData.name == id) then
 						table.remove(timers, index)
 						break;
 					end
@@ -31,14 +32,13 @@ local alarm = function(self, src, dest, time, msg)
 				self.timers = timers
 			end
 
-			local nick = self:srctonick(src)
 			table.insert(timers, {
 				nick = nick,
 				dst = dest,
 				src = src,
 				msg = (#msg > 0 and msg) or 'Timer finished',
 
-				name = 'Alarm:' .. nick,
+				name = id,
 				func = func,
 				callTime = timer,
 				oneCall = true,
