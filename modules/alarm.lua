@@ -1,5 +1,5 @@
 local func = function(self, data)
-	self:msg(data.dst, data.src, '%s: %s.', data.nick, data.msg)
+	self:msg(data.dst, data.src, '%s: %s', data.nick, data.msg)
 end
 
 local alarm = function(self, src, dest, time, msg)
