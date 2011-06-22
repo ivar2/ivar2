@@ -1,4 +1,4 @@
-local _FLIGHT = os.time{year = 2010; month = 6; day = 30; hour = 11;}
+local _FLIGHT = os.time{year = 2011; month = 6; day = 23; hour = 13; min = 45;}
 
 local getDiff = function()
 	local _END = os.date('*t', _FLIGHT)
@@ -84,9 +84,9 @@ return {
 		end
 
 		if(flipped) then
-			self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+			self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
 		else
-			self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' and %1'))
+			self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
 		end
 	end,
 }
