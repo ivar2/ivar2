@@ -1,4 +1,4 @@
-local _FLIGHT = (...).config.awesomejapanFlight
+local _FLIGHT = (...).config.awesomejapan.flight
 
 local getDiff = function()
 	local _END = os.date('*t', _FLIGHT)
@@ -54,8 +54,8 @@ do
 				days = math.floor((_FLIGHT - _NOW) / 86400)
 			end
 
-			if(self.config.awesomejapan) then
-				for k, dest in next, self.config.awesomejapan do
+			if(self.config.awesomejapan.chans) then
+				for k, dest in next, self.config.awesomejapan.chans do
 					local locale = 'dag'
 					if(days > 1) then
 						locale = 'dager'
@@ -88,7 +88,7 @@ return {
 			end
 		end
 
-		local att = self.config.awesomejapanGuyz
+		local att = self.config.awesomejapan.guyz
 		local awesome
 
 		if(att) then
