@@ -56,10 +56,15 @@ do
 
 			if(self.config.awesomejapan) then
 				for k, dest in next, self.config.awesomejapan do
+					local locale = 'dag'
+					if(days > 1) then
+						locale = 'dager'
+					end
+
 					if(flipped) then
-						self:privmsg(dest, 'Bare %s dager siden awesome guys dro til Japan! *tease*', days)
+						self:privmsg(dest, 'Bare %s %s siden awesome guys dro til Japan! *tease*', days, locale)
 					else
-						self:privmsg(dest, 'Bare %s dager til the awesome guyz drar til Japan!', days)
+						self:privmsg(dest, 'Bare %s %s til the awesome guyz drar til Japan!', days, locale)
 					end
 				end
 			end
