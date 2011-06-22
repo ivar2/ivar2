@@ -89,7 +89,17 @@ return {
 		end
 
 		local att = self.config.awesomejapanGuyz
-		local awesome = att and att[self:srctonick(src)]
+		local awesome
+
+		if(att) then
+			local nick = self:srctonick(src)
+			for _, guy in next, att do
+				if(nick == guy) then
+					awesome = true
+					break
+				end
+			end
+		end
 
 		if(flipped) then
 			if(awesome) then
