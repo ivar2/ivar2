@@ -1,4 +1,4 @@
-local _FLIGHT = os.time{year = 2011; month = 6; day = 23; hour = 13; min = 45;}
+local _FLIGHT = (...).config.awesomejapanFlight
 
 local getDiff = function()
 	local _END = os.date('*t', _FLIGHT)
@@ -88,10 +88,21 @@ return {
 			end
 		end
 
+		local att = self.config.awesomejapanGuyz
+		local awesome = att and att[self:srctonick(src)]
+
 		if(flipped) then
-			self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			if(awesome) then
+				self:msg(dest, src, 'Bare %s siden DU satt deg på flyet mot Japan. LOL FAIL HOTEL LONER', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			else
+				self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			end
 		else
-			self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			if(awesome) then
+				self:msg(dest, src, 'Om %s sitter DU og Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			else
+				self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			end
 		end
 	end,
 }
