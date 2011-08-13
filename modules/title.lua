@@ -55,6 +55,7 @@ local iiHost = {
 
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
+	['hijiribe.donmai.us'] = danbooru,
 	['open.spotify.com'] = function(path, url)
 		local path = path['path']
 
