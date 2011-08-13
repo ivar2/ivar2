@@ -105,7 +105,6 @@ local getTitle = function(url, offset)
 		end
 	end
 
-
 	local body, status, headers = utils.http(url)
 	if(body) then
 		local charset = body:lower():match'<meta.-content=["\'].-(charset=.-)["\'].->'
