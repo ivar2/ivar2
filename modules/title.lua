@@ -178,6 +178,16 @@ local gsubit = function(url)
 	-- Strip out the anchors.
 	url = url:gsub('#.+', '')
 	if(not urls[url]) then
+		local limit = 100
+		local title = getTitle(url)
+		if(#title > limit) then
+			title == title:sub(1, limit)
+			if(#title == limit) then
+				-- Clip it at the last space:
+				title = title:match('^.* ')
+			end
+		end
+
 		urls[url] = {
 			n = found,
 			m = total,
