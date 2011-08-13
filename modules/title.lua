@@ -191,7 +191,7 @@ local gsubit = function(url)
 		urls[url] = {
 			n = found,
 			m = total,
-			title = getTitle(url),
+			title = title,
 		}
 	else
 		urls[url].n = string.format("%s+%d", urls[url].n, found)
