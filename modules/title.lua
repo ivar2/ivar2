@@ -181,7 +181,7 @@ local gsubit = function(url)
 		local limit = 100
 		local title = getTitle(url)
 		if(#title > limit) then
-			title == title:sub(1, limit)
+			title = title:sub(1, limit)
 			if(#title == limit) then
 				-- Clip it at the last space:
 				title = title:match('^.* ')
