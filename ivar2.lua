@@ -104,11 +104,11 @@ local client = {
 	end,
 
 	Notice = function(self, destination, format, ...)
-		return self:Send('NOTICE %s :%s', destination, format, ...)
+		return self:Send('NOTICE %s :%s', destination, safeFormat(format, ...))
 	end,
 
 	Privmsg = function(self, destination, format, ...)
-		return self:Send('PRIVMSG %s :%s', destination, format, ...)
+		return self:Send('PRIVMSG %s :%s', destination, safeFormat(format, ...))
 	end,
 
 	Msg = function(self, type, destination, source, ...)
