@@ -1,16 +1,44 @@
-return {
-	["^:(%S+) PRIVMSG (%S+) :!airs (.+)$"] = function(self, src, dest, msg)
-		local content, status = utils.http"http://www.mahou.org/Showtime/"
-		content = content:match("<h1>Currently Airing</h1></center>.-<table.-<table.->(.-)</table>")
+local httpclient = require'handler.http.client'
 
-		msg = msg:lower()
-		for title, station, airtime, eta in content:gmatch('<tr.->\n<td>.-</td>\n<td>(.-)<a name="%d+"></a></td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->.-</td>\n<td.->(.-)</td>\n<td.->(.-)</td>\n') do
-			local lower = title:lower()
-			if(lower:find(msg, 1, true)) then
-				return self:msg(dest, src, "%s airs on %s on %s (ETA: %s)", title, station, airtime, eta:sub(1,-2))
+local ivar2 = ...
+local client = httpclient.new(ivar2.Loop)
+
+local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
+local parseData = function(self, destination, source, data, anime)
+	data = data:match'Airing</h1>(.-)<h1>'
+	data = data:gsub('<td.->', '<td>'):gsub('</?a.->', ''):gsub('[\r\n]+', '')
+	-- FIXME: This match is _steps_ away from locking on the C side.
+	for entry in data:gmatch'<tr.->(.-)</tr>' do
+		for title, channel,airtime,eta in entry:gmatch(pattern) do
+			if(title:lower():find(anime, 1, true)) then
+				return self:Msg('privmsg', destination, source, '%s airs on %s on %s (ETA: %s)', title, channel, airtime, eta:sub(1, -2))
 			end
 		end
+	end
 
-		self:msg(dest, src, "The requested anime does not currently air, or you just simply failed.")
-	end,
+	self:Msg('privmsg', destination, source, 'Fool! I found nothing by that name... :(')
+end
+
+return {
+	PRIVMSG = {
+		['!airs%s*$'] = function(self, source, destination)
+			self:Msg('privmsg', destination, source, 'Returns air time, ETA and channel for <anime>. Usage: !airs <anime>.', source.nick)
+		end,
+
+		['!airs (.+)$'] = function(self, source, destination, anime)
+			local sink = {}
+			client:request{
+				url = 'http://www.mahou.org/Showtime/',
+				stream_response = true,
+
+				on_data = function(request, response, data)
+					if(data) then sink[#sink + 1] = data print(#data) end
+				end,
+
+				on_finished = function()
+					parseData(self, destination, source, table.concat(sink), anime:lower())
+				end,
+			}
+		end,
+	},
 }
