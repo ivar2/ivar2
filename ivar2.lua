@@ -223,7 +223,8 @@ local client = {
 	LoadModules = function(self)
 		if(self.config.modules) then
 			for _, moduleName in next, self.config.modules do
-				local moduleTable = safeCall(self, moduleName, assert(loadfile('modules/' .. moduleName .. '.lua'))())
+				local moduleFile = assert(loadfile('modules/' .. moduleName .. '.lua'))
+				local moduleTable = safeCall(self, moduleName, moduleFile)
 				if(moduleTable) then
 					self:EnableModule(moduleName, moduleTable)
 				end
