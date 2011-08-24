@@ -26,7 +26,7 @@ local safeCall = function(self, moduleName, func, ...)
 	local success, message = pcall(func, self, ...)
 
 	if(not success) then
-		return
+		return nil, message
 	end
 
 	return message
@@ -57,6 +57,7 @@ local client = {
 
 	Send = function(self, format, ...)
 		local message = safeFormat(format, ...)
+		-- TODO: We should use :Log() here.
 		print(message)
 		if(message) then
 			message = message:gsub('[\r\n]+', '')
@@ -224,7 +225,7 @@ local client = {
 		if(self.config.modules) then
 			for _, moduleName in next, self.config.modules do
 				local moduleFile = assert(loadfile('modules/' .. moduleName .. '.lua'))
-				local moduleTable = safeCall(self, moduleName, moduleFile)
+				local moduleTable, moduleError = safeCall(self, moduleName, moduleFile)
 				if(moduleTable) then
 					self:EnableModule(moduleName, moduleTable)
 				end
@@ -279,23 +280,26 @@ local client = {
 		for line in data:gmatch('[^\n]+') do
 			if(line:sub(-1) ~= '\r') then
 				self.overflow = line
-			elseif(line:sub(1,1) ~= ':') then
-				self:DispatchCommand(line:match('([^:]+) :(.*)'))
-			elseif(line:sub(1,1) == ':') then
-				local source, command, destination, argument
-				if(line:match' :') then
-					source, command, destination, argument = line:match(':(%S+) ([%u%d]+) ([^:]+) :(.*)')
-				else
-					source, command, destination, argument = line:match(':(%S+) ([%u%d]+) (%S+) (.*)')
-				end
-
-				if(not self:IsIgnored(destination, source)) then
-					self:DispatchCommand(command, argument, source, destination)
-				end
-			end
-
-			if(not self.overflow) then
+			else
+				-- Strip of \r.
+				line = line:sub(1, -2)
+				-- TODO: We should use :Log() here.
 				print(line)
+
+				if(line:sub(1,1) ~= ':') then
+					self:DispatchCommand(line:match('([^:]+) :(.*)'))
+				elseif(line:sub(1,1) == ':') then
+					local source, command, destination, argument
+					if(line:match' :') then
+						source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) ([^:]+) :(.*)')
+					else
+						source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) (%S+) (.*)')
+					end
+
+					if(not self:IsIgnored(destination, source)) then
+						self:DispatchCommand(command, argument, source, destination)
+					end
+				end
 			end
 		end
 	end,
