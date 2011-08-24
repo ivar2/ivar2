@@ -283,9 +283,9 @@ local client = {
 			elseif(line:sub(1,1) == ':') then
 				local source, command, destination, argument
 				if(line:match' :') then
-					source, command, destination, argument = line:match('(%S+) ([%u%d]+) ([^:]+) :(.*)')
+					source, command, destination, argument = line:match(':(%S+) ([%u%d]+) ([^:]+) :(.*)')
 				else
-					source, command, destination, argument = line:match('(%S+) ([%u%d]+) (%S+) (.*)')
+					source, command, destination, argument = line:match(':(%S+) ([%u%d]+) (%S+) (.*)')
 				end
 
 				if(not self:IsIgnored(destination, source)) then
