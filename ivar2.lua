@@ -66,8 +66,12 @@ local client = {
 		end
 	end,
 
-	Join = function(self, channel)
-		return self:Send('JOIN %s', channel)
+	Join = function(self, channel, password)
+		if(password) then
+			return self:Send('JOIN %s %s', channel, password)
+		else
+			return self:Send('JOIN %s', channel)
+		end
 	end,
 
 	Part = function(self, channel)
