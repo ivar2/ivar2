@@ -150,9 +150,15 @@ local client = {
 
 			if(not self:IsModuleDisabled(moduleName, destination)) then
 				if(pattern and argument:match(pattern)) then
-					safeCall(self, moduleName, callback, source, destination, argument:match(pattern))
+					local success, message = safeCall(self, moduleName, callback, source, destination, argument:match(pattern))
+					if(not success) then
+						log:error('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+					end
 				elseif(not pattern) then
-					safeCall(self, moduleName, callback, argument)
+					local success, message = safeCall(self, moduleName, callback, argument)
+					if(not success) then
+						log:error('Unable to execute handler %s from %s: %s', command, moduleName, message)
+					end
 				end
 			end
 		end
@@ -187,6 +193,8 @@ local client = {
 	EnableModule = function(self, moduleName, moduleTable)
 		for command, handlers in next, moduleTable do
 			if(not events[command]) then events[command] = {} end
+
+			log:info(string.format('Loading module %s.', moduleName))
 
 			for pattern, handler in next, handlers do
 				if(type(pattern) ~= 'string') then pattern = nil end
@@ -226,9 +234,15 @@ local client = {
 	LoadModules = function(self)
 		if(self.config.modules) then
 			for _, moduleName in next, self.config.modules do
-				local moduleFile = assert(loadfile('modules/' .. moduleName .. '.lua'))
+				local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
+				if(not moduleFile) then
+					log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
+				end
+
 				local moduleTable, moduleError = safeCall(self, moduleName, moduleFile)
-				if(moduleTable) then
+				if(not moduleTable) then
+					log:error(string.format('Unable to execute module %s: %s.', moduleName, moduleError))
+				else
 					self:EnableModule(moduleName, moduleTable)
 				end
 			end
