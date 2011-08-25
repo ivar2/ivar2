@@ -210,20 +210,24 @@ local client = {
 		end
 	end,
 
+	LoadModule = function(self, moduleName)
+		local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
+		if(not moduleFile) then
+			log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
+		end
+
+		local success, message = pcall(moduleFile, self)
+		if(not success) then
+			log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
+		else
+			self:EnableModule(moduleName, message)
+		end
+	end,
+
 	LoadModules = function(self)
 		if(self.config.modules) then
 			for _, moduleName in next, self.config.modules do
-				local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
-				if(not moduleFile) then
-					log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
-				end
-
-				local success, message = pcall(moduleFile, self)
-				if(not success) then
-					log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
-				else
-					self:EnableModule(moduleName, message)
-				end
+				self:LoadModule(moduleName)
 			end
 		end
 	end,
