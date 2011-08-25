@@ -32,7 +32,7 @@ return {
 				stream_response = true,
 
 				on_data = function(request, response, data)
-					if(data) then sink[#sink + 1] = data print(#data) end
+					if(data) then sink[#sink + 1] = data end
 				end,
 
 				on_finished = function()
