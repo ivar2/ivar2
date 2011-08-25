@@ -271,7 +271,7 @@ local client = {
 	end,
 
 	handle_connected = function(self)
-		self:Send(string.format('NICK %s', self.config.nick))
+		self:Nick(self.config.nick)
 		self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
 	end,
 
