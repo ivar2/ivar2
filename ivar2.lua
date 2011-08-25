@@ -50,9 +50,9 @@ local client = {
 
 	Send = function(self, format, ...)
 		local message = safeFormat(format, ...)
-		log:debug(message)
 		if(message) then
 			message = message:gsub('[\r\n]+', '')
+			log:debug(message)
 
 			self.socket:send(message .. '\r\n')
 		end
