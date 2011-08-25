@@ -181,10 +181,10 @@ local client = {
 	end,
 
 	EnableModule = function(self, moduleName, moduleTable)
+		log:info(string.format('Loading module %s.', moduleName))
+
 		for command, handlers in next, moduleTable do
 			if(not events[command]) then events[command] = {} end
-
-			log:info(string.format('Loading module %s.', moduleName))
 
 			for pattern, handler in next, handlers do
 				if(type(pattern) ~= 'string') then pattern = nil end
