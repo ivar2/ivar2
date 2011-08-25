@@ -257,6 +257,7 @@ local client = {
 			bindHost, bindPort = unpack(config.bind)
 		end
 
+		log:info(string.format('Connecting to %s:%s.', config.host, config.port))
 		self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
 
 		self:DisableAllModules()
@@ -264,7 +265,9 @@ local client = {
 	end,
 
 	handle_error = function(self, err)
+		log:error(err)
 		if(self.config.autoReconnect) then
+			log:info('Lost connection to server. Reconnecting in 60 seconds.')
 			ev.Timer.new(
 				function(loop, timer, revents)
 					self.socket:close()
