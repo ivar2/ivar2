@@ -7,16 +7,14 @@ local loop = ev.Loop.default
 
 local events = {
 	['PING'] = {
-		{
-			'core',
+		core = {
 			function(self, time)
 				self:Send(string.format('PONG %s', time))
 			end,
 		},
 	},
 	['433'] = {
-		{
-			'core',
+		core = {
 			function(self)
 				local nick = self.config.nick:sub(1,8) .. '_'
 				self:Nick(nick)
@@ -108,7 +106,7 @@ local client = {
 		local handler = type == 'notice' and 'Notice' or 'Privmsg'
 		if(destination == self.config.nick) then
 			-- Send the respons as a PM.
-				return self[handler](self, source.nick or source, ...)
+			return self[handler](self, source.nick or source, ...)
 		else
 			-- Send it to the channel.
 			return self[handler](self, destination, ...)
@@ -135,19 +133,18 @@ local client = {
 
 		if(source) then source = self:ParseMask(source) end
 
-		for _, module in next, events[command] do
-			local moduleName, callback, pattern = module[1], module[2], module[3]
-
+		for moduleName, moduleTable in next, events[command] do
 			if(not self:IsModuleDisabled(moduleName, destination)) then
-				if(pattern and argument:match(pattern)) then
-					local success, message = pcall(callback, self, source, destination, argument:match(pattern))
-					if(not success) then
-						log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
+				for pattern, callback in next, moduleTable do
+					local success, message
+					if(type(pattern) == 'number') then
+						success, message = pcall(callback, self, argument)
+					elseif(argument:match(pattern)) then
+						success, message = pcall(callback, self, source, destination, argument:match(pattern))
 					end
-				elseif(not pattern) then
-					local success, message = pcall(callback, self, argument)
-					if(not success) then
-						log:error(string.format('Unable to execute handler %s from %s: %s', command, moduleName, message))
+
+					if(not success and message) then
+						log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
 					end
 				end
 			end
@@ -185,37 +182,28 @@ local client = {
 
 		for command, handlers in next, moduleTable do
 			if(not events[command]) then events[command] = {} end
-
-			for pattern, handler in next, handlers do
-				if(type(pattern) ~= 'string') then pattern = nil end
-
-				table.insert(
-					events[command],
-					{
-						moduleName,
-						handler,
-						pattern,
-					}
-				)
-			end
+			events[command][moduleName] = handlers
 		end
 	end,
 
 	DisableModule = function(self, moduleName)
-		for command, handlers in next, events do
-			for key, handler in next, handlers do
-				if(handler[1] == moduleName) then
-					table.remove(handlers, key)
+		for command, modules in next, events do
+			for module in next, modules do
+				if(module == moduleName) then
+					log:info(string.format('Disabling module: %s', module))
+					modules[module] = nil
+					break
 				end
 			end
 		end
 	end,
 
 	DisableAllModules = function(self)
-		for command, handlers in next, events do
-			for key, handler in next, handlers do
-				if(handler[1] ~= 'core') then
-					table.remove(handlers, key)
+		for command, modules in next, events do
+			for module in next, modules do
+				if(module ~= 'core') then
+					log:info(string.format('Disabling module: %s', module))
+					modules[module] = nil
 				end
 			end
 		end
