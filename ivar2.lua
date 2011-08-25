@@ -142,12 +142,12 @@ local client = {
 				if(pattern and argument:match(pattern)) then
 					local success, message = pcall(callback, self, source, destination, argument:match(pattern))
 					if(not success) then
-						log:error('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+						log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
 					end
 				elseif(not pattern) then
 					local success, message = pcall(callback, self, argument)
 					if(not success) then
-						log:error('Unable to execute handler %s from %s: %s', command, moduleName, message)
+						log:error(string.format('Unable to execute handler %s from %s: %s', command, moduleName, message))
 					end
 				end
 			end
