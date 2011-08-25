@@ -25,16 +25,6 @@ local events = {
 	},
 }
 
-local safeCall = function(self, moduleName, func, ...)
-	local success, message = pcall(func, self, ...)
-
-	if(not success) then
-		return nil, message
-	end
-
-	return message
-end
-
 local safeFormat = function(format, ...)
 	if(select('#', ...) > 0) then
 		local success, message = pcall(string.format, format, ...)
@@ -150,12 +140,12 @@ local client = {
 
 			if(not self:IsModuleDisabled(moduleName, destination)) then
 				if(pattern and argument:match(pattern)) then
-					local success, message = safeCall(self, moduleName, callback, source, destination, argument:match(pattern))
+					local success, message = pcall(callback, self, source, destination, argument:match(pattern))
 					if(not success) then
 						log:error('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
 					end
 				elseif(not pattern) then
-					local success, message = safeCall(self, moduleName, callback, argument)
+					local success, message = pcall(callback, self, argument)
 					if(not success) then
 						log:error('Unable to execute handler %s from %s: %s', command, moduleName, message)
 					end
@@ -239,11 +229,11 @@ local client = {
 					log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
 				end
 
-				local moduleTable, moduleError = safeCall(self, moduleName, moduleFile)
-				if(not moduleTable) then
-					log:error(string.format('Unable to execute module %s: %s.', moduleName, moduleError))
+				local success, message = pcall(moduleFile, self)
+				if(not success) then
+					log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
 				else
-					self:EnableModule(moduleName, moduleTable)
+					self:EnableModule(moduleName, message)
 				end
 			end
 		end
