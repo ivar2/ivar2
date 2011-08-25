@@ -1,5 +1,8 @@
 local connection = require'handler.connection'
 local ev = require'ev'
+require'logging.console'
+
+local log = logging.console()
 local loop = ev.Loop.default
 
 local events = {
@@ -57,8 +60,7 @@ local client = {
 
 	Send = function(self, format, ...)
 		local message = safeFormat(format, ...)
-		-- TODO: We should use :Log() here.
-		print(message)
+		log:debug(message)
 		if(message) then
 			message = message:gsub('[\r\n]+', '')
 
@@ -233,11 +235,6 @@ local client = {
 		end
 	end,
 
-	Log = function(self, level, format, ...)
-		local message = safeFormat(format, ...)
-		print(level, format)
-	end,
-
 	Connect = function(self, config)
 		self.config = config
 
@@ -283,8 +280,7 @@ local client = {
 			else
 				-- Strip of \r.
 				line = line:sub(1, -2)
-				-- TODO: We should use :Log() here.
-				print(line)
+				log:debug(line)
 
 				if(line:sub(1,1) ~= ':') then
 					self:DispatchCommand(line:match('([^:]+) :(.*)'))
