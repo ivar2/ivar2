@@ -204,7 +204,7 @@ local client = {
 	DisableModule = function(self, moduleName)
 		for command, handlers in next, events do
 			for key, handler in next, handlers do
-				if(handlers[1] == moduleName) then
+				if(handler[1] == moduleName) then
 					table.remove(handlers, key)
 				end
 			end
