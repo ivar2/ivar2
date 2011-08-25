@@ -188,12 +188,9 @@ local client = {
 
 	DisableModule = function(self, moduleName)
 		for command, modules in next, events do
-			for module in next, modules do
-				if(module == moduleName) then
-					log:info(string.format('Disabling module: %s', module))
-					modules[module] = nil
-					break
-				end
+			if(modules[moduleName]) then
+				log:info(string.format('Disabling module: %s', moduleName))
+				modules[moduleName] = nil
 			end
 		end
 	end,
