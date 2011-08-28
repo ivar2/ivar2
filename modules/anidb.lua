@@ -1,288 +1,224 @@
-local udp
+package.path = table.concat({
+	'libs/?.lua',
+	'libs/?/init.lua',
 
--- Cache
-local cache = {}
+	'',
+}, ';') .. package.path
 
--- Socket var
-local host = 'api.anidb.info'
-local port = 9000
-local ip = socket.dns.toip(host)
+local httpclient = require'handler.http.client'
+local zlib = require'zlib'
+local anidbSearch = require'anidbsearch'
 
--- AniDB related vars
-local destination
-local source
-local message
-local session
+require'tokyocabinet'
+require'logging.console'
+local log = logging.console()
 
-local db = 'data/anidb_db.lua'
+local ivar2 = ...
+local client = httpclient.new(ivar2.Loop)
+local anidb = tokyocabinet.hdbnew()
 
-local amask = string.format(
-	'%02X%02X%02X%02X%02X',
-
-	--aid, year, type, catlist, catweight
-	128 + 32 + 16 + 2 + 1,
-	-- romaji, kanji
-	128 + 64,
-	-- episodes, normal ep count, air date, end date
-	128 + 64 + 16 + 8,
-	-- rating, temp rating, review rating
-	128 + 32 + 8,
-	-- nil...
-	0
-)
-
-local mergeCatInfo = function(cats, weight)
+local buildOutput = function(...)
 	local out = {}
 
-	for index, cat in next, cats do
-		if(weight[index] == "6") then
-			table.insert(out, cat)
+	for i=1, select('#', ...) do
+		local str = select(i, ...)
+		if(str) then table.insert(out, str) end
+	end
+
+	return table.concat(out)
+end
+
+local handleXML = function(xml)
+	local error = xml:match('<error>([^<]+)</error>')
+	if(error) then
+		log:error(string.format('anidb: %s', error))
+		return string.format('Error: %s', error)
+	end
+
+	local url = 'http://anidb.net/a' .. xml:match('id="(%d+)"')
+	local type = xml:match('<type>([^<]+)</type>')
+	local episodecount = tonumber(xml:match('<episodecount>([^<]+)</episodecount>'))
+	local startdate = xml:match('<startdate>([^<]+)</startdate>') or '?'
+	local enddate = xml:match('<enddate>([^<]+)</enddate>') or '?'
+
+	startdate = startdate:gsub('%-', '.')
+	enddate = enddate:gsub('%-', '.')
+
+	local titles = {}
+	for lang, type, title in xml:gmatch('<title xml:lang="([^"]+)" type="([^"]+)">([^<]+)</title>') do
+		if(type == 'main') then
+			titles.main = title
+		elseif(lang == 'ja' and type == 'official') then
+			titles.japanese = title
 		end
 	end
 
-	table.sort(out)
-
-	return out
-end
-
--- Reply handlers.
-local handlers = {}
-
-local _fmt = function(self, fmt, ...)
-	if(select('#', ...) > 0) then
-		local succ, err = pcall(string.format, fmt, ...)
-		if(not succ) then
-			self:log('ERROR', 'Failed string.format: ' .. tostring(err) .. ' Traceback' .. debug.traceback())
-
-			return
-		end
-
-		fmt = err
-	end
-
-	return fmt
-end
-
-local send = function(self, fmt, ...)
-	fmt = _fmt(self, fmt, ...)
-
-	if(fmt) then
-		local sent, err = udp:send(fmt)
-		if(err) then
-			return nil, err
-		else
-			return true
-		end
-	end
-end
-
-local recv = function(self)
-	local reply, err = udp:receive()
-	if(err) then
-		return nil, err
-	end
-
-	return true, reply
-end
-
-local sendrecv = function(self, fmt, ...)
-	local succ, err  = send(self, fmt, ...)
-
-	if(succ) then
-		local succ, err = recv()
-
-		if(succ) then
-			local id, data = err:match'(%d+) (.*)'
-			if(handlers[id]) then
-				local succ, err = handlers[id](self, data)
-				if(not succ) then
-					print('Handler failed!', id, err)
-				elseif(err) then
-					self:msg(destination, source, err)
-				end
-			else
-				print('Unknown handler id', id, data)
+	local categories = {}
+	do
+		local weighted = {}
+		local catString = xml:match('<categories>(.-)</categories>')
+		if(catString) then
+			for weight, name in catString:gmatch('weight="([^"]+)">\n<name>([^<]+)</name>') do
+				table.insert(weighted, {name = name, weight = tonumber(weight)})
 			end
+			table.sort(weighted, function(a, b) return a.weight > b.weight end)
+		end
+
+		local i = 7
+		repeat
+			weighted[i] = nil
+			i = i + 1
+		until not weighted[i]
+
+		for i=1,#weighted do
+			table.insert(categories, weighted[i].name)
+		end
+
+		table.sort(categories)
+	end
+
+	local episodes, airedepisodes = {}, 0
+	local today = os.date('%Y-%m-%d')
+	local episodesString = xml:match('<episodes>\n(.-)</episodes>')
+	if(episodesString) then
+		for eptype, epno, airdate in episodesString:gmatch('type="([^"]+)">(%d+)</epno>.-<airdate>([^<]+)</airdate>') do
+			if(eptype == '1') then
+				local aired = airdate < today
+				if(aired) then airedepisodes = airedepisodes + 1 end
+
+				episodes[tonumber(epno)] = {airdate = airdate:gsub('%-', '.'), aired = aired}
+			end
+		end
+	end
+
+	local airing = airedepisodes ~= episodecount
+	if(airedepisodes == 0) then airedepisodes = '?' end
+	if(episodecount == 0) then episodecount = '?' end
+
+	local rating
+	do
+		local permanent = xml:match('<permanent.->([^<]+)</permanent>')
+		local temporary = xml:match('<temporary.->([^<]+)</temporary>')
+
+		if(airedepisodes == episodecount) then
+			rating = permanent
 		else
-			return nil, err, 'receive'
-		end
-	else
-		return nil, err, 'send'
-	end
-
-	return true
-end
-
-local doLogin = function(self)
-	local succ, err, handler = sendrecv(self, 'AUTH user=%s&pass=%s&protover=3&client=ivartre&clientver=0&enc=utf-8', self.config.anidbUser, self.config.anidbPassword)
-	if(not succ) then
-		if(handler == 'send') then
-			self:msg(destination, source, 'AniDB login failed.. :(')
-		elseif(handler == 'receive') then
-			self:msg(destination, source, 'AniDB reply failed. :(')
+			rating = temporary
 		end
 
-		return nil, err
-	else
-		return true
-	end
-end
-
--- 501 LOGIN FIRST
-handlers['501'] = function(self)
-	local succ, err = doLogin(self)
-	if(not succ) then
-		print('Login failed!', tostring(err))
-		return nil, err
-	end
-
-	return true
-end
-
--- 200 LOGIN ACCEPTED
--- Send data.
-handlers['200'] = function(self, data)
-	if(data) then
-		session = data:match'(%S+)'
-	end
-
-	local succ, err, handler = sendrecv(self, 'ANIME aid=%s&amask=%s&s=%s', message, amask, session)
-	if(not succ) then
-		if(handler == 'send') then
-			self:msg(destination, source, 'Fetching information from AniDB failed. :(')
-		elseif(handler == 'receive') then
-			self:msg(destination, source, 'AniDB reply failed. :(')
+		if(not rating) then
+			rating = permanent or temporary or 'no'
 		end
-
-		return nil, err
-	else
-		return true
-	end
-end
-
--- 230 ANIME
-handlers['230'] = function(self, data)
-	data = data:match'\n(.*)\n'
-	-- LINE OF DOOM!
-	local aid, year, type, catlist, catweight, romaji, kanji, max, min, airStart, airEnd, rating, temp, review = unpack(utils.split(data, '|'))
-	local cats = mergeCatInfo(utils.split(catlist, ','), utils.split(catweight, ','))
-
-	-- Convert airEnd:
-	if(airEnd == '0') then
-		airEnd = '?'
-	else
-		airEnd = os.date('%d.%m.%y', airEnd)
 	end
 
-	local title
-	-- Convert titles:
-	if(romaji == '') then
-		title = kanji
-	elseif(kanji == '') then
-		title = romaji
-	else
-		title = string.format('%s // %s', romaji, kanji)
-	end
-
-	-- Convert episode.
-	if(max == '0') then
-		max = '?'
-	end
-
-	-- Cheat ratings...
-	local total = 300
-	if(rating == '0') then total = total - 100 end
-	if(temp == '0') then total = total - 100 end
-	if(review == '0') then total = total - 100 end
-
-	local out = string.format(
-		'%s (%s till %s) %s, %s/%s episodes, %.2f rating / %s | http://anidb.net/a%s',
-		title,
-		os.date('%d.%m.%y', airStart), airEnd,
-		type, min, max,
-		(rating + temp + review) / total,
-		table.concat(cats, ', '), aid
+	return buildOutput(
+		titles.main,
+		titles.japanese and string.format(' // %s', titles.japanese),
+		string.format(' (%s till %s) ', startdate, enddate),
+		type,
+		(type ~= 'Movie') and string.format(', %s/%s episodes', airedepisodes, episodecount),
+		string.format(', %s rating', rating),
+		#categories > 0 and string.format(' / %s', table.concat(categories, ', ')),
+		string.format(' | %s', url)
 	)
-
-	cache[message] = out
-	return true, out
 end
 
--- 330 NO SUCH ANIME
-handlers['330'] = function(self)
-	return true, 'No such anime. :('
-end
+local doLookup = function(self, destination, source, aid)
+	anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
 
--- 504 CLIENT BANNED
-handlers['504'] = function(self, msg)
-	return nil, msg
-end
+	-- Is it fresh and present in our cache?
+	if(anidb[aid] and tonumber(anidb[aid .. ':time']) > os.time()) then
+		log:debug(string.format('anidb: Fetching %d from cache.', aid))
+		self:Msg('privmsg', destination, source, anidb[aid])
+		anidb:close()
+		return
+	else
+		anidb:close()
+		log:info(string.format('anidb: Requesting information on %d.', aid))
+		local sink = {}
+		client:request{
+			host = 'api.anidb.net',
+			port = 9001,
+			scheme = 'http',
+			method = 'GET',
+			path = ("/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1"):format(aid),
 
--- 506 INVALID SESSION
-handlers['506'] = function(self)
-	local succ, err = doLogin(self)
-	if(not succ) then
-		print('Login failed!', tostring(err))
-		return nil, err
+			-- We have to close the socket ourselves if we want to stream it.
+			stream_response = nil,
+
+			on_data = function(request, response, data)
+				if(data) then sink[#sink + 1] = data end
+			end,
+
+			on_finished = function()
+				local xml = zlib.inflate() (table.concat(sink))
+				local output = handleXML(xml)
+				if(output:sub(1,5) == 'Error') then
+					self:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
+				else
+					anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
+					anidb:put(aid, output)
+					-- Keep it for one day.
+					anidb:put(aid .. ':time', os.time() + 86400)
+					anidb:close()
+
+					self:Msg('privmsg', destination, source, output)
+				end
+			end,
+		}
 	end
-
-	return true
 end
 
 return {
-	["^:(%S+) PRIVMSG (%S+) :!anidb (.+)$"] = function(self, src, dest, msg)
-		local num = tonumber(msg)
-		if(num) then
-			msg = num
-		else
-			local search = loadfile(db) (msg)
-			local matches = loadstring('return ' .. search) ()
+	PRIVMSG = {
+		['!anidb (.+)$'] = function(self, source, destination, anime)
+			-- Force a close in-case we didn't get to earlier.
+			anidb:close()
 
-			if(#matches == 0) then
-				return self:msg(dest, src, 'No matches found. :(')
-			elseif(matches[1].weight == 1000 or matches[1] and not matches[2]) then
-				msg = matches[1].aid
+			local aid = tonumber(anime)
+			if(aid) then
+				return doLookup(self, destination, source, aid)
+			end
+
+			local results = anidbSearch(anime)
+			local numResults = #results
+			if(numResults == 0) then
+				return self:Msg('privmsg', destination, source, 'No matches found :-(.')
+			elseif(numResults == 1) then
+				return doLookup(self, destination, source, results[1].aid)
 			else
-				local n = 15
-				local out = {}
-				for i=1, #matches do
-					local match = matches[i]
-					local aid = match.aid
-					local title = match.title
+				do
+					local w1000 = {}
+					for i=1, numResults do
+						local anime = results[i]
+						if(anime.weight == 1e3) then
+							table.insert(w1000, anime.aid)
+						end
+					end
 
-					n = n + #title + #tostring(aid) + 4
-					local limit = utils.limit - #self.config.nick - #dest
-					if(n < limit) then
-						table.insert(out, string.format('\002[%s]\002 %s', aid, title))
+					if(#w1000 == 1) then
+						return doLookup(self, destination, source, w1000[1])
 					end
 				end
 
-				return self:msg(dest, src, 'Multiple hits: %s', table.concat(out, ' '))
+				do
+					local n = 15
+					local out = {}
+					local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
+					for i=1, numResults do
+						local anime = results[i]
+						local aid = anime.aid
+						local title = anime.title
+
+						n = n + #title + #tostring(aid) + 5
+						if(n < msgLimit) then
+							table.insert(out, string.format('\002[%s]\002 %s', aid, title))
+						end
+					end
+
+					return self:Msg('privmsg', destination, source, table.concat(out, ' '))
+				end
 			end
-		end
-
-		-- we should have a timer here, but...
-		if(cache[msg]) then
-			self:log('INFO', 'Fetching [%s] AniDB information from cache.', msg)
-			return self:msg(dest, src, cache[msg])
-		end
-
-		destination = dest
-		source = src
-		message = msg
-
-		if(not udp) then
-			udp = self.AniDBudp or socket.udp()
-			udp:settimeout(3)
-			udp:setpeername(ip, port)
-			self.AniDBudp = udp
-		end
-
-		if(not session) then
-			local succ, err = handlers['501'](self)
-			if(not succ) then return self:msg(dest, src, 'AniDB login failed. :(') end
-		else
-			handlers['200'](self)
-		end
-	end,
+		end,
+	},
 }
