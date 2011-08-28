@@ -8,6 +8,7 @@ package.path = table.concat({
 local httpclient = require'handler.http.client'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
+local html2unicode = require'html'
 
 require'tokyocabinet'
 require'logging.console'
@@ -152,7 +153,7 @@ local doLookup = function(self, destination, source, aid)
 
 			on_finished = function()
 				local xml = zlib.inflate() (table.concat(sink))
-				local output = handleXML(xml)
+				local output = html2unicode(handleXML(xml))
 				if(output:sub(1,5) == 'Error') then
 					self:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
 				else
