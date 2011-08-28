@@ -61,5 +61,5 @@ return function(str)
 		end
 	end)
 
-	return str = str:gsub("&(%w+);", entities)
+	return str:gsub("&(%w+);", entities)
 end
