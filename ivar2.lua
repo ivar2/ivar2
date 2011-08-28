@@ -292,6 +292,11 @@ local client = {
 						source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) (%S+) (.*)')
 					end
 
+					if(not source) then
+						source, command, argument = line:match('^:(%S+) ([%u%d]+) (%S+)')
+						destination = self:ParseMaskNick(source)
+					end
+
 					if(not self:IsIgnored(destination, source)) then
 						self:DispatchCommand(command, argument, source, destination)
 					end
