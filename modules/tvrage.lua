@@ -1,5 +1,27 @@
-require'socket.url'
+package.path = table.concat(
+	{
+		'libs/?.lua',
+		'libs/?/init.lua',
+
+		'',
+	}, ';'
+) .. package.path
+
+local httpclient = require'handler.http.client'
+local html2unicode = require'html'
 local date = require'date'
+
+local ivar2 = ...
+local client = httpclient.new(ivar2.Loop)
+
+local urlEncode = function(str)
+	return str:gsub(
+		'([^%w ])',
+		function (c)
+			return string.format ("%%%02X", string.byte(c))
+		end
+	):gsub(' ', '+')
+end
 
 local monthName = {
 	Jan = '01',
@@ -93,17 +115,16 @@ end
 local handleData = function(str)
 	local data = {}
 
-	local tmp = utils.split(str:gsub('\n', '@'), '@')
-	for i=1, #tmp, 2 do
-		local k, v = tmp[i], tmp[i+1]
-		data[k] = v
+	for line in str:gmatch('[^\n]+') do
+		local key, value = line:match('([^@]+)@(.*)')
+		data[key] = value
 	end
 
 	return data
 end
 
 local out = function(data)
-	local output = string.format('%s', utils.decodeHTML(data['Show Name']))
+	local output = string.format('%s', html2unicode(data['Show Name']))
 
 	if(data['Started'] and data['Ended']) then
 		output = output .. string.format(' (%s till %s)', handleDate(data['Started']), handleDate(data['Ended']))
@@ -136,30 +157,42 @@ local out = function(data)
 	return output
 end
 
-local handle = function(self, src, dest, msg)
-	local url = ('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(socket.url.escape(msg))
-	local content, status = utils.http(url)
-
-	if(status == 200) then
-		if(content:sub(1,15) == 'No Show Results') then
-			self:msg(dest, src, "%s: %s", src:match"^([^!]+)", 'Invalid show? :(')
-		else
-			local data = handleData(content)
-			local output = out(data)
-
-			if(out) then
-				self:msg(dest, src, "%s", output)
-			else
-				self:msg(dest, src, "%s: %s", 'haste', 'I blew up :(')
-			end
-		end
+local parseData = function(self, source, destination, data)
+	if(data:sub(1, 15) == 'No Show Results') then
+		self:Msg('privmsg', destination, source, '%s: %s', source.nick, 'Invalid show? :(')
 	else
-		self:msg(dest, src, "Sorry %s, I'm emo at haste and need to cut myself %s times.", src:match"^([^!]+)", status)
+		local output = out(handleData(data))
+		if(output) then
+			self:Msg('privmsg', destination, source, output)
+		end
 	end
 end
 
+local handle = function(self, source, destination, input)
+	local url = ('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(urlEncode(input))
+
+	local sink = {}
+	client:request{
+		host = 'services.tvrage.com',
+		port = 80,
+		scheme = 'http',
+		method = 'GET',
+		path = ('/tools/quickinfo.php?show=%s'):format(urlEncode(input)),
+
+		on_data = function(request, response, data)
+			if(data) then sink[#sink + 1] = data end
+		end,
+
+		on_finished = function()
+			parseData(self, source, destination, table.concat(sink))
+		end,
+	}
+end
+
 return {
-	["^:(%S+) PRIVMSG (%S+) :!tv (.+)$"] = handle,
-	["^:(%S+) PRIVMSG (%S+) :!tvr (.+)$"] = handle,
-	["^:(%S+) PRIVMSG (%S+) :!tvrage (.+)$"] = handle,
+	PRIVMSG = {
+		['!tv (.+)$'] = handle,
+		['!tvr (.+)$'] = handle,
+		['!tvrage (.+)'] = handle,
+	},
 }
