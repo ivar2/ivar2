@@ -4,7 +4,7 @@ local ivar2 = ...
 local client = httpclient.new(ivar2.Loop)
 
 local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
-local parseData = function(self, destination, source, data, anime)
+local parseData = function(self, source, destination, data, anime)
 	data = data:match'Airing</h1>(.-)<h1>'
 	data = data:gsub('<td.->', '<td>'):gsub('</?a.->', ''):gsub('[\r\n]+', '')
 	-- FIXME: This match is _steps_ away from locking on the C side.
@@ -36,7 +36,7 @@ return {
 				end,
 
 				on_finished = function()
-					parseData(self, destination, source, table.concat(sink), anime:lower())
+					parseData(self, source, destination, table.concat(sink), anime:lower())
 				end,
 			}
 		end,
