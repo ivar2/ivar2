@@ -27,11 +27,7 @@ local handle = function(self, source, destination, input)
 
 	local sink = {}
 	client:request{
-		host ='www.google.com',
-		port = 80,
-		scheme = 'http',
-		method = 'GET',
-		path = ('/search?q=%s'):format(search),
+		url = ('http://www.google.com/search?q=%s'):format(search),
 		stream_response = true,
 
 		on_data = function(request, response, data)
