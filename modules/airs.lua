@@ -1,6 +1,4 @@
 local httpclient = require'handler.http.client'
-
-local ivar2 = ...
 local client = httpclient.new(ivar2.Loop)
 
 local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
