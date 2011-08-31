@@ -73,14 +73,14 @@ return {
 		['!rrstat'] = function(self, source, destination)
 			rr:open('cache/rr')
 			local nicks = rr:fwmkeys(destination .. ':')
-			rr:close()
 
 			local tmp = {}
-			for nick, value in next, nicks do
-				local nick, type = nick:match(':(^[:]+):(%w+)')
+			for _, key in next, nicks do
+				local nick, type = key:match(':([^:]+):(%w+)')
 				if(not tmp[nick]) then tmp[nick] = {} end
-				tmp[nick][type] = tonumber(value)
+				tmp[nick][type] = tonumber(rr[key])
 			end
+			rr:close()
 
 			local stats = {}
 			for nick, data in next, tmp do
