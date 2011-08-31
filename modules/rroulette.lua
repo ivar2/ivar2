@@ -91,11 +91,10 @@ return {
 
 			local out = {}
 			for i=1, math.min(#stats, 5) do
-				table.insert(out, string.format('%s (%.1f%%)', stats[i].nick, stats[i].ratio * 100))
+				table.insert(out, string.format('%s (%.1f%%)', stats[i].nick, (1 - stats[i].ratio) * 100))
 			end
 
 			self:Msg('privmsg', destination, source, 'Survival rate: %s', table.concat(out, ', '))
-
 		end,
 	}
 }
