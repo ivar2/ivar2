@@ -1,10 +1,3 @@
-package.path = table.concat({
-	'libs/?.lua',
-	'libs/?/init.lua',
-
-	'',
-}, ';') .. package.path
-
 local httpclient = require'handler.http.client'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
@@ -14,7 +7,6 @@ require'tokyocabinet'
 require'logging.console'
 local log = logging.console()
 
-local ivar2 = ...
 local client = httpclient.new(ivar2.Loop)
 local anidb = tokyocabinet.hdbnew()
 
