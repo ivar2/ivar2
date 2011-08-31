@@ -27,8 +27,12 @@ return {
 
 			local bullet = getBullet(rr[destination])
 			local chamber = getChamber(rr[destination])
-			local deaths = rr[destination .. ':' .. nick .. ':deaths'] or 0
-			local attempts = (rr[destination .. ':' .. nick .. ':attempts'] or 0) + 1
+
+			local deathKey = destination .. ':' .. nick .. ':deaths'
+			local attemptKey = destination .. ':' .. nick .. ':attempts'
+
+			local deaths = rr[deathKey] or 0
+			local attempts = (rr[attemptKey] or 0) + 1
 			local seed = math.random(1, chamber)
 
 			if(seed == bullet) then
@@ -64,8 +68,8 @@ return {
 			end
 
 			rr[destination] = (chamber * 10) + bullet
-			rr[destination .. ':' .. nick .. ':deaths'] = deaths
-			rr[destination .. ':' .. nick .. ':attempts'] = attempts
+			rr[deathKey] = deaths
+			rr[attemptKey] = attempts
 
 			rr:close()
 		end,
