@@ -1,8 +1,5 @@
 local ev = require'ev'
-
 require'tokyocabinet'
-
-local ivar2 = ...
 local rr = tokyocabinet.hdbnew()
 
 if(not ivar2.timers) then ivar2.timers = {} end
