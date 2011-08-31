@@ -28,14 +28,13 @@ return {
 			local bullet = getBullet(rr[destination])
 			local chamber = getChamber(rr[destination])
 			local deaths = rr[destination .. ':' .. nick .. ':deaths'] or 0
-			local attempts = rr[destination .. ':' .. nick .. ':attempts'] or 0
+			local attempts = (rr[destination .. ':' .. nick .. ':attempts'] or 0) + 1
 			local seed = math.random(1, chamber)
 
 			if(seed == bullet) then
 				bullet = math.random(1, 6)
 				chamber = 6
 				deaths = deaths + 1
-				attempts = attempts + 1
 				self:Kick(destination, nick, 'BANG!')
 			else
 				chamber = chamber - 1
