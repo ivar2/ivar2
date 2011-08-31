@@ -15,20 +15,11 @@ local getChamber = function(n)
 	return (n - getBullet(n)) / 10 % 10
 end
 
-local getDeaths = function(n)
-	return (n - (n % 100)) / 100
-end
-
 return {
 	PRIVMSG = {
 		['!rr$'] = function(self, source, destination)
 			rr:open('cache/rr', rr.OWRITER + rr.OCREAT)
 			local nick = source.nick
-
-			-- kinda depricated.
-			if(not rr[nick]) then
-				rr[nick] = 0
-			end
 
 			if(not rr[destination]) then
 				rr[destination] = 60 + math.random(1,6)
@@ -36,13 +27,15 @@ return {
 
 			local bullet = getBullet(rr[destination])
 			local chamber = getChamber(rr[destination])
-			local deaths = getDeaths(rr[nick])
+			local deaths = rr[destination .. ':' .. nick .. ':deaths'] or 0
+			local attempts = rr[destination .. ':' .. nick .. ':attempts'] or 0
 			local seed = math.random(1, chamber)
 
 			if(seed == bullet) then
 				bullet = math.random(1, 6)
 				chamber = 6
 				deaths = deaths + 1
+				attempts = attempts + 1
 				self:Kick(destination, nick, 'BANG!')
 			else
 				chamber = chamber - 1
@@ -73,40 +66,38 @@ return {
 			end
 
 			rr[destination] = (chamber * 10) + bullet
-			rr[nick] = (deaths * 100)
+			rr[destination .. ':' .. nick .. ':deaths'] = deaths
+			rr[destination .. ':' .. nick .. ':attempts'] = attempts
 
 			rr:close()
 		end,
 
-		['!rrstats ?(.*)$'] = function(self, source, destination, nick)
+		['!rrstat'] = function(self, source, destination)
 			rr:open('cache/rr')
-			if(#nick > 0) then
-				nick = nick:match'^%s*(.*%S)' or ''
-				local data = rr[nick] and getDeaths(rr[nick])
-				if(not data) then
-					self:Msg('privmsg', destination, source, '%s has no deaths.', nick)
-				else
-					self:Msg('privmsg', destination, source, '%s has %s deaths.', nick, data)
-				end
-			else
-				local all = {}
-				for k, v in rr:pairs() do
-					if(k:sub(1,1) ~= '#') then
-						table.insert(all, {nick = k, deaths = getDeaths(v)})
-					end
-				end
+			local nicks = rr:fwmkeys(destination .. ':')
+			rr:close()
 
-				table.sort(all, function(a,b) return a.deaths > b.deaths end)
-				local tmp = {}
-				for i=1, math.min(#all, 5) do
-					table.insert(tmp, string.format('%s (%s)', all[i].nick, all[i].deaths))
-				end
-
-				local out = 'Top deaths: ' .. table.concat(tmp, ', ')
-				self:Msg('privmsg', destination, source, out)
+			local tmp = {}
+			for nick, value in next, nicks do
+				local nick, type = nick:match(':(^[:]+):(%w+)')
+				if(not tmp[nick]) then tmp[nick] = {} end
+				tmp[nick][type] = tonumber(value)
 			end
 
-			rr:close()
+			local stats = {}
+			for nick, data in next, tmp do
+				local deathRatio = data.deaths / data.attempts
+				table.insert(stats, {nick = nick, deaths = data.deaths, attempts = data.attempts, ratio = deathRatio})
+			end
+			table.sort(stats, function(a,b) return a.ratio < b.ratio end)
+
+			local out = {}
+			for i=1, math.min(#stats, 5) do
+				table.insert(out, string.format('%s (%.1f%%)', stats[i].nick, stats[i].ratio * 100))
+			end
+
+			self:Msg('privmsg', destination, source, 'Survival rate: %s', table.concat(out, ', '))
+
 		end,
 	}
 }
