@@ -130,11 +130,7 @@ local doLookup = function(self, destination, source, aid)
 		log:info(string.format('anidb: Requesting information on %d.', aid))
 		local sink = {}
 		client:request{
-			host = 'api.anidb.net',
-			port = 9001,
-			scheme = 'http',
-			method = 'GET',
-			path = ("/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1"):format(aid),
+			url = ('http://api.anidb.net:9001/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1'):format(aid),
 
 			-- We have to close the socket ourselves if we want to stream it.
 			stream_response = nil,
