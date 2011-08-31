@@ -2,21 +2,24 @@ local httpclient = require'handler.http.client'
 local ev = require'ev'
 require'tokyocabinet'
 
-local x0 = tokyocabinetc.hdbnew()
-local loop = ev.Loop.default
-local client = httpclient.new(loop)
+local x0 = tokyocabinet.hdbnew()
 
-local handleRequest = function(data, callback)
+local handleRequest = function(data, url, callback)
 	if(data:sub(8,9) =='x0') then
 		x0:open('data/x0', x0.OWRITER + x0.OCREAT)
 		x0[url] = data
 		x0:close()
 		
-		return callback(url)
+		return callback(data)
 	end
 end
 
+local client
 return {
+	init = function(loop)
+		client = httpclient.new(loop)
+	end,
+
 	lookup = function(url, callback)
 		x0:open('data/x0', x0.OWRITER + x0.OCREAT)
 		if(x0[url]) then
@@ -36,7 +39,7 @@ return {
 			end,
 
 			on_finished = function()
-				handleRequest(table.concat(sink), callback)
+				handleRequest(table.concat(sink), url, callback)
 			end,
 		}
 	end
