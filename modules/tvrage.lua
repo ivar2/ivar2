@@ -163,11 +163,7 @@ local handle = function(self, source, destination, input)
 
 	local sink = {}
 	client:request{
-		host = 'services.tvrage.com',
-		port = 80,
-		scheme = 'http',
-		method = 'GET',
-		path = ('/tools/quickinfo.php?show=%s'):format(urlEncode(input)),
+		url = url,
 
 		on_data = function(request, response, data)
 			if(data) then sink[#sink + 1] = data end
