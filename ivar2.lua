@@ -1,3 +1,10 @@
+package.path = table.concat({
+	'libs/?.lua',
+	'libs/?/init.lua',
+
+	'',
+}, ';') .. package.path
+
 local connection = require'handler.connection'
 local ev = require'ev'
 require'logging.console'
@@ -215,6 +222,13 @@ local client = {
 		if(not moduleFile) then
 			log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
 		end
+
+		local env = {
+			ivar2 = self,
+			package = package,
+		}
+		local proxy = setmetatable(env, {__index = _G })
+		setfenv(moduleFile, proxy)
 
 		local success, message = pcall(moduleFile, self)
 		if(not success) then
