@@ -61,7 +61,6 @@ return {
 					timer:start(ivar2.Loop)
 				end
 
-				print('Click', chamber)
 				self:Msg('privmsg', destination, source, 'Click. %d/6', chamber)
 			end
 
