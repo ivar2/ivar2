@@ -1,17 +1,7 @@
-package.path = table.concat(
-	{
-		'libs/?.lua',
-		'libs/?/init.lua',
-
-		'',
-	}, ';'
-) .. package.path
-
 local httpclient = require'handler.http.client'
 local html2unicode = require'html'
 local date = require'date'
 
-local ivar2 = ...
 local client = httpclient.new(ivar2.Loop)
 
 local urlEncode = function(str)
