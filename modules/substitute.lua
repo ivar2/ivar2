@@ -1,44 +1,57 @@
 local db = {}
 
+local handleMessage = function(nick, destination, msg, update)
+	if(db[nick] and db[nick][destination]) then
+		local matchPoint = msg:match('()[^%%]/')
+		local match = msg:sub(1, matchPoint)
+
+		local replacePoint = msg:match('()[^%%]/', matchPoint + 1)
+		local replace = msg:sub(matchPoint + 2, replacePoint)
+
+		local flags = 1
+		if(replacePoint) then
+			local flagPoint = msg:match('()[^%%]/', replacePoint + 1)
+			local flag = msg:sub(replacePoint + 2, flagPoint)
+			if(flag:lower() == 'g') then
+				flags = #db[nick][destination]
+			end
+		end
+
+		local out = db[nick][destination]:gsub(match, replace, flags)
+		if(out ~= db[nick][destination]) then
+			if(update) then
+				db[nick][destination] = out
+			end
+
+			return out
+		end
+	end
+end
+
 return {
-	["^:(%S+) PRIVMSG (%S+) :(.+)$"] = function(self, src, dest, msg)
-		if(msg:match"s/(.*)/(.-)/(%w?)$" or msg:match"<(.-)>s/(.*)/(.-)/(%w?)$") then return end
-
-		src = self:srctonick(src)
-		if(not db[src]) then db[src] = {} end
-		db[src][dest] = msg
-	end,
-	["^:(%S+) PRIVMSG (%S+) :s/(.*)/(.-)/(%w?)$"] = function(self, src, dest, match, replace, flag)
-		src = self:srctonick(src)
-
-		if(db[src] and db[src][dest]) then
-			if(flag == "g") then
-				flag = #db[src][dest]
-			else
-				flag = 1
+	PRIVMSG = {
+		['^s/(.+)$'] = function(self, source, destination, message)
+			local out = handleMessage(source.nick, destination, message, true)
+			if(out) then
+				self:Msg('privmsg', destination, source, '%s meant: %s', source.nick, out)
 			end
+		end,
 
-			local new = db[src][dest]:gsub(match, replace, flag)
-			if(new ~= db[src][dest]) then
-				db[src][dest] = new
-				self:msg(dest, src, "%s meant: %s", src, new)
+		['^<([^>]+)>s/(.+)$'] = function(self, source, destination, target, message)
+			local out = handleMessage(target, destination, message)
+			if(out) then
+				self:Msg('privmsg', destination, source, '%s thought %s meant: %s', source.nick, target, out)
 			end
-		end
-	end,
-	["^:(%S+) PRIVMSG (%S+) :<(.-)>s/(.*)/(.-)/(%w?)$"] = function(self, src, dest, target, match, replace, flag)
-		src = self:srctonick(src)
+		end,
 
-		if(src ~= target and db[target] and db[target][dest]) then
-			if(flag == "g") then
-				flag = #db[target][dest]
-			else
-				flag = 1
-			end
+		function(self, source, destination, argument)
+			-- Don't validate input here, people fail to often and try again.
+			if(argument:match('^<[^>]+>s/') or argument:sub(1, 2) == 's/') then return end
 
-			local new = db[target][dest]:gsub(match, replace, flag)
-			if(new ~= db[target][dest]) then
-				self:msg(dest, src, "%s thought %s meant: %s", src, target, new)
+			local nick = source.nick
+			if(not db[nick]) then db[nick] = {}
+				db[nick][destination] = argument
 			end
-		end
-	end,
+		end,
+	}
 }
