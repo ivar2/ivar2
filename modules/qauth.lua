@@ -4,29 +4,16 @@
 -- Example:
 -- config = {
 --     ...
---     QAuthUser = 'Qnetuser',
---     QAuthMD5Hash = 'md5 hash of password'
+--     QAuth = {
+--         type = ['md5', 'sha1'],
+--         user = 'Qnet user',
+--         hash = 'md5/sha1 hash of password',
+--     },
 --     ...
 -- }
 
-require"md5"
-require"bit"
-
--- http://en.wikipedia.org/wiki/HMAC
-local function hmac(key, data)
-	if key:len() > 64 then
-		key = md5.sumhexa(key)
-	end
-
-	if key:len() < 64 then
-		key = key..string.char(0):rep(64 - key:len())
-	end
-
-	local ipad = key:gsub(".", function(char) return string.char(bit.bxor(char:byte(), 0x36)) end)
-	local opad = key:gsub(".", function(char) return string.char(bit.bxor(char:byte(), 0x5C)) end)
-
-	return md5.sumhexa(opad..md5.sum(ipad..data))
-end
+local nixio = require'nixio'
+local crypto = nixio.crypto
 
 --[[
     * challenge = "3afabede5c2859fd821e315f889d9a6c"
@@ -44,20 +31,41 @@ end
     * /msg Q@CServe.quakenet.org CHALLENGEAUTH [fishking] e683c83fd16a03b6d690ea231b4f346c32ae0aaa HMAC-SHA-1
 --]]
 
-return {
-	["^:(%S+) 001"] = function(self, src, dest, msg)
-		if(not src:match"quakenet%.org") then return end
-		self:privmsg("Q@CServe.quakenet.org", "CHALLENGE")
-	end,
-	[":Q!TheQBot@CServe%.quakenet%.org NOTICE (%S+) :CHALLENGE (%S+)"] = function(self, dest, challenge)
-		local user, pass_hash = self.config.QAuthUser, self.config.QAuthMD5Hash
-		local key = md5.sumhexa(("%s:%s"):format(user:lower(), pass_hash))
+local Q = 'Q!TheQBot@CServe.quakenet.org'
 
-		self:privmsg("Q@CServe.quakenet.org", "CHALLENGEAUTH %s %s %s", user, hmac(key, challenge), "HMAC-MD5")
-	end,
-	[":Q!TheQBot@CServe%.quakenet%.org NOTICE (%S+) :You are now logged in as (%S+)."] = function(self, dest, qauth)
-		if(self.config.QAuthHideHost) then
-			self:send("MODE %s :%s", self.config.nick, 'x')
+return {
+	['001'] = {
+		function(self, source)
+			if(source.mask:match('%.quakenet%.org')) then
+				self:Privmsg('Q@CServe.quakenet.org', 'CHALLENGE')
+			end
 		end
-	end,
+	},
+
+	NOTICE = {
+		['CHALLENGE (%S+)'] = function(self, source, destination, challenge)
+			if(source.mask == Q) then
+				local config = self.config.QAuth
+				local type = config.type
+				local user = config.user
+				local passHash = config.hash
+
+				local key = crypto.hash(type):update(string.format('%s:%s', user:lower(), passHash)):final()
+
+				if(type == 'md5') then
+					hmac = 'HMAC-MD5'
+				else
+					hmac = 'HMAC-SHA-1'
+				end
+
+				self:Privmsg('Q@CServe.quakenet.org', 'CHALLENGEAUTH %s %s %s', user, crypto.hmac(type, key):update(challenge):final(), hmac)
+			end
+		end,
+
+		['You are now logged in as %S+%.'] = function(self, source, destination)
+			if(source.mask == Q and self.config.QAuth.hideHost) then
+				self:Mode(self.config.nick, 'x')
+			end
+		end,
+	}
 }
