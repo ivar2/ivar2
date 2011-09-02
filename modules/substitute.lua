@@ -49,9 +49,8 @@ return {
 			if(argument:match('^<[^>]+>s/') or argument:sub(1, 2) == 's/') then return end
 
 			local nick = source.nick
-			if(not db[nick]) then db[nick] = {}
-				db[nick][destination] = argument
-			end
+			if(not db[nick]) then db[nick] = {} end
+			db[nick][destination] = argument
 		end,
 	}
 }
