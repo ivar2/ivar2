@@ -1,9 +1,5 @@
 require'chasen'
 
-local trim = function(s)
-	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
-end
-
 -- Odd shit acies does.
 local odd = {
 	['ぁ'] = 'a', ['ぃ'] = 'i', ['ぅ'] = 'u', ['ぇ'] = 'e', ['ぉ'] = 'o',
@@ -83,52 +79,63 @@ local post = {
 	['ッ(.)'] = '%1%1',
 }
 
+local split = function(str, pattern)
+	local out = {}
+	str:gsub('[^' .. pattern ..']+', function(match)
+		table.insert(out, match)
+	end)
+
+	return out
+end
+
+local trim = function(s)
+	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
 return {
-	["^:(%S+) PRIVMSG (%S+) :!kr (.+)$"] = function(self, src, dest, msg)
-		msg = chasen.sparse(msg:gsub('%s', '\n'))
-		msg = utils.split(msg:gsub("　", " "), '\n')
+	PRIVMSG = {
+		['!kr (.+)$'] = function(self, source, destination, input)
+			local tmp = chasen.sparse(input:gsub('%s', '\n'))
+			tmp = split(tmp:gsub("　", " "), '\n')
 
-		-- chop of the last bit.
-		table.remove(msg)
+			-- chop of the last bit.
+			table.remove(tmp)
 
-		for k, data in ipairs(msg) do
-			print(data)
-		end
-		for i=1,#msg do
-			msg[i] = utils.split(msg[i], '\t')
-		end
-
-		local output = ''
-
-
-		for k, data in next, msg do
-			if(data[4] == '未知語') then
-				output = output .. data[1]
-			elseif(data[4] == '記号-アルファベット') then
-				output = output..data[1]
-			elseif(data[1] == 'EOS') then
-				output = output .. ' '
-			else
-				output = output..' '..data[2]
+			for i=1,#tmp do
+				tmp[i] = split(tmp[i], '\t')
 			end
-		end
 
-		for find, replace in next, odd do
-			output = output:gsub(find, replace)
-		end
+			-- Little baby tables got lost :(
+			local output = ''
+			for _, data in next, tmp do
+				if(data[4] == '未知語') then
+					output = output .. data[1]
+				elseif(data[4] == '記号-アルファベット') then
+					output = output .. data[1]
+				elseif(data[1] == 'EOS') then
+					output = output .. ' '
+				else
+					output = output..' '..data[2]
+				end
+			end
 
-		for find, replace in next, pre do
-			output = output:gsub(find, replace)
-		end
+			for find, replace in next, odd do
+				output = output:gsub(find, replace)
+			end
 
-		for find, replace in next, katakana do
-			output = output:gsub(find, replace)
-		end
+			for find, replace in next, pre do
+				output = output:gsub(find, replace)
+			end
 
-		for find, replace in next, post do
-			output = output:gsub(find, replace)
-		end
+			for find, replace in next, katakana do
+				output = output:gsub(find, replace)
+			end
 
-		self:msg(dest, src, 'In romaji: %s', trim(output):gsub("[%s%s]+", " "))
-	end
+			for find, replace in next, post do
+				output = output:gsub(find, replace)
+			end
+
+			self:Msg('privmsg', destination, source, 'In rōmaji: %s', trim(output):gsub("[%s%s]+", " "))
+		end,
+	},
 }
