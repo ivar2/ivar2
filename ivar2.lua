@@ -148,8 +148,10 @@ local client = {
 			if(not self:IsModuleDisabled(moduleName, destination)) then
 				for pattern, callback in next, moduleTable do
 					local success, message
-					if(type(pattern) == 'number') then
+					if(type(pattern) == 'number' and not source) then
 						success, message = pcall(callback, self, argument)
+					elseif(type(pattern) == 'number' and source) then
+						success, message = pcall(callback, self, source, destination, argument)
 					elseif(argument:match(pattern)) then
 						success, message = pcall(callback, self, source, destination, argument:match(pattern))
 					end
