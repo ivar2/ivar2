@@ -1,3 +1,8 @@
+local httpclient = require'handler.http.client'
+local html2unicode = require'html'
+
+local client = httpclient.new(ivar2.Loop)
+
 local cc = {
 	["AED"] = "United Arab Emirates Dirham (AED)",
 	["ANG"] = "Netherlands Antillean Gulden (ANG)",
@@ -73,6 +78,10 @@ local cc = {
 	["ZAR"] = "South African Rand (ZAR)",
 }
 
+local conv = {
+	['euro'] = 'eur',
+}
+
 -- make environment
 local _X = setmetatable({
 	math = math,
@@ -87,47 +96,62 @@ local function run(untrusted_code)
 	return pcall(untrusted_function)
 end
 
-local exchange = function(self, src, dest, val, from, to)
-	from = from:gsub(' [tT]?[oO]?[iI]?[nN]?', '')
-	local output
+local parseData = function(data)
+	local data = data:match'<div id=currency_converter_result>(.-)</span>'
+	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' ')
+end
 
-	if(cc[from:upper()] and cc[to:upper()] and from:upper() ~= to:upper()) then
-		val = val:gsub(',', '.')
-		local success, val, err = run('return '..val)
-		if(not err) then
-			if(type(val) == 'number' and val > 0 and val ~= math.huge and val ~= (0/0)) then
-				local url = ('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(val, from, to)
-				local content, status = utils.http(url)
-				if(status == 200) then
-					local data = content:match'<div id=currency_converter_result>(.-)</span>'
-					data = utils.decodeHTML(data:gsub('<.->', '')):gsub('  ', ' ')
-					if(data) then
-						output = data
-					end
-				else
-					output = 'Unable to contact server. Returned status code: '..tostring(status)
-				end
-			else
-				output = 'assertion failed - invalid number data.'
-			end
-		else
-			output = 'assertion failed - '..err
-		end
-	else
-		output = 'Invalid currency.'
+local checkInput = function(value, from, to)
+	if(not (cc[from] and cc[to])) then
+		return nil, string.format('Invalid currency: %s.', (not cc[from] and from) or (not cc[to] and to))
 	end
 
-	if dest == self.config.nick then
-		-- Send the response in a PM
-		local srcnick = self:srctonick(src)
-		self:privmsg(srcnick, "%s: %s", srcnick, output)
+	-- Control the input.
+	value = value:gsub(',', '.')
+	local success, value, err = run('return ' .. value)
+	if(err) then
+		return nil, string.format('Parsing of input failed: %s', err)
+	end
+
+	-- Number validation, serious business!
+	if(type(value) ~= 'number' or value <= 0 or value == math.huge or value ~= value) then
+		return nil, string.format('Invalid number provided: %s', tonumber(value))
+	end
+
+	return true, value
+end
+
+local handleExchange = function(self, source, destination, value, from, to)
+	-- Strip away to/in.
+	from = from:lower():gsub(' [toin]+', '')
+	from = (conv[from] or from):upper()
+	to = (conv[to] or to):upper()
+
+	local success, value = checkInput(value, from, to)
+	if(not success) then
+		self:Msg('privmsg', destination, source, '%s: %s', source.nick, value)
 	else
-		-- Send it to the channel
-		self:privmsg(dest, "%s: %s", self:srctonick(src), output)
+		local sink = {}
+		client:request{
+			url = ('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to),
+
+			on_data = function(request, response, data)
+				if(data) then sink[#sink + 1] = data end
+			end,
+
+			on_finished = function()
+				local data = parseData(table.concat(sink))
+				if(data) then
+					self:Msg('privmsg', destination, source, '%s: %s', source.nick, data)
+				end
+			end,
+		}
 	end
 end
 
 return {
-	["^:(%S+) PRIVMSG (%S+) :!xe (.-) (.-) (%a%a%a)"] = exchange,
-	["^:(%S+) PRIVMSG (%S+) :!cur (.-) (.-) (%a%a%a)"] = exchange,
+	PRIVMSG = {
+		['!xe (.-) (.-) (%a+)$'] = handleExchange,
+		['!cur (.-) (.-) (%a+)$'] = handleExchange,
+	},
 }
