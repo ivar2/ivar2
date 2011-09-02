@@ -17,7 +17,9 @@ end
 local client
 return {
 	init = function(loop)
-		client = httpclient.new(loop)
+		if(not client) then
+			client = httpclient.new(loop)
+		end
 	end,
 
 	lookup = function(url, callback)
