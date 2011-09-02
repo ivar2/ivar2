@@ -220,7 +220,7 @@ local client = {
 	LoadModule = function(self, moduleName)
 		local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
 		if(not moduleFile) then
-			log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
+			return log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
 		end
 
 		local env = {
