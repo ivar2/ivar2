@@ -2,32 +2,11 @@ local iconv = require"iconv"
 local parse = require"socket.url".parse
 local patterns = {
 	-- X://Y url
-	"^(%a[%w%.+-]+://%S+)",
-	"%f[%S](%a[%w%.+-]+://%S+)",
+	"^(https?://%S+)",
+	"%f[%S](https?://%S+)",
 	-- www.X.Y url
 	"^(www%.[%w_-%%]+%.%S+)",
 	"%f[%S](www%.[%w_-%%]+%.%S+)",
-	-- XXX.YYY.ZZZ.WWW:VVVV/UUUUU IPv4 address with port and path
-	"^([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d:[0-6]?%d?%d?%d?%d/%S+)",
-	"%f[%S]([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d:[0-6]?%d?%d?%d?%d/%S+)",
-	-- XXX.YYY.ZZZ.WWW/VVVVV IPv4 address with path
-	"^([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%/%S+)",
-	"%f[%S]([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%/%S+)",
-	-- XXX.YYY.ZZZ.WWW IPv4 address
-	"^([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%)%f[%D]",
-	"%f[%S]([0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%.[0-2]?%d?%d%)%f[%D]",
-	-- X.Y.Z:WWWW/VVVVV url with port and path
-	"^([%w_-%%%.]+[%w_-%%]%.(%a%a+):[0-6]?%d?%d?%d?%d/%S+)",
-	"%f[%S]([%w_-%%%.]+[%w_-%%]%.(%a%a+):[0-6]?%d?%d?%d?%d/%S+)",
-	-- X.Y.Z:WWWW url with port (ts server for example)
-	"^([%w_-%%%.]+[%w_-%%]%.(%a%a+):[0-6]?%d?%d?%d?%d)%f[%D]",
-	"%f[%S]([%w_-%%%.]+[%w_-%%]%.(%a%a+):[0-6]?%d?%d?%d?%d)%f[%D]",
-	-- X.Y.Z/WWWWW url with path
-	--	"^([%w_-%%%.]+[%w_-%%]%.(%a%a+)/%S+)",
-	"%f[%S]([%w_-%%%.]+[%w_-%%]%.(%a%a+)/%S+)",
-	-- X.Y.Z url
-	--	"^([%w_-%%%.]+[%w_-%%]%.(%a%a+))",
-	--	"%f[%S]([%w_-%%%.]+[%w_-%%]%.(%a%a+))",
 }
 
 local danbooru = function(path)
@@ -50,9 +29,6 @@ local danbooru = function(path)
 end
 
 local iiHost = {
-	-- do nothing
-	['eu.wowarmory.com'] = function() end,
-
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
 	['hijiribe.donmai.us'] = danbooru,
