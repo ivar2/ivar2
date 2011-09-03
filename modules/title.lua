@@ -28,7 +28,7 @@ local danbooru = function(path)
 	end
 end
 
-local iiHost = {
+local customLookup = {
 	['danbooru.donmai.us'] = danbooru,
 	['miezaru.donmai.us'] = danbooru,
 	['hijiribe.donmai.us'] = danbooru,
@@ -75,8 +75,8 @@ local getTitle = function(url, offset)
 	local path = parse(url)
 	local host = path['host']:gsub('^www%.', '')
 
-	if(iiHost[host]) then
-		local title = iiHost[host](path, url)
+	if(customLookup[host]) then
+		local title = customLookup[host](path, url)
 		if(title) then
 			return title
 		end
