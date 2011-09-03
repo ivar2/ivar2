@@ -1,5 +1,15 @@
 local iconv = require"iconv"
-local parse = require"socket.url".parse
+local httpclient = require'handler.http.client'
+local html2unicode = require'html'
+local x0 = require'x0'
+local uri = require"handler.uri"
+
+local uri_parse = uri.parse
+local client = httpclient.new(ivar2.Loop)
+x0.init(ivar2.Loop)
+
+local DL_LIMIT = 2^16
+
 local patterns = {
 	-- X://Y url
 	"^(https?://%S+)",
@@ -9,191 +19,159 @@ local patterns = {
 	"%f[%S](www%.[%w_-%%]+%.%S+)",
 }
 
-local danbooru = function(path)
-	local path = path['path']
-
-	if(path and path:match'/data/([^%.]+)') then
-		local md5 = path:match'/data/([^%.]+)'
-		local xml, s = utils.http('http://danbooru.donmai.us/post/index.xml?tags=md5:'..md5)
-		if(s == 200) then
-			local id = xml:match' id="(%d+)"'
-			local tags = xml:match'tags="([^"]+)'
-
-			return string.format('http://danbooru.donmai.us/post/show/%s/ - %s', id, tags)
-		elseif(s == 503) then
-			return string.format('http://danbooru.donmai.us/post?tags=md5:%s', md5)
-		else
-			return string.format('Server returned: %d', s)
-		end
-	end
-end
-
-local customLookup = {
-	['danbooru.donmai.us'] = danbooru,
-	['miezaru.donmai.us'] = danbooru,
-	['hijiribe.donmai.us'] = danbooru,
-	['open.spotify.com'] = function(path, url)
-		local path = path['path']
-
-		if(path and path:match'/(%w+)/(.+)') then
-			local type, id = path:match'/(%w+)/(.+)'
-			local old = socket.http.USERAGENT
-			socket.http.USERAGENT = 'Otravi/1.0'
-			local content = utils.http(url)
-			socket.http.USERAGENT = old
-			local title = content:match"<title>(.-)</title>"
-
-			return string.format('%s: spotify:%s:%s', title, type, id)
-		end
-	end,
-	['s3.amazonaws.com'] = function(path)
-		local path = path['path']
-
-		if(path and path:match'/danbooru/([^%.]+)') then
-			local md5 = path:match'/danbooru/([^%.]+)'
-			local xml, s = utils.http('http://danbooru.donmai.us/post/index.xml?tags=md5:'..md5)
-			if(s == 200) then
-				local id = xml:match' id="(%d+)"'
-				local tags = xml:match'tags="([^"]+)'
-
-				return string.format('http://danbooru.donmai.us/post/show/%s/ - %s', id, tags)
-			end
-		end
-	end,
-}
-
-local renameCharset = {
+local translateCharset = {
+	utf8 = 'utf-8',
 	['x-sjis'] = 'sjis',
 }
 
-local validProtocols = {
-	['http'] = true,
-	['https'] = true,
-}
+local verify = function(charset)
+	if(charset) then
+		charset = charset:lower()
+		charset = translateCharset[charset] or charset
 
-local getTitle = function(url, offset)
-	local path = parse(url)
-	local host = path['host']:gsub('^www%.', '')
+		return charset
+	end
+end
 
-	if(customLookup[host]) then
-		local title = customLookup[host](path, url)
-		if(title) then
-			return title
+local guessCharset = function(headers, data)
+	local charset
+	-- XML:
+	charset = verify(data:match('<%?xml .-encoding=[\'"]([^\'"]+)[\'"].->'))
+	if(charset) then return charset end
+
+	-- HTML5:
+	charset = verify(data:match('<meta charset=[\'"]([\'"]+)[\'"]>'))
+	if(charset) then return charset end
+
+	-- HTML:
+	charset = data:lower():match('<meta.-content=[\'"].-(charset=.-)[\'"].->')
+	if(charset) then
+		charset = verify(charset:match'=([^;]+)')
+		if(charset) then return charset end
+	end
+
+	-- Header:
+	local contentType = headers['Content-Type']
+	if(contentType and contentType:match'charset') then
+		charset = verify(contentType:match('charset=([^;]+)'))
+		if(charset) then return charset end
+	end
+end
+
+local handleData = function(headers, data)
+	local charset = guessCharset(headers, data)
+	if(charset and charset ~= 'utf-8') then
+		local cd, err = iconv.new("utf-8", charset)
+		if(cd) then
+			data = cd:iconv(data)
 		end
 	end
 
-	local body, status, headers = utils.http(url)
-	if(body) then
-		local charset = body:lower():match'<meta.-content=["\'].-(charset=.-)["\'].->'
-		if(charset) then
-			charset = charset:match"charset=(.+)$?;?"
+	local title = data:match('<[tT][iI][tT][lL][eE]>(.-)</[tT][iI][tT][lL][eE]>')
+	if(title) then
+		for _, pattern in ipairs(patterns) do
+			title = title:gsub(pattern, '<snip />')
 		end
 
-		if(not charset) then
-			charset = body:match'<%?xml.-encoding=[\'"](.-)[\'"].-%?>'
-		end
+		title = html2unicode(title)
+		title = title:gsub('%s%s+', ' ')
 
-		if(not charset) then
-			local tmp = utils.split(headers['content-type'], ' ')
-			for _, v in pairs(tmp) do
-				if(v:lower():match"charset") then
-					charset = v:lower():match"charset=(.+)$?;?"
-					break
-				end
-			end
-		end
-
-		local title = body:match"<[tT][iI][tT][lL][eE]>(.-)</[tT][iI][tT][lL][eE]>"
-
-		if(title) then
-			for _, pattern in ipairs(patterns) do
-				title = title:gsub(pattern, '<snip />')
-			end
-		end
-
-		if(charset and title and charset:lower() ~= "utf-8") then
-			charset = charset:gsub("\n", ""):gsub("\r", "")
-			charset = renameCharset[charset] or charset
-			local cd, err = iconv.new("utf-8", charset)
-			if(cd) then
-				title = cd:iconv(title)
-			end
-		end
-
-		if(title and title ~= "" and title ~= '<snip />') then
-			title = utils.decodeHTML(title)
-			title = title:gsub("[%s%s]+", " ")
-
-			if(#url >= 105) then
-				local short = utils.x0(url)
-				if(short ~= url) then
-					title = "Downgraded URL: " ..short.." - "..title
-				end
-			end
-
+		if(title ~= '<snip />') then
 			return title
 		end
 	end
 end
 
-local found = 0
-local urls
-local gsubit = function(url)
-	found = found + 1
-
-	local total = 1
-	for k in pairs(urls) do
-		total = total + 1
+local handleOutput = function(self, metadata)
+	local output = {}
+	for i=1, #metadata.processed do
+		local lookup = metadata.processed[i]
+		table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
 	end
 
-	if(not url:match"://") then
-		url = "http://"..url
-	elseif(not validProtocols[url:match'^[^:]+']) then
-		return
+	if(#output > 0) then
+		self:Msg('privmsg', metadata.destination, metadata.source, table.concat(output, ' '))
 	end
 
-	-- Strip out the anchors.
-	url = url:gsub('#.+', '')
-	if(not urls[url]) then
-		local limit = 100
-		local title = getTitle(url)
-		if(#title > limit) then
-			title = title:sub(1, limit)
-			if(#title == limit) then
-				-- Clip it at the last space:
-				title = title:match('^.* ')
+end
+
+local fetchInformation = function(self, metadata, index, url, indexString)
+	local info = uri_parse(url)
+	if(info.path == '') then
+		url = url .. '/'
+	end
+
+	local sinkSize = 0
+	local sink = {}
+
+	client:request{
+		url = url,
+		stream_response = true,
+
+		on_data = function(request, response, data)
+			if(data) then
+				sinkSize = sinkSize + #data
+				sink[#sink + 1] = data
+				if(sinkSize > DL_LIMIT) then
+					request.connection.skip_complete = true
+					request.on_finished(response)
+				end
 			end
-		end
+		end,
 
-		urls[url] = {
-			n = found,
-			m = total,
-			title = title,
-		}
-	else
-		urls[url].n = string.format("%s+%d", urls[url].n, found)
-	end
+		on_finished = function(response)
+			local message = handleData(response.headers, table.concat(sink))
+			metadata.processed[index] = {index = indexString, output = message}
+			metadata.num = metadata.num - 1
+
+			if(metadata.num == 0) then
+				handleOutput(self, metadata)
+			end
+		end,
+	}
 end
 
 return {
-	["^:(%S+) PRIVMSG (%S+) :(.+)$"] = function(self, src, dest, msg)
-		if(self:srctonick(src) == self.config.nick or msg:sub(1,1) == '!' or self:srctonick(src):match"^CIA") then return end
-		urls, found = {}, 0
-		for key, msg in pairs(utils.split(msg, " ")) do
-			for _, pattern in ipairs(patterns) do
-				msg:gsub(pattern, gsubit)
-			end
-		end
+	PRIVMSG = {
+		function(self, source, destination, argument)
+			-- We don't want to pick up URLs from commands.
+			if(argument:sub(1,1) == '!') then return end
 
-		if(next(urls)) then
-			local out = {}
-			for url, data in pairs(urls) do
-				if(data.title) then
-					table.insert(out, data.m, string.format("\002[%s]\002 %s", data.n, data.title))
+			local tmp = {}
+			local tmpOrder = {}
+			local index = 0
+			for split in argument:gmatch('%S+') do
+				index = index + 1
+				for i=1, #patterns do
+					local _, count = split:gsub(patterns[i], function(url)
+						if(url:sub(1,4) ~= 'http') then
+							url = 'http://' .. url
+						end
+
+						if(not tmp[url]) then
+							table.insert(tmpOrder, url)
+							tmp[url] = index
+						else
+							tmp[url] = string.format('%s+%d', tmp[url], index)
+						end
+					end)
+					if(count > 0) then break end
 				end
 			end
 
-			if(#out > 0) then self:msg(dest, src, table.concat(out, " ")) end
-		end
-	end,
+			if(#tmpOrder > 0) then
+				local output = {
+					num = #tmpOrder,
+					source = source,
+					destination = destination,
+					processed = {},
+				}
+
+				for i=1, #tmpOrder do
+					local url = tmpOrder[i]
+					fetchInformation(self, output, i, url, tmp[url])
+				end
+			end
+		end,
+	},
 }
