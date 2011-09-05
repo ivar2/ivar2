@@ -1,7 +1,5 @@
-local httpclient = require'handler.http.client'
+local simplehttp = require'simplehttp'
 local html2unicode = require'html'
-
-local client = httpclient.new(ivar2.Loop)
 
 local cc = {
 	["AED"] = "United Arab Emirates Dirham (AED)",
@@ -131,21 +129,15 @@ local handleExchange = function(self, source, destination, value, from, to)
 	if(not success) then
 		self:Msg('privmsg', destination, source, '%s: %s', source.nick, value)
 	else
-		local sink = {}
-		client:request{
-			url = ('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to),
-
-			on_data = function(request, response, data)
-				if(data) then sink[#sink + 1] = data end
-			end,
-
-			on_finished = function()
-				local data = parseData(table.concat(sink))
-				if(data) then
-					self:Msg('privmsg', destination, source, '%s: %s', source.nick, data)
+		simplehttp(
+			('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to),
+			function(data)
+				local message = parseData(data)
+				if(message) then
+					self:Msg('privmsg', destination, source, '%s: %s', source.nick, message)
 				end
-			end,
-		}
+			end
+		)
 	end
 end
 
