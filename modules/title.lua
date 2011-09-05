@@ -123,9 +123,8 @@ return {
 
 			local tmp = {}
 			local tmpOrder = {}
-			local index = 0
+			local index = 1
 			for split in argument:gmatch('%S+') do
-				index = index + 1
 				for i=1, #patterns do
 					local _, count = split:gsub(patterns[i], function(url)
 						if(url:sub(1,4) ~= 'http') then
@@ -139,7 +138,11 @@ return {
 							tmp[url] = string.format('%s+%d', tmp[url], index)
 						end
 					end)
-					if(count > 0) then break end
+
+					if(count > 0) then
+						index = index + 1
+						break
+					end
 				end
 			end
 
