@@ -15,7 +15,6 @@ local json = require'json'
 local html2unicode = require'html'
 
 local client = httpclient.new(ivar2.Loop)
-x0.init(ivar2.Loop)
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
