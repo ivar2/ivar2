@@ -151,7 +151,7 @@ end
 
 return {
 	PRIVMSG = {
-		['!xe (.-) (.-) (%a+)$'] = handleExchange,
-		['!cur (.-) (.-) (%a+)$'] = handleExchange,
+		['^!xe (.-) (.-) (%a+)$'] = handleExchange,
+		['^!cur (.-) (.-) (%a+)$'] = handleExchange,
 	},
 }
