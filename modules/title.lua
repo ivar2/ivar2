@@ -1,3 +1,4 @@
+local simplehttp = require'simplehttp'
 local iconv = require"iconv"
 local html2unicode = require'html'
 local x0 = require'x0'
