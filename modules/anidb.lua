@@ -1,3 +1,4 @@
+local simplehttp = require'simplehttp'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
 local html2unicode = require'html'
