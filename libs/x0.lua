@@ -18,7 +18,7 @@ return {
 
 		simplehttp(
 			'http://api.x0.no/?' .. url,
-			function(data, url, callback)
+			function(data, url)
 				if(data:sub(8,9) =='x0') then
 					x0:open('data/x0', x0.OWRITER + x0.OCREAT)
 					x0[url] = data
