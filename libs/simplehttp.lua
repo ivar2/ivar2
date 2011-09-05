@@ -22,7 +22,7 @@ return function(url, callback, stream, limit)
 		end,
 
 		on_finished = function(response)
-			callback(table.concat(sink), url, response),
+			callback(table.concat(sink), url, response)
 		end,
 	}
 end
