@@ -6,7 +6,6 @@ local uri = require"handler.uri"
 
 local uri_parse = uri.parse
 local client = httpclient.new(ivar2.Loop)
-x0.init(ivar2.Loop)
 
 local DL_LIMIT = 2^16
 
