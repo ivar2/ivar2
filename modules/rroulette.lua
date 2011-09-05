@@ -14,7 +14,7 @@ end
 
 return {
 	PRIVMSG = {
-		['!rr$'] = function(self, source, destination)
+		['^!rr$'] = function(self, source, destination)
 			rr:open('cache/rr', rr.OWRITER + rr.OCREAT)
 			local nick = source.nick
 
@@ -71,7 +71,7 @@ return {
 			rr:close()
 		end,
 
-		['!rrstat'] = function(self, source, destination)
+		['^!rrstat'] = function(self, source, destination)
 			rr:open('cache/rr')
 			local nicks = rr:fwmkeys(destination .. ':')
 
