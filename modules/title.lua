@@ -83,7 +83,9 @@ local handleOutput = function(metadata)
 	local output = {}
 	for i=1, #metadata.processed do
 		local lookup = metadata.processed[i]
-		table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
+		if(lookup.output) then
+			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
+		end
 	end
 
 	if(#output > 0) then
