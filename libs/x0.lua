@@ -14,14 +14,8 @@ local handleRequest = function(data, url, callback)
 	end
 end
 
-local client
+local client = httpclient.new(ev.Loop.default)
 return {
-	init = function(loop)
-		if(not client) then
-			client = httpclient.new(loop)
-		end
-	end,
-
 	lookup = function(url, callback)
 		x0:open('data/x0', x0.OWRITER + x0.OCREAT)
 		if(x0[url]) then
