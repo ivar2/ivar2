@@ -1,13 +1,10 @@
-local httpclient = require'handler.http.client'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
 local html2unicode = require'html'
-
 require'tokyocabinet'
 require'logging.console'
-local log = logging.console()
 
-local client = httpclient.new(ivar2.Loop)
+local log = logging.console()
 local anidb = tokyocabinet.hdbnew()
 
 local buildOutput = function(...)
@@ -116,34 +113,26 @@ local handleXML = function(xml)
 	)
 end
 
-local doLookup = function(self, destination, source, aid)
+local doLookup = function(destination, source, aid)
 	anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
 
 	-- Is it fresh and present in our cache?
 	if(anidb[aid] and tonumber(anidb[aid .. ':time']) > os.time()) then
 		log:debug(string.format('anidb: Fetching %d from cache.', aid))
-		self:Msg('privmsg', destination, source, anidb[aid])
+		ivar2:Msg('privmsg', destination, source, anidb[aid])
 		anidb:close()
 		return
 	else
 		anidb:close()
 		log:info(string.format('anidb: Requesting information on %d.', aid))
-		local sink = {}
-		client:request{
-			url = ('http://api.anidb.net:9001/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1'):format(aid),
 
-			-- We have to close the socket ourselves if we want to stream it.
-			stream_response = nil,
-
-			on_data = function(request, response, data)
-				if(data) then sink[#sink + 1] = data end
-			end,
-
-			on_finished = function()
-				local xml = zlib.inflate() (table.concat(sink))
+		simplehttp(
+			('http://api.anidb.net:9001/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1'):format(aid),
+			function(data)
+				local xml = zlib.inflate() (data)
 				local output = html2unicode(handleXML(xml))
 				if(output:sub(1,5) == 'Error') then
-					self:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
+					ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
 				else
 					anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
 					anidb:put(aid, output)
@@ -151,10 +140,13 @@ local doLookup = function(self, destination, source, aid)
 					anidb:put(aid .. ':time', os.time() + 86400)
 					anidb:close()
 
-					self:Msg('privmsg', destination, source, output)
+					ivar2:Msg('privmsg', destination, source, output)
 				end
 			end,
-		}
+			nil,
+			-- We have to close the socket ourselves if we want to stream it.
+			nil
+		)
 	end
 end
 
@@ -166,7 +158,7 @@ return {
 
 			local aid = tonumber(anime)
 			if(aid) then
-				return doLookup(self, destination, source, aid)
+				return doLookup(destination, source, aid)
 			end
 
 			local results = anidbSearch(anime)
@@ -174,7 +166,7 @@ return {
 			if(numResults == 0) then
 				return self:Msg('privmsg', destination, source, 'No matches found :-(.')
 			elseif(numResults == 1) then
-				return doLookup(self, destination, source, results[1].aid)
+				return doLookup(destination, source, results[1].aid)
 			else
 				do
 					local w1000 = {}
@@ -186,7 +178,7 @@ return {
 					end
 
 					if(#w1000 == 1) then
-						return doLookup(self, destination, source, w1000[1])
+						return doLookup(destination, source, w1000[1])
 					end
 				end
 
