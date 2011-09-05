@@ -21,7 +21,7 @@ math.randomseed(os.time() % 1e5)
 
 return {
 	PRIVMSG = {
-		['!choose (.*)$'] = function(self, source, destination, choices)
+		['^!choose (.+)$'] = function(self, source, destination, choices)
 			local hax = {}
 			local arr = split(choices, '%s*([^,]+)%s*')
 
