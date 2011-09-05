@@ -143,7 +143,6 @@ local doLookup = function(destination, source, aid)
 					ivar2:Msg('privmsg', destination, source, output)
 				end
 			end,
-			nil,
 			-- We have to close the socket ourselves if we want to stream it.
 			nil
 		)
