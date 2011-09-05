@@ -15,14 +15,17 @@ return {
 			x0:close()
 		end
 
-		simplehttp(url, function(data, url, callback)
-			if(data:sub(8,9) =='x0') then
-				x0:open('data/x0', x0.OWRITER + x0.OCREAT)
-				x0[url] = data
-				x0:close()
 
-				return callback(data)
-			end
-		end)
-	end,
-}
+		simplehttp(
+			'http://api.x0.no/?' .. url,
+			function(data, url, callback)
+				if(data:sub(8,9) =='x0') then
+					x0:open('data/x0', x0.OWRITER + x0.OCREAT)
+					x0[url] = data
+					x0:close()
+
+					return callback(data)
+				end
+			end)
+		end,
+	}
