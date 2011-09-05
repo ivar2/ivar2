@@ -10,11 +10,9 @@
 -- }
 
 local x0 = require'x0'
-local httpclient = require'handler.http.client'
+local simplehttp = require'simplehttp'
 local json = require'json'
 local html2unicode = require'html'
-
-local client = httpclient.new(ivar2.Loop)
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -42,7 +40,7 @@ local urlEncode = function(str)
 end
 
 local outFormat = '\002%s\002 <%s>'
-local parseData = function(self, source, destination, data)
+local parseData = function(source, destination, data)
 	data = utify8(data)
 	data = json.decode(data)
 
@@ -62,7 +60,7 @@ local parseData = function(self, source, destination, data)
 					arr[i] = outFormat:format(title, short or url)
 
 					if(n == 0) then
-						self:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+						ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
 					end
 				end)
 			else
@@ -71,9 +69,9 @@ local parseData = function(self, source, destination, data)
 		end
 
 		if(#arr == 0 and n == 0) then
-			self:Msg('privmsg', destination, source, 'jack shit found :-(.')
+			ivar2:Msg('privmsg', destination, source, 'jack shit found :-(.')
 		elseif(#arr == 3) then
-			self:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+			ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
 		end
 	end
 end
@@ -82,18 +80,12 @@ local url = 'http://www.google.com/uds/GwebSearch?context=0&hl=en&key=%s&v=1.0&q
 local handler = function(self, source, destination, input)
 	local search = urlEncode(input)
 
-	local sink = {}
-	client:request{
-		url = url:format(self.config.googleAPIKey, search),
-
-		on_data = function(request, response, data)
-			if(data) then sink[#sink + 1] = data end
-		end,
-
-		on_finished = function()
-			parseData(self, source, destination, table.concat(sink))
-		end,
-	}
+	simplehttp(
+		url:format(self.config.googleAPIKey, search),
+		function(data)
+			parseData(source, destination, data)
+		end
+	)
 end
 
 return {
