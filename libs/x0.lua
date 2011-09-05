@@ -11,6 +11,8 @@ return {
 			x0:close()
 
 			return callback(url)
+		else
+			x0:close()
 		end
 
 		simplehttp(url, function(data, url, callback)
