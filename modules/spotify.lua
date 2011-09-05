@@ -1,9 +1,7 @@
 -- http://developer.spotify.com/en/metadata-api/overview/
 
-local httpclient = require'handler.http.client'
+local simplehttp = require'simplehttp'
 local json = require'json'
-
-local client = httpclient.new(ivar2.Loop)
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -67,7 +65,7 @@ local handleData = function(metadata, json)
 	end
 end
 
-local handleOutput = function(self, data)
+local handleOutput = function(data)
 	local uris = {}
 	local uriOrder = {}
 	for i, meta in ipairs(data.handled) do
@@ -88,32 +86,27 @@ local handleOutput = function(self, data)
 	end
 
 	if(#output > 0) then
-		self:Msg('privmsg', data.destination, data.source, table.concat(output, ' '))
+		ivar2:Msg('privmsg', data.destination, data.source, table.concat(output, ' '))
 	end
 end
 
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:artist:4YrKBkKSVeqDamzBPWVnSJ
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:album:6G9fHYDCoyEErUkHrFYfs4
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:track:6NmXV4o6bmp704aPGyTVVG
-local fetchInformation = function(self, output, n, data)
-	local sink = {}
-	client:request{
-		url = ('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(data.uri),
+local fetchInformation = function(output, n, info)
+	simplehttp(
+		('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
 
-		on_data = function(request, response, data)
-			if(data) then sink[#sink + 1] = data end
-		end,
-
-		on_finished = function()
-			local info = handleData(data, json.decode(table.concat(sink)))
-			output.handled[n] = {uri = data.uri, type = data.type, hash = data.hash, info = info}
+		function(data)
+			local info = handleData(info, json.decode(data))
+			output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = info}
 			output.num = output.num - 1
 
 			if(output.num == 0) then
-				handleOutput(self, output)
+				handleOutput(output)
 			end
-		end,
-	}
+		end
+	)
 end
 
 return {
@@ -143,7 +136,7 @@ return {
 				}
 
 				for i=1, #tmp do
-					fetchInformation(self, output, i, tmp[i])
+					fetchInformation(output, i, tmp[i])
 				end
 			end
 		end,
