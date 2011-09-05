@@ -1,6 +1,8 @@
 local simplehttp = require'simplehttp'
 require'tokyocabinet'
 
+local x0 = tokyocabinet.hdbnew()
+
 return {
 	lookup = function(url, callback)
 		x0:open('data/x0', x0.OWRITER + x0.OCREAT)
