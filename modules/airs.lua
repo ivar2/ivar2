@@ -19,11 +19,11 @@ end
 
 return {
 	PRIVMSG = {
-		['!airs%s*$'] = function(self, source, destination)
+		['^!airs%s*$'] = function(self, source, destination)
 			self:Msg('privmsg', destination, source, 'Returns air time, ETA and channel for <anime>. Usage: !airs <anime>.', source.nick)
 		end,
 
-		['!airs (.+)$'] = function(self, source, destination, anime)
+		['^!airs (.+)$'] = function(self, source, destination, anime)
 			local sink = {}
 			client:request{
 				url = 'http://www.mahou.org/Showtime/',
