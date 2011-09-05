@@ -1,12 +1,9 @@
 local iconv = require"iconv"
-local httpclient = require'handler.http.client'
 local html2unicode = require'html'
 local x0 = require'x0'
 local uri = require"handler.uri"
 
 local uri_parse = uri.parse
-local client = httpclient.new(ivar2.Loop)
-
 local DL_LIMIT = 2^16
 
 local patterns = {
@@ -81,7 +78,7 @@ local handleData = function(headers, data)
 	end
 end
 
-local handleOutput = function(self, metadata)
+local handleOutput = function(metadata)
 	local output = {}
 	for i=1, #metadata.processed do
 		local lookup = metadata.processed[i]
@@ -89,45 +86,30 @@ local handleOutput = function(self, metadata)
 	end
 
 	if(#output > 0) then
-		self:Msg('privmsg', metadata.destination, metadata.source, table.concat(output, ' '))
+		ivar2:Msg('privmsg', metadata.destination, metadata.source, table.concat(output, ' '))
 	end
-
 end
 
-local fetchInformation = function(self, metadata, index, url, indexString)
+local fetchInformation = function(metadata, index, url, indexString)
 	local info = uri_parse(url)
 	if(info.path == '') then
 		url = url .. '/'
 	end
 
-	local sinkSize = 0
-	local sink = {}
+	simplehttp(
+		url,
 
-	client:request{
-		url = url,
-		stream_response = true,
-
-		on_data = function(request, response, data)
-			if(data) then
-				sinkSize = sinkSize + #data
-				sink[#sink + 1] = data
-				if(sinkSize > DL_LIMIT) then
-					request.connection.skip_complete = true
-					request.on_finished(response)
-				end
-			end
-		end,
-
-		on_finished = function(response)
-			local message = handleData(response.headers, table.concat(sink))
+		function(data, url, response)
+			local message = handleData(response.headers, data)
 			metadata.processed[index] = {index = indexString, output = message}
 			metadata.num = metadata.num - 1
 
 			if(metadata.num == 0) then
-				handleOutput(self, metadata)
+				handleOutput( metadata)
 			end
 		end,
-	}
+		true,
+		DL_LIMIT)
 end
 
 return {
@@ -168,7 +150,7 @@ return {
 
 				for i=1, #tmpOrder do
 					local url = tmpOrder[i]
-					fetchInformation(self, output, i, url, tmp[url])
+					fetchInformation(output, i, url, tmp[url])
 				end
 			end
 		end,
