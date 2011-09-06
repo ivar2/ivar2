@@ -132,11 +132,12 @@ local customHosts = {
 				end
 			)
 		end
-	end
+	end,
 }
 
 local fetchInformation = function(metadata, index, url, indexString)
 	local info = uri_parse(url)
+	info.url = url
 	if(info.path == '') then
 		url = url .. '/'
 	end
