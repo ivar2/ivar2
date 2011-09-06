@@ -100,7 +100,7 @@ local fetchInformation = function(metadata, index, url, indexString)
 	end
 
 	simplehttp(
-		url,
+		url:gsub('#.*$', ''),
 
 		function(data, url, response)
 			local message = handleData(response.headers, data)
