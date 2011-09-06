@@ -106,6 +106,35 @@ local handleOutput = function(metadata)
 	end
 end
 
+local customHosts = {
+	['%.donmai%.us'] = function(metadata, index, info, indexString)
+		local path = info.path
+
+		if(path and path:match('/data/([^%.]+)')) then
+			local md5 = path:match('/data/([^%.]+)')
+			local domain = info.host
+			simplehttp(
+				string.format('http://%s/post/index.xml?tags=md5:%s', domain, md5),
+
+				function(data, url, response)
+					local id = data:match(' id="(%d+)"')
+					local tags = data:match('tags="([^"]+)')
+
+					metadata.processed[index] = {
+						index = indexString,
+						output = string.format('http://%s/post/show/%s/ - %s', domain, id, tags)
+					}
+					metadata.num = metadata.num - 1
+
+					if(metadata.num == 0) then
+						handleOutput(metadata)
+					end
+				end
+			)
+		end
+	end
+}
+
 local fetchInformation = function(metadata, index, url, indexString)
 	local info = uri_parse(url)
 	if(info.path == '') then
