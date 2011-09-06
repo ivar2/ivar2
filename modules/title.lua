@@ -160,7 +160,6 @@ local customHosts = {
 	end,
 
 	['farm%d+%.static%.flickr.com'] = function(metadata, index, info, indexString)
-		print('flickr')
 		local path = info.path
 
 		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
@@ -168,7 +167,6 @@ local customHosts = {
 		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
 		if(path and path:match('/[^/]+/([^_]+)')) then
 			local photoid = path:match('/[^/]+/([^_]+)')
-			print(photoid or 'nil')
 			local url = string.format(
 				"http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=%s&photo_id=%s",
 				ivar2.config.flickrAPIKey,
@@ -182,9 +180,6 @@ local customHosts = {
 					local title = html2unicode(data:match('<title>([^<]+)</title>'))
 					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
 					local username = html2unicode(data:match('username="([^"]+)"'))
-
-					print(data)
-					print(title, owner, username)
 
 					metadata.processed[index] = {
 						index = indexString,
