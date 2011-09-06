@@ -1,5 +1,4 @@
 bot-*.lua
-data/x0
-data/rr
+cache/*
 
 modules/spam*.lua
