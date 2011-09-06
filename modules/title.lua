@@ -128,11 +128,12 @@ local fetchInformation = function(metadata, index, url, indexString)
 			metadata.num = metadata.num - 1
 
 			if(metadata.num == 0) then
-				handleOutput( metadata)
+				handleOutput(metadata)
 			end
 		end,
 		true,
-		DL_LIMIT)
+		DL_LIMIT
+	)
 end
 
 return {
