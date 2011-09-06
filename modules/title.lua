@@ -133,6 +133,32 @@ local customHosts = {
 			)
 		end
 	end,
+
+	['open.spotify.com'] = function(metadata, index, info, indexString)
+		local path = info.path
+
+		if(path and path:match'/(%w+)/(.+)') then
+			simplehttp(
+				info.url,
+
+				function(data, url, response)
+					local title = html2unicode(data:match'<title>(.-)</title>')
+					local uri = data:match('property="og:audio" content="([^"]+)"')
+
+					metadata.processed[index] = {
+						index = indexString,
+						output = string.format('%s: %s', title, uri)
+					}
+					metadata.num = metadata.num - 1
+
+					if(metadata.num == 0) then
+						handleOutput(metadata)
+					end
+				end
+			)
+		end
+
+	end,
 }
 
 local fetchInformation = function(metadata, index, url, indexString)
