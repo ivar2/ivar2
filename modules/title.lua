@@ -1,8 +1,10 @@
-local simplehttp = require'simplehttp'
 local iconv = require"iconv"
-local html2unicode = require'html'
-local x0 = require'x0'
 local uri = require"handler.uri"
+
+local simplehttp = require'simplehttp'
+local x0 = require'x0'
+local html2unicode = require'html'
+local base58 = require'base58'
 
 local uri_parse = uri.parse
 local DL_LIMIT = 2^16
@@ -179,16 +181,14 @@ local customHosts = {
 				function(data, url, response)
 					local title = html2unicode(data:match('<title>([^<]+)</title>'))
 					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
-					local username = html2unicode(data:match('username="([^"]+)"'))
 
 					metadata.processed[index] = {
 						index = indexString,
 						output = string.format(
-							'%s by %s <http://flic.kr/%s/%s/>',
+							'%s by %s <http://flic.kr/p/%s/>',
 							title,
 							owner,
-							username,
-							photoid
+							base58.encode(photoid)
 						)
 					}
 					metadata.num = metadata.num - 1
