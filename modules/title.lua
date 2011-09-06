@@ -79,12 +79,25 @@ local handleData = function(headers, data)
 	end
 end
 
+local limitOutput = function(str)
+	local limit = 100
+	if(#str > limit) then
+		str = str:sub(1, limit)
+		if(#str == limit) then
+			-- Clip it at the last space:
+			str = str:match('^.* ')
+		end
+	end
+
+	return str
+end
+
 local handleOutput = function(metadata)
 	local output = {}
 	for i=1, #metadata.processed do
 		local lookup = metadata.processed[i]
 		if(lookup.output) then
-			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
+			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, limitOutput(lookup.output)))
 		end
 	end
 
