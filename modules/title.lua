@@ -112,6 +112,13 @@ local fetchInformation = function(metadata, index, url, indexString)
 		url = url .. '/'
 	end
 
+	local host = info.host:gsub('^www%.', '')
+	for pattern, customHandler in next, customHosts do
+		if(host:match(pattern)) then
+			return customHandler(metadata, index, info, indexString)
+		end
+	end
+
 	simplehttp(
 		url:gsub('#.*$', ''),
 
