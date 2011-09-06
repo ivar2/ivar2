@@ -68,10 +68,12 @@ local parseData = function(source, destination, data)
 			end
 		end
 
-		if(#arr == 0 and n == 0) then
-			ivar2:Msg('privmsg', destination, source, 'jack shit found :-(.')
-		elseif(#arr == 3) then
-			ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+		if(n == 0) then
+			if(#arr > 0) then
+				ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+			else
+				ivar2:Msg('privmsg', destination, source, 'jack shit found :-(.')
+			end
 		end
 	end
 end
