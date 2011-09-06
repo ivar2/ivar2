@@ -157,7 +157,53 @@ local customHosts = {
 				end
 			)
 		end
+	end,
 
+	['farm%d+%.static%.flickr.com'] = function(metadata, index, info, indexString)
+		print('flickr')
+		local path = info.path
+
+		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
+		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
+		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
+		if(path and path:match('/[^/]+/([^_]+)')) then
+			local photoid = path:match('/[^/]+/([^_]+)')
+			print(photoid or 'nil')
+			local url = string.format(
+				"http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=%s&photo_id=%s",
+				ivar2.config.flickrAPIKey,
+				photoid
+			)
+
+			simplehttp(
+				url,
+
+				function(data, url, response)
+					local title = html2unicode(data:match('<title>([^<]+)</title>'))
+					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
+					local username = html2unicode(data:match('username="([^"]+)"'))
+
+					print(data)
+					print(title, owner, username)
+
+					metadata.processed[index] = {
+						index = indexString,
+						output = string.format(
+							'%s by %s <http://flic.kr/%s/%s/>',
+							title,
+							owner,
+							username,
+							photoid
+						)
+					}
+					metadata.num = metadata.num - 1
+
+					if(metadata.num == 0) then
+						handleOutput(metadata)
+					end
+				end
+			)
+		end
 	end,
 }
 
