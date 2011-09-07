@@ -63,7 +63,16 @@ return {
 							data = data:gsub(pattern, '<snip /.')
 						end
 
-						handleOutput(source, destination, split(data, '[^\n\r]+'))
+						local choices = split(data, '[^\n\r]+')
+						for i=1, #choices do
+							local line = choices[i]
+							line = line:gsub('%s%s+', ' '):sub(1, 300)
+							if(#line == 0) then
+								table.remove(choices, i)
+							end
+						end
+
+						handleOutput(source, destination, choices)
 					end,
 					true,
 					2^16
