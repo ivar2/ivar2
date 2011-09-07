@@ -29,7 +29,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 		end,
 
 		on_finished = function()
-			if(resp.status_code == 301) then
+			if(resp.status_code == 301 or resp.status_code == 302) then
 				return simplehttp(resp.headers.Location, callback, stream, limit, visited)
 			end
 
