@@ -65,9 +65,8 @@ return {
 
 						local choices = split(data, '[^\n\r]+')
 						for i=1, #choices do
-							local line = choices[i]
-							line = line:gsub('%s%s+', ' '):sub(1, 300)
-							if(#line == 0) then
+							choices[i] = choices[i]:gsub('%s%s+', ' '):sub(1, 300)
+							if(#choices[i] == 0) then
 								table.remove(choices, i)
 							end
 						end
