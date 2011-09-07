@@ -64,7 +64,9 @@ return {
 						end
 
 						handleOutput(source, destination, split(data, '[^\n\r]+'))
-					end
+					end,
+					true,
+					2^16
 				)
 			else
 				handleOutput(source, destination, split(choices, '%s*([^,]+)%s*'))
