@@ -1,3 +1,15 @@
+local simplehttp = require'simplehttp'
+
+local patterns = {
+	-- X://Y url
+	"^(https?://%S+)",
+	"%f[%S](https?://%S+)",
+	-- 			-- www.X.Y url
+	"^(www%.[%w_-%%]+%.%S+)",
+	"%f[%S](www%.[%w_-%%]+%.%S+)",
+}
+
+
 local split = function(str, pattern)
 	local out = {}
 	str:gsub(pattern, function(match)
@@ -17,28 +29,45 @@ local reply = {
 	'ಠ_ಠ',
 }
 
-math.randomseed(os.time() % 1e5)
+local handleOutput = function(source, destination, choices)
+	local hax = {}
+	for k, v in pairs(choices) do
+		hax[v] = true
+	end
+
+	local i = 0
+	for k, v in pairs(hax) do
+		i = i + 1
+	end
+
+	if(#choices == 1 or i == 1) then
+		ivar2:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
+	else
+		local seed = math.random(1, #choices)
+		ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, choices[seed])
+	end
+end
 
 return {
 	PRIVMSG = {
 		['^!choose (.+)$'] = function(self, source, destination, choices)
-			local hax = {}
-			local arr = split(choices, '%s*([^,]+)%s*')
+			if(choices:match('https?://%S+')) then
+				simplehttp(
+					choices:match('(https?://%S+)'),
 
-			for k, v in pairs(arr) do
-				hax[v] = true
-			end
+					function(data)
+						-- Strip out any HTML.
+						data = data:gsub('<%/?[%w:]+.-%/?>', '')
+						-- K-Line prevention!
+						for _, pattern in ipairs(patterns) do
+							data = data:gsub(pattern, '<snip /.')
+						end
 
-			local i = 0
-			for k, v in pairs(hax) do
-				i = i + 1
-			end
-
-			if(#arr == 1 or i == 1) then
-				self:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
+						handleOutput(source, destination, split(data, '[^\n\r]+'))
+					end
+				)
 			else
-				local seed = math.random(1, #arr)
-				self:Msg('privmsg', destination, source, '%s: %s', source.nick, arr[seed])
+				handleOutput(source, destination, split(choices, '%s*([^,]+)%s*'))
 			end
 		end
 	}
