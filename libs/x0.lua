@@ -26,6 +26,7 @@ return {
 
 					return callback(data)
 				end
-			end)
-		end,
-	}
+			end
+		)
+	end,
+}
