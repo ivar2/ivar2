@@ -144,7 +144,7 @@ local customHosts = {
 				info.url,
 
 				function(data, url, response)
-					local title = html2unicode(data:match'<title>(.-)</title>')
+					local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
 					local uri = data:match('property="og:audio" content="([^"]+)"')
 
 					metadata.processed[index] = {
