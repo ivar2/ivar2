@@ -63,7 +63,7 @@ local limitOutput = function(str)
 		str = str:sub(1, limit)
 		if(#str == limit) then
 			-- Clip it at the last space:
-			str = str:match('^.* ')
+			str = str:match('^.* ') .. '…'
 		end
 	end
 
