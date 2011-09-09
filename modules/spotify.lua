@@ -98,8 +98,8 @@ local fetchInformation = function(output, n, info)
 		('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
 
 		function(data)
-			local info = handleData(info, json.decode(data))
-			output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = info}
+			local message = handleData(info, json.decode(data))
+			output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = message}
 			output.num = output.num - 1
 
 			if(output.num == 0) then
