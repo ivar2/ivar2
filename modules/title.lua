@@ -57,6 +57,19 @@ local guessCharset = function(headers, data)
 	end
 end
 
+local limitOutput = function(str)
+	local limit = 100
+	if(#str > limit) then
+		str = str:sub(1, limit)
+		if(#str == limit) then
+			-- Clip it at the last space:
+			str = str:match('^.* ')
+		end
+	end
+
+	return str
+end
+
 local handleData = function(headers, data)
 	local charset = guessCharset(headers, data)
 	if(charset and charset ~= 'utf-8') then
@@ -76,22 +89,9 @@ local handleData = function(headers, data)
 		title = title:gsub('%s%s+', ' ')
 
 		if(title ~= '<snip />') then
-			return title
+			return limitOutput(title)
 		end
 	end
-end
-
-local limitOutput = function(str)
-	local limit = 100
-	if(#str > limit) then
-		str = str:sub(1, limit)
-		if(#str == limit) then
-			-- Clip it at the last space:
-			str = str:match('^.* ')
-		end
-	end
-
-	return str
 end
 
 local handleOutput = function(metadata)
@@ -99,7 +99,7 @@ local handleOutput = function(metadata)
 	for i=1, #metadata.processed do
 		local lookup = metadata.processed[i]
 		if(lookup.output) then
-			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, limitOutput(lookup.output)))
+			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
 		end
 	end
 
@@ -124,7 +124,7 @@ local customHosts = {
 
 					metadata.processed[index] = {
 						index = indexString,
-						output = string.format('http://%s/post/show/%s/ - %s', domain, id, tags)
+						output = string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags))
 					}
 					metadata.num = metadata.num - 1
 
