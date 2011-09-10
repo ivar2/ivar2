@@ -18,7 +18,7 @@ local trim = function(s)
 end
 
 local limitOutput = function(str)
-	local limit = 150
+	local limit = 100
 	if(#str > limit) then
 		str = str:sub(1, limit)
 		if(#str == limit) then
