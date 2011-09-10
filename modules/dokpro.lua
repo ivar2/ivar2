@@ -17,6 +17,19 @@ local trim = function(s)
 	return s:match('^()%s*$') and '' or s:match('^%s*(.*%S)')
 end
 
+local limitOutput = function(str)
+	local limit = 150
+	if(#str > limit) then
+		str = str:sub(1, limit)
+		if(#str == limit) then
+			-- Clip it at the last space:
+			str = str:match('^.* ') .. '…'
+		end
+	end
+
+	return str
+end
+
 local parseData = function(data)
 	data = iso2utf:iconv(data)
 
@@ -73,7 +86,7 @@ local handleInput = function(self, source, destination, word)
 			for i=1, #words do
 				local word = words[i]
 				local lookup = table.concat(word.lookup, ', ')
-				local message = string.format('\002[%s]\002: %s', lookup, word.meaning)
+				local message = string.format('\002[%s]\002: %s', lookup, limitOutput(word.meaning))
 
 				n = n + #message
 				if(n < msgLimit) then
