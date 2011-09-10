@@ -1,4 +1,5 @@
 local simplehttp = require'simplehttp'
+local html2unicode = require'html'
 local iconv = require"iconv"
 local iso2utf = iconv.new("utf-8", "iso-8859-15")
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
@@ -35,7 +36,7 @@ local parseData = function(data)
 		for td in entryData:gmatch('<td[^>]->(.-)</td>') do
 			-- Strip away HTML.
 			local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
-			line = line:gsub('%s%s+', ' ')
+			line = html2unicode(line:gsub('%s%s+', ' '))
 
 			if(#line > 0) then
 				if(tonumber(line)) then
