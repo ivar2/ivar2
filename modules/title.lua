@@ -95,6 +95,8 @@ local handleData = function(headers, data)
 end
 
 local handleOutput = function(metadata)
+	if(metadata.num ~= 0) then return end
+
 	local output = {}
 	for i=1, #metadata.processed do
 		local lookup = metadata.processed[i]
@@ -128,9 +130,7 @@ local customHosts = {
 					}
 					metadata.num = metadata.num - 1
 
-					if(metadata.num == 0) then
-						handleOutput(metadata)
-					end
+					handleOutput(metadata)
 				end
 			)
 		end
@@ -153,9 +153,7 @@ local customHosts = {
 					}
 					metadata.num = metadata.num - 1
 
-					if(metadata.num == 0) then
-						handleOutput(metadata)
-					end
+					handleOutput(metadata)
 				end
 			)
 		end
@@ -193,9 +191,7 @@ local customHosts = {
 					}
 					metadata.num = metadata.num - 1
 
-					if(metadata.num == 0) then
-						handleOutput(metadata)
-					end
+					handleOutput(metadata)
 				end
 			)
 		end
@@ -243,9 +239,7 @@ local customHosts = {
 					}
 					metadata.num = metadata.num - 1
 
-					if(metadata.num == 0) then
-						handleOutput(metadata)
-					end
+					handleOutput(metadata)
 				end
 			)
 		end
@@ -274,9 +268,7 @@ local fetchInformation = function(metadata, index, url, indexString)
 			metadata.processed[index] = {index = indexString, output = message}
 			metadata.num = metadata.num - 1
 
-			if(metadata.num == 0) then
-				handleOutput(metadata)
-			end
+			handleOutput(metadata)
 		end,
 		true,
 		DL_LIMIT
