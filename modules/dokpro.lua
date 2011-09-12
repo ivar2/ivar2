@@ -86,7 +86,11 @@ local handleInput = function(self, source, destination, word)
 			for i=1, #words do
 				local word = words[i]
 				local lookup = table.concat(word.lookup, ', ')
-				local message = string.format('\002[%s]\002: %s', lookup, limitOutput(word.meaning))
+				local definition = word.meaning
+				if(#definition < 30 and word.examples[1]) then
+					definition = definition .. ' ' .. word.examples[1]
+				end
+				local message = string.format('\002[%s]\002: %s', lookup, limitOutput(definition))
 
 				n = n + #message
 				if(n < msgLimit) then
