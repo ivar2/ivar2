@@ -1,8 +1,6 @@
-local httpclient = require'handler.http.client'
+local simplehttp = require'simplehttp'
 local html2unicode = require'html'
 local date = require'date'
-
-local client = httpclient.new(ivar2.Loop)
 
 local urlEncode = function(str)
 	return str:gsub(
@@ -147,32 +145,20 @@ local out = function(data)
 	return output
 end
 
-local parseData = function(self, source, destination, data)
-	if(data:sub(1, 15) == 'No Show Results') then
-		self:Msg('privmsg', destination, source, '%s: %s', source.nick, 'Invalid show? :(')
-	else
-		local output = out(handleData(data))
-		if(output) then
-			self:Msg('privmsg', destination, source, output)
-		end
-	end
-end
-
 local handle = function(self, source, destination, input)
-	local url = ('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(urlEncode(input))
-
-	local sink = {}
-	client:request{
-		url = url,
-
-		on_data = function(request, response, data)
-			if(data) then sink[#sink + 1] = data end
-		end,
-
-		on_finished = function()
-			parseData(self, source, destination, table.concat(sink))
-		end,
-	}
+	simplehttp(
+		('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(urlEncode(input)),
+		function(data)
+			if(data:sub(1, 15) == 'No Show Results') then
+				self:Msg('privmsg', destination, source, '%s: %s', source.nick, 'Invalid show? :(')
+			else
+				local output = out(handleData(data))
+				if(output) then
+					self:Msg('privmsg', destination, source, output)
+				end
+			end
+		end
+	)
 end
 
 return {
