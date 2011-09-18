@@ -233,10 +233,16 @@ local customHosts = {
 
 	['youtube%.com'] = function(metadata, index, info, indexString)
 		local query = info.query
+		local path = info.path
+		local vid
 
 		if(query and query:match('v=[a-zA-Z0-9_-]+')) then
-			local vid = query:match('v=([a-zA-Z0-9_-]+)')
+			vid = query:match('v=([a-zA-Z0-9_-]+)')
+		elseif(path and path:match('#.*/%d+/([a-zA-Z0-9_-]+)')) then
+			vid = path:match('#.*/%d+/([a-zA-Z0-9_-]+)')
+		end
 
+		if(vid) then
 			simplehttp(
 				'https://gdata.youtube.com/feeds/api/videos/' .. vid,
 
