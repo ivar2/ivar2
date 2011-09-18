@@ -22,7 +22,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 				sinkSize = sinkSize + #data
 				sink[#sink + 1] = data
 				if(limit and sinkSize > limit) then
-					request.connection.skip_complete = true
+					-- Cancel it
+					request:close()
 					request.on_finished(response)
 				end
 			end
