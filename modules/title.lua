@@ -23,6 +23,40 @@ local translateCharset = {
 	['x-sjis'] = 'sjis',
 }
 
+local parseAJAX
+do
+	local escapedChars = {}
+	local q = function(i)
+		escapedChars[string.char(i)] = string.format('%%%X', i)
+	end
+
+	for i=0, tonumber(20, 16) do
+		q(i)
+	end
+
+	for i=tonumber('7F', 16), tonumber('FF', 16) do
+		q(i)
+	end
+
+	q(tonumber(23, 16))
+	q(tonumber(25, 16))
+	q(tonumber(26, 16))
+	q(tonumber('2B', 16))
+
+	function parseAJAX(url)
+		local offset, shebang = url:match('()#!(.+)$')
+
+		if(offset) then
+			url = url:sub(1, offset - 1)
+
+			shebang = shebang:gsub('([%z\1-\127\194-\244][\128-\191]*)', escapedChars)
+			url = url .. '?_escaped_fragment_=' .. shebang
+		end
+
+		return url
+	end
+end
+
 local verify = function(charset)
 	if(charset) then
 		charset = charset:lower()
@@ -261,7 +295,7 @@ local fetchInformation = function(metadata, index, url, indexString)
 	end
 
 	simplehttp(
-		url:gsub('#.*$', ''),
+		parseAJAX(url):gsub('#.*$', ''),
 
 		function(data, url, response)
 			local message = handleData(response.headers, data)
