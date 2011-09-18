@@ -79,7 +79,7 @@ local handleData = function(headers, data)
 		end
 	end
 
-	local title = data:match('<[tT][iI][tT][lL][eE]>(.-)</[tT][iI][tT][lL][eE]>')
+	local title = data:match('<[tT][iI][tT][lL][eE][^>]+>(.-)</[tT][iI][tT][lL][eE]>')
 	if(title) then
 		for _, pattern in ipairs(patterns) do
 			title = title:gsub(pattern, '<snip />')
