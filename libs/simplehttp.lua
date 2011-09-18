@@ -7,7 +7,6 @@ local function simplehttp(url, callback, stream, limit, visited)
 	local sink = {}
 	local visited = visited or {}
 
-	local resp
 	-- Prevent infinite loops!
 	if(visited[url]) then return end
 	visited[url] = true
@@ -18,23 +17,22 @@ local function simplehttp(url, callback, stream, limit, visited)
 
 		on_data = function(request, response, data)
 			if(data) then
-				resp = response
 				sinkSize = sinkSize + #data
 				sink[#sink + 1] = data
 				if(limit and sinkSize > limit) then
+					request.on_finished(request, response)
 					-- Cancel it
 					request:close()
-					request.on_finished(response)
 				end
 			end
 		end,
 
-		on_finished = function()
-			if(resp.status_code == 301 or resp.status_code == 302) then
-				return simplehttp(resp.headers.Location, callback, stream, limit, visited)
+		on_finished = function(request, response)
+			if(response.status_code == 301 or response.status_code == 302) then
+				return simplehttp(response.headers.Location, callback, stream, limit, visited)
 			end
 
-			callback(table.concat(sink), url, resp)
+			callback(table.concat(sink), url, response)
 		end,
 	}
 end
