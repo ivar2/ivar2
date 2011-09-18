@@ -156,12 +156,15 @@ return {
 			-- Force a close in-case we didn't get to earlier.
 			anidb:close()
 
+			-- Relaod the DB.
+			anidbSearch.reload()
+
 			local aid = tonumber(anime)
 			if(aid) then
 				return doLookup(destination, source, aid)
 			end
 
-			local results = anidbSearch(anime)
+			local results = anidbSearch.lookup(anime)
 			local numResults = #results
 			if(numResults == 0) then
 				return self:Msg('privmsg', destination, source, 'No matches found :-(.')
