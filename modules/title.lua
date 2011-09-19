@@ -68,6 +68,26 @@ end
 
 local guessCharset = function(headers, data)
 	local charset
+
+	-- BOM:
+	local bom4 = data:sub(1,4)
+	local bom2 = data:sub(1,2)
+	if(data:sub(1,3) == '\239\187\191') then
+		return 'utf-8'
+	elseif(bom4 == '\255\254\000\000') then
+		return 'utf-32le'
+	elseif(bom4 == '\000\000\254\255') then
+		return 'utf-32be'
+	elseif(bom4 == '\254\255\000\000') then
+		return 'x-iso-10646-ucs-4-3412'
+	elseif(bom4 == '\000\000\255\254') then
+		return 'x-iso-10646-ucs-4-2143'
+	elseif(bom2 == '\255\254') then
+		return 'utf-16le'
+	elseif(bom2 == '\254\255') then
+		return 'utf-16be'
+	end
+
 	-- XML:
 	charset = verify(data:match('<%?xml .-encoding=[\'"]([^\'"]+)[\'"].->'))
 	if(charset) then return charset end
