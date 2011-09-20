@@ -187,6 +187,8 @@ local customHosts = {
 					handleOutput(metadata)
 				end
 			)
+
+			return true
 		end
 	end,
 
@@ -210,6 +212,8 @@ local customHosts = {
 					handleOutput(metadata)
 				end
 			)
+
+			return true
 		end
 	end,
 
@@ -248,6 +252,8 @@ local customHosts = {
 					handleOutput(metadata)
 				end
 			)
+
+			return true
 		end
 	end,
 
@@ -302,6 +308,8 @@ local customHosts = {
 					handleOutput(metadata)
 				end
 			)
+
+			return true
 		end
 	end,
 }
@@ -315,8 +323,8 @@ local fetchInformation = function(metadata, index, url, indexString)
 
 	local host = info.host:gsub('^www%.', '')
 	for pattern, customHandler in next, customHosts do
-		if(host:match(pattern)) then
-			return customHandler(metadata, index, info, indexString)
+		if(host:match(pattern) and customHandler(metadata, index, info, indexString)) then
+			return
 		end
 	end
 
