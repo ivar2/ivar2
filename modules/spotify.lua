@@ -2,6 +2,11 @@
 
 local simplehttp = require'simplehttp'
 local json = require'json'
+require'tokyocabinet'
+require'logging.console'
+
+local log = logging.console()
+local spotify = tokyocabinet.hdbnew()
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -65,6 +70,42 @@ local handleData = function(metadata, json)
 	end
 end
 
+local parseRFC1123
+do
+	local monthName = {
+		Jan = '01',
+		Feb = '02',
+		Mar = '03',
+		Apr = '04',
+		May = '05',
+		Jun = '06',
+		Jul = '07',
+		Aug = '08',
+		Sep = '09',
+		Oct = '10',
+		Nov = '11',
+		Dec = '12'
+	}
+
+	parseRFC1123 = function(date)
+		-- RFC 1123: http://www.ietf.org/rfc/rfc1123.txt
+		-- RFC 822: http://www.ietf.org/rfc/rfc822.txt
+		local day = tonumber(date:sub(6, 7))
+		local month = tonumber(monthName[date:sub(9, 11)])
+		local year = tonumber(date:sub(13, 16))
+		local hour = tonumber(date:sub(18, 19))
+		local minute = tonumber(date:sub(21, 22))
+		local seconds = tonumber(date:sub(24, 25))
+		-- TODO: Handle EST and friends.
+		local tz = date:sub(27)
+
+		hour = hour + os.date('%H') - os.date('!%H')
+		minute = minute + os.date('%M') - os.date('!%M')
+
+		return os.time{day = day, month = month, year = year, hour = hour, min = minute, sec = seconds}
+	end
+end
+
 local handleOutput = function(data)
 	local uris = {}
 	local uriOrder = {}
@@ -94,19 +135,44 @@ end
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:album:6G9fHYDCoyEErUkHrFYfs4
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:track:6NmXV4o6bmp704aPGyTVVG
 local fetchInformation = function(output, n, info)
-	simplehttp(
-		('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
+	spotify:open('data/spotify', spotify.OWRITER + spotify.OCREAT)
+	if(spotify[info.uri] and tonumber(spotify[info.uri .. ':timestamp']) > os.time()) then
+		log:debug(string.format('spotify: Fetching %s from cache.', info.uri))
 
-		function(data)
-			local message = handleData(info, json.decode(data))
-			output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = message}
-			output.num = output.num - 1
+		output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = spotify[info.uri]}
+		output.num = output.num - 1
 
-			if(output.num == 0) then
-				handleOutput(output)
-			end
+		spotify:close()
+
+		if(output.num == 0) then
+			handleOutput(output)
 		end
-	)
+		return
+	else
+		spotify:close()
+		log:info(string.format('spotify: Requesting information on %s.', info.uri))
+
+		simplehttp(
+			('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
+
+			function(data, url, response)
+				local message = handleData(info, json.decode(data))
+				local expires = parseRFC1123(response.headers.Expires)
+
+				spotify:open('data/spotify', spotify.OWRITER + spotify.OCREAT)
+				spotify[info.uri] = message
+				spotify[info.uri .. ':timestamp'] = expires
+				spotify:close()
+
+				output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = message}
+				output.num = output.num - 1
+
+				if(output.num == 0) then
+					handleOutput(output)
+				end
+			end
+		)
+	end
 end
 
 return {
