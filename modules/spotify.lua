@@ -107,13 +107,16 @@ do
 end
 
 local handleOutput = function(data)
+	if(data.num ~= 0) then return end
+
 	local uris = {}
 	local uriOrder = {}
 	for i, meta in ipairs(data.handled) do
 		local uri = meta.uri
 		if(not uris[uri]) then
 			table.insert(uriOrder, uri)
-			uris[uri] = {n = i, meta = meta}
+			meta.n = i
+			uris[uri] = meta
 		else
 			uris[uri].n = string.format('%s+%d', uris[uri].n, i)
 		end
@@ -122,8 +125,7 @@ local handleOutput = function(data)
 	local output = {}
 	for i=1, #uriOrder do
 		local lookup = uris[uriOrder[i]]
-		local url = string.format('http://open.spotify.com/%s/%s', lookup.meta.type, lookup.meta.hash)
-		table.insert(output, string.format('\002[%s]\002 %s - %s', lookup.n, lookup.meta.info, url))
+		table.insert(output, string.format('\002[%s]\002 %s - %s', lookup.n, lookup.info, lookup.open))
 	end
 
 	if(#output > 0) then
@@ -139,15 +141,12 @@ local fetchInformation = function(output, n, info)
 	if(spotify[info.uri] and tonumber(spotify[info.uri .. ':timestamp']) > os.time()) then
 		log:debug(string.format('spotify: Fetching %s from cache.', info.uri))
 
-		output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = spotify[info.uri]}
+		info.info = spotify[info.uri]
+		output.handled[n] = info
 		output.num = output.num - 1
 
 		spotify:close()
-
-		if(output.num == 0) then
-			handleOutput(output)
-		end
-		return
+		handleOutput(output)
 	else
 		spotify:close()
 		log:info(string.format('spotify: Requesting information on %s.', info.uri))
@@ -164,12 +163,11 @@ local fetchInformation = function(output, n, info)
 				spotify[info.uri .. ':timestamp'] = expires
 				spotify:close()
 
-				output.handled[n] = {uri = info.uri, type = info.type, hash = info.hash, info = message}
+				output.handled[n] = info
+				info.info = message
 				output.num = output.num - 1
 
-				if(output.num == 0) then
-					handleOutput(output)
-				end
+				handleOutput(output)
 			end
 		)
 	end
@@ -186,8 +184,7 @@ return {
 
 					tmp[index] = {
 						uri = uri,
-						type = type,
-						hash = hash,
+						open = ('http://open.spotify.com/%s/%s'):format(type, hash)
 					}
 				end
 			end
