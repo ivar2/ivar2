@@ -42,8 +42,6 @@ local parseLine = function(data)
 		local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
 		line = html2unicode(line:gsub('%s%s+', ' '))
 
-		print(line)
-
 		if(#line > 0) then
 			if(tonumber(line)) then
 				insertAt = tonumber(line)
