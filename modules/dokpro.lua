@@ -72,9 +72,10 @@ local parseData = function(data)
 			table.insert(words, parseLine(entryData))
 		end
 	else
-		data = data:match('(<td><span class="b">[^\n]+)')
-		local entry = parseLine(data)
+		local lookup = data:match('>([^<]+)</a>')
+		local entry = parseLine(data:match('(<td><span class="b">[^\n]+)'))
 		if(entry) then
+			table.insert(entry.lookup, lookup)
 			table.insert(words, entry)
 		end
 	end
