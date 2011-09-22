@@ -30,6 +30,37 @@ local limitOutput = function(str)
 	return str
 end
 
+local parseLine = function(data)
+	local entry = {
+		lookup = {},
+		examples = {},
+	}
+
+	local insertAt
+	for td in data:gmatch('<td[^>]->(.-)</td>') do
+		-- Strip away HTML.
+		local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
+		line = html2unicode(line:gsub('%s%s+', ' '))
+
+		print(line)
+
+		if(#line > 0) then
+			if(tonumber(line)) then
+				insertAt = tonumber(line)
+			elseif(not line:match('%s+')) then
+				table.insert(entry.lookup, line)
+			elseif(insertAt) then
+				entry.examples[insertAt] = line
+				insertAt = nil
+			else
+				entry.meaning = line
+			end
+		end
+	end
+
+	return entry
+end
+
 local parseData = function(data)
 	data = iso2utf:iconv(data)
 
@@ -38,33 +69,16 @@ local parseData = function(data)
 	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)</div>'):gsub('&nbsp;', '')
 
 	local words = {}
-	for entryData in data:gmatch('<table class="liten_ordliste">([^\n]+)') do
-		local entry = {
-			lookup = {},
-			examples = {},
-		}
-
-		local insertAt
-		for td in entryData:gmatch('<td[^>]->(.-)</td>') do
-			-- Strip away HTML.
-			local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
-			line = html2unicode(line:gsub('%s%s+', ' '))
-
-			if(#line > 0) then
-				if(tonumber(line)) then
-					insertAt = tonumber(line)
-				elseif(not line:match('%s+')) then
-					table.insert(entry.lookup, line)
-				elseif(insertAt) then
-					entry.examples[insertAt] = line
-					insertAt = nil
-				else
-					entry.meaning = line
-				end
-			end
+	if(data:match('liten_ordliste')) then
+		for entryData in data:gmatch('<table class="liten_ordliste">([^\n]+)') do
+			table.insert(words, parseLine(entryData))
 		end
-
-		table.insert(words, entry)
+	else
+		data = data:match('(<td><span class="b">[^\n]+)')
+		local entry = parseLine(data)
+		if(entry) then
+			table.insert(words, entry)
+		end
 	end
 
 	return words
