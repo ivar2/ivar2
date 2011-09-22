@@ -38,7 +38,6 @@ local parseData = function(data)
 	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)</div>'):gsub('&nbsp;', '')
 
 	local words = {}
-	local entryIndex = 1
 	for entryData in data:gmatch('<table class="liten_ordliste">([^\n]+)') do
 		local entry = {
 			lookup = {},
