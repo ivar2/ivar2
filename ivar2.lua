@@ -5,6 +5,12 @@ package.path = table.concat({
 	'',
 }, ';') .. package.path
 
+package.cpath = table.concat({
+	'libs/?.so',
+
+	'',
+}, ';') .. package.cpath
+
 local connection = require'handler.connection'
 local ev = require'ev'
 require'logging.console'
