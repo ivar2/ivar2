@@ -184,6 +184,7 @@ return {
 
 					tmp[index] = {
 						uri = uri,
+						type = type,
 						open = ('http://open.spotify.com/%s/%s'):format(type, hash)
 					}
 				end
