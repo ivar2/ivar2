@@ -1,6 +1,9 @@
 local httpclient = require'handler.http.client'
+local uri = require"handler.uri"
 local ev = require'ev'
+
 local client = httpclient.new(ev.Loop.default)
+local uri_parse = uri.parse
 
 local function simplehttp(url, callback, stream, limit, visited)
 	local sinkSize = 0
@@ -29,7 +32,13 @@ local function simplehttp(url, callback, stream, limit, visited)
 
 		on_finished = function(request, response)
 			if(response.status_code == 301 or response.status_code == 302) then
-				return simplehttp(response.headers.Location, callback, stream, limit, visited)
+				local location = response.headers.Location
+				if(location:sub(1, 4) ~= 'http') then
+					local info = uri_parse(url)
+					location = string.format('%s://%s/', info.scheme, info.host, location)
+				end
+
+				return simplehttp(location, callback, stream, limit, visited)
 			end
 
 			callback(table.concat(sink), url, response)
