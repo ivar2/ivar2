@@ -333,10 +333,19 @@ local fetchInformation = function(metadata, index, url, indexString)
 
 		function(data, url, response)
 			local message = handleData(response.headers, data)
-			metadata.processed[index] = {index = indexString, output = message}
-			metadata.num = metadata.num - 1
+			if(#url > 140) then
+				x0.lookup(url, function(short)
+					metadata.processed[index] = {index = indexString, output = string.format('Downgraded URL: %s - %s', short, message)}
+					message.num = metadata.num - 1
 
-			handleOutput(metadata)
+					handleOutput(metadata)
+				end)
+			else
+				metadata.processed[index] = {index = indexString, output = message}
+				metadata.num = metadata.num - 1
+
+				handleOutput(metadata)
+			end
 		end,
 		true,
 		DL_LIMIT
