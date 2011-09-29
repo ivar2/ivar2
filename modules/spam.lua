@@ -2,42 +2,9 @@ local trim = function(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
-local meh = {
-	['^god natt'] = 'svekling!',
-}
-
-local caseinsensitive = {
-	['^eerin eerin'] = 'tasukete ERINNNNNN!!',
-}
-
-local wordlist = {
-	['^Yokohama.?$'] = {'RIGHT OVER THERE! o/','OVER HERE! .|o.|','.\o OVER HERE!','DER BORTE! o-','ZOMG!'},
-	['^tadaima$'] = {'okaeri','okaaeriii','おかえり！'},
-	['^tadaima!$'] = {'okaeri!','okaeriii!','おかえりーーー！'},
-	['^ただいま$'] = 'おかえり',
-	['^gossun gossun$'] = 'gossun kugi!',
-	['^GOSSUN GOSSUN$'] = 'gossun kugi!',
-	['^DAME DAME DAME DAME NINGEN$'] = 'NINGEEEEN NINGEEEEN',
-	['^mud$'] = 'kip',
-	['*kose viddy*'] = 'fu',
-	['*KOSE VIDDY*'] = 'fu..',
-	['^pizza$'] = 'hva skjer med rømmedressingen a?!',
-	['^hva skjer med r.*mmedressingen a'] = 'dunno',
-	['^God morgen$'] = {'morn!','mornings!','gudd mørning!','mårn!','mårndu!'},
-	['^god morgen$'] = {'morn!','mornings!','gudd mørning!','mårn!','mårndu!'},
-	['^God dag$'] = {'huheei!','hellauen!','god dagens!','tjohei!','næmmen hei!','hællæ!','tjohei kjøttdeig!'},
-	['^god dag$'] = {'huheei!','hellauen!','god dagens!','tjohei!','næmmen hei!','hællæ!','tjohei kjøttdeig!'},
-	['sos sos sos'] = {'OOOH! GODMAN!','Oooh! Godman!','Oooooh! Godmaan!','Ooh! Godman!','OOOOOH GODMAN!','OOooOo GODMAN!'},
-	['^cheetamen$'] = {'ole ole!','OLE OLE!'},
-	['^CHEETAMEN$'] = {'ole ole!','OLE OLE!'},
-	['^cheetahmen$'] = {'ole ole!','OLE OLE!'},
-	['^CHEETAHMEN$'] = {'ole ole!','OLE OLE!'},
-	['pero pero'] = {'dooon\'t touch me.','don\'t touch me.','don\'t. touch. me.','don\'t touch mee.'},
-	['(　ﾟ∀ﾟ)o彡'] = 'GTFO!',
-	['^tadaima$'] = {'okaeri','okaaeriii','おかえり！'},
-	['^tadaima!$'] = {'okaeri!','okaeriii!','おかえりーーー！'},
-	['^ただいま$'] = 'おかえり',
-} 
+local meh = ivar2.config.spam.meh
+local caseinsensitive = ivar2.config.spam.caseInsensitive
+local wordlist = ivar2.config.spam.wordlist
 
 local caseTable
 local case = function(str)
@@ -91,27 +58,33 @@ return {
 		function(self, source, destination, message)
 			message = trim(message)
 			message = message:gsub('<.->%s+', '')
-			for pattern, reply in pairs(wordlist) do
-				if(message:match(pattern)) then
-					buildCaseTable(message)
-					-- found a match, let's tail call our way out!
-					return send(destination, source, reply)
+			if(wordlist) then
+				for pattern, reply in pairs(wordlist) do
+					if(message:match(pattern)) then
+						buildCaseTable(message)
+						-- found a match, let's tail call our way out!
+						return send(destination, source, reply)
+					end
 				end
 			end
 
-			local tmp = message:lower()
-			for pattern, reply in next, caseinsensitive do
-				if(tmp:match(pattern)) then
-					-- found a match, let's tail call our way out!
-					return send(destination, source, reply)
+			if(caseinsensitive) then
+				local tmp = message:lower()
+				for pattern, reply in next, caseinsensitive do
+					if(tmp:match(pattern)) then
+						-- found a match, let's tail call our way out!
+						return send(destination, source, reply)
+					end
 				end
 			end
 
-			for pattern, reply in next, meh do
-				if(tmp:match(pattern)) then
-					buildCaseTable(message)
-					-- found a match, let's tail call our way out!
-					return send(destination, source, reply, true)
+			if(meh) then
+				for pattern, reply in next, meh do
+					if(tmp:match(pattern)) then
+						buildCaseTable(message)
+						-- found a match, let's tail call our way out!
+						return send(destination, source, reply, true)
+					end
 				end
 			end
 		end,
