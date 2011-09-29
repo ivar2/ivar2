@@ -1,4 +1,2 @@
 bot-*.lua
 cache/*
-
-modules/spam*.lua
