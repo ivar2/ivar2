@@ -66,54 +66,54 @@ local buildCaseTable = function(msg)
 	end
 end
 
-local send = function(self, dest, reply, fuck)
+local send = function(destination, source, reply, fuck)
 	if(type(reply) == 'table') then
 		math.randomseed(os.time())
 		math.random(); math.random(); math.random()
 
 		if(fuck) then
-			self:privmsg(dest, case(reply[math.random(1, #reply)]))
+			ivar2:Msg('privmsg', destination, source, case(reply[math.random(1, #reply)]))
 		else
-			self:privmsg(dest, reply[math.random(1, #reply)])
+			ivar2:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
 		end
 
 	else
 		if(fuck) then
-			self:privmsg(dest, case(reply))
+			ivar2:Msg('privmsg', destination, source, case(reply))
 		else
-			self:privmsg(dest, reply)
+			ivar2:Msg('privmsg', destination, source, reply)
 		end
 	end
 end
 
 return {
-	["^:(%S+) PRIVMSG (%S+) :(.+)$"] = function(self, src, dest, msg)
-		-- block the bots own messages
-		if(self:srctonick(src) == self.config.nick) then return end
-		msg = trim(msg)
-		msg = msg:gsub('<.->%s+', '')
-		for pattern, reply in pairs(wordlist) do
-			if(msg:match(pattern)) then
-				buildCaseTable(msg)
-				-- found a match, let's tail call our way out!
-				return send(self, dest, reply)
+	PRIVMSG = {
+		function(self, source, destination, message)
+			message = trim(message)
+			message = message:gsub('<.->%s+', '')
+			for pattern, reply in pairs(wordlist) do
+				if(message:match(pattern)) then
+					buildCaseTable(message)
+					-- found a match, let's tail call our way out!
+					return send(destination, source, reply)
+				end
 			end
-		end
 
-		local tmp = msg:lower()
-		for pattern, reply in next, caseinsensitive do
-			if(tmp:match(pattern)) then
-				-- found a match, let's tail call our way out!
-				return send(self, dest, reply)
+			local tmp = message:lower()
+			for pattern, reply in next, caseinsensitive do
+				if(tmp:match(pattern)) then
+					-- found a match, let's tail call our way out!
+					return send(destination, source, reply)
+				end
 			end
-		end
 
-		for pattern, reply in next, meh do
-			if(tmp:match(pattern)) then
-				buildCaseTable(msg)
-				-- found a match, let's tail call our way out!
-				return send(self, dest, reply, true)
+			for pattern, reply in next, meh do
+				if(tmp:match(pattern)) then
+					buildCaseTable(message)
+					-- found a match, let's tail call our way out!
+					return send(destination, source, reply, true)
+				end
 			end
-		end
-	end,
+		end,
+	}
 }
