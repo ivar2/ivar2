@@ -68,8 +68,8 @@ return {
 				end
 			end
 
+			local tmp = message:lower()
 			if(caseinsensitive) then
-				local tmp = message:lower()
 				for pattern, reply in next, caseinsensitive do
 					if(tmp:match(pattern)) then
 						-- found a match, let's tail call our way out!
