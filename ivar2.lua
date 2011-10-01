@@ -23,6 +23,8 @@ local ivar2 = {
 	Loop = loop,
 }
 
+local control
+
 local events = {
 	['PING'] = {
 		core = {
@@ -291,6 +293,11 @@ end
 function ivar2:Connect(config)
 	self.config = config
 
+	if(not control) then
+		control = assert(loadfile('core/control.lua'))(ivar2)
+		control:start(loop)
+	end
+
 	local bindHost, bindPort
 	if(config.bind) then
 		bindHost, bindPort = unpack(config.bind)
@@ -313,6 +320,8 @@ function ivar2:Reload()
 	if(not success) then
 		return log:error(string.format('Unable to execute new core: %s.', message))
 	else
+		control:stop(self.Loop)
+
 		message.socket = self.socket
 		message.config = self.config
 		message.timers = self.timers
@@ -322,6 +331,9 @@ function ivar2:Reload()
 		message.updated = true
 		self.socket:sethandler(message)
 		self = message
+
+		control = assert(loadfile('core/control.lua'))(ivar2)
+		control:start(loop)
 
 		log:info('Successfully update core.')
 	end
