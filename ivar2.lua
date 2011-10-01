@@ -73,8 +73,12 @@ local client_mt = {
 	end,
 
 	handle_connected = function(self)
-		self:Nick(self.config.nick)
-		self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
+		if(not self.updated) then
+			self:Nick(self.config.nick)
+			self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
+		else
+			self.updated = nil
+		end
 	end,
 
 	handle_data = function(self, data)
@@ -295,6 +299,32 @@ local ivar2 = setmetatable({
 
 		self:DisableAllModules()
 		self:LoadModules()
+	end,
+
+	Test = function() end,
+
+	Reload = function(self)
+		local coreFunc, coreError = loadfile('ivar2.lua')
+		if(not coreFunc) then
+			return log:error(string.format('Unable to reload core: %s.', coreError))
+		end
+
+		local success, message = pcall(coreFunc)
+		if(not success) then
+			return log:error(string.format('Unable to execute new core: %s.', message))
+		else
+			message.socket = self.socket
+			message.config = self.config
+			message.timers = self.timers
+			message.Loop = self.Loop
+
+			message:LoadModules()
+			message.updated = true
+			self.socket:sethandler(message)
+			self = message
+
+			log:info('Successfully update core.')
+		end
 	end,
 
 	ParseInput = function(self, data)
