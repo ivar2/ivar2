@@ -75,7 +75,7 @@ local client_mt = {
 				60
 			):start(loop)
 		else
-			loop:stop(loop)
+			loop:unloop()
 		end
 	end,
 
