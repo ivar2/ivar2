@@ -18,6 +18,11 @@ require'logging.console'
 local log = logging.console()
 local loop = ev.Loop.default
 
+local ivar2 = {
+	ignores = {},
+	Loop = loop,
+}
+
 local events = {
 	['PING'] = {
 		core = {
@@ -86,281 +91,277 @@ local client_mt = {
 	end,
 }
 client_mt.__index = client_mt
+setmetatable(ivar2, client_mt)
 
-local ivar2 = setmetatable({
-	ignores = {},
-	Loop = loop,
+function ivar2:Send(format, ...)
+	local message = safeFormat(format, ...)
+	if(message) then
+		message = message:gsub('[\r\n]+', '')
+		log:debug(message)
 
-	Send = function(self, format, ...)
-		local message = safeFormat(format, ...)
-		if(message) then
-			message = message:gsub('[\r\n]+', '')
-			log:debug(message)
+		self.socket:send(message .. '\r\n')
+	end
+end
 
-			self.socket:send(message .. '\r\n')
-		end
-	end,
+function ivar2:Quit(message)
+	self.config.autoReconnect = nil
 
-	Quit = function(self, message)
-		self.config.autoReconnect = nil
+	if(message) then
+		return self:Send('QUIT :%s', message)
+	else
+		return self:Send'QUIT'
+	end
+end
 
-		if(message) then
-			return self:Send('QUIT :%s', message)
-		else
-			return self:Send'QUIT'
-		end
-	end,
+function ivar2:Join(channel, password)
+	if(password) then
+		return self:Send('JOIN %s %s', channel, password)
+	else
+		return self:Send('JOIN %s', channel)
+	end
+end
 
-	Join = function(self, channel, password)
-		if(password) then
-			return self:Send('JOIN %s %s', channel, password)
-		else
-			return self:Send('JOIN %s', channel)
-		end
-	end,
+function ivar2:Part(channel)
+	return self:Send('PART %s', channel)
+end
 
-	Part = function(self, channel)
-		return self:Send('PART %s', channel)
-	end,
+function ivar2:Topic(destination, topic)
+	if(topic) then
+		return self:Send('TOPIC %s :%s', destination, topic)
+	else
+		return self:Send('TOPIC %s', destination)
+	end
+end
 
-	Topic = function(self, destination, topic)
-		if(topic) then
-			return self:Send('TOPIC %s :%s', destination, topic)
-		else
-			return self:Send('TOPIC %s', destination)
-		end
-	end,
+function ivar2:Mode(destination, mode)
+	return self:Send('MODE %s %s', destination, mode)
+end
 
-	Mode = function(self, destination, mode)
-		return self:Send('MODE %s %s', destination, mode)
-	end,
+function ivar2:Kick(destination, user, comment)
+	if(comment) then
+		return self:Send('KICK %s %s :%s', destination, user, comment)
+	else
+		return self:Send('KICK %s %s', destination, user)
+	end
+end
 
-	Kick = function(self, destination, user, comment)
-		if(comment) then
-			return self:Send('KICK %s %s :%s', destination, user, comment)
-		else
-			return self:Send('KICK %s %s', destination, user)
-		end
-	end,
+function ivar2:Notice(destination, format, ...)
+	return self:Send('NOTICE %s :%s', destination, safeFormat(format, ...))
+end
 
-	Notice = function(self, destination, format, ...)
-		return self:Send('NOTICE %s :%s', destination, safeFormat(format, ...))
-	end,
+function ivar2:Privmsg(destination, format, ...)
+	return self:Send('PRIVMSG %s :%s', destination, safeFormat(format, ...))
+end
 
-	Privmsg = function(self, destination, format, ...)
-		return self:Send('PRIVMSG %s :%s', destination, safeFormat(format, ...))
-	end,
+function ivar2:Msg(type, destination, source, ...)
+	local handler = type == 'notice' and 'Notice' or 'Privmsg'
+	if(destination == self.config.nick) then
+		-- Send the respons as a PM.
+		return self[handler](self, source.nick or source, ...)
+	else
+		-- Send it to the channel.
+		return self[handler](self, destination, ...)
+	end
+end
 
-	Msg = function(self, type, destination, source, ...)
-		local handler = type == 'notice' and 'Notice' or 'Privmsg'
-		if(destination == self.config.nick) then
-			-- Send the respons as a PM.
-			return self[handler](self, source.nick or source, ...)
-		else
-			-- Send it to the channel.
-			return self[handler](self, destination, ...)
-		end
-	end,
+function ivar2:Nick(nick)
+	self.config.nick = nick
+	return self:Send('NICK %s', nick)
+end
 
-	Nick = function(self, nick)
-		self.config.nick = nick
-		return self:Send('NICK %s', nick)
-	end,
+function ivar2:ParseMaskNick(source)
+	return source:match'([^!]+)!'
+end
 
-	ParseMaskNick = function(self, source)
-		return source:match'([^!]+)!'
-	end,
+function ivar2:ParseMask(mask)
+	local source = {}
+	source.mask, source.nick, source.ident, source.host = mask, mask:match'([^!]+)!([^@]+)@(.*)'
+	return source
+end
 
-	ParseMask = function(self, mask)
-		local source = {}
-		source.mask, source.nick, source.ident, source.host = mask, mask:match'([^!]+)!([^@]+)@(.*)'
-		return source
-	end,
+function ivar2:DispatchCommand(command, argument, source, destination)
+	if(not events[command]) then return end
 
-	DispatchCommand = function(self, command, argument, source, destination)
-		if(not events[command]) then return end
+	if(source) then source = self:ParseMask(source) end
 
-		if(source) then source = self:ParseMask(source) end
+	for moduleName, moduleTable in next, events[command] do
+		if(not self:IsModuleDisabled(moduleName, destination)) then
+			for pattern, callback in next, moduleTable do
+				local success, message
+				if(type(pattern) == 'number' and not source) then
+					success, message = pcall(callback, self, argument)
+				elseif(type(pattern) == 'number' and source) then
+					success, message = pcall(callback, self, source, destination, argument)
+				elseif(argument:match(pattern)) then
+					success, message = pcall(callback, self, source, destination, argument:match(pattern))
+				end
 
-		for moduleName, moduleTable in next, events[command] do
-			if(not self:IsModuleDisabled(moduleName, destination)) then
-				for pattern, callback in next, moduleTable do
-					local success, message
-					if(type(pattern) == 'number' and not source) then
-						success, message = pcall(callback, self, argument)
-					elseif(type(pattern) == 'number' and source) then
-						success, message = pcall(callback, self, source, destination, argument)
-					elseif(argument:match(pattern)) then
-						success, message = pcall(callback, self, source, destination, argument:match(pattern))
-					end
-
-					if(not success and message) then
-						log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
-					end
+				if(not success and message) then
+					log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
 				end
 			end
 		end
-	end,
+	end
+end
 
-	IsModuleDisabled = function(self, moduleName, destination)
-		local channel = self.config.channels[destination]
+function ivar2:IsModuleDisabled(moduleName, destination)
+	local channel = self.config.channels[destination]
 
-		if(type(channel) == 'table') then
-			return tableHasValue(channel.disabledModules, moduleName)
+	if(type(channel) == 'table') then
+		return tableHasValue(channel.disabledModules, moduleName)
+	end
+end
+
+function ivar2:Ignore(mask)
+	self.ignores[mask] = true
+end
+
+function ivar2:Unignore(mask)
+	self.ignores[mask] = nil
+end
+
+function ivar2:IsIgnored(destination, source)
+	if(self.ignores[source]) then return true end
+
+	local channel = self.config.channels[destination]
+	local nick = self:ParseMaskNick(source)
+	if(type(channel) == 'table') then
+		return tableHasValue(channel.ignoredNicks, nick)
+	end
+end
+
+function ivar2:EnableModule(moduleName, moduleTable)
+	log:info(string.format('Loading module %s.', moduleName))
+
+	for command, handlers in next, moduleTable do
+		if(not events[command]) then events[command] = {} end
+		events[command][moduleName] = handlers
+	end
+end
+
+function ivar2:DisableModule(moduleName)
+	for command, modules in next, events do
+		if(modules[moduleName]) then
+			log:info(string.format('Disabling module: %s', moduleName))
+			modules[moduleName] = nil
 		end
-	end,
+	end
+end
 
-	Ignore = function(mask)
-		self.ignores[mask] = true
-	end,
-
-	Unignore = function(mask)
-		self.ignores[mask] = nil
-	end,
-
-	IsIgnored = function(self, destination, source)
-		if(self.ignores[source]) then return true end
-
-		local channel = self.config.channels[destination]
-		local nick = self:ParseMaskNick(source)
-		if(type(channel) == 'table') then
-			return tableHasValue(channel.ignoredNicks, nick)
-		end
-	end,
-
-	EnableModule = function(self, moduleName, moduleTable)
-		log:info(string.format('Loading module %s.', moduleName))
-
-		for command, handlers in next, moduleTable do
-			if(not events[command]) then events[command] = {} end
-			events[command][moduleName] = handlers
-		end
-	end,
-
-	DisableModule = function(self, moduleName)
-		for command, modules in next, events do
-			if(modules[moduleName]) then
-				log:info(string.format('Disabling module: %s', moduleName))
-				modules[moduleName] = nil
+function ivar2:DisableAllModules()
+	for command, modules in next, events do
+		for module in next, modules do
+			if(module ~= 'core') then
+				log:info(string.format('Disabling module: %s', module))
+				modules[module] = nil
 			end
 		end
-	end,
+	end
+end
 
-	DisableAllModules = function(self)
-		for command, modules in next, events do
-			for module in next, modules do
-				if(module ~= 'core') then
-					log:info(string.format('Disabling module: %s', module))
-					modules[module] = nil
+function ivar2:LoadModule(moduleName)
+	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
+	if(not moduleFile) then
+		return log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
+	end
+
+	local env = {
+		ivar2 = self,
+		package = package,
+	}
+	local proxy = setmetatable(env, {__index = _G })
+	setfenv(moduleFile, proxy)
+
+	local success, message = pcall(moduleFile, self)
+	if(not success) then
+		log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
+	else
+		self:EnableModule(moduleName, message)
+	end
+end
+
+function ivar2:LoadModules()
+	if(self.config.modules) then
+		for _, moduleName in next, self.config.modules do
+			self:LoadModule(moduleName)
+		end
+	end
+end
+
+function ivar2:Connect(config)
+	self.config = config
+
+	local bindHost, bindPort
+	if(config.bind) then
+		bindHost, bindPort = unpack(config.bind)
+	end
+
+	log:info(string.format('Connecting to %s:%s.', config.host, config.port))
+	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
+
+	self:DisableAllModules()
+	self:LoadModules()
+end
+
+function ivar2:Reload()
+	local coreFunc, coreError = loadfile('ivar2.lua')
+	if(not coreFunc) then
+		return log:error(string.format('Unable to reload core: %s.', coreError))
+	end
+
+	local success, message = pcall(coreFunc)
+	if(not success) then
+		return log:error(string.format('Unable to execute new core: %s.', message))
+	else
+		message.socket = self.socket
+		message.config = self.config
+		message.timers = self.timers
+		message.Loop = self.Loop
+
+		message:LoadModules()
+		message.updated = true
+		self.socket:sethandler(message)
+		self = message
+
+		log:info('Successfully update core.')
+	end
+end
+
+function ivar2:ParseInput(data)
+	if(self.overflow) then
+		data = self.overflow .. data
+		self.overflow = nil
+	end
+
+	for line in data:gmatch('[^\n]+') do
+		if(line:sub(-1) ~= '\r') then
+			self.overflow = line
+		else
+			-- Strip of \r.
+			line = line:sub(1, -2)
+			log:debug(line)
+
+			if(line:sub(1,1) ~= ':') then
+				self:DispatchCommand(line:match('([^:]+) :(.*)'))
+			elseif(line:sub(1,1) == ':') then
+				local source, command, destination, argument
+				if(line:match' :') then
+					source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) ([^:]+) :(.*)')
+				else
+					source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) (%S+) (.*)')
+				end
+
+				if(not source) then
+					source, command, argument = line:match('^:(%S+) ([%u%d]+) (%S+)')
+					destination = self:ParseMaskNick(source)
+				end
+
+				if(not self:IsIgnored(destination, source)) then
+					self:DispatchCommand(command, argument, source, destination)
 				end
 			end
 		end
-	end,
-
-	LoadModule = function(self, moduleName)
-		local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
-		if(not moduleFile) then
-			return log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
-		end
-
-		local env = {
-			ivar2 = self,
-			package = package,
-		}
-		local proxy = setmetatable(env, {__index = _G })
-		setfenv(moduleFile, proxy)
-
-		local success, message = pcall(moduleFile, self)
-		if(not success) then
-			log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
-		else
-			self:EnableModule(moduleName, message)
-		end
-	end,
-
-	LoadModules = function(self)
-		if(self.config.modules) then
-			for _, moduleName in next, self.config.modules do
-				self:LoadModule(moduleName)
-			end
-		end
-	end,
-
-	Connect = function(self, config)
-		self.config = config
-
-		local bindHost, bindPort
-		if(config.bind) then
-			bindHost, bindPort = unpack(config.bind)
-		end
-
-		log:info(string.format('Connecting to %s:%s.', config.host, config.port))
-		self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
-
-		self:DisableAllModules()
-		self:LoadModules()
-	end,
-
-	Reload = function(self)
-		local coreFunc, coreError = loadfile('ivar2.lua')
-		if(not coreFunc) then
-			return log:error(string.format('Unable to reload core: %s.', coreError))
-		end
-
-		local success, message = pcall(coreFunc)
-		if(not success) then
-			return log:error(string.format('Unable to execute new core: %s.', message))
-		else
-			message.socket = self.socket
-			message.config = self.config
-			message.timers = self.timers
-			message.Loop = self.Loop
-
-			message:LoadModules()
-			message.updated = true
-			self.socket:sethandler(message)
-			self = message
-
-			log:info('Successfully update core.')
-		end
-	end,
-
-	ParseInput = function(self, data)
-		if(self.overflow) then
-			data = self.overflow .. data
-			self.overflow = nil
-		end
-
-		for line in data:gmatch('[^\n]+') do
-			if(line:sub(-1) ~= '\r') then
-				self.overflow = line
-			else
-				-- Strip of \r.
-				line = line:sub(1, -2)
-				log:debug(line)
-
-				if(line:sub(1,1) ~= ':') then
-					self:DispatchCommand(line:match('([^:]+) :(.*)'))
-				elseif(line:sub(1,1) == ':') then
-					local source, command, destination, argument
-					if(line:match' :') then
-						source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) ([^:]+) :(.*)')
-					else
-						source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) (%S+) (.*)')
-					end
-
-					if(not source) then
-						source, command, argument = line:match('^:(%S+) ([%u%d]+) (%S+)')
-						destination = self:ParseMaskNick(source)
-					end
-
-					if(not self:IsIgnored(destination, source)) then
-						self:DispatchCommand(command, argument, source, destination)
-					end
-				end
-			end
-		end
-	end,
-}, client_mt)
+	end
+end
 
 return ivar2
