@@ -55,7 +55,35 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local client = {
+local client_mt = {
+	handle_error = function(self, err)
+		log:error(err)
+		if(self.config.autoReconnect) then
+			log:info('Lost connection to server. Reconnecting in 60 seconds.')
+			ev.Timer.new(
+				function(loop, timer, revents)
+					self.socket:close()
+					self:Connect(self.config)
+				end,
+				60
+			):start(loop)
+		else
+			loop:stop(loop)
+		end
+	end,
+
+	handle_connected = function(self)
+		self:Nick(self.config.nick)
+		self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
+	end,
+
+	handle_data = function(self, data)
+		return self:ParseInput(data)
+	end,
+}
+client_mt.__index = client_mt
+
+local ivar2 = setmetatable({
 	ignores = {},
 	Loop = loop,
 
@@ -269,28 +297,7 @@ local client = {
 		self:LoadModules()
 	end,
 
-	handle_error = function(self, err)
-		log:error(err)
-		if(self.config.autoReconnect) then
-			log:info('Lost connection to server. Reconnecting in 60 seconds.')
-			ev.Timer.new(
-				function(loop, timer, revents)
-					self.socket:close()
-					self:Connect(self.config)
-				end,
-				60
-			):start(loop)
-		else
-			loop:stop(loop)
-		end
-	end,
-
-	handle_connected = function(self)
-		self:Nick(self.config.nick)
-		self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
-	end,
-
-	handle_data = function(self, data)
+	ParseInput = function(self, data)
 		if(self.overflow) then
 			data = self.overflow .. data
 			self.overflow = nil
@@ -326,6 +333,6 @@ local client = {
 			end
 		end
 	end,
-}
+}, client_mt)
 
-return client
+return ivar2
