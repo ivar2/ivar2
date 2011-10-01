@@ -301,8 +301,6 @@ local ivar2 = setmetatable({
 		self:LoadModules()
 	end,
 
-	Test = function() end,
-
 	Reload = function(self)
 		local coreFunc, coreError = loadfile('ivar2.lua')
 		if(not coreFunc) then
