@@ -137,7 +137,7 @@ end
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:album:6G9fHYDCoyEErUkHrFYfs4
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:track:6NmXV4o6bmp704aPGyTVVG
 local fetchInformation = function(output, n, info)
-	spotify:open('data/spotify', spotify.OWRITER + spotify.OCREAT)
+	spotify:open('cache/spotify', spotify.OWRITER + spotify.OCREAT)
 	if(spotify[info.uri] and tonumber(spotify[info.uri .. ':timestamp']) > os.time()) then
 		log:debug(string.format('spotify: Fetching %s from cache.', info.uri))
 
@@ -158,7 +158,7 @@ local fetchInformation = function(output, n, info)
 				local message = handleData(info, json.decode(data))
 				local expires = parseRFC1123(response.headers.Expires)
 
-				spotify:open('data/spotify', spotify.OWRITER + spotify.OCREAT)
+				spotify:open('cache/spotify', spotify.OWRITER + spotify.OCREAT)
 				spotify[info.uri] = message
 				spotify[info.uri .. ':timestamp'] = expires
 				spotify:close()
