@@ -63,7 +63,7 @@ local commands = {
 	end,
 
 	loadmodule = function(module)
-		ivar2:EnableModule(module)
+		ivar2:LoadModule(module)
 	end,
 
 	disablemodule = function(module)
