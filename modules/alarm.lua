@@ -21,7 +21,7 @@ local alarm = function(self, source, destination, time, message)
 	-- 60 days or more?
 	local nick = source.nick
 	if(duration >= (60 * 60 * 24 * 60) or duration == 0) then
-		return self:Msg(dest, src, "%s: :'(", nick)
+		return self:Msg('privmsg', destination, source, "%s: :'(", nick)
 	end
 
 	local id = 'Alarm: ' .. nick
