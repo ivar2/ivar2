@@ -1,5 +1,4 @@
 local ev = require'ev'
-local date = require'date'
 
 if(not ivar2.timers) then ivar2.timers = {} end
 
@@ -33,9 +32,7 @@ local alarm = function(self, source, destination, time, message)
 		duration
 	)
 
-	-- I implemented getRelativeTimeShort and was like... FFFUUUuu this is just
-	-- the input all over again!
-	self:Notice(source.nick, "I'll poke you in %s.", date.relativeTimeShort(os.time() + duration))
+	self:Notice(source.nick, "I'll poke you at %s.", os.date('%Y-%m-%d %X %Z', os.time() + duration))
 
 	self.timers[id] = timer
 	timer:start(ivar2.Loop)
