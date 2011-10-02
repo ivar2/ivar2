@@ -57,7 +57,7 @@ local alarm = function(self, source, destination, time, message)
 		duration
 	)
 
-	if(#timer.message > 0) then timer.message = message end
+	if(#message > 0) then timer.message = message end
 	timer.utimestamp = os.time() + duration
 
 	self:Notice(nick, "I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
