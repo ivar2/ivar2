@@ -12,6 +12,7 @@ package.cpath = table.concat({
 }, ';') .. package.cpath
 
 local connection = require'handler.connection'
+local nixio = require'nixio'
 local ev = require'ev'
 require'logging.console'
 
@@ -375,5 +376,8 @@ function ivar2:ParseInput(data)
 		end
 	end
 end
+
+-- Attempt to create the cache folder.
+nixio.fs.mkdir('cache')
 
 return ivar2
