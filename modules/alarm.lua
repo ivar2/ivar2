@@ -3,11 +3,15 @@ local ev = require'ev'
 if(not ivar2.timers) then ivar2.timers = {} end
 
 local alarm = function(self, source, destination, time, message)
+	local weeks = time:match'(%d+)[w]'
+	local days = time:match'(%d+)[d]'
 	local hour = time:match'(%d+)[ht]'
 	local min = time:match'(%d+)m'
 	local sec = time:match'(%d+)s'
 
 	local duration = 0
+	if(weeks) then duration = duration + (weeks * 60 * 60 * 24 * 7) end
+	if(days) then duration = duration + (days * 60 * 60 * 24) end
 	if(hour) then duration = duration + (hour * 60 * 60) end
 	if(min) then duration = duration + (min * 60) end
 	if(sec) then duration = duration + sec end
