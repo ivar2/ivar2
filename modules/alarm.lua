@@ -2,6 +2,8 @@ local ev = require'ev'
 
 if(not ivar2.timers) then ivar2.timers = {} end
 
+local dateFormat = '%Y-%m-%d %X %Z'
+
 local alarm = function(self, source, destination, time, message)
 	local weeks = time:match'(%d+)[w]'
 	local days = time:match'(%d+)[d]'
@@ -23,9 +25,28 @@ local alarm = function(self, source, destination, time, message)
 	end
 
 	local id = 'Alarm: ' .. nick
-	if(self.timers[id]) then
+	local runningTimer = self.timers[id]
+	if(runningTimer) then
+		-- Send a notification if we are overriding an old timer.
+		if(runningTimer.utimestamp < os.time()) then
+			if(runningTimer.message) then
+				self:Notice(
+					nick,
+					'Previously active timer set to trigger at %s with message "%s" has been removed.',
+					os.date(dateFormat, runningTimer.utimestamp),
+					runningTimer.message
+				)
+			else
+				self:Notice(
+					nick,
+					'Previously active timer set to trigger at %s has been removed.',
+					os.date(dateFormat, runningTimer.utimestamp)
+				)
+			end
+		end
+
 		-- message is probably changed.
-		self.timers[id]:stop(ivar2.Loop)
+		runningTimer:stop(ivar2.Loop)
 	end
 
 	local timer = ev.Timer.new(
@@ -36,7 +57,10 @@ local alarm = function(self, source, destination, time, message)
 		duration
 	)
 
-	self:Notice(source.nick, "I'll poke you at %s.", os.date('%Y-%m-%d %X %Z', os.time() + duration))
+	timer.message = message
+	timer.utimestamp = os.time() + duration
+
+	self:Notice(nick, "I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
 
 	self.timers[id] = timer
 	timer:start(ivar2.Loop)
