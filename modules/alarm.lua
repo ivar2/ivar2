@@ -28,7 +28,7 @@ local alarm = function(self, source, destination, time, message)
 	local runningTimer = self.timers[id]
 	if(runningTimer) then
 		-- Send a notification if we are overriding an old timer.
-		if(runningTimer.utimestamp < os.time()) then
+		if(runningTimer.utimestamp > os.time()) then
 			if(runningTimer.message) then
 				self:Notice(
 					nick,
