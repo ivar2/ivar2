@@ -106,9 +106,14 @@ local handleInput = function(self, source, destination, word)
 					local word = words[i]
 					local lookup = table.concat(word.lookup, ', ')
 					local definition = word.meaning
-					if((not definition or (definition and #definition < 30)) and word.examples[1]) then
-						definition = definition .. ' ' .. word.examples[1]
+					if(word.examples[1]) then
+						if(definition and #definition < 35) then
+							definition = definition .. ' ' .. word.examples[1]
+						else
+							definition = word.examples[1]
+						end
 					end
+
 					local message = string.format('\002[%s]\002: %s', lookup, limitOutput(definition))
 
 					n = n + #message
