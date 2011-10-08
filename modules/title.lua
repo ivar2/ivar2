@@ -88,6 +88,13 @@ local guessCharset = function(headers, data)
 		return 'utf-16be'
 	end
 
+	-- Header:
+	local contentType = headers['Content-Type']
+	if(contentType and contentType:match'charset') then
+		charset = verify(contentType:match('charset=([^;]+)'))
+		if(charset) then return charset end
+	end
+
 	-- XML:
 	charset = verify(data:match('<%?xml .-encoding=[\'"]([^\'"]+)[\'"].->'))
 	if(charset) then return charset end
@@ -100,13 +107,6 @@ local guessCharset = function(headers, data)
 	charset = data:lower():match('<meta.-content=[\'"].-(charset=.-)[\'"].->')
 	if(charset) then
 		charset = verify(charset:match'=([^;]+)')
-		if(charset) then return charset end
-	end
-
-	-- Header:
-	local contentType = headers['Content-Type']
-	if(contentType and contentType:match'charset') then
-		charset = verify(contentType:match('charset=([^;]+)'))
 		if(charset) then return charset end
 	end
 end
