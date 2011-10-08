@@ -24,6 +24,7 @@ local ivar2 = {
 	Loop = loop,
 }
 
+local nma
 local control
 
 local events = {
@@ -65,9 +66,9 @@ end
 
 local client_mt = {
 	handle_error = function(self, err)
-		log:error(err)
+		self:Log('error', err)
 		if(self.config.autoReconnect) then
-			log:info('Lost connection to server. Reconnecting in 60 seconds.')
+			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
 			ev.Timer.new(
 				function(loop, timer, revents)
 					self.socket:close()
@@ -96,11 +97,22 @@ local client_mt = {
 client_mt.__index = client_mt
 setmetatable(ivar2, client_mt)
 
+function ivar2:Log(level, ...)
+	local message = safeFormat(...)
+	if(message) then
+		if(level == 'error' and nma) then
+			nma(message)
+		end
+
+		log[level](log, message)
+	end
+end
+
 function ivar2:Send(format, ...)
 	local message = safeFormat(format, ...)
 	if(message) then
 		message = message:gsub('[\r\n]+', '')
-		log:debug(message)
+		self:Log('debug', message)
 
 		self.socket:send(message .. '\r\n')
 	end
@@ -200,7 +212,9 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 				end
 
 				if(not success and message) then
-					log:error(string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message))
+					local output = string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+					nma(output)
+					self:Log('error', output)
 				end
 			end
 		end
@@ -234,7 +248,7 @@ function ivar2:IsIgnored(destination, source)
 end
 
 function ivar2:EnableModule(moduleName, moduleTable)
-	log:info(string.format('Loading module %s.', moduleName))
+	self:Log('info', 'Loading module %s.', moduleName)
 
 	for command, handlers in next, moduleTable do
 		if(not events[command]) then events[command] = {} end
@@ -245,7 +259,7 @@ end
 function ivar2:DisableModule(moduleName)
 	for command, modules in next, events do
 		if(modules[moduleName]) then
-			log:info(string.format('Disabling module: %s', moduleName))
+			self:Log('info', 'Disabling module: %s', moduleName)
 			modules[moduleName] = nil
 		end
 	end
@@ -255,7 +269,7 @@ function ivar2:DisableAllModules()
 	for command, modules in next, events do
 		for module in next, modules do
 			if(module ~= 'core') then
-				log:info(string.format('Disabling module: %s', module))
+				self:Log('info', 'Disabling module: %s', module)
 				modules[module] = nil
 			end
 		end
@@ -265,7 +279,7 @@ end
 function ivar2:LoadModule(moduleName)
 	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
 	if(not moduleFile) then
-		return log:error(string.format('Unable to load module %s: %s.', moduleName, moduleError))
+		return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 	end
 
 	local env = {
@@ -277,7 +291,7 @@ function ivar2:LoadModule(moduleName)
 
 	local success, message = pcall(moduleFile, self)
 	if(not success) then
-		log:error(string.format('Unable to execute module %s: %s.', moduleName, message))
+		self:Log('error', 'Unable to execute module %s: %s.', moduleName, message)
 	else
 		self:EnableModule(moduleName, message)
 	end
@@ -299,12 +313,16 @@ function ivar2:Connect(config)
 		control:start(loop)
 	end
 
+	if(not nma) then
+		nma = assert(loadfile('core/nma.lua'))(ivar2)
+	end
+
 	local bindHost, bindPort
 	if(config.bind) then
 		bindHost, bindPort = unpack(config.bind)
 	end
 
-	log:info(string.format('Connecting to %s:%s.', config.host, config.port))
+	self:Log('info', 'Connecting to %s:%s.', config.host, config.port)
 	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
 
 	self:DisableAllModules()
@@ -314,12 +332,12 @@ end
 function ivar2:Reload()
 	local coreFunc, coreError = loadfile('ivar2.lua')
 	if(not coreFunc) then
-		return log:error(string.format('Unable to reload core: %s.', coreError))
+		return self:Log('error', 'Unable to reload core: %s.', coreError)
 	end
 
 	local success, message = pcall(coreFunc)
 	if(not success) then
-		return log:error(string.format('Unable to execute new core: %s.', message))
+		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
 		control:stop(self.Loop)
 
@@ -331,12 +349,14 @@ function ivar2:Reload()
 		message:LoadModules()
 		message.updated = true
 		self.socket:sethandler(message)
+
 		self = message
 
+		nma = assert(loadfile('core/nma.lua'))(ivar2)
 		control = assert(loadfile('core/control.lua'))(ivar2)
 		control:start(loop)
 
-		log:info('Successfully update core.')
+		self:Log('info', 'Successfully update core.')
 	end
 end
 
@@ -352,7 +372,7 @@ function ivar2:ParseInput(data)
 		else
 			-- Strip of \r.
 			line = line:sub(1, -2)
-			log:debug(line)
+			self:Log('debug', line)
 
 			if(line:sub(1,1) ~= ':') then
 				self:DispatchCommand(line:match('([^:]+) :(.*)'))
