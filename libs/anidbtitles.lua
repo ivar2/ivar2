@@ -10292,12 +10292,13 @@ return {
   ["main"] = "Mermaid Melody Pichi Pichi Pitch",
   ["official"] = {
    [1] = "Mermaid Melody",
-   [2] = "Pichi Pichi Pitch - La Mélodie des Sirènes",
-   [3] = "Sirene - Pichi Pichi Pitch",
-   [4] = "בנות הים",
-   [5] = "マーメイドメロディー ぴちぴちピッチ",
-   [6] = "真珠美人魚",
-   [7] = "피치피치핏치",
+   [2] = "Pichi Pichi Pitch",
+   [3] = "Pichi Pichi Pitch - La Mélodie des Sirènes",
+   [4] = "Sirene - Pichi Pichi Pitch",
+   [5] = "בנות הים",
+   [6] = "マーメイドメロディー ぴちぴちピッチ",
+   [7] = "真珠美人魚",
+   [8] = "피치피치핏치",
    },
   ["short"] = {
    },
@@ -26266,13 +26267,14 @@ return {
    },
   },
  [1874] = {
-  ["main"] = "Handle with Care",
+  ["main"] = "Handle with Care..",
   ["official"] = {
-   [1] = "ハンドル ウイズ ケア",
+   [1] = "Handle with Care..",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ハンドル ウイズ ケア",
    },
   },
  [1875] = {
@@ -39457,6 +39459,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "CONCERTO ～真夏の夜の狂夢(ゆめ)～",
+   [2] = "Concerto: A Midsummer Night`s Dream",
+   [3] = "Concerto: Manatsu no Yoru no Yume",
    },
   },
  [3075] = {
@@ -60177,7 +60182,8 @@ return {
   ["official"] = {
    [1] = "Bleach - A Gyémántpor lázadás",
    [2] = "Bleach The Movie 2: The DiamondDust Rebellion",
-   [3] = "劇場版 BLEACH The DiamondDust Rebellion もう一つの氷輪丸",
+   [3] = "Bleach the diamondDust rebellion",
+   [4] = "劇場版 BLEACH The DiamondDust Rebellion もう一つの氷輪丸",
    },
   ["short"] = {
    [1] = "Bleach Movie 2",
@@ -65305,12 +65311,13 @@ return {
    [4] = "Kara Uşak",
    [5] = "Kuro Shitsuji",
    [6] = "Mordomo Negro",
-   [7] = "Su Matzurdomu Nieddu",
-   [8] = "Μαύρος Μπάτλερ",
-   [9] = "Темний дворецький",
-   [10] = "Тёмный Дворецкий",
-   [11] = "الخادم الغامض",
-   [12] = "黑执事",
+   [7] = "Paslaptingasis liokajus",
+   [8] = "Su Matzurdomu Nieddu",
+   [9] = "Μαύρος Μπάτλερ",
+   [10] = "Темний дворецький",
+   [11] = "Тёмный Дворецкий",
+   [12] = "الخادم الغامض",
+   [13] = "黑执事",
    },
   },
  [6049] = {
@@ -78038,7 +78045,8 @@ return {
  [7440] = {
   ["main"] = "Hyakka Ryouran: Samurai Girls",
   ["official"] = {
-   [1] = "百花繚乱 サムライガールズ",
+   [1] = "Samurai Girls",
+   [2] = "百花繚乱 サムライガールズ",
    },
   ["short"] = {
    [1] = "hyakka ryouran",
@@ -80603,6 +80611,7 @@ return {
    },
   ["syn"] = {
    [1] = "Super Robot Wars OG: The Inspector",
+   [2] = "超级机器人大战OG2",
    },
   },
  [7719] = {
@@ -83904,17 +83913,17 @@ return {
   ["short"] = {
    [1] = "Madoka",
    [2] = "madomagi",
-   [3] = "まどマギ",
-   [4] = "マドマギ",
-   [5] = "小圆",
+   [3] = "pmagi",
+   [4] = "まどマギ",
+   [5] = "マドマギ",
+   [6] = "小圆",
    },
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
    [3] = "Puella Magi Madoka Magica",
-   [4] = "pmagi",
-   [5] = "مدوکا مجیکا دختر جادویی",
-   [6] = "魔法少女小圆",
+   [4] = "مدوکا مجیکا دختر جادویی",
+   [5] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -84498,7 +84507,9 @@ return {
    [1] = "PhiBrain",
    },
   ["syn"] = {
-   [1] = "Мозг Фи: Божественная головоломка",
+   [1] = "Phi Brain: The God`s Puzzle",
+   [2] = "Мозг Фи: Божественная головоломка",
+   [3] = "فی برین: پازل خدا",
    },
   },
  [8132] = {
@@ -84671,7 +84682,9 @@ return {
    [1] = "Ao no Futsumashi",
    [2] = "Синий Экзорцист",
    [3] = "اگزورسیست آبی",
-   [4] = "青のエクソシスト",
+   [4] = "جن گیر آبی",
+   [5] = "青のエクソシスト",
+   [6] = "青之驱魔师",
    },
   },
  [8149] = {
@@ -84698,6 +84711,7 @@ return {
    [1] = "バクマン. (2011)",
    },
   ["short"] = {
+   [1] = "bakuman2",
    },
   ["syn"] = {
    },
@@ -85007,6 +85021,7 @@ return {
   ["syn"] = {
    [1] = "Хей, Пиленце!",
    [2] = "Эй, цыпочка!",
+   [3] = "迷茫管家与懦弱的我",
    },
   },
  [8180] = {
@@ -85966,6 +85981,7 @@ return {
   ["syn"] = {
    [1] = "زاکو ناتسومه یوجینچو 3",
    [2] = "کتابٍ دوستان ناتسومه 3",
+   [3] = "夏目友人帐3",
    },
   },
  [8287] = {
@@ -86281,6 +86297,8 @@ return {
    },
   ["syn"] = {
    [1] = "Horizon on the Middle of Nowhere",
+   [2] = "افقی در ناکجاآباد",
+   [3] = "افقی در وسط هیچ کجا",
    },
   },
  [8324] = {
@@ -86291,6 +86309,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lietaus miestas",
    },
   },
  [8325] = {
@@ -86547,6 +86566,7 @@ return {
    },
   ["syn"] = {
    [1] = "Yuruyuri",
+   [2] = "摇曳百合",
    },
   },
  [8357] = {
@@ -86645,6 +86665,7 @@ return {
    },
   ["syn"] = {
    [1] = "You and Me",
+   [2] = "تو و من",
    },
   },
  [8368] = {
@@ -86767,9 +86788,11 @@ return {
   ["main"] = "Persona 4 The Animation",
   ["official"] = {
    [1] = "Persona 4 The Animation",
-   [2] = "ペルソナ4 the ANIMATION",
+   [2] = "Persona 4: The Animation",
+   [3] = "ペルソナ4 the ANIMATION",
    },
   ["short"] = {
+   [1] = "p4a",
    },
   ["syn"] = {
    [1] = "Персона 4",
@@ -86996,6 +87019,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "森田同学是无口",
    },
   },
  [8407] = {
@@ -88044,15 +88068,15 @@ return {
  [8521] = {
   ["main"] = "Tales of Symphonia The Animation: Sekai Tougou Hen",
   ["official"] = {
-   [1] = "テイルズ オブ シンフォニア THE ANIMATION 世界統合編",
+   [1] = "Tales of Symphonia The Animation: The United World Episode",
+   [2] = "テイルズ オブ シンフォニア THE ANIMATION 世界統合編",
    },
   ["short"] = {
    [1] = "ToS 3",
    [2] = "ToS3",
    },
   ["syn"] = {
-   [1] = "Tales of Symphonia The Animation: The United World Episode",
-   [2] = "Tales of Symphonia: The United World Chapter",
+   [1] = "Tales of Symphonia: The United World Chapter",
    },
   },
  [8522] = {
@@ -88144,6 +88168,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Chihaya Full",
+   [2] = "Colorful Chihaya",
    },
   },
  [8539] = {
@@ -88618,6 +88644,7 @@ return {
    [3] = "zero4",
    },
   ["syn"] = {
+   [1] = "Zero no Tsukaima 4",
    },
   },
  [8594] = {
@@ -88987,9 +89014,9 @@ return {
    },
   },
  [8637] = {
-  ["main"] = "Babuka: Gokudou no Tsuma",
+  ["main"] = "Babuka",
   ["official"] = {
-   [1] = "BaBuKa -極道の妻-",
+   [1] = "BaBuKa",
    },
   ["short"] = {
    },
@@ -89478,6 +89505,109 @@ return {
   ["main"] = "009 Re:Cyborg",
   ["official"] = {
    [1] = "009 Re:Cyborg",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8700] = {
+  ["main"] = "Morita-san wa Mukuchi. 2",
+  ["official"] = {
+   [1] = "森田さんは無口. 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8701] = {
+  ["main"] = "Saki: Achiga-hen - Episode of Side-A",
+  ["official"] = {
+   [1] = "咲-Saki-阿知賀編 episode of side-A",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8702] = {
+  ["main"] = "Nekketsu Uchuujin",
+  ["official"] = {
+   [1] = "Hot-Blooded Alien",
+   [2] = "熱血宇宙人",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8705] = {
+  ["main"] = "Memory (2009)",
+  ["official"] = {
+   [1] = "MEMORY (2009)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8706] = {
+  ["main"] = "Melody",
+  ["official"] = {
+   [1] = "melody",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8707] = {
+  ["main"] = "Anemone",
+  ["official"] = {
+   [1] = "Anemone",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8708] = {
+  ["main"] = "Kobe to Watashi",
+  ["official"] = {
+   [1] = "Kobe and I",
+   [2] = "神戸と私",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Kobe and Ai",
+   },
+  },
+ [8709] = {
+  ["main"] = "Senhime Zesshou Symphogear",
+  ["official"] = {
+   [1] = "戦姫絶唱シンフォギア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8710] = {
+  ["main"] = "Justeen",
+  ["official"] = {
+   [1] = "ジャスティーン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8711] = {
+  ["main"] = "Oshioki: Gakuen Reijou Kousei Keikaku",
+  ["official"] = {
+   [1] = "懲罰指導 ～学園令嬢更性計画～",
    },
   ["short"] = {
    },
