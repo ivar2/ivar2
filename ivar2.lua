@@ -24,10 +24,6 @@ local ivar2 = {
 	Loop = loop,
 }
 
-local nma
-local control
-local timeout
-
 local timeoutFunc = function(loop, timer, revents)
 	self:Log('error', 'Socket stalled for 6 minutes.')
 	if(self.config.autoReconnect) then
@@ -107,8 +103,8 @@ setmetatable(ivar2, client_mt)
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
 	if(message) then
-		if(level == 'error' and nma) then
-			nma(message)
+		if(level == 'error' and self.nma) then
+			self.nma(message)
 		end
 
 		log[level](log, message)
@@ -220,7 +216,7 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 
 				if(not success and message) then
 					local output = string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
-					nma(output)
+					self.nma(output)
 					self:Log('error', output)
 				end
 			end
@@ -315,22 +311,21 @@ end
 function ivar2:Connect(config)
 	self.config = config
 
-	if(not control) then
-		control = assert(loadfile('core/control.lua'))(ivar2)
-		control:start(loop)
+	if(not self.control) then
+		self.control = assert(loadfile('core/control.lua'))(ivar2)
+		self.control:start(loop)
 	end
 
-	if(not nma) then
-		nma = assert(loadfile('core/nma.lua'))(ivar2)
+	if(not self.nma) then
+		self.nma = assert(loadfile('core/nma.lua'))(ivar2)
 	end
 
-	if(timeout) then
-		timeout:stop(loop)
-		timeout = nil
+	if(self.timeout) then
+		self.timeout:stop(loop)
 	end
 
-	timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
-	timeout:start(loop)
+	self.timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+	self.timeout:start(loop)
 
 	local bindHost, bindPort
 	if(config.bind) then
@@ -360,8 +355,8 @@ function ivar2:Reload()
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
-		control:stop(self.Loop)
-		timeout:stop(self.Loop)
+		self.control:stop(self.Loop)
+		self.timeout:stop(self.Loop)
 
 		message.socket = self.socket
 		message.config = self.config
@@ -374,19 +369,19 @@ function ivar2:Reload()
 
 		self = message
 
-		nma = assert(loadfile('core/nma.lua'))(ivar2)
-		control = assert(loadfile('core/control.lua'))(ivar2)
-		control:start(loop)
+		self.nma = assert(loadfile('core/nma.lua'))(ivar2)
+		self.control = assert(loadfile('core/control.lua'))(ivar2)
+		self.control:start(loop)
 
-		timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
-		timeout:start(loop)
+		self.timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+		self.timeout:start(loop)
 
 		self:Log('info', 'Successfully update core.')
 	end
 end
 
 function ivar2:ParseInput(data)
-	timeout:again(loop)
+	self.timeout:again(loop)
 
 	if(self.overflow) then
 		data = self.overflow .. data
