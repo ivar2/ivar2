@@ -67,7 +67,7 @@ end
 local tableHasValue = function(table, value)
 	if(type(table) ~= 'table') then return end
 
-loop	for _, v in next, table do
+	for _, v in next, table do
 		if(v == value) then return true end
 	end
 end
