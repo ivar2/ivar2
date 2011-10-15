@@ -26,6 +26,14 @@ local ivar2 = {
 
 local nma
 local control
+local timeout
+
+local timeoutFunc = function(loop, timer, revents)
+	self:Log('error', 'Socket stalled for 6 minutes.')
+	if(self.config.autoReconnect) then
+		self:Reconnect()
+	end
+end
 
 local events = {
 	['PING'] = {
@@ -59,7 +67,7 @@ end
 local tableHasValue = function(table, value)
 	if(type(table) ~= 'table') then return end
 
-	for _, v in next, table do
+loop	for _, v in next, table do
 		if(v == value) then return true end
 	end
 end
@@ -316,6 +324,14 @@ function ivar2:Connect(config)
 		nma = assert(loadfile('core/nma.lua'))(ivar2)
 	end
 
+	if(timeout) then
+		timeout:stop(loop)
+		timeout = nil
+	end
+
+	timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+	timeout:start(loop)
+
 	local bindHost, bindPort
 	if(config.bind) then
 		bindHost, bindPort = unpack(config.bind)
@@ -345,6 +361,7 @@ function ivar2:Reload()
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
 		control:stop(self.Loop)
+		timeout:stop(self.Loop)
 
 		message.socket = self.socket
 		message.config = self.config
@@ -361,11 +378,16 @@ function ivar2:Reload()
 		control = assert(loadfile('core/control.lua'))(ivar2)
 		control:start(loop)
 
+		timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+		timeout:start(loop)
+
 		self:Log('info', 'Successfully update core.')
 	end
 end
 
 function ivar2:ParseInput(data)
+	timeout:again(loop)
+
 	if(self.overflow) then
 		data = self.overflow .. data
 		self.overflow = nil
