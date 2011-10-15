@@ -71,8 +71,7 @@ local client_mt = {
 			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
 			ev.Timer.new(
 				function(loop, timer, revents)
-					self.socket:close()
-					self:Connect(self.config)
+					self:Reconnect()
 				end,
 				60
 			):start(loop)
@@ -327,6 +326,12 @@ function ivar2:Connect(config)
 
 	self:DisableAllModules()
 	self:LoadModules()
+end
+
+function ivar2:Reconnect()
+	self:Log('info', 'Reconnecting to servers.')
+	self.socket:close()
+	self:Connect(self.config)
 end
 
 function ivar2:Reload()
