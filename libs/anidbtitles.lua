@@ -6758,8 +6758,7 @@ return {
    },
   ["short"] = {
    [1] = "GMS Movie",
-   [2] = "Saiyuki Requiem",
-   [3] = "Saiyuuki Requiem",
+   [2] = "Saiyuuki Requiem",
    },
   ["syn"] = {
    [1] = "Requiem for the One Not Chosen",
@@ -23472,6 +23471,7 @@ return {
    },
   ["syn"] = {
    [1] = "Фландрийский пес",
+   [2] = "フランダースの犬 (1997)",
    },
   },
  [1647] = {
@@ -42182,6 +42182,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ドン・チャック物語",
    },
   },
  [3370] = {
@@ -42262,6 +42263,7 @@ return {
    },
   ["syn"] = {
    [1] = "Don Chuck castoro",
+   [2] = "新ドンチャック物語",
    },
   },
  [3377] = {
@@ -54871,9 +54873,10 @@ return {
   ["main"] = "Devil May Cry",
   ["official"] = {
    [1] = "Devil May Cry",
-   [2] = "Демон против Демонов",
-   [3] = "قـد يبكي الشيطان",
-   [4] = "デビル メイ クライ",
+   [2] = "Démonvadászok - Devil May Cry",
+   [3] = "Демон против Демонов",
+   [4] = "قـد يبكي الشيطان",
+   [5] = "デビル メイ クライ",
    },
   ["short"] = {
    [1] = "DMC",
@@ -58903,6 +58906,7 @@ return {
    [1] = "hatsuinu",
    },
   ["syn"] = {
+   [1] = "A Strange Kind of Woman",
    },
   },
  [5193] = {
@@ -60626,8 +60630,11 @@ return {
    },
   ["syn"] = {
    [1] = "Neuro le mange-mystères",
-   [2] = "المحقق الشرير نوغامي نيورو",
-   [3] = "魔人侦探食脑奈罗",
+   [2] = "Nogami Neuro",
+   [3] = "Supernatural Detective Nogami Neuro",
+   [4] = "Нейро Ногами - детектив из Ада",
+   [5] = "المحقق الشرير نوغامي نيورو",
+   [6] = "魔人侦探食脑奈罗",
    },
   },
  [5418] = {
@@ -61623,7 +61630,8 @@ return {
  [5539] = {
   ["main"] = "The Siamese: First Mission",
   ["official"] = {
-   [1] = "シャム猫 / ファーストミッション",
+   [1] = "Siam Neko - First Mission",
+   [2] = "シャム猫 / ファーストミッション",
    },
   ["short"] = {
    },
@@ -66771,6 +66779,7 @@ return {
   ["syn"] = {
    [1] = "Adventures of the Polar Cubs",
    [2] = "Przygody niedźwiadków polarnych",
+   [3] = "北極のムーシカ・ミーシカ",
    },
   },
  [6230] = {
@@ -69571,10 +69580,11 @@ return {
    },
   ["syn"] = {
    [1] = "Angel Beats",
-   [2] = "Ангельские ритмы!",
-   [3] = "Пульс ангела!",
-   [4] = "天使的心跳",
-   [5] = "엔젤비트!, 엔젤비츠!",
+   [2] = "Angelo širdies dūžiai",
+   [3] = "Ангельские ритмы!",
+   [4] = "Пульс ангела!",
+   [5] = "天使的心跳",
+   [6] = "엔젤비트!, 엔젤비츠!",
    },
   },
  [6566] = {
@@ -75190,7 +75200,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "House of the Five Lusts",
+   [1] = "House Of Shame",
+   [2] = "House of the Five Lusts",
    },
   },
  [7140] = {
@@ -75785,6 +75796,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Schoolgirls Shameful Games",
    },
   },
  [7201] = {
@@ -76945,11 +76957,12 @@ return {
   ["syn"] = {
    [1] = "DenYuuDen",
    [2] = "Die Legende Der Legendären Helden",
-   [3] = "Легенда о Легендарных Героях",
-   [4] = "أسطورة الأبطال الأسطوريون",
-   [5] = "传说中的勇者传说",
-   [6] = "마법전사 라이너",
-   [7] = "전설의 용자의 전설",
+   [3] = "lol heroes",
+   [4] = "Легенда о Легендарных Героях",
+   [5] = "أسطورة الأبطال الأسطوريون",
+   [6] = "传说中的勇者传说",
+   [7] = "마법전사 라이너",
+   [8] = "전설의 용자의 전설",
    },
   },
  [7316] = {
@@ -79222,6 +79235,7 @@ return {
   ["syn"] = {
    [1] = "Evangelion 3.0",
    [2] = "Evangelion Shin Gekijouban: Quickening",
+   [3] = "Rebuild of Evangelion: 3.0",
    },
   },
  [7566] = {
@@ -82412,8 +82426,9 @@ return {
    },
   ["syn"] = {
    [1] = "Electromagnetic Wave Woman and Adolescent Man",
-   [2] = "الفتاة الكهرومغناطيسية و الشاب المراهق",
-   [3] = "دختر الکترو مغناطیسی و پسر نوجوان",
+   [2] = "Дівчинка-Електромагнітна хвиля і хлопець-підліток",
+   [3] = "الفتاة الكهرومغناطيسية و الشاب المراهق",
+   [4] = "دختر الکترو مغناطیسی و پسر نوجوان",
    },
   },
  [7904] = {
@@ -82642,7 +82657,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "그녀가 문병 오지 않는 이유",
+   [1] = "그녀가 문병을 오지 않는 이유",
    },
   },
  [7931] = {
@@ -83922,8 +83937,9 @@ return {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
    [3] = "Puella Magi Madoka Magica",
-   [4] = "مدوکا مجیکا دختر جادویی",
-   [5] = "魔法少女小圆",
+   [4] = "Дівчина-чарівниця Мадока Маґіка",
+   [5] = "مدوکا مجیکا دختر جادویی",
+   [6] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -84216,7 +84232,8 @@ return {
    },
   ["syn"] = {
    [1] = "Tiger and Bunny",
-   [2] = "Тигър и Зайче",
+   [2] = "Тигр и Кролик",
+   [3] = "Тигър и Зайче",
    },
   },
  [8102] = {
@@ -84990,7 +85007,8 @@ return {
  [8177] = {
   ["main"] = "Nurarihyon no Mago: Sennen Makyou",
   ["official"] = {
-   [1] = "ぬらりひょんの孫 千年魔京",
+   [1] = "Le seigneur des yôkai, La cité des démons",
+   [2] = "ぬらりひょんの孫 千年魔京",
    },
   ["short"] = {
    [1] = "NuraMago2",
@@ -86294,6 +86312,7 @@ return {
    [2] = "境界線上のホライゾン",
    },
   ["short"] = {
+   [1] = "kyoukasen",
    },
   ["syn"] = {
    [1] = "Horizon on the Middle of Nowhere",
@@ -86768,9 +86787,10 @@ return {
    },
   ["syn"] = {
    [1] = "C Cube",
-   [2] = "C^3",
-   [3] = "Cube x Cursed x Curious",
-   [4] = "C³",
+   [2] = "C3 -シーキューブ-",
+   [3] = "C^3",
+   [4] = "Cube x Cursed x Curious",
+   [5] = "C³",
    },
   },
  [8377] = {
@@ -87741,9 +87761,11 @@ return {
    [2] = "Shakugan III",
    [3] = "Shana 3",
    [4] = "Shana III",
-   [5] = "Shana3",
-   [6] = "SnS 3",
-   [7] = "SnS III",
+   [5] = "Shana final",
+   [6] = "Shana3",
+   [7] = "ShanaF",
+   [8] = "SnS 3",
+   [9] = "SnS III",
    },
   ["syn"] = {
    },
@@ -87764,6 +87786,7 @@ return {
    [1] = "UN-GO",
    },
   ["short"] = {
+   [1] = "ungo",
    },
   ["syn"] = {
    },
@@ -87853,6 +87876,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mobile Suit Gundam AGE",
    },
   },
  [8495] = {
@@ -88169,7 +88193,8 @@ return {
    },
   ["syn"] = {
    [1] = "Chihaya Full",
-   [2] = "Colorful Chihaya",
+   [2] = "Chihaya Furu",
+   [3] = "Colorful Chihaya",
    },
   },
  [8539] = {
@@ -88249,6 +88274,7 @@ return {
    [1] = "ハンター×ハンター (2011)",
    },
   ["short"] = {
+   [1] = "HxH 2011",
    },
   ["syn"] = {
    },
@@ -88320,16 +88346,6 @@ return {
   ["official"] = {
    [1] = "Dragon Age: Dawn of the Seeker",
    [2] = "ドラゴンエイジ -ブラッドメイジの聖戦-",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [8558] = {
-  ["main"] = "Garou Densetsu ~ Memories of Stray Wolves",
-  ["official"] = {
-   [1] = "餓狼伝説 15th Anniversary ~ Memories of Stray Wolves",
    },
   ["short"] = {
    },
@@ -88460,9 +88476,9 @@ return {
    },
   },
  [8573] = {
-  ["main"] = "Amagami SS 2",
+  ["main"] = "Amagami SS Plus",
   ["official"] = {
-   [1] = "アマガミSS 2",
+   [1] = "アマガミSS+ plus",
    },
   ["short"] = {
    },
@@ -88508,6 +88524,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ひだまりスケッチSP",
    },
   },
  [8578] = {
@@ -89081,6 +89098,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Chibi Devil",
    },
   },
  [8646] = {
@@ -89608,6 +89626,106 @@ return {
   ["main"] = "Oshioki: Gakuen Reijou Kousei Keikaku",
   ["official"] = {
    [1] = "懲罰指導 ～学園令嬢更性計画～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8713] = {
+  ["main"] = "Lupin Sansei: Chi no Kokuin - Eien no Mermaid",
+  ["official"] = {
+   [1] = "ルパン三世 血の刻印～永遠のMermaid～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8715] = {
+  ["main"] = "Sexual Education",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8716] = {
+  ["main"] = "Recorder to Randoseru",
+  ["official"] = {
+   [1] = "リコーダーとランドセル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Recorder and Backpack",
+   },
+  },
+ [8717] = {
+  ["main"] = "Futari wa Pretty Cure Splash Star: Maji Doki Theater",
+  ["official"] = {
+   [1] = "ふたりはプリキュア Splash Star マジッ★ドキッ♥ シアター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8718] = {
+  ["main"] = "Futari wa Pretty Cure Splash Star: Maji Doki 3D Theater",
+  ["official"] = {
+   [1] = "ふたりはプリキュア Splash Star マジッ★ドキッ♥ 3Dシアター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8719] = {
+  ["main"] = "Haiyoru! Nyaruko-san",
+  ["official"] = {
+   [1] = "這いよれ! ニャル子さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8720] = {
+  ["main"] = "Ijou Chitai: Jikken Dorei",
+  ["official"] = {
+   [1] = "異常痴態 実験奴隷",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8721] = {
+  ["main"] = "Shijou Saikyou no Deshi Ken`ichi OVA",
+  ["official"] = {
+   [1] = "史上最強の弟子 ケンイチ OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8722] = {
+  ["main"] = "High Score",
+  ["official"] = {
+   [1] = "HIGHSCORE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8723] = {
+  ["main"] = "Bono Bono no Plus",
+  ["official"] = {
+   [1] = "ぼのぼのプラス",
    },
   ["short"] = {
    },
