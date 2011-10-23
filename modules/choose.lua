@@ -9,7 +9,6 @@ local patterns = {
 	"%f[%S](www%.[%w_-%%]+%.%S+)",
 }
 
-
 local split = function(str, pattern)
 	local out = {}
 	str:gsub(pattern, function(match)
@@ -27,6 +26,7 @@ local reply = {
 	' (　´〰`)',
 	'○|￣|＿',
 	'ಠ_ಠ',
+	'（╯°□°）╯︵ ┻━┻',
 }
 
 local handleOutput = function(source, destination, choices)
