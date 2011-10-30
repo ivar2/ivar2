@@ -133,6 +133,9 @@ return {
 				output = output:gsub(find, replace)
 			end
 
+			-- Add a space before numbers if there's text infront
+			output = output:gsub('([%l%u]+)(%d)', '%1 %2')
+
 			self:Msg('privmsg', destination, source, 'In rōmaji: %s', trim(output):gsub("[%s%s]+", " "))
 		end,
 	},
