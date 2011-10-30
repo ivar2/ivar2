@@ -108,9 +108,7 @@ return {
 			-- Little baby tables got lost :(
 			local output = ''
 			for _, data in next, tmp do
-				if(data[4] == '未知語') then
-					output = output .. data[1]
-				elseif(data[4] == '記号-アルファベット') then
+				if(data[4] == '未知語' or data[4] == '記号-アルファベット' or data[4] == '名詞-数') then
 					output = output .. data[1]
 				elseif(data[1] == 'EOS') then
 					output = output .. ' '
