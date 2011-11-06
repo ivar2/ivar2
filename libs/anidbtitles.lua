@@ -127,13 +127,14 @@ return {
    [16] = "Prinzessin Mononoke",
    [17] = "Prinţesa Mononoke",
    [18] = "Πριγκίπισσα Μονονόκε",
-   [19] = "Принцеса Мононоке",
-   [20] = "Принцесса Мононоке",
-   [21] = "הנסיכה מונונוקי",
-   [22] = "الأميرة مونونوكي",
-   [23] = "もののけ姫",
-   [24] = "幽灵公主",
-   [25] = "모노노케 히메",
+   [19] = "Момонокэ гүнж",
+   [20] = "Принцеса Мононоке",
+   [21] = "Принцесса Мононоке",
+   [22] = "הנסיכה מונונוקי",
+   [23] = "الأميرة مونونوكي",
+   [24] = "もののけ姫",
+   [25] = "幽灵公主",
+   [26] = "모노노케 히메",
    },
   ["short"] = {
    },
@@ -1286,8 +1287,9 @@ return {
    [3] = "Samurajus X: Pasitikėjimas ir išdavystė",
    [4] = "Samuray X: Güven ve İhanet",
    [5] = "Бродяга Кэнсин OVA-1",
-   [6] = "Руроуні Кеншін: Оповіді Мейджі - Спогади",
-   [7] = "ساموراي اكس: الثقة و الخيانة",
+   [6] = "Бурлака Кеншін: Романтичні оповідання про мечника епохи Мейджі – Спогади",
+   [7] = "Руроуні Кеншін: Оповіді Мейджі - Спогади",
+   [8] = "ساموراي اكس: الثقة و الخيانة",
    },
   },
  [74] = {
@@ -5186,13 +5188,14 @@ return {
    [16] = "Naapurini Totoro",
    [17] = "Totoro - A varázserdő titka",
    [18] = "Οι περιπέτειες του Τότορο",
-   [19] = "Мой сосед Тоторо",
-   [20] = "השכן שלי טוטורו",
-   [21] = "جـــاري تــوتورو",
-   [22] = "โทโทโร่ เพื่อนรัก",
-   [23] = "となりのトトロ",
-   [24] = "龍貓",
-   [25] = "이웃집 토토로",
+   [19] = "Миний хөрш Тоторо",
+   [20] = "Мой сосед Тоторо",
+   [21] = "השכן שלי טוטורו",
+   [22] = "جـــاري تــوتورو",
+   [23] = "โทโทโร่ เพื่อนรัก",
+   [24] = "となりのトトロ",
+   [25] = "龍貓",
+   [26] = "이웃집 토토로",
    },
   ["short"] = {
    [1] = "TnT",
@@ -17001,9 +17004,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dororo",
+   [1] = "Dororo (1969)",
    [2] = "Dororo and Hyakkimaru",
-   [3] = "どろろ",
+   [3] = "どろろ (1969)",
    },
   },
  [1120] = {
@@ -28471,6 +28474,7 @@ return {
    },
   ["syn"] = {
    [1] = "Angel Hardcore",
+   [2] = "Суть ангелов",
    },
   },
  [2054] = {
@@ -31082,7 +31086,7 @@ return {
  [2258] = {
   ["main"] = "Mahou Senshi Sweet Knights: Heroine Ryoujoku Shirei",
   ["official"] = {
-   [1] = "魔法戦士スイートナイツ 〜ヒロイン凌辱指令〜",
+   [1] = "魔法戦士スイートナイツ ～ヒロイン凌辱指令～",
    },
   ["short"] = {
    },
@@ -32477,11 +32481,12 @@ return {
   ["official"] = {
    [1] = "12 skeppsbrutna pojkar på äventyrens ö",
    [2] = "Deux ans de vacances",
-   [3] = "Kahden vuoden loma-aika",
-   [4] = "Kétévi vakáció",
-   [5] = "Δύο χρόνια διακοπές",
-   [6] = "Двухгодичные каникулы",
-   [7] = "十五少年漂流記",
+   [3] = "Due Anni di Vacanza",
+   [4] = "Kahden vuoden loma-aika",
+   [5] = "Kétévi vakáció",
+   [6] = "Δύο χρόνια διακοπές",
+   [7] = "Двухгодичные каникулы",
+   [8] = "十五少年漂流記",
    },
   ["short"] = {
    },
@@ -37207,16 +37212,16 @@ return {
    [1] = "Coo - Der Dino aus dem Meer",
    [2] = "Coo che arrivò da un mare lontano",
    [3] = "Coo de la mer lointaine",
-   [4] = "Coo of the Far Seas",
-   [5] = "Coo 遠い海から来たクー",
-   [6] = "كو زائر من المحيط",
+   [4] = "Coo 遠い海から来たクー",
+   [5] = "كو زائر من المحيط",
    },
   ["short"] = {
    [1] = "coo",
    },
   ["syn"] = {
    [1] = "Coo Der Dino aus dem Meer",
-   [2] = "Coo: It Came From The Sea",
+   [2] = "Coo of the Far Seas",
+   [3] = "Coo: It Came From The Sea",
    },
   },
  [2803] = {
@@ -41289,18 +41294,6 @@ return {
    [1] = "Playball",
    },
   },
- [3295] = {
-  ["main"] = "Master Keaton (1999)",
-  ["official"] = {
-   [1] = "マスターキートン (1999)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "Master Keaton OVA",
-   [2] = "Master キートン (1999)",
-   },
-  },
  [3296] = {
   ["main"] = "Hellsing (2006)",
   ["official"] = {
@@ -43239,12 +43232,12 @@ return {
  [3455] = {
   ["main"] = "Yasuji no Pornorama: Yacchimae!!",
   ["official"] = {
-   [1] = "Do It! Yasuji`s Pornorama",
-   [2] = "ヤスジのポルノラマ やっちまえ!!",
+   [1] = "ヤスジのポルノラマ やっちまえ!!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Do It! Yasuji`s Pornorama",
    },
   },
  [3456] = {
@@ -46397,15 +46390,15 @@ return {
  [3956] = {
   ["main"] = "Hoero! Bun Bun (1987)",
   ["official"] = {
-   [1] = "Bark! Bun Bun Special",
-   [2] = "Yap! Bun bun",
-   [3] = "ほえろブンブン (1987)",
+   [1] = "Yap! Bun bun",
+   [2] = "ほえろブンブン (1987)",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Bark! Bunbun",
-   [2] = "Hoeru! Bunbun Special",
+   [1] = "Bark! Bun Bun Special",
+   [2] = "Bark! Bunbun",
+   [3] = "Hoeru! Bunbun Special",
    },
   },
  [3957] = {
@@ -48714,14 +48707,15 @@ return {
    },
   ["syn"] = {
    [1] = "Ah! My Goddess Everyone`s Wings",
-   [2] = "Ah! My Goddess: Everyone Has Wings",
-   [3] = "Ah! My Goddess: Sorezore no Tsubasa",
-   [4] = "Ah! Zeiţa Mea: Oricine are Aripi",
-   [5] = "Ah!! My Goddess: Sorezore no Hane",
-   [6] = "Ах! Моя богиня: у каждого есть крылья",
-   [7] = "Моя богиня! (сезон второй)",
-   [8] = "ああっ女神さまっ 第二期",
-   [9] = "我的女神: 缤纷之翼",
+   [2] = "Ah! My Goddess, Flights of Fancy",
+   [3] = "Ah! My Goddess: Everyone Has Wings",
+   [4] = "Ah! My Goddess: Sorezore no Tsubasa",
+   [5] = "Ah! Zeiţa Mea: Oricine are Aripi",
+   [6] = "Ah!! My Goddess: Sorezore no Hane",
+   [7] = "Ах! Моя богиня: у каждого есть крылья",
+   [8] = "Моя богиня! (сезон второй)",
+   [9] = "ああっ女神さまっ 第二期",
+   [10] = "我的女神: 缤纷之翼",
    },
   },
  [4154] = {
@@ -52227,7 +52221,7 @@ return {
    },
   },
  [4521] = {
-  ["main"] = "Code Geass Hangyaku no Lelouch",
+  ["main"] = "Code Geass: Hangyaku no Lelouch",
   ["official"] = {
    [1] = "Code Geass",
    [2] = "Code Geass: Lelouch of the Rebellion",
@@ -52746,8 +52740,9 @@ return {
    [7] = "5 сантиметров в секунду",
    [8] = "5cm per Second",
    [9] = "Másodpercenként 5 centiméter",
-   [10] = "秒速5センチメートル",
-   [11] = "초속 5센티미터",
+   [10] = "Секундэд таван сантиметр",
+   [11] = "秒速5センチメートル",
+   [12] = "초속 5센티미터",
    },
   ["short"] = {
    [1] = "5cm",
@@ -55323,8 +55318,9 @@ return {
  [4824] = {
   ["main"] = "Bouken Korobokkuru",
   ["official"] = {
-   [1] = "عقلة الإصبع",
-   [2] = "冒険コロボックル",
+   [1] = "Gli gnomi delle montagne",
+   [2] = "عقلة الإصبع",
+   [3] = "冒険コロボックル",
    },
   ["short"] = {
    },
@@ -58083,6 +58079,7 @@ return {
    },
   ["syn"] = {
    [1] = "Iblard Time",
+   [2] = "Час Ібларда",
    },
   },
  [5100] = {
@@ -59978,14 +59975,16 @@ return {
  [5310] = {
   ["main"] = "Sky Crawlers",
   ["official"] = {
-   [1] = "Padangių Klajokliai",
-   [2] = "Sky Crawlers",
-   [3] = "Sky Crawlers: L`armée du ciel",
-   [4] = "The Sky Crawlers",
-   [5] = "The Sky Crawlers - Eternamente",
-   [6] = "The Sky Crawlers - I Cavalieri del Cielo",
-   [7] = "Égenjárók",
-   [8] = "スカイ・クロラ",
+   [1] = "Nebeští jezdci",
+   [2] = "Padangių Klajokliai",
+   [3] = "Sky Crawlers",
+   [4] = "Sky Crawlers: L`armée du ciel",
+   [5] = "Sukai Kurora",
+   [6] = "The Sky Crawlers",
+   [7] = "The Sky Crawlers - Eternamente",
+   [8] = "The Sky Crawlers - I Cavalieri del Cielo",
+   [9] = "Égenjárók",
+   [10] = "スカイ・クロラ",
    },
   ["short"] = {
    },
@@ -60359,7 +60358,7 @@ return {
    },
   },
  [5373] = {
-  ["main"] = "Code Geass Hangyaku no Lelouch R2",
+  ["main"] = "Code Geass: Hangyaku no Lelouch R2",
   ["official"] = {
    [1] = "Code Geass R2",
    [2] = "Code Geass: Lelouch of the Rebellion R2",
@@ -60738,7 +60737,8 @@ return {
  [5426] = {
   ["main"] = "Aa! Megami-sama! Tatakau Tsubasa",
   ["official"] = {
-   [1] = "ああっ女神さまっ 闘う翼",
+   [1] = "Ah! My Goddess, Fighting Wings",
+   [2] = "ああっ女神さまっ 闘う翼",
    },
   ["short"] = {
    },
@@ -64643,7 +64643,8 @@ return {
  [5950] = {
   ["main"] = "Hime Dorei: Mesu e to Ochiteyuku Futago no Oujo",
   ["official"] = {
-   [1] = "姫奴隷 ～牝へと堕ちゆく双子の王女～",
+   [1] = "Slaved Princess",
+   [2] = "姫奴隷 ～牝へと堕ちゆく双子の王女～",
    },
   ["short"] = {
    },
@@ -68640,7 +68641,8 @@ return {
   ["main"] = "Tokyo Magnitude 8.0",
   ["official"] = {
    [1] = "Tokyo Magnitude 8.0",
-   [2] = "東京マグニチュード8.0",
+   [2] = "Tokyo Magnitute 8.0",
+   [3] = "東京マグニチュード8.0",
    },
   ["short"] = {
    [1] = "magni8",
@@ -75095,7 +75097,7 @@ return {
    },
   },
  [7126] = {
-  ["main"] = "Code Geass Hangyaku no Lelouch Special Edition: Black Rebellion",
+  ["main"] = "Code Geass: Hangyaku no Lelouch Special Edition - Black Rebellion",
   ["official"] = {
    [1] = "コードギアス 反逆のルルーシュ SPECIAL EDITION `BLACK REBELLION`",
    },
@@ -75105,7 +75107,7 @@ return {
    },
   },
  [7127] = {
-  ["main"] = "Code Geass Hangyaku no Lelouch R2 Special Edition: Zero Requiem",
+  ["main"] = "Code Geass: Hangyaku no Lelouch R2 Special Edition - Zero Requiem",
   ["official"] = {
    [1] = "コードギアス 反逆のルルーシュ R2 SPECIAL EDITION `ZERO REQUIEM`",
    },
@@ -76425,7 +76427,8 @@ return {
    [3] = "Kätkijät",
    [4] = "The Borrower Arrietty",
    [5] = "Ариэти из страны лилипутов",
-   [6] = "借りぐらしのアリエッティ",
+   [6] = "Зээлдэгч Арриэтти",
+   [7] = "借りぐらしのアリエッティ",
    },
   ["short"] = {
    },
@@ -78711,14 +78714,16 @@ return {
    },
   },
  [7508] = {
-  ["main"] = "Code Geass Gaiden: Boukoku no Akito",
+  ["main"] = "Code Geass: Boukoku no Akito",
   ["official"] = {
-   [1] = "コードギアスGAIDEN 亡国のアキト",
+   [1] = "コードギアス 亡国のアキト",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Code Geass Side Story: Akito of the Ruined Nation",
+   [1] = "Code Geass Gaiden",
+   [2] = "Code Geass Side Story: Akito of the Ruined Nation",
+   [3] = "Code Geass: Akito the Exiled",
    },
   },
  [7509] = {
@@ -81179,6 +81184,7 @@ return {
    [1] = "映画ドラえもん 新・のび太と鉄人兵団 ～はばたけ 天使たち～",
    },
   ["short"] = {
+   [1] = "Doraemon The Movie 2011",
    },
   ["syn"] = {
    },
@@ -82751,7 +82757,8 @@ return {
  [7934] = {
   ["main"] = "Beelzebub",
   ["official"] = {
-   [1] = "べるぜバブ",
+   [1] = "Beelzebub",
+   [2] = "べるぜバブ",
    },
   ["short"] = {
    [1] = "beel",
@@ -84650,7 +84657,8 @@ return {
   ["syn"] = {
    [1] = "Pikachu no Fushigina Fushigina Daiboken",
    [2] = "Pikachu`s Big Mysterious Adventure",
-   [3] = "Pokemon: Movie 13 Short",
+   [3] = "Pikachu`s Really Mysterious Adventure",
+   [4] = "Pokemon: Movie 13 Short",
    },
   },
  [8140] = {
@@ -84859,16 +84867,17 @@ return {
  [8160] = {
   ["main"] = "Fate/Zero",
   ["official"] = {
-   [1] = "فیت / زیرو",
-   [2] = "フェイト/ゼロ",
+   [1] = "Fate Zero",
+   [2] = "Fate/Zero",
+   [3] = "فیت / زیرو",
+   [4] = "フェイト/ゼロ",
    },
   ["short"] = {
    [1] = "f/z",
    [2] = "fz",
    },
   ["syn"] = {
-   [1] = "Fate Zero",
-   [2] = "سرنوشت / صفر",
+   [1] = "سرنوشت / صفر",
    },
   },
  [8161] = {
@@ -86795,12 +86804,13 @@ return {
    },
   ["syn"] = {
    [1] = "Kami-sama no Memo-chou",
-   [2] = "Kamisama no Memochou",
-   [3] = "Notepad of God",
-   [4] = "god`s notebook",
-   [5] = "Блокнот Бога",
-   [6] = "Записная книжка Бога",
-   [7] = "神的记事本",
+   [2] = "Kamisama no Memo-chou",
+   [3] = "Kamisama no Memochou",
+   [4] = "Notepad of God",
+   [5] = "god`s notebook",
+   [6] = "Блокнот Бога",
+   [7] = "Записная книжка Бога",
+   [8] = "神的记事本",
    },
   },
  [8371] = {
@@ -86834,6 +86844,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Prince of Tennis: OVA Another Story II",
    },
   },
  [8374] = {
@@ -87020,7 +87031,8 @@ return {
  [8395] = {
   ["main"] = "Mirai Nikki (2011)",
   ["official"] = {
-   [1] = "未来日記 (2011)",
+   [1] = "Mirai Nikki",
+   [2] = "未来日記 (2011)",
    },
   ["short"] = {
    },
@@ -87830,7 +87842,8 @@ return {
  [8483] = {
   ["main"] = "Shakugan no Shana III (Final)",
   ["official"] = {
-   [1] = "灼眼のシャナIII (Final)",
+   [1] = "Shakugan no Shana III (Final)",
+   [2] = "灼眼のシャナIII (Final)",
    },
   ["short"] = {
    [1] = "Shakugan 3",
@@ -87943,6 +87956,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ウィザードガール・アンビシャス",
    },
   },
  [8494] = {
@@ -88402,6 +88416,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cross Fight B-Daman",
    },
   },
  [8556] = {
@@ -89934,19 +89949,21 @@ return {
    },
   },
  [8740] = {
-  ["main"] = "Chou Uchuu Machine X Bomber",
+  ["main"] = "X Bomber",
   ["official"] = {
    [1] = "Super Space Machine X Bomber",
-   [2] = "超宇宙マシーンXボンバー",
+   [2] = "Xボンバー",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "超宇宙マシーンエックスボンバー",
+   [1] = "Chou Uchuu Machine X Bomber",
+   [2] = "超宇宙マシーンXボンバー",
+   [3] = "超宇宙マシーンエックスボンバー",
    },
   },
  [8741] = {
-  ["main"] = "Tomica Mirai Kinkyu Tai Earth Commander",
+  ["main"] = "Tomika Mirai Kinkyuu Tai Earth Commander",
   ["official"] = {
    [1] = "トミカ未来緊急隊アースコマンダー",
    },
@@ -89966,13 +89983,14 @@ return {
    },
   },
  [8743] = {
-  ["main"] = "Midori Tama Shinshi",
+  ["main"] = "Ryoku Tama Shinshi",
   ["official"] = {
    [1] = "緑玉紳士",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Monsieur Greenpeas",
    },
   },
  [8744] = {
@@ -90222,6 +90240,76 @@ return {
   ["main"] = "Hate You",
   ["official"] = {
    [1] = "HATE YOU",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8769] = {
+  ["main"] = "Evidence",
+  ["official"] = {
+   [1] = "Evidence",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8770] = {
+  ["main"] = "Dororo",
+  ["official"] = {
+   [1] = "どろろ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8771] = {
+  ["main"] = "Fujilog Season 2",
+  ["official"] = {
+   [1] = "フジログ シーズン2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8772] = {
+  ["main"] = "Ghost Messenger",
+  ["official"] = {
+   [1] = "고스트 메신저",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8773] = {
+  ["main"] = "Game Tengoku",
+  ["official"] = {
+   [1] = "ゲーム天国",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8774] = {
+  ["main"] = "Pants Pankurou",
+  ["official"] = {
+   [1] = "パンツぱんくろう",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8775] = {
+  ["main"] = "Major: World Series",
+  ["official"] = {
+   [1] = "メジャーWorld Series",
    },
   ["short"] = {
    },
