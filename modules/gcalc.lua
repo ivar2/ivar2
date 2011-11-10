@@ -11,9 +11,9 @@ local urlEncode = function(str)
 end
 
 local parseData = function(source, destination, data)
-	local ans = data:match('<h2 .-><b>(.-)</b></h2><div')
+	local ans = data:match('<h2 class="r".->(.-)</h2>')
 	if(ans) then
-		ans = ans:gsub('<sup>(.-)</sup>', '^%1'):gsub('<[^>]+> ?', '')
+		ans = ans:gsub('<sup>(.-)</sup>', '^%1'):gsub('<[^>]+> ?', ''):gsub('%s+', ' ')
 		ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, html2unicode(ans))
 	else
 		ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, 'Do you want some air with that fail?')
