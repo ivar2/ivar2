@@ -1,23 +1,27 @@
 local db = {}
 
+local toLuaPattern = function(str)
+	return str:gsub('%%', '%%%%'):gsub('\\([%l%u%d^$()%%.%[%]*+%-?])', '%%%1')
+end
+
 local handleMessage = function(nick, destination, msg, update)
 	if(db[nick] and db[nick][destination]) then
-		local matchPoint = msg:match('()[^%%]/')
+		local matchPoint = msg:match('()[^\\]/')
 		local match = msg:sub(1, matchPoint)
 
-		local replacePoint = msg:match('()[^%%]/', matchPoint + 1)
+		local replacePoint = msg:match('()[^\\]/', matchPoint + 1)
 		local replace = msg:sub(matchPoint + 2, replacePoint)
 
 		local flags = 1
 		if(replacePoint) then
-			local flagPoint = msg:match('()[^%%]/', replacePoint + 1)
+			local flagPoint = msg:match('()[^\\]/', replacePoint + 1)
 			local flag = msg:sub(replacePoint + 2, flagPoint)
 			if(flag:lower() == 'g') then
 				flags = #db[nick][destination]
 			end
 		end
 
-		local out = db[nick][destination]:gsub(match, replace, flags)
+		local out = db[nick][destination]:gsub(toLuaPattern(match), toLuaPattern(replace), flags)
 		if(out ~= db[nick][destination]) then
 			if(update) then
 				db[nick][destination] = out
