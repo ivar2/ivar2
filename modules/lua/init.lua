@@ -3,6 +3,12 @@ return {
 		['^lua>(.+)$'] = function(self, source, destination, lua)
 			local inputFile = os.tmpname()
 			local outputFile = os.tmpname()
+
+			-- emulate the interepter
+			if(lua:match('^%s*(%S)') == '=') then
+				lua = lua:gsub('^%s*(%S)', 'return ')
+			end
+
 			local file = io.open(inputFile, 'w')
 			file:write(lua)
 			file:close()
