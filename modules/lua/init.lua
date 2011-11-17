@@ -17,8 +17,6 @@ return {
 			os.remove(inputFile)
 			os.remove(outputFile)
 
-			local postfix = output:sub(-4)
-
 			if(status == 0) then
 				-- Cut of the initial RUN: and the newline+postfix
 				output = output:sub(5, -6)
