@@ -7,7 +7,7 @@ return {
 			file:write(lua)
 			file:close()
 
-			local cmd = string.format([[modules/lua/sandbox.sh %s %s &> /dev/null]], inputFile, outputFile)
+			local cmd = string.format([[modules/lua/sandbox.sh %s %s 2> /dev/null]], inputFile, outputFile)
 			local status = os.execute(cmd) / 256
 			local file = io.open(outputFile, 'r')
 			local output = file:read(251)
