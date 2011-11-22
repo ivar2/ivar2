@@ -25,6 +25,9 @@ local function simplehttp(url, callback, stream, limit, visited)
 	local sink = {}
 	local visited = visited or {}
 
+	-- Add support for IDNs.
+	url = toIDN(url)
+
 	-- Prevent infinite loops!
 	if(visited[url]) then return end
 	visited[url] = true
