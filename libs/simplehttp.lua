@@ -1,9 +1,24 @@
 local httpclient = require'handler.http.client'
 local uri = require"handler.uri"
+local idn = require'idn'
 local ev = require'ev'
 
 local client = httpclient.new(ev.Loop.default)
 local uri_parse = uri.parse
+
+local toIDN = function(url)
+	local info = uri_parse(url, nil, true)
+	info.host = idn.encode(info.host)
+
+	return string.format(
+		'%s://%s%s%s',
+
+		info.scheme,
+		info.userinfo or '',
+		info.host,
+		info.path or ''
+	)
+end
 
 local function simplehttp(url, callback, stream, limit, visited)
 	local sinkSize = 0
