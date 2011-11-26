@@ -10,6 +10,10 @@ local toIDN = function(url)
 	local info = uri_parse(url, nil, true)
 	info.host = idn.encode(info.host)
 
+	if(info.port) then
+		info.host = info.host .. ':' .. info.port
+	end
+
 	return string.format(
 		'%s://%s%s%s',
 
