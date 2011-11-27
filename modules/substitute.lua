@@ -1,7 +1,7 @@
 local db = {}
 
 local toLuaPattern = function(str)
-	return str:gsub('%%', '%%%%'):gsub('\\([%l%u%d^$()%%.%[%]*+%-?])', '%%%1')
+	return str:gsub('%%', '%%%%'):gsub('\\([%l%u%d^$()%%.%[%]*+%-?])', '%%%1'):gsub('\\/', '/')
 end
 
 local handleMessage = function(nick, destination, msg, update)
