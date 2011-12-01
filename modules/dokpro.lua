@@ -60,7 +60,7 @@ local parseLine = function(data)
 end
 
 local parseData = function(data)
-	data = iso2utf:iconv(data) or data
+	data = iso2utf:iconv(data)
 
 	if(data:match('ordboksdatabasene')) then
 		return nil, 'Service down. :('
