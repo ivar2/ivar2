@@ -91,7 +91,7 @@ local parseData = function(data)
 end
 
 local handleInput = function(self, source, destination, word)
-	local query = urlEncode(utf2iso:iconv(word))
+	local query = urlEncode(utf2iso:iconv(word) or word)
 	simplehttp(
 		"http://www.nob-ordbok.uio.no/perl/ordbok.cgi?ordbok=bokmaal&bokmaal=+&OPP=" .. query,
 
