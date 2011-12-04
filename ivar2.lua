@@ -25,9 +25,9 @@ local ivar2 = {
 }
 
 local timeoutFunc = function(loop, timer, revents)
-	self:Log('error', 'Socket stalled for 6 minutes.')
-	if(self.config.autoReconnect) then
-		self:Reconnect()
+	ivar2:Log('error', 'Socket stalled for 6 minutes.')
+	if(ivar2.config.autoReconnect) then
+		ivar2:Reconnect()
 	end
 end
 
