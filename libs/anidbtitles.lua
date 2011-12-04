@@ -1484,7 +1484,8 @@ return {
   ["syn"] = {
    [1] = "Jin Roh",
    [2] = "Jin-Roh, the Wolf Brigade",
-   [3] = "Перевертень",
+   [3] = "Загін вовків",
+   [4] = "Перевертень",
    },
   },
  [84] = {
@@ -2804,15 +2805,15 @@ return {
   ["official"] = {
    [1] = "As Super Gatinhas",
    [2] = "Berry Berry Mew Mew",
-   [3] = "Kočičí síla",
-   [4] = "Mew Mew Amiche Vincenti",
-   [5] = "Mew Mew Power",
-   [6] = "Miau Miau Power",
-   [7] = "Mijau Mijau Družina",
-   [8] = "Puterea echipei Miau-Miau",
-   [9] = "Vadmacska kommandó",
-   [10] = "Vajzat Mjau - Mbrojtëset e Planetit",
-   [11] = "Дружина Мјау - Мјау",
+   [3] = "Družina Mjau - Mjau",
+   [4] = "Kočičí síla",
+   [5] = "Mew Mew Amiche Vincenti",
+   [6] = "Mew Mew Power",
+   [7] = "Miau Miau Power",
+   [8] = "Mijau Mijau Družina",
+   [9] = "Puterea echipei Miau-Miau",
+   [10] = "Vadmacska kommandó",
+   [11] = "Vajzat Mjau - Mbrojtëset e Planetit",
    [12] = "Силата Миу Миу",
    [13] = "טוקיו מיו מיו",
    [14] = "توکیو میو میو",
@@ -3391,14 +3392,15 @@ return {
  [196] = {
   ["main"] = "Ouritsu Uchuugun: Honneamise no Tsubasa",
   ["official"] = {
-   [1] = "Křídla Honneamise",
-   [2] = "Le Ali di Honneamise",
-   [3] = "Les ailes d`Honneamise",
-   [4] = "The Wings of Honneamise",
-   [5] = "Wings of Honneamise",
-   [6] = "Wings of Honneamise - Eroberung des Universums",
-   [7] = "Королевский десант",
-   [8] = "王立宇宙軍 オネアミスの翼",
+   [1] = "Hanėjų Sparnai",
+   [2] = "Křídla Honneamise",
+   [3] = "Le Ali di Honneamise",
+   [4] = "Les ailes d`Honneamise",
+   [5] = "The Wings of Honneamise",
+   [6] = "Wings of Honneamise",
+   [7] = "Wings of Honneamise - Eroberung des Universums",
+   [8] = "Королевский десант",
+   [9] = "王立宇宙軍 オネアミスの翼",
    },
   ["short"] = {
    [1] = "Honneamise",
@@ -3406,12 +3408,11 @@ return {
    },
   ["syn"] = {
    [1] = "As Asas de Honneamise",
-   [2] = "Hanėjų Sparnai",
-   [3] = "Star Quest",
-   [4] = "Wings of Honneamise",
-   [5] = "Wings of Honneamise: The Royal Space Force",
-   [6] = "Королевские космические силы - Крылья Хоннеамиз",
-   [7] = "王立宇宙军",
+   [2] = "Star Quest",
+   [3] = "Wings of Honneamise",
+   [4] = "Wings of Honneamise: The Royal Space Force",
+   [5] = "Королевские космические силы - Крылья Хоннеамиз",
+   [6] = "王立宇宙军",
    },
   },
  [197] = {
@@ -18632,7 +18633,7 @@ return {
  [1252] = {
   ["main"] = "Kingdom of Chaos: Born to Kill",
   ["official"] = {
-   [1] = "キングダム・オブ・カオス 〜ボーン・トゥー・キル〜",
+   [1] = "キングダム・オブ・カオス ～ボーン・トゥー・キル～",
    },
   ["short"] = {
    },
@@ -30302,8 +30303,9 @@ return {
  [2200] = {
   ["main"] = "Anju to Zushiou Maru",
   ["official"] = {
-   [1] = "Árva testvérek",
-   [2] = "安寿と厨子王丸",
+   [1] = "As Aventuras de Robin",
+   [2] = "Árva testvérek",
+   [3] = "安寿と厨子王丸",
    },
   ["short"] = {
    },
@@ -33284,17 +33286,17 @@ return {
   ["official"] = {
    [1] = "D.I.C.E.",
    [2] = "DICE",
-   [3] = "Организацията \"ДАЙС\"",
-   [4] = "دايس",
-   [5] = "หุ่นยนต์จักรกลไดโนเสาร์",
-   [6] = "ディノブレイカー",
+   [3] = "DICE - A mentőcsapat",
+   [4] = "Организацията \"ДАЙС\"",
+   [5] = "دايس",
+   [6] = "หุ่นยนต์จักรกลไดโนเสาร์",
+   [7] = "ディノブレイカー",
    },
   ["short"] = {
    [1] = "DICE",
    },
   ["syn"] = {
-   [1] = "DICE - A mentőcsapat",
-   [2] = "DNA Integrated Cybernetic Enterprises",
+   [1] = "DNA Integrated Cybernetic Enterprises",
    },
   },
  [2435] = {
@@ -59975,7 +59977,7 @@ return {
  [5308] = {
   ["main"] = "100%",
   ["official"] = {
-   [1] = "100%",
+   [1] = "100%[A Hundred Percents]",
    },
   ["short"] = {
    },
@@ -59990,12 +59992,11 @@ return {
    [2] = "Padangių Klajokliai",
    [3] = "Sky Crawlers",
    [4] = "Sky Crawlers: L`armée du ciel",
-   [5] = "Sukai Kurora",
-   [6] = "The Sky Crawlers",
-   [7] = "The Sky Crawlers - Eternamente",
-   [8] = "The Sky Crawlers - I Cavalieri del Cielo",
-   [9] = "Égenjárók",
-   [10] = "スカイ・クロラ",
+   [5] = "The Sky Crawlers",
+   [6] = "The Sky Crawlers - Eternamente",
+   [7] = "The Sky Crawlers - I Cavalieri del Cielo",
+   [8] = "Égenjárók",
+   [9] = "スカイ・クロラ",
    },
   ["short"] = {
    },
@@ -76452,19 +76453,19 @@ return {
    [4] = "Arrietty, le petit monde des chapardeurs",
    [5] = "Kätkijät",
    [6] = "Lånaren Arrietty",
-   [7] = "The Secret World of Arrietty",
-   [8] = "Ариэти из страны лилипутов",
-   [9] = "Зээлдэгч Арриэтти",
-   [10] = "借りぐらしのアリエッティ",
+   [7] = "Skoliniautojai",
+   [8] = "The Secret World of Arrietty",
+   [9] = "Ариэтти из страны лилипутов",
+   [10] = "Зээлдэгч Арриэтти",
+   [11] = "借りぐらしのアリエッティ",
    },
   ["short"] = {
    [1] = "Arrietty",
    },
   ["syn"] = {
    [1] = "Kari-gurashi no Arietti",
-   [2] = "Skoliniautojai",
-   [3] = "The Borrower Arrietty",
-   [4] = "The Borrowers",
+   [2] = "The Borrower Arrietty",
+   [3] = "The Borrowers",
    },
   },
  [7259] = {
@@ -82374,13 +82375,13 @@ return {
  [7885] = {
   ["main"] = "Cheburashka",
   ["official"] = {
-   [1] = "Чебурашка",
-   [2] = "チェブラーシカ",
+   [1] = "Kūlverstukas Filmas",
+   [2] = "Чебурашка",
+   [3] = "チェブラーシカ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kūlverstukas Filmas",
    },
   },
  [7888] = {
@@ -82431,8 +82432,9 @@ return {
    [3] = "ポケットモンスター ベストウイッシュ",
    },
   ["short"] = {
-   [1] = "pmbw",
-   [2] = "pokemon bw",
+   [1] = "pkmnbw",
+   [2] = "pmbw",
+   [3] = "pokemon bw",
    },
   ["syn"] = {
    [1] = "Pokemon Best Wishes",
@@ -83914,7 +83916,8 @@ return {
  [8058] = {
   ["main"] = "X-Men",
   ["official"] = {
-   [1] = "エックスメン",
+   [1] = "X-Men",
+   [2] = "エックスメン",
    },
   ["short"] = {
    },
@@ -84071,7 +84074,7 @@ return {
   ["main"] = "Hoshi o Ou Kodomo",
   ["official"] = {
    [1] = "Children Who Chase Lost Voices From Deep Below",
-   [2] = "Hoshi wo Ou Kodomo",
+   [2] = "Vaikai, kurie vijosi žvaigždes",
    [3] = "Ловцы забытых голосов",
    [4] = "星を追う子ども",
    },
@@ -84079,7 +84082,7 @@ return {
    },
   ["syn"] = {
    [1] = "Children Who Chase Stars",
-   [2] = "Vaikai, kurie vijosi žvaigždes",
+   [2] = "Hoshi wo Ou Kodomo",
    },
   },
  [8074] = {
@@ -84789,8 +84792,9 @@ return {
   ["main"] = "Ao no Exorcist",
   ["official"] = {
    [1] = "Blue Exorcist",
-   [2] = "طارد الأرواح الشريرة الأزرق",
-   [3] = "青の祓魔師",
+   [2] = "جنگیر آبی",
+   [3] = "طارد الأرواح الشريرة الأزرق",
+   [4] = "青の祓魔師",
    },
   ["short"] = {
    [1] = "AnE",
@@ -84833,6 +84837,7 @@ return {
    [1] = "bakuman2",
    },
   ["syn"] = {
+   [1] = "Bakuman S2",
    },
   },
  [8151] = {
@@ -85112,6 +85117,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Фуджілог",
    },
   },
  [8177] = {
@@ -85393,9 +85399,10 @@ return {
   ["syn"] = {
    [1] = "Bunny Drop",
    [2] = "Брошенная Зайка",
-   [3] = "Изоставеното зайче",
-   [4] = "باران خرگوش",
-   [5] = "白兔糖",
+   [3] = "Брошенный кролик",
+   [4] = "Изоставеното зайче",
+   [5] = "باران خرگوش",
+   [6] = "白兔糖",
    },
   },
  [8212] = {
@@ -86902,9 +86909,9 @@ return {
    },
   },
  [8375] = {
-  ["main"] = "Gekijouban Blood-C",
+  ["main"] = "Blood-C: The Last Dark",
   ["official"] = {
-   [1] = "劇場版 BLOOD-C",
+   [1] = "BLOOD-C The Last Dark",
    },
   ["short"] = {
    },
@@ -86949,7 +86956,8 @@ return {
    [4] = "پرسونا فور د انیمیشن",
    },
   ["short"] = {
-   [1] = "p4a",
+   [1] = "Persona 4",
+   [2] = "p4a",
    },
   ["syn"] = {
    [1] = "Персона 4",
@@ -87434,11 +87442,12 @@ return {
  [8434] = {
   ["main"] = "School I",
   ["official"] = {
-   [1] = "school I",
+   [1] = "School I",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "School I Tsuujouban",
    },
   },
  [8436] = {
@@ -87904,6 +87913,7 @@ return {
    [7] = "ShanaF",
    [8] = "SnS 3",
    [9] = "SnS III",
+   [10] = "SnSF",
    },
   ["syn"] = {
    },
@@ -89009,6 +89019,7 @@ return {
    [2] = "デジモンクロスウォーズ 時を駆ける少年ハンターたち",
    },
   ["short"] = {
+   [1] = "Digimon Xros Wars II",
    },
   ["syn"] = {
    [1] = "جنگ های صلیبی دیجیمون : شکارچیان جوانی که در زمان پریدند",
@@ -89337,6 +89348,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Harem King",
    },
   },
  [8661] = {
@@ -89399,6 +89411,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Natsume Yujincho (4)",
    },
   },
  [8668] = {
@@ -90685,16 +90698,6 @@ return {
   ["syn"] = {
    },
   },
- [8815] = {
-  ["main"] = "My Sweet Umadonna",
-  ["official"] = {
-   [1] = "My sweet ウマドンナ",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8816] = {
   ["main"] = "AKB0048",
   ["official"] = {
@@ -90714,6 +90717,67 @@ return {
    },
   ["syn"] = {
    [1] = "Precure All Stars New Stage Movie: Friends of the Future",
+   },
+  },
+ [8818] = {
+  ["main"] = "Mahou Shoujo Lyrical Nanoha A`s Portable: The Gears of Destiny",
+  ["official"] = {
+   [1] = "魔法少女リリカルなのはA`s PORTABLE -THE GEARS OF DESTINY-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8819] = {
+  ["main"] = "Smile Precure!",
+  ["official"] = {
+   [1] = "スマイルプリキュア!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8820] = {
+  ["main"] = "Koi to Senkyo to Chocolate",
+  ["official"] = {
+   [1] = "恋と選挙とチョコレート",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Love, Election, & Chocolate",
+   },
+  },
+ [8821] = {
+  ["main"] = "Mahou Shoujo Lyrical Nanoha The Movie 2nd A`s",
+  ["official"] = {
+   [1] = "魔法少女リリカルなのは The MOVIE 2nd A`s",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8822] = {
+  ["main"] = "Koi-ken! Watashi-tachi Anime ni Nacchatta!",
+  ["official"] = {
+   [1] = "こいけん! ～私たちアニメになっちゃった!～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8823] = {
+  ["main"] = "Kuiba/Cribug",
+  ["official"] = {
+   [1] = "魁拔、迫り来る危機",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
