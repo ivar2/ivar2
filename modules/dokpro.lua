@@ -114,13 +114,15 @@ local handleInput = function(self, source, destination, word)
 						end
 					end
 
-					local message = string.format('\002[%s]\002: %s', lookup, limitOutput(definition))
+					if(definition) then
+						local message = string.format('\002[%s]\002: %s', lookup, limitOutput(definition))
 
-					n = n + #message
-					if(n < msgLimit) then
-						table.insert(out, message)
-					else
-						break
+						n = n + #message
+						if(n < msgLimit) then
+							table.insert(out, message)
+						else
+							break
+						end
 					end
 				end
 			end
