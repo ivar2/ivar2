@@ -22,14 +22,14 @@ local loop = ev.Loop.default
 local ivar2 = {
 	ignores = {},
 	Loop = loop,
-}
 
-local timeoutFunc = function(loop, timer, revents)
-	ivar2:Log('error', 'Socket stalled for 6 minutes.')
-	if(ivar2.config.autoReconnect) then
-		ivar2:Reconnect()
-	end
-end
+	timeoutFunc = function(loop, timer, revents)
+		ivar2:Log('error', 'Socket stalled for 6 minutes.')
+		if(ivar2.config.autoReconnect) then
+			ivar2:Reconnect()
+		end
+	end,
+}
 
 local events = {
 	['PING'] = {
@@ -324,7 +324,7 @@ function ivar2:Connect(config)
 		self.timeout:stop(loop)
 	end
 
-	self.timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+	self.timeout = ev.Timer.new(self.timeoutFunc, 60*6, 60*6)
 	self.timeout:start(loop)
 
 	local bindHost, bindPort
@@ -369,11 +369,11 @@ function ivar2:Reload()
 
 		self = message
 
-		self.nma = assert(loadfile('core/nma.lua'))(ivar2)
-		self.control = assert(loadfile('core/control.lua'))(ivar2)
+		self.nma = assert(loadfile('core/nma.lua'))(self)
+		self.control = assert(loadfile('core/control.lua'))(self)
 		self.control:start(loop)
 
-		self.timeout = ev.Timer.new(timeoutFunc, 60*6, 60*6)
+		self.timeout = ev.Timer.new(self.timeoutFunc, 60*6, 60*6)
 		self.timeout:start(loop)
 
 		self:Log('info', 'Successfully update core.')
