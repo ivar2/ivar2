@@ -81,7 +81,7 @@ local post = {
 
 local split = function(str, pattern)
 	local out = {}
-	str:gsub('[^' .. pattern ..']+', function(match)
+	str:gsub(pattern, function(match)
 		table.insert(out, match)
 	end)
 
@@ -96,13 +96,13 @@ return {
 	PRIVMSG = {
 		['^!kr (.+)$'] = function(self, source, destination, input)
 			local tmp = chasen.sparse(input:gsub('%s', '\n'))
-			tmp = split(tmp:gsub("　", " "), '\n')
+			tmp = split(tmp:gsub("　", " "), '[^\n]+')
 
 			-- chop of the last bit.
 			table.remove(tmp)
 
 			for i=1,#tmp do
-				tmp[i] = split(tmp[i], '\t')
+				tmp[i] = split(tmp[i], '([^\t]*)\t?')
 			end
 
 			-- Little baby tables got lost :(
