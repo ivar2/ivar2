@@ -23,10 +23,12 @@ local ivar2 = {
 	ignores = {},
 	Loop = loop,
 
-	timeoutFunc = function(loop, timer, revents)
-		ivar2:Log('error', 'Socket stalled for 6 minutes.')
-		if(ivar2.config.autoReconnect) then
-			ivar2:Reconnect()
+	timeoutFunc = function(ivar2)
+		return function(loop, timer, revents)
+			ivar2:Log('error', 'Socket stalled for 6 minutes.')
+			if(ivar2.config.autoReconnect) then
+				ivar2:Reconnect()
+			end
 		end
 	end,
 }
@@ -324,7 +326,7 @@ function ivar2:Connect(config)
 		self.timeout:stop(loop)
 	end
 
-	self.timeout = ev.Timer.new(self.timeoutFunc, 60*6, 60*6)
+	self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
 	self.timeout:start(loop)
 
 	local bindHost, bindPort
@@ -373,7 +375,7 @@ function ivar2:Reload()
 		self.control = assert(loadfile('core/control.lua'))(self)
 		self.control:start(loop)
 
-		self.timeout = ev.Timer.new(self.timeoutFunc, 60*6, 60*6)
+		self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
 		self.timeout:start(loop)
 
 		self:Log('info', 'Successfully update core.')
