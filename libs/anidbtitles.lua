@@ -2421,6 +2421,9 @@ return {
    [1] = "ID1st",
    [2] = "IDFS",
    [3] = "id",
+   [4] = "ini-d",
+   [5] = "inid",
+   [6] = "イニD",
    },
   ["syn"] = {
    [1] = "Initial D First Stage",
@@ -2839,8 +2842,8 @@ return {
    [1] = "Hviezdny šerif Saber Rider",
    [2] = "Jeździec Srebrnej Szabli",
    [3] = "Sab-Rider - Le chevalier au sabre",
-   [4] = "Saber Rider",
-   [5] = "Saber Rider and the Star Sheriffs",
+   [4] = "Saber Rider and the Star Sheriffs",
+   [5] = "Saber Rider e os Guardiões do Espaço",
    [6] = "Saber Rider şi Şerifii Stelari",
    [7] = "Sapeliratsastaja",
    [8] = "Sceriffi delle Stelle",
@@ -7970,7 +7973,7 @@ return {
    },
   },
  [479] = {
-  ["main"] = "Haja-Kyosei G Dangaiou",
+  ["main"] = "Haja Kyosei G Dangaiou",
   ["official"] = {
    [1] = "Great Dangaioh",
    [2] = "破邪巨星Gダンガイオー",
@@ -18988,15 +18991,15 @@ return {
    },
   },
  [1281] = {
-  ["main"] = "Vixens",
+  ["main"] = "Visionary",
   ["official"] = {
    [1] = "Visionary",
-   [2] = "ヴィジョナリィ",
+   [2] = "Vixens",
+   [3] = "ヴィジョナリィ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Visionary",
    },
   },
  [1282] = {
@@ -21790,7 +21793,7 @@ return {
   ["official"] = {
    [1] = "Bounty Hunter: the Hard",
    [2] = "The Hard - Chasseur de primes",
-   [3] = "ザ・ハ－ド BOUNTY HUNTER",
+   [3] = "ザ・ハード BOUNTY HUNTER",
    },
   ["short"] = {
    },
@@ -23175,8 +23178,7 @@ return {
   ["main"] = "Shinkon Gattai Godannar!! Second Season",
   ["official"] = {
    [1] = "Godannar!! (suite)",
-   [2] = "Shinkon Gattai Godannar Second Season",
-   [3] = "神魂合体ゴーダンナー!!-SECOND SEASON-",
+   [2] = "神魂合体ゴーダンナー!!-SECOND SEASON-",
    },
   ["short"] = {
    [1] = "SGG S2",
@@ -23184,6 +23186,7 @@ return {
    },
   ["syn"] = {
    [1] = "Shinkon Gattai Godannar 2nd",
+   [2] = "Shinkon Gattai Godannar Second Season",
    },
   },
  [1613] = {
@@ -24897,14 +24900,15 @@ return {
    },
   },
  [1764] = {
-  ["main"] = "Ojamajo Doremi # Movie: Pop and the Magical Cursed Rose",
+  ["main"] = "Eiga Ojamajo Doremi #",
   ["official"] = {
-   [1] = "おジャ魔女どれみ♯",
+   [1] = "映画 おジャ魔女どれみ#",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Pop and the Queen`s Cursed Rose",
+   [1] = "Ojamajo Doremi # Movie: Pop and the Magical Cursed Rose",
+   [2] = "Pop and the Queen`s Cursed Rose",
    },
   },
  [1765] = {
@@ -25212,9 +25216,9 @@ return {
    },
   },
  [1791] = {
-  ["main"] = "Motto! Ojamajo Doremi Kaeru Seki no Himitsu",
+  ["main"] = "Eiga Motto! Ojamajo Doremi Kaeru Seki no Himitsu",
   ["official"] = {
-   [1] = "も～っと! おジャ魔女どれみ カエル石のひみつ",
+   [1] = "映画 も～っと! おジャ魔女どれみ カエル石のひみつ",
    },
   ["short"] = {
    },
@@ -31563,8 +31567,9 @@ return {
    },
   ["syn"] = {
    [1] = "Adventures of Peter Pan",
-   [2] = "Peter Pan & Wendy",
-   [3] = "مغامرات بيتر بان",
+   [2] = "Peter Pan",
+   [3] = "Peter Pan & Wendy",
+   [4] = "مغامرات بيتر بان",
    },
   },
  [2295] = {
@@ -32713,6 +32718,8 @@ return {
    [1] = "SPC",
    },
   ["syn"] = {
+   [1] = "История кошек-ниндзя",
+   [2] = "Коты-Самураи",
    },
   },
  [2383] = {
@@ -33000,7 +33007,7 @@ return {
   ["syn"] = {
    [1] = "Lupin Sansei Special 16",
    [2] = "Lupin Sansei: Nusumareta Lupin - Copycat wa Manatsu no Chou",
-   [3] = "ルパン三世 盗まれたルパン 〜コピーキャットは真夏の蝶〜",
+   [3] = "ルパン三世 盗まれたルパン ～コピーキャットは真夏の蝶～",
    },
   },
  [2406] = {
@@ -34206,7 +34213,7 @@ return {
   ["main"] = "Maid no Yakata: Zetsubou Hen",
   ["official"] = {
    [1] = "Maid Service",
-   [2] = "メイドの館〜絶望編〜",
+   [2] = "メイドの館～絶望編～",
    },
   ["short"] = {
    },
@@ -40502,7 +40509,8 @@ return {
  [3156] = {
   ["main"] = "Midori no Makibao",
   ["official"] = {
-   [1] = "みどりのマキバオー",
+   [1] = "فوزان",
+   [2] = "みどりのマキバオー",
    },
   ["short"] = {
    },
@@ -42660,14 +42668,14 @@ return {
  [3406] = {
   ["main"] = "Hi no Ame ga Furu",
   ["official"] = {
-   [1] = "Fire Rain",
-   [2] = "مطر من نار",
-   [3] = "火の雨がふる",
+   [1] = "مطر من نار",
+   [2] = "火の雨がふる",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Rain of Fire",
+   [1] = "Fire Rain",
+   [2] = "Rain of Fire",
    },
   },
  [3408] = {
@@ -43823,11 +43831,12 @@ return {
    [4] = "Voltron - Az Univerzum Védelmezője",
    [5] = "Voltron - Der Beschützer des Universums",
    [6] = "Voltron - obrońca wszechświata",
-   [7] = "Волтрон - Защитникът На Вселената",
-   [8] = "Вольтрон: Защитник Вселенной",
-   [9] = "וולטרון",
-   [10] = "فولترون",
-   [11] = "百獣王 ゴライオン",
+   [7] = "Voltron ο υπερασπιστής της υφηλίου",
+   [8] = "Волтрон - Защитникът На Вселената",
+   [9] = "Вольтрон: Защитник Вселенной",
+   [10] = "וולטרון",
+   [11] = "فولترون",
+   [12] = "百獣王 ゴライオン",
    },
   ["short"] = {
    },
@@ -44301,7 +44310,7 @@ return {
  [3545] = {
   ["main"] = "Megazone 23 III",
   ["official"] = {
-   [1] = "MEGAZONE23Ⅲ",
+   [1] = "MEGAZONE23III",
    [2] = "Megazone 23 - Part III",
    },
   ["short"] = {
@@ -45388,7 +45397,7 @@ return {
  [3631] = {
   ["main"] = "Space Oz no Bouken",
   ["official"] = {
-   [1] = "The Galaxy Adventures of Oz",
+   [1] = "The Wonderful Galaxy of Oz",
    [2] = "Óz galaktikus birodalma",
    [3] = "باتي والأصدقاء",
    [4] = "スペース・オズの冒険",
@@ -45397,7 +45406,7 @@ return {
    },
   ["syn"] = {
    [1] = "The Adventures of Space Oz",
-   [2] = "The Wonderful Galaxy of Oz",
+   [2] = "The Galaxy Adventures of Oz",
    },
   },
  [3632] = {
@@ -47151,6 +47160,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Сексуальный воин Манами",
    },
   },
  [4021] = {
@@ -51000,7 +51010,7 @@ return {
    },
   },
  [4361] = {
-  ["main"] = "Tabako to hai",
+  ["main"] = "Tabako to Hai",
   ["official"] = {
    [1] = "Cigarettes and Ashes",
    [2] = "たばこと灰",
@@ -61982,23 +61992,23 @@ return {
  [5569] = {
   ["main"] = "Allison to Lillia",
   ["official"] = {
-   [1] = "Allison a Lillia",
-   [2] = "Allison i Lillia",
-   [3] = "アリソンとリリア",
+   [1] = "Allison & Lillia",
+   [2] = "Allison a Lillia",
+   [3] = "Allison i Lillia",
+   [4] = "アリソンとリリア",
    },
   ["short"] = {
    [1] = "AltoLi",
    },
   ["syn"] = {
-   [1] = "Allison & Lillia",
-   [2] = "Allison a Lillia",
-   [3] = "Allison and Lillia",
-   [4] = "Allison och Lillia",
-   [5] = "Allison İle Lillia",
-   [6] = "Алисон и Лилия",
-   [7] = "Алисън и Лилия",
-   [8] = "Аллисон и Лилия",
-   [9] = "艾莉森与莉莉亚",
+   [1] = "Allison a Lillia",
+   [2] = "Allison and Lillia",
+   [3] = "Allison och Lillia",
+   [4] = "Allison İle Lillia",
+   [5] = "Алисон и Лилия",
+   [6] = "Алисън и Лилия",
+   [7] = "Аллисон и Лилия",
+   [8] = "艾莉森与莉莉亚",
    },
   },
  [5570] = {
@@ -70402,6 +70412,7 @@ return {
   ["official"] = {
    [1] = "DARKER THAN BLACK -流星の双子(ジェミニ)-",
    [2] = "Darker than BLACK -유성의 제미니-",
+   [3] = "Darker than Black: Gemini of the Meteor",
    },
   ["short"] = {
    [1] = "dtb2",
@@ -70409,14 +70420,13 @@ return {
    },
   ["syn"] = {
    [1] = "Darker than Black 2",
-   [2] = "Darker than Black: Gemini of the Meteor",
-   [3] = "Tamsiau už Juodą: Meteoro Dvyniai",
-   [4] = "Zifiri Karanlık 2",
-   [5] = "Близнюки метеора",
-   [6] = "Темнее черного: Близнецы и падающая звезда",
-   [7] = "Темніше чорного: Близнюки метеора",
-   [8] = "أدكن مِنْ الأسودِ 2",
-   [9] = "黑之契约者-流星的双子-",
+   [2] = "Tamsiau už Juodą: Meteoro Dvyniai",
+   [3] = "Zifiri Karanlık 2",
+   [4] = "Близнюки метеора",
+   [5] = "Темнее черного: Близнецы и падающая звезда",
+   [6] = "Темніше чорного: Близнюки метеора",
+   [7] = "أدكن مِنْ الأسودِ 2",
+   [8] = "黑之契约者-流星的双子-",
    },
   },
  [6645] = {
@@ -74601,7 +74611,8 @@ return {
  [7065] = {
   ["main"] = "Onmyouji Ayakashi no Megami: Inran Jubaku",
   ["official"] = {
-   [1] = "陰陽師 妖かしの女神 淫乱呪縛",
+   [1] = "Onmyouji",
+   [2] = "陰陽師 妖かしの女神 淫乱呪縛",
    },
   ["short"] = {
    },
@@ -78385,7 +78396,8 @@ return {
  [7461] = {
   ["main"] = "Ginmaku Hetalia: Axis Powers - Paint it, White (Shiroku Nure!)",
   ["official"] = {
-   [1] = "銀幕ヘタリア Axis Powers Paint it, White(白くぬれ!)",
+   [1] = "Hetalia: Axis Powers: Paint it, White!",
+   [2] = "銀幕ヘタリア Axis Powers Paint it, White(白くぬれ!)",
    },
   ["short"] = {
    },
@@ -81238,6 +81250,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Dorami & Doraemons: Robot School`s Seven Mysteries!",
    },
   },
  [7769] = {
@@ -83421,6 +83434,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Любовь цыплёнка",
    },
   },
  [7996] = {
@@ -84904,7 +84918,8 @@ return {
    [1] = "聖痕のクェイサーII",
    },
   ["short"] = {
-   [1] = "SnQ2",
+   [1] = "Qwaser2",
+   [2] = "SnQ2",
    },
   ["syn"] = {
    [1] = "The Qwaser of Stigmata II",
@@ -85581,6 +85596,7 @@ return {
    },
   ["syn"] = {
    [1] = "Fall in Love with Me for Real!!",
+   [2] = "請認真的和我戀愛!!",
    },
   },
  [8231] = {
@@ -85904,7 +85920,8 @@ return {
    [1] = "ラストエグザイル-銀翼のファム-",
    },
   ["short"] = {
-   [1] = "le2",
+   [1] = "last exile 2",
+   [2] = "le2",
    },
   ["syn"] = {
    [1] = "LASTEXILE -Fam, The Silver Wing-",
@@ -86635,7 +86652,7 @@ return {
  [8339] = {
   ["main"] = "Mou Hitotsu no Doubutsuen: Zetsumetsu Doubutsu Monogatari",
   ["official"] = {
-   [1] = "もうひとつのどうぶつえん　～絶滅動物ものがたり～",
+   [1] = "もうひとつのどうぶつえん ～絶滅動物ものがたり～",
    },
   ["short"] = {
    },
@@ -87847,7 +87864,8 @@ return {
  [8473] = {
   ["main"] = "Eroge! H mo Game mo Kaihatsu Zanmai",
   ["official"] = {
-   [1] = "えろげー! ～Hもゲームも開発三昧～",
+   [1] = "Eroge! Oddanie się rozwijaniu erotyki i gier!",
+   [2] = "えろげー! ～Hもゲームも開発三昧～",
    },
   ["short"] = {
    },
@@ -89947,7 +89965,7 @@ return {
  [8727] = {
   ["main"] = "Love Bitch: Yasashii Onna",
   ["official"] = {
-   [1] = "ラブビッチ～優しい女…～",
+   [1] = "ラブビッチ～優しい女...～",
    },
   ["short"] = {
    },
@@ -90174,7 +90192,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Обитель зла 4: Культивация",
+   [1] = "Resident Evil 4: Incubate",
+   [2] = "Обитель зла 4: Культивация",
    },
   },
  [8751] = {
@@ -90542,9 +90561,9 @@ return {
    },
   },
  [8790] = {
-  ["main"] = "Kibun Ha Keijijou Jitsuzai OL Kouza",
+  ["main"] = "Kibun wa Uaa Jitsuzai OL Kouza",
   ["official"] = {
-   [1] = "気分は形而上（うああ）実在OL講座",
+   [1] = "気分は形而上[うああ] 実在OL講座",
    },
   ["short"] = {
    },
@@ -90893,6 +90912,130 @@ return {
   ["main"] = "Kono Naka ni Hitori, Imouto ga Iru!",
   ["official"] = {
    [1] = "この中に1人、妹がいる！",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8831] = {
+  ["main"] = "Thermae Romae",
+  ["official"] = {
+   [1] = "テルマエ・ロマエ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8832] = {
+  ["main"] = "Ookami Kodomo no Ame to Yuki",
+  ["official"] = {
+   [1] = "おおかみこどもの雨と雪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "The Wolf Children Ame and Yuki",
+   },
+  },
+ [8833] = {
+  ["main"] = "Harbor Tale",
+  ["official"] = {
+   [1] = "HARBOR TALE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8834] = {
+  ["main"] = "Shining Hearts",
+  ["official"] = {
+   [1] = "シャイニング・ハーツ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8835] = {
+  ["main"] = "Maki-chan to Nau.",
+  ["official"] = {
+   [1] = "真希ちゃんとなう.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8836] = {
+  ["main"] = "Bakuman. (2012)",
+  ["official"] = {
+   [1] = "バクマン. (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8837] = {
+  ["main"] = "Star Jewel",
+  ["official"] = {
+   [1] = "STAR☆jewel",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "スタージュエル",
+   },
+  },
+ [8839] = {
+  ["main"] = "Guitar Shoujo!",
+  ["official"] = {
+   [1] = "ギター少女!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Guitar Girl",
+   },
+  },
+ [8840] = {
+  ["main"] = "Hiiro no Kakera",
+  ["official"] = {
+   [1] = "緋色の欠片",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Scarlet Fragment",
+   },
+  },
+ [8841] = {
+  ["main"] = "Seiko: Joshidaisei Seiko-chan",
+  ["official"] = {
+   [1] = "SEIKO 女子大生聖子ちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8842] = {
+  ["main"] = "Jormungand",
+  ["official"] = {
+   [1] = "ヨルムンガンド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8844] = {
+  ["main"] = "Yuru Yuri 2",
+  ["official"] = {
+   [1] = "ゆるゆり♪♪",
    },
   ["short"] = {
    },
