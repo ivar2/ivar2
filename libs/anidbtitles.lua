@@ -26928,9 +26928,9 @@ return {
  [1919] = {
   ["main"] = "Hana no Ko Lunlun",
   ["official"] = {
-   [1] = "A Flor das Sete Cores",
-   [2] = "Angel",
-   [3] = "Angel das Blumenmädchen",
+   [1] = "Angel",
+   [2] = "Angel das Blumenmädchen",
+   [3] = "Angel, a Menina das Flores",
    [4] = "Le tour du monde de Lydie",
    [5] = "Lidia în jurul lumii",
    [6] = "Lili, a virágangyal",
@@ -26945,19 +26945,20 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Angel Cloud",
-   [2] = "Flower Angel",
-   [3] = "Hana no Ko Runrun",
-   [4] = "La fleur aux sept couleurs",
-   [5] = "La flor magica de 7 colores",
-   [6] = "Lili,a virágangyal",
-   [7] = "Lulu, le mystère de la fleur magique",
-   [8] = "Lun Lun the Flower Child",
-   [9] = "Lunlun, Flower Angel",
-   [10] = "Lydie et la clef magique",
-   [11] = "The Flower Angel",
-   [12] = "Çiçek Kız Lunlun",
-   [13] = "Лулу, ангел цветов",
+   [1] = "A Flor das Sete Cores",
+   [2] = "Angel Cloud",
+   [3] = "Flower Angel",
+   [4] = "Hana no Ko Runrun",
+   [5] = "La fleur aux sept couleurs",
+   [6] = "La flor magica de 7 colores",
+   [7] = "Lili,a virágangyal",
+   [8] = "Lulu, le mystère de la fleur magique",
+   [9] = "Lun Lun the Flower Child",
+   [10] = "Lunlun, Flower Angel",
+   [11] = "Lydie et la clef magique",
+   [12] = "The Flower Angel",
+   [13] = "Çiçek Kız Lunlun",
+   [14] = "Лулу, ангел цветов",
    },
   },
  [1920] = {
@@ -45371,14 +45372,15 @@ return {
    },
   },
  [3629] = {
-  ["main"] = "Tsushimamaru: Sayonara Okinawa",
+  ["main"] = "Tsushima Maru: Sayonara Okinawa",
   ["official"] = {
-   [1] = "Tsushimamaru: Goodbye, Okinawa",
-   [2] = "対馬丸 ―さよなら沖縄―",
+   [1] = "対馬丸 -さようなら沖縄-",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tsushimamaru: Goodbye, Okinawa",
+   [2] = "対馬丸 -さよなら沖縄-",
    },
   },
  [3630] = {
@@ -51425,8 +51427,10 @@ return {
    [3] = "Pierwszy oddział",
    [4] = "Pierwyj otrjad",
    [5] = "Pirmasis Būrys: Tiesos Akimirka",
-   [6] = "Първи отряд : Моментът на истината",
-   [7] = "الفرقة الأولى: لحظة الحقيقة",
+   [6] = "Перший загін",
+   [7] = "Перший загін: Момент Істини",
+   [8] = "Първи отряд : Моментът на истината",
+   [9] = "الفرقة الأولى: لحظة الحقيقة",
    },
   },
  [4402] = {
@@ -54453,12 +54457,12 @@ return {
  [4724] = {
   ["main"] = "Shin Takarajima",
   ["official"] = {
-   [1] = "New Treasure Island",
-   [2] = "新宝島",
+   [1] = "新宝島",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "New Treasure Island",
    },
   },
  [4725] = {
@@ -59378,7 +59382,10 @@ return {
   ["short"] = {
    [1] = "TAMNM",
    [2] = "They are my noble Masters",
-   [3] = "kimiaru",
+   [3] = "gadegade",
+   [4] = "kimiaru",
+   [5] = "がでがで",
+   [6] = "きみある",
    },
   ["syn"] = {
    [1] = "Ele sunt stăpânele mele nobile",
@@ -64624,10 +64631,11 @@ return {
    [3] = "nodame2",
    },
   ["syn"] = {
-   [1] = "Nodame Cantabile: Paris Chapter",
-   [2] = "Нодамэ Кантабиле (второй сезон)",
-   [3] = "نودامي: جزء باريس",
-   [4] = "交响情人梦_巴黎篇",
+   [1] = "Nodame Cantabile 2",
+   [2] = "Nodame Cantabile: Paris Chapter",
+   [3] = "Нодамэ Кантабиле (второй сезон)",
+   [4] = "نودامي: جزء باريس",
+   [5] = "交响情人梦_巴黎篇",
    },
   },
  [5942] = {
@@ -71733,8 +71741,9 @@ return {
   ["syn"] = {
    [1] = "Muncind",
    [2] = "working",
-   [3] = "Работаю!!",
-   [4] = "迷糊餐厅",
+   [3] = "Работа`!!",
+   [4] = "Работаю!!",
+   [5] = "迷糊餐厅",
    },
   },
  [6781] = {
@@ -74123,9 +74132,10 @@ return {
    [2] = "Ncf",
    },
   ["syn"] = {
-   [1] = "Нодамэ Кантабиле (третий сезон)",
-   [2] = "交响情人梦Finale",
-   [3] = "交响情人梦最终篇",
+   [1] = "Nodame Cantabile 3",
+   [2] = "Нодамэ Кантабиле (третий сезон)",
+   [3] = "交响情人梦Finale",
+   [4] = "交响情人梦最终篇",
    },
   },
  [7020] = {
@@ -78476,7 +78486,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kid the Phantom Thief",
+   [1] = "Kaito Kid",
+   [2] = "Kid the Phantom Thief",
    },
   },
  [7470] = {
@@ -79188,7 +79199,7 @@ return {
    },
   },
  [7548] = {
-  ["main"] = "Sore Ike! Anpanman: Tsumiki Shiro no Himitsu",
+  ["main"] = "Sore Ike! Anpanman: Tsumikijou no Himitsu",
   ["official"] = {
    [1] = "それいけ! アンパンマン つみき城のひみつ",
    },
@@ -79208,7 +79219,7 @@ return {
    },
   },
  [7550] = {
-  ["main"] = "Sore Ike! Anpanman: Roll to Lola Ukigumo Shiro no Himitsu",
+  ["main"] = "Sore Ike! Anpanman: Roll to Laura Ukigumojou no Himitsu",
   ["official"] = {
    [1] = "それいけ! アンパンマン ロールとローラ うきぐも城のひみつ",
    },
@@ -79869,9 +79880,10 @@ return {
  [7621] = {
   ["main"] = "Onigamiden",
   ["official"] = {
-   [1] = "Legend of the Millennium Dragon",
-   [2] = "Onigamiden - Legend of the Millenium Dragon",
-   [3] = "鬼神伝",
+   [1] = "La Leyenda del Dragón Milenario",
+   [2] = "Legend of the Millennium Dragon",
+   [3] = "Onigamiden - Legend of the Millenium Dragon",
+   [4] = "鬼神伝",
    },
   ["short"] = {
    },
@@ -80849,6 +80861,7 @@ return {
   ["syn"] = {
    [1] = "Infinite Stratos",
    [2] = "Infinite Stratos IS",
+   [3] = "Необъятные небеса",
    },
   },
  [7728] = {
@@ -82898,6 +82911,7 @@ return {
    },
   ["syn"] = {
    [1] = "Bibliotheca Mystica de Dantalian",
+   [2] = "Таинственная библиотека Данталиан",
    },
   },
  [7940] = {
@@ -84681,7 +84695,8 @@ return {
   ["syn"] = {
    [1] = "Phi Brain: The God`s Puzzle",
    [2] = "Мозг Фи: Божественная головоломка",
-   [3] = "فی برین: پازل ایزدی",
+   [3] = "Фи Брейн: Господарят на пъзелите",
+   [4] = "فی برین: پازل ایزدی",
    },
   },
  [8132] = {
@@ -85397,8 +85412,9 @@ return {
    },
   ["syn"] = {
    [1] = "Psie Dni",
-   [2] = "روزهای سگی",
-   [3] = "ドッグ・デイズ",
+   [2] = "Собачьи деньки",
+   [3] = "روزهای سگی",
+   [4] = "ドッグ・デイズ",
    },
   },
  [8208] = {
@@ -86090,7 +86106,7 @@ return {
    },
   },
  [8279] = {
-  ["main"] = "Saint Seiya (2011)",
+  ["main"] = "Saint Seiya (2012)",
   ["official"] = {
    [1] = "聖闘士星矢",
    },
@@ -86263,8 +86279,9 @@ return {
    [1] = "ikamusume2",
    },
   ["syn"] = {
-   [1] = "Squid Girl 2",
-   [2] = "侵略!?イカ娘",
+   [1] = "Shinryaku! Ika Musume 2",
+   [2] = "Squid Girl 2",
+   [3] = "侵略!?イカ娘",
    },
   },
  [8295] = {
@@ -87934,6 +87951,7 @@ return {
    },
   ["syn"] = {
    [1] = "Корона Грешника",
+   [2] = "Короната на Грешника",
    },
   },
  [8481] = {
@@ -88795,6 +88813,7 @@ return {
    [1] = "ブラック★ロックシューター (2012)",
    },
   ["short"] = {
+   [1] = "brstv",
    },
   ["syn"] = {
    },
@@ -88807,6 +88826,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Infinite Stratos Encore: Sextet of Burning Love",
    },
   },
  [8587] = {
@@ -89408,6 +89428,7 @@ return {
    [1] = "ハイスクールDxD",
    },
   ["short"] = {
+   [1] = "DxD",
    },
   ["syn"] = {
    [1] = "Harem King",
@@ -89749,7 +89770,8 @@ return {
  [8700] = {
   ["main"] = "Morita-san wa Mukuchi. 2",
   ["official"] = {
-   [1] = "森田さんは無口. 2",
+   [1] = "Moritasan wa Mukuchi (2)",
+   [2] = "森田さんは無口. 2",
    },
   ["short"] = {
    },
@@ -89963,13 +89985,15 @@ return {
    },
   },
  [8727] = {
-  ["main"] = "Love Bitch: Yasashii Onna",
+  ["main"] = "Love Bitch",
   ["official"] = {
-   [1] = "ラブビッチ～優しい女...～",
+   [1] = "LOVE♥BITCH",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Love Bitch: Yasashii Onna",
+   [2] = "ラブビッチ～優しい女...～",
    },
   },
  [8728] = {
@@ -90328,9 +90352,9 @@ return {
    },
   },
  [8764] = {
-  ["main"] = "Hoshi no Kirby no Pilot",
+  ["main"] = "Hoshi no Kirby Pilot",
   ["official"] = {
-   [1] = "星のカービィのPILOT",
+   [1] = "星のカービィ PILOT",
    },
   ["short"] = {
    },
@@ -90975,8 +90999,10 @@ return {
    [1] = "バクマン. (2012)",
    },
   ["short"] = {
+   [1] = "bakuman3",
    },
   ["syn"] = {
+   [1] = "Bakuman S3",
    },
   },
  [8837] = {
@@ -91036,6 +91062,150 @@ return {
   ["main"] = "Yuru Yuri 2",
   ["official"] = {
    [1] = "ゆるゆり♪♪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Yuriyuri 2",
+   },
+  },
+ [8845] = {
+  ["main"] = "Black Jack Final",
+  ["official"] = {
+   [1] = "ブラック・ジャック FINAL",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8846] = {
+  ["main"] = "Moomin 1969",
+  ["official"] = {
+   [1] = "Mūmin",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8847] = {
+  ["main"] = "Chou Soku Henkei Gyrozetter",
+  ["official"] = {
+   [1] = "超速変形ジャイロゼッター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8848] = {
+  ["main"] = "Sengoku Collection",
+  ["official"] = {
+   [1] = "戦国コレクション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8849] = {
+  ["main"] = "Ultraman M78 Gekijou: Love & Peace",
+  ["official"] = {
+   [1] = "ウルトラマンM78劇場 LOVE & PEACE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8850] = {
+  ["main"] = "Ai Mai! Moe Can Change!",
+  ["official"] = {
+   [1] = "あいまい! 萌えCanちぇんじ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Ai Mi! Moe Can Change!",
+   },
+  },
+ [8851] = {
+  ["main"] = "Sekai no Hikari: Shinran Seijin",
+  ["official"] = {
+   [1] = "世界の光 親鸞聖人",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8852] = {
+  ["main"] = "Tasogare Otome x Amnesia",
+  ["official"] = {
+   [1] = "黄昏乙女xアムネジア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Dusk Maiden of Amnesia",
+   },
+  },
+ [8853] = {
+  ["main"] = "Nazo no Kanojo X",
+  ["official"] = {
+   [1] = "謎の彼女X",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8854] = {
+  ["main"] = "Eureka Seven Ao",
+  ["official"] = {
+   [1] = "エウレカセブンAO",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Eureka Seven Astral Ocean",
+   },
+  },
+ [8855] = {
+  ["main"] = "Hyoka",
+  ["official"] = {
+   [1] = "氷菓",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8856] = {
+  ["main"] = "Bosporus Kaikyou Tunnel",
+  ["official"] = {
+   [1] = "ボスポラス海峡トンネル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8857] = {
+  ["main"] = "Sakasama no Patema",
+  ["official"] = {
+   [1] = "サカサマのパテマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8858] = {
+  ["main"] = "Haruwo",
+  ["official"] = {
+   [1] = "ハルヲ",
    },
   ["short"] = {
    },
