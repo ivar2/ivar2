@@ -36,8 +36,12 @@ local parseData = function(source, destination, data)
 		return ivar2:Msg('privmsg', destination, source, response.message)
 	end
 
-	local out = {}
 	local info = response.topartists
+	if(info['@attr'].total == '0') then
+		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any plays in the last 7 days.")
+	end
+
+	local out = {}
 	for i=1, #info.artist do
 		local entry = info.artist[i]
 		table.insert(out, string.format('%s (%s)', entry.name, entry.playcount))
