@@ -38,7 +38,7 @@ local parseData = function(source, destination, data)
 
 	local info = response.topartists
 	if(info.total == '0') then
-		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any plays in the last 7 days.")
+		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any plays in the last 7 days.", info.user)
 	end
 
 	local out = {}
