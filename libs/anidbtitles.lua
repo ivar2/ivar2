@@ -5332,7 +5332,7 @@ return {
   ["main"] = "Seijun Kango Gakuin Shinjin Nurse \"Yumi\" Chigyaku no Kango Jisshuu",
   ["official"] = {
    [1] = "Nurse Me!",
-   [2] = "清純看護学院 新人ナース”祐未”恥虐の看護実習",
+   [2] = "清純看護学院 新人ナース\"祐未\"恥虐の看護実習",
    },
   ["short"] = {
    },
@@ -8438,7 +8438,7 @@ return {
    [3] = "Kapitán Tsubasa",
    [4] = "Olive et Tom - Le retour",
    [5] = "Super Kickers 2006 - Captain Tsubasa",
-   [6] = "Tsubasa kapitány",
+   [6] = "Tsubasa Kapitány (2001)",
    [7] = "الشبح",
    [8] = "キャプテン翼 (2001)",
    },
@@ -18382,8 +18382,9 @@ return {
    [1] = "Dawno, Dawno Temu",
    [2] = "Il était une fois Windaria",
    [3] = "Once Upon A Time",
-   [4] = "Виндария",
-   [5] = "ウインダリア",
+   [4] = "Ο Πρίγκιπας και η πριγκίπισσα",
+   [5] = "Виндария",
+   [6] = "ウインダリア",
    },
   ["short"] = {
    },
@@ -25709,6 +25710,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kameari Park Precinct",
+   [2] = "Kochikame The Movie",
    },
   },
  [1824] = {
@@ -27220,6 +27222,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Стоп!! Хибари-кун!",
    },
   },
  [1932] = {
@@ -33952,11 +33955,12 @@ return {
  [2485] = {
   ["main"] = "Angel",
   ["official"] = {
-   [1] = "エンジェル",
+   [1] = "ANGEL",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "エンジェル",
    },
   },
  [2486] = {
@@ -41012,6 +41016,7 @@ return {
    [1] = "BLOOD+",
    [2] = "Blood+",
    [3] = "Кровь+",
+   [4] = "Кръв+",
    },
   ["short"] = {
    [1] = "B+",
@@ -41019,7 +41024,8 @@ return {
   ["syn"] = {
    [1] = "+دم",
    [2] = "Blood TV",
-   [3] = "Kraujas Plius",
+   [3] = "Blood+",
+   [4] = "Kraujas Plius",
    },
   },
  [3187] = {
@@ -41782,13 +41788,14 @@ return {
   ["official"] = {
    [1] = "Shin Chan - El Pequeño Samurai",
    [2] = "Shin Chan - O Pequeno Samurai",
-   [3] = "映画 クレヨンしんちゃん 嵐を呼ぶアッパレ! 戦国大合戦",
+   [3] = "クレヨンしんちゃん 嵐を呼ぶ アッパレ!戦国大合戦",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Crayon Shin-chan - Film 10",
    [2] = "Crayon Shin-chan Movie 10",
+   [3] = "映画 クレヨンしんちゃん 嵐を呼ぶアッパレ! 戦国大合戦",
    },
   },
  [3317] = {
@@ -45507,16 +45514,16 @@ return {
   ["main"] = "Paris no Isabel",
   ["official"] = {
    [1] = "Isabelle de Paris",
-   [2] = "Isabelle of Paris",
-   [3] = "ريناد",
-   [4] = "巴里のイザベル",
+   [2] = "ريناد",
+   [3] = "巴里のイザベル",
    },
   ["short"] = {
    [1] = "PnI",
    },
   ["syn"] = {
-   [1] = "Pari no Isaberu",
-   [2] = "Paris no Isabelle",
+   [1] = "Isabelle of Paris",
+   [2] = "Pari no Isaberu",
+   [3] = "Paris no Isabelle",
    },
   },
  [3628] = {
@@ -45588,13 +45595,15 @@ return {
  [3633] = {
   ["main"] = "Adesugata Mahou no Sannin Musume",
   ["official"] = {
-   [1] = "艶姿魔法の三人娘",
+   [1] = "艶姿魔法の三人娘[マミ·ペルシャ·エミ]",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Les trois charmantes jeunes filles magiques",
-   [2] = "Mami, Emi, Pelsia: Adesugata Mahou no Sannin Musume",
+   [1] = "Adesugata Mahou no Mami Pelsia Emi",
+   [2] = "Adesugata Mahou no Mami Persia Emi",
+   [3] = "Les trois charmantes jeunes filles magiques",
+   [4] = "Mami, Emi, Pelsia: Adesugata Mahou no Sannin Musume",
    },
   },
  [3634] = {
@@ -49661,7 +49670,7 @@ return {
    },
   ["syn"] = {
    [1] = "Lemon Angel",
-   [2] = "ミッドナイトアニメ　レモンエンジェル",
+   [2] = "ミッドナイトアニメ レモンエンジェル (1987)",
    },
   },
  [4211] = {
@@ -52400,7 +52409,8 @@ return {
  [4512] = {
   ["main"] = "Futari no Joe",
   ["official"] = {
-   [1] = "ふたりのジョー",
+   [1] = "Joe vs. Joe",
+   [2] = "ふたりのジョー",
    },
   ["short"] = {
    },
@@ -53612,7 +53622,7 @@ return {
  [4622] = {
   ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Mouretsu! Otona Teikoku Gyakushuu",
   ["official"] = {
-   [1] = "映画 クレヨンしんちゃん 嵐を呼ぶモーレツ! オトナ帝国の逆襲",
+   [1] = "クレヨンしんちゃん 嵐を呼ぶ モーレツ!オトナ帝国の逆襲",
    },
   ["short"] = {
    },
@@ -53621,6 +53631,7 @@ return {
    [2] = "Crayon Shin-chan Movie 09",
    [3] = "Shin-chan: Imperium dorosłych kontratakuje",
    [4] = "The Adult Empire Strikes Back",
+   [5] = "映画 クレヨンしんちゃん 嵐を呼ぶモーレツ! オトナ帝国の逆襲",
    },
   },
  [4623] = {
@@ -54476,13 +54487,14 @@ return {
  [4704] = {
   ["main"] = "Eiga Crayon Shin-chan: Ankoku Tamatama Daitsuiseki",
   ["official"] = {
-   [1] = "映画 クレヨンしんちゃん 暗黒タマタマ大追跡",
+   [1] = "クレヨンしんちゃん 暗黒タマタマ大追跡",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Crayon Shin-chan - Film 05",
    [2] = "Crayon Shin-chan Movie 05",
+   [3] = "映画 クレヨンしんちゃん 暗黒タマタマ大追跡",
    },
   },
  [4705] = {
@@ -54513,7 +54525,7 @@ return {
   ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Jungle",
   ["official"] = {
    [1] = "Shin-chan: Zamieszanie w Dżungli",
-   [2] = "映画 クレヨンしんちゃん 嵐を呼ぶジャングル",
+   [2] = "クレヨンしんちゃん 嵐を呼ぶジャングル",
    },
   ["short"] = {
    },
@@ -54521,6 +54533,7 @@ return {
    [1] = "Crayon Shin-chan - Film 08",
    [2] = "Crayon Shin-chan Movie 08",
    [3] = "Eiga Crayon Shin-chan: Arashi wo Yobu Jungle",
+   [4] = "映画 クレヨンしんちゃん 嵐を呼ぶジャングル",
    },
   },
  [4708] = {
@@ -57989,7 +58002,8 @@ return {
  [5069] = {
   ["main"] = "Kono Aozora ni Yakusoku o: Youkoso Tsugumi Ryou e",
   ["official"] = {
-   [1] = "この青空に約束を― ～ようこそつぐみ寮へ～",
+   [1] = "Kono Aozora ni Yakusoku wo",
+   [2] = "この青空に約束を― ～ようこそつぐみ寮へ～",
    },
   ["short"] = {
    [1] = "konnyaku",
@@ -63005,7 +63019,8 @@ return {
   ["official"] = {
    [1] = "Dracula",
    [2] = "Dracula: Sovereign of the Damned",
-   [3] = "闇の帝王 吸血鬼ドラキュラ",
+   [3] = "Ο Κόμης Δράκουλας",
+   [4] = "闇の帝王 吸血鬼ドラキュラ",
    },
   ["short"] = {
    },
@@ -68046,6 +68061,7 @@ return {
    },
   ["syn"] = {
    [1] = "Let`s Go! Tamagotchi",
+   [2] = "さあイコー! たまごっち",
    },
   },
  [6322] = {
@@ -69831,15 +69847,15 @@ return {
  [6550] = {
   ["main"] = "Crayon Shin-chan: Otakebe! Kasukabe Yasei Oukoku",
   ["official"] = {
-   [1] = "Crayon Shin-chan: Otakebe! Kasukabe Animal Kingdom",
-   [2] = "クレヨンしんちゃん オタケベ!カスカベ野生王国",
+   [1] = "クレヨンしんちゃん オタケベ!カスカベ野生王国",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Crayon Shin-chan - Film 17",
    [2] = "Crayon Shin-chan Movie 17",
-   [3] = "Kureyon Shinchan: Otakebe! Kasukabe Yasei Oukoku",
+   [3] = "Crayon Shin-chan: Otakebe! Kasukabe Animal Kingdom",
+   [4] = "Kureyon Shinchan: Otakebe! Kasukabe Yasei Oukoku",
    },
   },
  [6551] = {
@@ -70061,7 +70077,8 @@ return {
  [6574] = {
   ["main"] = "GA: Geijutsuka Art Design Class",
   ["official"] = {
-   [1] = "GA 芸術科アートデザインクラス",
+   [1] = "GA Geijutsuka Art Design Class",
+   [2] = "GA 芸術科アートデザインクラス",
    },
   ["short"] = {
    [1] = "G.A.",
@@ -76811,16 +76828,17 @@ return {
   ["main"] = "Karigurashi no Arrietty",
   ["official"] = {
    [1] = "A Pequena Arrietty",
-   [2] = "Arrietty - Die wundersame Welt der Borger",
-   [3] = "Arrietty - il mondo segreto sotto il pavimento",
-   [4] = "Arrietty, le petit monde des chapardeurs",
-   [5] = "Kätkijät",
-   [6] = "Lånaren Arrietty",
-   [7] = "Skoliniautojai",
-   [8] = "The Secret World of Arrietty",
-   [9] = "Ариэтти из страны лилипутов",
-   [10] = "Зээлдэгч Арриэтти",
-   [11] = "借りぐらしのアリエッティ",
+   [2] = "Arriettas hemmelige verden",
+   [3] = "Arrietty - Die wundersame Welt der Borger",
+   [4] = "Arrietty - il mondo segreto sotto il pavimento",
+   [5] = "Arrietty, le petit monde des chapardeurs",
+   [6] = "Kätkijät",
+   [7] = "Lånaren Arrietty",
+   [8] = "Skoliniautojai",
+   [9] = "The Secret World of Arrietty",
+   [10] = "Ариэтти из страны лилипутов",
+   [11] = "Зээлдэгч Арриэтти",
+   [12] = "借りぐらしのアリエッティ",
    },
   ["short"] = {
    [1] = "Arrietty",
@@ -77102,7 +77120,8 @@ return {
  [7286] = {
   ["main"] = "B Gata H Kei",
   ["official"] = {
-   [1] = "B型H系",
+   [1] = "B Gata H Kei - Yamada`s First Time",
+   [2] = "B型H系",
    },
   ["short"] = {
    [1] = "BGHK",
@@ -78539,6 +78558,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Moretsu Pirates",
    },
   },
  [7444] = {
@@ -84939,7 +84959,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Detective Conan: Quarter of Silence",
+   [1] = "Detective Conan Movie 15",
+   [2] = "Detective Conan: Quarter of Silence",
    },
   },
  [8122] = {
@@ -85327,7 +85348,6 @@ return {
   ["official"] = {
    [1] = "Fate/Zero",
    [2] = "فیت / زیرو",
-   [3] = "フェイト/ゼロ",
    },
   ["short"] = {
    [1] = "f/z",
@@ -85337,6 +85357,7 @@ return {
    [1] = "Fate Zero",
    [2] = "Нулева съдба",
    [3] = "سرنوشت / صفر",
+   [4] = "フェイト/ゼロ",
    },
   },
  [8161] = {
@@ -85546,6 +85567,7 @@ return {
    },
   ["syn"] = {
    [1] = "ぬらりひょんの孫 ～千年魔京～",
+   [2] = "滑头鬼之孙~千年魔京~",
    },
   },
  [8178] = {
@@ -87733,6 +87755,7 @@ return {
    [1] = "I Don`t Have Many Friends",
    [2] = "У меня мало друзей",
    [3] = "من دوستان زیادی ندارم",
+   [4] = "我的朋友很少",
    },
   },
  [8420] = {
@@ -88269,14 +88292,14 @@ return {
    },
   },
  [8476] = {
-  ["main"] = "Kore wa Zombie Desuka? Jigoku Hen",
+  ["main"] = "Kore wa Zombie Desuka? Of the Dead",
   ["official"] = {
-   [1] = "これはゾンビですか? 地獄変",
+   [1] = "これはゾンビですか? OF THE DEAD",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Is This a Zombie? Hell Chapter",
+   [1] = "Is This a Zombie? Of the Dead",
    },
   },
  [8478] = {
@@ -88691,6 +88714,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "我的朋友很少OAD",
    },
   },
  [8523] = {
@@ -88878,13 +88902,15 @@ return {
  [8552] = {
   ["main"] = "Kill Me Baby",
   ["official"] = {
-   [1] = "キルミーベイベー",
+   [1] = "Kill Me Baby",
+   [2] = "キルミーベイベー",
    },
   ["short"] = {
    [1] = "kmb",
    },
   ["syn"] = {
    [1] = "Baby, Please Kill Me",
+   [2] = "اقتلني يا حبيبي",
    },
   },
  [8553] = {
@@ -88921,7 +88947,8 @@ return {
  [8556] = {
   ["main"] = "Another",
   ["official"] = {
-   [1] = "アナザー",
+   [1] = "Another",
+   [2] = "アナザー",
    },
   ["short"] = {
    },
@@ -89046,6 +89073,7 @@ return {
   ["main"] = "Brave 10",
   ["official"] = {
    [1] = "BRAVE10",
+   [2] = "Brave 10",
    },
   ["short"] = {
    },
@@ -89184,9 +89212,10 @@ return {
  [8586] = {
   ["main"] = "IS: Infinite Stratos Encore - Koi ni Kogareru Rokujuusou",
   ["official"] = {
-   [1] = "IS＜インフィニット・ストラトス＞ アンコール「恋に焦がれる六重奏」",
+   [1] = "IS&lt;インフィニット・ストラトス&gt; アンコール「恋に焦がれる六重奏」",
    },
   ["short"] = {
+   [1] = "IS Encore",
    },
   ["syn"] = {
    [1] = "Infinite Stratos Encore: Sextet of Burning Love",
@@ -89237,7 +89266,8 @@ return {
  [8593] = {
   ["main"] = "Zero no Tsukaima F",
   ["official"] = {
-   [1] = "ゼロの使い魔F",
+   [1] = "Familiar of Zero F",
+   [2] = "ゼロの使い魔F",
    },
   ["short"] = {
    [1] = "ZnT 4",
@@ -89249,9 +89279,9 @@ return {
    },
   },
  [8594] = {
-  ["main"] = "Tantei Opera Milky Holmes 2",
+  ["main"] = "Tantei Opera Milky Holmes Dai 2 Maku",
   ["official"] = {
-   [1] = "探偵オペラ ミルキィホームズ 2",
+   [1] = "探偵オペラ ミルキィホームズ 第2幕",
    },
   ["short"] = {
    },
@@ -89325,6 +89355,7 @@ return {
    [2] = "新テニスの王子様",
    },
   ["short"] = {
+   [1] = "PoT 2",
    },
   ["syn"] = {
    },
@@ -89506,7 +89537,8 @@ return {
  [8620] = {
   ["main"] = "Ano Natsu de Matteru",
   ["official"] = {
-   [1] = "あの夏で待ってる",
+   [1] = "Ano Natsu de Matteru",
+   [2] = "あの夏で待ってる",
    },
   ["short"] = {
    },
@@ -89770,7 +89802,8 @@ return {
  [8658] = {
   ["main"] = "Nisemonogatari",
   ["official"] = {
-   [1] = "偽物語",
+   [1] = "Nisemonogatari",
+   [2] = "偽物語",
    },
   ["short"] = {
    },
@@ -89801,9 +89834,10 @@ return {
    },
   },
  [8661] = {
-  ["main"] = "Gdgd Fairies",
+  ["main"] = "Gudaguda Fairies",
   ["official"] = {
-   [1] = "gdgd妖精s[ぐだぐだフェアリーズ]",
+   [1] = "gdgd Fairies",
+   [2] = "gdgd妖精s[ぐだぐだフェアリーズ]",
    },
   ["short"] = {
    },
@@ -89861,6 +89895,7 @@ return {
    },
   ["syn"] = {
    [1] = "Natsume Yujincho (4)",
+   [2] = "ناتسومي وكتاب الاصدقاء 4",
    },
   },
  [8668] = {
@@ -90036,6 +90071,7 @@ return {
    [1] = "パパのいうことを聞きなさい!",
    },
   ["short"] = {
+   [1] = "papakiki",
    },
   ["syn"] = {
    [1] = "Listen to Me, Girls. I Am Your Father!",
@@ -90106,7 +90142,7 @@ return {
   ["main"] = "Zoku Attacker You! Kin Medal e no Michi",
   ["official"] = {
    [1] = "Mila e Shiro - Il sogno continua",
-   [2] = "続・アタッカーYOU　金メダルへの道",
+   [2] = "続・アタッカーYOU 金メダルへの道",
    },
   ["short"] = {
    },
@@ -90209,7 +90245,7 @@ return {
    },
   },
  [8709] = {
-  ["main"] = "Senhime Zesshou Symphogear",
+  ["main"] = "Senki Zesshou Symphogear",
   ["official"] = {
    [1] = "戦姫絶唱シンフォギア",
    },
@@ -90251,14 +90287,17 @@ return {
    },
   },
  [8716] = {
-  ["main"] = "Recorder to Randoseru",
+  ["main"] = "Recorder to Randsell Do",
   ["official"] = {
-   [1] = "リコーダーとランドセル",
+   [1] = "Recorder and Randsell",
+   [2] = "リコーダーとランドセル ド♪",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Recorder and Backpack",
+   [2] = "Recorder and Satchel",
+   [3] = "Recorder to Randel",
    },
   },
  [8718] = {
@@ -91878,7 +91917,87 @@ return {
  [8895] = {
   ["main"] = "Evangelion Shin Gekijouban: ?",
   ["official"] = {
-   [1] = "ヱヴァンゲリヲン新劇場版：?",
+   [1] = "ヱヴァンゲリヲン新劇場版:?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8896] = {
+  ["main"] = "Kore ga Umi e no Ai Janaika!",
+  ["official"] = {
+   [1] = "これが海への愛じゃなイカ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8897] = {
+  ["main"] = "Gokujyo",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8898] = {
+  ["main"] = "Otome wa Boku ni Koishiteru: Futari no Elder",
+  ["official"] = {
+   [1] = "乙女はお姉さま[ボク]に恋してる 2人のエルダー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8899] = {
+  ["main"] = "Joshiraku",
+  ["official"] = {
+   [1] = "じょしらく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8901] = {
+  ["main"] = "Happening Star",
+  ["official"] = {
+   [1] = "Happening Star ☆",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ハプニングスター☆",
+   },
+  },
+ [8903] = {
+  ["main"] = "Danball Senki W",
+  ["official"] = {
+   [1] = "ダンボール戦機W",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8904] = {
+  ["main"] = "Himitsu Kessha Taka no Tsume Gaiden Mukashi no Yoshida-kun",
+  ["official"] = {
+   [1] = "秘密結社 鷹の爪外伝 むかしの吉田くん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8906] = {
+  ["main"] = "Mahou Tsukai Jiji",
+  ["official"] = {
+   [1] = "まほうつかいじじぃ",
    },
   ["short"] = {
    },
