@@ -49,9 +49,10 @@ local parseData = function(source, destination, data)
 
 	ivar2:Msg(
 		'privmsg', destination, source,
-		"%s's top artists the last 7 days: %s",
+		"%s's top artists the last 7 days: %s | http://last.fm/user/%s",
 		info['@attr'].user,
-		table.concat(out, ', ')
+		table.concat(out, ', '),
+		info['@attr'].user
 	)
 end
 
