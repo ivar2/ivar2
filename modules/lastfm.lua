@@ -78,12 +78,11 @@ local parseRecentTracks = function(source, destination, data)
 
 		return ivar2:Msg(
 			'privmsg', destination, source,
-			"%s's now playing: %s - [%s] %s | %s",
+			"%s's now playing: %s - [%s] %s",
 			info['@attr'].user,
 			artist,
 			album,
 			track.name,
-			track.url
 		)
 	end
 end
