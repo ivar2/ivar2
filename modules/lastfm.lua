@@ -30,7 +30,7 @@ local buildQuery = function(param)
 end
 
 local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
-local parseData = function(source, destination, data)
+local parseTopArtists = function(source, destination, data)
 	local response = json.decode(utify8(data))
 	if(response.error) then
 		return ivar2:Msg('privmsg', destination, source, response.message)
@@ -67,7 +67,7 @@ return {
 					user = user,
 				},
 				function(data)
-					parseData(source, destination, data)
+					parseTopArtists(source, destination, data)
 				end
 			)
 		end,
