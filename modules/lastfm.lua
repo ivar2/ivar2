@@ -62,7 +62,7 @@ return {
 				buildQuery{
 					method = 'user.getTopArtists',
 					period = '7day',
-					limit = '3',
+					limit = '5',
 					user = user,
 				},
 				function(data)
