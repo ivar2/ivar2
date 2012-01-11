@@ -70,6 +70,10 @@ local parseRecentTracks = function(source, destination, data)
 	end
 
 	local track = info.track[1]
+	if(not track) then
+		return ivar2:Msg('privmsg', destination, source, "%s is currently not listening to music.", info.user)
+	end
+
 	if(track['@attr'].nowplaying) then
 		local artist = track.artist['#text']
 		if(artist == '') then artist = 'Uknown Artist' end
