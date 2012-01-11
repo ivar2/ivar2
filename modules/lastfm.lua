@@ -72,7 +72,13 @@ local parseRecentTracks = function(source, destination, data)
 	local track = info.track[1]
 	if(track['@attr'].nowplaying) then
 		local artist = track.artist['#text']
+		if(artist == '') then artist = 'Uknown Artist' end
+
 		local album = track.album['#text']
+		if(album == '') then album = 'Uknown Album' end
+
+		local title = track.name
+		if(title = '') then title = 'Uknown Title' end
 
 		return ivar2:Msg(
 			'privmsg', destination, source,
@@ -80,7 +86,7 @@ local parseRecentTracks = function(source, destination, data)
 			info['@attr'].user,
 			artist,
 			album,
-			track.name
+			title
 		)
 	end
 end
