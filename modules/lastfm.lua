@@ -82,7 +82,7 @@ local parseRecentTracks = function(source, destination, data)
 		if(album == '') then album = 'Uknown Album' end
 
 		local title = track.name
-		if(title = '') then title = 'Uknown Title' end
+		if(title == '') then title = 'Uknown Title' end
 
 		return ivar2:Msg(
 			'privmsg', destination, source,
