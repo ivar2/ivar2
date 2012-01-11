@@ -56,6 +56,38 @@ local parseTopArtists = function(source, destination, data)
 	)
 end
 
+local parseRecentTracks = function(source, destination, data)
+	local response = json.decode(utify8(data))
+	if(response.error) then
+		return ivar2:Msg('privmsg', destination, source, response.message)
+	end
+
+	-- This should only be the case if someone tries to lookup a registered user
+	-- with no plays registered.
+	local info = response.recenttracks
+	if(info.total == '0') then
+		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any recently played tracks.", info.user)
+	end
+
+	print(info, #info.track)
+
+	local track = info.track[1]
+	if(track['@attr'].nowplaying) then
+		local artist = track.artist['#text']
+		local album = track.album['#text']
+
+		return ivar2:Msg(
+			'privmsg', destination, source,
+			"%s's now playing: %s - [%s] %s | %s",
+			info['@attr'].user,
+			artist,
+			album,
+			track.name,
+			track.url
+		)
+	end
+end
+
 return {
 	PRIVMSG = {
 		['^!lastfm (.+)$'] = function(self, source, destination, user)
@@ -68,6 +100,19 @@ return {
 				},
 				function(data)
 					parseTopArtists(source, destination, data)
+				end
+			)
+		end,
+
+		['^!np (.+)$'] = function(self, source, destination, user)
+			simplehttp(
+				buildQuery{
+					method = 'user.getRecentTracks',
+					limit = '1',
+					user = user,
+				},
+				function(data)
+					parseRecentTracks(source, destination, data)
 				end
 			)
 		end,
