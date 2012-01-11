@@ -66,12 +66,12 @@ local parseRecentTracks = function(source, destination, data)
 	-- with no plays registered.
 	local info = response.recenttracks
 	if(info.total == '0') then
-		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any recently played tracks.", info.user)
+		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any recently played tracks.", info['@attr'].user)
 	end
 
 	local track = info.track[1]
 	if(not track) then
-		return ivar2:Msg('privmsg', destination, source, "%s is currently not listening to music.", info.user)
+		return ivar2:Msg('privmsg', destination, source, "%s is currently not listening to music.", info['@attr'].user)
 	end
 
 	if(track['@attr'].nowplaying) then
