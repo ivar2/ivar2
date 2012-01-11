@@ -80,7 +80,7 @@ local parseRecentTracks = function(source, destination, data)
 			info['@attr'].user,
 			artist,
 			album,
-			track.name,
+			track.name
 		)
 	end
 end
