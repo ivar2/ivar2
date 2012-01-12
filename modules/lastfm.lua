@@ -74,25 +74,19 @@ local parseRecentTracks = function(source, destination, data)
 		return ivar2:Msg('privmsg', destination, source, "%s is currently not listening to music.", info['@attr'].user)
 	end
 
-	if(track['@attr'].nowplaying) then
-		local artist = track.artist['#text']
-		if(artist == '') then artist = 'Uknown Artist' end
+	local out = {
+		string.format("%s's now playing:", info['@attr'].user),
+		string.format('%s -', track.artist['#text']),
+	}
 
-		local album = track.album['#text']
-		if(album == '') then album = 'Uknown Album' end
-
-		local title = track.name
-		if(title == '') then title = 'Uknown Title' end
-
-		return ivar2:Msg(
-			'privmsg', destination, source,
-			"%s's now playing: %s - [%s] %s",
-			info['@attr'].user,
-			artist,
-			album,
-			title
-		)
+	local album = track.album['#text']
+	if(album ~= '') then
+		table.insert(out, string.format('[%s]', album))
 	end
+
+	table.insert(out, track.name)
+
+	return ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
 end
 
 return {
