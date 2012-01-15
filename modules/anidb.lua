@@ -91,7 +91,7 @@ local handleXML = function(xml)
 		local permanent = xml:match('<permanent.->([^<]+)</permanent>')
 		local temporary = xml:match('<temporary.->([^<]+)</temporary>')
 
-		if(airedepisodes == episodecount) then
+		if(not airing) then
 			rating = permanent
 		else
 			rating = temporary
