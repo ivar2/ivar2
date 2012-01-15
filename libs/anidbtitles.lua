@@ -1033,7 +1033,9 @@ return {
    },
   ["syn"] = {
    [1] = "Alien 9",
-   [2] = "Чужой 9",
+   [2] = "Alien9",
+   [3] = "Lớp Alien số 9",
+   [4] = "Чужой 9",
    },
   },
  [59] = {
@@ -1427,9 +1429,10 @@ return {
   ["main"] = "Elf o Karu Mono-tachi II",
   ["official"] = {
    [1] = "Cazadores de Duendes 2",
-   [2] = "Ceux qui chassent des elfes 2",
-   [3] = "Those Who Hunt Elves II",
-   [4] = "エルフを狩るモノたち II",
+   [2] = "Caçadores de Elfas (2)",
+   [3] = "Ceux qui chassent des elfes 2",
+   [4] = "Those Who Hunt Elves II",
+   [5] = "エルフを狩るモノたち II",
    },
   ["short"] = {
    [1] = "TWHE2",
@@ -1580,7 +1583,7 @@ return {
    },
   },
  [89] = {
-  ["main"] = "Koutetsu Tenshi Kurumi 2 shiki",
+  ["main"] = "Koutetsu Tenshi Kurumi 2-shiki",
   ["official"] = {
    [1] = "Steel Angel Kurumi 2",
    [2] = "鋼鉄天使くるみ2式",
@@ -5461,6 +5464,8 @@ return {
    [1] = "Agga Ruta",
    [2] = "Agga Rutta",
    [3] = "Erdvėlaivis Agga Ruter",
+   [4] = "Space Opera Agga Ruter",
+   [5] = "Space Opera アッガ・ルター",
    },
   },
  [316] = {
@@ -11628,7 +11633,7 @@ return {
   ["official"] = {
    [1] = "Albator 84 le film - L`Atlantis de ma jeunesse",
    [2] = "Arcadia of My Youth",
-   [3] = "Capitão Harlock e a nave Arcadia",
+   [3] = "Capitão Harlock e a Nave Arcádia",
    [4] = "Harlock, o Pirata do Espaço",
    [5] = "L`Arcadia della mia giovinezza",
    [6] = "わが青春のアルカディア",
@@ -13580,15 +13585,16 @@ return {
    },
   },
  [872] = {
-  ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Eikou no Yakiniku Road",
+  ["main"] = "Crayon Shin-chan: Arashi o Yobu Eikou no Yakiniku Road",
   ["official"] = {
-   [1] = "映画 クレヨンしんちゃん 嵐を呼ぶ栄光のヤキニクロード",
+   [1] = "クレヨンしんちゃん 嵐を呼ぶ 栄光のヤキニクロード",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Crayon Shin-chan - Film 11",
    [2] = "Crayon Shin-chan Movie 11",
+   [3] = "映画 クレヨンしんちゃん 嵐を呼ぶ栄光のヤキニクロード",
    },
   },
  [873] = {
@@ -16004,11 +16010,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Cidade Perversa",
-   [2] = "Demon Beast City",
-   [3] = "La cité interdite",
-   [4] = "Nuodėmingas Miestas",
-   [5] = "Supernatural Beast City",
+   [1] = "Cidade Maligna",
+   [2] = "Cidade Perversa",
+   [3] = "Demon Beast City",
+   [4] = "La cité interdite",
+   [5] = "Nuodėmingas Miestas",
+   [6] = "Supernatural Beast City",
    },
   },
  [1041] = {
@@ -19188,7 +19195,7 @@ return {
    [2] = "Marimite",
    },
   ["syn"] = {
-   [1] = "A Virgem Maria está olhando por vós",
+   [1] = "A Virgem Maria Está Olhando por Vós",
    [2] = "Ang Birheng Maria ay Pumapatnubay sa Iyo",
    [3] = "La Virgen María nos observa",
    [4] = "La vierge Marie vous regarde",
@@ -28273,12 +28280,12 @@ return {
    [4] = "marimite2",
    },
   ["syn"] = {
-   [1] = "A Virgem Maria está olhando por vós ~primavera~",
-   [2] = "La vierge Marie vous regarde ~printemps~",
+   [1] = "A Virgem Maria Está Olhando Por Vós: Primavera",
+   [2] = "La vierge Marie vous regarde : printemps",
    [3] = "Maria-sama ga Miteru - Haru",
    [4] = "Maria-sama ga Miteru Haru",
    [5] = "The Virgin Mary is watching you: Spring",
-   [6] = "Дева Мария смотрит за вами ~Весна~",
+   [6] = "Дева Мария смотрит за вами: Весна",
    [7] = "圣母在上～春～",
    },
   },
@@ -29194,7 +29201,7 @@ return {
  [2101] = {
   ["main"] = "Jigoku Sensei Nube (1996)",
   ["official"] = {
-   [1] = "地獄先生ぬ〜べ〜 (1996)",
+   [1] = "地獄先生ぬ～べ～ (1996)",
    },
   ["short"] = {
    },
@@ -31760,8 +31767,9 @@ return {
    [2] = "Das Mädchen von der Farm",
    [3] = "Katri - Paimen, Piika Ja Emäntä",
    [4] = "Katri, Girl of the Meadows",
-   [5] = "فتاة المراعي",
-   [6] = "牧場の少女カトリ",
+   [5] = "حنا، دختر در مزرعه",
+   [6] = "فتاة المراعي",
+   [7] = "牧場の少女カトリ",
    },
   ["short"] = {
    },
@@ -36762,8 +36770,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Bottle Bob",
-   [2] = "The Genie Family",
+   [1] = "Bob, o Gênio",
+   [2] = "Bottle Bob",
+   [3] = "O Gênio Maluco",
+   [4] = "The Genie Family",
    },
   },
  [2742] = {
@@ -41784,7 +41794,7 @@ return {
    },
   },
  [3316] = {
-  ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Appare! Sengoku Dai Kassen",
+  ["main"] = "Crayon Shin-chan: Arashi o Yobu Appare! Sengoku Daikassen",
   ["official"] = {
    [1] = "Shin Chan - El Pequeño Samurai",
    [2] = "Shin Chan - O Pequeno Samurai",
@@ -43937,11 +43947,13 @@ return {
    [3] = "Latający dom",
    [4] = "Repülő ház",
    [5] = "The Flying House",
-   [6] = "トンデラハウスの大冒険",
+   [6] = "Летающий дом",
+   [7] = "トンデラハウスの大冒険",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Приключения чудесного домика, или Летающий дом",
    },
   },
  [3499] = {
@@ -47076,7 +47088,8 @@ return {
    },
   ["syn"] = {
    [1] = "Armored Trooper Votoms: Shining Heresy",
-   [2] = "Zırhlı Piyade Votoms: Şanlı Kâfir",
+   [2] = "Armored Trooper Votoms: The Defrost",
+   [3] = "Zırhlı Piyade Votoms: Şanlı Kâfir",
    },
   },
  [3999] = {
@@ -48067,14 +48080,15 @@ return {
  [4084] = {
   ["main"] = "Running Boy Star Soldier no Himitsu",
   ["official"] = {
-   [1] = "RUNNING Boy スターソルジャーの秘密",
-   [2] = "Running Boy: Secrets of Star Soldier",
+   [1] = "RUNNING BOY スター·ソルジャーの秘密",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Running Boy: Star Soldier no Himitsu",
-   [2] = "Running Boy: Star Soldier`s Secret",
+   [1] = "RUNNING BOY スターソルジャーの秘密",
+   [2] = "Running Boy: Secrets of Star Soldier",
+   [3] = "Running Boy: Star Soldier no Himitsu",
+   [4] = "Running Boy: Star Soldier`s Secret",
    },
   },
  [4085] = {
@@ -48884,40 +48898,41 @@ return {
  [4151] = {
   ["main"] = "Toki o Kakeru Shoujo",
   ["official"] = {
-   [1] = "A menina que corre através do tempo",
-   [2] = "Das Mädchen, das durch die Zeit sprang",
-   [3] = "La Ragazza che Saltava nel Tempo",
-   [4] = "La traversée du temps",
-   [5] = "O dziewczynie skaczącej przez czas",
-   [6] = "O dívce, která proskočila časem",
-   [7] = "Putovanje kroz vrijeme",
-   [8] = "The Girl Who Leapt Through Time",
-   [9] = "Tüdruk, kes hüppas läbi aja",
-   [10] = "Девочка, покорившая время",
-   [11] = "กระโดดจัมพ์ ทะลุข้ามเวลา",
-   [12] = "時をかける少女",
-   [13] = "跳跃吧! 时空少女",
-   [14] = "跳躍吧! 時空少女",
-   [15] = "시간을 달리는 소녀",
+   [1] = "Das Mädchen, das durch die Zeit sprang",
+   [2] = "La Ragazza che Saltava nel Tempo",
+   [3] = "La traversée du temps",
+   [4] = "O dziewczynie skaczącej przez czas",
+   [5] = "O dívce, která proskočila časem",
+   [6] = "Putovanje kroz vrijeme",
+   [7] = "The Girl Who Leapt Through Time",
+   [8] = "Tüdruk, kes hüppas läbi aja",
+   [9] = "Девочка, покорившая время",
+   [10] = "กระโดดจัมพ์ ทะลุข้ามเวลา",
+   [11] = "時をかける少女",
+   [12] = "跳跃吧! 时空少女",
+   [13] = "跳躍吧! 時空少女",
+   [14] = "시간을 달리는 소녀",
    },
   ["short"] = {
    [1] = "tokikake",
    [2] = "twks",
    },
   ["syn"] = {
-   [1] = "La ragazza che corre nel tempo",
-   [2] = "Mergina, keliavusi laiku",
-   [3] = "Mergina, kuri persikėlė laike",
-   [4] = "O dievčati, ktoré preskočilo čas",
-   [5] = "The Girl Who Cut Time",
-   [6] = "The Little Girl Who Conquered Time",
-   [7] = "Toki wo Kakeru Shoujo",
-   [8] = "Zamanda Sıçrayan Kız",
-   [9] = "Девочка, перепрыгнувшая время",
-   [10] = "Дівчинка, що стрибала крізь час",
-   [11] = "הילדה שזינקה מבעד לזמן",
-   [12] = "الفتاة التي قفزت عبر الزمن",
-   [13] = "穿越时空的少女",
+   [1] = "A Garota que Salta Através do Tempo",
+   [2] = "A Menina que Corre Através do Tempo",
+   [3] = "La ragazza che corre nel tempo",
+   [4] = "Mergina, keliavusi laiku",
+   [5] = "Mergina, kuri persikėlė laike",
+   [6] = "O dievčati, ktoré preskočilo čas",
+   [7] = "The Girl Who Cut Time",
+   [8] = "The Little Girl Who Conquered Time",
+   [9] = "Toki wo Kakeru Shoujo",
+   [10] = "Zamanda Sıçrayan Kız",
+   [11] = "Девочка, перепрыгнувшая время",
+   [12] = "Дівчинка, що стрибала крізь час",
+   [13] = "הילדה שזינקה מבעד לזמן",
+   [14] = "الفتاة التي قفزت عبر الزمن",
+   [15] = "穿越时空的少女",
    },
   },
  [4152] = {
@@ -49531,7 +49546,7 @@ return {
  [4199] = {
   ["main"] = "Pocket Monsters Advanced Generation: Pokemon Ranger to Umi no Ouji Manaphy",
   ["official"] = {
-   [1] = "Pokemon Ranger and The Temple of The Sea",
+   [1] = "Pokemon Ranger and the Temple of the Sea",
    [2] = "Pokemon Ranger und der Tempel des Meeres",
    [3] = "Pokémon Ranger et le Temple des Mers",
    [4] = "ポケットモンスター アドバンスジェネレーション ポケモンレンジャーと蒼海の王子マナフィ",
@@ -53620,7 +53635,7 @@ return {
    },
   },
  [4622] = {
-  ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Mouretsu! Otona Teikoku Gyakushuu",
+  ["main"] = "Crayon Shin-chan: Arashi o Yobu Mouretsu! Otona Teikoku Gyakushuu",
   ["official"] = {
    [1] = "クレヨンしんちゃん 嵐を呼ぶ モーレツ!オトナ帝国の逆襲",
    },
@@ -53647,10 +53662,10 @@ return {
    },
   },
  [4624] = {
-  ["main"] = "Eiga Crayon Shin-chan: Action Kamen vs Haigure Maou",
+  ["main"] = "Crayon Shin-chan: Action Kamen vs Haigure Maou",
   ["official"] = {
    [1] = "Shin Chan - A Invasão",
-   [2] = "映画 クレヨンしんちゃん アクション仮面VSハイグレ魔王",
+   [2] = "クレヨンしんちゃん アクション仮面VSハイグレ魔王",
    },
   ["short"] = {
    },
@@ -53658,12 +53673,13 @@ return {
    [1] = "Crayon Shin-chan - Film 01",
    [2] = "Crayon Shin-chan Movie 01",
    [3] = "Kureyon Shin-Chan Movie: Action Kamen vs Haigure Devil",
+   [4] = "映画 クレヨンしんちゃん アクション仮面VSハイグレ魔王",
    },
   },
  [4625] = {
-  ["main"] = "Eiga Crayon Shin-chan: Buriburi Oukoku no Hihou",
+  ["main"] = "Crayon Shin-chan: Buriburi Oukoku no Hihou",
   ["official"] = {
-   [1] = "映画 クレヨンしんちゃん ブリブリ王国の秘宝",
+   [1] = "クレヨンしんちゃん ブリブリ王国の秘宝",
    },
   ["short"] = {
    },
@@ -53671,6 +53687,7 @@ return {
    [1] = "Crayon Shin-chan - Film 02",
    [2] = "Crayon Shin-chan Movie 02",
    [3] = "The Kureyon Shin-Chan movie: Treasures of the BuriBuri kingdom",
+   [4] = "映画 クレヨンしんちゃん ブリブリ王国の秘宝",
    },
   },
  [4626] = {
@@ -54485,7 +54502,7 @@ return {
    },
   },
  [4704] = {
-  ["main"] = "Eiga Crayon Shin-chan: Ankoku Tamatama Daitsuiseki",
+  ["main"] = "Crayon Shin-chan: Ankoku Tamatama Daitsuiseki",
   ["official"] = {
    [1] = "クレヨンしんちゃん 暗黒タマタマ大追跡",
    },
@@ -54522,7 +54539,7 @@ return {
    },
   },
  [4707] = {
-  ["main"] = "Eiga Crayon Shin-chan: Arashi o Yobu Jungle",
+  ["main"] = "Crayon Shin-chan: Arashi o Yobu Jungle",
   ["official"] = {
    [1] = "Shin-chan: Zamieszanie w Dżungli",
    [2] = "クレヨンしんちゃん 嵐を呼ぶジャングル",
@@ -57992,11 +58009,12 @@ return {
  [5068] = {
   ["main"] = "Prism Ark",
   ["official"] = {
-   [1] = "プリズム・アーク",
+   [1] = "PRISM ARK",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "プリズム·アーク",
    },
   },
  [5069] = {
@@ -59324,7 +59342,8 @@ return {
  [5205] = {
   ["main"] = "Rensa Byoutou",
   ["official"] = {
-   [1] = "連鎖病棟",
+   [1] = "Linked Hospital Ward",
+   [2] = "連鎖病棟",
    },
   ["short"] = {
    },
@@ -63292,7 +63311,8 @@ return {
    },
   ["syn"] = {
    [1] = "Fairy in the Forest",
-   [2] = "Лесная фея Реми-чан",
+   [2] = "Fairy of the Forest",
+   [3] = "Лесная фея Реми-чан",
    },
   },
  [5720] = {
@@ -64159,9 +64179,9 @@ return {
    },
   },
  [5844] = {
-  ["main"] = "Shishunki Shoujo",
+  ["main"] = "Shishunki Shoujo: Kari Kari",
   ["official"] = {
-   [1] = "思春期少女",
+   [1] = "思春期少女 「かりかり」",
    },
   ["short"] = {
    },
@@ -74883,15 +74903,16 @@ return {
    },
   },
  [7060] = {
-  ["main"] = "Time-Patrol Bon",
+  ["main"] = "Fujiko F. Fujio Anime Special: SF Adventure - Time-Patrol Bon",
   ["official"] = {
-   [1] = "T・Pぼん",
+   [1] = "藤子·F·不二雄アニメスペシャル SFアドベンチャー T·P[タイムパトロール]ぼん",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "TP Bon",
-   [2] = "タイム・パトロールぽん",
+   [2] = "T・Pぼん",
+   [3] = "タイム・パトロールぽん",
    },
   },
  [7061] = {
@@ -75001,13 +75022,14 @@ return {
    },
   },
  [7071] = {
-  ["main"] = "Fujiko F. Fujio no Sukoshi Fushigi Tanpen Theater",
+  ["main"] = "Fujiko F. Fujio: Sukoshi Fushigi Tanpen Theater",
   ["official"] = {
-   [1] = "藤子・F・不二雄のSF(すこしふしぎ)短編シアター",
+   [1] = "藤子·F·不二雄 SF[すこしふしぎ]短編シアター",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "藤子·F·不二雄のSF(すこしふしぎ)短編シアター",
    },
   },
  [7072] = {
@@ -78449,7 +78471,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Future Diary",
+   [1] = "Gelecek Günlüğü",
+   [2] = "The Future Diary",
    },
   },
  [7433] = {
@@ -78550,15 +78573,20 @@ return {
    },
   },
  [7443] = {
-  ["main"] = "Moretsu Uchuu Kaizoku",
+  ["main"] = "Mouretsu Pirates",
   ["official"] = {
    [1] = "Bodacious Space Pirates",
-   [2] = "モーレツ宇宙海賊",
+   [2] = "モーレツ宇宙海賊[パイレーツ] BODACIOUS SPACE PIRATES",
    },
   ["short"] = {
+   [1] = "mopai",
+   [2] = "moupai",
+   [3] = "モーパイ",
    },
   ["syn"] = {
-   [1] = "Moretsu Pirates",
+   [1] = "Mini-skirt Space Pirates",
+   [2] = "Moretsu Pirates",
+   [3] = "Mouretsu Uchuu Kaizoku",
    },
   },
  [7444] = {
@@ -80684,6 +80712,8 @@ return {
    [1] = "ドラゴンクライシス!",
    },
   ["short"] = {
+   [1] = "dc!",
+   [2] = "ドラクラ!",
    },
   ["syn"] = {
    [1] = "Dragon Crisis",
@@ -82767,6 +82797,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = ".hack//Lượng tử",
    },
   },
  [7884] = {
@@ -83835,7 +83866,7 @@ return {
    },
   },
  [7999] = {
-  ["main"] = "Ichirin-Sha",
+  ["main"] = "Ichirin-sha",
   ["official"] = {
    [1] = "L`homme au monocycle",
    [2] = "一輪者 ICHIRIN-SHA",
@@ -87572,7 +87603,7 @@ return {
    },
   },
  [8399] = {
-  ["main"] = "Detective Conan Magic File 2011: Niigata - Tokyo Omiyage Capriccio",
+  ["main"] = "Meitantei Conan Magic File 2011: Niigata - Tokyo Omiyage Capriccio",
   ["official"] = {
    [1] = "名探偵コナン MAGIC FILE 2011 ～新潟～東京 おみやげ狂騒曲(カプリチオ)～",
    },
@@ -88459,7 +88490,7 @@ return {
  [8492] = {
   ["main"] = "Organic",
   ["official"] = {
-   [1] = "organic",
+   [1] = "Organic",
    },
   ["short"] = {
    },
@@ -88709,7 +88740,7 @@ return {
  [8522] = {
   ["main"] = "Boku wa Tomodachi ga Sukunai OAD",
   ["official"] = {
-   [1] = "僕は友達が少ない OAD",
+   [1] = "僕は友達が少ない 闇鍋は美少女が残念な臭い(;´∀`)",
    },
   ["short"] = {
    },
@@ -88910,7 +88941,8 @@ return {
    },
   ["syn"] = {
    [1] = "Baby, Please Kill Me",
-   [2] = "اقتلني يا حبيبي",
+   [2] = "Прикончи меня, детка",
+   [3] = "اقتلني يا حبيبي",
    },
   },
  [8553] = {
@@ -88948,11 +88980,11 @@ return {
   ["main"] = "Another",
   ["official"] = {
    [1] = "Another",
-   [2] = "アナザー",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "アナザー",
    },
   },
  [8557] = {
@@ -89060,13 +89092,14 @@ return {
    },
   },
  [8570] = {
-  ["main"] = "Hoshizora e Kakaru Hashi OVA",
+  ["main"] = "Hoshizora e Kakaru Hashi: Kakaru ka? Gakuensai ni Koi no Hashi",
   ["official"] = {
-   [1] = "星空へ架かる橋 OVA",
+   [1] = "星空へ架かる橋 架かるか? 学園祭に恋の橋",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A Bridge to the Starry Skies: Mountable? Bridge of Love at School Festival",
    },
   },
  [8571] = {
@@ -89189,9 +89222,10 @@ return {
    },
   },
  [8583] = {
-  ["main"] = "Rinne no Lagrange",
+  ["main"] = "Rinne no Lagrange: Flower Declaration of Your Heart",
   ["official"] = {
-   [1] = "輪廻のラグランジェ",
+   [1] = "Lagrange -The Flower of Rin-ne",
+   [2] = "輪廻のラグランジェ Flower declaration of your heart",
    },
   ["short"] = {
    },
@@ -89273,6 +89307,7 @@ return {
    [1] = "ZnT 4",
    [2] = "ZnT4",
    [3] = "zero4",
+   [4] = "zntf",
    },
   ["syn"] = {
    [1] = "Zero no Tsukaima 4",
@@ -89311,7 +89346,7 @@ return {
  [8597] = {
   ["main"] = "A Channel + Smile",
   ["official"] = {
-   [1] = "Aチャンネル＋smile",
+   [1] = "Aチャンネル+smile",
    },
   ["short"] = {
    },
@@ -89351,7 +89386,7 @@ return {
  [8601] = {
   ["main"] = "Shin Tennis no Ouji-sama",
   ["official"] = {
-   [1] = "Prince of Tennis II",
+   [1] = "The Prince of Tennis II",
    [2] = "新テニスの王子様",
    },
   ["short"] = {
@@ -89493,8 +89528,9 @@ return {
  [8616] = {
   ["main"] = "Digimon Xros Wars: Toki o Kakeru Shounen Hunter-tachi",
   ["official"] = {
-   [1] = "توکی او کاکرو شونن هانتر تاچی",
-   [2] = "デジモンクロスウォーズ 時を駆ける少年ハンターたち",
+   [1] = "Digimon Xros Wars - The Young Hunters Who Leapt Through Time",
+   [2] = "توکی او کاکرو شونن هانتر تاچی",
+   [3] = "デジモンクロスウォーズ 時を駆ける少年ハンターたち",
    },
   ["short"] = {
    [1] = "Digimon Xros Wars III",
@@ -89537,12 +89573,14 @@ return {
  [8620] = {
   ["main"] = "Ano Natsu de Matteru",
   ["official"] = {
-   [1] = "Ano Natsu de Matteru",
+   [1] = "Waiting in the Summer",
    [2] = "あの夏で待ってる",
    },
   ["short"] = {
+   [1] = "natsumachi",
    },
   ["syn"] = {
+   [1] = "Onegai Senpai",
    },
   },
  [8624] = {
@@ -89557,13 +89595,14 @@ return {
    },
   },
  [8625] = {
-  ["main"] = "Another OAD",
+  ["main"] = "Another 0-kan",
   ["official"] = {
-   [1] = "アナザー OAD",
+   [1] = "Another 0巻",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "アナザー 0巻",
    },
   },
  [8626] = {
@@ -89727,6 +89766,7 @@ return {
    },
   ["syn"] = {
    [1] = "Chibi Devil",
+   [2] = "Крошка-дьяволёнок!",
    },
   },
  [8646] = {
@@ -89892,6 +89932,7 @@ return {
    [1] = "夏目友人帳 肆",
    },
   ["short"] = {
+   [1] = "ny4",
    },
   ["syn"] = {
    [1] = "Natsume Yujincho (4)",
@@ -90068,7 +90109,8 @@ return {
  [8686] = {
   ["main"] = "Papa no Iukoto o Kikinasai!",
   ["official"] = {
-   [1] = "パパのいうことを聞きなさい!",
+   [1] = "Listen to Me, Girls, I`m Your Father!",
+   [2] = "パパのいうことを聞きなさい!",
    },
   ["short"] = {
    [1] = "papakiki",
@@ -90277,7 +90319,7 @@ return {
  [8713] = {
   ["main"] = "Lupin Sansei: Chi no Kokuin - Eien no Mermaid",
   ["official"] = {
-   [1] = "ルパン三世 血の刻印～永遠のMermaid～",
+   [1] = "ルパン三世 血の刻印 永遠のmermaid",
    },
   ["short"] = {
    },
@@ -90293,11 +90335,14 @@ return {
    [2] = "リコーダーとランドセル ド♪",
    },
   ["short"] = {
+   [1] = "rikoran",
+   [2] = "リコラン",
    },
   ["syn"] = {
    [1] = "Recorder and Backpack",
    [2] = "Recorder and Satchel",
    [3] = "Recorder to Randel",
+   [4] = "Recorder to Randoseru",
    },
   },
  [8718] = {
@@ -90624,7 +90669,8 @@ return {
    },
   ["syn"] = {
    [1] = "Resident Evil 4: Incubate",
-   [2] = "Обитель зла 4: Культивация",
+   [2] = "Обитель зла 4: Инкубация",
+   [3] = "Обитель зла 4: Культивация",
    },
   },
  [8751] = {
@@ -91076,9 +91122,11 @@ return {
  [8798] = {
   ["main"] = "Area no Kishi",
   ["official"] = {
-   [1] = "エリアの騎士",
+   [1] = "エリアの騎士 THE KNIGHT in THE AREA",
    },
   ["short"] = {
+   [1] = "erikishi",
+   [2] = "エリ騎士",
    },
   ["syn"] = {
    [1] = "The Knight in the Area",
@@ -91360,6 +91408,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "THERMÆ ROMÆ",
    },
   },
  [8832] = {
@@ -91555,10 +91604,14 @@ return {
   ["main"] = "Nazo no Kanojo X",
   ["official"] = {
    [1] = "謎の彼女X",
+   [2] = "수수께끼 그녀 X",
    },
   ["short"] = {
+   [1] = "MGX",
    },
   ["syn"] = {
+   [1] = "Mysterious Girlfriend X",
+   [2] = "NnKX",
    },
   },
  [8854] = {
@@ -91613,13 +91666,14 @@ return {
    },
   },
  [8859] = {
-  ["main"] = "Time Ranger Ceasar Boy no Bouken: Roman Teikoku Hen",
+  ["main"] = "Time Ranger Cesar Boy no Bouken: Roma Teikoku Hen",
   ["official"] = {
    [1] = "タイムレンジャー セザールボーイの冒険 ローマ帝国編",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Time Ranger Ceasar Boy no Bouken: Roman Teikoku Hen",
    },
   },
  [8860] = {
@@ -91813,7 +91867,7 @@ return {
    },
   },
  [8881] = {
-  ["main"] = "Iijime",
+  ["main"] = "Ijime",
   ["official"] = {
    [1] = "いじめ",
    },
@@ -91934,15 +91988,6 @@ return {
   ["syn"] = {
    },
   },
- [8897] = {
-  ["main"] = "Gokujyo",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8898] = {
   ["main"] = "Otome wa Boku ni Koishiteru: Futari no Elder",
   ["official"] = {
@@ -91998,6 +92043,116 @@ return {
   ["main"] = "Mahou Tsukai Jiji",
   ["official"] = {
    [1] = "まほうつかいじじぃ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8907] = {
+  ["main"] = "Tweet Love Story: Megumi to Taiyou",
+  ["official"] = {
+   [1] = "Tweet Love Story メグミとタイヨウ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8908] = {
+  ["main"] = "Megumi to Taiyou",
+  ["official"] = {
+   [1] = "メグミとタイヨウ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8910] = {
+  ["main"] = "Nurarihyon no Mago: Gekitou Dai Futsal Taikai! Nuragumi W Cup!!",
+  ["official"] = {
+   [1] = "ぬらりひょんの孫 ~激闘 大フットサル大会!奴良組Wカップ!!~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8911] = {
+  ["main"] = "Aneki no Kounai Kaikinbi",
+  ["official"] = {
+   [1] = "アネキの口内解禁日",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8912] = {
+  ["main"] = "Two Down Full Base",
+  ["official"] = {
+   [1] = "二死満塁[ツーダンフルベース]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Nishi Manrui",
+   },
+  },
+ [8913] = {
+  ["main"] = "Ozuma",
+  ["official"] = {
+   [1] = "オズマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8914] = {
+  ["main"] = "Code Geass: Hangyaku no Lelouch - Nunnally in Wonderland",
+  ["official"] = {
+   [1] = "コードギアス 反逆のルルーシュ ナナリーinワンダーランド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8915] = {
+  ["main"] = "Pareo wa Emerald",
+  ["official"] = {
+   [1] = "パレオはエメラルド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8916] = {
+  ["main"] = "Tsuritama",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8917] = {
+  ["main"] = "Kyoukaisen-jou no Horizon II",
+  ["official"] = {
+   [1] = "境界線上のホライゾン II",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8918] = {
+  ["main"] = "Tengen Toppa Gurren Lagann: Ore no Gurren wa Pikka Pika!!",
+  ["official"] = {
+   [1] = "天元突破 グレンラガン 俺のグレンはピッカピカ!!",
    },
   ["short"] = {
    },
