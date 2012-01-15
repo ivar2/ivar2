@@ -84,7 +84,7 @@ local handleXML = function(xml)
 
 	local airing = airedepisodes ~= episodecount
 	if(airedepisodes == 0) then airedepisodes = '?' end
-	if(episodecount == 0) then episodecount = '?' end
+	if(episodecount == 0 or enddate == '?') then episodecount = '?' end
 
 	local rating
 	do
