@@ -8,6 +8,10 @@ require'logging.console'
 local log = logging.console()
 local anidb = tokyocabinet.hdbnew()
 
+local trim = function(s)
+	return s:match('^%s*(.-)%s*$')
+end
+
 local buildOutput = function(...)
 	local out = {}
 
@@ -164,7 +168,7 @@ return {
 				return doLookup(destination, source, aid)
 			end
 
-			local results = anidbSearch.lookup(anime)
+			local results = anidbSearch.lookup(trim(anime))
 			local numResults = #results
 			if(numResults == 0) then
 				return self:Msg('privmsg', destination, source, 'No matches found :-(.')
