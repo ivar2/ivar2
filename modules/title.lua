@@ -334,7 +334,7 @@ local fetchInformation = function(metadata, index, url, indexString)
 
 		function(data, url, response)
 			local message = handleData(response.headers, data)
-			if(#url > 140) then
+			if(#url > 140 and message) then
 				x0.lookup(url, function(short)
 					metadata.processed[index] = {index = indexString, output = string.format('Downgraded URL: %s - %s', short, message)}
 					metadata.num = metadata.num - 1
