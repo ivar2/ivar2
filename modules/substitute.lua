@@ -21,8 +21,17 @@ local handleMessage = function(nick, destination, msg, update)
 			end
 		end
 
-		local out = db[nick][destination]:gsub(toLuaPattern(match), toLuaPattern(replace), flags)
-		if(out ~= db[nick][destination]) then
+		-- We have to use pcall to avoid errors about invalid capture pattern and
+		-- invalid capture index.
+		local success, out = pcall(
+			string.gsub,
+			db[nick][destination],
+			toLuaPattern(match),
+			toLuaPattern(replace),
+			flags
+		)
+
+		if(success and out ~= db[nick][destination]) then
 			if(update) then
 				db[nick][destination] = out
 			end
