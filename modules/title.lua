@@ -143,7 +143,7 @@ local handleData = function(headers, data)
 		title = html2unicode(title)
 		title = title:gsub('%s%s+', ' ')
 
-		if(title ~= '<snip />') then
+		if(title ~= '<snip />' and #title > 0) then
 			return limitOutput(title)
 		end
 	end
