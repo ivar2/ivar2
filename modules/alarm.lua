@@ -4,19 +4,77 @@ if(not ivar2.timers) then ivar2.timers = {} end
 
 local dateFormat = '%Y-%m-%d %X %Z'
 
-local alarm = function(self, source, destination, time, message)
-	local weeks = time:match'(%d+)[w]'
-	local days = time:match'(%d+)[d]'
-	local hour = time:match'(%d+)[ht]'
-	local min = time:match'(%d+)m'
-	local sec = time:match'(%d+)s'
+local split = function(str, pattern)
+	local out = {}
 
+	str:gsub(pattern, function(match)
+		table.insert(out, match)
+	end)
+
+	return out
+end
+
+local timeMatches = {
+	{
+		'(%d+)[:.](%d%d)', function(h, m)
+			local duration = 0
+			local now = os.time()
+			local date = os.date'*t'
+
+			local ntime = date.hour * 60 * 60 + date.min * 60
+			local atime = h * 60 * 60 + m * 60
+
+			-- Set the correct time of day.
+			date.hour = h
+			date.min = m
+
+			-- Set seconds to zero as we currentlu don't support it.
+			date.sec = 0
+
+			-- If the alarm is right now or in the past, bump it to the next day.
+			if(ntime >= atime) then
+				date.day = date.day + 1
+			end
+
+			return os.time(date) - now
+		end
+	},
+	{'(%d+)w', function(w) return w * 60 * 60 * 24 * 7 end},
+	{'(%d+)d', function(d) return d * 60 * 60 * 24 end},
+	{'(%d+)[ht]', function(h) return h * 60 * 60 end},
+	{'(%d+)m', function(m) return m * 60 end},
+	{'(%d+)s', function(s) return s end},
+}
+
+local parseTime = function(input)
 	local duration = 0
-	if(weeks) then duration = duration + (weeks * 60 * 60 * 24 * 7) end
-	if(days) then duration = duration + (days * 60 * 60 * 24) end
-	if(hour) then duration = duration + (hour * 60 * 60) end
-	if(min) then duration = duration + (min * 60) end
-	if(sec) then duration = duration + sec end
+
+	local offset
+	for i=1, #input do
+		local found
+		local str = input[i]
+		for j=1, #timeMatches do
+			local pattern, func = unpack(timeMatches[j])
+			local a1, a2 = str:match(pattern)
+			if(a1) then
+				found = true
+				duration = duration + func(a1, a2)
+			end
+		end
+
+		if(not found) then break end
+		offset = i + 1
+	end
+
+	if(duration ~= 0) then
+		return duration, table.concat(input, ' ', offset)
+	end
+end
+
+local alarm = function(self, source, destination, message)
+	local duration, message = parseTime(split(message, '%S+'))
+	-- Couldn't figure out what the user wanted.
+	if(not duration) then return end
 
 	-- 60 days or more?
 	local nick = source.nick
@@ -68,7 +126,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!alarm (%S+)%s?(.*)'] = alarm,
-		['^!timer (%S+)%s?(.*)'] = alarm,
+		['^!alarm (.*)$'] = alarm,
+		['^!timer (.*)$'] = alarm,
 	},
 }
