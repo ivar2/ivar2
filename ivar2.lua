@@ -343,7 +343,12 @@ end
 
 function ivar2:Reconnect()
 	self:Log('info', 'Reconnecting to servers.')
-	self.socket:close()
+
+	-- Doesn't exsist if connection.tcp() in :Connect() fails.
+	if(self.socket) then
+		self.socket:close()
+	end
+
 	self:Connect(self.config)
 end
 
