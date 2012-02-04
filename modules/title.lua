@@ -261,6 +261,7 @@ local customHosts = {
 	['youtube%.com'] = function(metadata, index, info, indexString)
 		local query = info.query
 		local path = info.path
+		local fragment = info.fragment
 		local vid
 
 		if(query and query:match('v=[a-zA-Z0-9_-]+')) then
