@@ -266,7 +266,7 @@ local customHosts = {
 		if(query and query:match('v=[a-zA-Z0-9_-]+')) then
 			vid = query:match('v=([a-zA-Z0-9_-]+)')
 		elseif(fragment and fragment:match('.*/%d+/([a-zA-Z0-9_-]+)')) then
-			vid = query:match('.*/%d+/([a-zA-Z0-9_-]+)')
+			vid = fragment:match('.*/%d+/([a-zA-Z0-9_-]+)')
 		-- FIXME: lua-handler's URI parser doesn't split path and fragment
 		-- correctly when there's no query present.
 		elseif(path and path:match('#.*/%d+/([a-zA-Z0-9_-]+)')) then
