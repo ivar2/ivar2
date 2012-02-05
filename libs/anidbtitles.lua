@@ -198,7 +198,7 @@ return {
  [11] = {
   ["main"] = "Initial D Battle Stage",
   ["official"] = {
-   [1] = "頭文字[イニシャル]D BATTLE STAGE",
+   [1] = "頭文字[イニシャル]D Battle Stage",
    },
   ["short"] = {
    [1] = "IDBS",
@@ -960,13 +960,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Vash, o Estouro da Boiada",
-   [2] = "Трайган",
-   [3] = "Трайґан",
-   [4] = "Триган",
-   [5] = "Тригун",
-   [6] = "טריגאן",
-   [7] = "تراي جن",
+   [1] = "Трайган",
+   [2] = "Трайґан",
+   [3] = "Триган",
+   [4] = "Тригун",
+   [5] = "טריגאן",
+   [6] = "تراي جن",
    },
   },
  [54] = {
@@ -1774,11 +1773,12 @@ return {
   ["syn"] = {
    [1] = "Berserk",
    [2] = "Berserkas",
-   [3] = "Берсерк",
-   [4] = "неустрашим войн",
-   [5] = "ברזרק",
-   [6] = "الهائج",
-   [7] = "เบอร์เซิร์ค",
+   [3] = "Leģendārais Paukotājs",
+   [4] = "Берсерк",
+   [5] = "неустрашим войн",
+   [6] = "ברזרק",
+   [7] = "الهائج",
+   [8] = "เบอร์เซิร์ค",
    },
   },
  [99] = {
@@ -3161,9 +3161,9 @@ return {
  [181] = {
   ["main"] = "Versailles no Bara",
   ["official"] = {
-   [1] = "Lady Oscar",
-   [2] = "Lady Oscar - Die Rose von Versailles",
-   [3] = "Rosa de Versalhes",
+   [1] = "A Rosa de Versalhes",
+   [2] = "Lady Oscar",
+   [3] = "Lady Oscar - Die Rose von Versailles",
    [4] = "Rose of Versailles",
    [5] = "Versay`ın Gülü",
    [6] = "ليدي أوسكار",
@@ -3179,13 +3179,12 @@ return {
    [7] = "ベルばら",
    },
   ["syn"] = {
-   [1] = "Berubara",
-   [2] = "La rose de Versailles",
-   [3] = "Lady Oscar",
-   [4] = "Lady Oskar",
-   [5] = "Róża Wersalu",
-   [6] = "The Rose of Versailles",
-   [7] = "Роза Версаля",
+   [1] = "La rose de Versailles",
+   [2] = "Lady Oscar",
+   [3] = "Lady Oskar",
+   [4] = "Róża Wersalu",
+   [5] = "The Rose of Versailles",
+   [6] = "Роза Версаля",
    },
   },
  [183] = {
@@ -8003,8 +8002,9 @@ return {
  [478] = {
   ["main"] = "Glass no Kamen",
   ["official"] = {
-   [1] = "Laura ou la passion du théâtre",
-   [2] = "ガラスの仮面",
+   [1] = "Il grande sogno di Maya",
+   [2] = "Laura ou la passion du théâtre",
+   [3] = "ガラスの仮面",
    },
   ["short"] = {
    },
@@ -8201,8 +8201,9 @@ return {
   ["main"] = "Maison Ikkoku: Kanketsu Hen",
   ["official"] = {
    [1] = "Maison Ikkoku",
-   [2] = "Maison Ikkoku: Final Chapter",
-   [3] = "めぞん一刻 完結篇",
+   [2] = "Maison Ikkoku: Capitolo finale",
+   [3] = "Maison Ikkoku: Final Chapter",
+   [4] = "めぞん一刻 完結篇",
    },
   ["short"] = {
    [1] = "MI movie",
@@ -9527,10 +9528,10 @@ return {
  [581] = {
   ["main"] = "Last Exile",
   ["official"] = {
-   [1] = "Last Exile",
-   [2] = "Изгнанник",
-   [3] = "الملاذ الأخير",
-   [4] = "ラストエグザイル",
+   [1] = "LASTEXILE",
+   [2] = "Last Exile",
+   [3] = "Изгнанник",
+   [4] = "الملاذ الأخير",
    },
   ["short"] = {
    [1] = "le",
@@ -9544,7 +9545,8 @@ return {
    [6] = "Останній вигнанець",
    [7] = "Последният изгнанник",
    [8] = "المنفى الأخير",
-   [9] = "最后流亡",
+   [9] = "ラストエグザイル",
+   [10] = "最后流亡",
    },
   },
  [582] = {
@@ -10186,7 +10188,7 @@ return {
   ["official"] = {
    [1] = "Initial D - 3e étape",
    [2] = "Initial D Third Stage",
-   [3] = "頭文字(イニシャル) D THIRD STAGE",
+   [3] = "頭文字[イニシャル]D Third Stage",
    },
   ["short"] = {
    [1] = "ID3rd",
@@ -10287,7 +10289,7 @@ return {
   ["official"] = {
    [1] = "Initial D - Extra Stage",
    [2] = "Initial D Extra Stage",
-   [3] = "頭文字D Extra Stage",
+   [3] = "頭文字[イニシャル]D Extra Stage",
    },
   ["short"] = {
    [1] = "IDES",
@@ -11524,10 +11526,11 @@ return {
   ["official"] = {
    [1] = "Gundam - Odwet Chara",
    [2] = "Mobile Suit Gundam - Char`s Counter Attack",
-   [3] = "Mobile Suit Gundam: Char`s Counterattack",
-   [4] = "โมบิลสูทกันดั้ม: ชาร์ เคาน์เตอร์ แอทแทค",
-   [5] = "機動戦士ガンダム 逆襲のシャア",
-   [6] = "기동전사 건담 : 역습의 샤아",
+   [3] = "Mobile Suit Gundam - The Movie - Il Contrattacco Di Char",
+   [4] = "Mobile Suit Gundam: Char`s Counterattack",
+   [5] = "โมบิลสูทกันดั้ม: ชาร์ เคาน์เตอร์ แอทแทค",
+   [6] = "機動戦士ガンダム 逆襲のシャア",
+   [7] = "기동전사 건담 : 역습의 샤아",
    },
   ["short"] = {
    [1] = "CCA",
@@ -12173,8 +12176,9 @@ return {
   ["main"] = "Sayonara Ginga Tetsudou 999: Andromeda Shuuchakueki",
   ["official"] = {
    [1] = "Adieu Galaxy Express 999",
-   [2] = "Sayonara Galaxy Express 999",
-   [3] = "さよなら銀河鉄道999 -アンドロメダ終着駅-",
+   [2] = "Galaxy Express 999 - Capolinea Andromeda",
+   [3] = "Sayonara Galaxy Express 999",
+   [4] = "さよなら銀河鉄道999 -アンドロメダ終着駅-",
    },
   ["short"] = {
    [1] = "Adieu 999",
@@ -24341,8 +24345,7 @@ return {
  [1707] = {
   ["main"] = "Yuusha Exkaiser",
   ["official"] = {
-   [1] = "Brave Exkaiser",
-   [2] = "勇者エクスカイザー",
+   [1] = "勇者エクスカイザー",
    },
   ["short"] = {
    [1] = "Exkaizer",
@@ -24350,6 +24353,7 @@ return {
    },
   ["syn"] = {
    [1] = "Brave Caesar",
+   [2] = "Brave Exkaiser",
    },
   },
  [1708] = {
@@ -24365,14 +24369,14 @@ return {
  [1709] = {
   ["main"] = "Taiyou no Yuusha Fighbird",
   ["official"] = {
-   [1] = "Brave hero of the Sun, Firebird",
-   [2] = "太陽の勇者ファイバード",
+   [1] = "太陽の勇者ファイバード",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Brave of the Sun Fighbird",
-   [2] = "Burning brave hero Firebird",
+   [1] = "Brave hero of the Sun, Firebird",
+   [2] = "Brave of the Sun Fighbird",
+   [3] = "Burning brave hero Firebird",
    },
   },
  [1710] = {
@@ -24468,15 +24472,15 @@ return {
  [1717] = {
   ["main"] = "Yuusha Ou GaoGaiGar Final",
   ["official"] = {
-   [1] = "Brave King GaoGaiGar OVA",
-   [2] = "勇者王ガオガイガー FINAL",
-   [3] = "가오가이거 파이널",
+   [1] = "勇者王ガオガイガー FINAL",
+   [2] = "가오가이거 파이널",
    },
   ["short"] = {
    [1] = "GGG Final",
    },
   ["syn"] = {
-   [1] = "勇者王.最终结合",
+   [1] = "Brave King GaoGaiGar OVA",
+   [2] = "勇者王.最终结合",
    },
   },
  [1719] = {
@@ -24536,7 +24540,7 @@ return {
   ["official"] = {
    [1] = "Initial D - 4e étape",
    [2] = "Initial D Fourth Stage",
-   [3] = "頭文字(イニシャル) D Fourth Stage",
+   [3] = "頭文字[イニシャル]D Fourth Stage",
    },
   ["short"] = {
    [1] = "ID4th",
@@ -27805,11 +27809,12 @@ return {
  [1978] = {
   ["main"] = "Tower of Etruria",
   ["official"] = {
-   [1] = "タワー オブ エトルリア",
+   [1] = "Tower of Etruria",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "タワー オブ エトルリア",
    },
   },
  [1979] = {
@@ -28021,12 +28026,13 @@ return {
    [1] = "AIR TV",
    [2] = "AIR 青空",
    [3] = "Air Natsu Tokubetsu-hen",
-   [4] = "Gökyüzü",
-   [5] = "Powietrze",
-   [6] = "Въздух",
-   [7] = "Высь",
-   [8] = "Повітря",
-   [9] = "هواء",
+   [4] = "Gaiss",
+   [5] = "Gökyüzü",
+   [6] = "Powietrze",
+   [7] = "Въздух",
+   [8] = "Высь",
+   [9] = "Повітря",
+   [10] = "هواء",
    },
   },
  [2003] = {
@@ -28091,7 +28097,8 @@ return {
   ["main"] = "Kidou Senshi Gundam 0083: Zeon no Zankou",
   ["official"] = {
    [1] = "Mobile Suit Gundam 0083 - Le crépuscule de Zeon",
-   [2] = "機動戦士ガンダム0083 -ジオンの残光-",
+   [2] = "Mobile Suit Gundam 0083 The Movie - L`Ultima Scintilla Di Zeon",
+   [3] = "機動戦士ガンダム0083 -ジオンの残光-",
    },
   ["short"] = {
    [1] = "Gundam 0083: The Last Blitz of Zeon",
@@ -30261,9 +30268,10 @@ return {
    [1] = "Sword of the Stranger",
    [2] = "Sword of the stranger",
    [3] = "Võõra mõõk",
-   [4] = "سيف الغريب",
-   [5] = "ストレンヂア -無皇刃譚-",
-   [6] = "스트레인저 무황인담",
+   [4] = "Мечът на странника",
+   [5] = "سيف الغريب",
+   [6] = "ストレンヂア -無皇刃譚-",
+   [7] = "스트레인저 무황인담",
    },
   ["short"] = {
    [1] = "Stranja",
@@ -32429,7 +32437,7 @@ return {
  [2349] = {
   ["main"] = "Muteki Robo Trider G7",
   ["official"] = {
-   [1] = "Trider G7",
+   [1] = "L` Indistruttibile Robot Trider G7",
    [2] = "無敵ロボ トライダーG7",
    },
   ["short"] = {
@@ -33738,13 +33746,13 @@ return {
  [2459] = {
   ["main"] = "Yuusha Shirei Dagwon",
   ["official"] = {
-   [1] = "Brave Command Dagwon",
-   [2] = "勇者指令ダグオン",
+   [1] = "勇者指令ダグオン",
    },
   ["short"] = {
    [1] = "dagwon",
    },
   ["syn"] = {
+   [1] = "Brave Command Dagwon",
    },
   },
  [2460] = {
@@ -38736,7 +38744,7 @@ return {
    },
   },
  [2912] = {
-  ["main"] = "Gekijouban Rockman.EXE - Hikari to Yami no Program",
+  ["main"] = "Gekijouban Rockman.EXE: Hikari to Yami no Program",
   ["official"] = {
    [1] = "劇場版ロックマンエグゼ 光と闇の遺産[プログラム]",
    },
@@ -39423,14 +39431,14 @@ return {
  [3049] = {
   ["main"] = "Kikou Keisatsu Metal Jack",
   ["official"] = {
-   [1] = "Armored Police Metal Jack",
-   [2] = "Spezialeinheit Metal Jack",
-   [3] = "機甲警察 メタルジャック",
+   [1] = "Spezialeinheit Metal Jack",
+   [2] = "機甲警察 メタルジャック",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kikou Keisatsu Metarujakku",
+   [1] = "Armored Police Metal Jack",
+   [2] = "Kikou Keisatsu Metarujakku",
    },
   },
  [3050] = {
@@ -39617,8 +39625,9 @@ return {
  [3067] = {
   ["main"] = "Ichigo 100%",
   ["official"] = {
-   [1] = "Strawberry 100%",
-   [2] = "いちご100%",
+   [1] = "Ichigo 100%",
+   [2] = "Strawberry 100%",
+   [3] = "いちご100%",
    },
   ["short"] = {
    [1] = "Ichigo",
@@ -40661,12 +40670,12 @@ return {
  [3154] = {
   ["main"] = "Ougon Yuusha Goldran",
   ["official"] = {
-   [1] = "Golden Brave Goldran",
-   [2] = "黄金勇者ゴルドラン",
+   [1] = "黄金勇者ゴルドラン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Golden Brave Goldran",
    },
   },
  [3155] = {
@@ -41511,12 +41520,13 @@ return {
    [2] = "Fata Iadului",
    [3] = "Garota do Inferno",
    [4] = "La chica infernal",
-   [5] = "Piekielna dziewczyna",
-   [6] = "Адская девочка",
-   [7] = "Момичето от ада",
-   [8] = "Пекельна дівчина",
-   [9] = "فتاة الجحيم",
-   [10] = "地狱少女",
+   [5] = "Menina do Inferno",
+   [6] = "Piekielna dziewczyna",
+   [7] = "Адская девочка",
+   [8] = "Момичето от ада",
+   [9] = "Пекельна дівчина",
+   [10] = "فتاة الجحيم",
+   [11] = "地狱少女",
    },
   },
  [3293] = {
@@ -41688,7 +41698,7 @@ return {
   ["official"] = {
    [1] = "Tokyo Requiem",
    [2] = "Διαστροφικές Iστορίες του Τόκυο",
-   [3] = "東京鎮魂歌",
+   [3] = "東京鎮魂歌[レクイエム]",
    },
   ["short"] = {
    },
@@ -42167,12 +42177,13 @@ return {
  [3345] = {
   ["main"] = "Growlanser IV: Wayfarer of the Time",
   ["official"] = {
-   [1] = "グローランサーIV ~Wayfarer of the time~",
+   [1] = "GROWLANSER IV Wayfarer of the time",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Growlanser IV: Wayfarer of Time",
+   [2] = "グローランサーIV",
    },
   },
  [3346] = {
@@ -42772,12 +42783,13 @@ return {
    [4] = "Juodoji Lagūna",
    [5] = "Kara Lagün",
    [6] = "Laguna Neagră",
-   [7] = "Черната Лагуна",
-   [8] = "Чорна лагуна",
-   [9] = "Чёрная лагуна",
-   [10] = "الوحل الأسود",
-   [11] = "مرداب سیاه",
-   [12] = "黑礁",
+   [7] = "Melnā Lagūna",
+   [8] = "Черната Лагуна",
+   [9] = "Чорна лагуна",
+   [10] = "Чёрная лагуна",
+   [11] = "الوحل الأسود",
+   [12] = "مرداب سیاه",
+   [13] = "黑礁",
    },
   },
  [3396] = {
@@ -44456,19 +44468,19 @@ return {
  [3541] = {
   ["main"] = "Giant Robo Gaiden Ginrei",
   ["official"] = {
-   [1] = "Giant Robo - Ginrei Special",
+   [1] = "Ginrei Special",
    [2] = "ジャイアントロボ外伝 GinRei 銀鈴",
    },
   ["short"] = {
    [1] = "Gin Rei",
-   [2] = "Ginrei Special",
-   [3] = "ginrei",
-   [4] = "grgg",
+   [2] = "ginrei",
+   [3] = "grgg",
    },
   ["syn"] = {
-   [1] = "Giant Robo Gaiden",
-   [2] = "Giant Robo: Gin-Rei Special",
-   [3] = "GinRei: THE ANIMATION",
+   [1] = "Giant Robo - Ginrei Special",
+   [2] = "Giant Robo Gaiden",
+   [3] = "Giant Robo: Gin-Rei Special",
+   [4] = "GinRei: THE ANIMATION",
    },
   },
  [3542] = {
@@ -44856,7 +44868,7 @@ return {
    [2] = "Då Sångstritaren Gråter",
    [3] = "Higurashi no Naku Koroni",
    [4] = "Kiedy płaczą cykady",
-   [5] = "Quando as cigarras choram",
+   [5] = "Quando as Cigarras Choram",
    [6] = "Quando piansero le cicale",
    [7] = "When The Cicadas Cry",
    [8] = "When They Cry",
@@ -47735,22 +47747,24 @@ return {
    [2] = "Betonas, geležis, raumenys",
    [3] = "En busca de la ciudad tesoro",
    [4] = "Hazine Şehri",
-   [5] = "TEKKONKINKREET - Preto e Branco",
+   [5] = "Preto e Branco",
    [6] = "Tekkon Kinkreet - Soli contro tutti",
    [7] = "TekkonKinkreet",
    [8] = "Tekkonkinkreet",
    [9] = "Tekkonkinkreet - A Cidade do Tesouro",
-   [10] = "Железобетон",
-   [11] = "Теконкинкрийт",
-   [12] = "鉄コン筋クリート (2006)",
-   [13] = "철콘 근크리트",
+   [10] = "Tekkonkinkreet:Μαχητες Της Σιδερενιας Πολης",
+   [11] = "Железобетон",
+   [12] = "Теконкинкрийт",
+   [13] = "鉄コン筋クリート (2006)",
+   [14] = "철콘 근크리트",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Black & White",
-   [2] = "Tekkon Kinkurito",
-   [3] = "Залізобетон",
+   [2] = "Tekkon Kinkreet",
+   [3] = "Tekkon Kinkurito",
+   [4] = "Залізобетон",
    },
   },
  [4055] = {
@@ -48760,7 +48774,8 @@ return {
    [1] = "i100 ova",
    },
   ["syn"] = {
-   [1] = "Strawberry 100% OVA",
+   [1] = "Ichigo 100% - OAV",
+   [2] = "Strawberry 100% OVA",
    },
   },
  [4143] = {
@@ -50066,13 +50081,14 @@ return {
    [2] = "Dnes v triede 5-2",
    [3] = "Dzisiaj w klasie 5-2",
    [4] = "Hoje na Sala 5-2",
-   [5] = "Kyo no Gononi",
-   [6] = "Kyou no 5 no 2",
-   [7] = "Kyou no 5-2",
-   [8] = "Today`s 5th grader, 2nd class",
-   [9] = "Сегодня в 5-ом Б",
-   [10] = "היום בכיתה ה`-2",
-   [11] = "今天的5年2班",
+   [5] = "Hoje na Turma 5-2",
+   [6] = "Kyo no Gononi",
+   [7] = "Kyou no 5 no 2",
+   [8] = "Kyou no 5-2",
+   [9] = "Today`s 5th grader, 2nd class",
+   [10] = "Сегодня в 5-ом Б",
+   [11] = "היום בכיתה ה`-2",
+   [12] = "今天的5年2班",
    },
   },
  [4242] = {
@@ -51824,9 +51840,10 @@ return {
    },
   ["syn"] = {
    [1] = "Kara Kan Kardeşler",
-   [2] = "Чернокръвните братя",
-   [3] = "أشقاء الدم الأسود",
-   [4] = "黑血兄弟",
+   [2] = "Melno Asiņu Brāļi",
+   [3] = "Чернокръвните братя",
+   [4] = "أشقاء الدم الأسود",
+   [5] = "黑血兄弟",
    },
   },
  [4417] = {
@@ -52957,20 +52974,21 @@ return {
    [1] = "DN",
    },
   ["syn"] = {
-   [1] = "Mirties Užrašai",
-   [2] = "Notes Śmierci",
-   [3] = "Quaderno della Morte",
-   [4] = "Sveska Smrti",
-   [5] = "Ölüm Defteri",
-   [6] = "Записник Смерті",
-   [7] = "Свеска Смрти",
-   [8] = "Тетрадка на Смъртта",
-   [9] = "מחברת המוות",
-   [10] = "دفترچه مرگ",
-   [11] = "مدونة الموت",
-   [12] = "مذكرة الموت",
-   [13] = "デスノート",
-   [14] = "死亡笔记",
+   [1] = "Caderno da Morte",
+   [2] = "Mirties Užrašai",
+   [3] = "Notes Śmierci",
+   [4] = "Quaderno della Morte",
+   [5] = "Sveska Smrti",
+   [6] = "Ölüm Defteri",
+   [7] = "Записник Смерті",
+   [8] = "Свеска Смрти",
+   [9] = "Тетрадка на Смъртта",
+   [10] = "מחברת המוות",
+   [11] = "دفترچه مرگ",
+   [12] = "مدونة الموت",
+   [13] = "مذكرة الموت",
+   [14] = "デスノート",
+   [15] = "死亡笔记",
    },
   },
  [4564] = {
@@ -53557,6 +53575,7 @@ return {
  [4609] = {
   ["main"] = "Highway Jenny",
   ["official"] = {
+   [1] = "Highway Jenny",
    },
   ["short"] = {
    },
@@ -54978,10 +54997,11 @@ return {
  [4747] = {
   ["main"] = "Katekyo Hitman Reborn!",
   ["official"] = {
-   [1] = "Tetikçi Eğitmen Reborn!",
-   [2] = "Tutor Hitman Reborn!",
-   [3] = "ครูพิเศษจอมป่วน รีบอร์น!",
-   [4] = "家庭教師ヒットマンREBORN!",
+   [1] = "Reborn!",
+   [2] = "Tetikçi Eğitmen Reborn!",
+   [3] = "Tutor Hitman Reborn!",
+   [4] = "ครูพิเศษจอมป่วน รีบอร์น!",
+   [5] = "家庭教師ヒットマンREBORN!",
    },
   ["short"] = {
    [1] = "KHR",
@@ -58397,7 +58417,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Bakugan Szörny Bunyósok",
+   [1] = "Bakugan Kaujas Cīnītāji",
+   [2] = "Bakugan Szörny Bunyósok",
    },
   },
  [5099] = {
@@ -58507,8 +58528,9 @@ return {
   ["main"] = "Shigurui",
   ["official"] = {
    [1] = "Shigurui: Death Frenzy",
-   [2] = "シグルイ",
-   [3] = "시구루이",
+   [2] = "Шигуруй: Гибелна ярост",
+   [3] = "シグルイ",
+   [4] = "시구루이",
    },
   ["short"] = {
    },
@@ -60215,7 +60237,7 @@ return {
  [5298] = {
   ["main"] = "Initial D Battle Stage 2",
   ["official"] = {
-   [1] = "頭文字[イニシャル]D BATTLE STAGE 2",
+   [1] = "頭文字[イニシャル]D Battle Stage 2",
    },
   ["short"] = {
    },
@@ -61928,6 +61950,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bālais Motobraucējs",
    },
   },
  [5532] = {
@@ -62860,7 +62883,8 @@ return {
  [5638] = {
   ["main"] = "Ai no Katachi: Ecchi na Onna no Ko wa Kirai... Desu ka?",
   ["official"] = {
-   [1] = "愛のカタチ ～エッチな女のコは嫌い...ですか?～",
+   [1] = "The Shape of Love",
+   [2] = "愛のカタチ ～エッチな女のコは嫌い...ですか?～",
    },
   ["short"] = {
    },
@@ -63096,7 +63120,8 @@ return {
    [1] = "Blade of the Immortal",
    [2] = "Blade: A Lâmina do Imortal",
    [3] = "Miecz Nieśmiertelnego",
-   [4] = "無限の住人",
+   [4] = "Острието на безсмъртния",
+   [5] = "無限の住人",
    },
   ["short"] = {
    [1] = "BotI",
@@ -63337,6 +63362,7 @@ return {
    [1] = "Fairy in the Forest",
    [2] = "Fairy of the Forest",
    [3] = "Лесная фея Реми-чан",
+   [4] = "妖精の森",
    },
   },
  [5720] = {
@@ -65756,15 +65782,16 @@ return {
    [3] = "Il Maggiordomo Nero",
    [4] = "Kara Uşak",
    [5] = "Kuro Shitsuji",
-   [6] = "Mordomo Negro",
-   [7] = "Paslaptingasis liokajus",
-   [8] = "Su Matzurdomu Nieddu",
-   [9] = "Μαύρος Μπάτλερ",
-   [10] = "Темний дворецький",
-   [11] = "Тёмный Дворецкий",
-   [12] = "Черният Иконом",
-   [13] = "الخادم الغامض",
-   [14] = "黑执事",
+   [6] = "Melnais Virssulainis",
+   [7] = "Mordomo Negro",
+   [8] = "Paslaptingasis liokajus",
+   [9] = "Su Matzurdomu Nieddu",
+   [10] = "Μαύρος Μπάτλερ",
+   [11] = "Темний дворецький",
+   [12] = "Тёмный Дворецкий",
+   [13] = "Черният Иконом",
+   [14] = "الخادم الغامض",
+   [15] = "黑执事",
    },
   },
  [6049] = {
@@ -66121,9 +66148,10 @@ return {
   ["syn"] = {
    [1] = "C;H",
    [2] = "ChäoS;HEAd",
-   [3] = "Кутерьма в голове",
-   [4] = "Хаос в Главата",
-   [5] = "رأس;الفوضى",
+   [3] = "Haoss;Galva",
+   [4] = "Кутерьма в голове",
+   [5] = "Хаос в Главата",
+   [6] = "رأس;الفوضى",
    },
   },
  [6089] = {
@@ -66531,11 +66559,12 @@ return {
  [6129] = {
   ["main"] = "Initial D Extra Stage 2: Tabidachi no Green",
   ["official"] = {
-   [1] = "頭文字D Extra Stage 2 旅立ちのグリーン",
+   [1] = "頭文字[イニシャル]D Extra Stage2",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "頭文字D Extra Stage 2 旅立ちのグリーン",
    },
   },
  [6130] = {
@@ -68679,11 +68708,12 @@ return {
   ["main"] = "Bremen 4: Jigoku no Naka no Tenshi-tachi",
   ["official"] = {
    [1] = "Bremen 4",
-   [2] = "ブレーメン4 地獄の中の天使たち",
+   [2] = "ブレーメン4[フォー]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ブレーメン4 地獄の中の天使たち",
    },
   },
  [6397] = {
@@ -70037,10 +70067,11 @@ return {
   ["syn"] = {
    [1] = "Angel Beats",
    [2] = "Angelo širdies dūžiai",
-   [3] = "Ангельские ритмы!",
-   [4] = "Пульс ангела!",
-   [5] = "天使的心跳",
-   [6] = "엔젤비트!, 엔젤비츠!",
+   [3] = "Eņģeļa Pulss",
+   [4] = "Ангельские ритмы!",
+   [5] = "Пульс ангела!",
+   [6] = "天使的心跳",
+   [7] = "엔젤비트!, 엔젤비츠!",
    },
   },
  [6566] = {
@@ -76887,14 +76918,15 @@ return {
    [2] = "Arriettas hemmelige verden",
    [3] = "Arrietty - Die wundersame Welt der Borger",
    [4] = "Arrietty - il mondo segreto sotto il pavimento",
-   [5] = "Arrietty, le petit monde des chapardeurs",
-   [6] = "Kätkijät",
-   [7] = "Lånaren Arrietty",
-   [8] = "Skoliniautojai",
-   [9] = "The Secret World of Arrietty",
-   [10] = "Ариэтти из страны лилипутов",
-   [11] = "Зээлдэгч Арриэтти",
-   [12] = "借りぐらしのアリエッティ",
+   [5] = "Arrietty y el mundo de los diminutos",
+   [6] = "Arrietty, le petit monde des chapardeurs",
+   [7] = "Kätkijät",
+   [8] = "Lånaren Arrietty",
+   [9] = "Skoliniautojai",
+   [10] = "The Secret World of Arrietty",
+   [11] = "Ариэтти из страны лилипутов",
+   [12] = "Зээлдэгч Арриэтти",
+   [13] = "借りぐらしのアリエッティ",
    },
   ["short"] = {
    [1] = "Arrietty",
@@ -78253,6 +78285,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bakugan Kaujas Cīnītāji: Jaunā Vestroia",
    },
   },
  [7402] = {
@@ -79292,6 +79325,7 @@ return {
    },
   ["short"] = {
    [1] = "digimon6",
+   [2] = "digixw",
    },
   ["syn"] = {
    [1] = "Digimon Cross Wars",
@@ -81638,7 +81672,7 @@ return {
    },
   },
  [7765] = {
-  ["main"] = "The Doraemons: Dokidoki Kikansha Daibakushou!",
+  ["main"] = "The Doraemons: Dokidoki Kikansha Daibakusou!",
   ["official"] = {
    [1] = "ザ☆ドラえもんズ ドキドキ機関車大爆走!",
    },
@@ -81680,9 +81714,9 @@ return {
    },
   },
  [7769] = {
-  ["main"] = "Dorami & Doraemons: Space Land Kiki Ippatsu!",
+  ["main"] = "Eiga Dorami & Doraemons: Space Land Kiki Ippatsu!",
   ["official"] = {
-   [1] = "ドラミ&ドラえもんズ 宇宙(スペース)ランド危機イッパツ!",
+   [1] = "映画ドラミ&ドラえもんズ 宇宙[スペース]ランド危機イッパツ!",
    },
   ["short"] = {
    },
@@ -86381,15 +86415,17 @@ return {
  [8260] = {
   ["main"] = "Last Exile: Gin`yoku no Fam",
   ["official"] = {
-   [1] = "ラストエグザイル-銀翼のファム-",
+   [1] = "LASTEXILE 銀翼のファム",
    },
   ["short"] = {
    [1] = "last exile 2",
    [2] = "le2",
    },
   ["syn"] = {
-   [1] = "LASTEXILE -Fam, The Silver Wing-",
-   [2] = "Last Exile: Ginyoku no Fam",
+   [1] = "LAST EXILE 銀翼のファム",
+   [2] = "LASTEXILE -Fam, The Silver Wing-",
+   [3] = "Last Exile: Ginyoku no Fam",
+   [4] = "ラストエグザイル-銀翼のファム-",
    },
   },
  [8261] = {
@@ -86941,6 +86977,8 @@ return {
    [1] = "デジモンクロスウォーズ～悪のデスジェネラルと七人の王国～",
    },
   ["short"] = {
+   [1] = "digimon7",
+   [2] = "digixw2",
    },
   ["syn"] = {
    [1] = "Digimon Xros Wars II",
@@ -87808,7 +87846,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Milk Pot It`s Heavily In the Morning",
    },
   },
  [8418] = {
@@ -88441,7 +88478,7 @@ return {
    },
   },
  [8483] = {
-  ["main"] = "Shakugan no Shana III (Final)",
+  ["main"] = "Shakugan no Shana Final",
   ["official"] = {
    [1] = "Shakugan no Shana III (Final)",
    [2] = "灼眼のシャナIII[Final]",
@@ -89280,6 +89317,7 @@ return {
   ["official"] = {
    [1] = "Lagrange -The Flower of Rin-ne",
    [2] = "輪廻のラグランジェ Flower declaration of your heart",
+   [3] = "윤회의 라그랑주",
    },
   ["short"] = {
    [1] = "lagrange",
@@ -89590,6 +89628,8 @@ return {
    },
   ["short"] = {
    [1] = "Digimon Xros Wars III",
+   [2] = "digimon8",
+   [3] = "digixw3",
    },
   ["syn"] = {
    [1] = "Digimon Xros Wars: The Boy Hunters Who Leapt Through Time",
@@ -90053,11 +90093,12 @@ return {
  [8673] = {
   ["main"] = "Code: Breaker",
   ["official"] = {
-   [1] = "Code: Breaker",
+   [1] = "CØDE:BREAKER",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "コード:ブレイカー",
    },
   },
  [8674] = {
@@ -90438,9 +90479,9 @@ return {
    },
   },
  [8721] = {
-  ["main"] = "Shijou Saikyou no Deshi Ken`ichi OVA",
+  ["main"] = "Shijou Saikyou no Deshi Ken`ichi (2012)",
   ["official"] = {
-   [1] = "史上最強の弟子 ケンイチ OVA",
+   [1] = "史上最強の弟子ケンイチ (2012)",
    },
   ["short"] = {
    },
@@ -90523,6 +90564,7 @@ return {
   ["main"] = "Danshi Koukousei no Nichijou",
   ["official"] = {
    [1] = "男子高校生の日常",
+   [2] = "남자고교생의 일상",
    },
   ["short"] = {
    },
@@ -91465,7 +91507,7 @@ return {
  [8831] = {
   ["main"] = "Thermae Romae",
   ["official"] = {
-   [1] = "テルマエ・ロマエ",
+   [1] = "テルマエ・ロマエ THERMÆ ROMÆ",
    },
   ["short"] = {
    },
@@ -91788,6 +91830,7 @@ return {
    },
   ["syn"] = {
    [1] = "Space Bros.",
+   [2] = "Space Brothers",
    },
   },
  [8866] = {
@@ -92199,6 +92242,7 @@ return {
  [8916] = {
   ["main"] = "Tsuritama",
   ["official"] = {
+   [1] = "つり球",
    },
   ["short"] = {
    },
@@ -92213,6 +92257,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tengen Toppa Gurren Lagann: My Gurren Is Shiny!!",
    },
   },
  [8919] = {
@@ -92285,6 +92330,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ズーブルズ!",
    },
   },
  [8927] = {
@@ -92312,16 +92358,6 @@ return {
   ["main"] = "Blood Lad",
   ["official"] = {
    [1] = "ブラッドラッド",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [8930] = {
-  ["main"] = "The Prince of Tennis: Eikoku-shiki Teikyuu-jou Kessen",
-  ["official"] = {
-   [1] = "The Prince of Tennis: Eikoku-shiki Teikyuu-jou Kessen",
    },
   ["short"] = {
    },
@@ -92376,12 +92412,154 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Chuugakusei: Super Deluxe",
    },
   },
  [8936] = {
   ["main"] = "Chuu-gakusei: Universal Sukoyaka",
   ["official"] = {
    [1] = "中学星 UNIVERSALすこやか",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8937] = {
+  ["main"] = "Ashura",
+  ["official"] = {
+   [1] = "アシュラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8938] = {
+  ["main"] = "Pretty Rhythm: Dear My Future",
+  ["official"] = {
+   [1] = "プリティーリズム ディアマイフューチャー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8939] = {
+  ["main"] = "Eiga Smile Precure!",
+  ["official"] = {
+   [1] = "映画 スマイルプリキュア!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8940] = {
+  ["main"] = "One Piece Film",
+  ["official"] = {
+   [1] = "ワンピース フィルム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8941] = {
+  ["main"] = "The Big O (2003)",
+  ["official"] = {
+   [1] = "THEビッグオー (2003)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8942] = {
+  ["main"] = "Tales of Gekijou",
+  ["official"] = {
+   [1] = "ているず おぶ 劇場",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8943] = {
+  ["main"] = "Naruto SD: Rock Lee no Seishun Full-Power Ninden",
+  ["official"] = {
+   [1] = "NARUTO -ナルト- SD ロック・リーの青春フルパワー忍伝",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8944] = {
+  ["main"] = "Dantalian no Shoka: Ibarahime",
+  ["official"] = {
+   [1] = "ダンタリアンの書架 荊姫",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8945] = {
+  ["main"] = "Sekiei Ayakashi Mangatan",
+  ["official"] = {
+   [1] = "石影妖漫画譚",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8946] = {
+  ["main"] = "Chii`s Sweet Home: Chii to Kocchi, Deau.",
+  ["official"] = {
+   [1] = "チーズスイートホーム チーとコッチ,出会う.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Chii`s Sweet Home: Chii and Kocchi Meet",
+   },
+  },
+ [8947] = {
+  ["main"] = "Ojou-sama Yomeiri Kousou!",
+  ["official"] = {
+   [1] = "お嬢様☆嫁入り抗争!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8948] = {
+  ["main"] = "Hetalia Axis Powers Fan Disc",
+  ["official"] = {
+   [1] = "ヘタリア Ａxis Ｐowers ファンディスク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8949] = {
+  ["main"] = "Kagaku na Yatsura",
+  ["official"] = {
+   [1] = "カガクなヤツら",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8950] = {
+  ["main"] = "Bulsajo roboteu Pinikseu-King",
+  ["official"] = {
+   [1] = "불사조 로보트 피닉스킹",
    },
   ["short"] = {
    },
