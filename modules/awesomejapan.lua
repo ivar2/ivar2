@@ -1,4 +1,6 @@
-local _FLIGHT = (...).config.awesomejapan.flight
+local ev = require'ev'
+
+local _FLIGHT = ivar2.config.awesomejapan.flight
 
 local getDiff = function()
 	local _END = os.date('*t', _FLIGHT)
@@ -23,96 +25,111 @@ local getDiff = function()
 	return diff, flipped
 end
 
-do
-	local self = ...
-	local timers = self.timers or {}
-	self.timers = timers
-
-	local src = 'Awesome Japan'
-	for index, timerData in pairs(timers) do
-		if(timerData.name == src) then
-			table.remove(timers, index)
-			break
+local isOwner = function(source)
+	if(ivar2.config.owners) then
+		for _, mask in next, ivar2.config.owners do
+			if(mask == source.mask) then return true end
 		end
 	end
+end
 
-	local today = os.date('*t', os.time())
+do
+	local self = ivar2
+	if(not ivar2.timers) then ivar2.timers = {} end
 
-	table.insert(timers, {
-		name = src,
-		-- doesn't matter if we overflow on the day.
-		callTime = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0},
-		func = function(self, data)
-			data.callTime = data.callTime + 86400
-			local _NOW = os.time()
+	local name = 'Awesome Japan'
+	if(not self.timers[name]) then
+		local today = os.date('*t', os.time())
+		local midnight = os.time{year = today.year, month = today.month, day = today.day + 1, hour = 0}
+		local now = os.time()
 
-			local days, flipped
-			if(_FLIGHT < _NOW) then
-				flipped = true
-				days = math.floor((_NOW - _FLIGHT) / 86400)
-			else
-				days = math.floor((_FLIGHT - _NOW) / 86400)
-			end
+		local timer = ev.Timer.new(
+			function(loop, timer, revents)
+				local _NOW = os.time()
 
-			if(self.config.awesomejapan.chans) then
-				for k, dest in next, self.config.awesomejapan.chans do
-					local locale = 'dag'
-					if(days > 1) then
-						locale = 'dager'
-					end
+				local days, flipped
+				if(_FLIGHT < _NOW) then
+					flipped = true
+					days = math.floor((_NOW - _FLIGHT) / 86400)
+				else
+					days = math.floor((_FLIGHT - _NOW) / 86400)
+				end
 
-					if(flipped) then
-						self:privmsg(dest, 'Bare %s %s siden awesome guys dro til Japan! *tease*', days, locale)
-					else
-						self:privmsg(dest, 'Bare %s %s til the awesome guyz drar til Japan!', days, locale)
+				if(self.config.awesomejapan.chans) then
+					for k, dest in next, self.config.awesomejapan.chans do
+						local locale = 'dag'
+						if(days > 1) then
+							locale = 'dager'
+						end
+
+						if(flipped) then
+							self:Privmsg(dest, 'Bare %s %s siden awesome guys dro til Japan! *tease*', days, locale)
+						else
+							self:Privmsg(dest, 'Bare %s %s til the awesome guyz drar til Japan!', days, locale)
+						end
 					end
 				end
-			end
-		end,
-	})
+			end,
+			midnight - now,
+			86400
+		)
+
+		self.timers[name] = timer
+		timer:start(ivar2.Loop)
+	end
 end
 
 return {
-	["^:(%S+) PRIVMSG (%S+) :!awesomejapan%s*$"] = function(self, src, dest, msg)
-		local relative = {}
-		local nor = {'sekund', 'sekunder', 'minutt', 'minutter', 'time', 'timer', 'dag', 'dager', 'måned', 'måneder', 'år', 'år'}
-		local order = {'sec','min','hour','day','month','year'}
+	PRIVMSG = {
+		["^!awesomejapan%s*$"] = function(self, source, dest)
+			local relative = {}
+			local nor = {'sekund', 'sekunder', 'minutt', 'minutter', 'time', 'timer', 'dag', 'dager', 'måned', 'måneder', 'år', 'år'}
+			local order = {'sec','min','hour','day','month','year'}
 
-		local diff, flipped = getDiff()
-		for i=#order, 1, -1 do
-			local field = order[i]
-			local d = diff[field]
-			if(d > 0) then
-				local L = (d ~= 1 and i * 2) or (i * 2) - 1
-				table.insert(relative, string.format('%d %s', d, nor[L]))
-			end
-		end
-
-		local att = self.config.awesomejapan.guyz
-		local awesome
-
-		if(att) then
-			local nick = self:srctonick(src)
-			for _, guy in next, att do
-				if(nick == guy) then
-					awesome = true
-					break
+			local diff, flipped = getDiff()
+			for i=#order, 1, -1 do
+				local field = order[i]
+				local d = diff[field]
+				if(d > 0) then
+					local L = (d ~= 1 and i * 2) or (i * 2) - 1
+					table.insert(relative, string.format('%d %s', d, nor[L]))
 				end
 			end
-		end
 
-		if(flipped) then
-			if(awesome) then
-				self:msg(dest, src, 'Bare %s siden DU satt deg på flyet mot Japan. LOL FAIL HOTEL LONER', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
-			else
-				self:msg(dest, src, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+			local att = self.config.awesomejapan.guyz
+			local awesome
+
+			if(att) then
+				local nick = source.nick
+				for _, guy in next, att do
+					if(nick == guy) then
+						awesome = true
+						break
+					end
+				end
 			end
-		else
-			if(awesome) then
-				self:msg(dest, src, 'Om %s sitter DU og Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+
+			if(flipped) then
+				if(awesome) then
+					self:Msg('privmsg', dest, source, 'Bare %s siden DU satt deg på flyet mot Japan. LOL FAIL HOTEL LONER', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+				else
+					self:Msg('privmsg', dest, source, 'Bare %s siden Awesomegjengen satt seg på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+				end
 			else
-				self:msg(dest, src, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+				if(awesome) then
+					self:Msg('privmsg', dest, source, 'Om %s sitter DU og Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+				else
+					self:Msg('privmsg', dest, source, 'Om %s sitter Awesomegjengen på flyet mot Japan!', table.concat(relative, ', '):gsub(', ([^,]+)$', ' og %1'))
+				end
 			end
-		end
-	end,
+		end,
+
+		["^!awesomejapan stop$"] = function(self, source, dest)
+			if(isOwner(source)) then
+				local name = 'Awesome Japan'
+				self.timers[name]:stop(self.Loop)
+				self.timers[name] = nil
+			end
+		end,
+	}
 }
