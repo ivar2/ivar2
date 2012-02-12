@@ -257,14 +257,15 @@ return {
  [15] = {
   ["main"] = "Kanon",
   ["official"] = {
-   [1] = "カノン",
+   [1] = "Kanon",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Kanon 2002",
    [2] = "Канон",
-   [3] = "雪之少女",
+   [3] = "カノン",
+   [4] = "雪之少女",
    },
   },
  [16] = {
@@ -907,6 +908,7 @@ return {
   ["syn"] = {
    [1] = "Απήεντο Σομα",
    [2] = "Απήεντο Σώμα",
+   [3] = "沉默的未知",
    },
   },
  [51] = {
@@ -1254,7 +1256,7 @@ return {
    [1] = "Irresponsible Captain Tylor (1994)",
    [2] = "Tylor - The Irresponsible Captain",
    [3] = "Tylor - The irresponsible captain (OAV)",
-   [4] = "無責任艦長タイラー特別編　ひとりぼっちの戦争",
+   [4] = "無責任艦長タイラー特別編 ひとりぼっちの戦争",
    },
   ["short"] = {
    },
@@ -5224,16 +5226,17 @@ return {
    [14] = "Mój sąsiad Totoro",
    [15] = "Naaber Totoro",
    [16] = "Naapurini Totoro",
-   [17] = "Totoro - A varázserdő titka",
-   [18] = "Οι περιπέτειες του Τότορο",
-   [19] = "Миний хөрш Тоторо",
-   [20] = "Мой сосед Тоторо",
-   [21] = "השכן שלי טוטורו",
-   [22] = "جـــاري تــوتورو",
-   [23] = "โทโทโร่ เพื่อนรัก",
-   [24] = "となりのトトロ",
-   [25] = "龍貓",
-   [26] = "이웃집 토토로",
+   [17] = "Totoro",
+   [18] = "Totoro - A varázserdő titka",
+   [19] = "Οι περιπέτειες του Τότορο",
+   [20] = "Миний хөрш Тоторо",
+   [21] = "Мой сосед Тоторо",
+   [22] = "השכן שלי טוטורו",
+   [23] = "جـــاري تــوتورو",
+   [24] = "โทโทโร่ เพื่อนรัก",
+   [25] = "となりのトトロ",
+   [26] = "龍貓",
+   [27] = "이웃집 토토로",
    },
   ["short"] = {
    [1] = "TnT",
@@ -5857,22 +5860,23 @@ return {
   ["main"] = "Mimi o Sumaseba",
   ["official"] = {
    [1] = "A könyvek hercege",
-   [2] = "Si tu tends l`oreille",
-   [3] = "Stimme des Herzens - Whisper of the Heart",
-   [4] = "Sydämen kuiskaus",
-   [5] = "Szept serca",
-   [6] = "Südame sosin",
-   [7] = "Whisper of the Heart",
-   [8] = "Yüreğinin Sesi",
-   [9] = "Şoapta Inimii",
-   [10] = "Širdies Šnabždezys",
-   [11] = "Ο Ψίθυρος της Καρδιάς",
-   [12] = "Шепотът на сърцето",
-   [13] = "Шёпот сердца",
-   [14] = "הלחישה שבלב",
-   [15] = "همس القلوب",
-   [16] = "夢幻街少女",
-   [17] = "耳をすませば",
+   [2] = "I sospiri del mio cuore",
+   [3] = "Si tu tends l`oreille",
+   [4] = "Stimme des Herzens - Whisper of the Heart",
+   [5] = "Sydämen kuiskaus",
+   [6] = "Szept serca",
+   [7] = "Südame sosin",
+   [8] = "Whisper of the Heart",
+   [9] = "Yüreğinin Sesi",
+   [10] = "Şoapta Inimii",
+   [11] = "Širdies Šnabždezys",
+   [12] = "Ο Ψίθυρος της Καρδιάς",
+   [13] = "Шепотът на сърцето",
+   [14] = "Шёпот сердца",
+   [15] = "הלחישה שבלב",
+   [16] = "همس القلوب",
+   [17] = "夢幻街少女",
+   [18] = "耳をすませば",
    },
   ["short"] = {
    [1] = "MoS",
@@ -16639,13 +16643,13 @@ return {
  [1080] = {
   ["main"] = "First Kiss Story: Kiss Kara Hajimaru Monogatari",
   ["official"] = {
-   [1] = "First Kiss Story: The Story That Starts With a Kiss",
-   [2] = "ファーストKiss☆物語[ストーリー] Kissからはじまる物語",
+   [1] = "ファーストKiss☆物語[ストーリー] Kissからはじまる物語",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "First Kiss Story",
+   [2] = "First Kiss Story: The Story That Starts With a Kiss",
    },
   },
  [1081] = {
@@ -23712,8 +23716,9 @@ return {
   ["main"] = "Flanders no Inu: Boku no Patrasche",
   ["official"] = {
    [1] = "A Dog of Flanders: My Patrasche",
-   [2] = "Un chien des Flandres",
-   [3] = "フランダースの犬 ～ぼくのパトラッシュ～",
+   [2] = "Il mio amico Patrasche",
+   [3] = "Un chien des Flandres",
+   [4] = "フランダースの犬 ～ぼくのパトラッシュ～",
    },
   ["short"] = {
    },
@@ -28630,14 +28635,15 @@ return {
  [2053] = {
   ["main"] = "Angel Core: Tenshi-tachi no Sumika",
   ["official"] = {
-   [1] = "Angel Core",
-   [2] = "エンゼル・コア ～天使たちの住処～",
+   [1] = "ANGEL CORE ~天使たちの住処~",
+   [2] = "Angel Core",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Angel Hardcore",
    [2] = "Суть ангелов",
+   [3] = "エンゼル・コア",
    },
   },
  [2054] = {
@@ -32851,20 +32857,20 @@ return {
   ["main"] = "Cat Ninden Teyandee",
   ["official"] = {
    [1] = "Los Gatos Samurai",
-   [2] = "Os Gatos Samurai Pizza",
-   [3] = "Samourai Pizza Cats",
-   [4] = "Samurai Pizza Cats",
-   [5] = "Samuraje z Pizza Kot",
-   [6] = "Szamuráj Pizzacicák",
-   [7] = "החתולים הסמוראים",
-   [8] = "キャッ党忍伝てやんでえ",
+   [2] = "Samourai Pizza Cats",
+   [3] = "Samurai Pizza Cats",
+   [4] = "Samuraje z Pizza Kot",
+   [5] = "Szamuráj Pizzacicák",
+   [6] = "החתולים הסמוראים",
+   [7] = "キャッ党忍伝てやんでえ",
    },
   ["short"] = {
    [1] = "SPC",
    },
   ["syn"] = {
-   [1] = "История кошек-ниндзя",
-   [2] = "Коты-Самураи",
+   [1] = "Os Gatos Samurai Pizza",
+   [2] = "История кошек-ниндзя",
+   [3] = "Коты-Самураи",
    },
   },
  [2383] = {
@@ -38270,7 +38276,8 @@ return {
  [2866] = {
   ["main"] = "Ninpuu Kamui Gaiden",
   ["official"] = {
-   [1] = "忍風カムイ外伝",
+   [1] = "L`invincibile Ninja Kamui",
+   [2] = "忍風カムイ外伝",
    },
   ["short"] = {
    },
@@ -38633,7 +38640,8 @@ return {
   ["official"] = {
    [1] = "Love City",
    [2] = "Nom de code : Love City",
-   [3] = "アイ・シティ",
+   [3] = "Terror em Love City",
+   [4] = "アイ・シティ",
    },
   ["short"] = {
    },
@@ -39209,7 +39217,7 @@ return {
   ["main"] = "Hyakumannen Chikyuu no Tabi Bander Book",
   ["official"] = {
    [1] = "100万年地球の旅バンダーブック",
-   [2] = "Le Avventure Di Bandar",
+   [2] = "Le Avventure Di Bander",
    [3] = "Le prince du soleil",
    [4] = "One Million-year Trip: Bander Book",
    },
@@ -45101,10 +45109,11 @@ return {
  [3593] = {
   ["main"] = "Manga Sekai Mukashibanashi",
   ["official"] = {
-   [1] = "World Famous Fairy Tales",
-   [2] = "סיפורים קלאסיים מצוירים",
-   [3] = "حكايات عالمية",
-   [4] = "まんが世界昔ばなし",
+   [1] = "Super Aventuras",
+   [2] = "World Famous Fairy Tales",
+   [3] = "סיפורים קלאסיים מצוירים",
+   [4] = "حكايات عالمية",
+   [5] = "まんが世界昔ばなし",
    },
   ["short"] = {
    [1] = "MSMB",
@@ -45370,7 +45379,7 @@ return {
    },
   },
  [3612] = {
-  ["main"] = "Insect Tsurezuregusa",
+  ["main"] = "Konchuu Tsurezuregusa",
   ["official"] = {
    [1] = "昆蟲つれづれ草",
    },
@@ -45378,8 +45387,9 @@ return {
    },
   ["syn"] = {
    [1] = "Essays on Insects",
-   [2] = "Tezuka Osamu - Image From the Past to the Future",
-   [3] = "Tezuka Osamu: Images of the Past and Future",
+   [2] = "Insect Tsurezuregusa",
+   [3] = "Tezuka Osamu - Image From the Past to the Future",
+   [4] = "Tezuka Osamu: Images of the Past and Future",
    },
   },
  [3613] = {
@@ -50525,12 +50535,12 @@ return {
  [4286] = {
   ["main"] = "Konpeki no Kantai",
   ["official"] = {
-   [1] = "Deep Blue Fleet",
-   [2] = "紺碧の艦隊",
+   [1] = "紺碧の艦隊",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Deep Blue Fleet",
    },
   },
  [4287] = {
@@ -56051,7 +56061,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "殺人切符は［ハート］色",
+   [1] = "殺人切符は[ハート]色",
    },
   },
  [4867] = {
@@ -56343,11 +56353,12 @@ return {
    [1] = "baccano",
    },
   ["syn"] = {
-   [1] = "Баккано!",
-   [2] = "Рейвах!",
-   [3] = "Шумиха!",
-   [4] = "Шумотевица!",
-   [5] = "باكانو",
+   [1] = "Baccano!",
+   [2] = "Баккано!",
+   [3] = "Рейвах!",
+   [4] = "Шумиха!",
+   [5] = "Шумотевица!",
+   [6] = "باكانو",
    },
   },
  [4898] = {
@@ -57037,7 +57048,7 @@ return {
    },
   },
  [4959] = {
-  ["main"] = "Umeboshi Denka : Uchu no Hatekara Panparopan!",
+  ["main"] = "Umeboshi Denka: Uchuu no Hate kara Panparopan!",
   ["official"] = {
    [1] = "ウメ星デンカ 宇宙の果てからパンパロパン!",
    },
@@ -58576,6 +58587,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Little Bebil in Wonderland",
    },
   },
  [5112] = {
@@ -63058,7 +63070,8 @@ return {
  [5674] = {
   ["main"] = "Zettai Karen Children",
   ["official"] = {
-   [1] = "絶対可憐チルドレン",
+   [1] = "Psychic Squad",
+   [2] = "絶対可憐チルドレン",
    },
   ["short"] = {
    [1] = "zkc",
@@ -70219,7 +70232,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Rivers Light",
+   [1] = "River`s Light",
    },
   },
  [6582] = {
@@ -72060,6 +72073,7 @@ return {
    [1] = "テガミバチ LETTER BEE",
    },
   ["short"] = {
+   [1] = "bee",
    },
   ["syn"] = {
    [1] = "Letter Bee TV",
@@ -76101,7 +76115,8 @@ return {
  [7177] = {
   ["main"] = "Gekijouban Gintama: Shinyaku Benizakura Hen",
   ["official"] = {
-   [1] = "劇場版 銀魂 新訳紅桜篇",
+   [1] = "Gintama - The Movie",
+   [2] = "劇場版 銀魂 新訳紅桜篇",
    },
   ["short"] = {
    },
@@ -76737,7 +76752,8 @@ return {
  [7244] = {
   ["main"] = "Planzet",
   ["official"] = {
-   [1] = "プランゼット",
+   [1] = "Planzet",
+   [2] = "プランゼット",
    },
   ["short"] = {
    },
@@ -78656,7 +78672,8 @@ return {
    [1] = "Bodacious Space Pirates",
    [2] = "Mini-skirt Space Pirates",
    [3] = "Moretsu Pirates",
-   [4] = "Mouretsu Uchuu Kaizoku",
+   [4] = "Mouretsu Space Pirates",
+   [5] = "Mouretsu Uchuu Kaizoku",
    },
   },
  [7444] = {
@@ -78806,6 +78823,8 @@ return {
    },
   ["short"] = {
    [1] = "bee2",
+   [2] = "tb2",
+   [3] = "tbr",
    },
   ["syn"] = {
    [1] = "Letter Bee 2",
@@ -84550,7 +84569,8 @@ return {
   ["main"] = "Mahou Shoujo Madoka Magica",
   ["official"] = {
    [1] = "Madoka Magica",
-   [2] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
+   [2] = "Madoka magica",
+   [3] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
    },
   ["short"] = {
    [1] = "Madoka",
@@ -85722,9 +85742,10 @@ return {
  [8181] = {
   ["main"] = "Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
   ["official"] = {
-   [1] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
-   [2] = "آنو هی میتا هانا نو ناما و باکوتچی وا مادا شیرانای",
-   [3] = "あの日見た花の名前を僕達はまだ知らない.",
+   [1] = "Ano hana",
+   [2] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
+   [3] = "آنو هی میتا هانا نو ناما و باکوتچی وا مادا شیرانای",
+   [4] = "あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
    [1] = "Ano Hana",
@@ -86895,9 +86916,9 @@ return {
    },
   },
  [8310] = {
-  ["main"] = "Chocolat no Mahou: Meringue au Chocolat Kanashimi no Senritsu",
+  ["main"] = "Chocolat no Mahou",
   ["official"] = {
-   [1] = "ショコラの魔法～ムラング・オ・ショコラ 哀しみの旋律～",
+   [1] = "ショコラの魔法",
    },
   ["short"] = {
    },
@@ -89073,7 +89094,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "アナザー",
+   [1] = "Лишний",
+   [2] = "アナザー",
    },
   },
  [8557] = {
@@ -89677,6 +89699,7 @@ return {
    },
   ["syn"] = {
    [1] = "Onegai Senpai",
+   [2] = "Ждём тебя летом",
    },
   },
  [8624] = {
@@ -89939,7 +89962,8 @@ return {
   ["main"] = "Nisemonogatari",
   ["official"] = {
    [1] = "Nisemonogatari",
-   [2] = "偽物語",
+   [2] = "Nisemonogatari (Histoires d`Imposture)",
+   [3] = "偽物語",
    },
   ["short"] = {
    },
@@ -90459,7 +90483,7 @@ return {
    },
   },
  [8719] = {
-  ["main"] = "Haiyoru! Nyaruko-san",
+  ["main"] = "Haiyore! Nyaruko-san",
   ["official"] = {
    [1] = "這いよれ! ニャル子さん",
    },
@@ -90607,7 +90631,7 @@ return {
  [8733] = {
   ["main"] = "Musekinin Kanchou Tylor: Chijou Yori Eien ni",
   ["official"] = {
-   [1] = "無責任艦長タイラー　地上より永遠に",
+   [1] = "無責任艦長タイラー 地上より永遠に",
    },
   ["short"] = {
    },
@@ -91537,13 +91561,14 @@ return {
    },
   },
  [8834] = {
-  ["main"] = "Shining Hearts",
+  ["main"] = "Shining Hearts: Shiawase no Pan",
   ["official"] = {
-   [1] = "シャイニング・ハーツ",
+   [1] = "シャイニング・ハーツ ~幸せのパン~",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Shining Hearts: Bread of Happiness",
    },
   },
  [8835] = {
@@ -91886,9 +91911,10 @@ return {
    },
   },
  [8872] = {
-  ["main"] = "Arashi no Yoru ni (2012)",
+  ["main"] = "Arashi no Yoru ni: Himitsu no Tomodachi",
   ["official"] = {
-   [1] = "あらしのよるに (2012)",
+   [1] = "One Stormy Night",
+   [2] = "あらしのよるに ひみつのともだち",
    },
   ["short"] = {
    },
@@ -92004,9 +92030,9 @@ return {
    },
   },
  [8885] = {
-  ["main"] = "Eiga Toshokan Sensou",
+  ["main"] = "Toshokan Sensou: Kakumei no Tsubasa",
   ["official"] = {
-   [1] = "映画 図書館戦争",
+   [1] = "図書館戦争 革命のつばさ",
    },
   ["short"] = {
    },
@@ -92564,6 +92590,245 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [8953] = {
+  ["main"] = "Rui no Masaiban",
+  ["official"] = {
+   [1] = "ルイの魔裁判",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8954] = {
+  ["main"] = "Qin Shiming Yue Zhi Bai Bu Fei Jian",
+  ["official"] = {
+   [1] = "Qin`s Moon - Hundred Steps Flying Sword",
+   [2] = "秦时明月之百步飞剑",
+   },
+  ["short"] = {
+   [1] = "Qin Shi Ming Yue",
+   },
+  ["syn"] = {
+   [1] = "Qin`s Moon Season 1",
+   [2] = "The Legend of Qin: Hundred Steps Flying Sword",
+   },
+  },
+ [8955] = {
+  ["main"] = "Qin Shiming Yue Zhi Ye Jin Tianming",
+  ["official"] = {
+   [1] = "Qin`s Moon - Night Ends - Daylight",
+   [2] = "秦时明月之夜尽天明",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Qin Shi Ming Yue 2: Night Ends - Daybreak",
+   [2] = "Qin`s Moon Season 2",
+   [3] = "The Legend of Qin: Night Ends - Daylight",
+   },
+  },
+ [8956] = {
+  ["main"] = "Qin Shiming Yue Zhi Zhu Zi Bai Jia",
+  ["official"] = {
+   [1] = "Qin`s Moon - Hundred Schools of Thought",
+   [2] = "秦时明月之诸子百家",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Qin Shi Ming Yue 3: Hundred Schools of Thought",
+   [2] = "Qin`s Moon Season 3",
+   [3] = "The Legend of Qin: Hundred Schools of Thought",
+   },
+  },
+ [8957] = {
+  ["main"] = "Eiga Jewelpet Sweets Dance Princess",
+  ["official"] = {
+   [1] = "映画ジュエルペット スウィーツダンスプリンセス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8958] = {
+  ["main"] = "Ao no Exorcist Kuro no Iede",
+  ["official"] = {
+   [1] = "Ao no Exorcist Kuro no Iede",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8960] = {
+  ["main"] = "Jewelpet Kira Deco!",
+  ["official"] = {
+   [1] = "ジュエルペットきら☆デコッ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8961] = {
+  ["main"] = "Ai wa KAT-TUN",
+  ["official"] = {
+   [1] = "愛はKAT-TUN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8962] = {
+  ["main"] = "Rinne no Lagrange: Flower Declaration of Your Heart (2012)",
+  ["official"] = {
+   [1] = "輪廻のラグランジェ Flower declaration of your heart (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8963] = {
+  ["main"] = "Saint Seiya Omega",
+  ["official"] = {
+   [1] = "聖闘士星矢Ω",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8964] = {
+  ["main"] = "Light Lag",
+  ["official"] = {
+   [1] = "ライトラグ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8965] = {
+  ["main"] = "First Love",
+  ["official"] = {
+   [1] = "First Love",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8966] = {
+  ["main"] = "Cele Kano",
+  ["official"] = {
+   [1] = "セレ・カノ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8967] = {
+  ["main"] = "Gakkatsu!",
+  ["official"] = {
+   [1] = "ガッ活!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8968] = {
+  ["main"] = "Otome Nadeshiko Koi Techou",
+  ["official"] = {
+   [1] = "乙女なでしこ恋手帖",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Otome Nadeshiko Love Diary",
+   },
+  },
+ [8969] = {
+  ["main"] = "Sankarea (2012)",
+  ["official"] = {
+   [1] = "さんかれあ (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8970] = {
+  ["main"] = "Kansen 5: The Daybreak",
+  ["official"] = {
+   [1] = "姦染5-THE Daybreak-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8971] = {
+  ["main"] = "Arcana Famiglia",
+  ["official"] = {
+   [1] = "アルカナ・ファミリア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8973] = {
+  ["main"] = "Exaella",
+  ["official"] = {
+   [1] = "エックサエラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8974] = {
+  ["main"] = "Cardfight!! Vanguard (2012)",
+  ["official"] = {
+   [1] = "カードファイト!! ヴァンガード (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8975] = {
+  ["main"] = "Pabu & Mojizu",
+  ["official"] = {
+   [1] = "パブー&モジーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8976] = {
+  ["main"] = "X Yochou",
+  ["official"] = {
+   [1] = "X OVA",
+   [2] = "X 予兆",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "X Episode 0",
+   [2] = "X: An Omen",
+   [3] = "Épisode 0 - Un présage",
+   [4] = "Предзнаменование",
+   [5] = "ลางร้าย?",
    },
   },
 }
