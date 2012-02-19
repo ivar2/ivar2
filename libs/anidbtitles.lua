@@ -3079,14 +3079,14 @@ return {
    [2] = "おとぎストーリー 天使のしっぽ",
    },
   ["short"] = {
-   [1] = "Angel Tail",
-   [2] = "TnS",
-   [3] = "at",
+   [1] = "TnS",
+   [2] = "at",
    },
   ["syn"] = {
-   [1] = "Angel Tails",
-   [2] = "Angel`s Tail",
-   [3] = "Tenshi no Shippo",
+   [1] = "Angel Tail",
+   [2] = "Angel Tails",
+   [3] = "Angel`s Tail",
+   [4] = "Tenshi no Shippo",
    },
   },
  [177] = {
@@ -7545,7 +7545,7 @@ return {
    },
   },
  [448] = {
-  ["main"] = "Lime-iro Senkitan",
+  ["main"] = "Lime-iro Senkitan: Meiji Nippon, Otome Sakimorisu.",
   ["official"] = {
    [1] = "らいむいろ戦奇譚 明治日本,乙女 防人ス.",
    },
@@ -21809,8 +21809,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Seifuku Shoujo (incorrect)",
-   [2] = "Virgin in the School Uniform",
+   [1] = "Virgin in the School Uniform",
    },
   },
  [1496] = {
@@ -28265,8 +28264,9 @@ return {
    [1] = "Die schwarzen Brüder",
    [2] = "Le ciel bleu de Romeo",
    [3] = "Romeo and The Black Brothers",
-   [4] = "عهد الأصدقاء",
-   [5] = "ロミオの青い空",
+   [4] = "Τα παιδιά των καπνοδόχων",
+   [5] = "عهد الأصدقاء",
+   [6] = "ロミオの青い空",
    },
   ["short"] = {
    },
@@ -38646,6 +38646,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cidade do Amor",
    },
   },
  [2903] = {
@@ -41971,7 +41972,7 @@ return {
   ["main"] = "Watashi to Watashi: Futari no Lotte",
   ["official"] = {
    [1] = "I and Myself: The Two Lottes",
-   [2] = "わたしとわたし －ふたりのロッテ－",
+   [2] = "わたしとわたし -ふたりのロッテ-",
    },
   ["short"] = {
    },
@@ -51849,11 +51850,12 @@ return {
    [1] = "BBB",
    },
   ["syn"] = {
-   [1] = "Kara Kan Kardeşler",
-   [2] = "Melno Asiņu Brāļi",
-   [3] = "Чернокръвните братя",
-   [4] = "أشقاء الدم الأسود",
-   [5] = "黑血兄弟",
+   [1] = "Juodojo Kraujo Broliai",
+   [2] = "Kara Kan Kardeşler",
+   [3] = "Melno Asiņu Brāļi",
+   [4] = "Чернокръвните братя",
+   [5] = "أشقاء الدم الأسود",
+   [6] = "黑血兄弟",
    },
   },
  [4417] = {
@@ -52564,10 +52566,11 @@ return {
    },
   ["short"] = {
    [1] = "CodeGeass",
-   [2] = "cg1",
-   [3] = "cghnl",
-   [4] = "geass",
-   [5] = "geass1",
+   [2] = "cg r1",
+   [3] = "cg1",
+   [4] = "cghnl",
+   [5] = "geass",
+   [6] = "geass1",
    },
   ["syn"] = {
    [1] = "Code Geass 1",
@@ -52708,7 +52711,7 @@ return {
   ["main"] = "Yoake Mae Yori Ruriiro na: Crescent Love",
   ["official"] = {
    [1] = "Brighter than the Dawning Blue",
-   [2] = "夜明け前より瑠璃色な -Crescent Love- (クレッセントラブ)",
+   [2] = "夜明け前より瑠璃色な -Crescent Love-",
    },
   ["short"] = {
    [1] = "Crescent Love",
@@ -59803,8 +59806,9 @@ return {
    },
   ["short"] = {
    [1] = "G00",
-   [2] = "Gundam 00",
-   [3] = "Ґандам 00",
+   [2] = "G00 S1",
+   [3] = "Gundam 00",
+   [4] = "Ґандам 00",
    },
   ["syn"] = {
    [1] = "Gundam Double O",
@@ -64841,7 +64845,7 @@ return {
  [5922] = {
   ["main"] = "Koihime Musou",
   ["official"] = {
-   [1] = "Koihime Muso",
+   [1] = "Koihime Musou",
    [2] = "恋姫†無双",
    },
   ["short"] = {
@@ -75723,13 +75727,13 @@ return {
  [7139] = {
   ["main"] = "Reijoku no Yakata",
   ["official"] = {
-   [1] = "麗辱の館",
+   [1] = "House of 5 Lusts",
+   [2] = "麗辱の館",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "House Of Shame",
-   [2] = "House of the Five Lusts",
    },
   },
  [7140] = {
@@ -80340,8 +80344,9 @@ return {
   ["official"] = {
    [1] = "La Leyenda del Dragón Milenario",
    [2] = "Legend of the Millennium Dragon",
-   [3] = "Onigamiden - Legend of the Millenium Dragon",
-   [4] = "鬼神伝",
+   [3] = "Onigamiden - A Lenda do Dragão Milenar",
+   [4] = "Onigamiden - Legend of the Millenium Dragon",
+   [5] = "鬼神伝",
    },
   ["short"] = {
    },
@@ -81150,11 +81155,12 @@ return {
  [7706] = {
   ["main"] = "Cynical Hysterie Hour",
   ["official"] = {
-   [1] = "シニカル・ヒステリー・アワー",
+   [1] = "CYNICAL HYSTERIE HOUR",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "シニカル・ヒステリー・アワー",
    },
   },
  [7707] = {
@@ -84800,6 +84806,7 @@ return {
   ["syn"] = {
    [1] = "Fullmetal Alchemist Milos no Seinaru Hoshi",
    [2] = "Fullmetal Alchemist the Movie: The Sacred Star of Milos",
+   [3] = "Hagaren the Movie (2011)",
    },
   },
  [8091] = {
@@ -86679,7 +86686,8 @@ return {
  [8285] = {
   ["main"] = "Oni Chichi: Re-birth",
   ["official"] = {
-   [1] = "鬼父 Re-birth",
+   [1] = "Oni Chichi: Od-rodzenie",
+   [2] = "鬼父 Re-birth",
    },
   ["short"] = {
    },
@@ -89008,9 +89016,9 @@ return {
    },
   },
  [8549] = {
-  ["main"] = "MUV-LUV Alternative Total Eclipse",
+  ["main"] = "Total Eclipse",
   ["official"] = {
-   [1] = "マブラヴ オルタネイティヴ トータル・イクリプス",
+   [1] = "トータル・イクリプス",
    },
   ["short"] = {
    },
@@ -89094,8 +89102,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Лишний",
-   [2] = "アナザー",
+   [1] = "Иная",
+   [2] = "Лишний",
+   [3] = "アナザー",
    },
   },
  [8557] = {
@@ -89357,6 +89366,7 @@ return {
    [1] = "brstv",
    },
   ["syn"] = {
+   [1] = "قاذفة الصخرة السوداء",
    },
   },
  [8586] = {
@@ -89417,7 +89427,8 @@ return {
   ["main"] = "Zero no Tsukaima F",
   ["official"] = {
    [1] = "Familiar of Zero F",
-   [2] = "ゼロの使い魔F",
+   [2] = "Il Famiglio di Louise Finale",
+   [3] = "ゼロの使い魔F",
    },
   ["short"] = {
    [1] = "ZnT 4",
@@ -89696,10 +89707,10 @@ return {
    },
   ["short"] = {
    [1] = "natsumachi",
+   [2] = "なつまち",
    },
   ["syn"] = {
-   [1] = "Onegai Senpai",
-   [2] = "Ждём тебя летом",
+   [1] = "Ждём тебя летом",
    },
   },
  [8624] = {
@@ -89968,6 +89979,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Impostory",
    },
   },
  [8659] = {
@@ -90281,6 +90293,7 @@ return {
    [1] = "ソードアート・オンライン",
    },
   ["short"] = {
+   [1] = "SAO",
    },
   ["syn"] = {
    },
@@ -90412,9 +90425,9 @@ return {
    },
   },
  [8709] = {
-  ["main"] = "Senki Zesshou Symphogear",
+  ["main"] = "Senki Zesshou Symphogear: Meteoroid-falling, Burning, and Disappear, Then...",
   ["official"] = {
-   [1] = "戦姫絶唱シンフォギア",
+   [1] = "戦姫絶唱シンフォギア Meteoroid-falling, burning, and disappear, then...",
    },
   ["short"] = {
    [1] = "symphogear",
@@ -90515,7 +90528,7 @@ return {
  [8722] = {
   ["main"] = "High Score",
   ["official"] = {
-   [1] = "HIGHSCORE",
+   [1] = "HIGH SCORE",
    },
   ["short"] = {
    },
@@ -90677,6 +90690,7 @@ return {
    [1] = "クイーンズブレイド リベリオン",
    },
   ["short"] = {
+   [1] = "QBR",
    },
   ["syn"] = {
    },
@@ -90905,7 +90919,8 @@ return {
  [8761] = {
   ["main"] = "Oni Chichi: Re-born",
   ["official"] = {
-   [1] = "鬼父 Re-born",
+   [1] = "Oni Chichi: Od-rodzona",
+   [2] = "鬼父 Re-born",
    },
   ["short"] = {
    },
@@ -91478,9 +91493,9 @@ return {
    },
   },
  [8826] = {
-  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Kyurem vs Seikenshi",
+  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Kyurem vs Seikenshi Keldeo",
   ["official"] = {
-   [1] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士",
+   [1] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
    },
   ["short"] = {
    },
@@ -91624,16 +91639,6 @@ return {
    },
   ["syn"] = {
    [1] = "Scarlet Fragment",
-   },
-  },
- [8841] = {
-  ["main"] = "Seiko: Joshidaisei Seiko-chan",
-  ["official"] = {
-   [1] = "SEIKO 女子大生聖子ちゃん",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
    },
   },
  [8842] = {
@@ -92654,16 +92659,6 @@ return {
   ["syn"] = {
    },
   },
- [8958] = {
-  ["main"] = "Ao no Exorcist Kuro no Iede",
-  ["official"] = {
-   [1] = "Ao no Exorcist Kuro no Iede",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8960] = {
   ["main"] = "Jewelpet Kira Deco!",
   ["official"] = {
@@ -92785,16 +92780,6 @@ return {
   ["syn"] = {
    },
   },
- [8973] = {
-  ["main"] = "Exaella",
-  ["official"] = {
-   [1] = "エックサエラ",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8974] = {
   ["main"] = "Cardfight!! Vanguard (2012)",
   ["official"] = {
@@ -92829,6 +92814,69 @@ return {
    [3] = "Épisode 0 - Un présage",
    [4] = "Предзнаменование",
    [5] = "ลางร้าย?",
+   },
+  },
+ [8977] = {
+  ["main"] = "Nantokashite Alguard",
+  ["official"] = {
+   [1] = "なんとかして アルガード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Alguard",
+   [2] = "なんとかして☆アルガード",
+   },
+  },
+ [8978] = {
+  ["main"] = "Please R*pe Me!",
+  ["official"] = {
+   [1] = "プリーズ・レ♡プ・ミー!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Please Rape Me!",
+   },
+  },
+ [8979] = {
+  ["main"] = "Dark Blue",
+  ["official"] = {
+   [1] = "Dark Blue",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8980] = {
+  ["main"] = "Project Show-A",
+  ["official"] = {
+   [1] = "Project Show-A",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8981] = {
+  ["main"] = "Oku-sama wa Michael",
+  ["official"] = {
+   [1] = "奥様はミカえる♥",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8982] = {
+  ["main"] = "Slime Boukenki: Umi Da, Yeah",
+  ["official"] = {
+   [1] = "スライム冒険記 ~海だ, イエー~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
