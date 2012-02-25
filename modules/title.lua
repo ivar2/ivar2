@@ -23,6 +23,16 @@ local translateCharset = {
 	['x-sjis'] = 'sjis',
 }
 
+-- RFC 2396, section 1.6, 2.2, 2.3 and 2.4.1.
+local smartEscape = function(str)
+	-- lowalpha: a-z | upalpha: A-Z | digit: 0-9 | mark: -_.!~*'() |
+	-- reserved: ;/?:@&=+$, | delims: <>#%" | unwise: {}|\^[]` | space: <20>
+	local pattern = '[^a-zA-Z0-9%-_%.!~%*\'%(%);/%?:@&=%+%$,<>#%%"{}|\\%^%[%] ]'
+	return str:gsub(pattern, function(c)
+		return ('%%%02X'):format(c:byte())
+	end)
+end
+
 local parseAJAX
 do
 	local escapedChars = {}
@@ -373,6 +383,8 @@ return {
 						if(url:sub(1,4) ~= 'http') then
 							url = 'http://' .. url
 						end
+
+						url = smartEscape(url)
 
 						if(not tmp[url]) then
 							table.insert(tmpOrder, url)
