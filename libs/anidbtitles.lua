@@ -1376,12 +1376,13 @@ return {
    [4] = "Макрос",
    },
   ["syn"] = {
-   [1] = "Guerra das Galáxias",
-   [2] = "Macross, Super Dimensional Fortress",
-   [3] = "Robotech",
-   [4] = "Robotech: The Macross Saga",
-   [5] = "قلعة الأبعاد الخارقة ماكروس",
-   [6] = "超时空要塞",
+   [1] = "Fortaleza Superdimensional Macross",
+   [2] = "Guerra das Galáxias",
+   [3] = "Macross, Super Dimensional Fortress",
+   [4] = "Robotech",
+   [5] = "Robotech: The Macross Saga",
+   [6] = "قلعة الأبعاد الخارقة ماكروس",
+   [7] = "超时空要塞",
    },
   },
  [78] = {
@@ -7356,7 +7357,7 @@ return {
  [436] = {
   ["main"] = "Tatakae!! Iczer-1",
   ["official"] = {
-   [1] = "Fight!! Iczer-1",
+   [1] = "Fight! Iczer-One",
    [2] = "Iczer One",
    [3] = "戦え!! イクサー1",
    },
@@ -7366,7 +7367,8 @@ return {
    [3] = "iczer-1",
    },
   ["syn"] = {
-   [1] = "Iczer 1",
+   [1] = "Fight!! Iczer-1",
+   [2] = "Iczer 1",
    },
   },
  [437] = {
@@ -13792,10 +13794,10 @@ return {
    },
   },
  [887] = {
-  ["main"] = "Eiken Eikenbu yori Ai o Komete",
+  ["main"] = "Eiken",
   ["official"] = {
    [1] = "Eiken",
-   [2] = "エイケン エイケンヴより愛をこめて",
+   [2] = "エイケン",
    },
   ["short"] = {
    },
@@ -15393,9 +15395,10 @@ return {
    },
   ["syn"] = {
    [1] = "Clash of the Bionoids",
-   [2] = "Macross: Alguém se Lembra do Amor?",
-   [3] = "The Super Dimension Fortress Macross Do You Remember Love",
-   [4] = "macross movie",
+   [2] = "Fortaleza Superdimensonal Macross: Você se Lembra do Amor?",
+   [3] = "Macross: Alguém se Lembra do Amor?",
+   [4] = "The Super Dimension Fortress Macross Do You Remember Love",
+   [5] = "macross movie",
    },
   },
  [997] = {
@@ -16012,7 +16015,8 @@ return {
    [2] = "La città delle bestie incantatrici",
    [3] = "Poderes Eróticos",
    [4] = "Wicked City",
-   [5] = "妖獣都市",
+   [5] = "Порочен Град",
+   [6] = "妖獣都市",
    },
   ["short"] = {
    },
@@ -16023,6 +16027,7 @@ return {
    [4] = "La cité interdite",
    [5] = "Nuodėmingas Miestas",
    [6] = "Supernatural Beast City",
+   [7] = "Град на Греха",
    },
   },
  [1041] = {
@@ -19626,14 +19631,16 @@ return {
    [1] = "MnH",
    },
   ["syn"] = {
-   [1] = "Meus dias com Midori",
-   [2] = "Midori Dienos",
-   [3] = "My Days With Midori",
-   [4] = "Дни Мидори",
-   [5] = "Зелени дни",
-   [6] = "ימיה של מידורי",
-   [7] = "أيامي مع ميدوري",
-   [8] = "美鸟日记",
+   [1] = "Dias de Midori",
+   [2] = "Meus Dias com Midori",
+   [3] = "Meus dias com Midori",
+   [4] = "Midori Dienos",
+   [5] = "My Days With Midori",
+   [6] = "Дни Мидори",
+   [7] = "Зелени дни",
+   [8] = "ימיה של מידורי",
+   [9] = "أيامي مع ميدوري",
+   [10] = "美鸟日记",
    },
   },
  [1328] = {
@@ -27072,10 +27079,11 @@ return {
    [8] = "Lulu, le mystère de la fleur magique",
    [9] = "Lun Lun the Flower Child",
    [10] = "Lunlun, Flower Angel",
-   [11] = "Lydie et la clef magique",
-   [12] = "The Flower Angel",
-   [13] = "Çiçek Kız Lunlun",
-   [14] = "Лулу, ангел цветов",
+   [11] = "Lunlun, a Filha das Flores",
+   [12] = "Lydie et la clef magique",
+   [13] = "The Flower Angel",
+   [14] = "Çiçek Kız Lunlun",
+   [15] = "Лулу, ангел цветов",
    },
   },
  [1920] = {
@@ -37330,7 +37338,7 @@ return {
    },
   },
  [2790] = {
-  ["main"] = "Onna Senshi Efe & Jiira Guude no Monshou",
+  ["main"] = "Onna Senshi Efe & Jira: Gude no Monshou",
   ["official"] = {
    [1] = "Gude Crest - The Emblem of Gude",
    [2] = "女戦士エフェ&ジーラ グーデの紋章",
@@ -43944,12 +43952,12 @@ return {
  [3495] = {
   ["main"] = "Kumo ni Noru",
   ["official"] = {
-   [1] = "Climbing on a Cloud",
-   [2] = "雲にのる",
+   [1] = "雲にのる",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Climbing on a Cloud",
    },
   },
  [3496] = {
@@ -44850,13 +44858,16 @@ return {
    },
   ["syn"] = {
    [1] = "Bežiūrint į dylantį mėnulį",
-   [2] = "Hantsuki",
-   [3] = "Spoglądając na półksiężyc",
-   [4] = "Глядя на полумесяц",
-   [5] = "Поглед към Полумесеца",
-   [6] = "仰望半月之空",
-   [7] = "升起半月的天空",
-   [8] = "반쪽 달이 떠오르는 하늘",
+   [2] = "Fitando a Meia-Lua Acima",
+   [3] = "Fitando a Meia-Lua no Céu",
+   [4] = "Hantsuki",
+   [5] = "Olhando para a Meia-Lua",
+   [6] = "Spoglądając na półksiężyc",
+   [7] = "Глядя на полумесяц",
+   [8] = "Поглед към Полумесеца",
+   [9] = "仰望半月之空",
+   [10] = "升起半月的天空",
+   [11] = "반쪽 달이 떠오르는 하늘",
    },
   },
  [3574] = {
@@ -45905,14 +45916,15 @@ return {
    [11] = "스즈미야 하루히의 우울",
    },
   ["short"] = {
-   [1] = "SHnY",
-   [2] = "Suhayu",
-   [3] = "haruhi",
-   [4] = "mel",
-   [5] = "mohs",
-   [6] = "suzuharu",
-   [7] = "ฮารุฮิ",
-   [8] = "凉宫",
+   [1] = "Haruhi 1",
+   [2] = "Haruhi 2006",
+   [3] = "SHnY",
+   [4] = "Suhayu",
+   [5] = "haruhi",
+   [6] = "mohs",
+   [7] = "suzuharu",
+   [8] = "ฮารุฮิ",
+   [9] = "凉宫",
    },
   ["syn"] = {
    [1] = "A Melancolia de Haruhi Suzumiya",
@@ -46266,18 +46278,17 @@ return {
    },
   },
  [3674] = {
-  ["main"] = "Shirayuki Hime no Densetsu",
+  ["main"] = "Shirayuki-hime no Densetsu",
   ["official"] = {
    [1] = "A Lenda da Branca de Neve",
    [2] = "Hófehérke és a hét törpe",
    [3] = "Królewna Śnieżka",
    [4] = "La légende de Blanche-Neige",
    [5] = "Schneewittchen",
-   [6] = "The Legend of Snow White",
-   [7] = "Η Χιονάτη και οι Επτά Νάνοι",
-   [8] = "שלגיה",
-   [9] = "فلة والأقزام السبعة",
-   [10] = "白雪姫の伝説",
+   [6] = "Η Χιονάτη και οι Επτά Νάνοι",
+   [7] = "שלגיה",
+   [8] = "فلة والأقزام السبعة",
+   [9] = "白雪姫の伝説",
    },
   ["short"] = {
    },
@@ -46286,6 +46297,7 @@ return {
    [2] = "Legend of Princess Snow White",
    [3] = "Legend of Snow White",
    [4] = "Shirayukihime no Densetsu",
+   [5] = "The Legend of Snow White",
    },
   },
  [3675] = {
@@ -47291,7 +47303,8 @@ return {
    [1] = "Fairy Princess Minky Momo 夢の中の輪舞[ロンド] La ronde in my dream",
    [2] = "Gigi i fontanna młodości",
    [3] = "Magical Princess Minky Momo: La Ronde in my Dream",
-   [4] = "Джи-Джи и ее мечты",
+   [4] = "Η πριγκίπισσα Τζίτζι και η πηγή της νιότης",
+   [5] = "Джи-Джи и ее мечты",
    },
   ["short"] = {
    [1] = "Gígja Prinsessa",
@@ -47363,7 +47376,7 @@ return {
    },
   },
  [4018] = {
-  ["main"] = "Jigoku Sensei Nube: Gozen 0 toki Nube Shisu",
+  ["main"] = "Jigoku Sensei Nube: Gozen 0 Ji Nube Shisu!",
   ["official"] = {
    [1] = "地獄先生ぬ～べ～ 午前0時ぬ～ぺ～死す!",
    },
@@ -47656,7 +47669,7 @@ return {
    },
   },
  [4045] = {
-  ["main"] = "Yanbo Ninbo Tonbo",
+  ["main"] = "Yanbou Ninbou Tonbou",
   ["official"] = {
    [1] = "Yanbo, Ninbo and Tonbo",
    [2] = "ヤンボウ ニンボウ トンボウ",
@@ -47667,7 +47680,7 @@ return {
    },
   },
  [4046] = {
-  ["main"] = "Tsubasa Chronicle 2nd Series",
+  ["main"] = "Tsubasa Chronicle Dai 2 Series",
   ["official"] = {
    [1] = "Tsubasa Chronicle - 2. Staffel",
    [2] = "Tsubasa Chronicle - Saison 2",
@@ -47680,9 +47693,11 @@ return {
    [2] = "tsubasa2",
    },
   ["syn"] = {
-   [1] = "trc2",
-   [2] = "Хроника крыльев (сезон второй)",
-   [3] = "翼 年代记 第2季",
+   [1] = "Tsubasa Chronicle 2nd Series",
+   [2] = "Tsubasa Chronicle Dai Ni Series",
+   [3] = "trc2",
+   [4] = "Хроника крыльев (сезон второй)",
+   [5] = "翼 年代记 第2季",
    },
   },
  [4049] = {
@@ -52578,17 +52593,20 @@ return {
    [3] = "Code Geass R1",
    [4] = "Code Geass ~ Lelouch de la rébellion",
    [5] = "Code Geass: Cuộc khởi nghĩa của Lelouch",
-   [6] = "Code Geass: Lelouch de la Rebelión",
-   [7] = "Code Geass: Lelouch de la Rebel·lió",
-   [8] = "Code Geass: Lelouch`un Başkaldırısı",
-   [9] = "Kodas Geass: Leloušio sukilimas",
-   [10] = "code geass",
-   [11] = "Код Геас: Бунтът на Люлюш",
-   [12] = "Код Гиас: Восставший Лелуш",
-   [13] = "Код Гиасс: Восстание Лелуша",
-   [14] = "קוד ג`יאס",
-   [15] = "كود قياس: تمرد للوتش",
-   [16] = "叛逆的鲁鲁修",
+   [6] = "Code Geass: Lelouch da Rebelião",
+   [7] = "Code Geass: Lelouch de la Rebelión",
+   [8] = "Code Geass: Lelouch de la Rebel·lió",
+   [9] = "Code Geass: Lelouch`un Başkaldırısı",
+   [10] = "Código Geass R1",
+   [11] = "Código Geass: Lelouch da Rebelião",
+   [12] = "Kodas Geass: Leloušio sukilimas",
+   [13] = "code geass",
+   [14] = "Код Геас: Бунтът на Люлюш",
+   [15] = "Код Гиас: Восставший Лелуш",
+   [16] = "Код Гиасс: Восстание Лелуша",
+   [17] = "קוד ג`יאס",
+   [18] = "كود قياس: تمرد للوتش",
+   [19] = "叛逆的鲁鲁修",
    },
   },
  [4522] = {
@@ -54863,7 +54881,7 @@ return {
  [4732] = {
   ["main"] = "Seikima 2 Humane Society: Jinrui Ai ni Michita Shakai",
   ["official"] = {
-   [1] = "聖飢魔II HUMANE SOCIETY ~人類愛に満ちた社会~",
+   [1] = "聖飢魔II HUMANE SOCIETY 人類愛に満ちた社会",
    },
   ["short"] = {
    },
@@ -55325,8 +55343,7 @@ return {
  [4779] = {
   ["main"] = "Baribari Densetsu",
   ["official"] = {
-   [1] = "Legend of Rolling Wheels",
-   [2] = "バリバリ伝説",
+   [1] = "バリバリ伝説",
    },
   ["short"] = {
    [1] = "bariden",
@@ -55334,6 +55351,7 @@ return {
    },
   ["syn"] = {
    [1] = "Baribari Legend",
+   [2] = "Legend of Rolling Wheels",
    },
   },
  [4781] = {
@@ -57655,7 +57673,7 @@ return {
    },
   },
  [5028] = {
-  ["main"] = "Yamako Shimura no Mari to Senhiki no Koinu",
+  ["main"] = "Yamakoshi Mura no Mari to Sanbiki no Koinu",
   ["official"] = {
    [1] = "山古志村のマリと三匹の子犬",
    },
@@ -60563,9 +60581,10 @@ return {
    [1] = "Haruhi-chan",
    },
   ["syn"] = {
-   [1] = "Melancholia Haruhi Suzumiyi-chan",
-   [2] = "كآبة هاروهي تشان سوزوميا",
-   [3] = "小凉宫春日的忧郁",
+   [1] = "A Melancolia de Suzumiya Haruhi-chan",
+   [2] = "Melancholia Haruhi Suzumiyi-chan",
+   [3] = "كآبة هاروهي تشان سوزوميا",
+   [4] = "小凉宫春日的忧郁",
    },
   },
  [5343] = {
@@ -60762,11 +60781,14 @@ return {
    },
   ["syn"] = {
    [1] = "Code Geass: Cuộc khởi nghĩa của Lelouch R2",
-   [2] = "Code Geass: Lelouch`un Başkaldırısı R2",
-   [3] = "Kodas Geass: Leloušio sukilimas R2",
-   [4] = "Код Геас: Бунтът на Люлюш 2",
-   [5] = "Код Гиас: Восставший Лелуш R2",
-   [6] = "叛逆的鲁鲁修 R2",
+   [2] = "Code Geass: Lelouch da Rebelião R2",
+   [3] = "Code Geass: Lelouch`un Başkaldırısı R2",
+   [4] = "Código Geass R2",
+   [5] = "Código Geass: Lelouch da Rebelião R2",
+   [6] = "Kodas Geass: Leloušio sukilimas R2",
+   [7] = "Код Геас: Бунтът на Люлюш 2",
+   [8] = "Код Гиас: Восставший Лелуш R2",
+   [9] = "叛逆的鲁鲁修 R2",
    },
   },
  [5375] = {
@@ -62252,10 +62274,9 @@ return {
    [3] = "Oinarisama",
    },
   ["syn"] = {
-   [1] = "Wagaya no Oinara-sama",
-   [2] = "Інарі нашого дому",
-   [3] = "Инари в нашем доме",
-   [4] = "我家有个狐仙大人",
+   [1] = "Інарі нашого дому",
+   [2] = "Инари в нашем доме",
+   [3] = "我家有个狐仙大人",
    },
   },
  [5558] = {
@@ -65113,10 +65134,11 @@ return {
   ["syn"] = {
    [1] = "Count and Fairy",
    [2] = "Earl and Fairy",
-   [3] = "Граф и Фея",
-   [4] = "Графът и Феята",
-   [5] = "الدوق والفيري",
-   [6] = "伯爵和妖精",
+   [3] = "O Conde e a Fada",
+   [4] = "Граф и Фея",
+   [5] = "Графът и Феята",
+   [6] = "الدوق والفيري",
+   [7] = "伯爵和妖精",
    },
   },
  [5956] = {
@@ -66379,8 +66401,9 @@ return {
    [4] = "Resident Evil: Degeneration",
    [5] = "Resident Evil: Degeneração",
    [6] = "Resident Evil: Rozklad",
-   [7] = "Обитель зла: Вырождение",
-   [8] = "バイオハザード ディジェネレーション",
+   [7] = "Заразно зло: Дегенерация",
+   [8] = "Обитель зла: Вырождение",
+   [9] = "バイオハザード ディジェネレーション",
    },
   ["short"] = {
    [1] = "biodeg",
@@ -68511,18 +68534,21 @@ return {
    [4] = "涼宮ハルヒの憂鬱 (2009)",
    },
   ["short"] = {
-   [1] = "haruhi2",
+   [1] = "Haruhi 2009",
+   [2] = "haruhi2",
    },
   ["syn"] = {
-   [1] = "De Melancholie van Haruhi Suzumiya",
-   [2] = "La malinconia di Haruhi Suzumiya (2009)",
-   [3] = "La mélancolie de Haruhi Suzumiya (2009)",
-   [4] = "Melancholia Haruhi Suzumiyi (2009)",
-   [5] = "The Melancholy of Haruhi Suzumiya 2",
-   [6] = "haruhiS2",
-   [7] = "Меланхолия Харухи Судзумии (2009)",
-   [8] = "Меланхолія Харухі Судзумії (2009)",
-   [9] = "كآبة هاروهي سوزوميا 2",
+   [1] = "A Melancolia de Haruhi Suzumiya (2009)",
+   [2] = "A Melancolia de Suzumiya Haruhi (2009)",
+   [3] = "De Melancholie van Haruhi Suzumiya",
+   [4] = "Haruhi S2",
+   [5] = "La malinconia di Haruhi Suzumiya (2009)",
+   [6] = "La mélancolie de Haruhi Suzumiya (2009)",
+   [7] = "Melancholia Haruhi Suzumiyi (2009)",
+   [8] = "The Melancholy of Haruhi Suzumiya 2",
+   [9] = "Меланхолия Харухи Судзумии (2009)",
+   [10] = "Меланхолія Харухі Судзумії (2009)",
+   [11] = "كآبة هاروهي سوزوميا 2",
    },
   },
  [6368] = {
@@ -69314,17 +69340,19 @@ return {
    [3] = "knt",
    },
   ["syn"] = {
-   [1] = "Pasiekti Tave",
-   [2] = "Reach You",
-   [3] = "Reaching You",
-   [4] = "Sana Ulaşmak",
-   [5] = "Από μένα για σένα",
-   [6] = "Докосвам се до теб",
-   [7] = "Достучаться до тебя",
-   [8] = "Дотянуться до тебя",
-   [9] = "Чамруу тэмүүлэх нь",
-   [10] = "لأصل إليك",
-   [11] = "好想告诉你",
+   [1] = "Chegando Até Você",
+   [2] = "Kimi ni Todoke",
+   [3] = "Pasiekti Tave",
+   [4] = "Reach You",
+   [5] = "Reaching You",
+   [6] = "Sana Ulaşmak",
+   [7] = "Από μένα για σένα",
+   [8] = "Докосвам се до теб",
+   [9] = "Достучаться до тебя",
+   [10] = "Дотянуться до тебя",
+   [11] = "Чамруу тэмүүлэх нь",
+   [12] = "لأصل إليك",
+   [13] = "好想告诉你",
    },
   },
  [6467] = {
@@ -76507,11 +76535,13 @@ return {
   ["syn"] = {
    [1] = "La Disparition de Haruhi Suzumiya",
    [2] = "La scomparsa di Haruhi Suzumiya",
-   [3] = "The Vanishment of Haruhi Suzumiya",
-   [4] = "Vanishment of Haruhi Suzumiya",
-   [5] = "Zniknięcie Haruhi Suzumiyi",
-   [6] = "Зникнення Харухі Судзумії",
-   [7] = "凉宫春日的消失",
+   [3] = "O Desaparecimento de Haruhi Suzumiya",
+   [4] = "O Desaparecimento de Suzumiya Haruhi",
+   [5] = "The Vanishment of Haruhi Suzumiya",
+   [6] = "Vanishment of Haruhi Suzumiya",
+   [7] = "Zniknięcie Haruhi Suzumiyi",
+   [8] = "Зникнення Харухі Судзумії",
+   [9] = "凉宫春日的消失",
    },
   },
  [7222] = {
@@ -77023,6 +77053,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Mysterious Medicine",
    },
   },
  [7267] = {
@@ -77066,6 +77097,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Woodpecker Plan",
    },
   },
  [7270] = {
@@ -79856,20 +79888,20 @@ return {
  [7568] = {
   ["main"] = "Kami nomi zo Shiru Sekai",
   ["official"] = {
-   [1] = "The World God Only Knows",
-   [2] = "کامی نومی زو شیرو سکای",
-   [3] = "神のみぞ知るセカイ The World God Only Knows",
+   [1] = "Que sa volonté soit faite",
+   [2] = "The World God Only Knows",
+   [3] = "کامی نومی زو شیرو سکای",
+   [4] = "神のみぞ知るセカイ The World God Only Knows",
    },
   ["short"] = {
    [1] = "Kaminomi",
    [2] = "twgok",
    },
   ["syn"] = {
-   [1] = "Que sa volonté soit faite",
-   [2] = "Одному лишь Богу ведомый мир",
-   [3] = "Светът, който само Бог познава",
-   [4] = "العالم الذي لا يعلمه إلا الله",
-   [5] = "دنیایی که فقط خدا می شناسد",
+   [1] = "Одному лишь Богу ведомый мир",
+   [2] = "Светът, който само Бог познава",
+   [3] = "العالم الذي لا يعلمه إلا الله",
+   [4] = "دنیایی که فقط خدا می شناسد",
    },
   },
  [7569] = {
@@ -84111,11 +84143,14 @@ return {
    [1] = "knt2",
    },
   ["syn"] = {
-   [1] = "Kimi ni Todoke: From Me to You 2nd Season",
-   [2] = "Достучаться до тебя 2 сезон",
-   [3] = "Дотянуться до тебя [ТВ-2]",
-   [4] = "به تو برسد",
-   [5] = "好想告诉你 2nd",
+   [1] = "Chegando Até Você 2",
+   [2] = "Chegando Até Você: Segunda Temporada",
+   [3] = "Kimi ni Todoke 2",
+   [4] = "Kimi ni Todoke: From Me to You 2nd Season",
+   [5] = "Достучаться до тебя 2 сезон",
+   [6] = "Дотянуться до тебя [ТВ-2]",
+   [7] = "به تو برسد",
+   [8] = "好想告诉你 2nd",
    },
   },
  [8015] = {
@@ -84576,23 +84611,24 @@ return {
   ["official"] = {
    [1] = "Madoka Magica",
    [2] = "Madoka magica",
-   [3] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
+   [3] = "Puella Magi Madoka Magica",
+   [4] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
    },
   ["short"] = {
    [1] = "Madoka",
-   [2] = "madomagi",
-   [3] = "pmagi",
-   [4] = "まどマギ",
-   [5] = "マドマギ",
-   [6] = "小圆",
+   [2] = "Madoka Magica",
+   [3] = "madomagi",
+   [4] = "pmagi",
+   [5] = "まどマギ",
+   [6] = "マドマギ",
+   [7] = "小圆",
    },
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
-   [3] = "Puella Magi Madoka Magica",
-   [4] = "Дівчина-чарівниця Мадока Маґіка",
-   [5] = "مدوکا مجیکا دختر جادویی",
-   [6] = "魔法少女小圆",
+   [3] = "Дівчина-чарівниця Мадока Маґіка",
+   [4] = "مدوکا مجیکا دختر جادویی",
+   [5] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -89102,9 +89138,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Иная",
-   [2] = "Лишний",
-   [3] = "アナザー",
+   [1] = "Інша",
+   [2] = "Иная",
+   [3] = "Лишний",
+   [4] = "アナザー",
    },
   },
  [8557] = {
@@ -90162,6 +90199,7 @@ return {
    [1] = "ゴクジョッ. ~極楽院女子高寮物語~",
    },
   ["short"] = {
+   [1] = "Gokujo",
    },
   ["syn"] = {
    },
@@ -90629,6 +90667,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ラブリディ",
    },
   },
  [8732] = {
@@ -91173,8 +91212,9 @@ return {
  [8789] = {
   ["main"] = "Taekwon V",
   ["official"] = {
-   [1] = "テコンV",
-   [2] = "로보트 태권브이",
+   [1] = "Voltar the Invincible",
+   [2] = "テコンV",
+   [3] = "로보트 태권브이",
    },
   ["short"] = {
    },
@@ -91742,10 +91782,10 @@ return {
    },
   ["short"] = {
    [1] = "MGX",
+   [2] = "NnKX",
    },
   ["syn"] = {
    [1] = "Mysterious Girlfriend X",
-   [2] = "NnKX",
    },
   },
  [8854] = {
@@ -91787,6 +91827,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Patema Inverted",
    },
   },
  [8858] = {
@@ -92727,6 +92768,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Celebrity Kano",
    },
   },
  [8967] = {
@@ -92873,6 +92915,130 @@ return {
   ["main"] = "Slime Boukenki: Umi Da, Yeah",
   ["official"] = {
    [1] = "スライム冒険記 ~海だ, イエー~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8983] = {
+  ["main"] = "Egomama",
+  ["official"] = {
+   [1] = "エゴママ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8984] = {
+  ["main"] = "Renkyori En`ai",
+  ["official"] = {
+   [1] = "恋距離遠愛",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Koi Kyori Too Ai",
+   [2] = "Love Distance Long Affair",
+   },
+  },
+ [8986] = {
+  ["main"] = "Shiba Inuko-san",
+  ["official"] = {
+   [1] = "しばいぬ子さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8987] = {
+  ["main"] = "Naniwa Kinyuu Den: Minami no Teiou",
+  ["official"] = {
+   [1] = "難波金融伝 ミナミの帝王",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8988] = {
+  ["main"] = "Youkoso Uchuujin",
+  ["official"] = {
+   [1] = "ようこそ宇宙人",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Welcome, Aliens",
+   },
+  },
+ [8989] = {
+  ["main"] = "Hana to Mogura",
+  ["official"] = {
+   [1] = "花ともぐら",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Flowers and Moles",
+   },
+  },
+ [8991] = {
+  ["main"] = "Upotte!! OAD",
+  ["official"] = {
+   [1] = "うぽって!! OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8992] = {
+  ["main"] = "Yurumates 3D",
+  ["official"] = {
+   [1] = "ゆるめいつ3でぃ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8994] = {
+  ["main"] = "Crimson Girls",
+  ["official"] = {
+   [1] = "クリムゾンガールズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8995] = {
+  ["main"] = "Nazo no Kanojo X OVA",
+  ["official"] = {
+   [1] = "謎の彼女X OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8996] = {
+  ["main"] = "Seitokai Yakuindomo (2012)",
+  ["official"] = {
+   [1] = "生徒会役員共 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8997] = {
+  ["main"] = "Gon",
+  ["official"] = {
+   [1] = "ゴン",
    },
   ["short"] = {
    },
