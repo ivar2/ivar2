@@ -45,7 +45,9 @@ local handleDate = function(str)
 end
 
 local handleGenres = function(str)
-	return str:gsub(' |', ',')
+	local genres = {}
+	str:gsub(' | ', '|'):gsub('[^|]+', function(g) table.insert(genres, g) end)
+	return table.concat(genres, ', ')
 end
 
 local handleEpisode = function(str, raw)
