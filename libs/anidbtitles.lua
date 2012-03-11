@@ -3564,6 +3564,8 @@ return {
    },
   ["syn"] = {
    [1] = "Scorched Bread",
+   [2] = "Жжёный хлеб",
+   [3] = "Жжёный хлебушек",
    },
   },
  [204] = {
@@ -5864,20 +5866,21 @@ return {
    [2] = "I sospiri del mio cuore",
    [3] = "Si tu tends l`oreille",
    [4] = "Stimme des Herzens - Whisper of the Heart",
-   [5] = "Sydämen kuiskaus",
-   [6] = "Szept serca",
-   [7] = "Südame sosin",
-   [8] = "Whisper of the Heart",
-   [9] = "Yüreğinin Sesi",
-   [10] = "Şoapta Inimii",
-   [11] = "Širdies Šnabždezys",
-   [12] = "Ο Ψίθυρος της Καρδιάς",
-   [13] = "Шепотът на сърцето",
-   [14] = "Шёпот сердца",
-   [15] = "הלחישה שבלב",
-   [16] = "همس القلوب",
-   [17] = "夢幻街少女",
-   [18] = "耳をすませば",
+   [5] = "Susurros del corazón",
+   [6] = "Sydämen kuiskaus",
+   [7] = "Szept serca",
+   [8] = "Südame sosin",
+   [9] = "Whisper of the Heart",
+   [10] = "Yüreğinin Sesi",
+   [11] = "Şoapta Inimii",
+   [12] = "Širdies Šnabždezys",
+   [13] = "Ο Ψίθυρος της Καρδιάς",
+   [14] = "Шепотът на сърцето",
+   [15] = "Шёпот сердца",
+   [16] = "הלחישה שבלב",
+   [17] = "همس القلوب",
+   [18] = "夢幻街少女",
+   [19] = "耳をすませば",
    },
   ["short"] = {
    [1] = "MoS",
@@ -6649,7 +6652,7 @@ return {
    },
   },
  [387] = {
-  ["main"] = "Hana Yori Dango",
+  ["main"] = "Hana yori Dango",
   ["official"] = {
    [1] = "Boys Over Flowers",
    [2] = "花より男子",
@@ -15240,11 +15243,12 @@ return {
   ["official"] = {
    [1] = "Babilon aranykincse",
    [2] = "Edgar de la cambriole - L`or de Babylone",
-   [3] = "Lupin III - the gold of Babylon",
-   [4] = "Lupin III: La leggenda dell`oro di Babilonia",
-   [5] = "Lupin III: The Golden Legend of Babylon",
-   [6] = "Lupin III: The Legend of the Gold of Babylon",
-   [7] = "ルパン三世 バビロンの黄金伝説",
+   [3] = "Lupin III - A Lenda do Ouro da Babilónia",
+   [4] = "Lupin III - the gold of Babylon",
+   [5] = "Lupin III: La leggenda dell`oro di Babilonia",
+   [6] = "Lupin III: The Golden Legend of Babylon",
+   [7] = "Lupin III: The Legend of the Gold of Babylon",
+   [8] = "ルパン三世 バビロンの黄金伝説",
    },
   ["short"] = {
    },
@@ -15264,15 +15268,16 @@ return {
    [3] = "Pokémon - Der Film: Mewtu gegen Mew",
    [4] = "Pokémon - Filmen",
    [5] = "Pokémon az első film - Mewtwo visszavág",
-   [6] = "Pokémon: Elokuva",
-   [7] = "Pokémon: Film Pierwszy",
-   [8] = "Pokémon: První film",
-   [9] = "Pokémon: Prvý film",
-   [10] = "Pokémon: den första filmen - Mewtvå slår tillbaka",
-   [11] = "Pokémon: İlk Film",
-   [12] = "Покемон Филмът",
-   [13] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
-   [14] = "劇場版ポケットモンスター ミュウツーの逆襲",
+   [6] = "Pokémon η ταινία - Ο Mewtwo αντεπιτίθεται",
+   [7] = "Pokémon: Elokuva",
+   [8] = "Pokémon: Film Pierwszy",
+   [9] = "Pokémon: První film",
+   [10] = "Pokémon: Prvý film",
+   [11] = "Pokémon: den första filmen - Mewtvå slår tillbaka",
+   [12] = "Pokémon: İlk Film",
+   [13] = "Покемон Филмът",
+   [14] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
+   [15] = "劇場版ポケットモンスター ミュウツーの逆襲",
    },
   ["short"] = {
    },
@@ -16291,7 +16296,7 @@ return {
    },
   },
  [1059] = {
-  ["main"] = "Ai Yori Aoshi: Enishi",
+  ["main"] = "Ai yori Aoshi: Enishi",
   ["official"] = {
    [1] = "Ai Yori Aoshi ~Enishi~",
    [2] = "Ai yori Aoshi ~ Enishi",
@@ -22285,6 +22290,8 @@ return {
    [2] = "smashhit",
    },
   ["syn"] = {
+   [1] = "Hit wo Nerae",
+   [2] = "Hit wo Nerae!",
    },
   },
  [1533] = {
@@ -29279,12 +29286,12 @@ return {
  [2105] = {
   ["main"] = "Hanitarou Desu",
   ["official"] = {
-   [1] = "I Am Hanitarou",
-   [2] = "ハニ太郎です.",
+   [1] = "ハニ太郎です.",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I Am Hanitarou",
    },
   },
  [2106] = {
@@ -31881,9 +31888,10 @@ return {
    [3] = "The Adventures of Tom Sawyer",
    [4] = "Tom Sawyer",
    [5] = "Tom Sawyers Abenteuer",
-   [6] = "תום סויר",
-   [7] = "مغامرات توم سوير",
-   [8] = "トム・ソーヤーの冒険",
+   [6] = "Tom story",
+   [7] = "תום סויר",
+   [8] = "مغامرات توم سوير",
+   [9] = "トム・ソーヤーの冒険",
    },
   ["short"] = {
    },
@@ -32463,7 +32471,7 @@ return {
    },
   },
  [2350] = {
-  ["main"] = "Saikyou Robo Daiooja",
+  ["main"] = "Saikyou Robo Daiouja",
   ["official"] = {
    [1] = "最強ロボ ダイオージャ",
    },
@@ -34637,7 +34645,7 @@ return {
    },
   },
  [2542] = {
-  ["main"] = "Bishoujo Senshi Sailor Moon Sailor Stars",
+  ["main"] = "Bishoujo Senshi Sailor Moon: Sailor Stars",
   ["official"] = {
    [1] = "Czarodziejka z Księżyca: Sailor Moon Sailor Stars",
    [2] = "Petali di stelle per Sailor Moon",
@@ -40024,10 +40032,10 @@ return {
    },
   },
  [3096] = {
-  ["main"] = "Fuuma no Kojirou: Fuuma Hanran Hen",
+  ["main"] = "Fuuma no Kojirou: Saishuushou - Fuuma Hanran Hen",
   ["official"] = {
    [1] = "Kojirô !",
-   [2] = "風魔の小次郎～風魔反乱篇～",
+   [2] = "風魔の小次郎 最終章 風魔反乱篇",
    },
   ["short"] = {
    },
@@ -45918,13 +45926,14 @@ return {
   ["short"] = {
    [1] = "Haruhi 1",
    [2] = "Haruhi 2006",
-   [3] = "SHnY",
-   [4] = "Suhayu",
-   [5] = "haruhi",
-   [6] = "mohs",
-   [7] = "suzuharu",
-   [8] = "ฮารุฮิ",
-   [9] = "凉宫",
+   [3] = "Haruhi S1",
+   [4] = "SHnY",
+   [5] = "Suhayu",
+   [6] = "haruhi",
+   [7] = "mohs",
+   [8] = "suzuharu",
+   [9] = "ฮารุฮิ",
+   [10] = "凉宫",
    },
   ["syn"] = {
    [1] = "A Melancolia de Haruhi Suzumiya",
@@ -47671,12 +47680,12 @@ return {
  [4045] = {
   ["main"] = "Yanbou Ninbou Tonbou",
   ["official"] = {
-   [1] = "Yanbo, Ninbo and Tonbo",
-   [2] = "ヤンボウ ニンボウ トンボウ",
+   [1] = "ヤンボウ ニンボウ トンボウ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yanbo, Ninbo and Tonbo",
    },
   },
  [4046] = {
@@ -47962,6 +47971,7 @@ return {
  [4069] = {
   ["main"] = "Funny Pets",
   ["official"] = {
+   [1] = "Funny Pets",
    },
   ["short"] = {
    },
@@ -52589,24 +52599,23 @@ return {
    },
   ["syn"] = {
    [1] = "Code Geass 1",
-   [2] = "Code Geass Hangyaku no LaRouche",
-   [3] = "Code Geass R1",
-   [4] = "Code Geass ~ Lelouch de la rébellion",
-   [5] = "Code Geass: Cuộc khởi nghĩa của Lelouch",
-   [6] = "Code Geass: Lelouch da Rebelião",
-   [7] = "Code Geass: Lelouch de la Rebelión",
-   [8] = "Code Geass: Lelouch de la Rebel·lió",
-   [9] = "Code Geass: Lelouch`un Başkaldırısı",
-   [10] = "Código Geass R1",
-   [11] = "Código Geass: Lelouch da Rebelião",
-   [12] = "Kodas Geass: Leloušio sukilimas",
-   [13] = "code geass",
-   [14] = "Код Геас: Бунтът на Люлюш",
-   [15] = "Код Гиас: Восставший Лелуш",
-   [16] = "Код Гиасс: Восстание Лелуша",
-   [17] = "קוד ג`יאס",
-   [18] = "كود قياس: تمرد للوتش",
-   [19] = "叛逆的鲁鲁修",
+   [2] = "Code Geass R1",
+   [3] = "Code Geass ~ Lelouch de la rébellion",
+   [4] = "Code Geass: Cuộc khởi nghĩa của Lelouch",
+   [5] = "Code Geass: Lelouch da Rebelião",
+   [6] = "Code Geass: Lelouch de la Rebelión",
+   [7] = "Code Geass: Lelouch de la Rebel·lió",
+   [8] = "Code Geass: Lelouch`un Başkaldırısı",
+   [9] = "Código Geass R1",
+   [10] = "Código Geass: Lelouch da Rebelião",
+   [11] = "Kodas Geass: Leloušio sukilimas",
+   [12] = "code geass",
+   [13] = "Код Геас: Бунтът на Люлюш",
+   [14] = "Код Гиас: Восставший Лелуш",
+   [15] = "Код Гиасс: Восстание Лелуша",
+   [16] = "קוד ג`יאס",
+   [17] = "كود قياس: تمرد للوتش",
+   [18] = "叛逆的鲁鲁修",
    },
   },
  [4522] = {
@@ -54879,7 +54888,7 @@ return {
    },
   },
  [4732] = {
-  ["main"] = "Seikima 2 Humane Society: Jinrui Ai ni Michita Shakai",
+  ["main"] = "Seikimatsu: Humane Society - Jinrui Ai ni Michita Shakai",
   ["official"] = {
    [1] = "聖飢魔II HUMANE SOCIETY 人類愛に満ちた社会",
    },
@@ -55910,7 +55919,8 @@ return {
    [6] = "Evangelion: 1.11 Monstrum - Nejste sami",
    [7] = "Evangelion: 1.11 You Are (Not) Alone.",
    [8] = "Evangelion:1.01 - You are (not) alone",
-   [9] = "ヱヴァンゲリヲン新劇場版:序",
+   [9] = "Евангелион 1.11: Ты (не) один",
+   [10] = "ヱヴァンゲリヲン新劇場版:序",
    },
   ["short"] = {
    [1] = "Eva:1.0",
@@ -55922,8 +55932,7 @@ return {
    [4] = "Evangelion New Theatrical Version: The Beginning",
    [5] = "Evangelion Shin Gekijouban: Rebuild of Evangelion",
    [6] = "Evangelion: 1.0 Tu (Ne) Vienišas",
-   [7] = "Евангелион по-новому",
-   [8] = "ヱヴァンゲリヲン 新劇場版 REBUILD OF EVANGELION",
+   [7] = "ヱヴァンゲリヲン 新劇場版 REBUILD OF EVANGELION",
    },
   },
  [4848] = {
@@ -57232,7 +57241,7 @@ return {
    },
   },
  [4979] = {
-  ["main"] = "Dennou Sentai Voogie`s Angel: Forever and ever",
+  ["main"] = "Dennou Sentai Voogie`s Angel: Forever and Ever",
   ["official"] = {
    [1] = "電脳戦隊ヴギィ’ズ・エンジェル -Forever and ever-",
    },
@@ -58496,7 +58505,8 @@ return {
   ["official"] = {
    [1] = "Fist of the North Star 3: Legend of Raoh - Fierce Fight",
    [2] = "Hokuto no Ken 2 - L`héritier du Hokuto",
-   [3] = "真救世主伝説 北斗の拳 ラオウ伝 激闘の章",
+   [3] = "Ken Il Guerriero - La Leggenda Di Raoul",
+   [4] = "真救世主伝説 北斗の拳 ラオウ伝 激闘の章",
    },
   ["short"] = {
    },
@@ -61060,7 +61070,9 @@ return {
    [2] = "마크로스 프론티어",
    },
   ["short"] = {
-   [1] = "macF",
+   [1] = "Macross F",
+   [2] = "macF",
+   [3] = "マクロスF",
    },
   ["syn"] = {
    [1] = "Macross Frontier Deculture Edition",
@@ -62226,18 +62238,19 @@ return {
    },
   },
  [5552] = {
-  ["main"] = "Porfy no Nagai Tabi",
+  ["main"] = "Porphy no Nagai Tabi",
   ["official"] = {
    [1] = "Il lungo viaggio di Porfi",
    [2] = "ポルフィの長い旅",
    },
   ["short"] = {
-   [1] = "Porfy",
+   [1] = "Porphy",
    },
   ["syn"] = {
-   [1] = "Porfy`s Long Journey",
-   [2] = "رحلة بورفي الطويلة",
-   [3] = "西米特拉的孤儿 ～ 波菲拉斯的漫长旅程",
+   [1] = "Porfy no Nagai Tabi",
+   [2] = "Porphy`s Long Journey",
+   [3] = "رحلة بورفي الطويلة",
+   [4] = "西米特拉的孤儿 ～ 波菲拉斯的漫长旅程",
    },
   },
  [5553] = {
@@ -66346,7 +66359,8 @@ return {
   ["official"] = {
    [1] = "Fist of the North Star 5: Legend of Kenshiro",
    [2] = "Hokuto no Ken 3 - La Légende de Kenshiro",
-   [3] = "真救世主伝説 北斗の拳 ZERO ケンシロウ伝",
+   [3] = "Ken Il Guerriero - La Leggenda del Vero Salvatore",
+   [4] = "真救世主伝説 北斗の拳 ZERO ケンシロウ伝",
    },
   ["short"] = {
    },
@@ -66597,14 +66611,15 @@ return {
    },
   },
  [6129] = {
-  ["main"] = "Initial D Extra Stage 2: Tabidachi no Green",
+  ["main"] = "Initial D Extra Stage 2",
   ["official"] = {
    [1] = "頭文字[イニシャル]D Extra Stage2",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "頭文字D Extra Stage 2 旅立ちのグリーン",
+   [1] = "Initial D Extra Stage 2: Tabidachi no Green",
+   [2] = "頭文字D Extra Stage 2 旅立ちのグリーン",
    },
   },
  [6130] = {
@@ -66817,9 +66832,10 @@ return {
   ["main"] = "Evangelion Shin Gekijouban: Ha",
   ["official"] = {
    [1] = "Evangelion 2.0: Murdumine",
-   [2] = "Evangelion: 2.0 You Can (Not) Advance",
-   [3] = "Evangelion: 2.22 - You Can (Not) Advance",
-   [4] = "ヱヴァンゲリヲン新劇場版:破",
+   [2] = "Evangelion : 2.0 You Can (Not) Advance",
+   [3] = "Evangelion: 2.0 You Can (Not) Advance",
+   [4] = "Evangelion: 2.22 - You Can (Not) Advance",
+   [5] = "ヱヴァンゲリヲン新劇場版:破",
    },
   ["short"] = {
    },
@@ -68748,7 +68764,7 @@ return {
    },
   },
  [6396] = {
-  ["main"] = "Bremen 4: Jigoku no Naka no Tenshi-tachi",
+  ["main"] = "Bremen Four",
   ["official"] = {
    [1] = "Bremen 4",
    [2] = "ブレーメン4[フォー]",
@@ -68756,7 +68772,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ブレーメン4 地獄の中の天使たち",
+   [1] = "Bremen 4: Jigoku no Naka no Tenshi-tachi",
+   [2] = "ブレーメン4 地獄の中の天使たち",
    },
   },
  [6397] = {
@@ -68937,7 +68954,8 @@ return {
  [6419] = {
   ["main"] = "Anata no Shiranai Kangofu: Seiteki Byoutou 24 Ji",
   ["official"] = {
-   [1] = "あなたの知らない看護婦 ～性的病棟24時～",
+   [1] = "The truth of nurse",
+   [2] = "あなたの知らない看護婦 ～性的病棟24時～",
    },
   ["short"] = {
    },
@@ -75390,16 +75408,16 @@ return {
  [7103] = {
   ["main"] = "Break Blade",
   ["official"] = {
-   [1] = "ブレイク ブレイド BROKEN BLADE",
+   [1] = "Broken Blade",
+   [2] = "ブレイク ブレイド BROKEN BLADE",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Break Blade Movie",
-   [2] = "Broken Blade",
-   [3] = "Kırık Kılıç",
-   [4] = "Сломанный Меч",
-   [5] = "ブレイクブレイド BROKEN BLADE",
+   [2] = "Kırık Kılıç",
+   [3] = "Сломанный Меч",
+   [4] = "ブレイクブレイド BROKEN BLADE",
    },
   },
  [7105] = {
@@ -77478,7 +77496,8 @@ return {
  [7307] = {
   ["main"] = "K-On!!",
   ["official"] = {
-   [1] = "けいおん!!",
+   [1] = "K-ON!!",
+   [2] = "けいおん!!",
    },
   ["short"] = {
    [1] = "k-on 2",
@@ -78631,8 +78650,9 @@ return {
    },
   ["syn"] = {
    [1] = "Học Viện Huyền Bí",
-   [2] = "世纪末超自然学院",
-   [3] = "세기말 오컬트 학원",
+   [2] = "Оккультная Академия",
+   [3] = "世纪末超自然学院",
+   [4] = "세기말 오컬트 학원",
    },
   },
  [7438] = {
@@ -79069,6 +79089,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Princess and the Pilot",
+   [2] = "The Recollections of a Certain Pilot",
    },
   },
  [7481] = {
@@ -79558,8 +79580,9 @@ return {
  [7535] = {
   ["main"] = "Bakugan Battle Brawlers: Gundalian Invaders",
   ["official"] = {
-   [1] = "Bakugan: a Gundalia-i megszállók",
-   [2] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
+   [1] = "Bakugan: Najeźdźcy z Gundalii",
+   [2] = "Bakugan: a Gundalia-i megszállók",
+   [3] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
    },
   ["short"] = {
    },
@@ -79619,7 +79642,8 @@ return {
  [7541] = {
   ["main"] = "Sono Hanabira ni Kuchizuke o",
   ["official"] = {
-   [1] = "その花びらにくちづけを",
+   [1] = "Becoming your lover",
+   [2] = "その花びらにくちづけを",
    },
   ["short"] = {
    },
@@ -80279,7 +80303,7 @@ return {
  [7610] = {
   ["main"] = "Seme Chichi",
   ["official"] = {
-   [1] = "せめ・ちち",
+   [1] = "せめちち",
    },
   ["short"] = {
    },
@@ -84626,9 +84650,10 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
-   [3] = "Дівчина-чарівниця Мадока Маґіка",
-   [4] = "مدوکا مجیکا دختر جادویی",
-   [5] = "魔法少女小圆",
+   [3] = "Волшебница Мадока Магика",
+   [4] = "Дівчина-чарівниця Мадока Маґіка",
+   [5] = "مدوکا مجیکا دختر جادویی",
+   [6] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -85344,9 +85369,9 @@ return {
    },
   ["syn"] = {
    [1] = "Drawer Hobs",
-   [2] = "Wakate Animator Ikusei Project 4",
+   [2] = "Wakate Animator Ikusei Project 2010 4",
    [3] = "Wardrobe Dwellers",
-   [4] = "Young Animator Training Project 4",
+   [4] = "Young Animator Training Project 2010 4",
    [5] = "若手アニメーター育成プロジェクト4",
    },
   },
@@ -85786,9 +85811,10 @@ return {
   ["main"] = "Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
   ["official"] = {
    [1] = "Ano hana",
-   [2] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
-   [3] = "آنو هی میتا هانا نو ناما و باکوتچی وا مادا شیرانای",
-   [4] = "あの日見た花の名前を僕達はまだ知らない.",
+   [2] = "Все още не знаем името на цветето, което видяхме онзи ден.",
+   [3] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
+   [4] = "آنو هی میتا هانا نو ناما و باکوتچی وا مادا شیرانای",
+   [5] = "あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
    [1] = "Ano Hana",
@@ -86418,8 +86444,8 @@ return {
    },
   ["syn"] = {
    [1] = "One-Hit Bond",
-   [2] = "Wakate Animator Ikusei Project 3",
-   [3] = "Young Animator Training Project 3",
+   [2] = "Wakate Animator Ikusei Project 2010 3",
+   [3] = "Young Animator Training Project 2010 3",
    [4] = "若手アニメーター育成プロジェクト3",
    },
   },
@@ -86432,8 +86458,8 @@ return {
    },
   ["syn"] = {
    [1] = "Grandfather`s Lamp",
-   [2] = "Wakate Animator Ikusei Project 2",
-   [3] = "Young Animator Training Project 2",
+   [2] = "Wakate Animator Ikusei Project 2010 2",
+   [3] = "Young Animator Training Project 2010 2",
    [4] = "若手アニメーター育成プロジェクト2",
    },
   },
@@ -86446,8 +86472,8 @@ return {
    },
   ["syn"] = {
    [1] = "Super Veggie Torracman",
-   [2] = "Wakate Animator Ikusei Project 1",
-   [3] = "Young Animator Training Project 1",
+   [2] = "Wakate Animator Ikusei Project 2010 1",
+   [3] = "Young Animator Training Project 2010 1",
    [4] = "若手アニメーター育成プロジェクト1",
    },
   },
@@ -86670,6 +86696,7 @@ return {
    [1] = "映画 けいおん!",
    },
   ["short"] = {
+   [1] = "K-On Movie",
    },
   ["syn"] = {
    },
@@ -86783,7 +86810,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Into the Forest of Fireflies` Light",
+   [1] = "Hotarubi no Mori he",
+   [2] = "Into the Forest of Fireflies` Light",
    },
   },
  [8290] = {
@@ -87009,6 +87037,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Fish",
+   [2] = "Рыба",
    },
   },
  [8318] = {
@@ -87690,6 +87720,7 @@ return {
   ["main"] = "Bakugan: Mechtanium Surge",
   ["official"] = {
    [1] = "Bakugan: Mechtanium Surge",
+   [2] = "Bakugan: Świat Mechtoganów",
    },
   ["short"] = {
    },
@@ -88384,13 +88415,15 @@ return {
    },
   },
  [8465] = {
-  ["main"] = "Nankai no Juju",
+  ["main"] = "Puka Puka Juju",
   ["official"] = {
-   [1] = "南海のジュジュ",
+   [1] = "ぷかぷかジュジュ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Wakate Animator Ikusei Project 2011 3",
+   [2] = "Young Animator Training Project 2011 3",
    },
   },
  [8466] = {
@@ -88401,6 +88434,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Wakate Animator Ikusei Project 2011 4",
+   [2] = "Young Animator Training Project 2011 4",
    },
   },
  [8467] = {
@@ -88411,6 +88446,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Wakate Animator Ikusei Project 2011 1",
+   [2] = "Young Animator Training Project 2011 1",
    },
   },
  [8468] = {
@@ -88421,6 +88458,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Wakate Animator Ikusei Project 2011 2",
+   [2] = "Young Animator Training Project 2011 2",
    },
   },
  [8471] = {
@@ -88484,6 +88523,7 @@ return {
    },
   ["syn"] = {
    [1] = "Is This a Zombie? Of the Dead",
+   [2] = "これはゾンビですか? オブ・ザ・デッド",
    },
   },
  [8478] = {
@@ -88942,6 +88982,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Queen`s Blade: Rebellion OVA",
    },
   },
  [8532] = {
@@ -89097,6 +89138,7 @@ return {
    [1] = "Baby, Please Kill Me",
    [2] = "Прикончи меня, детка",
    [3] = "اقتلني يا حبيبي",
+   [4] = "킬 미 베이비",
    },
   },
  [8553] = {
@@ -89134,6 +89176,7 @@ return {
   ["main"] = "Another",
   ["official"] = {
    [1] = "Another",
+   [2] = "Өөр",
    },
   ["short"] = {
    },
@@ -89220,9 +89263,9 @@ return {
    },
   },
  [8566] = {
-  ["main"] = "Maken-ki! (2012)",
+  ["main"] = "Maken-ki!: Natsu Da! Mizugi Da! Gasshuku Da!",
   ["official"] = {
-   [1] = "マケン姫っ! (2012)",
+   [1] = "マケン姫っ! 夏だ! 水着だ! 合宿だ!",
    },
   ["short"] = {
    },
@@ -89388,8 +89431,9 @@ return {
    [3] = "윤회의 라그랑주",
    },
   ["short"] = {
-   [1] = "lagrange",
-   [2] = "rinne no lagrange",
+   [1] = "Lag-rin",
+   [2] = "lagrange",
+   [3] = "rinne no lagrange",
    },
   ["syn"] = {
    },
@@ -90296,9 +90340,9 @@ return {
    },
   },
  [8689] = {
-  ["main"] = "Ao no Exorcist Gekijou",
+  ["main"] = "Gekijouban Ao no Exorcist",
   ["official"] = {
-   [1] = "青の祓魔師劇場",
+   [1] = "劇場版 青の祓魔師 [エクソシスト]",
    },
   ["short"] = {
    },
@@ -91659,17 +91703,6 @@ return {
    [1] = "スタージュエル",
    },
   },
- [8839] = {
-  ["main"] = "Guitar Shoujo!",
-  ["official"] = {
-   [1] = "ギター少女!",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "Guitar Girl",
-   },
-  },
  [8840] = {
   ["main"] = "Hiiro no Kakera",
   ["official"] = {
@@ -91679,6 +91712,7 @@ return {
    },
   ["syn"] = {
    [1] = "Scarlet Fragment",
+   [2] = "ヒイロノカケラ",
    },
   },
  [8842] = {
@@ -91786,6 +91820,7 @@ return {
    },
   ["syn"] = {
    [1] = "Mysterious Girlfriend X",
+   [2] = "謎の彼女Ｘ",
    },
   },
  [8854] = {
@@ -91807,6 +91842,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hyoka",
    },
   },
  [8856] = {
@@ -92733,7 +92769,7 @@ return {
  [8963] = {
   ["main"] = "Saint Seiya Omega",
   ["official"] = {
-   [1] = "聖闘士星矢Ω",
+   [1] = "聖闘士星矢Ω-セイントセイヤオメガ-",
    },
   ["short"] = {
    },
@@ -92823,9 +92859,9 @@ return {
    },
   },
  [8974] = {
-  ["main"] = "Cardfight!! Vanguard (2012)",
+  ["main"] = "Cardfight!! Vanguard: Asia Circuit Hen",
   ["official"] = {
-   [1] = "カードファイト!! ヴァンガード (2012)",
+   [1] = "カードファイト!! ヴァンガード アジアサーキット編",
    },
   ["short"] = {
    },
@@ -92904,11 +92940,12 @@ return {
  [8981] = {
   ["main"] = "Oku-sama wa Michael",
   ["official"] = {
-   [1] = "奥様はミカえる♥",
+   [1] = "おくさまは天使 [ミカえる] ♥",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "奥様はミカえる♥",
    },
   },
  [8982] = {
@@ -93039,6 +93076,402 @@ return {
   ["main"] = "Gon",
   ["official"] = {
    [1] = "ゴン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [8999] = {
+  ["main"] = "Hakuouki: Reimei-roku",
+  ["official"] = {
+   [1] = "薄桜鬼 黎明録",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9000] = {
+  ["main"] = "Gekijouban Hakuouki",
+  ["official"] = {
+   [1] = "劇場版 薄桜鬼",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9002] = {
+  ["main"] = "Shinsekai Yori",
+  ["official"] = {
+   [1] = "新世界より",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "From the New World",
+   },
+  },
+ [9003] = {
+  ["main"] = "Baku Tech! Bakugan",
+  ["official"] = {
+   [1] = "爆TECH!爆丸",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9004] = {
+  ["main"] = "Hoshi no Yuuenchi",
+  ["official"] = {
+   [1] = "ほしのゆうえんち",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9006] = {
+  ["main"] = "Mado",
+  ["official"] = {
+   [1] = "窓",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "The Window",
+   },
+  },
+ [9007] = {
+  ["main"] = "Satsujin Kyoujidai",
+  ["official"] = {
+   [1] = "殺人狂時代",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Au Fou!",
+   },
+  },
+ [9008] = {
+  ["main"] = "Nihiki no Sanma",
+  ["official"] = {
+   [1] = "二匹のサンマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Two Fishes",
+   },
+  },
+ [9009] = {
+  ["main"] = "Fashion",
+  ["official"] = {
+   [1] = "ファッション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9010] = {
+  ["main"] = "Kyonyuu Fantasy",
+  ["official"] = {
+   [1] = "巨乳ファンタジー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9011] = {
+  ["main"] = "Hishoka Drop The Animation",
+  ["official"] = {
+   [1] = "秘書課ドロップ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9012] = {
+  ["main"] = "Onegai my Melody: Yuu & Ai",
+  ["official"] = {
+   [1] = "おねがいマイメロディ 友＆愛",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9013] = {
+  ["main"] = "Kyoufu no Kyou-chan",
+  ["official"] = {
+   [1] = "きょうふのキョーちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9014] = {
+  ["main"] = "Sore Ike! Anpanman: Yomigaere Bananajima",
+  ["official"] = {
+   [1] = "それいけ! アンパンマン よみがえれ バナナ島",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9015] = {
+  ["main"] = "Hagure Yuusha no Estetica",
+  ["official"] = {
+   [1] = "はぐれ勇者の鬼畜美学 [エステティカ]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9016] = {
+  ["main"] = "Furusato Saisei Nippon no Mukashibanashi",
+  ["official"] = {
+   [1] = "ふるさと再生 日本の昔ばなし",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9018] = {
+  ["main"] = "Bono Bono: Kumomo no Ki no Koto",
+  ["official"] = {
+   [1] = "ぼのぼの クモモの木のこと",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9019] = {
+  ["main"] = "Wellber no Monogatari: Kanashimi no Senshi Galahad no Banka",
+  ["official"] = {
+   [1] = "ウエルベールの物語 哀しみの戦士ガラハドの挽歌",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9020] = {
+  ["main"] = "Kuromajo-san ga Touru!!",
+  ["official"] = {
+   [1] = "黒魔女さんが通る!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9021] = {
+  ["main"] = "Meloetta to Kirakira Recital",
+  ["official"] = {
+   [1] = "メロエッタのキラキラリサイタル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9022] = {
+  ["main"] = "Monsuno",
+  ["official"] = {
+   [1] = "Monsuno",
+   [2] = "モンスーノ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Monsuno: World Master",
+   },
+  },
+ [9023] = {
+  ["main"] = "Gekijouban Naruto 2012",
+  ["official"] = {
+   [1] = "劇場版 NARUTO 2012",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9024] = {
+  ["main"] = "Naruto Shippuuden : Uchiha Madara and Kyuubi vs Shodaime Hokage Senju Hashirama",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9025] = {
+  ["main"] = "Ninja Hattori-kun Plus Paaman: Ninja Kaijuu Jippou VS Miracle Tamago",
+  ["official"] = {
+   [1] = "忍者ハットリくん+パーマン 忍者怪獣ジッポウVSミラクル卵",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9026] = {
+  ["main"] = "Pa-Pa-Pa the Movie: Paaman",
+  ["official"] = {
+   [1] = "Pa-Pa-Pa ザ★ムービー パーマン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9027] = {
+  ["main"] = "Pa-Pa-Pa the Movie: Paaman - Tako de Pon! Ashi wa Pon!",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9028] = {
+  ["main"] = "Shimajirou Hesoka",
+  ["official"] = {
+   [1] = "しまじろう ヘソカ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9029] = {
+  ["main"] = "Haru wa Kuru",
+  ["official"] = {
+   [1] = "春は来る",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9030] = {
+  ["main"] = "God Eater Prologue",
+  ["official"] = {
+   [1] = "ゴッドイーター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9031] = {
+  ["main"] = "Lupin the Third: Mine Fujiko to Iu Onna",
+  ["official"] = {
+   [1] = "LUPIN the Third ～峰不二子という女～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9032] = {
+  ["main"] = "Uchuu Kyoudai (2012)",
+  ["official"] = {
+   [1] = "宇宙兄弟 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9033] = {
+  ["main"] = "Hime-sama Gentei!",
+  ["official"] = {
+   [1] = "姫様限定!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Princess Limited!",
+   },
+  },
+ [9034] = {
+  ["main"] = "Recorder to Randsell Re",
+  ["official"] = {
+   [1] = "リコーダーとランドセル レ♪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9035] = {
+  ["main"] = "Goulart Knights: Evoked the Beginning White",
+  ["official"] = {
+   [1] = "グラール騎士団 Evoked THE Beginning White",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9036] = {
+  ["main"] = "Kami-Usagi Rope",
+  ["official"] = {
+   [1] = "紙兎ロペ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9037] = {
+  ["main"] = "Gekijouban Kami-Usagi Rope",
+  ["official"] = {
+   [1] = "劇場版 紙兎ロペ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9038] = {
+  ["main"] = "Ring of Gundam",
+  ["official"] = {
+   [1] = "Ring of Gundam",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "リング・オブ・ガンダム",
+   },
+  },
+ [9039] = {
+  ["main"] = "Bakusou Circuit Romance Twin",
+  ["official"] = {
+   [1] = "爆走サーキット·ロマン TWIN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9040] = {
+  ["main"] = "Bakusou Circuit Roman Twin",
+  ["official"] = {
+   [1] = "爆走サーキット・ロマン TWIN",
    },
   ["short"] = {
    },
