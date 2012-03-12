@@ -7,6 +7,10 @@ end
 local handleMessage = function(nick, destination, msg, update)
 	if(db[nick] and db[nick][destination]) then
 		local matchPoint = msg:match('()[^\\]/')
+
+		-- Someone failed and only wrote: s/match
+		if(not matchPoint) then return end
+
 		local match = msg:sub(1, matchPoint)
 
 		local replacePoint = msg:match('()[^\\]/', matchPoint + 1)
