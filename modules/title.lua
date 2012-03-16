@@ -4,6 +4,7 @@ local uri = require"handler.uri"
 local simplehttp = require'simplehttp'
 local x0 = require'x0'
 local html2unicode = require'html'
+local json = require'json'
 local base58 = require'base58'
 
 local uri_parse = uri.parse
@@ -31,6 +32,22 @@ local smartEscape = function(str)
 	return str:gsub(pattern, function(c)
 		return ('%%%02X'):format(c:byte())
 	end)
+end
+
+local utify8 = function(str)
+	str = str:gsub("\\u(....)", function(n)
+		n = tonumber(n, 16)
+
+		if(n < 128) then
+			return string.char(n)
+		elseif(n < 2048) then
+			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
+		else
+			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
+		end
+	end)
+
+	return str
 end
 
 local parseAJAX
@@ -318,6 +335,52 @@ local customHosts = {
 					metadata.processed[index] = {
 						index = indexString,
 						output = output
+					}
+					metadata.num = metadata.num - 1
+
+					handleOutput(metadata)
+				end
+			)
+
+			return true
+		end
+	end,
+
+	['twitter%.com'] = function(metadata, index, info, indexString)
+		local query = info.query
+		local path = info.path
+		local fragment = info.fragment
+		local tid
+
+		local pattern = '/status[es]*/(%d+)'
+		if(fragment and fragment:match(pattern)) then
+			tid = fragment:match(pattern)
+		elseif(path and path:match(pattern)) then
+			tid = path:match(pattern)
+		end
+
+		if(tid) then
+			simplehttp(
+				('https://api.twitter.com/1/statuses/show/%s.json'):format(tid),
+
+				function(data)
+					local info = json.decode(data)
+					local name = utify8(info.user.name)
+					local screen_name = utify8(info.user.screen_name)
+					local tweet = utify8(info.text)
+
+					local out = {}
+					if(name == screen_name) then
+						table.insert(out, string.format('\002%s\002:', name))
+					else
+						table.insert(out, string.format('\002%s\002 @%s:', name, screen_name))
+					end
+
+					table.insert(out, tweet)
+
+					metadata.processed[index] = {
+						index = indexString,
+						output = table.concat(out, ' ')
 					}
 					metadata.num = metadata.num - 1
 
