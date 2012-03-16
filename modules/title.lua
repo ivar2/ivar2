@@ -364,10 +364,10 @@ local customHosts = {
 				('https://api.twitter.com/1/statuses/show/%s.json'):format(tid),
 
 				function(data)
-					local info = json.decode(data)
-					local name = utify8(info.user.name)
-					local screen_name = utify8(info.user.screen_name)
-					local tweet = utify8(info.text)
+					local info = json.decode(utify8(data))
+					local name = info.user.name
+					local screen_name = info.user.screen_name
+					local tweet = info.text
 
 					local out = {}
 					if(name == screen_name) then
