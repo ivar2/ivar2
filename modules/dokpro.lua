@@ -128,7 +128,7 @@ local handleInput = function(self, source, destination, word)
 			end
 
 			if(#out > 0) then
-				self:Msg('privmsg', destination, source, '%s | http://x0.no/dokpro/%s', table.concat(out, ', '), word)
+				self:Msg('privmsg', destination, source, '%s | http://x0.no/dokpro/%s', table.concat(out, ', '), urlEncode(word))
 			else
 				self:Msg('privmsg', destination, source, '%s: %s', source.nick, err or 'Du suger, prøv igjen.')
 			end
