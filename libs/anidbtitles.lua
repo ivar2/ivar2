@@ -12283,7 +12283,7 @@ return {
   ["main"] = "Kyouhaku Second: Mou Hitotsu no Ashita - The Animation",
   ["official"] = {
    [1] = "The Blackmail II: The Animation",
-   [2] = "脅迫Ⅱ[セカンド] ～もうひとつの明日～ THE ANIMATION",
+   [2] = "脅迫II[セカンド] ～もうひとつの明日～ THE ANIMATION",
    },
   ["short"] = {
    [1] = "Kyouhaku II",
@@ -19739,7 +19739,7 @@ return {
    },
   ["syn"] = {
    [1] = "Green Green 13",
-   [2] = "Green Green Evolutions",
+   [2] = "Green Green Erolutions",
    },
   },
  [1334] = {
@@ -19862,7 +19862,7 @@ return {
    [1] = "Heaven",
    [2] = "Kowaremono - Fragile Hearts",
    [3] = "Sex Machine",
-   [4] = "こわれものⅡ",
+   [4] = "こわれものII",
    },
   ["short"] = {
    },
@@ -19870,7 +19870,6 @@ return {
    [1] = "Kowaremono - Heaven",
    [2] = "Kowaremono 2",
    [3] = "Slave Doll 2",
-   [4] = "こわれものII",
    },
   },
  [1344] = {
@@ -23899,8 +23898,8 @@ return {
  [1664] = {
   ["main"] = "Aoi Umi no Tristia",
   ["official"] = {
-   [1] = "Tristia of the Deep Blue Sea",
-   [2] = "Tristia – błękitna wyspa",
+   [1] = "Tristia - błękitna wyspa",
+   [2] = "Tristia of the Deep Blue Sea",
    [3] = "Тристия",
    [4] = "發明工坊",
    [5] = "蒼い海のトリスティア",
@@ -40378,8 +40377,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "G Spot Express",
-   [2] = "Itazura The Animation",
+   [1] = "Die U-Bahn-Grabscher Bande",
+   [2] = "G Spot Express",
+   [3] = "Itazura The Animation",
    },
   },
  [3127] = {
@@ -42873,10 +42873,13 @@ return {
   ["official"] = {
    [1] = "Kiss in the Dark",
    [2] = "Papa to Kiss - Kiss in the Dark",
-   [3] = "パパとKISS IN THE DARK",
+   [3] = "パパと♥KISS IN THE DARK",
    },
   ["short"] = {
    [1] = "KitD",
+   [2] = "papakiss",
+   [3] = "パパKISS",
+   [4] = "パパキス",
    },
   ["syn"] = {
    [1] = "Papa to: Kiss in the Dark",
@@ -48638,15 +48641,14 @@ return {
    },
   },
  [4122] = {
-  ["main"] = "Ginga Tetsudou 999: Kimi wa Haha no You ni Aiseru ka!!",
+  ["main"] = "Ginga Tetsudou 999: Kimi wa Haha no You ni Aiseruka!!",
   ["official"] = {
-   [1] = "Galaxy Railway 999: Can You Love Like a Mother?!!",
-   [2] = "銀河鉄道999 君は母のように愛せるか!!",
+   [1] = "銀河鉄道999 君は母のように愛せるか!!",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Ginga Tetsudo 999: Kimi wa Haha no You ni Aiseru ka!!",
+   [1] = "Galaxy Railway 999: Can You Love Like a Mother?!!",
    },
   },
  [4123] = {
@@ -52762,6 +52764,8 @@ return {
    },
   ["syn"] = {
    [1] = "Psychoarmor Gobarian",
+   [2] = "サイコアーマーゴーバリアン",
+   [3] = "サイコアーマー・ゴーバリアン",
    },
   },
  [4534] = {
@@ -62636,11 +62640,12 @@ return {
  [5592] = {
   ["main"] = "To Heart 2 ad",
   ["official"] = {
-   [1] = "OVA トゥハート2 ad",
+   [1] = "ToHeart2ad",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "トゥハート2 ad",
    },
   },
  [5593] = {
@@ -67902,6 +67907,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "トゥハート2 adplus",
    },
   },
  [6287] = {
@@ -74994,13 +75000,14 @@ return {
    [3] = "La Déchéance D`un Homme",
    },
   ["syn"] = {
-   [1] = "Blue Literature Series",
-   [2] = "Evergreen Literature",
-   [3] = "Japonų literatūros klasika",
-   [4] = "No Longer Human",
-   [5] = "Классика японской литературы",
-   [6] = "سلسلة الأدب الزرقاء",
-   [7] = "青之文学系列 人间失格篇",
+   [1] = "Aoi Bungaku Series",
+   [2] = "Blue Literature Series",
+   [3] = "Evergreen Literature",
+   [4] = "Japonų literatūros klasika",
+   [5] = "No Longer Human",
+   [6] = "Классика японской литературы",
+   [7] = "سلسلة الأدب الزرقاء",
+   [8] = "青之文学系列 人间失格篇",
    },
   },
  [7057] = {
@@ -76548,9 +76555,10 @@ return {
  [7221] = {
   ["main"] = "Suzumiya Haruhi no Shoushitsu",
   ["official"] = {
-   [1] = "The Disappearance of Haruhi Suzumiya",
-   [2] = "Исчезновение Харухи Судзумии",
-   [3] = "涼宮ハルヒの消失",
+   [1] = "Das Verschwinden der Haruhi Suzumiya",
+   [2] = "The Disappearance of Haruhi Suzumiya",
+   [3] = "Исчезновение Харухи Судзумии",
+   [4] = "涼宮ハルヒの消失",
    },
   ["short"] = {
    [1] = "haruhi movie",
@@ -80401,6 +80409,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A Lenda do Dragão Milenar",
    },
   },
  [7622] = {
@@ -80436,6 +80445,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "トゥハート2 adnext",
    },
   },
  [7625] = {
@@ -81399,10 +81409,12 @@ return {
  [7729] = {
   ["main"] = "Steins;Gate",
   ["official"] = {
-   [1] = "STEINS;GATE",
+   [1] = "Steins;Gate",
    },
   ["short"] = {
    [1] = "s;g",
+   [2] = "shutage",
+   [3] = "シュタゲ",
    },
   ["syn"] = {
    [1] = "Врата Штейна",
@@ -84462,9 +84474,9 @@ return {
    },
   },
  [8049] = {
-  ["main"] = "Macross Frontier Music Clip Shuu: Nyankuri",
+  ["main"] = "Nyankuri: Nyan x 2 Music Clip",
   ["official"] = {
-   [1] = "マクロスfrontier MUSIC CLIP集 娘クリ",
+   [1] = "娘クリ Nyan×2 Music Clip",
    },
   ["short"] = {
    },
@@ -84954,11 +84966,12 @@ return {
  [8102] = {
   ["main"] = "Carnival Phantasm",
   ["official"] = {
-   [1] = "カーニバル・ファンタズム",
+   [1] = "Carnival Phantasm",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カーニバル・ファンタズム",
    },
   },
  [8103] = {
@@ -87748,7 +87761,8 @@ return {
   ["official"] = {
    [1] = "Mirai Nikki",
    [2] = "The Future Diary",
-   [3] = "未来日記 (2011)",
+   [3] = "Дневник будущего",
+   [4] = "未来日記 (2011)",
    },
   ["short"] = {
    [1] = "MN",
@@ -89549,7 +89563,7 @@ return {
    },
   },
  [8597] = {
-  ["main"] = "A Channel + Smile",
+  ["main"] = "A Channel +Smile",
   ["official"] = {
    [1] = "Aチャンネル+smile",
    },
@@ -90079,6 +90093,7 @@ return {
    },
   ["short"] = {
    [1] = "DxD",
+   [2] = "HDD",
    },
   ["syn"] = {
    [1] = "Harem King",
@@ -90360,6 +90375,7 @@ return {
   ["main"] = "Accel World",
   ["official"] = {
    [1] = "アクセル・ワールド",
+   [2] = "액셀 월드",
    },
   ["short"] = {
    },
@@ -91241,9 +91257,9 @@ return {
    },
   },
  [8788] = {
-  ["main"] = "Gekijouban Fairy Tail",
+  ["main"] = "Gekijouban Fairy Tail: Houou no Miko",
   ["official"] = {
-   [1] = "劇場版 Fairy Tail",
+   [1] = "劇場版 FAIRY TAIL 鳳凰の巫女",
    },
   ["short"] = {
    },
@@ -91585,9 +91601,9 @@ return {
    },
   },
  [8827] = {
-  ["main"] = "Hana-Saku Iroha (2012)",
+  ["main"] = "Hana-Saku Iroha: Home Sweet Home",
   ["official"] = {
-   [1] = "花咲くいろは (2012)",
+   [1] = "花咲くいろは HOME SWEET HOME",
    },
   ["short"] = {
    },
@@ -91617,7 +91633,7 @@ return {
  [8830] = {
   ["main"] = "Kono Naka ni Hitori, Imouto ga Iru!",
   ["official"] = {
-   [1] = "この中に1人、妹がいる！",
+   [1] = "この中に1人, 妹がいる!",
    },
   ["short"] = {
    },
@@ -91824,6 +91840,7 @@ return {
   ["main"] = "Eureka Seven Ao",
   ["official"] = {
    [1] = "エウレカセブンAO",
+   [2] = "에우레카 세븐 AO",
    },
   ["short"] = {
    },
@@ -91929,6 +91946,7 @@ return {
   ["main"] = "Uchuu Kyoudai",
   ["official"] = {
    [1] = "宇宙兄弟",
+   [2] = "우주형제",
    },
   ["short"] = {
    },
@@ -91966,6 +91984,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Shooting Star Lens",
    },
   },
  [8869] = {
@@ -91982,7 +92001,8 @@ return {
  [8870] = {
   ["main"] = "Sakamichi no Apollon",
   ["official"] = {
-   [1] = "坂道のアポロン",
+   [1] = "Kids on the Slope",
+   [2] = "坂道のアポロン",
    },
   ["short"] = {
    },
@@ -92172,16 +92192,6 @@ return {
   ["syn"] = {
    },
   },
- [8892] = {
-  ["main"] = "Fate/Prototype",
-  ["official"] = {
-   [1] = "Fate/Prototype",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8895] = {
   ["main"] = "Evangelion Shin Gekijouban: ?",
   ["official"] = {
@@ -92208,8 +92218,10 @@ return {
    [1] = "乙女はお姉さま[ボク]に恋してる 2人のエルダー",
    },
   ["short"] = {
+   [1] = "otoboku2",
    },
   ["syn"] = {
+   [1] = "Otoboku: Maidens are Falling for Me 2",
    },
   },
  [8899] = {
@@ -92257,26 +92269,6 @@ return {
   ["main"] = "Mahou Tsukai Jiji",
   ["official"] = {
    [1] = "まほうつかいじじぃ",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [8907] = {
-  ["main"] = "Tweet Love Story: Megumi to Taiyou",
-  ["official"] = {
-   [1] = "Tweet Love Story メグミとタイヨウ",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [8908] = {
-  ["main"] = "Megumi to Taiyou",
-  ["official"] = {
-   [1] = "メグミとタイヨウ",
    },
   ["short"] = {
    },
@@ -92483,7 +92475,7 @@ return {
  [8932] = {
   ["main"] = "Nekogami Yaoyorozu (2012)",
   ["official"] = {
-   [1] = "猫神やおよろず (2012)",
+   [1] = "猫神やおよろず お花見ゴーストバスターズ",
    },
   ["short"] = {
    },
@@ -92504,6 +92496,7 @@ return {
   ["main"] = "Shirokuma Cafe",
   ["official"] = {
    [1] = "しろくまカフェ",
+   [2] = "백곰 카페",
    },
   ["short"] = {
    },
@@ -93197,7 +93190,7 @@ return {
  [9012] = {
   ["main"] = "Onegai my Melody: Yuu & Ai",
   ["official"] = {
-   [1] = "おねがいマイメロディ 友＆愛",
+   [1] = "おねがいマイメロディ 友 & 愛",
    },
   ["short"] = {
    },
@@ -93297,9 +93290,9 @@ return {
    },
   },
  [9023] = {
-  ["main"] = "Gekijouban Naruto 2012",
+  ["main"] = "Naruto the Movie: Road to Ninja",
   ["official"] = {
-   [1] = "劇場版 NARUTO 2012",
+   [1] = "Naruto the Movie Road to Ninja",
    },
   ["short"] = {
    },
@@ -93437,9 +93430,9 @@ return {
    },
   },
  [9037] = {
-  ["main"] = "Gekijouban Kami-Usagi Rope",
+  ["main"] = "Eiga Kami-Usagi Rope",
   ["official"] = {
-   [1] = "劇場版 紙兎ロペ",
+   [1] = "映画 紙兎ロペ ~つか, 夏休みラスイチってマジっすか!?~",
    },
   ["short"] = {
    },
@@ -93542,7 +93535,7 @@ return {
  [9049] = {
   ["main"] = "Himitsukessha Taka no Tsume Neo",
   ["official"] = {
-   [1] = "秘密結社 鷹の爪NEO",
+   [1] = "秘密結社鷹の爪 NEO",
    },
   ["short"] = {
    },
@@ -93553,16 +93546,6 @@ return {
   ["main"] = "One Off",
   ["official"] = {
    [1] = "わんおふ oneoff",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [9051] = {
-  ["main"] = "Pokemon: The Mastermind of Mirage Pokemon (special)",
-  ["official"] = {
-   [1] = "戦慄のミラージュポケモン Senritsu no Mirāju Pokemon",
    },
   ["short"] = {
    },
@@ -93620,7 +93603,7 @@ return {
    },
   },
  [9057] = {
-  ["main"] = "Saisougen no Hakuba",
+  ["main"] = "Daisougen to Hakuba",
   ["official"] = {
    [1] = "大草原と白馬",
    },
@@ -93719,20 +93702,293 @@ return {
   ["syn"] = {
    },
   },
- [9067] = {
-  ["main"] = "Slowking`s Day",
+ [9069] = {
+  ["main"] = "Usogui",
   ["official"] = {
-   [1] = "ヤドキングのいちにち Yadoking`s Day",
+   [1] = "嘘喰い",
    },
   ["short"] = {
    },
   ["syn"] = {
    },
   },
- [9069] = {
-  ["main"] = "Usogui",
+ [9070] = {
+  ["main"] = "Kid Icarus: Medusa`s Revenge",
   ["official"] = {
-   [1] = "嘘喰い",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9071] = {
+  ["main"] = "Kid Icarus: Thanatos Rising",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9072] = {
+  ["main"] = "Kappa no Suribachi",
+  ["official"] = {
+   [1] = "かっぱのすりばち",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9074] = {
+  ["main"] = "Fuse Teppou Musume no Torimonochou",
+  ["official"] = {
+   [1] = "伏 鉄砲娘の捕物帳",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9075] = {
+  ["main"] = "Minami-ke 4",
+  ["official"] = {
+   [1] = "みなみけ 4",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9076] = {
+  ["main"] = "Jormungand 2",
+  ["official"] = {
+   [1] = "ヨルムンガンド 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9077] = {
+  ["main"] = "Tari Tari",
+  ["official"] = {
+   [1] = "TARI TARI",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9078] = {
+  ["main"] = "Chouyaku Hyakunin Isshu: Uta Koi.",
+  ["official"] = {
+   [1] = "超訳百人一首 うた恋い.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9081] = {
+  ["main"] = "The Mystical Laws",
+  ["official"] = {
+   [1] = "The Mystical Laws",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "神秘の法",
+   },
+  },
+ [9082] = {
+  ["main"] = "Ippatsu Hicchuu!! Devander",
+  ["official"] = {
+   [1] = "一発必中!! デバンダー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9083] = {
+  ["main"] = "Starship Troopers: Invasion",
+  ["official"] = {
+   [1] = "スターシップ・トゥルーパーズ インベイジョン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "STI",
+   },
+  },
+ [9084] = {
+  ["main"] = "Panda no Taputapu",
+  ["official"] = {
+   [1] = "パンダのたぷたぷ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9085] = {
+  ["main"] = "Ribbon-chan",
+  ["official"] = {
+   [1] = "リボンちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9086] = {
+  ["main"] = "Furiko",
+  ["official"] = {
+   [1] = "振り子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Pendulum",
+   },
+  },
+ [9087] = {
+  ["main"] = "Shin Hikari Shinwa: Palutena no Kagami",
+  ["official"] = {
+   [1] = "新・光神話 パルテナの鏡",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9088] = {
+  ["main"] = "Rakuen Tsuihou: Expelled From Paradise",
+  ["official"] = {
+   [1] = "楽園追放 -Expelled From Paradaise-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9089] = {
+  ["main"] = "Little Charo: Touhoku-hen",
+  ["official"] = {
+   [1] = "リトル・チャロ東北編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9090] = {
+  ["main"] = "Seitokai no Ichizon 2",
+  ["official"] = {
+   [1] = "生徒会の一存 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9091] = {
+  ["main"] = "Aoi Sekai no Chuushin de",
+  ["official"] = {
+   [1] = "蒼い世界の中心で",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9092] = {
+  ["main"] = "Guilty Crown: Lost Christmas",
+  ["official"] = {
+   [1] = "ギルティクラウン ロストクリスマス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9093] = {
+  ["main"] = "Moyashimon Returns",
+  ["official"] = {
+   [1] = "もやしもん リターンズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9094] = {
+  ["main"] = "Yawaraka Sensha",
+  ["official"] = {
+   [1] = "やわらか戦車",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Tender Tank",
+   [2] = "Yawaraka Tank",
+   },
+  },
+ [9095] = {
+  ["main"] = "Kuwagata Tsumami",
+  ["official"] = {
+   [1] = "くわがたツマミ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9100] = {
+  ["main"] = "Zumomo to Nupepe",
+  ["official"] = {
+   [1] = "ズモモとヌペペ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9101] = {
+  ["main"] = "Shinken Semi Koukou Kouza",
+  ["official"] = {
+   [1] = "進研ゼミ高校講座",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9102] = {
+  ["main"] = "Hyouka (2013)",
+  ["official"] = {
+   [1] = "氷菓 (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9103] = {
+  ["main"] = "Hagure Yuusha no Estetica: Kichiku e no Touryuumon Super Reikan",
+  ["official"] = {
+   [1] = "はぐれ勇者の鬼畜美学[エステティカ]　鬼畜への登竜門スーパー零巻",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9104] = {
+  ["main"] = "Finder no Hyouteki",
+  ["official"] = {
+   [1] = "ファインダーの標的",
    },
   ["short"] = {
    },
