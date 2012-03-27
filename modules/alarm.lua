@@ -16,20 +16,21 @@ end
 
 local timeMatches = {
 	{
-		'(%d+)[:.](%d%d)', function(h, m)
+		'(%d+)[:.](%d%d)[:.]?(%d?%d?)', function(h, m, s)
+			-- Seconds will always return a match.
+			if(s == '') then s = 0 end
+
 			local duration = 0
 			local now = os.time()
 			local date = os.date'*t'
 
-			local ntime = date.hour * 60 * 60 + date.min * 60
-			local atime = h * 60 * 60 + m * 60
+			local ntime = date.hour * 60 * 60 + date.min * 60 + date.sec
+			local atime = h * 60 * 60 + m * 60 + s
 
 			-- Set the correct time of day.
 			date.hour = h
 			date.min = m
-
-			-- Set seconds to zero as we currentlu don't support it.
-			date.sec = 0
+			date.sec = s
 
 			-- If the alarm is right now or in the past, bump it to the next day.
 			if(ntime >= atime) then
