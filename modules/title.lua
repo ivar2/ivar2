@@ -410,7 +410,7 @@ local fetchInformation = function(metadata, index, url, indexString)
 	simplehttp(
 		parseAJAX(url):gsub('#.*$', ''),
 
-		function(data, url, response)
+		function(data, _, response)
 			local message = handleData(response.headers, data)
 			if(#url > 140 and message) then
 				x0.lookup(url, function(short)
