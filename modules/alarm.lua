@@ -56,10 +56,10 @@ local parseTime = function(input)
 		local str = input[i]
 		for j=1, #timeMatches do
 			local pattern, func = unpack(timeMatches[j])
-			local a1, a2 = str:match(pattern)
+			local a1, a2, a3 = str:match(pattern)
 			if(a1) then
 				found = true
-				duration = duration + func(a1, a2)
+				duration = duration + func(a1, a2, a3)
 			end
 		end
 
