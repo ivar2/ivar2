@@ -150,15 +150,14 @@ return {
    },
   },
  [8] = {
-  ["main"] = "Aquarian Age",
+  ["main"] = "Aquarian Age: Sign for Evolution",
   ["official"] = {
    [1] = "Aquarian Age",
    [2] = "Aquarian Age: Sign for Evolution",
    [3] = "L`âge du Verseau - Signe d`évolution",
-   [4] = "アクエリアンエイジ",
+   [4] = "アクエリアンエイジ Sign for Evolution",
    },
   ["short"] = {
-   [1] = "AA",
    },
   ["syn"] = {
    },
@@ -5971,7 +5970,8 @@ return {
    [1] = "smj",
    },
   ["syn"] = {
-   [1] = "SM J",
+   [1] = "Garotas Marionetes",
+   [2] = "SM J",
    },
   },
  [345] = {
@@ -7651,8 +7651,9 @@ return {
  [455] = {
   ["main"] = "Silent Mobius",
   ["official"] = {
-   [1] = "Silent Möbius",
-   [2] = "サイレントメビウス",
+   [1] = "Silent Mobius",
+   [2] = "Silent Möbius",
+   [3] = "サイレントメビウス",
    },
   ["short"] = {
    },
@@ -7664,8 +7665,9 @@ return {
  [456] = {
   ["main"] = "Burn Up! W",
   ["official"] = {
-   [1] = "Burn-Up W - On the Case & In your Face",
-   [2] = "バーンナップW",
+   [1] = "Burn Up W",
+   [2] = "Burn-Up W - On the Case & In your Face",
+   [3] = "バーンナップW",
    },
   ["short"] = {
    [1] = "buw",
@@ -7983,7 +7985,8 @@ return {
  [476] = {
   ["main"] = "Tenamonya Voyagers",
   ["official"] = {
-   [1] = "てなもんやボイジャーズ",
+   [1] = "Tenamonya Voyagers",
+   [2] = "てなもんやボイジャーズ",
    },
   ["short"] = {
    },
@@ -25673,7 +25676,8 @@ return {
  [1818] = {
   ["main"] = "Red Baron",
   ["official"] = {
-   [1] = "レッドバロン",
+   [1] = "Barão Vermelho",
+   [2] = "レッドバロン",
    },
   ["short"] = {
    },
@@ -32725,13 +32729,13 @@ return {
  [2369] = {
   ["main"] = "Bleach",
   ["official"] = {
-   [1] = "Bleach",
-   [2] = "Izbeljivač",
-   [3] = "`בליץ",
-   [4] = "بليتش",
-   [5] = "بلیچ",
-   [6] = "บลีช เทพมรณะ",
-   [7] = "ブリーチ",
+   [1] = "BLEACH",
+   [2] = "Bleach",
+   [3] = "Izbeljivač",
+   [4] = "`בליץ",
+   [5] = "بليتش",
+   [6] = "بلیچ",
+   [7] = "บลีช เทพมรณะ",
    [8] = "블리치",
    },
   ["short"] = {
@@ -32746,6 +32750,7 @@ return {
    [5] = "Блич",
    [6] = "Бліч",
    [7] = "المُبيض",
+   [8] = "ブリーチ",
    },
   },
  [2371] = {
@@ -33743,15 +33748,16 @@ return {
    },
   },
  [2456] = {
-  ["main"] = "Aquarian Age Saga II: Don`t Forget Me...",
+  ["main"] = "Aquarian Age: Saga II",
   ["official"] = {
    [1] = "Aquarian Age: The Movie",
-   [2] = "アクエリアンエイジ Saga II ~Don`t forget me...~",
+   [2] = "アクエリアンエイジ Saga II",
    },
   ["short"] = {
    [1] = "AA2",
    },
   ["syn"] = {
+   [1] = "アクエリアンエイジ Saga II Don`t forget me...",
    },
   },
  [2457] = {
@@ -40987,9 +40993,10 @@ return {
  [3178] = {
   ["main"] = "Lupin tai Holmes",
   ["official"] = {
-   [1] = "Lupin Against Holmes",
-   [2] = "Σέρλοκ Χόλμς εναντίον Αρσέν Λουπέν",
-   [3] = "ルパン対ホームズ",
+   [1] = "Arsenio Lupin contra Sherlock Holmes",
+   [2] = "Lupin Against Holmes",
+   [3] = "Σέρλοκ Χόλμς εναντίον Αρσέν Λουπέν",
+   [4] = "ルパン対ホームズ",
    },
   ["short"] = {
    },
@@ -44246,13 +44253,13 @@ return {
  [3519] = {
   ["main"] = "Sennin Buraku",
   ["official"] = {
-   [1] = "Hermit Village",
-   [2] = "仙人部落",
+   [1] = "仙人部落",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Village of the Hermit",
+   [1] = "Hermit Village",
+   [2] = "Village of the Hermit",
    },
   },
  [3520] = {
@@ -46685,13 +46692,14 @@ return {
    },
   },
  [3954] = {
-  ["main"] = "Yoiko",
+  ["main"] = "Yoi Ko",
   ["official"] = {
    [1] = "よいこ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "yoiko",
    },
   },
  [3955] = {
@@ -55322,7 +55330,8 @@ return {
  [4777] = {
   ["main"] = "Lucky Star",
   ["official"] = {
-   [1] = "らき☆すた",
+   [1] = "lucky star",
+   [2] = "らき☆すた",
    },
   ["short"] = {
    [1] = "LSTV",
@@ -59906,7 +59915,7 @@ return {
    },
   },
  [5260] = {
-  ["main"] = "Onimaru - Senjou ni Kakeru Itsutsu no Seishun",
+  ["main"] = "Onimaru: Senjou ni Kakeru Itsutsu no Seishun",
   ["official"] = {
    [1] = "鬼丸 戦場に駆ける五つの青春",
    },
@@ -59931,7 +59940,7 @@ return {
  [5262] = {
   ["main"] = "Circuit Angel: Ketsui no Starting Grid",
   ["official"] = {
-   [1] = "サーキットエンジェル 決意のスターティング・グリッド",
+   [1] = "サーキットエンジェル ~決意のスターティング・グリッド~",
    },
   ["short"] = {
    },
@@ -66386,7 +66395,7 @@ return {
    [3] = "Fullmetal Alchemist: Brotherhood",
    [4] = "Fullmetal Alchemist: Testvériség",
    [5] = "Стоманеният Алхимик: Братство",
-   [6] = "Цулметалан Алхимич: Ахан дүүсийн барилдлага",
+   [6] = "Цулметаллан Алхимич: Ахан дүүсийн барилдлага",
    [7] = "鋼の錬金術師 FULLMETAL ALCHEMIST (2009)",
    },
   ["short"] = {
@@ -67639,7 +67648,8 @@ return {
  [6258] = {
   ["main"] = "Kobato.",
   ["official"] = {
-   [1] = "こばと.",
+   [1] = "kobato",
+   [2] = "こばと.",
    },
   ["short"] = {
    [1] = "Kobato",
@@ -69214,7 +69224,8 @@ return {
   ["main"] = "Jewelpet",
   ["official"] = {
    [1] = "Jewel Pets",
-   [2] = "ジュエルペット",
+   [2] = "Jewelpet",
+   [3] = "ジュエルペット",
    },
   ["short"] = {
    },
@@ -69367,6 +69378,7 @@ return {
    [1] = "KimiTodo",
    [2] = "Todoke",
    [3] = "knt",
+   [4] = "君届",
    },
   ["syn"] = {
    [1] = "Chegando Até Você",
@@ -76917,9 +76929,8 @@ return {
   ["syn"] = {
    [1] = "Bakuman",
    [2] = "Бакуман",
-   [3] = "バクマン。",
-   [4] = "爆漫王",
-   [5] = "食梦者",
+   [3] = "爆漫王",
+   [4] = "食梦者",
    },
   },
  [7252] = {
@@ -78971,7 +78982,7 @@ return {
  [7465] = {
   ["main"] = "Midoriyama Koukou Koushien Hen (Gekijouban)",
   ["official"] = {
-   [1] = "緑山高校 甲子園編(劇場版)",
+   [1] = "緑山高校 甲子園編 (劇場版)",
    },
   ["short"] = {
    },
@@ -84170,7 +84181,9 @@ return {
    [1] = "君に届け 2ND SEASON",
    },
   ["short"] = {
-   [1] = "knt2",
+   [1] = "kimitodo 2",
+   [2] = "knt2",
+   [3] = "君届2",
    },
   ["syn"] = {
    [1] = "Chegando Até Você 2",
@@ -84384,8 +84397,8 @@ return {
  [8039] = {
   ["main"] = "Sket Dance",
   ["official"] = {
-   [1] = "SKET Dance",
-   [2] = "Sket Dance",
+   [1] = "SKET DANCE",
+   [2] = "SKET Dance",
    },
   ["short"] = {
    [1] = "sket",
@@ -85819,10 +85832,11 @@ return {
   ["main"] = "Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
   ["official"] = {
    [1] = "Ano hana",
-   [2] = "Все още не знаем името на цветето, което видяхме онзи ден.",
-   [3] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
-   [4] = "آنو هی میتا هانا نو ناما و بکوتاچی وا مادا شیرانای",
-   [5] = "あの日見た花の名前を僕達はまだ知らない.",
+   [2] = "anohana: The Flower We Saw That Day",
+   [3] = "Все още не знаем името на цветето, което видяхме онзи ден.",
+   [4] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
+   [5] = "آنو هی میتا هانا نو ناما و بکوتاچی وا مادا شیرانای",
+   [6] = "あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
    [1] = "Ano Hana",
@@ -87762,7 +87776,8 @@ return {
    [1] = "Mirai Nikki",
    [2] = "The Future Diary",
    [3] = "Дневник будущего",
-   [4] = "未来日記 (2011)",
+   [4] = "Ирээдүйн Тэмдэглэл",
+   [5] = "未来日記 (2011)",
    },
   ["short"] = {
    [1] = "MN",
@@ -89110,6 +89125,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "muv-luv",
    },
   },
  [8550] = {
@@ -89663,7 +89679,8 @@ return {
  [8607] = {
   ["main"] = "Kono Danshi, Uchuu-jin to Tatakaemasu.",
   ["official"] = {
-   [1] = "この男子, 宇宙人と戦えます.",
+   [1] = "This Boy Can Fight Aliens!",
+   [2] = "この男子, 宇宙人と戦えます.",
    },
   ["short"] = {
    },
@@ -89795,7 +89812,8 @@ return {
   ["main"] = "Ano Natsu de Matteru",
   ["official"] = {
    [1] = "Waiting in the Summer",
-   [2] = "あの夏で待ってる",
+   [2] = "Тэр нэг зунд хүлээж байя",
+   [3] = "あの夏で待ってる",
    },
   ["short"] = {
    [1] = "natsumachi",
@@ -90231,12 +90249,15 @@ return {
    },
   },
  [8674] = {
-  ["main"] = "Mass Effect",
+  ["main"] = "Mass Effect: Paragon Lost",
   ["official"] = {
+   [1] = "Mass Effect: Paragon Lost",
+   [2] = "マスエフェクト～失われたパラゴン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mass Effect: Ushinawareta Paragon",
    },
   },
  [8676] = {
@@ -90601,9 +90622,9 @@ return {
    },
   },
  [8720] = {
-  ["main"] = "Ijou Chitai: Jikken Dorei",
+  ["main"] = "Ijou Chitai",
   ["official"] = {
-   [1] = "異常痴態 実験奴隷",
+   [1] = "異常痴態",
    },
   ["short"] = {
    },
@@ -91216,16 +91237,6 @@ return {
    [2] = "Вечные узы",
    },
   },
- [8784] = {
-  ["main"] = "Gen`ei no Mesaia",
-  ["official"] = {
-   [1] = "幻影のメサイア",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8785] = {
   ["main"] = "Cheung Gong 7 hou: Oi dei kau",
   ["official"] = {
@@ -91548,7 +91559,7 @@ return {
    },
   },
  [8822] = {
-  ["main"] = "Koi-ken! Watashi-tachi Anime ni Nacchatta!",
+  ["main"] = "Koi-ken! Watashitachi Anime ni Nacchatta!",
   ["official"] = {
    [1] = "こいけん! ～私たちアニメになっちゃった!～",
    },
@@ -91587,6 +91598,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Peace-Hame!",
    },
   },
  [8826] = {
@@ -92070,6 +92082,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Aruvu Rezuru",
+   [2] = "Mechanized Fairies",
    },
   },
  [8879] = {
@@ -92140,9 +92154,9 @@ return {
    },
   },
  [8886] = {
-  ["main"] = "Kyoukaisen-jou no Horizon (2012)",
+  ["main"] = "Kyoukaisen-jou no Horizon II",
   ["official"] = {
-   [1] = "境界線上のホライゾン (2012)",
+   [1] = "境界線上のホライゾン II",
    },
   ["short"] = {
    [1] = "Horizon 2",
@@ -92473,7 +92487,7 @@ return {
    },
   },
  [8932] = {
-  ["main"] = "Nekogami Yaoyorozu (2012)",
+  ["main"] = "Nekogami Yaoyorozu: Ohanami Ghostbusters",
   ["official"] = {
    [1] = "猫神やおよろず お花見ゴーストバスターズ",
    },
@@ -92763,6 +92777,7 @@ return {
    [1] = "聖闘士星矢Ω-セイントセイヤオメガ-",
    },
   ["short"] = {
+   [1] = "sso",
    },
   ["syn"] = {
    },
@@ -93978,17 +93993,234 @@ return {
  [9103] = {
   ["main"] = "Hagure Yuusha no Estetica: Kichiku e no Touryuumon Super Reikan",
   ["official"] = {
-   [1] = "はぐれ勇者の鬼畜美学[エステティカ]　鬼畜への登竜門スーパー零巻",
+   [1] = "はぐれ勇者の鬼畜美学[エステティカ] 鬼畜への登竜門スーパー零巻",
    },
   ["short"] = {
    },
   ["syn"] = {
    },
   },
- [9104] = {
-  ["main"] = "Finder no Hyouteki",
+ [9105] = {
+  ["main"] = "Wild Adapter",
   ["official"] = {
-   [1] = "ファインダーの標的",
+   [1] = "WILD ADAPTER",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9107] = {
+  ["main"] = "Tamayura 2",
+  ["official"] = {
+   [1] = "たまゆら 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9108] = {
+  ["main"] = "Rinne no Lagrange: Flower Declaration of Your Heart - Kamogawa Days",
+  ["official"] = {
+   [1] = "輪廻のラグランジェ Flower declaration of your heart 鴨川デイズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9109] = {
+  ["main"] = "663114",
+  ["official"] = {
+   [1] = "663114",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9110] = {
+  ["main"] = "Kid Icarus",
+  ["official"] = {
+   [1] = "光神話 パルテナの鏡",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9111] = {
+  ["main"] = "Hadakya No Otonosama",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9113] = {
+  ["main"] = "SPHERES",
+  ["official"] = {
+   [1] = "스피어즈",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9115] = {
+  ["main"] = "The Four Seasons",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9116] = {
+  ["main"] = "Kankou Taisen Saitama ~Sakuya no Tatakai~",
+  ["official"] = {
+   [1] = "Tourism War Saitama ~Evening Battle~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9117] = {
+  ["main"] = "Where Dreams Come True",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9118] = {
+  ["main"] = "Piston~Tsu",
+  ["official"] = {
+   [1] = "ぴすとっ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9119] = {
+  ["main"] = "Nukko.",
+  ["official"] = {
+   [1] = "ぬっこ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9121] = {
+  ["main"] = "PES: Peace Eco Smile",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9122] = {
+  ["main"] = "Suki de Suki de, Suki de The Animation",
+  ["official"] = {
+   [1] = "好きで好きで, すきで THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9123] = {
+  ["main"] = "Recorder to Randsell",
+  ["official"] = {
+   [1] = "リコーダーとランドセル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9125] = {
+  ["main"] = "Hi no Youjin",
+  ["official"] = {
+   [1] = "火要鎮",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9126] = {
+  ["main"] = "Natsuyuki Rendezvous",
+  ["official"] = {
+   [1] = "夏雪ランデブー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9127] = {
+  ["main"] = "Psycho-pass",
+  ["official"] = {
+   [1] = "PSYCHO-PASS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "サイコパス",
+   },
+  },
+ [9128] = {
+  ["main"] = "Robotics;Notes",
+  ["official"] = {
+   [1] = "ロボティクス・ノーツ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9129] = {
+  ["main"] = "Kore wa Zombie Desuka? (2012)",
+  ["official"] = {
+   [1] = "これはゾンビですか? (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9130] = {
+  ["main"] = "Junjou Romantica (2012)",
+  ["official"] = {
+   [1] = "純情ロマンチカ (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9131] = {
+  ["main"] = "Shimajirou no Wow!",
+  ["official"] = {
+   [1] = "しまじろうのわお!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9132] = {
+  ["main"] = "Little Busters!",
+  ["official"] = {
+   [1] = "リトルバスターズ!",
    },
   ["short"] = {
    },
