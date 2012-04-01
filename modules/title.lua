@@ -24,6 +24,10 @@ local translateCharset = {
 	['x-sjis'] = 'sjis',
 }
 
+local trim = function(str)
+	return str:match('^%s*(.-)%s*$')
+end
+
 -- RFC 2396, section 1.6, 2.2, 2.3 and 2.4.1.
 local smartEscape = function(str)
 	-- lowalpha: a-z | upalpha: A-Z | digit: 0-9 | mark: -_.!~*'() |
@@ -168,7 +172,7 @@ local handleData = function(headers, data)
 		end
 
 		title = html2unicode(title)
-		title = title:gsub('%s%s+', ' ')
+		title = trim(title:gsub('%s%s+', ' '))
 
 		if(title ~= '<snip />' and #title > 0) then
 			return limitOutput(title)
