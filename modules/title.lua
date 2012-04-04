@@ -8,7 +8,7 @@ local json = require'json'
 local base58 = require'base58'
 
 local uri_parse = uri.parse
-local DL_LIMIT = 2^16
+local DL_LIMIT = 2^17
 
 local patterns = {
 	-- X://Y url
