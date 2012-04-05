@@ -23,6 +23,8 @@ local parseXML = function(xml)
 				if(plain and #plain > 0) then
 					-- Output tends to have double spaces.
 					plain = plain:gsub('%s+', ' ')
+					-- Convert the WA unicode escaping into HTML.
+					plain = plain:gsub('\\:([0-9a-z][0-9a-z][0-9a-z][0-9a-z])', '&#x%1;')
 					table.insert(sub, (html2unicode(plain)))
 				end
 			end
