@@ -60,43 +60,19 @@ local handleEpisode = function(str, raw)
 	end
 end
 
-local handleAirtime = function(rfc)
-	local year, month, day, hour, minute, seconds, offset = rfc:match('([^%-]+)%-([^%-]+)%-([^T]+)T([^:]+):([^:]+):([^%-%+]+)(.*)$')
+local getTimeOffset = function(timestamp)
+	local utc = os.date('!*t', timestamp)
+	local loc = os.date('*t', timestamp)
+	loc.isdst = false
 
-	year = tonumber(year)
-	month = tonumber(month)
-	day = tonumber(day)
-	hour = tonumber(hour)
-	minute = tonumber(minute)
+	return os.difftime(os.time(loc), os.time(utc))
+end
 
-	-- lua doesn't have any issues with HORRIBLE WRAPPING OF DOOMS!
-	-- so feeding it 26 or something retarded as hour works fine.
-	if(offset ~= 'Z') then
-		local flag, oh, om = offset:match('([%+%-])([^:]+):(.*)$')
-		if(flag == '-') then
-			hour = hour + oh
-			minute = minute + oh
-		else
-			hour = hour - oh
-			minute = minute - oh
-		end
-	end
-
-	if(year and month and day) then
-		local currentTime = os.time()
-		local localOffset = os.date('%H', currentTime) - os.date('!%H', currentTime)
-		local airTime = {
-			year = year,
-			month = month,
-			day = day,
-			hour = hour + localOffset,
-			minute = minute,
-		}
-
-		local relTime = date.relativeTimeShort(os.time(airTime))
-		if(relTime) then
-			return relTime
-		end
+local handleAirtime = function(timestamp)
+	timestamp = timestamp + getTimeOffset(timestamp)
+	local relTime = date.relativeTimeShort(timestamp)
+	if(relTime) then
+		return relTime
 	end
 
 	return 'In the future!'
@@ -136,7 +112,7 @@ local out = function(data)
 		output = output .. ' | Next: ' .. handleEpisode(data['Next Episode'])
 
 		if(data['RFC3339']) then
-			output = output .. ' (ETA: ' .. handleAirtime(data['RFC3339']) .. ')'
+			output = output .. ' (ETA: ' .. handleAirtime(data['GMT+0 NODST']) .. ')'
 		end
 	end
 
