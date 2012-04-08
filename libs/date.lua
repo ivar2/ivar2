@@ -22,6 +22,7 @@ do
 	}
 
 	function relativeTime(t1,t2, T, L)
+		t1, t2 = tonumber(t1), tonumber(t2)
 		if(not t1) then return end
 		if(not t2) then t2 = os.time() end
 		if(t2 > t1) then t2, t1 = t1, t2 end
