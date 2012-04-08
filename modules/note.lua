@@ -39,7 +39,9 @@ end
 return {
 	JOIN = {
 		-- Check if we have notes for the person who joined the channel.
-		handleOutput,
+		function(self, source, destination, channel)
+			return handleOutput(self, source, channel)
+		end,
 	},
 
 	PRIVMSG = {
