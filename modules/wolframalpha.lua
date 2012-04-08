@@ -60,7 +60,11 @@ return {
 						end
 					end
 
-					self:Msg('privmsg', destination, source, table.concat(out, ' '))
+					if(#out > 0) then
+						self:Msg('privmsg', destination, source, table.concat(out, ' '))
+					else
+						self:Msg('privmsg', destination, source, '%s: That made no sense at all.', source.nick)
+					end
 				end
 			)
 		end,
