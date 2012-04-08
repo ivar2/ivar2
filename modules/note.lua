@@ -37,6 +37,33 @@ local handleOutput = function(self, source, destination)
 end
 
 return {
+	NICK = {
+		function(self, source, destination, nick)
+			nick = nick:sub(2)
+			notes:open('cache/notes')
+
+			if(not notes:get('global:' .. nick:lower())) then return notes:close() end
+			-- We have to fetch out, ALL THE RECORDS.
+			local set = notes:fwmkeys('#')
+			notes:close()
+
+			local channels = {}
+			for _, key in next, set do
+				local channel, recipient = key:match('^([^:]+):([^:]+)')
+				if(nick == recipient) then
+					channels[channel] = true
+				end
+			end
+
+			if(not next(channels)) then return end
+			-- source still contains the old nick.
+			source.nick = nick
+			for channel in next, channels do
+				handleOutput(self, source, channel)
+			end
+		end,
+	},
+
 	JOIN = {
 		-- Check if we have notes for the person who joined the channel.
 		function(self, source, destination, channel)
