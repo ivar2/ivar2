@@ -4771,6 +4771,7 @@ return {
    [2] = "lob",
    },
   ["syn"] = {
+   [1] = "レジェンド オブ バサラ",
    },
   },
  [275] = {
@@ -5865,23 +5866,24 @@ return {
   ["official"] = {
    [1] = "A könyvek hercege",
    [2] = "I sospiri del mio cuore",
-   [3] = "Si tu tends l`oreille",
-   [4] = "Stimme des Herzens - Whisper of the Heart",
-   [5] = "Susurros del corazón",
-   [6] = "Sydämen kuiskaus",
-   [7] = "Szept serca",
-   [8] = "Südame sosin",
-   [9] = "Whisper of the Heart",
-   [10] = "Yüreğinin Sesi",
-   [11] = "Şoapta Inimii",
-   [12] = "Širdies Šnabždezys",
-   [13] = "Ο Ψίθυρος της Καρδιάς",
-   [14] = "Шепотът на сърцето",
-   [15] = "Шёпот сердца",
-   [16] = "הלחישה שבלב",
-   [17] = "همس القلوب",
-   [18] = "夢幻街少女",
-   [19] = "耳をすませば",
+   [3] = "Om du lyssnar noga",
+   [4] = "Si tu tends l`oreille",
+   [5] = "Stimme des Herzens - Whisper of the Heart",
+   [6] = "Susurros del corazón",
+   [7] = "Sydämen kuiskaus",
+   [8] = "Szept serca",
+   [9] = "Südame sosin",
+   [10] = "Whisper of the Heart",
+   [11] = "Yüreğinin Sesi",
+   [12] = "Şoapta Inimii",
+   [13] = "Širdies Šnabždezys",
+   [14] = "Ο Ψίθυρος της Καρδιάς",
+   [15] = "Шепотът на сърцето",
+   [16] = "Шёпот сердца",
+   [17] = "הלחישה שבלב",
+   [18] = "همس القلوب",
+   [19] = "夢幻街少女",
+   [20] = "耳をすませば",
    },
   ["short"] = {
    [1] = "MoS",
@@ -17957,18 +17959,18 @@ return {
    },
   },
  [1187] = {
-  ["main"] = "Mari to Ita Natsu",
+  ["main"] = "Mari Iyagi",
   ["official"] = {
    [1] = "Mari Iyagi",
-   [2] = "My Beautiful Girl Mari",
-   [3] = "Страна фантазий",
-   [4] = "マリといた夏",
-   [5] = "마리 이야기",
+   [2] = "Mari to Ita Natsu",
+   [3] = "My Beautiful Girl Mari",
+   [4] = "Страна фантазий",
+   [5] = "マリといた夏",
+   [6] = "마리 이야기",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Mari Iyagi",
    },
   },
  [1189] = {
@@ -21930,14 +21932,14 @@ return {
    },
   },
  [1503] = {
-  ["main"] = "Dangaizer 3",
+  ["main"] = "Choushin Hime Dangaizer 3",
   ["official"] = {
    [1] = "超神姫ダンガイザー3",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Choushin Hime Dangaizer 3",
+   [1] = "Dangaizer 3",
    },
   },
  [1504] = {
@@ -50369,8 +50371,9 @@ return {
    [4] = "L`école des champions",
    [5] = "Skot í Mark",
    [6] = "Smūgis",
-   [7] = "الكابتن رابح",
-   [8] = "燃えろ! トップストライカー",
+   [7] = "Ο Βενιαμίν και το Σουτ του Αετού",
+   [8] = "الكابتن رابح",
+   [9] = "燃えろ! トップストライカー",
    },
   ["short"] = {
    },
@@ -50913,7 +50916,7 @@ return {
  [4317] = {
   ["main"] = "Eiji",
   ["official"] = {
-   [1] = "エイジ",
+   [1] = "「エイジ」",
    },
   ["short"] = {
    },
@@ -52288,7 +52291,8 @@ return {
   ["syn"] = {
    [1] = "NIGHTHEAD-GENESIS",
    [2] = "Сумеречный разум: Рождение",
-   [3] = "暗夜第六感",
+   [3] = "ナイト ヘッド ジェネシス",
+   [4] = "暗夜第六感",
    },
   },
  [4473] = {
@@ -52465,10 +52469,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Coffee Samurai",
-   [2] = "Чудното звездно небе",
-   [3] = "Чудо зоряного неба",
-   [4] = "星空奇迹",
+   [1] = "Чудното звездно небе",
+   [2] = "Чудо зоряного неба",
+   [3] = "星空奇迹",
    },
   },
  [4504] = {
@@ -56650,7 +56653,7 @@ return {
    },
   },
  [4918] = {
-  ["main"] = "JoJo no Kimyou na Bouken Phantom Blood",
+  ["main"] = "JoJo no Kimyou na Bouken: Phantom Blood",
   ["official"] = {
    [1] = "ジョジョの奇妙な冒険 ファントム ブラッド",
    },
@@ -63836,6 +63839,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "البؤساء",
    },
   },
  [5778] = {
@@ -67646,6 +67650,7 @@ return {
    [2] = "Phantom ~Requiem of Phantom~",
    [3] = "phantom tv",
    [4] = "وهم",
+   [5] = "ファントム -PHANTOM OF INFERNO-",
    },
   },
  [6257] = {
@@ -68591,9 +68596,10 @@ return {
   ["main"] = "Suzumiya Haruhi no Yuuutsu (2009)",
   ["official"] = {
    [1] = "Die Melancholie der Haruhi Suzumiya (2009)",
-   [2] = "The Melancholy of Haruhi Suzumiya (2009)",
-   [3] = "Меланхолия Харухи Судзумии. Второй сезон",
-   [4] = "涼宮ハルヒの憂鬱 (2009)",
+   [2] = "La malinconia di Haruhi Suzumiya (2009)",
+   [3] = "The Melancholy of Haruhi Suzumiya (2009)",
+   [4] = "Меланхолия Харухи Судзумии. Второй сезон",
+   [5] = "涼宮ハルヒの憂鬱 (2009)",
    },
   ["short"] = {
    [1] = "Haruhi 2009",
@@ -68604,13 +68610,12 @@ return {
    [2] = "A Melancolia de Suzumiya Haruhi (2009)",
    [3] = "De Melancholie van Haruhi Suzumiya",
    [4] = "Haruhi S2",
-   [5] = "La malinconia di Haruhi Suzumiya (2009)",
-   [6] = "La mélancolie de Haruhi Suzumiya (2009)",
-   [7] = "Melancholia Haruhi Suzumiyi (2009)",
-   [8] = "The Melancholy of Haruhi Suzumiya 2",
-   [9] = "Меланхолия Харухи Судзумии (2009)",
-   [10] = "Меланхолія Харухі Судзумії (2009)",
-   [11] = "كآبة هاروهي سوزوميا 2",
+   [5] = "La mélancolie de Haruhi Suzumiya (2009)",
+   [6] = "Melancholia Haruhi Suzumiyi (2009)",
+   [7] = "The Melancholy of Haruhi Suzumiya 2",
+   [8] = "Меланхолия Харухи Судзумии (2009)",
+   [9] = "Меланхолія Харухі Судзумії (2009)",
+   [10] = "كآبة هاروهي سوزوميا 2",
    },
   },
  [6368] = {
@@ -69157,7 +69162,8 @@ return {
    [4] = "Кучета: Воят на Самотните в нощта",
    [5] = "الكِلاب : رصاصٌ و مجازر",
    [6] = "كلاب:كلاب ضالة تعوي في الظلام",
-   [7] = "暗夜迷途犬",
+   [7] = "ドッグス/バレッツ＆カーネイジ",
+   [8] = "暗夜迷途犬",
    },
   },
  [6437] = {
@@ -71966,11 +71972,12 @@ return {
   ["syn"] = {
    [1] = "11 Eyes",
    [2] = "11 akių",
-   [3] = "11 چشم",
-   [4] = "11eyes: Tsumi to Batsu to Aganai no Shoujo",
-   [5] = "أحدَ عشرَ عين",
-   [6] = "イレブンアイズ",
-   [7] = "罪与罚与赎的少女",
+   [3] = "11 глаз",
+   [4] = "11 چشم",
+   [5] = "11eyes: Tsumi to Batsu to Aganai no Shoujo",
+   [6] = "أحدَ عشرَ عين",
+   [7] = "イレブンアイズ",
+   [8] = "罪与罚与赎的少女",
    },
   },
  [6753] = {
@@ -78775,8 +78782,9 @@ return {
  [7443] = {
   ["main"] = "Mouretsu Pirates",
   ["official"] = {
-   [1] = "Moretsu Pirates",
-   [2] = "モーレツ宇宙海賊[パイレーツ] BODACIOUS SPACE PIRATES",
+   [1] = "Bodacious Space Pirates",
+   [2] = "Moretsu Pirates",
+   [3] = "モーレツ宇宙海賊[パイレーツ] BODACIOUS SPACE PIRATES",
    },
   ["short"] = {
    [1] = "mopai",
@@ -80540,7 +80548,8 @@ return {
   ["main"] = "Sora no Otoshimono Forte",
   ["official"] = {
    [1] = "Heaven`s Lost Property - Forte",
-   [2] = "そらのおとしものf (フォルテ)",
+   [2] = "Sora no Otoshimono Forte",
+   [3] = "そらのおとしものf (フォルテ)",
    },
   ["short"] = {
    },
@@ -80921,6 +80930,7 @@ return {
    },
   ["syn"] = {
    [1] = "Dragon Crisis",
+   [2] = "Драконова криза!",
    },
   },
  [7672] = {
@@ -83983,23 +83993,24 @@ return {
  [7989] = {
   ["main"] = "Cardfight!! Vanguard",
   ["official"] = {
-   [1] = "Cardfight Vanguard",
-   [2] = "カードファイト!! ヴァンガード",
+   [1] = "CARDFIGHT!! ヴァンガード",
+   [2] = "Cardfight Vanguard",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カードファイト!! ヴァンガード",
    },
   },
  [7991] = {
   ["main"] = "Berserk: Ougon Jidai Hen",
   ["official"] = {
-   [1] = "ベルセルク 黄金時代篇",
+   [1] = "Berserk: The Golden Age Arc",
+   [2] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Berserk: The Golden Age Arc",
    },
   },
  [7992] = {
@@ -85854,9 +85865,11 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Хей, Пиленце!",
-   [2] = "Эй, цыпочка!",
-   [3] = "迷茫管家与懦弱的我",
+   [1] = "Mayoeru Shitsuji to Chikin na Ore to",
+   [2] = "Хей, Пиленце!",
+   [3] = "Эй, цыпочка!",
+   [4] = "迷える執事とチキンな俺と",
+   [5] = "迷茫管家与懦弱的我",
    },
   },
  [8180] = {
@@ -86903,8 +86916,9 @@ return {
    },
   ["syn"] = {
    [1] = "Ben-to",
-   [2] = "ベントー",
-   [3] = "便当",
+   [2] = "Хавчик",
+   [3] = "ベントー",
+   [4] = "便当",
    },
   },
  [8293] = {
@@ -88160,6 +88174,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pleasant Goat and Big Big Wolf 2",
    },
   },
  [8432] = {
@@ -88592,6 +88607,7 @@ return {
    [1] = "これはゾンビですか? OF THE DEAD",
    },
   ["short"] = {
+   [1] = "korezombie2",
    },
   ["syn"] = {
    [1] = "Is This a Zombie? Of the Dead",
@@ -89609,7 +89625,8 @@ return {
  [8595] = {
   ["main"] = "Rurouni Kenshin: Meiji Kenkaku Romantan - Shin Kyoto Hen",
   ["official"] = {
-   [1] = "るろうに剣心 -明治剣客浪漫譚- 新京都編",
+   [1] = "Rurouni Kenshin: New Kyoto Arc - Cage of Flames",
+   [2] = "るろうに剣心 -明治剣客浪漫譚- 新京都編",
    },
   ["short"] = {
    },
@@ -90137,7 +90154,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Impostory",
+   [1] = "Bogustory",
+   [2] = "Impostory",
    },
   },
  [8659] = {
@@ -90666,7 +90684,8 @@ return {
  [8719] = {
   ["main"] = "Haiyore! Nyaruko-san",
   ["official"] = {
-   [1] = "這いよれ! ニャル子さん",
+   [1] = "Nyarko-san: Another Crawling Chaos",
+   [2] = "這いよれ! ニャル子さん",
    },
   ["short"] = {
    },
@@ -91644,7 +91663,7 @@ return {
    },
   },
  [8825] = {
-  ["main"] = "Pisu Hame!",
+  ["main"] = "Peace Hame!",
   ["official"] = {
    [1] = "ピスはめ!",
    },
@@ -91652,6 +91671,7 @@ return {
    },
   ["syn"] = {
    [1] = "Peace-Hame!",
+   [2] = "Pisu Hame!",
    },
   },
  [8826] = {
@@ -91909,6 +91929,8 @@ return {
    [2] = "에우레카 세븐 AO",
    },
   ["short"] = {
+   [1] = "e7 ao",
+   [2] = "e7ao",
    },
   ["syn"] = {
    [1] = "Eureka Seven: Astral Ocean",
@@ -92011,14 +92033,14 @@ return {
  [8865] = {
   ["main"] = "Uchuu Kyoudai",
   ["official"] = {
-   [1] = "宇宙兄弟",
-   [2] = "우주형제",
+   [1] = "Space Brothers",
+   [2] = "宇宙兄弟",
+   [3] = "우주형제",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Space Bros.",
-   [2] = "Space Brothers",
    },
   },
  [8866] = {
@@ -92281,9 +92303,9 @@ return {
    },
   },
  [8898] = {
-  ["main"] = "Otome wa Boku ni Koishiteru: Futari no Elder",
+  ["main"] = "Otome wa Boku ni Koishiteru: Futari no Elder The Animation",
   ["official"] = {
-   [1] = "乙女はお姉さま[ボク]に恋してる 2人のエルダー",
+   [1] = "乙女[おとめ]はお姉さま[ボク]に恋してる 2人のエルダー THE ANIMATION",
    },
   ["short"] = {
    [1] = "otoboku2",
@@ -93300,12 +93322,12 @@ return {
  [9016] = {
   ["main"] = "Furusato Saisei Nippon no Mukashibanashi",
   ["official"] = {
-   [1] = "ふるさと再生 日本の昔ばなし",
+   [1] = "Folktales from Japan",
+   [2] = "ふるさと再生 日本の昔ばなし",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Folktales from Japan",
    },
   },
  [9018] = {
@@ -93443,6 +93465,7 @@ return {
   ["main"] = "Lupin the Third: Mine Fujiko to Iu Onna",
   ["official"] = {
    [1] = "LUPIN the Third ～峰不二子という女～",
+   [2] = "Lupin the Third, The Woman Called Fujiko Mine",
    },
   ["short"] = {
    },
@@ -94322,26 +94345,29 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "My Coffee Samurai: A Vending Machine Boyfriend",
    },
   },
  [9142] = {
-  ["main"] = "Xi Yang Yang Yu Hui Tai Lang Zhi Kaixin Chuang Long Nian",
+  ["main"] = "Xi Yang Yang Yu Hui Tai Lang: Zhi Kaixin Chuang Long Nian",
   ["official"] = {
-   [1] = "喜羊羊与灰太狼之开心闯龙年",
+   [1] = "喜羊羊与灰太狼 之开心闯龙年",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pleasant Goat and Big Big Wolf 4",
    },
   },
  [9143] = {
-  ["main"] = "Xi Yang Yang Yu Hui Tai Lang Zhi Tu Nian Ding Gua Gua",
+  ["main"] = "Xi Yang Yang Yu Hui Tai Lang: Zhi Tu Nian Ding Gua Gua",
   ["official"] = {
-   [1] = "喜羊羊与灰太狼之兔年顶瓜瓜",
+   [1] = "喜羊羊与灰太狼 之兔年顶瓜瓜",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pleasant Goat and Big Big Wolf 3",
    },
   },
  [9144] = {
@@ -94397,6 +94423,66 @@ return {
  [9152] = {
   ["main"] = "Detective Conan/Excalibur",
   ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9153] = {
+  ["main"] = "Sakurasou no Pet na Kanojo",
+  ["official"] = {
+   [1] = "さくら荘のペットな彼女",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9154] = {
+  ["main"] = "Yakimochi Caprice",
+  ["official"] = {
+   [1] = "やきもち狂想曲[カプリス]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9155] = {
+  ["main"] = "Nogizaka Haruka no Himitsu: Finale",
+  ["official"] = {
+   [1] = "乃木坂春香の秘密 ふぃな～れ♪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9156] = {
+  ["main"] = "Uhou Renka",
+  ["official"] = {
+   [1] = "雨芳恋歌",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9157] = {
+  ["main"] = "Corpse Party: Missing Footage",
+  ["official"] = {
+   [1] = "コープスパーティー Missing Footage",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9158] = {
+  ["main"] = "Chitose Get You!!",
+  ["official"] = {
+   [1] = "ちとせげっちゅ!!",
    },
   ["short"] = {
    },
