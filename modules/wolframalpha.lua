@@ -10,6 +10,14 @@ local urlEncode = function(str)
 	):gsub(' ', '+')
 end
 
+local decode = function(str)
+	-- Output tends to have double spaces.
+	str = str:gsub('%s+', ' ')
+	-- Convert the WA unicode escaping into HTML.
+	str = str:gsub('\\:([0-9a-z][0-9a-z][0-9a-z][0-9a-z])', '&#x%1;')
+	return (html2unicode(str))
+end
+
 -- Soon, expat.
 local parseXML = function(xml)
 	local results = {}
@@ -21,16 +29,12 @@ local parseXML = function(xml)
 			for args, subpod in pod:gmatch('<subpod([^>]+)>(.-)</subpod>') do
 				local plain = subpod:match('<plaintext>(.-)</plaintext>')
 				if(plain and #plain > 0) then
-					-- Output tends to have double spaces.
-					plain = plain:gsub('%s+', ' ')
-					-- Convert the WA unicode escaping into HTML.
-					plain = plain:gsub('\\:([0-9a-z][0-9a-z][0-9a-z][0-9a-z])', '&#x%1;')
-					table.insert(sub, (html2unicode(plain)))
+					table.insert(sub, decode(plain))
 				end
 			end
 
 			if(#sub > 0) then
-				table.insert(results, string.format('\002%s\002: %s', title, table.concat(sub, '; ')))
+				table.insert(results, string.format('\002%s\002: %s', decode(title), table.concat(sub, '; ')))
 			end
 		end
 	end
