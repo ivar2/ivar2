@@ -3881,9 +3881,10 @@ return {
    },
   },
  [223] = {
-  ["main"] = "Angel Links",
+  ["main"] = "Seihou Tenshi Angel Links",
   ["official"] = {
-   [1] = "星方天使エンジェルリンクス",
+   [1] = "Angel Links",
+   [2] = "星方天使エンジェルリンクス",
    },
   ["short"] = {
    [1] = "AL",
@@ -4627,9 +4628,10 @@ return {
    [11] = "Salapoliisi Conan",
    [12] = "Детектив Конан",
    [13] = "المحقق كونان",
-   [14] = "ยอดนักสืบจิ๋วโคนัน เดอะซีรีส์",
-   [15] = "名探偵コナン",
-   [16] = "명탐정 코난",
+   [14] = "کاراگاه کونان",
+   [15] = "ยอดนักสืบจิ๋วโคนัน เดอะซีรีส์",
+   [16] = "名探偵コナン",
+   [17] = "명탐정 코난",
    },
   ["short"] = {
    [1] = "Case Closed",
@@ -11463,6 +11465,7 @@ return {
    [2] = "Mobile Suit Gundam",
    [3] = "موبيل سيوت كاندام",
    [4] = "機動戦士ガンダム",
+   [5] = "機動戰士高達",
    },
   ["short"] = {
    [1] = "MSG",
@@ -11484,6 +11487,7 @@ return {
    [1] = "Mobile Suit Gundam 0080: War in the Pocket",
    [2] = "โมบิลสูทกันดั้ม 0080 วอร์ส อินเดอะ พ็อคเก็ต",
    [3] = "機動戦士ガンダム 0080 ポケットの中の戦争",
+   [4] = "機動戰士高達0080 口袋中的戰爭",
    },
   ["short"] = {
    [1] = "MSG 0080",
@@ -11548,7 +11552,8 @@ return {
    [4] = "Mobile Suit Gundam: Char`s Counterattack",
    [5] = "โมบิลสูทกันดั้ม: ชาร์ เคาน์เตอร์ แอทแทค",
    [6] = "機動戦士ガンダム 逆襲のシャア",
-   [7] = "기동전사 건담 : 역습의 샤아",
+   [7] = "機動戰士高達 馬沙之反擊",
+   [8] = "기동전사 건담 : 역습의 샤아",
    },
   ["short"] = {
    [1] = "CCA",
@@ -11586,12 +11591,12 @@ return {
   ["main"] = "Refrain Blue",
   ["official"] = {
    [1] = "Refrain Blue",
-   [2] = "リフレインブルー",
    },
   ["short"] = {
    [1] = "RB",
    },
   ["syn"] = {
+   [1] = "リフレインブルー",
    },
   },
  [725] = {
@@ -18985,14 +18990,14 @@ return {
    },
   },
  [1269] = {
-  ["main"] = "Fujimi 2-choume Kokyogakudan",
+  ["main"] = "Fujimi 2-choume Koukyougakudan",
   ["official"] = {
-   [1] = "Fujimi 2-chome Symphony Orchestra",
-   [2] = "富士見二丁目交響楽団",
+   [1] = "富士見二丁目交響楽団",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fujimi 2-chome Symphony Orchestra",
    },
   },
  [1270] = {
@@ -57568,11 +57573,12 @@ return {
  [5015] = {
   ["main"] = "Sequence",
   ["official"] = {
-   [1] = "シークエンス",
+   [1] = "Sequence",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "シークエンス",
    },
   },
  [5016] = {
@@ -64533,8 +64539,9 @@ return {
   ["main"] = "Koukyoushihen: Eureka Seven - Pocket ga Niji de Ippai",
   ["official"] = {
    [1] = "Eureka Seven - Der Film: Good Night, Sleep Tight, Young Lovers",
-   [2] = "Eureka Seven -good night, sleep tight, young lovers-",
-   [3] = "交響詩篇エウレカセブン ポケットが虹でいっぱい",
+   [2] = "Eureka Seven - Le Film: Good Night, Sleep Tight, Young Lovers",
+   [3] = "Eureka Seven -good night, sleep tight, young lovers-",
+   [4] = "交響詩篇エウレカセブン ポケットが虹でいっぱい",
    },
   ["short"] = {
    [1] = "e7 movie",
@@ -64619,7 +64626,8 @@ return {
  [5891] = {
   ["main"] = "Tsuma Shibori",
   ["official"] = {
-   [1] = "妻しぼり",
+   [1] = "Beautiful Sisters",
+   [2] = "妻しぼり",
    },
   ["short"] = {
    },
@@ -67320,7 +67328,7 @@ return {
  [6226] = {
   ["main"] = "Slap Up Party: Arad Senki",
   ["official"] = {
-   [1] = "スラップアップパーティ −アラド戦記−",
+   [1] = "スラップアップパーティ -アラド戦記-",
    },
   ["short"] = {
    [1] = "slap up party",
@@ -74792,11 +74800,13 @@ return {
  [7032] = {
   ["main"] = "Ultraman Kids: M7.8 Sei no Yukai na Nakama",
   ["official"] = {
-   [1] = "ウルトラマンキッズ M7.8星のゆかいな仲間",
+   [1] = "ULTRAMAN Kids M7.8星のゆかいな仲間",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ウルトラマン キッズ M7.8星のゆかいな仲間",
+   [2] = "ウルトラマンキッズ M7.8星のゆかいな仲間",
    },
   },
  [7033] = {
@@ -75480,6 +75490,7 @@ return {
    [2] = "Kırık Kılıç",
    [3] = "Сломанный Меч",
    [4] = "ブレイクブレイド BROKEN BLADE",
+   [5] = "破剑之刃",
    },
   },
  [7105] = {
@@ -79481,7 +79492,7 @@ return {
  [7520] = {
   ["main"] = "Gekijouban Metal Fight Beyblade vs Taiyou: Shakunetsu no Shinryakusha Sol Blaze",
   ["official"] = {
-   [1] = "劇場版メタルファイト ベイブレードVS太陽 ～灼熱の侵略者ソルブレイズ～",
+   [1] = "劇場版メタルファイト ベイブレードVS太陽 灼熱の侵略者ソルブレイズ",
    },
   ["short"] = {
    },
@@ -85102,16 +85113,16 @@ return {
  [8109] = {
   ["main"] = "Hidan no Aria",
   ["official"] = {
-   [1] = "Ария на Аления куршум",
-   [2] = "هیدان نو آریا",
-   [3] = "緋弾のアリア",
+   [1] = "Aria the Scarlet Ammo",
+   [2] = "Ария на Аления куршум",
+   [3] = "هیدان نو آریا",
+   [4] = "緋弾のアリア",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Aria the Scarlet Ammo",
-   [2] = "آریا، مهمات سرخ",
-   [3] = "绯弹的亚莉亚",
+   [1] = "آریا، مهمات سرخ",
+   [2] = "绯弹的亚莉亚",
    },
   },
  [8110] = {
@@ -86128,8 +86139,9 @@ return {
  [8212] = {
   ["main"] = "Kaitou Tenshi Twin Angel: Kyun Kyun Tokimeki Paradise!!",
   ["official"] = {
-   [1] = "Twin Angel: Twinkle Paradise",
-   [2] = "快盗天使ツインエンジェル ～キュンキュン☆ときめきパラダイス!!～",
+   [1] = "Twin Angel",
+   [2] = "Twin Angel: Twinkle Paradise",
+   [3] = "快盗天使ツインエンジェル ～キュンキュン☆ときめきパラダイス!!～",
    },
   ["short"] = {
    },
@@ -87542,6 +87554,7 @@ return {
   ["syn"] = {
    [1] = "Wagnaria!! 2",
    [2] = "Working!! 2",
+   [3] = "迷糊快餐厅2",
    },
   },
  [8365] = {
@@ -87654,6 +87667,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Prince of Tennis - Showdown in England`s Tennis Fortress",
    },
   },
  [8375] = {
@@ -90248,6 +90262,7 @@ return {
   ["syn"] = {
    [1] = "Natsume Yujincho (4)",
    [2] = "ناتسومي وكتاب الاصدقاء 4",
+   [3] = "夏目友人帐4",
    },
   },
  [8668] = {
@@ -90384,11 +90399,14 @@ return {
    [1] = "黒子のバスケ",
    },
   ["short"] = {
+   [1] = "Kurobas",
+   [2] = "黒バス",
    },
   ["syn"] = {
    [1] = "Kuroko no Basket",
    [2] = "Kuroko no Basuke",
    [3] = "Kuroko`s Basketball",
+   [4] = "The Basketball Which Kuroko Plays",
    },
   },
  [8682] = {
@@ -90550,7 +90568,8 @@ return {
  [8701] = {
   ["main"] = "Saki: Achiga-hen - Episode of Side-A",
   ["official"] = {
-   [1] = "咲-Saki-阿知賀編 episode of side-A",
+   [1] = "Saki Episode of Side A",
+   [2] = "咲-Saki-阿知賀編 episode of side-A",
    },
   ["short"] = {
    },
@@ -90708,6 +90727,8 @@ return {
    [1] = "史上最強の弟子ケンイチ (2012)",
    },
   ["short"] = {
+   [1] = "HSD Kenichi OVA",
+   [2] = "HSDK OVA",
    },
   ["syn"] = {
    },
@@ -90892,10 +90913,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Chou Uchuu Machine X Bomber",
-   [2] = "Star Fleet",
-   [3] = "超宇宙マシーンXボンバー",
-   [4] = "超宇宙マシーンエックスボンバー",
+   [1] = "Bombardero X",
+   [2] = "Bomber X",
+   [3] = "Chou Uchuu Machine X Bomber",
+   [4] = "Star Fleet",
+   [5] = "超宇宙マシーンXボンバー",
+   [6] = "超宇宙マシーンエックスボンバー",
    },
   },
  [8741] = {
@@ -91821,6 +91844,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "جورمونگاند",
    },
   },
  [8844] = {
@@ -91905,6 +91929,7 @@ return {
    },
   ["syn"] = {
    [1] = "Dusk Maiden of Amnesia",
+   [2] = "Сумеречная Дева и Амнезия",
    },
   },
  [8853] = {
@@ -92181,9 +92206,10 @@ return {
    [1] = "fz2",
    },
   ["syn"] = {
-   [1] = "Fate/Zero: 2nd Season",
-   [2] = "Fate/Zero: Second Season",
-   [3] = "フェイト/ゼロ 2ndシーズン",
+   [1] = "Fate Zero 2nd Season",
+   [2] = "Fate/Zero: 2nd Season",
+   [3] = "Fate/Zero: Second Season",
+   [4] = "フェイト/ゼロ 2ndシーズン",
    },
   },
  [8881] = {
@@ -92646,9 +92672,9 @@ return {
    },
   },
  [8940] = {
-  ["main"] = "One Piece Film",
+  ["main"] = "One Piece Film Z",
   ["official"] = {
-   [1] = "ワンピース フィルム",
+   [1] = "ワンピース フィルム Z",
    },
   ["short"] = {
    },
@@ -93123,12 +93149,13 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yurumate3Dei",
    },
   },
  [8994] = {
-  ["main"] = "Crimson Girls",
+  ["main"] = "Crimson Girls: Chikan Shihai",
   ["official"] = {
-   [1] = "クリムゾンガールズ",
+   [1] = "クリムゾンガールズ ~痴漢支配~",
    },
   ["short"] = {
    },
@@ -94139,7 +94166,7 @@ return {
    },
   },
  [9113] = {
-  ["main"] = "SPHERES",
+  ["main"] = "Spheres",
   ["official"] = {
    [1] = "스피어즈",
    },
@@ -94483,6 +94510,115 @@ return {
   ["main"] = "Chitose Get You!!",
   ["official"] = {
    [1] = "ちとせげっちゅ!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9159] = {
+  ["main"] = "Hokuto no Ken: Legend of Heroes",
+  ["official"] = {
+   [1] = "北斗の拳 LEGEND of HEROES",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9161] = {
+  ["main"] = "Saitama Bousou Saizensen Flag!",
+  ["official"] = {
+   [1] = "埼玉暴走最前線 フラッグ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9162] = {
+  ["main"] = "To Love-Ru: Trouble - Darkness OAD",
+  ["official"] = {
+   [1] = "To LOVEる -とらぶる- ダークネス OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9163] = {
+  ["main"] = "Tottoko Hamtarou (2012)",
+  ["official"] = {
+   [1] = "とっとこハム太郎 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9164] = {
+  ["main"] = "Houkago Midnighters",
+  ["official"] = {
+   [1] = "放課後ミッドナイターズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9165] = {
+  ["main"] = "Chiisana Love Letter",
+  ["official"] = {
+   [1] = "小さなラブレター まり子とねむの木の子供たち",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9166] = {
+  ["main"] = "Senran Kagura",
+  ["official"] = {
+   [1] = "閃乱カグラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9167] = {
+  ["main"] = "Dosukoi! Wanpaku Dohyou",
+  ["official"] = {
+   [1] = "どすこい！わんぱく土俵",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9168] = {
+  ["main"] = "Heart Cocktail Again",
+  ["official"] = {
+   [1] = "ハートカクテルアゲイン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9169] = {
+  ["main"] = "Love Like Aliens",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9170] = {
+  ["main"] = "Kiki to Lala no Hime-sama ni Naritai",
+  ["official"] = {
+   [1] = "キキとララのお姫さまになりたい",
    },
   ["short"] = {
    },
