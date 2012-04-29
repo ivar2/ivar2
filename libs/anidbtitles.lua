@@ -13825,11 +13825,12 @@ return {
   ["main"] = "Ojamajo Doremi",
   ["official"] = {
    [1] = "DoReMi",
-   [2] = "Magical DoReMi",
-   [3] = "Magical Doremi",
-   [4] = "Magical Dorémi",
-   [5] = "دو ري مي",
-   [6] = "おジャ魔女どれみ",
+   [2] = "La Màgica Doremi",
+   [3] = "Magical DoReMi",
+   [4] = "Magical Doremi",
+   [5] = "Magical Dorémi",
+   [6] = "دو ري مي",
+   [7] = "おジャ魔女どれみ",
    },
   ["short"] = {
    [1] = "Doremi",
@@ -16867,9 +16868,9 @@ return {
    },
   },
  [1094] = {
-  ["main"] = "Battle Programmer Shirase",
+  ["main"] = "BPS: Battle Programmer Shirase",
   ["official"] = {
-   [1] = "バトルプログラマーシラセ",
+   [1] = "bpS バトルプログラマーシラセ",
    },
   ["short"] = {
    [1] = "BPS",
@@ -20578,6 +20579,7 @@ return {
    },
   ["syn"] = {
    [1] = "Best of Kitty #2 (3)",
+   [2] = "バルテュス ティアの輝き",
    },
   },
  [1396] = {
@@ -27683,7 +27685,7 @@ return {
    },
   },
  [1962] = {
-  ["main"] = "Anime Sanjushi",
+  ["main"] = "Anime Sanjuushi",
   ["official"] = {
    [1] = "(שלושת המוסקטרים (1987",
    [2] = "Cei trei muşchetari",
@@ -27704,6 +27706,7 @@ return {
    [1] = "Animated Three Musketeers",
    [2] = "Anime San Jushi",
    [3] = "Anime San Juushi",
+   [4] = "Anime Sanjushi",
    },
   },
  [1963] = {
@@ -44078,7 +44081,7 @@ return {
    },
   },
  [3506] = {
-  ["main"] = "Black Jack - Futari no Kuroi Isha",
+  ["main"] = "Black Jack: Futari no Kuroi Isha",
   ["official"] = {
    [1] = "ブラック・ジャック ふたりの黒い医者",
    },
@@ -64051,9 +64054,10 @@ return {
  [5802] = {
   ["main"] = "Hokuto no Ken Raou Gaiden Ten no Haou",
   ["official"] = {
-   [1] = "La légende de Raoh",
-   [2] = "Legends of the Dark Kings: A Fist of the North Star Story",
-   [3] = "北斗の拳 ラオウ外伝 天の覇王",
+   [1] = "Ken Il Guerriero: La Leggenda Di Raoul Il Dominatore Del Cielo",
+   [2] = "La légende de Raoh",
+   [3] = "Legends of the Dark Kings: A Fist of the North Star Story",
+   [4] = "北斗の拳 ラオウ外伝 天の覇王",
    },
   ["short"] = {
    [1] = "raoh",
@@ -78483,9 +78487,10 @@ return {
   ["syn"] = {
    [1] = "Dilute Cherry Demon: Strangely-spoken-of Shinsengumi",
    [2] = "Hakuoki",
-   [3] = "Hakuoki: Shinsengumi Kitan",
-   [4] = "Демонът в черешите: Хроники за Шинсенгуми",
-   [5] = "薄樱鬼",
+   [3] = "Hakuoki SSL",
+   [4] = "Hakuoki: Shinsengumi Kitan",
+   [5] = "Демонът в черешите: Хроники за Шинсенгуми",
+   [6] = "薄樱鬼",
    },
   },
  [7406] = {
@@ -78995,6 +79000,7 @@ return {
    [2] = "銀幕ヘタリア Axis Powers Paint it, White(白くぬれ!)",
    },
   ["short"] = {
+   [1] = "Hetalia Movie",
    },
   ["syn"] = {
    [1] = "Военизирана Хеталия - оцвети в бяло!",
@@ -84769,8 +84775,9 @@ return {
   ["official"] = {
    [1] = "Children Who Chase Lost Voices From Deep Below",
    [2] = "Vaikai, kurie vijosi žvaigždes",
-   [3] = "Ловцы забытых голосов",
-   [4] = "星を追う子ども",
+   [3] = "Voyage vers Agharta",
+   [4] = "Ловцы забытых голосов",
+   [5] = "星を追う子ども",
    },
   ["short"] = {
    },
@@ -85901,7 +85908,7 @@ return {
   ["main"] = "Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
   ["official"] = {
    [1] = "Ano hana",
-   [2] = "anohana: The Flower We Saw That Day",
+   [2] = "Anohana: The Flower We Saw That Day",
    [3] = "Все още не знаем името на цветето, което видяхме онзи ден.",
    [4] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
    [5] = "آنو هی میتا هانا نو ناما و بکوتاچی وا مادا شیرانای",
@@ -90060,6 +90067,7 @@ return {
   ["main"] = "Sankarea",
   ["official"] = {
    [1] = "さんかれあ",
+   [2] = "산카레아",
    },
   ["short"] = {
    },
@@ -90705,10 +90713,12 @@ return {
   ["official"] = {
    [1] = "Nyarko-san: Another Crawling Chaos",
    [2] = "這いよれ! ニャル子さん",
+   [3] = "기어와라! 냐루코양",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Haiyore! Nyarlko-san",
    },
   },
  [8720] = {
@@ -90729,6 +90739,7 @@ return {
   ["short"] = {
    [1] = "HSD Kenichi OVA",
    [2] = "HSDK OVA",
+   [3] = "Kenichi OVA",
    },
   ["syn"] = {
    },
@@ -91468,7 +91479,8 @@ return {
   ["main"] = "Area no Kishi",
   ["official"] = {
    [1] = "The Knight in the Area",
-   [2] = "エリアの騎士 THE KNIGHT in THE AREA",
+   [2] = "الفارس في الميدان",
+   [3] = "エリアの騎士 THE KNIGHT in THE AREA",
    },
   ["short"] = {
    [1] = "erikishi",
@@ -91565,6 +91577,7 @@ return {
  [8810] = {
   ["main"] = "Go Around",
   ["official"] = {
+   [1] = "GO AROUND",
    },
   ["short"] = {
    },
@@ -91762,7 +91775,8 @@ return {
  [8832] = {
   ["main"] = "Ookami Kodomo no Ame to Yuki",
   ["official"] = {
-   [1] = "おおかみこどもの雨と雪",
+   [1] = "Les enfants loups - Ame & Yuki",
+   [2] = "おおかみこどもの雨と雪",
    },
   ["short"] = {
    },
@@ -91825,9 +91839,9 @@ return {
    },
   },
  [8840] = {
-  ["main"] = "Hiiro no Kakera",
+  ["main"] = "Hiiro no Kakera: Tamayori Hime Kitan",
   ["official"] = {
-   [1] = "緋色の欠片",
+   [1] = "緋色の欠片 玉依姫奇譚",
    },
   ["short"] = {
    },
@@ -91882,8 +91896,11 @@ return {
   ["main"] = "Sengoku Collection",
   ["official"] = {
    [1] = "戦国コレクション",
+   [2] = "전국 컬렉션",
    },
   ["short"] = {
+   [1] = "sencolle",
+   [2] = "戦コレ",
    },
   ["syn"] = {
    [1] = "Parallel World Samurai",
@@ -91941,10 +91958,11 @@ return {
   ["short"] = {
    [1] = "MGX",
    [2] = "NnKX",
+   [3] = "nazokano x",
+   [4] = "謎彼X",
    },
   ["syn"] = {
    [1] = "Mysterious Girlfriend X",
-   [2] = "謎の彼女Ｘ",
    },
   },
  [8854] = {
@@ -92156,13 +92174,13 @@ return {
  [8875] = {
   ["main"] = "Kimi to Boku. 2",
   ["official"] = {
-   [1] = "君と僕. 2",
+   [1] = "You and Me 2",
+   [2] = "君と僕. 2",
    },
   ["short"] = {
    [1] = "KtB2",
    },
   ["syn"] = {
-   [1] = "You and Me 2",
    },
   },
  [8877] = {
@@ -92200,13 +92218,13 @@ return {
  [8880] = {
   ["main"] = "Fate/Zero (2012)",
   ["official"] = {
-   [1] = "フェイト/ゼロ (2012)",
+   [1] = "Fate/Zero (2012)",
    },
   ["short"] = {
    [1] = "fz2",
    },
   ["syn"] = {
-   [1] = "Fate Zero 2nd Season",
+   [1] = "Fate/Zero 2ndシーズン",
    [2] = "Fate/Zero: 2nd Season",
    [3] = "Fate/Zero: Second Season",
    [4] = "フェイト/ゼロ 2ndシーズン",
@@ -92292,6 +92310,7 @@ return {
   ["main"] = "Acchi Kocchi",
   ["official"] = {
    [1] = "あっちこっち",
+   [2] = "여기저기",
    },
   ["short"] = {
    },
@@ -92611,13 +92630,13 @@ return {
  [8934] = {
   ["main"] = "Shirokuma Cafe",
   ["official"] = {
-   [1] = "しろくまカフェ",
-   [2] = "백곰 카페",
+   [1] = "Polar Bear Cafe",
+   [2] = "しろくまカフェ",
+   [3] = "백곰 카페",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Polar Bear Cafe",
    },
   },
  [8935] = {
@@ -92877,7 +92896,7 @@ return {
  [8963] = {
   ["main"] = "Saint Seiya Omega",
   ["official"] = {
-   [1] = "聖闘士星矢Ω-セイントセイヤオメガ-",
+   [1] = "聖闘士星矢Ω[セイントセイヤオメガ]",
    },
   ["short"] = {
    [1] = "sso",
@@ -93491,7 +93510,7 @@ return {
  [9031] = {
   ["main"] = "Lupin the Third: Mine Fujiko to Iu Onna",
   ["official"] = {
-   [1] = "LUPIN the Third ～峰不二子という女～",
+   [1] = "LUPIN the Third 峰不二子という女",
    [2] = "Lupin the Third, The Woman Called Fujiko Mine",
    },
   ["short"] = {
@@ -93862,13 +93881,14 @@ return {
    },
   },
  [9074] = {
-  ["main"] = "Fuse Teppou Musume no Torimonochou",
+  ["main"] = "Fuse: Teppou Musume no Torimonochou",
   ["official"] = {
    [1] = "伏 鉄砲娘の捕物帳",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fuse: A Gun Girl`s Detective Story",
    },
   },
  [9075] = {
@@ -94448,12 +94468,14 @@ return {
    },
   },
  [9152] = {
-  ["main"] = "Detective Conan/Excalibur",
+  ["main"] = "Meitantei Conan: Excalibur no Kiseki",
   ["official"] = {
+   [1] = "名探偵コナン えくすかりばあの奇跡",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Detective Conan: The Miracle of Excalibur",
    },
   },
  [9153] = {
@@ -94527,9 +94549,9 @@ return {
    },
   },
  [9161] = {
-  ["main"] = "Saitama Bousou Saizensen Flag!",
+  ["main"] = "Saitama Bousou Saizensen Flag! Shinimonogurui no Seishun!!",
   ["official"] = {
-   [1] = "埼玉暴走最前線 フラッグ!",
+   [1] = "埼玉暴走最前線 フラッグ! 死にものぐるいの青春!!",
    },
   ["short"] = {
    },
@@ -94567,7 +94589,7 @@ return {
    },
   },
  [9165] = {
-  ["main"] = "Chiisana Love Letter",
+  ["main"] = "Chiisana Love Letter: Mariko to Nemunoki no Kodomo-tachi",
   ["official"] = {
    [1] = "小さなラブレター まり子とねむの木の子供たち",
    },
@@ -94589,7 +94611,7 @@ return {
  [9167] = {
   ["main"] = "Dosukoi! Wanpaku Dohyou",
   ["official"] = {
-   [1] = "どすこい！わんぱく土俵",
+   [1] = "どすこい! わんぱく土俵",
    },
   ["short"] = {
    },
@@ -94616,9 +94638,222 @@ return {
    },
   },
  [9170] = {
-  ["main"] = "Kiki to Lala no Hime-sama ni Naritai",
+  ["main"] = "Kiki to Lala no Ohime-sama ni Naritai",
   ["official"] = {
    [1] = "キキとララのお姫さまになりたい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9171] = {
+  ["main"] = "Sasurai-kun",
+  ["official"] = {
+   [1] = "さすらいくん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9172] = {
+  ["main"] = "Mumako",
+  ["official"] = {
+   [1] = "夢魔子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9173] = {
+  ["main"] = "Shibaitaroka",
+  ["official"] = {
+   [1] = "しばいたろか",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9174] = {
+  ["main"] = "Shura ga Yuku",
+  ["official"] = {
+   [1] = "修羅がゆく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9175] = {
+  ["main"] = "Teppen",
+  ["official"] = {
+   [1] = "てっぺん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9176] = {
+  ["main"] = "Anata ga Furikaeru Toki",
+  ["official"] = {
+   [1] = "あなたが振り返るとき",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9177] = {
+  ["main"] = "Manga Hana no Kakarichou",
+  ["official"] = {
+   [1] = "まんが花の係長",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9180] = {
+  ["main"] = "Kao An",
+  ["official"] = {
+   [1] = "Port of Return",
+   [2] = "靠岸",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9181] = {
+  ["main"] = "Meitentei Conan Bonus File: Fantasista no Hana",
+  ["official"] = {
+   [1] = "名探偵コナン BONUS FILE ファンタジスタの花",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9182] = {
+  ["main"] = "Katayoku no Khronos Gear",
+  ["official"] = {
+   [1] = "片翼のクロノスギア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9183] = {
+  ["main"] = "Zenmonogatari",
+  ["official"] = {
+   [1] = "全物語",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9184] = {
+  ["main"] = "Stitch to Suna no Wakusei",
+  ["official"] = {
+   [1] = "スティッチと砂の惑星",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Stitch and the Planet of Sand",
+   },
+  },
+ [9186] = {
+  ["main"] = "Karneval",
+  ["official"] = {
+   [1] = "カーニヴァル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9187] = {
+  ["main"] = "Accel World OVA",
+  ["official"] = {
+   [1] = "アクセル・ワールド OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9189] = {
+  ["main"] = "Yama ni Kagayaku: Guide-ken Heiji Gou",
+  ["official"] = {
+   [1] = "山に輝く ガイド犬平治号",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Yama ni Kagayaku: Guide Inu Heiji Gou",
+   },
+  },
+ [9190] = {
+  ["main"] = "Saishuu Chikan Densha Next",
+  ["official"] = {
+   [1] = "最終痴漢電車NEXT",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9192] = {
+  ["main"] = "Topo Gigio no Botan Sensou",
+  ["official"] = {
+   [1] = "トッポ・ジージョのボタン戦争",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9193] = {
+  ["main"] = "Topo Gigio Gekijou",
+  ["official"] = {
+   [1] = "トッポ・ジージョ劇場",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9194] = {
+  ["main"] = "Kaiketsu Zorori: Da-da-da-daibouken!",
+  ["official"] = {
+   [1] = "かいけつゾロリ だ・だ・だ・だいぼうけん!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9195] = {
+  ["main"] = "Kiki to Lala no Papa to Mama ni Aitai",
+  ["official"] = {
+   [1] = "キキとララのパパとママにあいたい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9196] = {
+  ["main"] = "Kiki to Lala no Mamatte Suteki!",
+  ["official"] = {
+   [1] = "キキとララのママってすてき!",
    },
   ["short"] = {
    },
