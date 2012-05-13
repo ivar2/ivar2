@@ -11,7 +11,8 @@ return {
    [2] = "SnM",
    },
   ["syn"] = {
-   [1] = "星界之纹章",
+   [1] = "Hvězdný erb",
+   [2] = "星界之纹章",
    },
   },
  [2] = {
@@ -5232,19 +5233,20 @@ return {
    [12] = "Mon voisin Totoro",
    [13] = "My Neighbor Totoro",
    [14] = "Mój sąsiad Totoro",
-   [15] = "Naaber Totoro",
-   [16] = "Naapurini Totoro",
-   [17] = "Totoro",
-   [18] = "Totoro - A varázserdő titka",
-   [19] = "Οι περιπέτειες του Τότορο",
-   [20] = "Миний хөрш Тоторо",
-   [21] = "Мой сосед Тоторо",
-   [22] = "השכן שלי טוטורו",
-   [23] = "جـــاري تــوتورو",
-   [24] = "โทโทโร่ เพื่อนรัก",
-   [25] = "となりのトトロ",
-   [26] = "龍貓",
-   [27] = "이웃집 토토로",
+   [15] = "Můj soused Totoro",
+   [16] = "Naaber Totoro",
+   [17] = "Naapurini Totoro",
+   [18] = "Totoro",
+   [19] = "Totoro - A varázserdő titka",
+   [20] = "Οι περιπέτειες του Τότορο",
+   [21] = "Миний хөрш Тоторо",
+   [22] = "Мой сосед Тоторо",
+   [23] = "השכן שלי טוטורו",
+   [24] = "جـــاري تــوتورو",
+   [25] = "โทโทโร่ เพื่อนรัก",
+   [26] = "となりのトトロ",
+   [27] = "龍貓",
+   [28] = "이웃집 토토로",
    },
   ["short"] = {
    [1] = "TnT",
@@ -14762,7 +14764,7 @@ return {
    },
   },
  [954] = {
-  ["main"] = "Mazinkaiser: Shitou! Ankoku Dai Shogun",
+  ["main"] = "Mazinkaiser: Shitou! Ankoku Daishougun",
   ["official"] = {
    [1] = "マジンカイザー 死闘! 暗黒大将軍",
    },
@@ -18978,6 +18980,8 @@ return {
   ["syn"] = {
    [1] = "The Fantastic Adventures Of Unico",
    [2] = "Unico Movie 1",
+   [3] = "Único el unicornio",
+   [4] = "Юнико",
    },
   },
  [1268] = {
@@ -21360,8 +21364,9 @@ return {
    [2] = "Naruto - La primavera nel Paese della Neve",
    [3] = "Naruto the Movie: Ninja Clash in the Land of Snow",
    [4] = "Naruto: Geheim-Mission im Land des ewigen Schnees",
-   [5] = "นารูโตะ นินจาจอมคาถา เดอะมูฟวี่ ตอน ศึกชิงเจ้าหญิงหิมะ",
-   [6] = "劇場版 NARUTO 大活劇! 雪姫忍法帖だってばよ!!",
+   [5] = "Naruto: Záchrana sněžné princezny",
+   [6] = "นารูโตะ นินจาจอมคาถา เดอะมูฟวี่ ตอน ศึกชิงเจ้าหญิงหิมะ",
+   [7] = "劇場版 NARUTO 大活劇! 雪姫忍法帖だってばよ!!",
    },
   ["short"] = {
    [1] = "Naruto Movie",
@@ -29324,14 +29329,14 @@ return {
  [2106] = {
   ["main"] = "Warau Salesman",
   ["official"] = {
-   [1] = "Laughing Salesman",
-   [2] = "笑ウせえるすまん",
+   [1] = "笑ウせえるすまん",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Smiling Salesman",
-   [2] = "笑ゥせぇるすまん",
+   [1] = "Laughing Salesman",
+   [2] = "Smiling Salesman",
+   [3] = "笑ゥせぇるすまん",
    },
   },
  [2107] = {
@@ -33275,7 +33280,7 @@ return {
    },
   },
  [2411] = {
-  ["main"] = "Touyama Sakura Uchuu Chou: Yatsu no Na wa Gold",
+  ["main"] = "Tooyamazakura Uchuuchou: Yatsu no Na wa Gold",
   ["official"] = {
    [1] = "遠山桜宇宙帖 奴の名はゴールド",
    },
@@ -35778,6 +35783,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "アンティーク・ハート",
    },
   },
  [2649] = {
@@ -42164,7 +42170,8 @@ return {
    [1] = "Cronache oniriche di Leda",
    [2] = "Fantastic Adventure Of Yohko: Leda",
    [3] = "Leda",
-   [4] = "幻夢戦記レダ",
+   [4] = "Η Λίντα",
+   [5] = "幻夢戦記レダ",
    },
   ["short"] = {
    [1] = "Leda",
@@ -46745,6 +46752,7 @@ return {
   ["syn"] = {
    [1] = "Girls in Summer Clothes",
    [2] = "Natsufuku no Shoujotachi",
+   [3] = "夏服の少女たち　ヒロシマ・昭和20年8月6日",
    },
   },
  [3956] = {
@@ -49857,8 +49865,10 @@ return {
    },
   ["syn"] = {
    [1] = "Shounen Onmyoji",
-   [2] = "Young Monk",
-   [3] = "少年阴阳师",
+   [2] = "Teenager Onmyoji",
+   [3] = "Young Monk",
+   [4] = "Юный мастер Инь-Ян",
+   [5] = "少年阴阳师",
    },
   },
  [4217] = {
@@ -51707,6 +51717,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Démon",
    },
   },
  [4399] = {
@@ -58297,6 +58308,7 @@ return {
    [1] = "Appleseed 2",
    [2] = "Appleseed : Бивша машина",
    [3] = "Ekusu makina",
+   [4] = "Яблочное зернышко (фильм второй)",
    },
   },
  [5081] = {
@@ -58505,9 +58517,10 @@ return {
    [4] = "Bakugan: Młodzi wojownicy",
    [5] = "Bakuganas",
    [6] = "Бакуган",
-   [7] = "בקוגן",
-   [8] = "บาคุกัน มอนสเตอร์บอลทะลุมิติ",
-   [9] = "爆丸バトルブローラーズ",
+   [7] = "Бакуган. Отчаянные бойцы",
+   [8] = "בקוגן",
+   [9] = "บาคุกัน มอนสเตอร์บอลทะลุมิติ",
+   [10] = "爆丸バトルブローラーズ",
    },
   ["short"] = {
    },
@@ -59857,7 +59870,8 @@ return {
   ["main"] = "Andromeda Stories",
   ["official"] = {
    [1] = "ANDROMEDA STORIES",
-   [2] = "Στον αστερισμό της Ανδρομέδας",
+   [2] = "Andromeda galassia perduta",
+   [3] = "Στον αστερισμό της Ανδρομέδας",
    },
   ["short"] = {
    },
@@ -60396,13 +60410,14 @@ return {
   ["syn"] = {
    [1] = "Moyashimon: Kin Gekijou Deluxe",
    [2] = "Moyashimon: Microbe Theatre Deluxe",
-   [3] = "Tales of Agriculture",
-   [4] = "Сельскохозяйственные истории",
-   [5] = "حكايات الزراعة",
-   [6] = "موياشيمون",
-   [7] = "萌菌物语",
-   [8] = "豆芽小文",
-   [9] = "豆芽纹",
+   [3] = "Příběhy z hnojárny",
+   [4] = "Tales of Agriculture",
+   [5] = "Сельскохозяйственные истории",
+   [6] = "حكايات الزراعة",
+   [7] = "موياشيمون",
+   [8] = "萌菌物语",
+   [9] = "豆芽小文",
+   [10] = "豆芽纹",
    },
   },
  [5306] = {
@@ -61328,13 +61343,13 @@ return {
  [5436] = {
   ["main"] = "Tottoi",
   ["official"] = {
-   [1] = "The Secret of the Seal",
-   [2] = "Tottoi",
-   [3] = "トトイ",
+   [1] = "Tottoi",
+   [2] = "トトイ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Secret of the Seal",
    },
   },
  [5442] = {
@@ -62802,8 +62817,9 @@ return {
    [1] = "Batman",
    },
   ["syn"] = {
-   [1] = "Batman: Gotham Şövalyesi",
-   [2] = "Бэтмен: Рыцарь Готэма",
+   [1] = "Batman - Gothamský rytíř",
+   [2] = "Batman: Gotham Şövalyesi",
+   [3] = "Бэтмен: Рыцарь Готэма",
    },
   },
  [5612] = {
@@ -66496,13 +66512,15 @@ return {
    },
   },
  [6109] = {
-  ["main"] = "Hells Angels",
+  ["main"] = "Hells",
   ["official"] = {
-   [1] = "ヘルズエンジェルス",
+   [1] = "HELLS",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hells Angels",
+   [2] = "ヘルズエンジェルス",
    },
   },
  [6110] = {
@@ -68832,8 +68850,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "House of Blocks",
-   [2] = "The House of Small Cubes",
+   [1] = "Dům z malých kostek",
+   [2] = "House of Blocks",
+   [3] = "The House of Small Cubes",
    },
   },
  [6396] = {
@@ -69184,7 +69203,7 @@ return {
    [4] = "Кучета: Воят на Самотните в нощта",
    [5] = "الكِلاب : رصاصٌ و مجازر",
    [6] = "كلاب:كلاب ضالة تعوي في الظلام",
-   [7] = "ドッグス/バレッツ＆カーネイジ",
+   [7] = "ドッグス/バレッツ&カーネイジ",
    [8] = "暗夜迷途犬",
    },
   },
@@ -69240,9 +69259,10 @@ return {
    [2] = "Токийское восьмибалльное",
    [3] = "Токио, 8-ма степен по Рихтер",
    [4] = "Токійський землетрус 8,0",
-   [5] = "زلزال طوكيو 8.0",
-   [6] = "东京地震8.0",
-   [7] = "東京地震8.0",
+   [5] = "Токіо Восьмибальний",
+   [6] = "زلزال طوكيو 8.0",
+   [7] = "东京地震8.0",
+   [8] = "東京地震8.0",
    },
   },
  [6442] = {
@@ -70722,7 +70742,8 @@ return {
   ["main"] = "8-gatsu no Symphony: Shibuya 2002-2003",
   ["official"] = {
    [1] = "8月のシンフォニー -渋谷 2002～2003",
-   [2] = "Symphony in August",
+   [2] = "Srpnová symfonie",
+   [3] = "Symphony in August",
    },
   ["short"] = {
    },
@@ -74366,6 +74387,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Dům v plamenech",
    },
   },
  [6988] = {
@@ -74377,6 +74399,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Trhání větví zakázáno",
    },
   },
  [6989] = {
@@ -74399,8 +74422,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Trip",
-   [2] = "Travel",
+   [1] = "Cesta",
+   [2] = "The Trip",
+   [3] = "Travel",
    },
   },
  [6993] = {
@@ -74468,7 +74492,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dojoji Temple",
+   [1] = "Chrám Dodžodži",
+   [2] = "Dojoji Temple",
    },
   },
  [7000] = {
@@ -74480,7 +74505,8 @@ return {
    },
   ["syn"] = {
    [1] = "Archer without a Bow",
-   [2] = "To Shoot without Shooting",
+   [2] = "Střílet bez střílení",
+   [3] = "To Shoot without Shooting",
    },
   },
  [7001] = {
@@ -80046,13 +80072,14 @@ return {
    },
   },
  [7571] = {
-  ["main"] = "Aitsu to Lullaby: Suiyoubi no Cinderella",
+  ["main"] = "Aitsu to Lullaby",
   ["official"] = {
-   [1] = "あいつとララバイ 水曜日のシンデレラ",
+   [1] = "あいつとララバイ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "あいつとララバイ 水曜日のシンデレラ",
    },
   },
  [7572] = {
@@ -84756,8 +84783,9 @@ return {
    [2] = "Mahou Shoujo Madoka Magika",
    [3] = "Волшебница Мадока Магика",
    [4] = "Дівчина-чарівниця Мадока Маґіка",
-   [5] = "مدوکا مجیکا دختر جادویی",
-   [6] = "魔法少女小圆",
+   [5] = "Чарівниця Мадока Магіка",
+   [6] = "مدوکا مجیکا دختر جادویی",
+   [7] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -87787,6 +87815,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Naruto OVA 8: The Fiery Chuunin exam! Naruto vs. Konohamaru!!",
    },
   },
  [8385] = {
@@ -87817,6 +87846,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Naruto OVA 7: The Genie and the Three Wishes",
    },
   },
  [8388] = {
@@ -89231,7 +89261,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "muv-luv",
+   [1] = "Muv-Luv Alternative: Total Eclipse",
+   [2] = "muv-luv",
    },
   },
  [8550] = {
@@ -90606,6 +90637,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Saki 2",
    },
   },
  [8702] = {
@@ -90937,6 +90969,8 @@ return {
    [1] = "QBR",
    },
   ["syn"] = {
+   [1] = "Queen`s Blade - Rebelia",
+   [2] = "Queens Blade Rebellion",
    },
   },
  [8740] = {
@@ -91545,9 +91579,9 @@ return {
    },
   },
  [8805] = {
-  ["main"] = "Tiger & Bunny Gekijouban",
+  ["main"] = "Gekijouban Tiger & Bunny",
   ["official"] = {
-   [1] = "TIGER & BUNNY 劇場版",
+   [1] = "劇場版 TIGER & BUNNY",
    },
   ["short"] = {
    },
@@ -91967,6 +92001,7 @@ return {
    [1] = "黄昏乙女xアムネジア",
    },
   ["short"] = {
+   [1] = "amnesia",
    },
   ["syn"] = {
    [1] = "Dusk Maiden of Amnesia",
@@ -92012,6 +92047,7 @@ return {
    },
   ["syn"] = {
    [1] = "Hyoka",
+   [2] = "Ice-cream",
    },
   },
  [8856] = {
@@ -94691,9 +94727,9 @@ return {
    },
   },
  [9172] = {
-  ["main"] = "Mumako",
+  ["main"] = "Fujiko Fujio A no Mumako",
   ["official"] = {
-   [1] = "夢魔子",
+   [1] = "藤子不二雄Aの夢魔子",
    },
   ["short"] = {
    },
@@ -94955,9 +94991,111 @@ return {
    },
   },
  [9205] = {
-  ["main"] = "Junkers Come Here -Memories of You-",
+  ["main"] = "Junkers Come Here: Memories of You",
   ["official"] = {
-   [1] = "ユンカース・カム・ヒア　～メモリーズ・オブ・ユー～",
+   [1] = "ユンカース・カム・ヒア ～メモリーズ・オブ・ユー～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9206] = {
+  ["main"] = "Boku wa Tomodachi ga Sukunai Add-on Disc",
+  ["official"] = {
+   [1] = "僕は友達が少ない あどおんでぃすく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9207] = {
+  ["main"] = "Mangirl!",
+  ["official"] = {
+   [1] = "まんがーる!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9208] = {
+  ["main"] = "Nerawareta Gakuen",
+  ["official"] = {
+   [1] = "ねらわれた学園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Haunted Academy",
+   },
+  },
+ [9209] = {
+  ["main"] = "Starless",
+  ["official"] = {
+   [1] = "STARLESS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9210] = {
+  ["main"] = "Christmas",
+  ["official"] = {
+   [1] = "クリスマス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9211] = {
+  ["main"] = "Tanken Driland",
+  ["official"] = {
+   [1] = "探検ドリランド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9213] = {
+  ["main"] = "Shadow Love",
+  ["official"] = {
+   [1] = "그림자 사랑",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9214] = {
+  ["main"] = "Zetsuen no Tempest: The Civilization Blaster",
+  ["official"] = {
+   [1] = "絶園のテンペスト THE CIVILIZATION BLASTER",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Forsaken Tempest",
+   },
+  },
+ [9215] = {
+  ["main"] = "Animeka",
+  ["official"] = {
+   [1] = "アニメカ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9216] = {
+  ["main"] = "Pocket Monsters: Best Wishes Season 2",
+  ["official"] = {
+   [1] = "ポケットモンスター ベストウイッシュ シーズン2",
    },
   ["short"] = {
    },
