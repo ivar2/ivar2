@@ -374,8 +374,8 @@ local customHosts = {
 				function(data)
 					local info = json.decode(utify8(data))
 					local name = info.user.name
-					local screen_name = info.user.screen_name
-					local tweet = info.text
+					local screen_name = html2unicode(info.user.screen_name)
+					local tweet = html2unicode(info.text)
 
 					local out = {}
 					if(name == screen_name) then
