@@ -1299,10 +1299,11 @@ return {
    [2] = "Samurai X: Reminiscence",
    [3] = "Samurajus X: Pasitikėjimas ir išdavystė",
    [4] = "Samuray X: Güven ve İhanet",
-   [5] = "Бродяга Кэнсин OVA-1",
-   [6] = "Бурлака Кеншін: Романтичні оповідання про мечника епохи Мейджі – Спогади",
-   [7] = "Руроуні Кеншін: Оповіді Мейджі - Спогади",
-   [8] = "ساموراي اكس: الثقة و الخيانة",
+   [5] = "Trust and Betrayal",
+   [6] = "Бродяга Кэнсин OVA-1",
+   [7] = "Бурлака Кеншін: Романтичні оповідання про мечника епохи Мейджі – Спогади",
+   [8] = "Руроуні Кеншін: Оповіді Мейджі - Спогади",
+   [9] = "ساموراي اكس: الثقة و الخيانة",
    },
   },
  [74] = {
@@ -2851,7 +2852,8 @@ return {
    [2] = "mew",
    },
   ["syn"] = {
-   [1] = "Токио Мяу Мяу",
+   [1] = "Mew Mew Power",
+   [2] = "Токио Мяу Мяу",
    },
   },
  [162] = {
@@ -8813,10 +8815,11 @@ return {
   ["main"] = "Panda Kopanda",
   ["official"] = {
    [1] = "Die Abenteuer des kleinen Panda (Teil 1)",
-   [2] = "Panda! Go Panda!",
-   [3] = "Suur panda ja väike panda",
-   [4] = "Панда большая и маленькая",
-   [5] = "パンダコパンダ",
+   [2] = "Panda Petit Panda",
+   [3] = "Panda! Go Panda!",
+   [4] = "Suur panda ja väike panda",
+   [5] = "Панда большая и маленькая",
+   [6] = "パンダコパンダ",
    },
   ["short"] = {
    },
@@ -8894,15 +8897,18 @@ return {
    },
   },
  [536] = {
-  ["main"] = "You`re Under Arrest: Taiho Shichau zo",
+  ["main"] = "You`re Under Arrest: No Mercy!!",
   ["official"] = {
-   [1] = "YOU`RE UNDER ARREST ～逮捕しちゃうぞ～",
+   [1] = "YOU`RE UNDER ARREST NO MERCY!!",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "You`re Under Arrest! No Mercy!!",
-   [2] = "yua no mercy",
+   [1] = "YOU`RE UNDER ARREST ～逮捕しちゃうぞ～",
+   [2] = "You`re Under Arrest! No Mercy!!",
+   [3] = "You`re Under Arrest: Taiho Shichau zo",
+   [4] = "yua no mercy",
+   [5] = "逮捕しちゃうぞ YOU`RE UNDER ARREST NO MERCY!!",
    },
   },
  [537] = {
@@ -14740,7 +14746,7 @@ return {
    },
   },
  [952] = {
-  ["main"] = "Mazinger Z tai Ankoku Daishougun",
+  ["main"] = "Mazinger Z Tai Ankoku Daishougun",
   ["official"] = {
    [1] = "Mazinga Z contro il Generale Nero",
    [2] = "マジンガーZ対暗黒大将軍",
@@ -25690,7 +25696,7 @@ return {
    },
   },
  [1817] = {
-  ["main"] = "Toushou!! Ramenman",
+  ["main"] = "Tatakae!! Ramenman",
   ["official"] = {
    [1] = "闘将!!拉麺男",
    },
@@ -27075,7 +27081,7 @@ return {
    },
   },
  [1918] = {
-  ["main"] = "Wakusei Robo Danguard Ace tai Konchuu Robot Gundan",
+  ["main"] = "Wakusei Robo Danguard Ace Tai Konchuu Robot Gundan",
   ["official"] = {
    [1] = "惑星ロボ ダンガードA[エース]対昆虫ロボット軍団",
    },
@@ -28597,7 +28603,7 @@ return {
    },
   },
  [2047] = {
-  ["main"] = "UFO Robo Grendizer tai Great Mazinger",
+  ["main"] = "UFO Robo Grendizer Tai Great Mazinger",
   ["official"] = {
    [1] = "Goldorak contre Great Mazinger",
    [2] = "Mazinga contro Goldrake",
@@ -41025,7 +41031,7 @@ return {
    },
   },
  [3178] = {
-  ["main"] = "Lupin tai Holmes",
+  ["main"] = "Lupin Tai Holmes",
   ["official"] = {
    [1] = "Arsenio Lupin contra Sherlock Holmes",
    [2] = "Lupin Against Holmes",
@@ -45238,7 +45244,7 @@ return {
    },
   },
  [3598] = {
-  ["main"] = "Meitantei Conan: Hyouteki wa Kogoro! Shounen Tanteidan Maruchichousa",
+  ["main"] = "Meitantei Conan: Hyouteki wa Kogoro! Shounen Tanteidan Maruhi Chousa",
   ["official"] = {
    [1] = "Detective Conan: The Target is Kogoro! The Detective Boys` Secret Investigation",
    [2] = "名探偵コナン 標的は小五郎!!少年探偵団マル秘調査",
@@ -46752,7 +46758,7 @@ return {
   ["syn"] = {
    [1] = "Girls in Summer Clothes",
    [2] = "Natsufuku no Shoujotachi",
-   [3] = "夏服の少女たち　ヒロシマ・昭和20年8月6日",
+   [3] = "夏服の少女たち ヒロシマ・昭和20年8月6日",
    },
   },
  [3956] = {
@@ -48284,7 +48290,7 @@ return {
    },
   },
  [4089] = {
-  ["main"] = "Heisei Inu Monogatari Bow Movie",
+  ["main"] = "Heisei Inu Monogatari Bow: Genshi Inu Monogatari Bow",
   ["official"] = {
    [1] = "平成イヌ物語バウ 原始イヌ物語バウ",
    },
@@ -48813,7 +48819,7 @@ return {
    },
   },
  [4138] = {
-  ["main"] = "Maria-sama ga Miteru 3rd",
+  ["main"] = "Maria-sama ga Miteru 3rd Season",
   ["official"] = {
    [1] = "Maria Watches Over Us 3rd Season OVA",
    [2] = "マリア様がみてる 3rdシーズン",
@@ -54299,7 +54305,7 @@ return {
    },
   },
  [4675] = {
-  ["main"] = "Mirai Shounen Conan 2: Taiga Daibouken",
+  ["main"] = "Mirai Shounen Conan II: Taiga Adventure",
   ["official"] = {
    [1] = "未来少年コナンII タイガアドベンチャー",
    },
@@ -63007,7 +63013,7 @@ return {
    },
   },
  [5638] = {
-  ["main"] = "Ai no Katachi: Ecchi na Onna no Ko wa Kirai... Desu ka?",
+  ["main"] = "Ai no Katachi: Ecchi na Onna no Ko wa Kirai... Desuka?",
   ["official"] = {
    [1] = "The Shape of Love",
    [2] = "愛のカタチ ～エッチな女のコは嫌い...ですか?～",
@@ -67538,7 +67544,7 @@ return {
    },
   },
  [6240] = {
-  ["main"] = "Meitantei Conan: Joshi Kousein Tantei Suzuki Sonoko no Jikenbo",
+  ["main"] = "Meitantei Conan: Joshikousei Tantei Suzuki Sonoko no Jikenbo",
   ["official"] = {
    [1] = "名探偵コナン 女子高生探偵 鈴木園子の事件簿",
    },
@@ -68687,7 +68693,6 @@ return {
    [1] = "アスラクライン",
    },
   ["short"] = {
-   [1] = "Asura",
    },
   ["syn"] = {
    [1] = "Asura Cryin` 1",
@@ -73086,7 +73091,7 @@ return {
    },
   },
  [6859] = {
-  ["main"] = "Benkei tai Ushiwaka",
+  ["main"] = "Benkei Tai Ushiwaka",
   ["official"] = {
    [1] = "べんけい対ウシワカ",
    },
@@ -74267,8 +74272,9 @@ return {
   ["main"] = "Panda Kopanda: Amefuri Circus no Maki",
   ["official"] = {
    [1] = "Die Abenteuer des kleinen Panda (Teil 2)",
-   [2] = "Suur panda ja väike panda: tsirkus vihmas",
-   [3] = "パンダ・コパンダ 雨ふりサーカスの巻",
+   [2] = "Panda Petit Panda (2e film)",
+   [3] = "Suur panda ja väike panda: tsirkus vihmas",
+   [4] = "パンダ・コパンダ 雨ふりサーカスの巻",
    },
   ["short"] = {
    },
@@ -79589,8 +79595,9 @@ return {
    },
   ["short"] = {
    [1] = "oreimo",
-   [2] = "おれいも",
-   [3] = "俺妹",
+   [2] = "oreimo1",
+   [3] = "おれいも",
+   [4] = "俺妹",
    },
   ["syn"] = {
    [1] = "My Little Sister Can`t Be This Cute",
@@ -81940,6 +81947,7 @@ return {
    [1] = "Doraemon The Movie 2011",
    },
   ["syn"] = {
+   [1] = "Nobita and the New Steel Troops",
    },
   },
  [7771] = {
@@ -84468,6 +84476,7 @@ return {
  [8035] = {
   ["main"] = "Doudou",
   ["official"] = {
+   [1] = "Doudou",
    },
   ["short"] = {
    },
@@ -89210,6 +89219,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ホーリーナイト",
    },
   },
  [8542] = {
@@ -91444,8 +91454,9 @@ return {
   ["main"] = "Taekwon V",
   ["official"] = {
    [1] = "Voltar the Invincible",
-   [2] = "テコンV",
-   [3] = "로보트 태권브이",
+   [2] = "Βολτάρ ο αήτητος",
+   [3] = "テコンV",
+   [4] = "로보트 태권브이",
    },
   ["short"] = {
    },
@@ -91573,6 +91584,8 @@ return {
    [1] = "夏色キセキ",
    },
   ["short"] = {
+   [1] = "natsukise",
+   [2] = "夏キセ",
    },
   ["syn"] = {
    [1] = "Natsuiro Kiseki",
@@ -91709,6 +91722,7 @@ return {
    [1] = "恋と選挙とチョコレート",
    },
   ["short"] = {
+   [1] = "Koichoco",
    },
   ["syn"] = {
    [1] = "Love, Election, & Chocolate",
@@ -92011,8 +92025,9 @@ return {
  [8853] = {
   ["main"] = "Nazo no Kanojo X",
   ["official"] = {
-   [1] = "謎の彼女X",
-   [2] = "수수께끼 그녀 X",
+   [1] = "L`enigmatica fidanzata X",
+   [2] = "謎の彼女X",
+   [3] = "수수께끼 그녀 X",
    },
   ["short"] = {
    [1] = "MGX",
@@ -92103,9 +92118,9 @@ return {
    },
   },
  [8861] = {
-  ["main"] = "Campione!",
+  ["main"] = "Campione! Matsurowanu Kamigami to Kami Koroshi no Maou",
   ["official"] = {
-   [1] = "カンピオーネ!",
+   [1] = "カンピオーネ! ~まつろわぬ神々と神殺しの魔王~",
    },
   ["short"] = {
    },
@@ -92285,9 +92300,10 @@ return {
    },
   ["syn"] = {
    [1] = "Fate/Zero 2ndシーズン",
-   [2] = "Fate/Zero: 2nd Season",
-   [3] = "Fate/Zero: Second Season",
-   [4] = "フェイト/ゼロ 2ndシーズン",
+   [2] = "Fate/Zero II",
+   [3] = "Fate/Zero: 2nd Season",
+   [4] = "Fate/Zero: Second Season",
+   [5] = "フェイト/ゼロ 2ndシーズン",
    },
   },
  [8881] = {
@@ -92301,14 +92317,15 @@ return {
    },
   },
  [8882] = {
-  ["main"] = "Dog Days 2",
+  ["main"] = "Dog Days`",
   ["official"] = {
-   [1] = "DOG DAYS 2",
+   [1] = "DOG DAYS`",
    },
   ["short"] = {
    [1] = "dd2",
    },
   ["syn"] = {
+   [1] = "Dog Days 2",
    },
   },
  [8883] = {
@@ -92340,7 +92357,8 @@ return {
    },
   ["short"] = {
    [1] = "Horizon 2",
-   [2] = "horizon2",
+   [2] = "Horizon II",
+   [3] = "horizon2",
    },
   ["syn"] = {
    [1] = "Horizon on the Middle of Nowhere 2",
@@ -92722,13 +92740,14 @@ return {
    },
   },
  [8937] = {
-  ["main"] = "Ashura",
+  ["main"] = "Asura",
   ["official"] = {
    [1] = "アシュラ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ashura",
    },
   },
  [8938] = {
@@ -92765,6 +92784,7 @@ return {
   ["main"] = "The Big O (2003)",
   ["official"] = {
    [1] = "THEビッグオー (2003)",
+   [2] = "The Big O (2003)",
    },
   ["short"] = {
    },
@@ -93701,9 +93721,9 @@ return {
    },
   },
  [9045] = {
-  ["main"] = "Inazuma Eleven GO 2: Chrono Stone",
+  ["main"] = "Inazuma Eleven GO: Chrono Stone",
   ["official"] = {
-   [1] = "イナズマイレブンGO 2 クロノ・ストーン",
+   [1] = "イナズマイレブンGO クロノ・ストーン",
    },
   ["short"] = {
    },
@@ -94437,6 +94457,7 @@ return {
    [1] = "俺の妹がこんなに可愛いわけがない 第2期",
    },
   ["short"] = {
+   [1] = "oreimo2",
    },
   ["syn"] = {
    },
@@ -95096,6 +95117,60 @@ return {
   ["main"] = "Pocket Monsters: Best Wishes Season 2",
   ["official"] = {
    [1] = "ポケットモンスター ベストウイッシュ シーズン2",
+   },
+  ["short"] = {
+   [1] = "pkmnbw2",
+   [2] = "pmbw2",
+   [3] = "pokemon bw2",
+   },
+  ["syn"] = {
+   },
+  },
+ [9226] = {
+  ["main"] = "Papa Love: Kyonyuubi Shiritsu Musume",
+  ["official"] = {
+   [1] = "パパラブ 巨乳美尻っ娘",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9227] = {
+  ["main"] = "Girls und Panzer",
+  ["official"] = {
+   [1] = "GIRLS und PANZER",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ガールズ&パンツァー",
+   },
+  },
+ [9228] = {
+  ["main"] = "Pocket Monsters Black 2/White 2 Shoukai SP Movie",
+  ["official"] = {
+   [1] = "『ポケットモンスターブラック２・ホワイト２』紹介SPムービー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9229] = {
+  ["main"] = "Hori-san to Miyamura-kun",
+  ["official"] = {
+   [1] = "堀さんと宮村くん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9230] = {
+  ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
+  ["official"] = {
+   [1] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
    },
   ["short"] = {
    },
