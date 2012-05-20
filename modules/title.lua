@@ -417,7 +417,7 @@ local customHosts = {
 				if(title == 'imgur: the simple image sharer') then
 					output = url
 				else
-					output = string.format('%s - %s', url, title)
+					output = string.format('%s - %s', url, title:sub(1, -9))
 				end
 
 				metadata.processed[index] = {
