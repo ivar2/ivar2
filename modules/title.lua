@@ -399,6 +399,41 @@ local customHosts = {
 			return true
 		end
 	end,
+
+	['i%.imgur%.com'] = function(metadata, index, info, indexString)
+		if(not info.path) then return end
+
+		local hash = info.path:match('/([^.]+)%.[a-zA-Z]+$')
+		if(not hash) then return end
+
+		local url = ('http://imgur.com/gallery/%s'):format(hash)
+		simplehttp(
+			url,
+
+			function(data, _, response)
+				local title = handleData(response.headers, data)
+
+				local output
+				if(title == 'imgur: the simple image sharer') then
+					output = url
+				else
+					output = string.format('%s - %s', url, title)
+				end
+
+				metadata.processed[index] = {
+					index = indexString,
+					output = output,
+				}
+				metadata.num = metadata.num - 1
+
+				handleOutput(metadata)
+			end,
+			true,
+			DL_LIMIT
+		)
+
+		return true
+	end,
 }
 
 local fetchInformation = function(metadata, index, url, indexString)
