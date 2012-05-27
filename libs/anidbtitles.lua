@@ -2402,7 +2402,8 @@ return {
    [3] = "HxHTV",
    },
   ["syn"] = {
-   [1] = "Охотник х Охотник",
+   [1] = "Hunter x Hunter",
+   [2] = "Охотник х Охотник",
    },
   },
  [133] = {
@@ -13497,6 +13498,7 @@ return {
   ["syn"] = {
    [1] = "Divine Love",
    [2] = "Dvine Luv",
+   [3] = "Dvine[LUV]",
    },
   },
  [863] = {
@@ -19776,7 +19778,8 @@ return {
   ["main"] = "Kaiketsu Zorori",
   ["official"] = {
    [1] = "Zorori Le Magnifique - Saison 1",
-   [2] = "かいけつゾロリ",
+   [2] = "Zorori, O Fantástico",
+   [3] = "かいけつゾロリ",
    },
   ["short"] = {
    },
@@ -20493,7 +20496,7 @@ return {
    },
   },
  [1389] = {
-  ["main"] = "Ace o Nerae: Final Stage",
+  ["main"] = "Ace o Nerae! Final Stage",
   ["official"] = {
    [1] = "Jeu, set et match - Stage final",
    [2] = "「エースをねらえ!」 -ファイナル・ステージ-",
@@ -23043,12 +23046,13 @@ return {
  [1587] = {
   ["main"] = "Darcrows",
   ["official"] = {
-   [1] = "Darcrows",
-   [2] = "ダークロウズ",
+   [1] = "DARCROWS",
+   [2] = "Darcrows",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ダークロウズ",
    },
   },
  [1588] = {
@@ -24093,9 +24097,10 @@ return {
    [2] = "God? Save Our King",
    [3] = "Kyo Kara Maoh!",
    [4] = "Kyou Kara Maoh!",
-   [5] = "Отныне Мао, король демонов!",
-   [6] = "מהיום מלך השדים",
-   [7] = "今日から㋮王!",
+   [5] = "Maou from now on!",
+   [6] = "Отныне Мао, король демонов!",
+   [7] = "מהיום מלך השדים",
+   [8] = "今日から㋮王!",
    },
   },
  [1678] = {
@@ -26622,13 +26627,14 @@ return {
  [1884] = {
   ["main"] = "Saint Seiya: Jashin Eris",
   ["official"] = {
-   [1] = "I Cavalieri dello Zodiaco - La Dea della Discordia",
-   [2] = "Les chevaliers du zodiaque - Éris : la légende de la pomme d`or",
-   [3] = "Los caballeros del zodiaco: la leyenda de la manzana de oro",
-   [4] = "Saint Seiya: O Santo Guerreiro",
-   [5] = "Saint-Seiya - Die Krieger des Zodiac, Movie 1: Die Legende des goldenen Apfels",
-   [6] = "Рыцари Зодиака: Легенда о Золотом Яблоке",
-   [7] = "聖闘士星矢 邪神エリス",
+   [1] = "A Lenda da Maçã de Ouro",
+   [2] = "I Cavalieri dello Zodiaco - La Dea della Discordia",
+   [3] = "Les chevaliers du zodiaque - Éris : la légende de la pomme d`or",
+   [4] = "Los caballeros del zodiaco: la leyenda de la manzana de oro",
+   [5] = "Saint Seiya: O Santo Guerreiro",
+   [6] = "Saint-Seiya - Die Krieger des Zodiac, Movie 1: Die Legende des goldenen Apfels",
+   [7] = "Рыцари Зодиака: Легенда о Золотом Яблоке",
+   [8] = "聖闘士星矢 邪神エリス",
    },
   ["short"] = {
    },
@@ -26654,10 +26660,11 @@ return {
  [1886] = {
   ["main"] = "Saint Seiya: Kamigami no Atsuki Tatakai",
   ["official"] = {
-   [1] = "A Grande Batalha dos Deuses",
-   [2] = "I Cavalieri dello Zodiaco - L`ardente scontro degli Dei",
-   [3] = "Les chevaliers du zodiaque - Asgard : le brûlant combat des dieux",
-   [4] = "聖闘士星矢 神々の熱き戦い",
+   [1] = "A Batalha dos Deuses",
+   [2] = "A Grande Batalha dos Deuses",
+   [3] = "I Cavalieri dello Zodiaco - L`ardente scontro degli Dei",
+   [4] = "Les chevaliers du zodiaque - Asgard : le brûlant combat des dieux",
+   [5] = "聖闘士星矢 神々の熱き戦い",
    },
   ["short"] = {
    },
@@ -32950,7 +32957,8 @@ return {
    [1] = "Puschel",
    },
   ["syn"] = {
-   [1] = "Seton Animal Chronicles: Banner the Squirrel",
+   [1] = "Puschel, das Eichhörnchen",
+   [2] = "Seton Animal Chronicles: Banner the Squirrel",
    },
   },
  [2384] = {
@@ -45079,7 +45087,8 @@ return {
   ["main"] = "Majime ni Fumajime Kaiketsu Zorori",
   ["official"] = {
    [1] = "Zorori Le Magnifique - Saison 2",
-   [2] = "まじめにふまじめ かいけつゾロリ",
+   [2] = "Zorori, O Fantástico - Temporada 2",
+   [3] = "まじめにふまじめ かいけつゾロリ",
    },
   ["short"] = {
    },
@@ -45736,8 +45745,9 @@ return {
   ["syn"] = {
    [1] = "Adesugata Mahou no Mami Pelsia Emi",
    [2] = "Adesugata Mahou no Mami Persia Emi",
-   [3] = "Les trois charmantes jeunes filles magiques",
-   [4] = "Mami, Emi, Pelsia: Adesugata Mahou no Sannin Musume",
+   [3] = "Charming Figures of the Magical Girl Trio",
+   [4] = "Les trois charmantes jeunes filles magiques",
+   [5] = "Mami, Emi, Pelsia: Adesugata Mahou no Sannin Musume",
    },
   },
  [3634] = {
@@ -49435,7 +49445,7 @@ return {
    },
   },
  [4184] = {
-  ["main"] = "5-tou ni Naritai",
+  ["main"] = "5-tou ni Naritai.",
   ["official"] = {
    [1] = "5等になりたい.",
    },
@@ -49878,7 +49888,7 @@ return {
    },
   },
  [4217] = {
-  ["main"] = "O-bake no... Holly",
+  ["main"] = "Obake no... Holly",
   ["official"] = {
    [1] = "המפחידנים",
    [2] = "おばけの... ホーリー",
@@ -49914,7 +49924,7 @@ return {
    },
   },
  [4220] = {
-  ["main"] = "Condition Green",
+  ["main"] = "Inferious Wakusei Senshi Gaiden Condition Green",
   ["official"] = {
    [1] = "Inferious Interplanetary War Chronicle Condition Green",
    [2] = "インフェリウス 惑星戦史外伝 コンディショングリーン",
@@ -49923,7 +49933,6 @@ return {
    },
   ["syn"] = {
    [1] = "Condition Green: Platoon # 801",
-   [2] = "Inferious Wakusei Senshi Gaiden Condition Green",
    },
   },
  [4221] = {
@@ -50024,7 +50033,7 @@ return {
    },
   },
  [4230] = {
-  ["main"] = "Ginga Tetsudou 999: Kimi wa Senshi no You ni Ikirareru ka!!",
+  ["main"] = "Ginga Tetsudou 999: Kimi wa Senshi no You ni Ikirareruka!!",
   ["official"] = {
    [1] = "Galaxy Express 999: Can You Live Like A Warrior?",
    [2] = "銀河鉄道999 君は戦士のように生きられるか!!",
@@ -50466,7 +50475,7 @@ return {
  [4267] = {
   ["main"] = "Yawara! Special - Zutto Kimi no Koto ga ...",
   ["official"] = {
-   [1] = "YAWARA! スペシャル ずっと君のことが... .",
+   [1] = "YAWARA! Special ずっと君のことが... .",
    },
   ["short"] = {
    },
@@ -54617,6 +54626,7 @@ return {
   ["syn"] = {
    [1] = "Deep - Sea Legend Meremanoid",
    [2] = "Meremanoid - La leggenda delle profondità marine",
+   [3] = "深海伝説マーメノイド",
    },
   },
  [4701] = {
@@ -61551,7 +61561,8 @@ return {
  [5469] = {
   ["main"] = "Tokubetsu Byoutou",
   ["official"] = {
-   [1] = "特別病棟",
+   [1] = "Restricted Hospital Ward",
+   [2] = "特別病棟",
    },
   ["short"] = {
    },
@@ -70169,6 +70180,7 @@ return {
   ["short"] = {
    [1] = "Seitokai",
    [2] = "SnI",
+   [3] = "seizon",
    },
   ["syn"] = {
    [1] = "Seitokai no Ichizon: Hekiyou Gakuen Seitokai Gijiroku",
@@ -74583,12 +74595,13 @@ return {
    [2] = "Class President is a Maid!",
    [3] = "Kaichou wa Maid-sama",
    [4] = "Przewodnicząca jest Pokojówką!",
-   [5] = "Şefa clasei e servitoare.",
-   [6] = "Президент - горничная!",
-   [7] = "Президент студенческого совета — горничная!",
-   [8] = "Президент студради - покоївка",
-   [9] = "Училищната президентка е прислужничка!",
-   [10] = "会长是女仆大人",
+   [5] = "kaichou wa maidsama",
+   [6] = "Şefa clasei e servitoare.",
+   [7] = "Президент - горничная!",
+   [8] = "Президент студенческого совета — горничная!",
+   [9] = "Президент студради - покоївка",
+   [10] = "Училищната президентка е прислужничка!",
+   [11] = "会长是女仆大人",
    },
   },
  [7009] = {
@@ -78844,8 +78857,7 @@ return {
   ["main"] = "Mouretsu Pirates",
   ["official"] = {
    [1] = "Bodacious Space Pirates",
-   [2] = "Moretsu Pirates",
-   [3] = "モーレツ宇宙海賊[パイレーツ] BODACIOUS SPACE PIRATES",
+   [2] = "モーレツ宇宙海賊[パイレーツ] BODACIOUS SPACE PIRATES",
    },
   ["short"] = {
    [1] = "mopai",
@@ -78853,12 +78865,11 @@ return {
    [3] = "モーパイ",
    },
   ["syn"] = {
-   [1] = "Bodacious Space Pirates",
-   [2] = "Mini-skirt Space Pirates",
-   [3] = "Moretsu Pirates",
-   [4] = "Moretsu Uchuu Kaizoku",
-   [5] = "Mouretsu Space Pirates",
-   [6] = "Mouretsu Uchuu Kaizoku",
+   [1] = "Mini-skirt Space Pirates",
+   [2] = "Moretsu Pirates",
+   [3] = "Moretsu Uchuu Kaizoku",
+   [4] = "Mouretsu Space Pirates",
+   [5] = "Mouretsu Uchuu Kaizoku",
    },
   },
  [7444] = {
@@ -80047,8 +80058,7 @@ return {
    [1] = "twgok1",
    [2] = "Одному лишь Богу ведомый мир",
    [3] = "Светът, който само Бог познава",
-   [4] = "العالم الذي لا يعلمه إلا الله",
-   [5] = "دنیایی که فقط خدا می شناسد",
+   [4] = "دنیایی که فقط خدا می شناسد",
    },
   },
  [7569] = {
@@ -81544,12 +81554,13 @@ return {
    [3] = "シュタゲ",
    },
   ["syn"] = {
-   [1] = "Ворота Штейна",
-   [2] = "Врата Штейна",
-   [3] = "シュタインズ ゲート",
-   [4] = "シュタインズ・ゲート",
-   [5] = "命运石之门",
-   [6] = "슈타인즈 게이트",
+   [1] = "Брама Штайна",
+   [2] = "Ворота Штейна",
+   [3] = "Врата Штейна",
+   [4] = "シュタインズ ゲート",
+   [5] = "シュタインズ・ゲート",
+   [6] = "命运石之门",
+   [7] = "슈타인즈 게이트",
    },
   },
  [7730] = {
@@ -83864,8 +83875,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Interlude: Thatness and Thereness",
-   [2] = "Rahxephon OVA",
+   [1] = "Her and Herself",
+   [2] = "Interlude: Thatness and Thereness",
+   [3] = "RahXephon Plusculus OVA: Her And Herself",
+   [4] = "Rahxephon OVA",
    },
   },
  [7970] = {
@@ -85646,7 +85659,10 @@ return {
    [2] = "SnQ2",
    },
   ["syn"] = {
-   [1] = "The Qwaser of Stigmata II",
+   [1] = "Seikon no Qwaser 2",
+   [2] = "The Qwaser of Stigmata II",
+   [3] = "qwaser 2",
+   [4] = "seikon 2",
    },
   },
  [8156] = {
@@ -86441,7 +86457,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "오나x2",
+   [1] = "ONAx2",
+   [2] = "오나x2",
    },
   },
  [8242] = {
@@ -88826,6 +88843,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Suite Precure Movie: Take Back! The Miraculous Melody That Connects Hearts",
    },
   },
  [8490] = {
@@ -91589,6 +91607,7 @@ return {
    },
   ["syn"] = {
    [1] = "Natsuiro Kiseki",
+   [2] = "Summer-colored Miracle",
    },
   },
  [8805] = {
@@ -92342,7 +92361,8 @@ return {
  [8885] = {
   ["main"] = "Toshokan Sensou: Kakumei no Tsubasa",
   ["official"] = {
-   [1] = "図書館戦争 革命のつばさ",
+   [1] = "Library War: The Wings of Revolution",
+   [2] = "図書館戦争 革命のつばさ",
    },
   ["short"] = {
    },
@@ -95171,6 +95191,58 @@ return {
   ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
   ["official"] = {
    [1] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9231] = {
+  ["main"] = "Tantei Opera Milky Holmes: Alternative One - Kobayashi Opera to 5-Mai no Kaiga",
+  ["official"] = {
+   [1] = "探偵オペラ　ミルキィホームズ　Alternative ONE 〜小林オペラと5枚の絵画〜",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9233] = {
+  ["main"] = "Getter Robo Movie",
+  ["official"] = {
+   [1] = "劇場版  ゲッターロボ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9235] = {
+  ["main"] = "Tonari no Kaibutsu-kun",
+  ["official"] = {
+   [1] = "となりの怪物くん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Tonari no Kaibutsukun",
+   },
+  },
+ [9236] = {
+  ["main"] = "Suki-tte Ii na yo.",
+  ["official"] = {
+   [1] = "好きっていいなよ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Say I Love You",
+   },
+  },
+ [9237] = {
+  ["main"] = "Busou Shinki",
+  ["official"] = {
+   [1] = "武装神姫",
    },
   ["short"] = {
    },
