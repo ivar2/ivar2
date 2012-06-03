@@ -1885,15 +1885,16 @@ return {
  [104] = {
   ["main"] = "Hoshi no Koe",
   ["official"] = {
-   [1] = "Kauge tähe hääl",
-   [2] = "La Voce delle Stelle",
-   [3] = "The Voices of a Distant Star",
-   [4] = "The voices of a distant star",
-   [5] = "Voices of a Distant Star",
-   [6] = "Голос далёкой звезды",
-   [7] = "เสียงเพรียกจากดวงดาว",
-   [8] = "ほしのこえ",
-   [9] = "별의 목소리",
+   [1] = "Hlasy z hvězd",
+   [2] = "Kauge tähe hääl",
+   [3] = "La Voce delle Stelle",
+   [4] = "The Voices of a Distant Star",
+   [5] = "The voices of a distant star",
+   [6] = "Voices of a Distant Star",
+   [7] = "Голос далёкой звезды",
+   [8] = "เสียงเพรียกจากดวงดาว",
+   [9] = "ほしのこえ",
+   [10] = "별의 목소리",
    },
   ["short"] = {
    [1] = "hnc",
@@ -4753,9 +4754,10 @@ return {
    [1] = "InuYasha - The Movie: Affections Touching Across Time",
    [2] = "InuYasha The Movie: Affections Touching Across Time",
    [3] = "Inuyasha - A Mozifilm: Időtlen Szerelem",
-   [4] = "Inuyasha - The Movie: Un sentimento che trascende il tempo",
-   [5] = "אינויאשה: הסרט",
-   [6] = "犬夜叉 時代を越える想い",
+   [4] = "Inuyasha - El Amor Que Trasciende El Tiempo",
+   [5] = "Inuyasha - The Movie: Un sentimento che trascende il tempo",
+   [6] = "אינויאשה: הסרט",
+   [7] = "犬夜叉 時代を越える想い",
    },
   ["short"] = {
    [1] = "IY Movie",
@@ -5655,7 +5657,10 @@ return {
    [4] = "ぼくの地球を守って",
    },
   ["short"] = {
-   [1] = "psme",
+   [1] = "bokutama",
+   [2] = "psme",
+   [3] = "ぼくたま",
+   [4] = "ぼく地球",
    },
   ["syn"] = {
    [1] = "Boku no Chikyuu wo Mamotte",
@@ -9027,7 +9032,7 @@ return {
    },
   },
  [545] = {
-  ["main"] = "Hunter X Hunter - Greed Island",
+  ["main"] = "Hunter X Hunter: Greed Island",
   ["official"] = {
    [1] = "Hunter X Hunter - Greed Island",
    [2] = "ฮันเตอร์ x ฮันเตอร์ OVA GI",
@@ -14073,9 +14078,10 @@ return {
    [1] = "InuYasha - The Movie 2: The Castle Beyond the Looking Glass",
    [2] = "InuYasha The Movie 2: The Castle Beyond the Looking Glass",
    [3] = "Inuyasha - A Film 2: Kastély a tükör mögött",
-   [4] = "Inuyasha - The Movie 2: Il castello al di là dello specchio",
-   [5] = "Inuyasha 2 - O Castelo de Sonhos no Espelho",
-   [6] = "犬夜叉 鏡の中の夢幻城",
+   [4] = "Inuyasha - El Castillo Al Otro Lado Del Espejo",
+   [5] = "Inuyasha - The Movie 2: Il castello al di là dello specchio",
+   [6] = "Inuyasha 2 - O Castelo de Sonhos no Espelho",
+   [7] = "犬夜叉 鏡の中の夢幻城",
    },
   ["short"] = {
    [1] = "IY KnNnM",
@@ -19562,7 +19568,8 @@ return {
    [2] = "InuYasha - The Movie 3: Swords of an Honorable Ruler",
    [3] = "InuYasha The Movie 3: Swords of an Honorable Ruler",
    [4] = "Inuyasha - A Film 3: A világhódítás kardjai",
-   [5] = "犬夜叉 天下覇道の剣",
+   [5] = "Inuyasha - La Espada Que Domina El Mundo",
+   [6] = "犬夜叉 天下覇道の剣",
    },
   ["short"] = {
    [1] = "IY Movie 3",
@@ -20994,7 +21001,7 @@ return {
    },
   },
  [1427] = {
-  ["main"] = "Hunter X Hunter - Greed Island Final",
+  ["main"] = "Hunter X Hunter: Greed Island Final",
   ["official"] = {
    [1] = "Hunter X Hunter - Greed Island Final",
    [2] = "ฮันเตอร์ x ฮันเตอร์ OVA GI FINAL",
@@ -32159,7 +32166,8 @@ return {
    [1] = "InuYasha - The Movie 4: Fire on the Mystic Island",
    [2] = "InuYasha The Movie 4: Fire on the Mystic Island",
    [3] = "Inuyasha - A Film 4: A vörösen lángoló Haurai sziget",
-   [4] = "犬夜叉 紅蓮の蓬莱島",
+   [4] = "Inuyasha - Fuego En Las Islas Místicas",
+   [5] = "犬夜叉 紅蓮の蓬莱島",
    },
   ["short"] = {
    [1] = "IY GnH",
@@ -65273,6 +65281,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Toybox Series #3: Picture Book 1936",
    },
   },
  [5960] = {
@@ -83602,6 +83611,7 @@ return {
   ["main"] = "Dororon Enma-kun: Meeramera",
   ["official"] = {
    [1] = "Dororonえん魔くん メ～ラめら",
+   [2] = "Ghastly Prince Enma Burning Up",
    },
   ["short"] = {
    [1] = "meeramera",
@@ -83987,7 +83997,7 @@ return {
  [7980] = {
   ["main"] = "Kyouiku Shidou The Animation",
   ["official"] = {
-   [1] = "教育指導 The Animation",
+   [1] = "教育指導 THE ANIMATION",
    },
   ["short"] = {
    },
@@ -86450,14 +86460,14 @@ return {
    },
   },
  [8241] = {
-  ["main"] = "Ona x2",
+  ["main"] = "Onanie",
   ["official"] = {
-   [1] = "オナx2",
+   [1] = "オナ×2",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ONAx2",
+   [1] = "Onax2",
    [2] = "오나x2",
    },
   },
@@ -90003,14 +90013,16 @@ return {
    },
   },
  [8625] = {
-  ["main"] = "Another 0-kan",
+  ["main"] = "Another: The Other - Inga",
   ["official"] = {
-   [1] = "Another 0巻",
+   [1] = "Another The Other -因果-",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "アナザー 0巻",
+   [1] = "Another 0巻",
+   [2] = "アナザー 0巻",
+   [3] = "アナザー The Other -因果-",
    },
   },
  [8626] = {
@@ -90921,7 +90933,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Houkago Nyannyan",
+   [1] = "Cipki po zajęciach",
+   [2] = "Houkago Nyannyan",
    },
   },
  [8731] = {
@@ -90932,7 +90945,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ラブリディ",
+   [1] = "Śliczny dzień",
+   [2] = "ラブリディ",
    },
   },
  [8732] = {
@@ -91404,6 +91418,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Złośliwa i sucza Sukumi",
    },
   },
  [8782] = {
@@ -91530,6 +91545,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Moja młodsza siostrzyczka - Diabełek z małymi cycuszkami",
    },
   },
  [8795] = {
@@ -92781,9 +92797,9 @@ return {
    },
   },
  [8939] = {
-  ["main"] = "Eiga Smile Precure!",
+  ["main"] = "Eiga Smile Precure! Ehon no Naka wa Minna Chiguhagu!",
   ["official"] = {
-   [1] = "映画 スマイルプリキュア!",
+   [1] = "映画 スマイルプリキュア! 絵本の中はみんなチグハグ!",
    },
   ["short"] = {
    },
@@ -93091,6 +93107,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "La storia della Arcana Famiglia",
    },
   },
  [8974] = {
@@ -93105,7 +93122,7 @@ return {
    },
   },
  [8975] = {
-  ["main"] = "Pabu & Mojizu",
+  ["main"] = "Paboo & Mojies",
   ["official"] = {
    [1] = "パブー&モジーズ",
    },
@@ -93151,6 +93168,7 @@ return {
    },
   ["syn"] = {
    [1] = "Please Rape Me!",
+   [2] = "Proszę, zgwałć mnie!",
    },
   },
  [8979] = {
@@ -93421,6 +93439,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cycata fantazja",
    },
   },
  [9011] = {
@@ -93644,7 +93663,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Princess Limited!",
+   [1] = "Ograniczona księżniczka!",
+   [2] = "Princess Limited!",
    },
   },
  [9034] = {
@@ -95067,6 +95087,7 @@ return {
    [1] = "ねらわれた学園",
    },
   ["short"] = {
+   [1] = "neragaku",
    },
   ["syn"] = {
    [1] = "Haunted Academy",
@@ -95200,7 +95221,7 @@ return {
  [9231] = {
   ["main"] = "Tantei Opera Milky Holmes: Alternative One - Kobayashi Opera to 5-Mai no Kaiga",
   ["official"] = {
-   [1] = "探偵オペラ　ミルキィホームズ　Alternative ONE 〜小林オペラと5枚の絵画〜",
+   [1] = "探偵オペラ ミルキィホームズ Alternative ONE ~小林オペラと5枚の絵画~",
    },
   ["short"] = {
    },
@@ -95243,6 +95264,77 @@ return {
   ["main"] = "Busou Shinki",
   ["official"] = {
    [1] = "武装神姫",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9239] = {
+  ["main"] = "Arisa Good Luck",
+  ["official"] = {
+   [1] = "ありさ☆Good Luck",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ありさ Good Luck",
+   },
+  },
+ [9240] = {
+  ["main"] = "Persona 4 the Animation: The Factor of Hope",
+  ["official"] = {
+   [1] = "ペルソナ4 the Animation -the Factor of Hope-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9241] = {
+  ["main"] = "Kore wa Zombie Desuka? Of the Dead OVA",
+  ["official"] = {
+   [1] = "これはゾンビですか？オブ・ザ・デッド 第０話",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9242] = {
+  ["main"] = "Vivid Red Operation",
+  ["official"] = {
+   [1] = "ビビッドレッド・オペレーション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9243] = {
+  ["main"] = "Kita e: Pure Session",
+  ["official"] = {
+   [1] = "北へ. PURE SESSION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9245] = {
+  ["main"] = "Ebiten: Kouritsu Ebi Sugawa Koukou Tenmonbu OAD",
+  ["official"] = {
+   [1] = "えびてん 公立海老栖川高校天悶部 OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9246] = {
+  ["main"] = "Shoujo x Shoujo x Shoujo The Animation",
+  ["official"] = {
+   [1] = "少女x少女x少女 THE ANIMATION",
    },
   ["short"] = {
    },
