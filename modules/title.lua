@@ -185,8 +185,8 @@ local handleOutput = function(metadata)
 	if(metadata.num ~= 0) then return end
 
 	local output = {}
-	for i=1, #metadata.processed do
-		local lookup = metadata.processed[i]
+	for i=1, #metadata.queue do
+		local lookup = metadata.queue[i]
 		if(lookup.output) then
 			table.insert(output, string.format('\002[%s]\002 %s', lookup.index, lookup.output))
 		end
@@ -198,7 +198,7 @@ local handleOutput = function(metadata)
 end
 
 local customHosts = {
-	['%.donmai%.us'] = function(metadata, index, info, indexString)
+	['%.donmai%.us'] = function(queue, info)
 		local path = info.path
 
 		if(path and path:match('/data/([^%.]+)')) then
@@ -211,12 +211,8 @@ local customHosts = {
 					local id = data:match(' id="(%d+)"')
 					local tags = data:match('tags="([^"]+)')
 
-					metadata.processed[index] = {
-						index = indexString,
-						output = string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags))
-					}
-
-					handleOutput(metadata)
+					queue.output = string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags))
+					handleOutput(queue.master)
 				end
 			)
 
@@ -224,7 +220,7 @@ local customHosts = {
 		end
 	end,
 
-	['open.spotify.com'] = function(metadata, index, info, indexString)
+	['open.spotify.com'] = function(queue, info)
 		local path = info.path
 
 		if(path and path:match'/(%w+)/(.+)') then
@@ -235,12 +231,8 @@ local customHosts = {
 					local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
 					local uri = data:match('property="og:audio" content="([^"]+)"')
 
-					metadata.processed[index] = {
-						index = indexString,
-						output = string.format('%s: %s', title, uri)
-					}
-
-					handleOutput(metadata)
+					queue.output = string.format('%s: %s', title, uri)
+					handleOutput(queue.master)
 				end
 			)
 
@@ -248,7 +240,7 @@ local customHosts = {
 		end
 	end,
 
-	['farm%d+%.static%.flickr.com'] = function(metadata, index, info, indexString)
+	['farm%d+%.static%.flickr.com'] = function(queue, info)
 		local path = info.path
 
 		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
@@ -269,17 +261,14 @@ local customHosts = {
 					local title = html2unicode(data:match('<title>([^<]+)</title>'))
 					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
 
-					metadata.processed[index] = {
-						index = indexString,
-						output = string.format(
-							'%s by %s <http://flic.kr/p/%s/>',
-							title,
-							owner,
-							base58.encode(photoid)
-						)
-					}
+					queue.output = string.format(
+						'%s by %s <http://flic.kr/p/%s/>',
+						title,
+						owner,
+						base58.encode(photoid)
+					)
 
-					handleOutput(metadata)
+					handleOutput(queue.master)
 				end
 			)
 
@@ -287,7 +276,7 @@ local customHosts = {
 		end
 	end,
 
-	['youtube%.com'] = function(metadata, index, info, indexString)
+	['youtube%.com'] = function(queue, info)
 		local query = info.query
 		local path = info.path
 		local fragment = info.fragment
@@ -338,12 +327,8 @@ local customHosts = {
 						output = string.format('%s by %s', title, uploader)
 					end
 
-					metadata.processed[index] = {
-						index = indexString,
-						output = output
-					}
-
-					handleOutput(metadata)
+					queue.output = output
+					handleOutput(queue.master)
 				end
 			)
 
@@ -351,7 +336,7 @@ local customHosts = {
 		end
 	end,
 
-	['twitter%.com'] = function(metadata, index, info, indexString)
+	['twitter%.com'] = function(queue, info)
 		local query = info.query
 		local path = info.path
 		local fragment = info.fragment
@@ -383,12 +368,8 @@ local customHosts = {
 
 					table.insert(out, tweet)
 
-					metadata.processed[index] = {
-						index = indexString,
-						output = table.concat(out, ' ')
-					}
-
-					handleOutput(metadata)
+					queue.output = table.concat(out, ' ')
+					handleOutput(queue.master)
 				end
 			)
 
@@ -396,7 +377,7 @@ local customHosts = {
 		end
 	end,
 
-	['i%.imgur%.com'] = function(metadata, index, info, indexString)
+	['i%.imgur%.com'] = function(queue, info)
 		if(not info.path) then return end
 
 		local hash = info.path:match('/([^.]+)%.[a-zA-Z]+$')
@@ -416,12 +397,8 @@ local customHosts = {
 					output = string.format('%s - %s', url, title:sub(1, -9))
 				end
 
-				metadata.processed[index] = {
-					index = indexString,
-					output = output,
-				}
-
-				handleOutput(metadata)
+				queue.output = output
+				handleOutput(queue.master)
 			end,
 			true,
 			DL_LIMIT
@@ -431,35 +408,33 @@ local customHosts = {
 	end,
 }
 
-local fetchInformation = function(metadata, index, url, indexString)
-	local info = uri_parse(url)
-	info.url = url
+local fetchInformation = function(queue)
+	local info = uri_parse(queue.url)
+	info.url = queue.url
 	if(info.path == '') then
-		url = url .. '/'
+		queue.url = queue.url .. '/'
 	end
 
 	local host = info.host:gsub('^www%.', '')
 	for pattern, customHandler in next, customHosts do
-		if(host:match(pattern) and customHandler(metadata, index, info, indexString)) then
+		if(host:match(pattern) and customHandler(queue, info)) then
 			return
 		end
 	end
 
 	simplehttp(
-		parseAJAX(url):gsub('#.*$', ''),
+		parseAJAX(queue.url):gsub('#.*$', ''),
 
 		function(data, _, response)
 			local message = handleData(response.headers, data)
-			if(#url > 140 and message) then
-				x0.lookup(url, function(short)
-					metadata.processed[index] = {index = indexString, output = string.format('Downgraded URL: %s - %s', short, message)}
-
-					handleOutput(metadata)
+			if(#queue.url > 140 and message) then
+				x0.lookup(queue.url, function(short)
+					queue.output = string.format('Downgraded URL: %s - %s', short, message)
+					handleOutput(queue.master)
 				end)
 			else
-				metadata.processed[index] = {index = indexString, output = message}
-
-				handleOutput(metadata)
+				queue.output = message
+				handleOutput(queue.master)
 			end
 		end,
 		true,
@@ -505,12 +480,17 @@ return {
 					num = #tmpOrder,
 					source = source,
 					destination = destination,
-					processed = {},
+					queue = {},
 				}
 
 				for i=1, #tmpOrder do
 					local url = tmpOrder[i]
-					fetchInformation(output, i, url, tmp[url])
+					output.queue[i] = {
+						index = tmp[url],
+						url = url,
+						master = output,
+					}
+					fetchInformation(output.queue[i])
 				end
 			end
 		end,
