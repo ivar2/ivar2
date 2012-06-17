@@ -64,7 +64,7 @@ customHosts['youtube%.com'] = function(queue, info)
 	end
 end
 
-customHosts['youtu.be'] = function(queue, info)
+customHosts['youtu%.be'] = function(queue, info)
 	local path = info.path
 	local vid
 
