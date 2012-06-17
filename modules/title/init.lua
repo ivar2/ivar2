@@ -4,8 +4,7 @@ local uri = require"handler.uri"
 local simplehttp = require'simplehttp'
 local x0 = require'x0'
 local html2unicode = require'html'
-local json = require'json'
-local base58 = require'base58'
+local nixio = require'nixio'
 
 local uri_parse = uri.parse
 local DL_LIMIT = 2^17
@@ -197,208 +196,38 @@ local handleOutput = function(metadata)
 	end
 end
 
-local customHosts = {
-	['%.donmai%.us'] = function(queue, info)
-		local path = info.path
+local customHosts = {}
+do
+	local _PROXY = setmetatable(
+		{
+			customHosts = customHosts,
+			DL_LIMIT = DL_LIMIT,
 
-		if(path and path:match('/data/([^%.]+)')) then
-			local md5 = path:match('/data/([^%.]+)')
-			local domain = info.host
-			simplehttp(
-				string.format('http://%s/post/index.xml?tags=md5:%s', domain, md5),
+			ivar2 = ivar2,
+			utify8 = utify8,
+			handleData = handleData,
+			limitOutput = limitOutput,
 
-				function(data, url, response)
-					local id = data:match(' id="(%d+)"')
-					local tags = data:match('tags="([^"]+)')
+		},{ __index = _G }
+	)
 
-					queue:done(string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags)))
-				end
-			)
+	local path = 'modules/title/sites/'
+	for custom in nixio.fs.dir(path) do
+		local customFile, customError = loadfile(path .. custom)
+		if(customFile) then
+			setfenv(customFile, _PROXY)
 
-			return true
-		end
-	end,
-
-	['open.spotify.com'] = function(queue, info)
-		local path = info.path
-
-		if(path and path:match'/(%w+)/(.+)') then
-			simplehttp(
-				info.url,
-
-				function(data, url, response)
-					local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
-					local uri = data:match('property="og:audio" content="([^"]+)"')
-
-					queue:done(string.format('%s: %s', title, uri))
-				end
-			)
-
-			return true
-		end
-	end,
-
-	['farm%d+%.static%.flickr.com'] = function(queue, info)
-		local path = info.path
-
-		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
-		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
-		-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
-		if(path and path:match('/[^/]+/([^_]+)')) then
-			local photoid = path:match('/[^/]+/([^_]+)')
-			local url = string.format(
-				"http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=%s&photo_id=%s",
-				ivar2.config.flickrAPIKey,
-				photoid
-			)
-
-			simplehttp(
-				url,
-
-				function(data, url, response)
-					local title = html2unicode(data:match('<title>([^<]+)</title>'))
-					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
-
-					queue:done(string.format(
-						'%s by %s <http://flic.kr/p/%s/>',
-						title,
-						owner,
-						base58.encode(photoid)
-					))
-				end
-			)
-
-			return true
-		end
-	end,
-
-	['youtube%.com'] = function(queue, info)
-		local query = info.query
-		local path = info.path
-		local fragment = info.fragment
-		local vid
-
-		if(query and query:match('v=[a-zA-Z0-9_-]+')) then
-			vid = query:match('v=([a-zA-Z0-9_-]+)')
-		elseif(fragment and fragment:match('.*/%d+/([a-zA-Z0-9_-]+)')) then
-			vid = fragment:match('.*/%d+/([a-zA-Z0-9_-]+)')
-		-- FIXME: lua-handler's URI parser doesn't split path and fragment
-		-- correctly when there's no query present.
-		elseif(path) then
-			if(path:match('#.*/%d+/([a-zA-Z0-9_-]+)')) then
-				vid = path:match('#.*/%d+/([a-zA-Z0-9_-]+)')
-			elseif(path:match('/v/([a-zA-Z0-9_-]+)')) then
-				vid = path:match('/v/([a-zA-Z0-9_-]+)')
+			local success, message = pcall(customFile, ivar2)
+			if(not success) then
+				ivar2:Log('error', 'Unable to execute custom title handler %s: %s.', custom:sub(1, -5), message)
+			else
+				ivar2:Log('info', 'Loading custom title handler: %s.', custom:sub(1, -5))
 			end
+		else
+			ivar2:Log('error', 'Unable to load custom title handler %s: %s.', custom:sub(1, -5), customError)
 		end
-
-		if(vid) then
-			simplehttp(
-				'https://gdata.youtube.com/feeds/api/videos/' .. vid,
-
-				function(data)
-					local title = html2unicode(data:match("<title type='text'>([^<]+)</title>"))
-					local uploader = html2unicode(data:match('<author><name>([^<]+)</name>'))
-					local duration = tonumber(data:match("<yt:duration seconds='(%d+)'/>"))
-
-					local output
-					if(duration) then
-						if(duration > 3600) then
-							duration = string.format(
-								'%d:%02d:%02d',
-								math.floor(duration / 3600),
-								math.floor((duration % 3600) / 60),
-								duration % 60
-							)
-						else
-							duration = string.format(
-								'%d:%02d',
-								math.floor(duration / 60),
-								duration % 60
-							)
-						end
-
-						output = string.format('%s (%s) by %s', title, duration, uploader)
-					else
-						output = string.format('%s by %s', title, uploader)
-					end
-
-					queue:done(output)
-				end
-			)
-
-			return true
-		end
-	end,
-
-	['twitter%.com'] = function(queue, info)
-		local query = info.query
-		local path = info.path
-		local fragment = info.fragment
-		local tid
-
-		local pattern = '/status[es]*/(%d+)'
-		if(fragment and fragment:match(pattern)) then
-			tid = fragment:match(pattern)
-		elseif(path and path:match(pattern)) then
-			tid = path:match(pattern)
-		end
-
-		if(tid) then
-			simplehttp(
-				('https://api.twitter.com/1/statuses/show/%s.json'):format(tid),
-
-				function(data)
-					local info = json.decode(utify8(data))
-					local name = info.user.name
-					local screen_name = html2unicode(info.user.screen_name)
-					local tweet = html2unicode(info.text)
-
-					local out = {}
-					if(name == screen_name) then
-						table.insert(out, string.format('\002%s\002:', name))
-					else
-						table.insert(out, string.format('\002%s\002 @%s:', name, screen_name))
-					end
-
-					table.insert(out, tweet)
-					queue:done(table.concat(out, ' '))
-				end
-			)
-
-			return true
-		end
-	end,
-
-	['i%.imgur%.com'] = function(queue, info)
-		if(not info.path) then return end
-
-		local hash = info.path:match('/([^.]+)%.[a-zA-Z]+$')
-		if(not hash) then return end
-
-		local url = ('http://imgur.com/gallery/%s'):format(hash)
-		simplehttp(
-			url,
-
-			function(data, _, response)
-				local title = handleData(response.headers, data)
-
-				local output
-				if(title == 'imgur: the simple image sharer') then
-					output = url
-				else
-					output = string.format('%s - %s', url, title:sub(1, -9))
-				end
-
-				queue:done(output)
-			end,
-			true,
-			DL_LIMIT
-		)
-
-		return true
-	end,
-}
+	end
+end
 
 local fetchInformation = function(queue)
 	local info = uri_parse(queue.url)
