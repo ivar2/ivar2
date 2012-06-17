@@ -211,8 +211,7 @@ local customHosts = {
 					local id = data:match(' id="(%d+)"')
 					local tags = data:match('tags="([^"]+)')
 
-					queue.output = string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags))
-					handleOutput(queue.master)
+					queue:done(string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags)))
 				end
 			)
 
@@ -231,8 +230,7 @@ local customHosts = {
 					local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
 					local uri = data:match('property="og:audio" content="([^"]+)"')
 
-					queue.output = string.format('%s: %s', title, uri)
-					handleOutput(queue.master)
+					queue:done(string.format('%s: %s', title, uri))
 				end
 			)
 
@@ -261,14 +259,12 @@ local customHosts = {
 					local title = html2unicode(data:match('<title>([^<]+)</title>'))
 					local owner = html2unicode(data:match('realname="([^"]+)"') or data:match('nsid="([^"]+)"'))
 
-					queue.output = string.format(
+					queue:done(string.format(
 						'%s by %s <http://flic.kr/p/%s/>',
 						title,
 						owner,
 						base58.encode(photoid)
-					)
-
-					handleOutput(queue.master)
+					))
 				end
 			)
 
@@ -327,8 +323,7 @@ local customHosts = {
 						output = string.format('%s by %s', title, uploader)
 					end
 
-					queue.output = output
-					handleOutput(queue.master)
+					queue:done(output)
 				end
 			)
 
@@ -367,9 +362,7 @@ local customHosts = {
 					end
 
 					table.insert(out, tweet)
-
-					queue.output = table.concat(out, ' ')
-					handleOutput(queue.master)
+					queue:done(table.concat(out, ' '))
 				end
 			)
 
@@ -397,8 +390,7 @@ local customHosts = {
 					output = string.format('%s - %s', url, title:sub(1, -9))
 				end
 
-				queue.output = output
-				handleOutput(queue.master)
+				queue:done(output)
 			end,
 			true,
 			DL_LIMIT
@@ -429,12 +421,10 @@ local fetchInformation = function(queue)
 			local message = handleData(response.headers, data)
 			if(#queue.url > 140 and message) then
 				x0.lookup(queue.url, function(short)
-					queue.output = string.format('Downgraded URL: %s - %s', short, message)
-					handleOutput(queue.master)
+					queue:done(string.format('Downgraded URL: %s - %s', short, message))
 				end)
 			else
-				queue.output = message
-				handleOutput(queue.master)
+				queue:done(message)
 			end
 		end,
 		true,
@@ -488,7 +478,10 @@ return {
 					output.queue[i] = {
 						index = tmp[url],
 						url = url,
-						master = output,
+						done = function(self, msg)
+							self.output = msg
+							handleOutput(output)
+						end,
 					}
 					fetchInformation(output.queue[i])
 				end
