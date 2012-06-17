@@ -37,22 +37,6 @@ local smartEscape = function(str)
 	end)
 end
 
-local utify8 = function(str)
-	str = str:gsub("\\u(....)", function(n)
-		n = tonumber(n, 16)
-
-		if(n < 128) then
-			return string.char(n)
-		elseif(n < 2048) then
-			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
-		else
-			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
-		end
-	end)
-
-	return str
-end
-
 local parseAJAX
 do
 	local escapedChars = {}
@@ -204,7 +188,6 @@ do
 			DL_LIMIT = DL_LIMIT,
 
 			ivar2 = ivar2,
-			utify8 = utify8,
 			handleData = handleData,
 			limitOutput = limitOutput,
 

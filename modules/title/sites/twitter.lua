@@ -2,6 +2,22 @@ local simplehttp = require'simplehttp'
 local json = require'json'
 local html2unicode = require'html'
 
+local utify8 = function(str)
+	str = str:gsub("\\u(....)", function(n)
+		n = tonumber(n, 16)
+
+		if(n < 128) then
+			return string.char(n)
+		elseif(n < 2048) then
+			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
+		else
+			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
+		end
+	end)
+
+	return str
+end
+
 customHosts['twitter%.com'] = function(queue, info)
 	local query = info.query
 	local path = info.path
