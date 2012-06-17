@@ -181,6 +181,7 @@ local handleData = function(headers, data)
 end
 
 local handleOutput = function(metadata)
+	metadata.num = metadata.num - 1
 	if(metadata.num ~= 0) then return end
 
 	local output = {}
@@ -214,7 +215,6 @@ local customHosts = {
 						index = indexString,
 						output = string.format('http://%s/post/show/%s/ - %s', domain, id, limitOutput(tags))
 					}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end
@@ -239,7 +239,6 @@ local customHosts = {
 						index = indexString,
 						output = string.format('%s: %s', title, uri)
 					}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end
@@ -279,7 +278,6 @@ local customHosts = {
 							base58.encode(photoid)
 						)
 					}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end
@@ -344,7 +342,6 @@ local customHosts = {
 						index = indexString,
 						output = output
 					}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end
@@ -390,7 +387,6 @@ local customHosts = {
 						index = indexString,
 						output = table.concat(out, ' ')
 					}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end
@@ -424,7 +420,6 @@ local customHosts = {
 					index = indexString,
 					output = output,
 				}
-				metadata.num = metadata.num - 1
 
 				handleOutput(metadata)
 			end,
@@ -458,13 +453,11 @@ local fetchInformation = function(metadata, index, url, indexString)
 			if(#url > 140 and message) then
 				x0.lookup(url, function(short)
 					metadata.processed[index] = {index = indexString, output = string.format('Downgraded URL: %s - %s', short, message)}
-					metadata.num = metadata.num - 1
 
 					handleOutput(metadata)
 				end)
 			else
 				metadata.processed[index] = {index = indexString, output = message}
-				metadata.num = metadata.num - 1
 
 				handleOutput(metadata)
 			end
