@@ -5670,12 +5670,13 @@ return {
   ["official"] = {
    [1] = "Conan",
    [2] = "Conan le fils du futur",
-   [3] = "Conan, el niño del futuro",
-   [4] = "Conan, il ragazzo del futuro",
-   [5] = "Conan, o Rapaz do Futuro",
-   [6] = "Future Boy Conan",
-   [7] = "مغامرات عدنان",
-   [8] = "未来少年コナン",
+   [3] = "Conan, el nen del futur",
+   [4] = "Conan, el niño del futuro",
+   [5] = "Conan, il ragazzo del futuro",
+   [6] = "Conan, o Rapaz do Futuro",
+   [7] = "Future Boy Conan",
+   [8] = "مغامرات عدنان",
+   [9] = "未来少年コナン",
    },
   ["short"] = {
    [1] = "FBC",
@@ -8388,8 +8389,8 @@ return {
  [505] = {
   ["main"] = "Captain Tsubasa",
   ["official"] = {
-   [1] = "Campeones",
-   [2] = "Campeões - Oliver e Benji",
+   [1] = "Campeones - Oliver y Benji",
+   [2] = "Campeões: Oliver e Benji - A Caminho da Glória",
    [3] = "Die tollen Fußballstars",
    [4] = "Flash Kicker",
    [5] = "Holly e Benji, due fuoriclasse",
@@ -8424,8 +8425,7 @@ return {
   ["main"] = "Shin Captain Tsubasa",
   ["official"] = {
    [1] = "Holly e Benji: Sfida al mondo",
-   [2] = "Supercampeones",
-   [3] = "新・キャプテン翼",
+   [2] = "新・キャプテン翼",
    },
   ["short"] = {
    },
@@ -8439,9 +8439,10 @@ return {
   ["official"] = {
    [1] = "Captain Tsubasa J",
    [2] = "Che campioni Holly e Benji!!!",
-   [3] = "Tsubasa Kapitány 2",
-   [4] = "كابتن ماجد الجزء الثالث",
-   [5] = "キャプテン翼J",
+   [3] = "Super Campeones",
+   [4] = "Tsubasa Kapitány 2",
+   [5] = "كابتن ماجد الجزء الثالث",
+   [6] = "キャプテン翼J",
    },
   ["short"] = {
    },
@@ -8452,21 +8453,23 @@ return {
  [508] = {
   ["main"] = "Captain Tsubasa (2001)",
   ["official"] = {
-   [1] = "Căpitanul Tsubasa",
-   [2] = "Holly e Benji Forever",
-   [3] = "Kapitán Tsubasa",
-   [4] = "Olive et Tom - Le retour",
-   [5] = "Super Kickers 2006 - Captain Tsubasa",
-   [6] = "Tsubasa Kapitány (2001)",
-   [7] = "الشبح",
-   [8] = "キャプテン翼 (2001)",
+   [1] = "Campeones Hacia el Mundial",
+   [2] = "Campeões: Oliver e Benji",
+   [3] = "Căpitanul Tsubasa",
+   [4] = "Holly e Benji Forever",
+   [5] = "Kapitán Tsubasa",
+   [6] = "Olive et Tom - Le retour",
+   [7] = "Super Kickers 2006 - Captain Tsubasa",
+   [8] = "Tsubasa Kapitány (2001)",
+   [9] = "الشبح",
+   [10] = "キャプテン翼 (2001)",
    },
   ["short"] = {
    [1] = "CT2001",
    },
   ["syn"] = {
    [1] = "Campeoes - Oliver e Benji",
-   [2] = "Capitão Tsubasa - O caminho para a taça mundial 2002",
+   [2] = "Capitão Tsubasa - O Caminho para a Taça Mundial 2002",
    [3] = "Captain Tsubasa",
    [4] = "Captain Tsubasa Road to 2002",
    [5] = "Captain Tsubasa: Road to Dream",
@@ -18774,7 +18777,8 @@ return {
    [1] = "One Piece: Chopper Kingdom of Strange Animal Island",
    [2] = "One Piece: Chopper auf der Insel der seltsamen Tiere",
    [3] = "One Piece: Il Tesoro del Re",
-   [4] = "ワンピース 珍獣島のチョッパー王国",
+   [4] = "One Piece: Le royaume de Chopper l`étrange île des animaux",
+   [5] = "ワンピース 珍獣島のチョッパー王国",
    },
   ["short"] = {
    [1] = "OP Movie 3",
@@ -18790,7 +18794,8 @@ return {
    [1] = "One Piece: Das Dead End Rennen",
    [2] = "One Piece: Dead End",
    [3] = "One Piece: Trappola mortale",
-   [4] = "ワンピース デッドエンドの冒険",
+   [4] = "One Piece: Une aventure sans issue",
+   [5] = "ワンピース デッドエンドの冒険",
    },
   ["short"] = {
    [1] = "OP Movie 4",
@@ -19285,10 +19290,10 @@ return {
    },
   },
  [1302] = {
-  ["main"] = "Houkago Mania Club",
+  ["main"] = "Houkago Mania Club: Koi no Hoshii no - The Animation",
   ["official"] = {
    [1] = "El club de las pervertidas",
-   [2] = "放課後マニア倶楽部",
+   [2] = "放課後マニア倶楽部 -濃いの欲しいの- THE ANIMATION",
    },
   ["short"] = {
    },
@@ -21539,8 +21544,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Fire Emblem: Mystery of the Emblem",
-   [2] = "ファイアーエムブレム 紋章の謎",
+   [1] = "Fire Emblem: Monshou no Nazo",
+   [2] = "Fire Emblem: Mystery of the Emblem",
+   [3] = "ファイアーエムブレム 紋章の謎",
    },
   },
  [1472] = {
@@ -34956,7 +34962,7 @@ return {
   ["main"] = "Houkago Ren`ai Club: Koi no Etude",
   ["official"] = {
    [1] = "El club del amor tras las clases",
-   [2] = "放課後恋愛クラブ～恋のエチュード～",
+   [2] = "放課後恋愛クラブ -恋のエチュード-",
    },
   ["short"] = {
    [1] = "Koikura",
@@ -51094,7 +51100,7 @@ return {
  [4337] = {
   ["main"] = "Imouto",
   ["official"] = {
-   [1] = "Sex Exchange (1)",
+   [1] = "Sex Exchange",
    [2] = "義妹 [いもうと]",
    },
   ["short"] = {
@@ -56825,9 +56831,10 @@ return {
  [4937] = {
   ["main"] = "Meitantei Conan: Konpeki no Jolly Roger",
   ["official"] = {
-   [1] = "Detektiv Conan - 11.Film: Die azurblaue Piratenflagge",
-   [2] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 11 ตอน ปริศนามหาขุมทรัพย์โจรสลัด",
-   [3] = "名探偵コナン 紺碧の棺(ジョリー・ロジャー)",
+   [1] = "Detective Conan: L`isola mortale",
+   [2] = "Detektiv Conan - 11.Film: Die azurblaue Piratenflagge",
+   [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 11 ตอน ปริศนามหาขุมทรัพย์โจรสลัด",
+   [4] = "名探偵コナン 紺碧の棺(ジョリー・ロジャー)",
    },
   ["short"] = {
    },
@@ -66739,6 +66746,7 @@ return {
    [3] = "テガミバチ ～光と青の幻想夜話～",
    },
   ["short"] = {
+   [1] = "tbova",
    },
   ["syn"] = {
    [1] = "Tegami Bachi OVA",
@@ -72084,6 +72092,7 @@ return {
    },
   ["short"] = {
    [1] = "bee",
+   [2] = "lb",
    },
   ["syn"] = {
    [1] = "Letter Bee TV",
@@ -77420,7 +77429,8 @@ return {
    },
   ["syn"] = {
    [1] = "Ojousama wa H ga Osuki ~The Animation~",
-   [2] = "Госпожа любит извращения",
+   [2] = "Princess Loves H",
+   [3] = "Госпожа любит извращения",
    },
   },
  [7304] = {
@@ -79495,7 +79505,8 @@ return {
    },
   ["syn"] = {
    [1] = "Jellyfish Princess",
-   [2] = "海月姬",
+   [2] = "Принцесса-медуза",
+   [3] = "海月姬",
    },
   },
  [7532] = {
@@ -83126,7 +83137,7 @@ return {
    },
   },
  [7907] = {
-  ["main"] = "Gakkou no Kowai Uwasa Shin: Hanako-san ga Kita!!",
+  ["main"] = "Gakkou no Kowai Uwasa: Shin Hanako-san ga Kita!!",
   ["official"] = {
    [1] = "学校のコワイうわさ 新・花子さんがきた!!",
    },
@@ -84542,15 +84553,15 @@ return {
  [8062] = {
   ["main"] = "Astarotte no Omocha!",
   ["official"] = {
-   [1] = "アスタロッテのおもちゃ!",
+   [1] = "Astarotte`s Toy",
+   [2] = "アスタロッテのおもちゃ!",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Astarotte Toy",
-   [2] = "Astarotte`s Toy",
-   [3] = "Lotte no Omocha!",
-   [4] = "Lotte`s Toy",
+   [2] = "Lotte no Omocha!",
+   [3] = "Lotte`s Toy",
    },
   },
  [8063] = {
@@ -85097,11 +85108,14 @@ return {
    },
   },
  [8118] = {
-  ["main"] = "Hime Gal Paradise",
+  ["main"] = "Hime Gal Paradise: Love and Beauty",
   ["official"] = {
-   [1] = "姫ギャル♥パラダイス",
+   [1] = "姫ギャル♥パラダイス ラブ&ビューティー★",
    },
   ["short"] = {
+   [1] = "himepara",
+   [2] = "姫♥パラ",
+   [3] = "姫パラ",
    },
   ["syn"] = {
    },
@@ -85319,7 +85333,7 @@ return {
    },
   },
  [8141] = {
-  ["main"] = "Kokuriko Saka kara",
+  ["main"] = "Coquelicot Saka kara",
   ["official"] = {
    [1] = "From Up On Poppy Hill",
    [2] = "La colline aux coquelicots",
@@ -85328,8 +85342,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kokuriko-Zaka Kara",
-   [2] = "Kokurikozaka Kara",
+   [1] = "Kokuriko Saka kara",
+   [2] = "Kokuriko-Zaka Kara",
+   [3] = "Kokurikozaka Kara",
    },
   },
  [8142] = {
@@ -86855,8 +86870,9 @@ return {
    },
   ["syn"] = {
    [1] = "Shinryaku! Ika Musume 2",
-   [2] = "Squid Girl 2",
-   [3] = "侵略!?イカ娘",
+   [2] = "Shinryaku! Ika Musume II",
+   [3] = "Squid Girl 2",
+   [4] = "侵略!?イカ娘",
    },
   },
  [8295] = {
@@ -89486,6 +89502,8 @@ return {
    [1] = "君のいる町 黄昏交差点",
    },
   ["short"] = {
+   [1] = "kimimachi",
+   [2] = "君町",
    },
   ["syn"] = {
    [1] = "A Town Where You Live",
@@ -89824,7 +89842,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Тохо - Калейдоскоп Фантазии",
+   [1] = "Touhou Gensou Mangekyou: The Memories of Phantasm",
+   [2] = "Тохо - Калейдоскоп Фантазии",
    },
   },
  [8625] = {
@@ -90085,6 +90104,7 @@ return {
    [3] = "偽物語",
    },
   ["short"] = {
+   [1] = "NMG",
    },
   ["syn"] = {
    [1] = "Bogustory",
@@ -90294,7 +90314,8 @@ return {
  [8679] = {
   ["main"] = "Poyopoyo Kansatsu Nikki",
   ["official"] = {
-   [1] = "ポヨポヨ観察日記",
+   [1] = "Poyopoyo",
+   [2] = "ポヨポヨ観察日記",
    },
   ["short"] = {
    },
@@ -90314,7 +90335,8 @@ return {
  [8681] = {
   ["main"] = "Kuroko no Baske",
   ["official"] = {
-   [1] = "黒子のバスケ",
+   [1] = "Kuroko`s Basketball",
+   [2] = "黒子のバスケ",
    },
   ["short"] = {
    [1] = "Kurobas",
@@ -90323,8 +90345,7 @@ return {
   ["syn"] = {
    [1] = "Kuroko no Basket",
    [2] = "Kuroko no Basuke",
-   [3] = "Kuroko`s Basketball",
-   [4] = "The Basketball Which Kuroko Plays",
+   [3] = "The Basketball Which Kuroko Plays",
    },
   },
  [8682] = {
@@ -91399,7 +91420,8 @@ return {
  [8799] = {
   ["main"] = "Medaka Box",
   ["official"] = {
-   [1] = "めだかボックス",
+   [1] = "Medaka Box",
+   [2] = "めだかボックス",
    },
   ["short"] = {
    },
@@ -91655,7 +91677,8 @@ return {
  [8829] = {
   ["main"] = "Upotte!!",
   ["official"] = {
-   [1] = "うぽって!!",
+   [1] = "Upotte!!",
+   [2] = "うぽって!!",
    },
   ["short"] = {
    },
@@ -91753,7 +91776,8 @@ return {
  [8840] = {
   ["main"] = "Hiiro no Kakera: Tamayori Hime Kitan",
   ["official"] = {
-   [1] = "緋色の欠片 玉依姫奇譚",
+   [1] = "Hiiro no Kakera",
+   [2] = "緋色の欠片 玉依姫奇譚",
    },
   ["short"] = {
    },
@@ -91807,8 +91831,9 @@ return {
  [8848] = {
   ["main"] = "Sengoku Collection",
   ["official"] = {
-   [1] = "戦国コレクション",
-   [2] = "전국 컬렉션",
+   [1] = "Sengoku Collection",
+   [2] = "戦国コレクション",
+   [3] = "전국 컬렉션",
    },
   ["short"] = {
    [1] = "sencolle",
@@ -91816,6 +91841,7 @@ return {
    },
   ["syn"] = {
    [1] = "Parallel World Samurai",
+   [2] = "Sengoku Collection (Parallel World Samurai)",
    },
   },
  [8849] = {
@@ -91855,7 +91881,8 @@ return {
    [1] = "黄昏乙女xアムネジア",
    },
   ["short"] = {
-   [1] = "amnesia",
+   [1] = "TOxA",
+   [2] = "amnesia",
    },
   ["syn"] = {
    [1] = "Dusk Maiden of Amnesia",
@@ -91866,8 +91893,9 @@ return {
   ["main"] = "Nazo no Kanojo X",
   ["official"] = {
    [1] = "L`enigmatica fidanzata X",
-   [2] = "謎の彼女X",
-   [3] = "수수께끼 그녀 X",
+   [2] = "Mysterious Girlfriend X",
+   [3] = "謎の彼女X",
+   [4] = "수수께끼 그녀 X",
    },
   ["short"] = {
    [1] = "MGX",
@@ -91876,8 +91904,7 @@ return {
    [4] = "謎彼X",
    },
   ["syn"] = {
-   [1] = "Mysterious Girlfriend X",
-   [2] = "دوست دختر اسرارآمیز",
+   [1] = "دوست دختر اسرارآمیز",
    },
   },
  [8854] = {
@@ -92234,6 +92261,7 @@ return {
    [2] = "여기저기",
    },
   ["short"] = {
+   [1] = "ackc",
    },
   ["syn"] = {
    },
@@ -92650,6 +92678,7 @@ return {
   ["main"] = "Naruto Sugoi Doryoku: Rock Lee no Seishun Full-Power Ninden",
   ["official"] = {
    [1] = "NARUTO SD[すごいどりょく] ロック・リーの青春フルパワー忍伝",
+   [2] = "NARUTO Spin-Off: Rock Lee & His Ninja Pals",
    },
   ["short"] = {
    },
@@ -93101,12 +93130,12 @@ return {
  [8992] = {
   ["main"] = "Yurumates 3D",
   ["official"] = {
-   [1] = "ゆるめいつ3でぃ",
+   [1] = "Yurumate3Dei",
+   [2] = "ゆるめいつ3でぃ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Yurumate3Dei",
    },
   },
  [8994] = {
@@ -93353,13 +93382,14 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pokemon: Movie 15 Short",
    },
   },
  [9022] = {
   ["main"] = "Monsuno",
   ["official"] = {
    [1] = "Monsuno",
-   [2] = "モンスーノ",
+   [2] = "獣旋バトル モンスーノ",
    },
   ["short"] = {
    },
@@ -93482,7 +93512,8 @@ return {
  [9034] = {
   ["main"] = "Recorder to Ransel Re",
   ["official"] = {
-   [1] = "リコーダーとランドセル レ♪",
+   [1] = "Recorder and Randsell (2)",
+   [2] = "リコーダーとランドセル レ♪",
    },
   ["short"] = {
    },
@@ -95324,6 +95355,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magi: The Labyrinth of Magic",
    },
   },
  [9269] = {
@@ -95451,6 +95483,107 @@ return {
   ["main"] = "Dangerous Jiisan Ja",
   ["official"] = {
    [1] = "でんぢゃらすじーさん邪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9283] = {
+  ["main"] = "Idolmaster (2012)",
+  ["official"] = {
+   [1] = "アイドルマスター (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9284] = {
+  ["main"] = "Hiiro no Kakera 2",
+  ["official"] = {
+   [1] = "緋色の欠片 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9285] = {
+  ["main"] = "Aru Zombie Shoujo no Sainan",
+  ["official"] = {
+   [1] = "あるゾンビ少女の災難",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9286] = {
+  ["main"] = "Kyou no Asuka Show",
+  ["official"] = {
+   [1] = "今日のあすかショー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9287] = {
+  ["main"] = "Maoyuu Maou Yuusha",
+  ["official"] = {
+   [1] = "まおゆう魔王勇者",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9289] = {
+  ["main"] = "Pokemon: Rinka no Mi o Sagase!",
+  ["official"] = {
+   [1] = "ポケモン～リンカのみをさがせ!～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Pokemon: Search for the Rinka Berries!",
+   },
+  },
+ [9290] = {
+  ["main"] = "Kindan no Byoutou The Animation",
+  ["official"] = {
+   [1] = "禁断の病棟 THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9291] = {
+  ["main"] = "Hayate no Gotoku! (2012)",
+  ["official"] = {
+   [1] = "ハヤテのごとく! (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9292] = {
+  ["main"] = "Hakkenden: Touhou Hakken Ibun",
+  ["official"] = {
+   [1] = "八犬伝 -東方八犬異聞-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9293] = {
+  ["main"] = "Gekijouban Mouretsu Pirates",
+  ["official"] = {
+   [1] = "劇場版 モーレツ宇宙海賊",
    },
   ["short"] = {
    },
