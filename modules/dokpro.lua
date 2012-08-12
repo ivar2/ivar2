@@ -4,6 +4,14 @@ local iconv = require"iconv"
 local iso2utf = iconv.new("utf-8", "iso-8859-15")
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
+local customEntities = {
+	oogon = 'ǫ',
+}
+
+local decodeHTMLentity = function(str)
+	return html2unicode((str:gsub("&(%w+);", customEntities)))
+end
+
 local urlEncode = function(str)
 	return str:gsub(
 		'([^%w ])',
@@ -40,7 +48,7 @@ local parseLine = function(data)
 	for td in data:gmatch('<td[^>]->(.-)</td>') do
 		-- Strip away HTML.
 		local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
-		line = html2unicode(line:gsub('%s%s+', ' '))
+		line = decodeHTMLentity(line:gsub('%s%s+', ' '))
 
 		if(#line > 0) then
 			if(tonumber(line)) then
