@@ -18237,12 +18237,13 @@ return {
  [1209] = {
   ["main"] = "Gun Frontier",
   ["official"] = {
-   [1] = "Gun Frontier",
-   [2] = "ガンフロンティア",
+   [1] = "GUN FRONTIER",
+   [2] = "Gun Frontier",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ガンフロンティア",
    },
   },
  [1210] = {
@@ -21982,14 +21983,15 @@ return {
    },
   },
  [1506] = {
-  ["main"] = "GS Mikami: Gokuraku Daisakusen!!",
+  ["main"] = "Ghost Sweeper Mikami: Gokuraku Daisakusen!!",
   ["official"] = {
-   [1] = "GS美神・極楽大作戦!!",
+   [1] = "GS[ゴーストスイーパー]美神 極楽大作戦!!",
    [2] = "Ghost Sweeper Mikami Movie",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "GS美神 極楽大作戦!!",
    },
   },
  [1507] = {
@@ -28126,8 +28128,9 @@ return {
   ["official"] = {
    [1] = "Ninja Boy",
    [2] = "Καμπαμαρού",
-   [3] = "نينجا",
-   [4] = "伊賀野カバ丸",
+   [3] = "Игано Кабамару",
+   [4] = "نينجا",
+   [5] = "伊賀野カバ丸",
    },
   ["short"] = {
    },
@@ -29214,17 +29217,18 @@ return {
    },
   },
  [2096] = {
-  ["main"] = "Ghost Sweeper GS Mikami",
+  ["main"] = "Ghost Sweeper Mikami",
   ["official"] = {
-   [1] = "Ghost Sweeper Mikami",
-   [2] = "Mikami la Cazafantasmas",
-   [3] = "Una Miss Scacciafantasmi",
-   [4] = "ゴーストスイーパーGS美神",
+   [1] = "GS[ゴーストスイーパー]美神",
+   [2] = "Ghost Sweeper Mikami",
+   [3] = "Mikami la Cazafantasmas",
+   [4] = "Una Miss Scacciafantasmi",
    },
   ["short"] = {
    [1] = "gs mikami",
    },
   ["syn"] = {
+   [1] = "GS美神",
    },
   },
  [2097] = {
@@ -30221,8 +30225,7 @@ return {
  [2177] = {
   ["main"] = "Ichigeki Sacchuu!! Hoihoi-san",
   ["official"] = {
-   [1] = "Interceptor-Doll Hoi Hoi-san",
-   [2] = "一撃殺虫!! ホイホイさん",
+   [1] = "一撃殺虫!! ホイホイさん",
    },
   ["short"] = {
    [1] = "Hoi Hoi",
@@ -30230,8 +30233,9 @@ return {
   ["syn"] = {
    [1] = "Hoi Hoi-san",
    [2] = "Ichigeki Satchu Hoi Hoi-san",
-   [3] = "Jedna střela, havěť mrtvá! HoiHoi",
-   [4] = "Механичната кукла Хой-Хой-сан",
+   [3] = "Interceptor-Doll Hoi Hoi-san",
+   [4] = "Jedna střela, havěť mrtvá! HoiHoi",
+   [5] = "Механичната кукла Хой-Хой-сан",
    },
   },
  [2178] = {
@@ -33688,9 +33692,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Saiyuki (1999)",
-   [2] = "Saiyuki OVA",
-   [3] = "Saiyuuki Premium",
+   [1] = "Gensou Maden Saiyuki Premium",
+   [2] = "Saiyuki (1999)",
+   [3] = "Saiyuki OVA",
+   [4] = "Saiyuuki Premium",
    },
   },
  [2447] = {
@@ -36015,9 +36020,9 @@ return {
    },
   },
  [2672] = {
-  ["main"] = "Black Jack Special",
+  ["main"] = "Black Jack Special: Inochi o Meguru 4tsu no Kiseki",
   ["official"] = {
-   [1] = "ブラックジャック スペシャル",
+   [1] = "ブラック·ジャック スペシャル ~命をめぐる4つの奇跡~",
    },
   ["short"] = {
    },
@@ -36025,6 +36030,7 @@ return {
    [1] = "Black Jack Special: The 4 Miracles of Life",
    [2] = "Black Jack: The 4 Miracles of Life",
    [3] = "Блек Джак: Четирите чудеса на живота",
+   [4] = "ブラックジャック スペシャル ~命をめぐる4つの奇跡~",
    },
   },
  [2673] = {
@@ -37177,12 +37183,13 @@ return {
  [2769] = {
   ["main"] = "Ichigatsu ni wa Christmas",
   ["official"] = {
-   [1] = "一月にはChristmas",
+   [1] = "1月にはChristmas",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Christmas in January",
+   [2] = "一月にはChristmas",
    },
   },
  [2770] = {
@@ -42976,18 +42983,19 @@ return {
   ["syn"] = {
    [1] = "Burning Eyes Shana",
    [2] = "SHANA Liepsnojančios Akys",
-   [3] = "Shana de los Ojos Ardientes",
-   [4] = "Shana dels Ulls Ardents",
-   [5] = "Shana dos Olhos Ardentes",
-   [6] = "Shana of the Burning Eyes",
-   [7] = "SnS 1",
-   [8] = "Вогняноока Шана",
-   [9] = "Жгучий взор Сяны",
-   [10] = "Огнеглазая Шана",
-   [11] = "Огнеокая Сяна",
-   [12] = "Шана с горящите очи",
-   [13] = "شانا",
-   [14] = "灼眼的夏娜",
+   [3] = "Shakugan no Shana 1",
+   [4] = "Shana de los Ojos Ardientes",
+   [5] = "Shana dels Ulls Ardents",
+   [6] = "Shana dos Olhos Ardentes",
+   [7] = "Shana of the Burning Eyes",
+   [8] = "SnS 1",
+   [9] = "Вогняноока Шана",
+   [10] = "Жгучий взор Сяны",
+   [11] = "Огнеглазая Шана",
+   [12] = "Огнеокая Сяна",
+   [13] = "Шана с горящите очи",
+   [14] = "شانا",
+   [15] = "灼眼的夏娜",
    },
   },
  [3411] = {
@@ -60446,7 +60454,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Небесные Скитальцы",
+   [1] = "Os Rastejadores do Céu",
+   [2] = "Небесные Скитальцы",
    },
   },
  [5311] = {
@@ -60744,8 +60753,9 @@ return {
  [5359] = {
   ["main"] = "Shimaizuma",
   ["official"] = {
-   [1] = "Fleshdance",
-   [2] = "仕舞妻",
+   [1] = "Beautiful Wives",
+   [2] = "Fleshdance",
+   [3] = "仕舞妻",
    },
   ["short"] = {
    },
@@ -69368,11 +69378,12 @@ return {
    [1] = "Aktar ve Kurt 2 OVA",
    [2] = "Spice and Wolf II OAV - Il Lupo e la malinconia ambra",
    [3] = "Spice and Wolf II OVA",
-   [4] = "The Wolf and the Amber Melancholy",
-   [5] = "Vilkė ir Gintarinė Melancholija",
-   [6] = "Вовчиця та спеції II OVA",
-   [7] = "Волчица и пряности 2 OVA",
-   [8] = "狼と香辛料II OVA",
+   [4] = "Spice and Wolf OVA",
+   [5] = "The Wolf and the Amber Melancholy",
+   [6] = "Vilkė ir Gintarinė Melancholija",
+   [7] = "Вовчиця та спеції II OVA",
+   [8] = "Волчица и пряности 2 OVA",
+   [9] = "狼と香辛料II OVA",
    },
   },
  [6466] = {
@@ -72061,6 +72072,8 @@ return {
    [1] = "東のエデン Air Communication",
    },
   ["short"] = {
+   [1] = "EotE AC",
+   [2] = "EotE: Air Communication",
    },
   ["syn"] = {
    [1] = "Eden of The East Compilation: Air Communication",
@@ -72679,7 +72692,8 @@ return {
  [6818] = {
   ["main"] = "Uragiri wa Boku no Namae o Shitte Iru",
   ["official"] = {
-   [1] = "裏切りは僕の名前を知っている",
+   [1] = "Fesseln des Verrats",
+   [2] = "裏切りは僕の名前を知っている",
    },
   ["short"] = {
    [1] = "Uraboku",
@@ -77629,7 +77643,7 @@ return {
    },
   },
  [7317] = {
-  ["main"] = "Little Polar Bear: Shiro Kuma-kun, Fune ni Noru",
+  ["main"] = "Little Polar Bear: Shirokuma-kun, Fune ni Noru",
   ["official"] = {
    [1] = "Lars de Kleine ijsbeer",
    [2] = "リトルポーラベア しろくまくん, ふねにのる",
@@ -77724,11 +77738,13 @@ return {
  [7327] = {
   ["main"] = "Dragon Fist",
   ["official"] = {
-   [1] = "ドラゴンフィスト",
+   [1] = "DRAGON FIST",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ドラゴン·フィスト",
+   [2] = "ドラゴンフィスト",
    },
   },
  [7328] = {
@@ -79405,11 +79421,12 @@ return {
    },
   ["syn"] = {
    [1] = "Girl Demon Zakuro",
-   [2] = "Otome Yokai Zakuro",
-   [3] = "Spirit Girl Zakuro",
-   [4] = "Гранатовая Демоница Закуро",
-   [5] = "おとめ妖怪ざくろ",
-   [6] = "妖怪少女石榴",
+   [2] = "Maiden Spirit Zakuro",
+   [3] = "Otome Yokai Zakuro",
+   [4] = "Spirit Girl Zakuro",
+   [5] = "Гранатовая Демоница Закуро",
+   [6] = "おとめ妖怪ざくろ",
+   [7] = "妖怪少女石榴",
    },
   },
  [7514] = {
@@ -89264,7 +89281,8 @@ return {
   ["syn"] = {
    [1] = "Baby, Please Kill Me",
    [2] = "Прикончи меня, детка",
-   [3] = "킬 미 베이비",
+   [3] = "爱杀宝贝",
+   [4] = "킬 미 베이비",
    },
   },
  [8553] = {
@@ -89417,19 +89435,6 @@ return {
    [1] = "ikki5",
    },
   ["syn"] = {
-   },
-  },
- [8570] = {
-  ["main"] = "Hoshizora e Kakaru Hashi: Kakaru ka? Gakuensai ni Koi no Hashi",
-  ["official"] = {
-   [1] = "星空へ架かる橋 架かるか? 学園祭に恋の橋",
-   },
-  ["short"] = {
-   [1] = "hoshizora ova",
-   },
-  ["syn"] = {
-   [1] = "A Bridge to the Starry Skies: Can it Be Crossed? The Bridge of Love at the School Festival",
-   [2] = "A Bridge to the Starry Skies: Mountable? Bridge of Love at School Festival",
    },
   },
  [8571] = {
@@ -90549,9 +90554,9 @@ return {
    },
   },
  [8694] = {
-  ["main"] = "Gekijouban Toaru Majutsu no Index",
+  ["main"] = "Gekijouban Toaru Majutsu no Index: Endymion no Kiseki",
   ["official"] = {
-   [1] = "劇場版 とある魔術の禁書目録[インデックス]",
+   [1] = "劇場版 とある魔術の禁書目録[インデックス] エンデュミオンの奇蹟",
    },
   ["short"] = {
    },
@@ -90696,6 +90701,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Corrective Discipline",
    },
   },
  [8713] = {
@@ -91677,6 +91683,7 @@ return {
    },
   ["short"] = {
    [1] = "precure9",
+   [2] = "smile precure",
    },
   ["syn"] = {
    },
@@ -91902,6 +91909,7 @@ return {
    },
   ["syn"] = {
    [1] = "جورمونگاند",
+   [2] = "军火女王",
    },
   },
  [8844] = {
@@ -91910,9 +91918,10 @@ return {
    [1] = "ゆるゆり♪♪",
    },
   ["short"] = {
+   [1] = "yy2",
    },
   ["syn"] = {
-   [1] = "Yuriyuri 2",
+   [1] = "Yuruyuri 2",
    },
   },
  [8845] = {
@@ -91994,6 +92003,7 @@ return {
   ["syn"] = {
    [1] = "Dusk Maiden of Amnesia",
    [2] = "Сумеречная Дева и Амнезия",
+   [3] = "黄昏少女x失忆",
    },
   },
  [8853] = {
@@ -92319,6 +92329,7 @@ return {
    [1] = "中二病でも恋がしたい!",
    },
   ["short"] = {
+   [1] = "chuunibyo",
    },
   ["syn"] = {
    [1] = "Chu-2 Byou demo Koi ga Shitai!",
@@ -93012,13 +93023,14 @@ return {
  [8966] = {
   ["main"] = "Cele Kano",
   ["official"] = {
-   [1] = "セレ・カノ",
+   [1] = "セレ♡カノ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Celebrity Kano",
    [2] = "My Lover is a Celebrity",
+   [3] = "セレ・カノ",
    },
   },
  [8967] = {
@@ -93511,7 +93523,7 @@ return {
    },
   },
  [9022] = {
-  ["main"] = "Monsuno",
+  ["main"] = "Juusen Battle Monsuno",
   ["official"] = {
    [1] = "Monsuno",
    [2] = "獣旋バトル モンスーノ",
@@ -93730,9 +93742,9 @@ return {
    },
   },
  [9046] = {
-  ["main"] = "Shinryaku! Ika Musume (2012)",
+  ["main"] = "Shinryaku!! Ika Musume",
   ["official"] = {
-   [1] = "侵略! イカ娘 (2012)",
+   [1] = "侵略!! イカ娘",
    },
   ["short"] = {
    },
@@ -93989,9 +94001,9 @@ return {
    },
   },
  [9076] = {
-  ["main"] = "Jormungand 2",
+  ["main"] = "Jormungand: Perfect Order",
   ["official"] = {
-   [1] = "ヨルムンガンド 2",
+   [1] = "ヨルムンガンド PERFECT ORDER",
    },
   ["short"] = {
    },
@@ -94374,6 +94386,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Summer Snow Rendezvous",
    },
   },
  [9127] = {
@@ -94919,9 +94932,9 @@ return {
    },
   },
  [9194] = {
-  ["main"] = "Kaiketsu Zorori: Da-da-da-daibouken!",
+  ["main"] = "Eiga Kaiketsu Zorori: Da-da-da-daibouken!",
   ["official"] = {
-   [1] = "かいけつゾロリ だ・だ・だ・だいぼうけん!",
+   [1] = "映画 かいけつゾロリ だ・だ・だ・だいぼうけん!",
    },
   ["short"] = {
    },
@@ -95372,6 +95385,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Aratanaru Sekai",
    },
   },
  [9260] = {
@@ -95667,7 +95681,6 @@ return {
    [1] = "hng3",
    },
   ["syn"] = {
-   [1] = "Hayate no Gotoku! 3rd Season",
    },
   },
  [9292] = {
@@ -96062,9 +96075,9 @@ return {
    },
   },
  [9337] = {
-  ["main"] = "Macross FB7",
+  ["main"] = "Macross FB7: Ginga Rukon Ore no Uta o Kike!",
   ["official"] = {
-   [1] = "マクロスFB7",
+   [1] = "マクロスFB7 銀河流魂 オレノウタヲキケ!",
    },
   ["short"] = {
    },
@@ -96135,9 +96148,9 @@ return {
    },
   },
  [9344] = {
-  ["main"] = "Initial D (2012)",
+  ["main"] = "Initial D Fifth Stage",
   ["official"] = {
-   [1] = "頭文字D (2012)",
+   [1] = "頭文字[イニシャル]D Fifth Stage",
    },
   ["short"] = {
    },
@@ -96197,9 +96210,9 @@ return {
    },
   },
  [9350] = {
-  ["main"] = "Prism Nana Project",
+  ["main"] = "Magical Suite Prism Nana",
   ["official"] = {
-   [1] = "PRISM NANA PROJECT",
+   [1] = "まじかるすいーとプリズム・ナナ",
    },
   ["short"] = {
    },
@@ -96237,9 +96250,161 @@ return {
    },
   },
  [9354] = {
-  ["main"] = "Salmon-chan",
+  ["main"] = "Shake-chan",
   ["official"] = {
+   [1] = "シャケちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    [1] = "Salmon-chan",
+   },
+  },
+ [9355] = {
+  ["main"] = "Touhou PVD 3",
+  ["official"] = {
+   [1] = "東方PVD 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9356] = {
+  ["main"] = "Gekijouban Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
+  ["official"] = {
+   [1] = "劇場版あの日見た花の名前を僕達はまだ知らない.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9357] = {
+  ["main"] = "Aku no Hana",
+  ["official"] = {
+   [1] = "惡の華",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "The Flowers of Evil",
+   },
+  },
+ [9358] = {
+  ["main"] = "Amnesia",
+  ["official"] = {
+   [1] = "AMNESIA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9359] = {
+  ["main"] = "Litchi De Hikari Club",
+  ["official"] = {
+   [1] = "ライチDE光クラブ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Lychee Light Club",
+   },
+  },
+ [9360] = {
+  ["main"] = "Kitaro Shinigami Picture Book Rakugo",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9363] = {
+  ["main"] = "Little Polar Bear: Shirokuma-kun, Doko e?",
+  ["official"] = {
+   [1] = "リトルポーラベア しろくまくん, どこへ?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9364] = {
+  ["main"] = "watashitachino kurashi to doboku series",
+  ["official"] = {
+   [1] = "私たちの暮らしと土木シリーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9365] = {
+  ["main"] = "Fantasista Doll",
+  ["official"] = {
+   [1] = "ファンタジスタドール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9366] = {
+  ["main"] = "Yuyushiki",
+  ["official"] = {
+   [1] = "ゆゆ式",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9367] = {
+  ["main"] = "Teekyuu",
+  ["official"] = {
+   [1] = "てーきゅう",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9368] = {
+  ["main"] = "Nurarihyon no Mago (2012)",
+  ["official"] = {
+   [1] = "ぬらりひょんの孫 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9369] = {
+  ["main"] = "Nezha nao hai",
+  ["official"] = {
+   [1] = "Naia Contra o Rei dos Dragões",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9371] = {
+  ["main"] = "Cuticle Tantei Inaba",
+  ["official"] = {
+   [1] = "キューティクル探偵因幡",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9372] = {
+  ["main"] = "Ichigeki Sacchuu!! Hoihoi-san: Legacy",
+  ["official"] = {
+   [1] = "一撃殺虫!! ホイホイさんLEGACY",
    },
   ["short"] = {
    },
