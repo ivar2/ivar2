@@ -2197,13 +2197,17 @@ return {
  [120] = {
   ["main"] = "Memories Off",
   ["official"] = {
-   [1] = "メモリーズオフ",
+   [1] = "Memories Off",
    },
   ["short"] = {
    [1] = "MO",
    [2] = "MOFF",
+   [3] = "memoff",
+   [4] = "memooff",
+   [5] = "メモオフ",
    },
   ["syn"] = {
+   [1] = "メモリーズオフ",
    },
   },
  [121] = {
@@ -10697,12 +10701,13 @@ return {
   ["main"] = "Karen",
   ["official"] = {
    [1] = "Hardball",
-   [2] = "Karen",
-   [3] = "カレン",
+   [2] = "KAREN",
+   [3] = "Karen",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カレン",
    },
   },
  [658] = {
@@ -11062,17 +11067,18 @@ return {
  [686] = {
   ["main"] = "Black Jack (1996)",
   ["official"] = {
-   [1] = "Black Jack - A Film",
-   [2] = "Black Jack - La sindrome di Moira",
-   [3] = "Black Jack - Le film",
-   [4] = "Black Jack - The Movie",
-   [5] = "Ο Χειρούργος με τα Θεϊκά Χέρια",
-   [6] = "ブラック・ジャック (1996)",
+   [1] = "BLACK JACK",
+   [2] = "Black Jack - A Film",
+   [3] = "Black Jack - La sindrome di Moira",
+   [4] = "Black Jack - Le film",
+   [5] = "Black Jack - The Movie",
+   [6] = "Ο Χειρούργος με τα Θεϊκά Χέρια",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Блек Джак (1996)",
+   [2] = "ブラック・ジャック (1996)",
    },
   },
  [687] = {
@@ -21722,11 +21728,15 @@ return {
  [1482] = {
   ["main"] = "Panzer Dragoon",
   ["official"] = {
-   [1] = "パンツァードラグーン",
+   [1] = "PANZER DRAGOON",
    },
   ["short"] = {
+   [1] = "pandora",
+   [2] = "pandra",
+   [3] = "パンドラ",
    },
   ["syn"] = {
+   [1] = "パンツァードラグーン",
    },
   },
  [1484] = {
@@ -26933,9 +26943,10 @@ return {
    },
   ["syn"] = {
    [1] = "Little Witch Meg",
-   [2] = "Meg la petite sorcière",
-   [3] = "Meg la sorcière",
-   [4] = "Meg the Witch Girl",
+   [2] = "Majokko Megu-chan",
+   [3] = "Meg la petite sorcière",
+   [4] = "Meg la sorcière",
+   [5] = "Meg the Witch Girl",
    },
   },
  [1907] = {
@@ -28704,13 +28715,14 @@ return {
  [2054] = {
   ["main"] = "Sinkan",
   ["official"] = {
-   [1] = "SinKan",
-   [2] = "T&A Teacher",
-   [3] = "シンカン",
+   [1] = "SINKAN",
+   [2] = "SinKan",
+   [3] = "T&A Teacher",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "シンカン",
    },
   },
  [2055] = {
@@ -35589,14 +35601,15 @@ return {
    },
   },
  [2633] = {
-  ["main"] = "Bronze Cathexis Koji Nanjo",
+  ["main"] = "Bronze Kouji Nanjou Cathexis",
   ["official"] = {
-   [1] = "BRONZE Cathexis KOJI NANJO",
+   [1] = "BRONZE KŌJI NANJŌ cathexis",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Zetsuai Cathexis",
+   [1] = "BRONZE KOJI NANJO cathexis",
+   [2] = "Zetsuai Cathexis",
    },
   },
  [2634] = {
@@ -41188,13 +41201,13 @@ return {
  [3190] = {
   ["main"] = "Kujira Tori",
   ["official"] = {
-   [1] = "The Whale Hunt",
-   [2] = "くじらとり",
+   [1] = "くじらとり",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Kujiratori",
+   [2] = "The Whale Hunt",
    },
   },
  [3191] = {
@@ -44402,13 +44415,14 @@ return {
   ["main"] = "Tsuma Tsuma",
   ["official"] = {
    [1] = "Wife with Wife",
-   [2] = "つまつま(妻×妻)",
+   [2] = "人妻x人妻[つまつま]",
    },
   ["short"] = {
    [1] = "WWW",
    },
   ["syn"] = {
    [1] = "Žmona su Žmona",
+   [2] = "つまつま 人妻×人妻",
    },
   },
  [3529] = {
@@ -47833,15 +47847,15 @@ return {
  [4053] = {
   ["main"] = "Shounen Santa no Daibouken",
   ["official"] = {
-   [1] = "The Adventures of Young Santa Claus",
-   [2] = "少年サンタの大冒険!",
+   [1] = "少年サンタの大冒険!",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Shonen Santa no Daiboken",
    [2] = "Shonen Santa no Daibouken",
-   [3] = "The Great Adventures of Young Santa",
+   [3] = "The Adventures of Young Santa Claus",
+   [4] = "The Great Adventures of Young Santa",
    },
   },
  [4054] = {
@@ -49716,6 +49730,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Serendipity Monogatari",
    },
   },
  [4201] = {
@@ -49922,13 +49937,14 @@ return {
  [4220] = {
   ["main"] = "Inferious Wakusei Senshi Gaiden Condition Green",
   ["official"] = {
-   [1] = "インフェリウス 惑星戦史外伝 コンディショングリーン",
+   [1] = "インフェリウス惑星戦史外伝 CONDITION GREEN",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Condition Green: Platoon # 801",
    [2] = "Inferious Interplanetary War Chronicle Condition Green",
+   [3] = "インフェリウス惑星戦史外伝 コンディショングリーン",
    },
   },
  [4221] = {
@@ -50294,7 +50310,7 @@ return {
    },
   },
  [4251] = {
-  ["main"] = "Ikusa Otome Valkyrie Shinshou: Anata ni Subete wo Sasagemasu",
+  ["main"] = "Ikusa Otome Valkyrie Shinshou: Anata ni Subete o Sasagemasu",
   ["official"] = {
    [1] = "戦乙女ヴァルキリー 真章 ～あなたに全てを捧げます～",
    },
@@ -55659,7 +55675,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "特務捜査官レイ＆風子",
+   [1] = "特務捜査官レイ&風子",
    },
   },
  [4812] = {
@@ -56747,7 +56763,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wife and Mama and Big Breasts",
+   [1] = "Boobs Apartment",
+   [2] = "Wife and Mama and Big Breasts",
    },
   },
  [4925] = {
@@ -57833,6 +57850,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Legend of Marine Snow",
    },
   },
  [5039] = {
@@ -58256,7 +58274,7 @@ return {
    },
   },
  [5077] = {
-  ["main"] = "Pelikan Road Club Culture",
+  ["main"] = "Pelican Road: Club Caroucha",
   ["official"] = {
    [1] = "ペリカンロード クラブ・カルーチャ",
    },
@@ -58314,10 +58332,11 @@ return {
    [5] = "Era uma vez...O Espaço",
    [6] = "Es war einmal ... der Weltraum",
    [7] = "Il était une fois... l`espace",
-   [8] = "Once Upon a Time Was the Space",
-   [9] = "Μια Φορά και έναν Καιρό ήταν το Διάστημα",
-   [10] = "היה היה... חלל",
-   [11] = "銀河パトロールPJ",
+   [8] = "Olipa kerran avaruus",
+   [9] = "Once Upon a Time Was the Space",
+   [10] = "Μια Φορά και έναν Καιρό ήταν το Διάστημα",
+   [11] = "היה היה... חלל",
+   [12] = "銀河パトロールPJ",
    },
   ["short"] = {
    },
@@ -58907,7 +58926,7 @@ return {
    },
   },
  [5135] = {
-  ["main"] = "Saigo no Door wo Shimero!",
+  ["main"] = "Saigo no Door o Shimero!",
   ["official"] = {
    [1] = "最後のドアを閉めろ!",
    },
@@ -59617,12 +59636,13 @@ return {
    [6] = "Era uma vez...O Corpo Humano",
    [7] = "Es war einmal... Das Leben",
    [8] = "Il était une fois... la Vie",
-   [9] = "Once Upon a Time... Life",
-   [10] = "Siamo Fatti Così - Esplorando il Corpo Umano",
-   [11] = "Μια Φορά και έναν Καιρό ήταν η Ζωή",
-   [12] = "החיים",
-   [13] = "كان ياما كان الحياة",
-   [14] = "生命の科学ミクロパトロール",
+   [9] = "Olipa kerran elämä",
+   [10] = "Once Upon a Time... Life",
+   [11] = "Siamo Fatti Così - Esplorando il Corpo Umano",
+   [12] = "Μια Φορά και έναν Καιρό ήταν η Ζωή",
+   [13] = "החיים",
+   [14] = "كان ياما كان الحياة",
+   [15] = "生命の科学ミクロパトロール",
    },
   ["short"] = {
    },
@@ -64114,7 +64134,7 @@ return {
    },
   },
  [5810] = {
-  ["main"] = "Sensuikan ni Koi wo Shita Kujira no Hanashi",
+  ["main"] = "Sensuikan ni Koi o Shita Kujira no Hanashi",
   ["official"] = {
    [1] = "せんすい艦に恋をしたクジラの話",
    },
@@ -70612,14 +70632,13 @@ return {
    },
   },
  [6608] = {
-  ["main"] = "Pro Yakyuu wo 10-bai Tanoshiku Miru Houhou Part 2",
+  ["main"] = "Pro Yakyuu o 10-bai Tanoshiku Miru Houhou Part 2",
   ["official"] = {
    [1] = "プロ野球を10倍楽しく見る方法PART2",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Pro Yakyuu o 10-bai Tanoshiku Miru Houhou Part 2",
    },
   },
  [6609] = {
@@ -70793,7 +70812,7 @@ return {
  [6632] = {
   ["main"] = "Happy Birthday Inochi Kagayaku Toki",
   ["official"] = {
-   [1] = "ハッピーバースデー 命かがやく瞬間",
+   [1] = "ハッピーバースデー 命かがやく瞬間[とき]",
    },
   ["short"] = {
    },
@@ -72045,7 +72064,7 @@ return {
    },
   },
  [6761] = {
-  ["main"] = "Chiisai Sensuikan ni Koi wo Shita Dekasugiru Kujira no Hanashi",
+  ["main"] = "Chiisai Sensuikan ni Koi o Shita Dekasugiru Kujira no Hanashi",
   ["official"] = {
    [1] = "小さい潜水艦に恋したでかすぎるクジラの話",
    },
@@ -72623,11 +72642,13 @@ return {
  [6811] = {
   ["main"] = "TWD Express Rolling Takeoff",
   ["official"] = {
-   [1] = "TWD EXPRESS ローリングテイクオフ",
+   [1] = "TWD EXPRESS ROLLING TAKEOFF",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "TWD EXPRESS ローリング テイク オフ",
+   [2] = "TWD EXPRESS ローリングテイクオフ",
    },
   },
  [6812] = {
@@ -78644,7 +78665,7 @@ return {
  [7430] = {
   ["main"] = "Mahou no Star Magical Emi: Kumo Hikaru",
   ["official"] = {
-   [1] = "魔法のスター マジカルエミ 雲光る",
+   [1] = "魔法のスター マジカルエミ -雲光る-",
    },
   ["short"] = {
    },
@@ -79737,15 +79758,17 @@ return {
    },
   },
  [7544] = {
-  ["main"] = "Black Jack: Internet-han",
+  ["main"] = "Black Jack (2001)",
   ["official"] = {
-   [1] = "ブラック・ジャック(インターネット版)",
+   [1] = "ブラック・ジャック (2001)",
    },
   ["short"] = {
+   [1] = "ネット版BJ",
    },
   ["syn"] = {
-   [1] = "Black Jack (2001)",
+   [1] = "Black Jack: Internet-ban",
    [2] = "Блек Джак (2001)",
+   [3] = "ブラック・ジャック(インターネット版)",
    },
   },
  [7546] = {
@@ -84742,7 +84765,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "シン－メン",
+   [1] = "シン-メン",
    },
   },
  [8071] = {
@@ -88567,8 +88590,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wakate Animator Ikusei Project 2011 4",
-   [2] = "Young Animator Training Project 2011 4",
+   [1] = "Minding My Own Business",
+   [2] = "Wakate Animator Ikusei Project 2011 4",
+   [3] = "Young Animator Training Project 2011 4",
    },
   },
  [8467] = {
@@ -92541,6 +92565,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Code Geass: Nunnally in Wonderland",
    },
   },
  [8915] = {
@@ -94299,13 +94324,14 @@ return {
    },
   },
  [9116] = {
-  ["main"] = "Kankou Taisen Saitama ~Sakuya no Tatakai~",
+  ["main"] = "Kankou Taisen Saitama: Sakuya no Tatakai",
   ["official"] = {
-   [1] = "Tourism War Saitama ~Evening Battle~",
+   [1] = "観光大戦SAITAMA ~サクヤの戦い~",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tourism War Saitama: Evening Battle",
    },
   },
  [9117] = {
@@ -94456,6 +94482,7 @@ return {
    [1] = "To LOVEる -とらぶる- ダークネス",
    },
   ["short"] = {
+   [1] = "tlrd",
    },
   ["syn"] = {
    },
@@ -94664,6 +94691,7 @@ return {
    [1] = "To LOVEる -とらぶる- ダークネス OAD",
    },
   ["short"] = {
+   [1] = "tlrd ova",
    },
   ["syn"] = {
    },
@@ -95572,13 +95600,14 @@ return {
    },
   },
  [9280] = {
-  ["main"] = "Netorare Zuma",
+  ["main"] = "Netorare Tsuma",
   ["official"] = {
    [1] = "ネトラレヅマ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Netorare Zuma",
    },
   },
  [9281] = {
@@ -96409,6 +96438,47 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [9375] = {
+  ["main"] = "Himeyuri",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9376] = {
+  ["main"] = "Kono Sekai no Katasumi ni",
+  ["official"] = {
+   [1] = "この世界の片隅に",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "To All The Corners of The World",
+   },
+  },
+ [9377] = {
+  ["main"] = "Himitsu no Akko-chan (2012)",
+  ["official"] = {
+   [1] = "ひみつのアッコちゃん (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9378] = {
+  ["main"] = "Takara Sagashi",
+  ["official"] = {
+   [1] = "たからさがし",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Treasure Hunting",
    },
   },
 }
