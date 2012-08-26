@@ -467,10 +467,10 @@ return {
    [2] = "Эксель Cага",
    },
   ["syn"] = {
-   [1] = "Animación absurda y experimental Excel Saga",
-   [2] = "Animation expérimentale Excel Saga",
-   [3] = "Excel Saga",
-   [4] = "Excel Saga Animazione Sperimentale",
+   [1] = "Animation expérimentale Excel Saga",
+   [2] = "Excel Saga",
+   [3] = "Excel Saga Animazione Sperimentale",
+   [4] = "Excel Saga: Animación Absurda y Experimental",
    [5] = "Quack Experimental Anime Excel Saga",
    [6] = "Weird Anime Excel Saga",
    [7] = "Експериментално Аниме: Ексел Сага",
@@ -482,9 +482,9 @@ return {
   ["main"] = "Juuni Kokuki",
   ["official"] = {
    [1] = "12 Kingdoms",
-   [2] = "12 Reinos",
-   [3] = "Els Dotze Regnes",
-   [4] = "Les 12 royaumes",
+   [2] = "Els Dotze Regnes",
+   [3] = "Les 12 royaumes",
+   [4] = "Los doce Reinos",
    [5] = "The Twelve Kingdoms",
    [6] = "Двенадцать королевств",
    [7] = "שתים עשרה הממלכות",
@@ -13162,9 +13162,10 @@ return {
    },
   ["syn"] = {
    [1] = "Green Green TV",
-   [2] = "Грийн Грийн",
-   [3] = "Зелень",
-   [4] = "أخضر أخضر",
+   [2] = "Verde Verde TV",
+   [3] = "Грийн Грийн",
+   [4] = "Зелень",
+   [5] = "أخضر أخضر",
    },
   },
  [835] = {
@@ -17244,7 +17245,7 @@ return {
    [1] = "Bola de Drac: El Camí cap a el més fort",
    [2] = "Dragon Ball - Il cammino dell`eroe",
    [3] = "Dragon Ball 4 - L`armée du Ruban Rouge",
-   [4] = "Dragon Ball: El camino hacia el más fuerte",
+   [4] = "Dragon Ball: El camino hacia el Poder",
    [5] = "Dragon Ball: The Path to Power",
    [6] = "ดราก้อนบอล มูฟวี่ 4 ตอน วิถีแห่งเจ้ายุทธจักร",
    [7] = "ドラゴンボール 最強への道",
@@ -21247,6 +21248,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ловецът на роботи Кашан",
    },
   },
  [1446] = {
@@ -25350,8 +25352,9 @@ return {
    },
   ["syn"] = {
    [1] = "Mach 5",
-   [2] = "Гонщик Спиди",
-   [3] = "Спиди-гонщик",
+   [2] = "mach gogogo",
+   [3] = "Гонщик Спиди",
+   [4] = "Спиди-гонщик",
    },
   },
  [1788] = {
@@ -26488,11 +26491,14 @@ return {
  [1872] = {
   ["main"] = "Steady x Study",
   ["official"] = {
-   [1] = "ステディ×スタディ",
+   [1] = "STEADY×STUDY",
    },
   ["short"] = {
+   [1] = "sutesuta",
+   [2] = "ステスタ",
    },
   ["syn"] = {
+   [1] = "ステディ×スタディ",
    },
   },
  [1873] = {
@@ -34845,11 +34851,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "St. Michaela School #2",
-   [2] = "St. Michaela School II",
-   [3] = "美少女十字軍の反乱～ローマへの道～",
-   [4] = "聖ミカエラ学園漂流記2",
-   [5] = "聖ミカエラ学園漂流記II",
+   [1] = "St Michael Academy 2",
+   [2] = "St. Michaela School #2",
+   [3] = "St. Michaela School II",
+   [4] = "美少女十字軍の反乱～ローマへの道～",
+   [5] = "聖ミカエラ学園漂流記2",
+   [6] = "聖ミカエラ学園漂流記II",
    },
   },
  [2553] = {
@@ -37869,7 +37876,9 @@ return {
  [2829] = {
   ["main"] = "Fushigi-boshi no Futago-hime",
   ["official"] = {
-   [1] = "ふしぎ星の☆ふたご姫",
+   [1] = "As Princesas Gémeas do Planeta Maravilha",
+   [2] = "Twin Princess - Principesse gemelle",
+   [3] = "ふしぎ星の☆ふたご姫",
    },
   ["short"] = {
    [1] = "Fushigiboshi",
@@ -57567,13 +57576,14 @@ return {
    },
   },
  [5010] = {
-  ["main"] = "Yume Kara, Samenai",
+  ["main"] = "Yume kara Samenai",
   ["official"] = {
-   [1] = "夢から, さめない.",
+   [1] = "夢からさめない",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "夢から, さめない",
    },
   },
  [5012] = {
@@ -60475,7 +60485,8 @@ return {
    },
   ["syn"] = {
    [1] = "Os Rastejadores do Céu",
-   [2] = "Небесные Скитальцы",
+   [2] = "Os navegantes do céu",
+   [3] = "Небесные Скитальцы",
    },
   },
  [5311] = {
@@ -63619,14 +63630,16 @@ return {
    },
   },
  [5737] = {
-  ["main"] = "Binetsu Hime: Zange no Shou",
+  ["main"] = "Binetsu Hime",
   ["official"] = {
-   [1] = "微熱姫 懺悔の章",
+   [1] = "微熱姫",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "奴隷人形～快楽を追求する獣たち～ (2)",
+   [1] = "Binetsu Hime: Zange no Shou",
+   [2] = "奴隷人形～快楽を追求する獣たち～ (2)",
+   [3] = "微熱姫 懺悔の章",
    },
   },
  [5739] = {
@@ -64611,7 +64624,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "サイレントチェイサー狩神",
+   [1] = "サイレントチェイサー カガミ",
+   [2] = "サイレントチェイサー狩神",
    },
   },
  [5886] = {
@@ -64739,7 +64753,9 @@ return {
  [5901] = {
   ["main"] = "Penguin no Mondai",
   ["official"] = {
-   [1] = "ペンギンの問題",
+   [1] = "Líos de Pingüino",
+   [2] = "Pinguim Chanfrado",
+   [3] = "ペンギンの問題",
    },
   ["short"] = {
    [1] = "penmon",
@@ -65749,7 +65765,8 @@ return {
  [6032] = {
   ["main"] = "Casshern Sins",
   ["official"] = {
-   [1] = "キャシャーン Sins",
+   [1] = "Греховете на Кашан",
+   [2] = "キャシャーン Sins",
    },
   ["short"] = {
    [1] = "CS",
@@ -66182,7 +66199,7 @@ return {
  [6081] = {
   ["main"] = "Suishou no Yoru: Aoi Kokuhaku Yori",
   ["official"] = {
-   [1] = "水晶の夜 ～蒼い告白より～",
+   [1] = "水晶の夜 ~蒼い告白より~",
    },
   ["short"] = {
    },
@@ -77284,7 +77301,7 @@ return {
    [1] = "Blazing Night Raid",
    [2] = "Greitasis Naktinis Reidas",
    [3] = "Raidul de noapte.",
-   [4] = "Молниеносный Ночной Рейд",
+   [4] = "Огни Ночного Рейда",
    [5] = "闪光的夜袭",
    },
   },
@@ -79075,6 +79092,9 @@ return {
    [1] = "まじっく快斗",
    },
   ["short"] = {
+   [1] = "magikai",
+   [2] = "majikai",
+   [3] = "まじ快",
    },
   ["syn"] = {
    [1] = "Kid the Phantom Thief",
@@ -83837,6 +83857,7 @@ return {
    },
   ["syn"] = {
    [1] = "Elf Princess Nina",
+   [2] = "妖精公主妮娜",
    },
   },
  [7971] = {
@@ -90390,7 +90411,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "コード:ブレイカー",
+   [1] = "C0DE:BREAKER",
+   [2] = "コード:ブレイカー",
    },
   },
  [8674] = {
@@ -93109,7 +93131,6 @@ return {
    [1] = "famiglia",
    },
   ["syn"] = {
-   [1] = "La storia della Arcana Famiglia",
    },
   },
  [8974] = {
@@ -93310,9 +93331,9 @@ return {
    },
   },
  [8995] = {
-  ["main"] = "Nazo no Kanojo X OVA",
+  ["main"] = "Nazo no Kanojo X: Nazo no Natsu Matsuri",
   ["official"] = {
-   [1] = "謎の彼女X OVA",
+   [1] = "謎の彼女X 謎の夏祭り",
    },
   ["short"] = {
    },
@@ -94041,6 +94062,7 @@ return {
    [1] = "TARI TARI",
    },
   ["short"] = {
+   [1] = "Tari x2",
    },
   ["syn"] = {
    },
@@ -94858,13 +94880,14 @@ return {
    },
   },
  [9181] = {
-  ["main"] = "Meitentei Conan Bonus File: Fantasista no Hana",
+  ["main"] = "Meitantei Conan Bonus File: Fantasista no Hana",
   ["official"] = {
    [1] = "名探偵コナン BONUS FILE ファンタジスタの花",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Detective Conan Bonus File: The Flower of Fantasista",
    },
   },
  [9182] = {
@@ -95487,9 +95510,9 @@ return {
    },
   },
  [9267] = {
-  ["main"] = "Minami-ke (2012)",
+  ["main"] = "Minami-ke Omatase",
   ["official"] = {
-   [1] = "みなみけ (2012)",
+   [1] = "みなみけ おまたせ",
    },
   ["short"] = {
    },
@@ -95885,9 +95908,9 @@ return {
    },
   },
  [9311] = {
-  ["main"] = "GJ-bu Chuutou-bu",
+  ["main"] = "GJ-bu",
   ["official"] = {
-   [1] = "GJ部中等部",
+   [1] = "GJ部",
    },
   ["short"] = {
    },
@@ -96479,6 +96502,87 @@ return {
    },
   ["syn"] = {
    [1] = "Treasure Hunting",
+   },
+  },
+ [9381] = {
+  ["main"] = "Kira Kira 5th Anniversary Live Anime: Kick Start Generation",
+  ["official"] = {
+   [1] = "キラ☆キラ 5th Anniversary Live Anime KICK START GENERATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9382] = {
+  ["main"] = "Kremlin",
+  ["official"] = {
+   [1] = "クレムリン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9383] = {
+  ["main"] = "Finder Series",
+  ["official"] = {
+   [1] = "ファインダーの標的",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9384] = {
+  ["main"] = "Gintama (2013)",
+  ["official"] = {
+   [1] = "銀魂 (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9385] = {
+  ["main"] = "Oyakodon: Oppai Tokumori Bonyuu Tsuyudaku de",
+  ["official"] = {
+   [1] = "母娘丼♥おっぱい特盛母乳汁だくで",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Haha Musume Donburi: Oppai Tokumori Bonyuu Shiru Dakude",
+   },
+  },
+ [9386] = {
+  ["main"] = "Wooser no Sono Higurashi",
+  ["official"] = {
+   [1] = "うーさーのその日暮らし",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9387] = {
+  ["main"] = "Nagi no Asukara",
+  ["official"] = {
+   [1] = "凪のあすから",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9388] = {
+  ["main"] = "Unsweet: Netorare Ochita Onna-tachi",
+  ["official"] = {
+   [1] = "アンスイート-寝取られ堕ちた女たち-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
