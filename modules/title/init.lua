@@ -21,6 +21,8 @@ local patterns = {
 local translateCharset = {
 	utf8 = 'utf-8',
 	['x-sjis'] = 'sjis',
+	['ks_c_5601-1987'] = 'euc-kr',
+	['ksc_5601'] = 'euc-kr',
 }
 
 local trim = function(str)
