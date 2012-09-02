@@ -826,7 +826,7 @@ return {
  [45] = {
   ["main"] = "Gun Smith Cats",
   ["official"] = {
-   [1] = "GUN SMITH CATS [ガンスミスキャッツ]",
+   [1] = "GUN SMITH CATS",
    [2] = "Gun Smith Cats",
    [3] = "Gunsmith Cats",
    },
@@ -835,7 +835,8 @@ return {
    [2] = "gc",
    },
   ["syn"] = {
-   [1] = "ガン・スミス・キャッツ",
+   [1] = "ガンスミスキャッツ",
+   [2] = "ガン・スミス・キャッツ",
    },
   },
  [46] = {
@@ -4109,11 +4110,10 @@ return {
    [2] = "digimon1",
    },
   ["syn"] = {
-   [1] = "Digimon",
-   [2] = "Digimon: Digitala Monster",
-   [3] = "Приключения дигимонов",
-   [4] = "مغامرات الديجيمون",
-   [5] = "数码暴龙",
+   [1] = "Digimon: Digitala Monster",
+   [2] = "Приключения дигимонов",
+   [3] = "مغامرات الديجيمون",
+   [4] = "数码暴龙",
    },
   },
  [235] = {
@@ -4142,12 +4142,11 @@ return {
   ["syn"] = {
    [1] = "Navegante da Lua",
    [2] = "Pretty Soldier Sailor Moon",
-   [3] = "Sailor Moon",
-   [4] = "Sailor Moon Classic",
-   [5] = "sm1",
-   [6] = "Красавица-воин Сейлор Мун",
-   [7] = "Сейлормун – Луна в матроске",
-   [8] = "بحار القمر",
+   [3] = "Sailor Moon Classic",
+   [4] = "sm1",
+   [5] = "Красавица-воин Сейлор Мун",
+   [6] = "Сейлормун – Луна в матроске",
+   [7] = "بحار القمر",
    },
   },
  [236] = {
@@ -4779,13 +4778,13 @@ return {
  [275] = {
   ["main"] = "Kaze no Tani no Nausicaa",
   ["official"] = {
-   [1] = "Naushika do Vale do Vento",
-   [2] = "Nausicaa din Valea Vântului",
-   [3] = "Nausicaa of the Valley of the Wind",
-   [4] = "Nausicaä aus dem Tal der Winde",
-   [5] = "Nausicaä de la vallée du vent",
-   [6] = "Nausicaä del valle del viento",
-   [7] = "Nausicaä della valle del vento",
+   [1] = "Nausicaa din Valea Vântului",
+   [2] = "Nausicaa of the Valley of the Wind",
+   [3] = "Nausicaä aus dem Tal der Winde",
+   [4] = "Nausicaä de la vallée du vent",
+   [5] = "Nausicaä del valle del viento",
+   [6] = "Nausicaä della valle del vento",
+   [7] = "Nausicaä do Vale do Vento",
    [8] = "Nausicaä från Vindarnas dal",
    [9] = "Nausicaä iz Dežele vetra",
    [10] = "Nausicaä z Doliny Wiatru",
@@ -4814,18 +4813,19 @@ return {
   ["syn"] = {
    [1] = "Kaze no Tani no Naushika",
    [2] = "La princesse des étoiles",
-   [3] = "Nausicaä of the Valley of the Wind",
-   [4] = "Nausika iš Vėjų slėnio",
-   [5] = "Nausikaja iz doline Vjetra",
-   [6] = "Sternkrieger",
-   [7] = "Vindens Krigare",
-   [8] = "Warriors of the Wind",
-   [9] = "Η Ναυσικά της Κοιλάδας των Ανέμων",
-   [10] = "Οι μαχητές του ανέμου",
-   [11] = "Навсікая Долини вітру",
-   [12] = "Наусика от Долината на Вятъра",
-   [13] = "Наушіка Долини Вітру",
-   [14] = "ناوسيكا فتاة وادي الرياح",
+   [3] = "Nausicaä do Vale do Vento",
+   [4] = "Nausicaä of the Valley of the Wind",
+   [5] = "Nausika iš Vėjų slėnio",
+   [6] = "Nausikaja iz doline Vjetra",
+   [7] = "Sternkrieger",
+   [8] = "Vindens Krigare",
+   [9] = "Warriors of the Wind",
+   [10] = "Η Ναυσικά της Κοιλάδας των Ανέμων",
+   [11] = "Οι μαχητές του ανέμου",
+   [12] = "Навсікая Долини вітру",
+   [13] = "Наусика от Долината на Вятъра",
+   [14] = "Наушіка Долини Вітру",
+   [15] = "ناوسيكا فتاة وادي الرياح",
    },
   },
  [276] = {
@@ -5001,10 +5001,11 @@ return {
    [3] = "魔女宅",
    },
   ["syn"] = {
-   [1] = "Відьомська пошта",
-   [2] = "Куриерска служба Кики",
-   [3] = "Служба доставки Кікі",
-   [4] = "خدمة توصيل كيكي",
+   [1] = "O Correio da Feiticeira",
+   [2] = "Відьомська пошта",
+   [3] = "Куриерска служба Кики",
+   [4] = "Служба доставки Кікі",
+   [5] = "خدمة توصيل كيكي",
    },
   },
  [287] = {
@@ -5298,10 +5299,10 @@ return {
   ["official"] = {
    [1] = "Karmínové prase",
    [2] = "Kızıl Kanatlar",
-   [3] = "O Porquinho Aviador",
-   [4] = "Porco Rosso",
-   [5] = "Porco Rosso - A mesterpilóta",
-   [6] = "Porco Rosso - O Último Herói Romântico",
+   [3] = "Porco Rosso",
+   [4] = "Porco Rosso - A mesterpilóta",
+   [5] = "Porco Rosso: O Porquinho Voador",
+   [6] = "Porco Rosso: O Último Herói Romântico",
    [7] = "Porko Roso",
    [8] = "Szkarłatny pilot",
    [9] = "Οι Αερομαχίες του Πόρκο Ρόσσο",
@@ -5320,13 +5321,15 @@ return {
    [5] = "くれ豚",
    },
   ["syn"] = {
-   [1] = "Punainen sika",
-   [2] = "The Crimson Pig",
-   [3] = "The Scarlet Pig",
-   [4] = "Порко Россо",
-   [5] = "Червоний кабан",
-   [6] = "بوركو روسو",
-   [7] = "紅豬",
+   [1] = "O Porco Vermelho",
+   [2] = "O Porquinho Voador: Porco Rosso",
+   [3] = "Punainen sika",
+   [4] = "The Crimson Pig",
+   [5] = "The Scarlet Pig",
+   [6] = "Порко Россо",
+   [7] = "Червоний кабан",
+   [8] = "بوركو روسو",
+   [9] = "紅豬",
    },
   },
  [307] = {
@@ -5713,13 +5716,14 @@ return {
    [10] = "Laputa: Castle in the Sky",
    [11] = "Laputa: Linna taivaalla",
    [12] = "Le château dans le ciel",
-   [13] = "Το Κάστρο στον Ουρανό",
-   [14] = "Небесный замок Лапута",
-   [15] = "הטירה בשמיים",
-   [16] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
-   [17] = "天空の城ラピュタ",
-   [18] = "天空之城",
-   [19] = "천공의 성 라퓨타",
+   [13] = "O Castelo no Céu",
+   [14] = "Το Κάστρο στον Ουρανό",
+   [15] = "Небесный замок Лапута",
+   [16] = "הטירה בשמיים",
+   [17] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
+   [18] = "天空の城ラピュタ",
+   [19] = "天空之城",
+   [20] = "천공의 성 라퓨타",
    },
   ["short"] = {
    [1] = "Laputa",
@@ -5778,17 +5782,18 @@ return {
   ["official"] = {
    [1] = "Alles eile",
    [2] = "Dün Gibi",
-   [3] = "Only Yesterday",
-   [4] = "Powrót do marzeń",
-   [5] = "Souvenirs, goutte à goutte",
-   [6] = "Tränen der Erinnerung - Only Yesterday",
-   [7] = "Yesterday - Vissza a gyerekkorba",
-   [8] = "Ταξιδιώτες στο Παρελθόν",
-   [9] = "Ещё вчера",
-   [10] = "רק אתמול",
-   [11] = "ในความทรงจำที่ไม่มีวันจาง",
-   [12] = "おもひでぽろぽろ",
-   [13] = "歲月的童話",
+   [3] = "Memórias de Ontem",
+   [4] = "Only Yesterday",
+   [5] = "Powrót do marzeń",
+   [6] = "Souvenirs, goutte à goutte",
+   [7] = "Tränen der Erinnerung - Only Yesterday",
+   [8] = "Yesterday - Vissza a gyerekkorba",
+   [9] = "Ταξιδιώτες στο Παρελθόν",
+   [10] = "Ещё вчера",
+   [11] = "רק אתמול",
+   [12] = "ในความทรงจำที่ไม่มีวันจาง",
+   [13] = "おもひでぽろぽろ",
+   [14] = "歲月的童話",
    },
   ["short"] = {
    },
@@ -5879,20 +5884,21 @@ return {
    [3] = "Om du lyssnar noga",
    [4] = "Si tu tends l`oreille",
    [5] = "Stimme des Herzens - Whisper of the Heart",
-   [6] = "Susurros del corazón",
-   [7] = "Sydämen kuiskaus",
-   [8] = "Szept serca",
-   [9] = "Südame sosin",
-   [10] = "Whisper of the Heart",
-   [11] = "Yüreğinin Sesi",
-   [12] = "Şoapta Inimii",
-   [13] = "Širdies Šnabždezys",
-   [14] = "Ο Ψίθυρος της Καρδιάς",
-   [15] = "Шепотът на сърцето",
-   [16] = "Шёпот сердца",
-   [17] = "הלחישה שבלב",
-   [18] = "夢幻街少女",
-   [19] = "耳をすませば",
+   [6] = "Sussurro do Coração",
+   [7] = "Susurros del corazón",
+   [8] = "Sydämen kuiskaus",
+   [9] = "Szept serca",
+   [10] = "Südame sosin",
+   [11] = "Whisper of the Heart",
+   [12] = "Yüreğinin Sesi",
+   [13] = "Şoapta Inimii",
+   [14] = "Širdies Šnabždezys",
+   [15] = "Ο Ψίθυρος της Καρδιάς",
+   [16] = "Шепотът на сърцето",
+   [17] = "Шёпот сердца",
+   [18] = "הלחישה שבלב",
+   [19] = "夢幻街少女",
+   [20] = "耳をすませば",
    },
   ["short"] = {
    [1] = "MoS",
@@ -6389,20 +6395,21 @@ return {
  [370] = {
   ["main"] = "Houhokekyo Tonari no Yamada-kun",
   ["official"] = {
-   [1] = "A Yamada család",
-   [2] = "Familie Yamada - Meine verrückten Nachbarn",
-   [3] = "Mes voisins les Yamada",
-   [4] = "Meus Vizinhos os Yamada",
-   [5] = "Minu naabrid Yamadad",
-   [6] = "Mis Vecinos los Yamada",
-   [7] = "My Neighbors the Yamadas",
-   [8] = "Rodzinka Yamadów",
-   [9] = "Yamada Ailesi",
-   [10] = "Η Γειτονιά της Πόλης: Η Τρελή Οικογένεια Γιαμάντα",
-   [11] = "Наши соседи Ямада",
-   [12] = "משפחת יאמאדה",
-   [13] = "ยามาดะ ครอบครัวนี้ไม่ธรรมดา",
-   [14] = "ホーホケキョとなりの山田くん",
+   [1] = "A Família Yamada",
+   [2] = "A Yamada család",
+   [3] = "Familie Yamada - Meine verrückten Nachbarn",
+   [4] = "Mes voisins les Yamada",
+   [5] = "Meus Vizinhos os Yamada",
+   [6] = "Minu naabrid Yamadad",
+   [7] = "Mis Vecinos los Yamada",
+   [8] = "My Neighbors the Yamadas",
+   [9] = "Rodzinka Yamadów",
+   [10] = "Yamada Ailesi",
+   [11] = "Η Γειτονιά της Πόλης: Η Τρελή Οικογένεια Γιαμάντα",
+   [12] = "Наши соседи Ямада",
+   [13] = "משפחת יאמאדה",
+   [14] = "ยามาดะ ครอบครัวนี้ไม่ธรรมดา",
+   [15] = "ホーホケキョとなりの山田くん",
    },
   ["short"] = {
    [1] = "Yamadas",
@@ -7083,7 +7090,7 @@ return {
    },
   },
  [415] = {
-  ["main"] = "Sakura Taisen Katsudou Shashin",
+  ["main"] = "Sakura Taisen: Katsudou Shashin",
   ["official"] = {
    [1] = "Sakura Wars - O Filme",
    [2] = "Sakura Wars - The Movie",
@@ -7209,11 +7216,12 @@ return {
  [423] = {
   ["main"] = "Rayearth",
   ["official"] = {
-   [1] = "Magic Knight RayEarth - OAV",
-   [2] = "Magic Knight Rayearth",
-   [3] = "Magic Knight Rayearth OVA",
-   [4] = "Rayearth - Il sogno di Emeraude",
-   [5] = "レイアース",
+   [1] = "Luchadoras de Leyenda Rayearth",
+   [2] = "Magic Knight RayEarth - OAV",
+   [3] = "Magic Knight Rayearth",
+   [4] = "Magic Knight Rayearth OVA",
+   [5] = "Rayearth - Il sogno di Emeraude",
+   [6] = "レイアース",
    },
   ["short"] = {
    [1] = "MKR OVA",
@@ -9608,7 +9616,7 @@ return {
   ["official"] = {
    [1] = "Galaksi Kahramanları",
    [2] = "Heldensagen vom Kosmosinsel 銀河英雄伝説",
-   [3] = "La Leyenda de los Heroes de la Galaxia",
+   [3] = "La leyenda de los héroes de la galaxia",
    [4] = "Legend of the Galactic Heroes",
    [5] = "Les héros de la galaxie",
    [6] = "حرب الكواكب",
@@ -9929,8 +9937,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Gear Fighter Dendou",
-   [2] = "Guard Earth and Advanced Reconnaissance Fighter Dendo",
+   [1] = "GEAR Senshi Dendoh",
+   [2] = "Gear Fighter Dendoh",
+   [3] = "Gear Fighter Dendou",
+   [4] = "Guard Earth and Advanced Reconnaissance Fighter Dendo",
    },
   },
  [607] = {
@@ -10991,8 +11001,7 @@ return {
  [680] = {
   ["main"] = "Tenshi no Shippo Chu!",
   ["official"] = {
-   [1] = "Angel`s Tail 2",
-   [2] = "天使のしっぽChu!",
+   [1] = "天使のしっぽChu!",
    },
   ["short"] = {
    [1] = "PETS2",
@@ -11002,7 +11011,8 @@ return {
   ["syn"] = {
    [1] = "Angel Tales 2",
    [2] = "Angel Tales OVA",
-   [3] = "Tenshi no Shippo Chu",
+   [3] = "Angel`s Tail 2",
+   [4] = "Tenshi no Shippo Chu",
    },
   },
  [681] = {
@@ -17508,8 +17518,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Digimon: The Movie",
-   [2] = "Приключения дигимонов. Фильм.",
+   [1] = "Digimon Adventure the Movie",
+   [2] = "Digimon: The Movie",
+   [3] = "Приключения дигимонов. Фильм.",
    },
   },
  [1149] = {
@@ -19503,14 +19514,15 @@ return {
   ["main"] = "Hi no Tori 2772: Ai no CosmoZone",
   ["official"] = {
    [1] = "Fööniks 2772",
-   [2] = "L`uccello di fuoco 2772",
-   [3] = "Pasărea de foc spaţială",
-   [4] = "Phénix, l`oiseau de feu",
-   [5] = "Space Firebird",
-   [6] = "The Phoenix 2772",
-   [7] = "Tűzmadár az Űrben",
-   [8] = "Космическата Огнена Птица",
-   [9] = "火の鳥2772愛のコスモゾーン",
+   [2] = "Hi No Tori 2772",
+   [3] = "L`uccello di fuoco 2772",
+   [4] = "Pasărea de foc spaţială",
+   [5] = "Phénix, l`oiseau de feu",
+   [6] = "Space Firebird",
+   [7] = "The Phoenix 2772",
+   [8] = "Tűzmadár az Űrben",
+   [9] = "Космическата Огнена Птица",
+   [10] = "火の鳥2772愛のコスモゾーン",
    },
   ["short"] = {
    },
@@ -25721,7 +25733,7 @@ return {
  [1818] = {
   ["main"] = "Red Baron",
   ["official"] = {
-   [1] = "Barão Vermelho",
+   [1] = "O Barão Vermelho",
    [2] = "レッドバロン",
    },
   ["short"] = {
@@ -27722,8 +27734,8 @@ return {
    [1] = "(שלושת המוסקטרים (1987",
    [2] = "Cei trei muşchetari",
    [3] = "D`Artagnan e i moschettieri del re",
-   [4] = "D`Artagnan und die drei Musketiere",
-   [5] = "Os 3 Mosqueteiros",
+   [4] = "D`Artagnan e os Três Mosqueteiros",
+   [5] = "D`Artagnan und die drei Musketiere",
    [6] = "Sous le signe des mousquetaires",
    [7] = "The Three Musketeers",
    [8] = "Οι τρεις σωματοφύλακες",
@@ -27739,6 +27751,7 @@ return {
    [2] = "Anime San Jushi",
    [3] = "Anime San Juushi",
    [4] = "Anime Sanjushi",
+   [5] = "Os Três Mosqueteiros",
    },
   },
  [1963] = {
@@ -30583,7 +30596,8 @@ return {
   ["official"] = {
    [1] = "Les fidèles serviteurs canins",
    [2] = "Rock el Valiente",
-   [3] = "わんわん忠臣蔵",
+   [3] = "Rock o Valente",
+   [4] = "わんわん忠臣蔵",
    },
   ["short"] = {
    },
@@ -30753,9 +30767,10 @@ return {
  [2213] = {
   ["main"] = "Kaitei 3-man Mile",
   ["official"] = {
-   [1] = "30,000 ميل تحت سطح البحر",
-   [2] = "Bulles sous les mers",
-   [3] = "海底3万マイル",
+   [1] = "20 Mil Léguas Sob o Mar",
+   [2] = "30,000 ميل تحت سطح البحر",
+   [3] = "Bulles sous les mers",
+   [4] = "海底3万マイル",
    },
   ["short"] = {
    },
@@ -30807,12 +30822,13 @@ return {
  [2216] = {
   ["main"] = "Nagagutsu Sanjuushi",
   ["official"] = {
-   [1] = "Continuavano a chiamarlo il gatto con gli stivali",
-   [2] = "Csizmás Kandúr a vadnyugaton",
-   [3] = "Kocour v botách: Na divokém západě",
-   [4] = "Return of Pero",
-   [5] = "Кот в сапогах на Диком Западе",
-   [6] = "ながぐつ三銃士",
+   [1] = "Continuam a Chamar-lhe Gato das Botas",
+   [2] = "Continuavano a chiamarlo il gatto con gli stivali",
+   [3] = "Csizmás Kandúr a vadnyugaton",
+   [4] = "Kocour v botách: Na divokém západě",
+   [5] = "Return of Pero",
+   [6] = "Кот в сапогах на Диком Западе",
+   [7] = "ながぐつ三銃士",
    },
   ["short"] = {
    },
@@ -32558,6 +32574,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "デッドヒート",
    },
   },
  [2352] = {
@@ -33004,7 +33021,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Corre por tu Vida",
+   [1] = "Corre por tu vida",
    [2] = "Hashire Meros",
    [3] = "Hashire Moeros",
    [4] = "Hashire Möros",
@@ -36481,11 +36498,10 @@ return {
    [3] = "Dogtanian",
    [4] = "Dogtanian i trzech muszkieterów",
    [5] = "Dogtanian und die drei Musketiere",
-   [6] = "D’Artagnan e os três Mosqueteiros",
-   [7] = "Les trois mousquetaires",
-   [8] = "Three Musketeers TV",
-   [9] = "Woof-woof Three Musketeers",
-   [10] = "Д`Артаньгав и три пса-мушкетёра",
+   [6] = "Les trois mousquetaires",
+   [7] = "Three Musketeers TV",
+   [8] = "Woof-woof Three Musketeers",
+   [9] = "Д`Артаньгав и три пса-мушкетёра",
    },
   },
  [2708] = {
@@ -47330,6 +47346,8 @@ return {
    [2] = "月光のピアス ユメミと銀のバラ騎士団",
    },
   ["short"] = {
+   [1] = "ginbara",
+   [2] = "銀バラ",
    },
   ["syn"] = {
    [1] = "Gekkou no Piasu",
@@ -49602,24 +49620,25 @@ return {
  [4193] = {
   ["main"] = "Ged Senki: Tales from Earthsea",
   ["official"] = {
-   [1] = "Cuentos de Terramar",
-   [2] = "Die Chroniken von Erdsee",
-   [3] = "Földtenger varázslója",
-   [4] = "I Racconti di Terramare",
-   [5] = "Legenden om Jordhavet",
-   [6] = "Legender Från Övärlden",
-   [7] = "Les contes de Terremer",
-   [8] = "Maameren tarinat",
-   [9] = "Meremaa lood",
-   [10] = "Opowieści z Ziemiomorza",
-   [11] = "TALES from EARTHSEA",
-   [12] = "Yerdeniz Öyküleri",
-   [13] = "Žemjūrės pasakos",
-   [14] = "Сказания Земноморья",
-   [15] = "הקוסם מארץ ים",
-   [16] = "ゲド戦記 TALES from EARTHSEA",
-   [17] = "地海戰記",
-   [18] = "게드전기",
+   [1] = "Contos de Terramar",
+   [2] = "Cuentos de Terramar",
+   [3] = "Die Chroniken von Erdsee",
+   [4] = "Földtenger varázslója",
+   [5] = "I Racconti di Terramare",
+   [6] = "Legenden om Jordhavet",
+   [7] = "Legender Från Övärlden",
+   [8] = "Les contes de Terremer",
+   [9] = "Maameren tarinat",
+   [10] = "Meremaa lood",
+   [11] = "Opowieści z Ziemiomorza",
+   [12] = "TALES from EARTHSEA",
+   [13] = "Yerdeniz Öyküleri",
+   [14] = "Žemjūrės pasakos",
+   [15] = "Сказания Земноморья",
+   [16] = "הקוסם מארץ ים",
+   [17] = "ゲド戦記 TALES from EARTHSEA",
+   [18] = "地海戰記",
+   [19] = "게드전기",
    },
   ["short"] = {
    [1] = "Ged Senki",
@@ -54505,8 +54524,9 @@ return {
   ["main"] = "Nodame Cantabile",
   ["official"] = {
    [1] = "Nodame Cantabile",
-   [2] = "のだめカンタービレ",
-   [3] = "노다메 칸타빌레",
+   [2] = "Нодаме Кантабиле",
+   [3] = "のだめカンタービレ",
+   [4] = "노다메 칸타빌레",
    },
   ["short"] = {
    [1] = "NC",
@@ -61596,6 +61616,7 @@ return {
    [1] = "大江戸四十八手[ふぉうてぃえいと]",
    },
   ["short"] = {
+   [1] = "OED48",
    },
   ["syn"] = {
    [1] = "Oodeo Shijyuuhatte",
@@ -70055,7 +70076,8 @@ return {
  [6547] = {
   ["main"] = "Mesu Kyoushi: Injoku no Kyoushitsu",
   ["official"] = {
-   [1] = "牝教師 淫辱の教室",
+   [1] = "Desire & Hatred",
+   [2] = "牝教師 淫辱の教室",
    },
   ["short"] = {
    },
@@ -77093,6 +77115,7 @@ return {
    [3] = "The Borrowers",
    [4] = "Ариети от страната на лилипутите",
    [5] = "Заемливката Ариети",
+   [6] = "Позичайко Аріетті",
    },
   },
  [7259] = {
@@ -80501,8 +80524,8 @@ return {
   ["official"] = {
    [1] = "La Leyenda del Dragón Milenario",
    [2] = "Legend of the Millennium Dragon",
-   [3] = "Onigamiden - A Lenda do Dragão Milenar",
-   [4] = "Onigamiden - Legend of the Millenium Dragon",
+   [3] = "Onigamiden - Legend of the Millenium Dragon",
+   [4] = "Onigamiden: A Lenda do Dragão Milenar",
    [5] = "鬼神伝",
    },
   ["short"] = {
@@ -85873,6 +85896,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Friends: Naki of Monster Island",
    },
   },
  [8175] = {
@@ -86698,6 +86722,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Anal Vampire",
+   [2] = "Vampire",
    },
   },
  [8265] = {
@@ -86828,7 +86854,8 @@ return {
   ["official"] = {
    [1] = "Humanity Has Declined",
    [2] = "Закат человечества",
-   [3] = "人類は衰退しました",
+   [3] = "Човечеството запада",
+   [4] = "人類は衰退しました",
    },
   ["short"] = {
    [1] = "Jintai",
@@ -91737,7 +91764,8 @@ return {
  [8820] = {
   ["main"] = "Koi to Senkyo to Chocolate",
   ["official"] = {
-   [1] = "恋と選挙とチョコレート",
+   [1] = "Love, Elections, & Chocolate",
+   [2] = "恋と選挙とチョコレート",
    },
   ["short"] = {
    [1] = "Koichoco",
@@ -94173,9 +94201,9 @@ return {
    },
   },
  [9090] = {
-  ["main"] = "Seitokai no Ichizon (2012)",
+  ["main"] = "Seitokai no Ichizon: Shin Anime (Kari)",
   ["official"] = {
-   [1] = "生徒会の一存 (2012)",
+   [1] = "生徒会の一存 新アニメ (仮)",
    },
   ["short"] = {
    },
@@ -95148,7 +95176,7 @@ return {
  [9214] = {
   ["main"] = "Zetsuen no Tempest: The Civilization Blaster",
   ["official"] = {
-   [1] = "絶園のテンペスト THE CIVILIZATION BLASTER",
+   [1] = "絶園のテンペスト ~THE CIVILIZATION BLASTER~",
    },
   ["short"] = {
    },
@@ -95224,7 +95252,7 @@ return {
  [9231] = {
   ["main"] = "Tantei Opera Milky Holmes: Alternative One - Kobayashi Opera to 5-Mai no Kaiga",
   ["official"] = {
-   [1] = "探偵オペラ ミルキィホームズ Alternative ONE ~小林オペラと5枚の絵画~",
+   [1] = "探偵オペラ ミルキィホームズ Alternative ONE 小林オペラと5枚の絵画",
    },
   ["short"] = {
    },
@@ -95563,9 +95591,9 @@ return {
    },
   },
  [9272] = {
-  ["main"] = "Medaka Box 2",
+  ["main"] = "Medaka Box: Abnormal",
   ["official"] = {
-   [1] = "めだかボックス 2",
+   [1] = "めだかボックス アブノーマル",
    },
   ["short"] = {
    },
@@ -95613,9 +95641,9 @@ return {
    },
   },
  [9279] = {
-  ["main"] = "Hump Bang",
+  ["main"] = "Hump Bang!",
   ["official"] = {
-   [1] = "ハンプバング",
+   [1] = "ハンプバング!",
    },
   ["short"] = {
    },
@@ -96524,16 +96552,6 @@ return {
   ["syn"] = {
    },
   },
- [9383] = {
-  ["main"] = "Finder Series",
-  ["official"] = {
-   [1] = "ファインダーの標的",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9384] = {
   ["main"] = "Gintama (2013)",
   ["official"] = {
@@ -96553,6 +96571,7 @@ return {
    },
   ["syn"] = {
    [1] = "Haha Musume Donburi: Oppai Tokumori Bonyuu Shiru Dakude",
+   [2] = "Mother-Daughter Bowl: With Extra Tits on Top, Juicy with Breast Milk",
    },
   },
  [9386] = {
@@ -96583,6 +96602,107 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [9390] = {
+  ["main"] = "Kyousougiga (2012)",
+  ["official"] = {
+   [1] = "京騒戯画 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9391] = {
+  ["main"] = "A Sumo Wrestler`s Tale",
+  ["official"] = {
+   [1] = "ちゅうずも",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9392] = {
+  ["main"] = "Yumekuri",
+  ["official"] = {
+   [1] = "ゆめくり",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9393] = {
+  ["main"] = "Senyuu.",
+  ["official"] = {
+   [1] = "戦勇.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9394] = {
+  ["main"] = "Kotoura-san",
+  ["official"] = {
+   [1] = "琴浦さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9395] = {
+  ["main"] = "Choujigen Game Neptune",
+  ["official"] = {
+   [1] = "超次元ゲイム ネプテューヌ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9396] = {
+  ["main"] = "Pony Metal U-GAIM Promotion Film",
+  ["official"] = {
+   [1] = "PONY METAL U-GAIM PROMOTION FILM",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9397] = {
+  ["main"] = "Hi no Tori: Hagoromo Hen",
+  ["official"] = {
+   [1] = "火の鳥 羽衣編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9398] = {
+  ["main"] = "Hyakka Ryouran: Samurai Girls Dai 2-ki",
+  ["official"] = {
+   [1] = "百花繚乱 サムライガールズ 第2期",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9399] = {
+  ["main"] = "Ongaku",
+  ["official"] = {
+   [1] = "音楽",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "音楽と漫画",
    },
   },
 }
