@@ -76,7 +76,7 @@ local parseData = function(data)
 
 	-- This page is a typical example of someone using XHTML+CSS+JS, while still
 	-- coding like they used to back in 1998.
-	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)</div>'):gsub('&nbsp;', '')
+	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)<div id="slutt">'):gsub('&nbsp;', '')
 
 	local words = {}
 	if(data:match('liten_ordliste')) then
