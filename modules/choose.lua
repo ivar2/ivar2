@@ -40,7 +40,7 @@ local handleOutput = function(source, destination, choices)
 		i = i + 1
 	end
 
-	if(#choices == 1 or i == 1) then
+	if(#choices <= 1 or i == 1) then
 		ivar2:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
 	else
 		local seed = math.random(1, #choices)
