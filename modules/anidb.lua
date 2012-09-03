@@ -5,6 +5,40 @@ local html2unicode = require'html'
 require'tokyocabinet'
 require'logging.console'
 
+local catWhitelist = {
+	['Action'] = true,
+	['Adventure'] = true,
+	['Angst'] = true,
+	['Art'] = true,
+	['Band'] = true,
+	['Clubs'] = true,
+	['College'] = true,
+	['Comedy'] = true,
+	['Daily Life'] = true,
+	['Drama'] = true,
+	['Ecchi'] = true,
+	['Fantasy'] = true,
+	['Harem'] = true,
+	['Horror'] = true,
+	['Idol'] = true,
+	['Josei'] = true,
+	['Lolicon'] = true,
+	['Magic'] = true,
+	['Martial Arts'] = true,
+	['Music'] = true,
+	['Romance'] = true,
+	['Sci-Fi'] = true,
+	['Seinen'] = true,
+	['Shotacon'] = true,
+	['Shoujo'] = true,
+	['Shounen'] = true,
+	['Sports'] = true,
+	['Super Power'] = true,
+	['Thriller'] = true,
+	['Tragedy'] = true,
+	['Vampires'] = true,
+}
+
 local log = logging.console()
 local anidb = tokyocabinet.hdbnew()
 
@@ -54,7 +88,9 @@ local handleXML = function(xml)
 		local catString = xml:match('<categories>(.-)</categories>')
 		if(catString) then
 			for weight, name in catString:gmatch('weight="([^"]+)">\n<name>([^<]+)</name>') do
-				table.insert(weighted, {name = name, weight = tonumber(weight)})
+				if(catWhitelist[name]) then
+					table.insert(weighted, {name = name, weight = tonumber(weight)})
+				end
 			end
 			table.sort(weighted, function(a, b) return a.weight > b.weight end)
 		end
