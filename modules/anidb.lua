@@ -15,6 +15,7 @@ local catWhitelist = {
 	['College'] = true,
 	['Comedy'] = true,
 	['Daily Life'] = true,
+	['Detective'] = true,
 	['Drama'] = true,
 	['Ecchi'] = true,
 	['Fantasy'] = true,
