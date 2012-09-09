@@ -441,7 +441,6 @@ function ivar2:ParseInput(data)
 				if(not source) then
 					-- :<source> <command> <destination>
 					source, command, destination = line:match('^:(%S+) (%u+) (.*)')
-					destination = self:ParseMaskNick(source)
 				end
 
 				if(not self:IsIgnored(destination, source)) then
