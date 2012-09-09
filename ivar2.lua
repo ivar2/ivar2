@@ -439,6 +439,10 @@ function ivar2:ParseInput(data)
 					source, command, destination, argument = line:match('^:(%S+) (%u+) (%S+) (.*)')
 				end
 				if(not source) then
+					-- :<source> <command> :<destination>
+					source, command, destination = line:match('^:(%S+) (%u+) :(.*)')
+				end
+				if(not source) then
 					-- :<source> <command> <destination>
 					source, command, destination = line:match('^:(%S+) (%u+) (.*)')
 				end
