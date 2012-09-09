@@ -66,8 +66,8 @@ return {
 
 	JOIN = {
 		-- Check if we have notes for the person who joined the channel.
-		function(self, source, destination, channel)
-			return handleOutput(self, source, channel)
+		function(self, source, destination)
+			return handleOutput(self, source, destination)
 		end,
 	},
 
