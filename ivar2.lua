@@ -36,7 +36,7 @@ local ivar2 = {
 local events = {
 	['PING'] = {
 		core = {
-			function(self, time)
+			function(self, source, destination, time)
 				self:Send(string.format('PONG %s', time))
 			end,
 		},
@@ -403,18 +403,45 @@ function ivar2:ParseInput(data)
 			line = line:sub(1, -2)
 			self:Log('debug', line)
 
-			if(line:sub(1,1) ~= ':') then
-				self:DispatchCommand(line:match('([^:]+) :(.*)'))
-			elseif(line:sub(1,1) == ':') then
-				local source, command, destination, argument
-				if(line:match' :') then
-					source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) ([^:]+) :(.*)')
-				else
-					source, command, destination, argument = line:match('^:(%S+) ([%u%d]+) (%S+) (.*)')
+			local source, command, destination, argument
+			if(line:sub(1, 1) ~= ':') then
+				command, argument = line:match'^(%S+) :(.*)'
+				if(command) then
+					self:DispatchCommand(command, argument, 'server')
 				end
-
+			elseif(line:sub(1, 1) == ':') then
 				if(not source) then
-					source, command, argument = line:match('^:(%S+) ([%u%d]+) (%S+)')
+					-- :<server> 000 <nick> <destination> :<argument>
+					source, command, destination, argument = line:match('^:(%S+) (%d%d%d) %S+ ([^%d]+[^:]+) :(.*)')
+				end
+				if(not source) then
+					-- :<server> 000 <nick> <int> :<argument>
+					source, command, argument = line:match('^:(%S+) (%d%d%d) [^:]+ (%d+ :.+)')
+					if(source) then argument = argument:gsub(':', '', 1) end
+				end
+				if(not source) then
+					-- :<server> 000 <nick> <argument> :<argument>
+					source, command, argument = line:match('^:(%S+) (%d%d%d) %S+ (.+) :.+$')
+				end
+				if(not source) then
+					-- :<server> 000 <nick> :<argument>
+					source, command, argument = line:match('^:(%S+) (%d%d%d) [^:]+ :(.*)')
+				end
+				if(not source) then
+					-- :<server> 000 <nick> <argument>
+					source, command, argument = line:match('^:(%S+) (%d%d%d) %S+ (.*)')
+				end
+				if(not source) then
+					-- :<server> <command> <destination> :<argument>
+					source, command, destination, argument = line:match('^:(%S+) (%u+) ([^:]+) :(.*)')
+				end
+				if(not source) then
+					-- :<source> <command> <destination> <argument>
+					source, command, destination, argument = line:match('^:(%S+) (%u+) (%S+) (.*)')
+				end
+				if(not source) then
+					-- :<source> <command> <destination>
+					source, command, destination = line:match('^:(%S+) (%u+) (.*)')
 					destination = self:ParseMaskNick(source)
 				end
 
