@@ -38,8 +38,7 @@ end
 
 return {
 	NICK = {
-		function(self, source, destination, nick)
-			nick = nick:sub(2)
+		function(self, source, nick)
 			notes:open('cache/notes')
 
 			if(not notes:get('global:' .. nick:lower())) then return notes:close() end
