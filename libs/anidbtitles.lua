@@ -5322,14 +5322,13 @@ return {
    },
   ["syn"] = {
    [1] = "O Porco Vermelho",
-   [2] = "O Porquinho Voador: Porco Rosso",
-   [3] = "Punainen sika",
-   [4] = "The Crimson Pig",
-   [5] = "The Scarlet Pig",
-   [6] = "Порко Россо",
-   [7] = "Червоний кабан",
-   [8] = "بوركو روسو",
-   [9] = "紅豬",
+   [2] = "Punainen sika",
+   [3] = "The Crimson Pig",
+   [4] = "The Scarlet Pig",
+   [5] = "Порко Россо",
+   [6] = "Червоний кабан",
+   [7] = "بوركو روسو",
+   [8] = "紅豬",
    },
   },
  [307] = {
@@ -6321,7 +6320,7 @@ return {
    [4] = "La reine du fond des temps",
    [5] = "Queen Millennia",
    [6] = "Η Βασίλισσα των 1000 Χρόνων",
-   [7] = "新竹取物語・1000年女王",
+   [7] = "新竹取物語 1000年女王",
    },
   ["short"] = {
    [1] = "Millennia",
@@ -9298,6 +9297,7 @@ return {
    [6] = "דיג`ימון 3",
    [7] = "أبطال الديجيتال الجزء الثالث",
    [8] = "デジモンテイマーズ",
+   [9] = "数码暴龙 驯兽师之王",
    },
   ["short"] = {
    [1] = "digimon3",
@@ -13469,10 +13469,10 @@ return {
    },
   },
  [858] = {
-  ["main"] = "Kagaku Ninja-Tai Gatchaman (1994)",
+  ["main"] = "Gatchaman",
   ["official"] = {
-   [1] = "Gatchaman - La bataille des planètes",
-   [2] = "科学忍者隊ガッチャマン (1994)",
+   [1] = "GATCHAMAN",
+   [2] = "Gatchaman - La bataille des planètes",
    },
   ["short"] = {
    },
@@ -13481,7 +13481,9 @@ return {
    [2] = "Gatchaman 1994",
    [3] = "Gatchaman 94",
    [4] = "Gatchaman Collection",
-   [5] = "Tecno Ninja Gatchaman",
+   [5] = "Kagaku Ninja-Tai Gatchaman (1994)",
+   [6] = "Tecno Ninja Gatchaman",
+   [7] = "科学忍者隊ガッチャマン (1994)",
    },
   },
  [861] = {
@@ -13953,6 +13955,7 @@ return {
    [3] = "opm2",
    },
   ["syn"] = {
+   [1] = "One Piece 2 - A aventura na ilha mecânica",
    },
   },
  [894] = {
@@ -14202,7 +14205,7 @@ return {
   ["official"] = {
    [1] = "Ange des ténèbres",
    [2] = "Angel of Darkness",
-   [3] = "El Angel de la Oscuridad",
+   [3] = "El angel de la oscuridad",
    [4] = "淫獣教師",
    },
   ["short"] = {
@@ -19959,7 +19962,7 @@ return {
   ["official"] = {
    [1] = "Gimnasia Artística X",
    [2] = "Princess 69",
-   [3] = "新体操(仮) THE ANIMATION ～妖精たちの輪舞曲～",
+   [3] = "新体操(仮) THE ANIMATION ~妖精たちの輪舞曲[ロンド]~",
    },
   ["short"] = {
    },
@@ -21310,7 +21313,7 @@ return {
    },
   },
  [1450] = {
-  ["main"] = "Kagaku Ninja-Tai Gatchaman F",
+  ["main"] = "Kagaku Ninja-Tai Gatchaman Fighter",
   ["official"] = {
    [1] = "Eagle Riders (2)",
    [2] = "La patrouille des aigles (suite)",
@@ -25627,11 +25630,12 @@ return {
    [3] = "Démétan la petite grenouille",
    [4] = "La Banda Dei Ranocchi",
    [5] = "Rohkea sammakko",
-   [6] = "Zielone żabki",
-   [7] = "Ο Γενναίος Βάτραχος",
-   [8] = "الضفدع الشجاع",
-   [9] = "けろっこデメタン",
-   [10] = "개구리 소년",
+   [6] = "The Brave Frog`s Greatest Adventure",
+   [7] = "Zielone żabki",
+   [8] = "Ο Γενναίος Βάτραχος",
+   [9] = "الضفدع الشجاع",
+   [10] = "けろっこデメタン",
+   [11] = "개구리 소년",
    },
   ["short"] = {
    },
@@ -27168,7 +27172,7 @@ return {
    [3] = "O Βασιλιάς Αρθούρος",
    [4] = "Prinz Arthus (Teil 1)",
    [5] = "Rei Arthur",
-   [6] = "円卓の騎士物語・燃えろアーサー",
+   [6] = "円卓の騎士物語 燃えろアーサー",
    },
   ["short"] = {
    [1] = "King Arthur",
@@ -27198,7 +27202,7 @@ return {
   ["official"] = {
    [1] = "King Arthur - Série 2",
    [2] = "Prinz Arthus (Teil 2)",
-   [3] = "燃えろアーサー・白馬の王子",
+   [3] = "燃えろアーサー 白馬の王子",
    },
   ["short"] = {
    },
@@ -27624,7 +27628,7 @@ return {
    [2] = "Bola de Drac: La Bella dorment al castell del mal",
    [3] = "Dragon Ball 2 - Le château du démon",
    [4] = "Dragon Ball Filme 2 - O Castelo Fantástico",
-   [5] = "Dragon Ball: La Bella Durmiente en el Castillo del Mal",
+   [5] = "Dragon Ball: La bella durmiente en el castillo del mal",
    [6] = "Dragon Ball: Sleeping Princess in Devil`s Castle",
    [7] = "Dragonball - The Movie 2: Das Schloss der Dämonen",
    [8] = "ดราก้อนบอล มูฟวี่ 2 ตอน เจ้าหญิงนิทราแห่งปราสาทจอมมาร",
@@ -29941,8 +29945,9 @@ return {
    [1] = "Czarodziejka z Księżyca: Sailor Moon S - the Movie",
    [2] = "Sailor Moon S Der Spielfilm: Schneeprinzessin Kaguya",
    [3] = "Sailor Moon S Movie: Hearts in Ice",
-   [4] = "เซเลอร์มูน S \"แผนยึดครองโลกของเจ้าหญิงหิมะ\"",
-   [5] = "美少女戦士セーラームーンS かぐや姫の恋人",
+   [4] = "Sailor Moon S: Corações de Gelo",
+   [5] = "เซเลอร์มูน S \"แผนยึดครองโลกของเจ้าหญิงหิมะ\"",
+   [6] = "美少女戦士セーラームーンS かぐや姫の恋人",
    },
   ["short"] = {
    },
@@ -29954,10 +29959,11 @@ return {
   ["official"] = {
    [1] = "Czarodziejka z Księżyca: Sailor Moon R the Movie",
    [2] = "Sailor Moon R Movie: Gefährliche Blumen",
-   [3] = "Sailor Moon R: The Movie - The Promise of the Rose",
-   [4] = "Sailor Moon, le film",
-   [5] = "เซเลอร์มูน R \"สงครามปีศาจดอกไม้จากอวกาศ\"",
-   [6] = "美少女戦士セーラームーンR",
+   [3] = "Sailor Moon R: A Promessa da Rosa",
+   [4] = "Sailor Moon R: The Movie - The Promise of the Rose",
+   [5] = "Sailor Moon, le film",
+   [6] = "เซเลอร์มูน R \"สงครามปีศาจดอกไม้จากอวกาศ\"",
+   [7] = "美少女戦士セーラームーンR",
    },
   ["short"] = {
    [1] = "SM R Movie",
@@ -29971,10 +29977,11 @@ return {
  [2153] = {
   ["main"] = "Bishoujo Senshi Sailor Moon Super S - Sailor 9 Senshi Shuuketsu! Black-Dream-Hole no Kiseki",
   ["official"] = {
-   [1] = "Sailor Moon Super S: Reise ins Land der Träume",
-   [2] = "Sailor Moon Super S: The Fabulous 9 Get Together! Miracle in the Black Dream Hole",
-   [3] = "เซเลอร์มูน SuperS \"รวมพลังอัศวินเซเลอร์ทั้ง 9! ปาฏิหาริย์แห่งแบล็กดรีมโฮล\"",
-   [4] = "美少女戦士 セーラームーン SuperS セーラー9戦士集結! ブラック・ドリーム・ホールの奇跡",
+   [1] = "Sailor Moon Super S: O Buraco Negro dos Sonhos",
+   [2] = "Sailor Moon Super S: Reise ins Land der Träume",
+   [3] = "Sailor Moon Super S: The Fabulous 9 Get Together! Miracle in the Black Dream Hole",
+   [4] = "เซเลอร์มูน SuperS \"รวมพลังอัศวินเซเลอร์ทั้ง 9! ปาฏิหาริย์แห่งแบล็กดรีมโฮล\"",
+   [5] = "美少女戦士 セーラームーン SuperS セーラー9戦士集結! ブラック・ドリーム・ホールの奇跡",
    },
   ["short"] = {
    },
@@ -34724,10 +34731,11 @@ return {
    [1] = "Czarodziejka z Księżyca: Sailor Moon Super S",
    [2] = "Sailor Moon (saison 4)",
    [3] = "Sailor Moon Super S",
-   [4] = "Sailor Moon e il mistero dei sogni",
-   [5] = "Varázslatos Álmok Super S",
-   [6] = "เซเลอร์มูน SuperS",
-   [7] = "美少女戦士セーラームーン Super S",
+   [4] = "Sailor Moon SuperS",
+   [5] = "Sailor Moon e il mistero dei sogni",
+   [6] = "Varázslatos Álmok Super S",
+   [7] = "เซเลอร์มูน SuperS",
+   [8] = "美少女戦士セーラームーン Super S",
    },
   ["short"] = {
    },
@@ -34741,9 +34749,8 @@ return {
    [1] = "Czarodziejka z Księżyca: Sailor Moon Sailor Stars",
    [2] = "Petali di stelle per Sailor Moon",
    [3] = "Sailor Moon Sailor Stars",
-   [4] = "Sailor Moon Stars",
-   [5] = "เซเลอร์มูน เซเลอร์สตาร์ส",
-   [6] = "美少女戦士セーラームーン セーラースターズ",
+   [4] = "เซเลอร์มูน เซเลอร์สตาร์ส",
+   [5] = "美少女戦士セーラームーン セーラースターズ",
    },
   ["short"] = {
    [1] = "Sailor Stars",
@@ -36494,14 +36501,13 @@ return {
    },
   ["syn"] = {
    [1] = "Czworonożni Muszkieterowie",
-   [2] = "Dartacan y los tres mosqueperros",
-   [3] = "Dogtanian",
-   [4] = "Dogtanian i trzech muszkieterów",
-   [5] = "Dogtanian und die drei Musketiere",
-   [6] = "Les trois mousquetaires",
-   [7] = "Three Musketeers TV",
-   [8] = "Woof-woof Three Musketeers",
-   [9] = "Д`Артаньгав и три пса-мушкетёра",
+   [2] = "Dogtanian",
+   [3] = "Dogtanian i trzech muszkieterów",
+   [4] = "Dogtanian und die drei Musketiere",
+   [5] = "Les trois mousquetaires",
+   [6] = "Three Musketeers TV",
+   [7] = "Woof-woof Three Musketeers",
+   [8] = "Д`Артаньгав и три пса-мушкетёра",
    },
   },
  [2708] = {
@@ -42885,11 +42891,11 @@ return {
  [3395] = {
   ["main"] = "Black Lagoon",
   ["official"] = {
-   [1] = "Black Lagoon",
-   [2] = "Пираты \"Чёрной лагуны\"",
-   [3] = "Пірати «Чорної Лагуни»",
-   [4] = "จารชนพันธุ์เถื่อน",
-   [5] = "ブラック・ラグーン",
+   [1] = "BLACK LAGOON",
+   [2] = "Black Lagoon",
+   [3] = "Пираты \"Чёрной лагуны\"",
+   [4] = "Пірати «Чорної Лагуни»",
+   [5] = "จารชนพันธุ์เถื่อน",
    [6] = "블랙 라군",
    },
   ["short"] = {
@@ -42908,7 +42914,8 @@ return {
    [9] = "Чорна лагуна",
    [10] = "Чёрная лагуна",
    [11] = "مرداب سیاه",
-   [12] = "黑礁",
+   [12] = "ブラック・ラグーン",
+   [13] = "黑礁",
    },
   },
  [3396] = {
@@ -44281,9 +44288,8 @@ return {
   ["syn"] = {
    [1] = "Comando G",
    [2] = "G-Force: Defensores do Espaço",
-   [3] = "Gatchaman",
-   [4] = "Scientific Ninja Team Gatchaman",
-   [5] = "Załoga G",
+   [3] = "Scientific Ninja Team Gatchaman",
+   [4] = "Załoga G",
    },
   },
  [3514] = {
@@ -45036,14 +45042,14 @@ return {
    },
   },
  [3577] = {
-  ["main"] = "Karakuri Kengo Musashi Lord",
+  ["main"] = "Karakuri Kengou Den Musashi Lord",
   ["official"] = {
-   [1] = "Musashi, the Samurai Lord",
-   [2] = "からくり剣豪伝ムサシロード",
+   [1] = "からくり剣豪伝ムサシロード",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Musashi, the Samurai Lord",
    },
   },
  [3578] = {
@@ -53569,7 +53575,7 @@ return {
  [4597] = {
   ["main"] = "Black Lagoon: The Second Barrage",
   ["official"] = {
-   [1] = "BLACK LAGOON 2ndシーズン",
+   [1] = "BLACK LAGOON The Second Barrage",
    [2] = "Black Lagoon 2nd Barrage",
    [3] = "Black Lagoon: The Second Barrage",
    [4] = "Пірати «Чорної Лагуни» 2",
@@ -53579,14 +53585,15 @@ return {
    [2] = "BLTSB",
    },
   ["syn"] = {
-   [1] = "Black Lagoon 2nd Barrage",
-   [2] = "Black Lagoon 2nd Season",
-   [3] = "Juodoji Lagūna: Antroji Salvė",
-   [4] = "Черната Лагуна 2",
-   [5] = "Черная лагуна (второй сезон)",
-   [6] = "مرداب سیاه : رگبار دوم",
-   [7] = "ブラック・ラグーン 2ndシーズン",
-   [8] = "黑礁 第二季",
+   [1] = "BLACK LAGOON 2ndシーズン",
+   [2] = "Black Lagoon 2nd Barrage",
+   [3] = "Black Lagoon 2nd Season",
+   [4] = "Juodoji Lagūna: Antroji Salvė",
+   [5] = "Черната Лагуна 2",
+   [6] = "Черная лагуна (второй сезон)",
+   [7] = "مرداب سیاه : رگبار دوم",
+   [8] = "ブラック・ラグーン 2ndシーズン",
+   [9] = "黑礁 第二季",
    },
   },
  [4598] = {
@@ -53605,17 +53612,17 @@ return {
  [4599] = {
   ["main"] = "Mikan Enikki",
   ["official"] = {
-   [1] = "Mikan",
-   [2] = "مذكرات ميكان",
-   [3] = "みかん絵日記",
+   [1] = "مذكرات ميكان",
+   [2] = "みかん絵日記",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Ilustrowany pamiętnik Mikana",
-   [2] = "Mikan - pomarańczowy kot",
-   [3] = "Mikan`s Illustrated Diary",
-   [4] = "Mikan`s Picture Diary",
+   [2] = "Mikan",
+   [3] = "Mikan - pomarańczowy kot",
+   [4] = "Mikan`s Illustrated Diary",
+   [5] = "Mikan`s Picture Diary",
    },
   },
  [4600] = {
@@ -54084,9 +54091,9 @@ return {
    },
   },
  [4650] = {
-  ["main"] = "Ojarumaru: Yakusoku no Natsu Ojaru to Semira",
+  ["main"] = "Eiga Ojarumaru: Yakusoku no Natsu Ojaru to Semira",
   ["official"] = {
-   [1] = "おじゃる丸 約束の夏 おじゃるとせみら",
+   [1] = "映画 おじゃる丸 約束の夏 おじゃるとせみら",
    },
   ["short"] = {
    },
@@ -60504,8 +60511,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Os Rastejadores do Céu",
-   [2] = "Os navegantes do céu",
+   [1] = "Os Navegantes do Céu",
+   [2] = "Os Rastejadores do Céu",
    [3] = "Небесные Скитальцы",
    },
   },
@@ -63510,7 +63517,7 @@ return {
  [5719] = {
   ["main"] = "Fairy Forest Remi-chan",
   ["official"] = {
-   [1] = "El Hada del Bosque",
+   [1] = "El hada del bosque",
    [2] = "フェアリーフォレスト レミちゃん",
    },
   ["short"] = {
@@ -75530,11 +75537,13 @@ return {
  [7105] = {
   ["main"] = "Hey Yo Yorang",
   ["official"] = {
-   [1] = "꼬마여우 요랑",
+   [1] = "My Little Fox",
+   [2] = "꼬마여우 요랑",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kang Hyeon and Yorang",
    },
   },
  [7107] = {
@@ -78056,7 +78065,7 @@ return {
    },
   },
  [7354] = {
-  ["main"] = "Bikkuriman: Moen Zone no Himitsu",
+  ["main"] = "Bikkuriman: Muen Zone no Hihou",
   ["official"] = {
    [1] = "ビックリマン 無縁ゾーンの秘宝",
    },
@@ -81749,9 +81758,9 @@ return {
    },
   },
  [7750] = {
-  ["main"] = "Sore Ike! Anpanman: Minami no Umi o Sukue",
+  ["main"] = "Sore Ike! Anpanman: Minami no Umi o Sukue!",
   ["official"] = {
-   [1] = "それいけ! アンパンマン みなみの海をすくえ",
+   [1] = "それいけ! アンパンマン みなみの海をすくえ!",
    },
   ["short"] = {
    },
@@ -83168,6 +83177,7 @@ return {
    },
   ["syn"] = {
    [1] = "Pokemon Best Wishes",
+   [2] = "Pokemon: Black and White",
    },
   },
  [7892] = {
@@ -85074,9 +85084,12 @@ return {
  [8096] = {
   ["main"] = "Hybrid Deka",
   ["official"] = {
-   [1] = "ハイブリッド刑事(デカ)",
+   [1] = "ハイブリッド刑事",
    },
   ["short"] = {
+   [1] = "haideka",
+   [2] = "ハイデカ",
+   [3] = "ハイ刑事",
    },
   ["syn"] = {
    },
@@ -86025,6 +86038,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Вечност над вечността",
    },
   },
  [8186] = {
@@ -86729,7 +86743,8 @@ return {
  [8265] = {
   ["main"] = "Maken-ki!",
   ["official"] = {
-   [1] = "マケン姫っ!",
+   [1] = "Maken-ki! Battling Venus",
+   [2] = "マケン姫っ!",
    },
   ["short"] = {
    },
@@ -87882,7 +87897,7 @@ return {
    },
   },
  [8387] = {
-  ["main"] = "Gekijouban Naruto Soyokazeden: Naruto to Mashin to Mitsu no Onegai Dattebayo!!",
+  ["main"] = "Gekijouban Naruto Soyokazeden: Naruto to Mashin to Mitsu no Onegai Datte ba yo!!",
   ["official"] = {
    [1] = "Naruto, le génie et les trois vœux",
    [2] = "劇場版 NARUTO そよ風伝 ナルトと魔神と3つのお願いだってばよ!!",
@@ -88175,7 +88190,7 @@ return {
    },
   },
  [8420] = {
-  ["main"] = "Korekuraide Utau",
+  ["main"] = "Korekurai de Utau",
   ["official"] = {
    [1] = "Sing In My Own Way",
    [2] = "これくらいで歌う",
@@ -89641,6 +89656,7 @@ return {
    [3] = "rinne no lagrange",
    },
   ["syn"] = {
+   [1] = "La flor de Rin-ne",
    },
   },
  [8584] = {
@@ -90027,8 +90043,9 @@ return {
   ["syn"] = {
    [1] = "Another 0-kan",
    [2] = "Another 0巻",
-   [3] = "アナザー 0巻",
-   [4] = "アナザー The Other -因果-",
+   [3] = "Another The Other -Karma-",
+   [4] = "アナザー 0巻",
+   [5] = "アナザー The Other -因果-",
    },
   },
  [8626] = {
@@ -91065,6 +91082,7 @@ return {
    [1] = "ココロコネクト",
    },
   ["short"] = {
+   [1] = "kokoco",
    },
   ["syn"] = {
    },
@@ -94093,6 +94111,7 @@ return {
    [1] = "Tari x2",
    },
   ["syn"] = {
+   [1] = "tari^2",
    },
   },
  [9078] = {
@@ -94671,6 +94690,9 @@ return {
    [1] = "やきもち狂想曲[カプリス]",
    },
   ["short"] = {
+   [1] = "yakicap",
+   [2] = "yakikapu",
+   [3] = "やきカプ",
    },
   ["syn"] = {
    },
@@ -95414,17 +95436,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   },
-  },
- [9252] = {
-  ["main"] = "TV Kazoku Channel Jacker",
-  ["official"] = {
-   [1] = "TV家族 チャンネル・ジャッカー",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "TV Family Channel Hijacker",
    },
   },
  [9253] = {
@@ -96703,6 +96714,138 @@ return {
    },
   ["syn"] = {
    [1] = "音楽と漫画",
+   },
+  },
+ [9400] = {
+  ["main"] = "Yuu Gi Ou! Zexal Second",
+  ["official"] = {
+   [1] = "遊戯王ゼアル II[セカンド]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Yuu Gi Ou! Zexal II",
+   },
+  },
+ [9401] = {
+  ["main"] = "Tsugou no Yoi Sexfriend?",
+  ["official"] = {
+   [1] = "都合のよいセックスフレンド?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Sex Friends Convenience?",
+   },
+  },
+ [9402] = {
+  ["main"] = "Joshiraku (2013)",
+  ["official"] = {
+   [1] = "じょしらく (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9403] = {
+  ["main"] = "Kono Danshi, Ningyo Hiroimashita.",
+  ["official"] = {
+   [1] = "この男子, 人魚ひろいました.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9404] = {
+  ["main"] = "Pokemon Black 2 White 2: Shoukai SP Movie Kanzenban",
+  ["official"] = {
+   [1] = "『ポケモンブラック２・ホワイト２』紹介SPムービー 完全版",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9405] = {
+  ["main"] = "Beast Saga",
+  ["official"] = {
+   [1] = "ビーストサーガ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9406] = {
+  ["main"] = "Maken-ki! 2",
+  ["official"] = {
+   [1] = "マケン姫っ! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9409] = {
+  ["main"] = "High School DxD Dai 2-ki",
+  ["official"] = {
+   [1] = "ハイスクールDxD 第2期",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9410] = {
+  ["main"] = "Star Driver The Movie",
+  ["official"] = {
+   [1] = "スタードライバー THE MOVIE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9411] = {
+  ["main"] = "Namanaka Hyaku Percent!",
+  ["official"] = {
+   [1] = "生膣ひゃくぱぁせんと!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9412] = {
+  ["main"] = "G Senjou no Maou",
+  ["official"] = {
+   [1] = "G線上の魔王",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9413] = {
+  ["main"] = "CHAINSAW MAID 2",
+  ["official"] = {
+   [1] = "チェンソーメイド２",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9414] = {
+  ["main"] = "Cross Fight B-Daman eS",
+  ["official"] = {
+   [1] = "クロスファイト ビーダマン eS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
