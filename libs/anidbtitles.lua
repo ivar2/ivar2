@@ -7161,14 +7161,14 @@ return {
   ["main"] = "Armitage III",
   ["official"] = {
    [1] = "Armitage III",
-   [2] = "アミテージ・ザ・サード",
-   [3] = "아미테이지 더 써드",
+   [2] = "Армитаж III",
+   [3] = "アミテージ・ザ・サード",
+   [4] = "아미테이지 더 써드",
    },
   ["short"] = {
    [1] = "Armitage",
    },
   ["syn"] = {
-   [1] = "Армитаж III",
    },
   },
  [421] = {
@@ -16762,11 +16762,12 @@ return {
   ["main"] = "Gilgamesh",
   ["official"] = {
    [1] = "Gilgamesh",
-   [2] = "Gilgamesh - De quel côté êtes-vous ?",
-   [3] = "Gilgamesh - Welcher Seite schliesst du dich an?",
-   [4] = "Gilgamesh: Whose Side Are You On?",
-   [5] = "Гильгамеш",
-   [6] = "ギルガメッシュ",
+   [2] = "Gilgamesh - De Cual Lado Tu Estas?",
+   [3] = "Gilgamesh - De quel côté êtes-vous ?",
+   [4] = "Gilgamesh - Welcher Seite schliesst du dich an?",
+   [5] = "Gilgamesh: Whose Side Are You On?",
+   [6] = "Гильгамеш",
+   [7] = "ギルガメッシュ",
    },
   ["short"] = {
    [1] = "ggm",
@@ -21301,7 +21302,7 @@ return {
    [1] = "Eagle Riders",
    [2] = "Eskadra Orła",
    [3] = "La patrouille des aigles",
-   [4] = "科学忍者隊ガッチャマン II",
+   [4] = "科学忍者隊ガッチャマンII",
    },
   ["short"] = {
    [1] = "Gatchaman II",
@@ -21309,7 +21310,6 @@ return {
   ["syn"] = {
    [1] = "Gatchaman, le combat des galaxies",
    [2] = "Science Ninja Team Gatchaman II",
-   [3] = "科学忍者隊ガッチャマンII",
    },
   },
  [1450] = {
@@ -28706,10 +28706,11 @@ return {
  [2052] = {
   ["main"] = "Meitantei Conan: Meikyuu no Crossroad",
   ["official"] = {
-   [1] = "Detective Conan: Crossroad in the Ancient Capital",
-   [2] = "Detektiv Conan - 7. Film: Die Kreuzung des Labyrinths",
-   [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 7 ตอน คดีฆาตกรรมแห่งเมืองปริศนา",
-   [4] = "名探偵コナン 迷宮の十字路(クロスロード)",
+   [1] = "Detective Conan - La mappa del mistero",
+   [2] = "Detective Conan: Crossroad in the Ancient Capital",
+   [3] = "Detektiv Conan - 7. Film: Die Kreuzung des Labyrinths",
+   [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 7 ตอน คดีฆาตกรรมแห่งเมืองปริศนา",
+   [5] = "名探偵コナン 迷宮の十字路(クロスロード)",
    },
   ["short"] = {
    [1] = "Detective Conan: Movie 7",
@@ -29594,7 +29595,7 @@ return {
    },
   },
  [2125] = {
-  ["main"] = "Geisters Fractions of the Earth",
+  ["main"] = "Geisters: Fractions of the Earth",
   ["official"] = {
    [1] = "Geisters - Fractions of the Earth",
    [2] = "ガイスターズ FRACTIONS OF THE EARTH",
@@ -32294,10 +32295,11 @@ return {
  [2328] = {
   ["main"] = "Meitantei Conan: Gin`yoku no Magician",
   ["official"] = {
-   [1] = "Detective Conan: Magician of the Silver Sky",
-   [2] = "Detektiv Conan - 8. Film: Der Magier mit den Silberschwingen",
-   [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 8 ตอน มนตราแห่งรัตติกาลสีเงิน",
-   [4] = "名探偵コナン 銀翼の奇術師[マジシャン]",
+   [1] = "Detective Conan - Il mago del cielo d`argento",
+   [2] = "Detective Conan: Magician of the Silver Sky",
+   [3] = "Detektiv Conan - 8. Film: Der Magier mit den Silberschwingen",
+   [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 8 ตอน มนตราแห่งรัตติกาลสีเงิน",
+   [5] = "名探偵コナン 銀翼の奇術師[マジシャン]",
    },
   ["short"] = {
    [1] = "Detective Conan: Movie 8",
@@ -35780,11 +35782,12 @@ return {
   ["main"] = "Meitantei Conan: Juuyonbanme no Target",
   ["official"] = {
    [1] = "Case Closed Movie: The Fourteenth Target",
-   [2] = "Detektiv Conan - 2. Film: Das 14. Ziel",
-   [3] = "Détective Conan - La 14e cible",
-   [4] = "المحقق كونان: الهدف الرابع عشر",
-   [5] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 2 ตอน คดีฆาตกรรมไพ่ปริศนา",
-   [6] = "名探偵コナン 14番目の標的(ターゲット)",
+   [2] = "Detective Conan - L`asso di picche",
+   [3] = "Detektiv Conan - 2. Film: Das 14. Ziel",
+   [4] = "Détective Conan - La 14e cible",
+   [5] = "المحقق كونان: الهدف الرابع عشر",
+   [6] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 2 ตอน คดีฆาตกรรมไพ่ปริศนา",
+   [7] = "名探偵コナン 14番目の標的(ターゲット)",
    },
   ["short"] = {
    },
@@ -35801,11 +35804,12 @@ return {
  [2646] = {
   ["main"] = "Meitantei Conan: Seikimatsu no Majutsushi",
   ["official"] = {
-   [1] = "Detective Conan: The Last Wizard of the Century",
-   [2] = "Detektiv Conan - 3. Film: Der Magier des letzten Jahrhunderts",
-   [3] = "المحقق كونان: ساحر القرن الأخير",
-   [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 3 ตอน ปริศนาพ่อมดคนสุดท้ายแห่งศตวรรษ",
-   [5] = "名探偵コナン 世紀末の魔術師",
+   [1] = "Detective Conan - L`ultimo mago del secolo",
+   [2] = "Detective Conan: The Last Wizard of the Century",
+   [3] = "Detektiv Conan - 3. Film: Der Magier des letzten Jahrhunderts",
+   [4] = "المحقق كونان: ساحر القرن الأخير",
+   [5] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 3 ตอน ปริศนาพ่อมดคนสุดท้ายแห่งศตวรรษ",
+   [6] = "名探偵コナン 世紀末の魔術師",
    },
   ["short"] = {
    },
@@ -35820,10 +35824,11 @@ return {
  [2647] = {
   ["main"] = "Meitantei Conan: Hitomi no Naka no Ansatsusha",
   ["official"] = {
-   [1] = "Detective Conan: Captured In her Eyes",
-   [2] = "Detektiv Conan - 4. Film: Der Killer in ihren Augen",
-   [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 4 ตอน ดดีฆาตกรรมนัยน์ตามรณะ",
-   [4] = "名探偵コナン 瞳の中の暗殺者",
+   [1] = "Detective Conan - Solo nei suoi occhi",
+   [2] = "Detective Conan: Captured In her Eyes",
+   [3] = "Detektiv Conan - 4. Film: Der Killer in ihren Augen",
+   [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 4 ตอน ดดีฆาตกรรมนัยน์ตามรณะ",
+   [5] = "名探偵コナン 瞳の中の暗殺者",
    },
   ["short"] = {
    },
@@ -37339,7 +37344,7 @@ return {
    },
   },
  [2780] = {
-  ["main"] = "Daicon III & IV Opening Animations",
+  ["main"] = "Daicon III & IV Opening Animation",
   ["official"] = {
    },
   ["short"] = {
@@ -37347,7 +37352,7 @@ return {
    [2] = "Daikon",
    },
   ["syn"] = {
-   [1] = "Daicon Opening Animations",
+   [1] = "Daicon Opening Animation",
    },
   },
  [2781] = {
@@ -42581,8 +42586,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "مغامرات سنان",
-   [2] = "ドン・チャック物語",
+   [1] = "Don Chuck Castoro",
+   [2] = "مغامرات سنان",
+   [3] = "ドン・チャック物語",
    },
   },
  [3370] = {
@@ -42662,7 +42668,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Don Chuck castoro",
+   [1] = "Don Chuck Story",
    [2] = "新ドンチャック物語",
    },
   },
@@ -47995,7 +48001,7 @@ return {
  [4062] = {
   ["main"] = "Samuraider",
   ["official"] = {
-   [1] = "サムライダー",
+   [1] = "サムライダー 謎の転校生",
    },
   ["short"] = {
    },
@@ -55141,7 +55147,7 @@ return {
  [4746] = {
   ["main"] = "Sango Shou Densetsu: Aoi Umi no Elfie",
   ["official"] = {
-   [1] = "Elfie",
+   [1] = "Elfie: A Salvadora do Planeta",
    [2] = "إبنة البحر",
    [3] = "サンゴ礁伝説 青い海のエルフィ",
    },
@@ -58575,6 +58581,7 @@ return {
   ["syn"] = {
    [1] = "Bakugan Kaujas Cīnītāji",
    [2] = "Bakugan Szörny Bunyósok",
+   [3] = "Бакуган: Бойци в действие",
    },
   },
  [5099] = {
@@ -66349,11 +66356,13 @@ return {
  [6093] = {
   ["main"] = "Go! Go! Ackman",
   ["official"] = {
-   [1] = "ゴーゴーアックマン",
+   [1] = "GO! GO! ACKMAN",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ゴー!ゴー!アックマン",
+   [2] = "ゴーゴーアックマン",
    },
   },
  [6095] = {
@@ -68995,11 +69004,14 @@ return {
  [6405] = {
   ["main"] = "Breakage",
   ["official"] = {
-   [1] = "ブレイクエイジ",
+   [1] = "BREAK-AGE",
    },
   ["short"] = {
+   [1] = "B-A",
    },
   ["syn"] = {
+   [1] = "ブレイク-エイジ",
+   [2] = "ブレイクエイジ",
    },
   },
  [6406] = {
@@ -78481,7 +78493,8 @@ return {
    [2] = "Bakugan Młodzi wojownicy: Nowa Vestroja",
    [3] = "Bakugan Savascilari: Yeni Vestroia",
    [4] = "Bakugan Szörny Bunyósok: Új Vestroia",
-   [5] = "爆丸バトルブローラーズ ニューヴェストロイア",
+   [5] = "Бакуган: Нова Вестроя",
+   [6] = "爆丸バトルブローラーズ ニューヴェストロイア",
    },
   ["short"] = {
    },
@@ -79712,7 +79725,8 @@ return {
   ["official"] = {
    [1] = "Bakugan: Najeźdźcy z Gundalii",
    [2] = "Bakugan: a Gundalia-i megszállók",
-   [3] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
+   [3] = "Бакуган: Нашествието на Гънделия",
+   [4] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
    },
   ["short"] = {
    },
@@ -81328,7 +81342,7 @@ return {
    },
   },
  [7704] = {
-  ["main"] = "Mofuku Tsuma",
+  ["main"] = "Mofukuzuma",
   ["official"] = {
    [1] = "喪服妻",
    },
@@ -87935,7 +87949,9 @@ return {
   ["main"] = "Bakugan: Mechtanium Surge",
   ["official"] = {
    [1] = "Bakugan: Mechtanium Surge",
-   [2] = "Bakugan: Świat Mechtoganów",
+   [2] = "Bakugan: Mechtanium kitörés",
+   [3] = "Bakugan: Świat Mechtoganów",
+   [4] = "Бакуган: Мектаниум се надига",
    },
   ["short"] = {
    },
@@ -87976,6 +87992,7 @@ return {
    },
   ["syn"] = {
    [1] = "Future Diary (2011)",
+   [2] = "未来日记",
    },
   },
  [8396] = {
@@ -89731,8 +89748,7 @@ return {
   ["main"] = "Zero no Tsukaima F",
   ["official"] = {
    [1] = "Familiar of Zero F",
-   [2] = "Il Famiglio di Louise Finale",
-   [3] = "ゼロの使い魔F",
+   [2] = "ゼロの使い魔F",
    },
   ["short"] = {
    [1] = "ZnT 4",
@@ -89741,7 +89757,8 @@ return {
    [4] = "zntf",
    },
   ["syn"] = {
-   [1] = "Zero no Tsukaima 4",
+   [1] = "Il Famiglio di Louise Finale",
+   [2] = "Zero no Tsukaima 4",
    },
   },
  [8594] = {
@@ -89993,6 +90010,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ゴティックメード -花の詩女-",
    },
   },
  [8619] = {
@@ -90619,6 +90637,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ускорен Свят",
    },
   },
  [8692] = {
@@ -91083,6 +91102,7 @@ return {
    },
   ["short"] = {
    [1] = "kokoco",
+   [2] = "kokoroco",
    },
   ["syn"] = {
    },
@@ -92145,6 +92165,7 @@ return {
    [3] = "I scream",
    [4] = "Ice-cream",
    [5] = "The Niece of Time",
+   [6] = "冰果",
    },
   },
  [8856] = {
@@ -92235,8 +92256,9 @@ return {
   ["main"] = "Uchuu Kyoudai",
   ["official"] = {
    [1] = "Space Brothers",
-   [2] = "宇宙兄弟",
-   [3] = "우주형제",
+   [2] = "Сансрын ах дүүс",
+   [3] = "宇宙兄弟",
+   [4] = "우주형제",
    },
   ["short"] = {
    },
@@ -92386,11 +92408,12 @@ return {
    [1] = "fz2",
    },
   ["syn"] = {
-   [1] = "Fate/Zero 2ndシーズン",
-   [2] = "Fate/Zero II",
-   [3] = "Fate/Zero: 2nd Season",
-   [4] = "Fate/Zero: Second Season",
-   [5] = "フェイト/ゼロ 2ndシーズン",
+   [1] = "Fate Zero (2012)",
+   [2] = "Fate/Zero 2ndシーズン",
+   [3] = "Fate/Zero II",
+   [4] = "Fate/Zero: 2nd Season",
+   [5] = "Fate/Zero: Second Season",
+   [6] = "フェイト/ゼロ 2ndシーズン",
    },
   },
  [8881] = {
@@ -92528,7 +92551,8 @@ return {
    [1] = "otoboku2",
    },
   ["syn"] = {
-   [1] = "Otoboku: Maidens are Falling for Me 2",
+   [1] = "Maidens are Falling for Me: The Two Elders",
+   [2] = "Otoboku: Maidens are Falling for Me 2",
    },
   },
  [8899] = {
@@ -93358,7 +93382,7 @@ return {
  [8992] = {
   ["main"] = "Yurumates 3D",
   ["official"] = {
-   [1] = "Yurumate3Dei",
+   [1] = "Yurumates3Dei",
    [2] = "ゆるめいつ3でぃ",
    },
   ["short"] = {
@@ -93811,6 +93835,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "KTV",
    },
   },
  [9044] = {
@@ -94501,6 +94526,7 @@ return {
    [1] = "ロボティクス・ノーツ",
    },
   ["short"] = {
+   [1] = "R;N",
    },
   ["syn"] = {
    },
@@ -95335,9 +95361,9 @@ return {
    },
   },
  [9241] = {
-  ["main"] = "Kore wa Zombie Desuka? Of the Dead OVA",
+  ["main"] = "Kore wa Zombie Desuka? Of the Dead: Hai, Encore Arigatou Gozaimasu",
   ["official"] = {
-   [1] = "これはゾンビですか？オブ・ザ・デッド 第０話",
+   [1] = "これはゾンビですか? OF THE DEAD はい, アンコールありがとうございます",
    },
   ["short"] = {
    },
@@ -95416,6 +95442,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Btoom",
    },
   },
  [9250] = {
@@ -95448,15 +95475,6 @@ return {
   ["syn"] = {
    },
   },
- [9254] = {
-  ["main"] = "Miraculous",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9257] = {
   ["main"] = "Yama no Susume",
   ["official"] = {
@@ -95481,7 +95499,8 @@ return {
  [9260] = {
   ["main"] = "Yurumates 3D Plus",
   ["official"] = {
-   [1] = "ゆるめいつ3でぃPLUS",
+   [1] = "Yurumates3Dei (2)",
+   [2] = "ゆるめいつ3でぃPLUS",
    },
   ["short"] = {
    },
@@ -95662,7 +95681,7 @@ return {
    },
   },
  [9280] = {
-  ["main"] = "Netorare Tsuma",
+  ["main"] = "Netorarezuma",
   ["official"] = {
    [1] = "ネトラレヅマ",
    },
@@ -95703,9 +95722,9 @@ return {
    },
   },
  [9284] = {
-  ["main"] = "Hiiro no Kakera 2",
+  ["main"] = "Hiiro no Kakera Dai Ni Shou",
   ["official"] = {
-   [1] = "緋色の欠片 2",
+   [1] = "緋色の欠片 第二章",
    },
   ["short"] = {
    },
@@ -95877,6 +95896,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Jojo`s Bizarre Adventure (2012)",
    },
   },
  [9305] = {
@@ -96186,9 +96206,9 @@ return {
    },
   },
  [9339] = {
-  ["main"] = "Hetalia: Axis Powers 5-ki",
+  ["main"] = "Hetalia: The Beautiful World",
   ["official"] = {
-   [1] = "ヘタリア Axis Powers 5期",
+   [1] = "ヘタリア The Beautiful World",
    },
   ["short"] = {
    },
@@ -96410,6 +96430,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "GeGeGe no Kitarou Shinigami Picture Book",
    },
   },
  [9363] = {
@@ -96423,7 +96444,7 @@ return {
    },
   },
  [9364] = {
-  ["main"] = "watashitachino kurashi to doboku series",
+  ["main"] = "Watashi-tachi no Kurashi to Doboku Series",
   ["official"] = {
    [1] = "私たちの暮らしと土木シリーズ",
    },
@@ -96473,13 +96494,20 @@ return {
    },
   },
  [9369] = {
-  ["main"] = "Nezha nao hai",
+  ["main"] = "Nezha Nao Hai",
   ["official"] = {
    [1] = "Naia Contra o Rei dos Dragões",
+   [2] = "Prince Nezha`s Triumph Against Dragon King",
+   [3] = "ナーザの大暴れ",
+   [4] = "哪吒闹海",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Nezha Conquers the Dragon King",
+   [2] = "Nezha ga Umi o Sawagasu",
+   [3] = "Nezha no Ooabare",
+   [4] = "ナーザが海を騒がす",
    },
   },
  [9371] = {
@@ -96505,6 +96533,7 @@ return {
  [9375] = {
   ["main"] = "Himeyuri",
   ["official"] = {
+   [1] = "ひめゆり",
    },
   ["short"] = {
    },
@@ -96626,13 +96655,14 @@ return {
    },
   },
  [9391] = {
-  ["main"] = "A Sumo Wrestler`s Tale",
+  ["main"] = "Chuuzumou",
   ["official"] = {
-   [1] = "ちゅうずも",
+   [1] = "ちゅうずもう",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A Sumo Wrestler`s Tale",
    },
   },
  [9392] = {
@@ -96688,7 +96718,7 @@ return {
  [9397] = {
   ["main"] = "Hi no Tori: Hagoromo Hen",
   ["official"] = {
-   [1] = "火の鳥 羽衣編",
+   [1] = "火の鳥 ~羽衣編~",
    },
   ["short"] = {
    },
@@ -96776,6 +96806,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ビ－ストサ－ガ",
    },
   },
  [9406] = {
@@ -96818,30 +96849,122 @@ return {
   ["syn"] = {
    },
   },
- [9412] = {
-  ["main"] = "G Senjou no Maou",
-  ["official"] = {
-   [1] = "G線上の魔王",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [9413] = {
-  ["main"] = "CHAINSAW MAID 2",
-  ["official"] = {
-   [1] = "チェンソーメイド２",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9414] = {
   ["main"] = "Cross Fight B-Daman eS",
   ["official"] = {
    [1] = "クロスファイト ビーダマン eS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9415] = {
+  ["main"] = "Efficus: Kono Omoi o Kimi ni...",
+  ["official"] = {
+   [1] = "efficus この想いを君に...",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "エフィカス この想いを君に...",
+   },
+  },
+ [9416] = {
+  ["main"] = "Ikkyuu-san Wide-ban: Ooabare Yancha-hime",
+  ["official"] = {
+   [1] = "一休さん ワイド版 大暴れやんちゃ姫",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9417] = {
+  ["main"] = "Wake Up, Girls!",
+  ["official"] = {
+   [1] = "Wake Up,Girls!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9418] = {
+  ["main"] = "Aiura",
+  ["official"] = {
+   [1] = "あいうら",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9419] = {
+  ["main"] = "Chiisana Oji-san",
+  ["official"] = {
+   [1] = "ちいさなおじさん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9420] = {
+  ["main"] = "Tamagotchi! Yume Kira Dream",
+  ["official"] = {
+   [1] = "たまごっち! ゆめキラドリーム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9421] = {
+  ["main"] = "Zettai Karen Children 2",
+  ["official"] = {
+   [1] = "絶対可憐チルドレン 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9422] = {
+  ["main"] = "Dangerous Jiisan Ja TV",
+  ["official"] = {
+   [1] = "でんぢゃらすじーさん邪 TV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9426] = {
+  ["main"] = "Rekka no Honoo: Final Burning",
+  ["official"] = {
+   [1] = "烈火の炎 FINAL BURNING",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Flame of Recca: Final Burning",
+   },
+  },
+ [9427] = {
+  ["main"] = "Gintama (2012)",
+  ["official"] = {
+   [1] = "銀魂 (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9428] = {
+  ["main"] = "Denpa Kyoushi",
+  ["official"] = {
+   [1] = "電波教師",
    },
   ["short"] = {
    },
