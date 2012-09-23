@@ -2631,7 +2631,7 @@ return {
    [3] = "Battle Angel",
    [4] = "Battle Angel Alita",
    [5] = "Gunnm",
-   [6] = "銃夢 GUNNM",
+   [6] = "HYPER FUTURE VISION 銃夢 GUNNM",
    },
   ["short"] = {
    [1] = "Alita",
@@ -7512,6 +7512,7 @@ return {
    [2] = "Earth Defender! Mao-chan",
    [3] = "Ground Defence Mao-chan",
    [4] = "Ground Defense Force! Mao-chan",
+   [5] = "rikumao",
    },
   },
  [445] = {
@@ -10185,14 +10186,14 @@ return {
  [622] = {
   ["main"] = "Denshin Mamotte Shugogetten!",
   ["official"] = {
-   [1] = "Protect Me, Heavenly Moon Guardian! OVA",
-   [2] = "伝心まもって守護月天!",
+   [1] = "伝心まもって守護月天!",
    },
   ["short"] = {
    [1] = "MSOVA",
    },
   ["syn"] = {
    [1] = "Mamotte Shugogetten OVA",
+   [2] = "Protect Me, Heavenly Moon Guardian! OVA",
    },
   },
  [623] = {
@@ -14369,8 +14370,7 @@ return {
  [922] = {
   ["main"] = "Mamotte Shugogetten!",
   ["official"] = {
-   [1] = "Protect Me, Heavenly Moon Guardian!",
-   [2] = "まもって守護月天!",
+   [1] = "まもって守護月天!",
    },
   ["short"] = {
    [1] = "ms tv",
@@ -14378,7 +14378,8 @@ return {
    },
   ["syn"] = {
    [1] = "Moi et mon ange gardien",
-   [2] = "守护月天",
+   [2] = "Protect Me, Heavenly Moon Guardian!",
+   [3] = "守护月天",
    },
   },
  [923] = {
@@ -23779,7 +23780,8 @@ return {
   ["official"] = {
    [1] = "A Dog of Flanders",
    [2] = "Niklaas, ein Junge aus Flandern",
-   [3] = "フランダースの犬",
+   [3] = "بائع الحليب",
+   [4] = "フランダースの犬",
    },
   ["short"] = {
    },
@@ -30240,11 +30242,13 @@ return {
  [2175] = {
   ["main"] = "Alice in Cyberland",
   ["official"] = {
-   [1] = "ありす in Cyberland",
+   [1] = "ありす ALICE in Cyber Land",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ありす in Cyberland",
+   [2] = "ありす イン サイバーランド",
    },
   },
  [2176] = {
@@ -32173,7 +32177,7 @@ return {
    },
   },
  [2319] = {
-  ["main"] = "Toushou!! Ramenman (1988)",
+  ["main"] = "Tatakae!! Ramenman (1988)",
   ["official"] = {
    [1] = "闘将!!拉麺男 (1988)",
    },
@@ -32414,9 +32418,10 @@ return {
  [2337] = {
   ["main"] = "Captain Tsubasa: Europe Daikessen",
   ["official"] = {
-   [1] = "Captain Tsubasa - Soccer Boys Europe Finals",
-   [2] = "Olive et Tom - Le défi européen : un match amical",
-   [3] = "キャプテン翼 ヨーロッパ大決戦",
+   [1] = "Capitão Tsubasa - European Challenge!",
+   [2] = "Captain Tsubasa - Soccer Boys Europe Finals",
+   [3] = "Olive et Tom - Le défi européen : un match amical",
+   [4] = "キャプテン翼 ヨーロッパ大決戦",
    },
   ["short"] = {
    },
@@ -36389,9 +36394,11 @@ return {
  [2701] = {
   ["main"] = "Triangle Heart: Sazanami Joshiryou",
   ["official"] = {
-   [1] = "とらいあんぐるハート ～さざなみ女子寮～",
+   [1] = "とらいあんぐるハート さざなみ女子寮",
    },
   ["short"] = {
+   [1] = "toraha 2",
+   [2] = "とらハ2",
    },
   ["syn"] = {
    },
@@ -42960,8 +42967,9 @@ return {
  [3399] = {
   ["main"] = "Captain Tsubasa: Asu ni Mukatte Hashire!",
   ["official"] = {
-   [1] = "Olive et Tom - La Coupe du monde : la sélection",
-   [2] = "キャプテン翼 明日に向って走れ!",
+   [1] = "Capitão Tsubasa: Tudo ou Nada",
+   [2] = "Olive et Tom - La Coupe du monde : la sélection",
+   [3] = "キャプテン翼 明日に向って走れ!",
    },
   ["short"] = {
    },
@@ -44537,13 +44545,13 @@ return {
  [3535] = {
   ["main"] = "Kouryuu no Mimi",
   ["official"] = {
-   [1] = "Ear of The Yellow Dragon",
-   [2] = "黄龍の耳",
+   [1] = "黄龍の耳",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Koryu no Mimi",
+   [1] = "Ear of The Yellow Dragon",
+   [2] = "Koryu no Mimi",
    },
   },
  [3536] = {
@@ -44791,8 +44799,9 @@ return {
  [3560] = {
   ["main"] = "Captain Tsubasa: Ayaushi! Zen Nihon Jr.",
   ["official"] = {
-   [1] = "Olive et Tom - Le défi européen : la revanche",
-   [2] = "キャプテン翼 危うし! 全日本Jr.",
+   [1] = "Campeões Oliver e Benji - O Jogo da Vingança",
+   [2] = "Olive et Tom - Le défi européen : la revanche",
+   [3] = "キャプテン翼 危うし! 全日本Jr.",
    },
   ["short"] = {
    },
@@ -44805,8 +44814,9 @@ return {
  [3561] = {
   ["main"] = "Captain Tsubasa: Sekai Daikessen!! Jr. World Cup",
   ["official"] = {
-   [1] = "Olive et Tom - La Coupe du monde : la Coupe du monde junior",
-   [2] = "キャプテン翼 世界大決戦!! Jr.ワールドカップ",
+   [1] = "Capitão Tsubasa: O Campeonato Mundial De Júniores",
+   [2] = "Olive et Tom - La Coupe du monde : la Coupe du monde junior",
+   [3] = "キャプテン翼 世界大決戦!! Jr.ワールドカップ",
    },
   ["short"] = {
    },
@@ -47690,14 +47700,14 @@ return {
  [4036] = {
   ["main"] = "Hyouga Senshi Gaislugger",
   ["official"] = {
-   [1] = "Glacier Warrior Gaislugger",
-   [2] = "氷河戦士ガイスラッガー",
+   [1] = "氷河戦士ガイスラッガー",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Guyslagger",
-   [2] = "Guyslugger",
+   [1] = "Glacier Warrior Gaislugger",
+   [2] = "Guyslagger",
+   [3] = "Guyslugger",
    },
   },
  [4037] = {
@@ -47999,7 +48009,7 @@ return {
    },
   },
  [4062] = {
-  ["main"] = "Samuraider",
+  ["main"] = "Samurider: Nazo no Tenkousei",
   ["official"] = {
    [1] = "サムライダー 謎の転校生",
    },
@@ -50425,12 +50435,12 @@ return {
  [4258] = {
   ["main"] = "Ganbare! Bokura no Hit and Run",
   ["official"] = {
-   [1] = "Hit and Run",
-   [2] = "がんばれ! ぼくらのヒットエンドラン",
+   [1] = "がんばれ! ぼくらのヒットエンドラン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hit and Run",
    },
   },
  [4259] = {
@@ -53618,17 +53628,17 @@ return {
  [4599] = {
   ["main"] = "Mikan Enikki",
   ["official"] = {
-   [1] = "مذكرات ميكان",
-   [2] = "みかん絵日記",
+   [1] = "Mikan – pomarańczowy kot",
+   [2] = "مذكرات ميكان",
+   [3] = "みかん絵日記",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Ilustrowany pamiętnik Mikana",
    [2] = "Mikan",
-   [3] = "Mikan - pomarańczowy kot",
-   [4] = "Mikan`s Illustrated Diary",
-   [5] = "Mikan`s Picture Diary",
+   [3] = "Mikan`s Illustrated Diary",
+   [4] = "Mikan`s Picture Diary",
    },
   },
  [4600] = {
@@ -58597,7 +58607,7 @@ return {
    },
   },
  [5100] = {
-  ["main"] = "Ogami Matsugoro",
+  ["main"] = "Ogami Matsugorou",
   ["official"] = {
    [1] = "おがみ松吾郎",
    },
@@ -65873,7 +65883,8 @@ return {
  [6041] = {
   ["main"] = "Gekijouban Bleach: Fade to Black Kimi no Na o Yobu",
   ["official"] = {
-   [1] = "劇場版 BLEACH Fade to Black 君の名を呼ぶ",
+   [1] = "Bleach The Movie 3: Fade to Black",
+   [2] = "劇場版 BLEACH Fade to Black 君の名を呼ぶ",
    },
   ["short"] = {
    [1] = "Bleach Movie 3",
@@ -80954,7 +80965,8 @@ return {
  [7666] = {
   ["main"] = "Gekijouban Bleach: Jigoku-hen",
   ["official"] = {
-   [1] = "劇場版 BLEACH 地獄篇",
+   [1] = "Bleach The Movie 4: Hell Verse",
+   [2] = "劇場版 BLEACH 地獄篇",
    },
   ["short"] = {
    [1] = "Bleach Movie 4",
@@ -82240,7 +82252,8 @@ return {
  [7795] = {
   ["main"] = "Kero Kero Keroppi no Gulliver no Bouken",
   ["official"] = {
-   [1] = "けろけろけろっぴのガリバーの冒険",
+   [1] = "Keroppi in The Adventures of Gulliver",
+   [2] = "けろけろけろっぴのガリバーの冒険",
    },
   ["short"] = {
    },
@@ -84920,7 +84933,8 @@ return {
   ["main"] = "Biohazard: Damnation",
   ["official"] = {
    [1] = "Resident Evil: Damnation",
-   [2] = "バイオハザード ダムネーション",
+   [2] = "Resident Evil: Potępienie",
+   [3] = "バイオハザード ダムネーション",
    },
   ["short"] = {
    },
@@ -86891,6 +86905,8 @@ return {
    [2] = "人退",
    },
   ["syn"] = {
+   [1] = "Mankind Has Fallen",
+   [2] = "人类衰退之后",
    },
   },
  [8279] = {
@@ -87507,9 +87523,9 @@ return {
    },
   },
  [8344] = {
-  ["main"] = "Prince of Tennis: Atobe Kara no Okurimono, Prince of Tennis:Atobe`s Gift",
+  ["main"] = "Tennis no Ouji-sama: Atobe Kara no Okurimono - Kimi ni Sasageru Tenipri Matsuri",
   ["official"] = {
-   [1] = "跡部からの贈り物",
+   [1] = "テニスの王子様 跡部からの贈り物 君に捧げるテニプリ祭り",
    },
   ["short"] = {
    },
@@ -88220,7 +88236,8 @@ return {
  [8421] = {
   ["main"] = "Mawaru Penguin Drum",
   ["official"] = {
-   [1] = "輪るピングドラム",
+   [1] = "Mawaru Penguindrum",
+   [2] = "輪るピングドラム",
    },
   ["short"] = {
    [1] = "PenguinDrum",
@@ -92441,7 +92458,8 @@ return {
  [8883] = {
   ["main"] = "Chuunibyou demo Koi ga Shitai!",
   ["official"] = {
-   [1] = "中二病でも恋がしたい!",
+   [1] = "Regardless of My Adolescent Delusions of Grandeur, I Want a Date!",
+   [2] = "中二病でも恋がしたい!",
    },
   ["short"] = {
    [1] = "chuunibyo",
@@ -92978,9 +92996,9 @@ return {
    },
   },
  [8948] = {
-  ["main"] = "Hetalia Axis Powers Fan Disc",
+  ["main"] = "Hetalia: Axis Powers Fan Disc",
   ["official"] = {
-   [1] = "ヘタリア Ａxis Ｐowers ファンディスク",
+   [1] = "ヘタリア Axis Powers ファンディスク",
    },
   ["short"] = {
    },
@@ -93192,7 +93210,7 @@ return {
    },
   },
  [8971] = {
-  ["main"] = "Arcana Famiglia: La Storia Della Arcana Famiglia",
+  ["main"] = "Arcana Famiglia: La Storia della Arcana Famiglia",
   ["official"] = {
    [1] = "La storia della Arcana Famiglia",
    [2] = "アルカナ・ファミリア La storia della Arcana Famiglia",
@@ -93710,16 +93728,6 @@ return {
   ["syn"] = {
    },
   },
- [9030] = {
-  ["main"] = "God Eater Prologue",
-  ["official"] = {
-   [1] = "ゴッドイーター",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9031] = {
   ["main"] = "Lupin the Third: Mine Fujiko to Iu Onna",
   ["official"] = {
@@ -94068,24 +94076,6 @@ return {
   ["syn"] = {
    },
   },
- [9070] = {
-  ["main"] = "Kid Icarus: Medusa`s Revenge",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [9071] = {
-  ["main"] = "Kid Icarus: Thanatos Rising",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9072] = {
   ["main"] = "Kappa no Suribachi",
   ["official"] = {
@@ -94159,7 +94149,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "神秘の法",
+   [1] = "Shinpi no Hou",
+   [2] = "神秘の法",
    },
   },
  [9082] = {
@@ -94227,7 +94218,7 @@ return {
  [9088] = {
   ["main"] = "Rakuen Tsuihou: Expelled From Paradise",
   ["official"] = {
-   [1] = "楽園追放 -Expelled From Paradaise-",
+   [1] = "楽園追放 -Expelled From Paradise-",
    },
   ["short"] = {
    },
@@ -94378,16 +94369,6 @@ return {
   ["syn"] = {
    },
   },
- [9110] = {
-  ["main"] = "Kid Icarus",
-  ["official"] = {
-   [1] = "光神話 パルテナの鏡",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9111] = {
   ["main"] = "Hadakya no Otonosama",
   ["official"] = {
@@ -94428,23 +94409,15 @@ return {
    [1] = "Tourism War Saitama: Evening Battle",
    },
   },
- [9117] = {
-  ["main"] = "Where Dreams Come True",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9118] = {
-  ["main"] = "Piston~Tsu",
+  ["main"] = "Pist Star",
   ["official"] = {
-   [1] = "ぴすとっ",
+   [1] = "ぴすとっ☆",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Piston~Tsu",
    },
   },
  [9119] = {
@@ -94567,6 +94540,7 @@ return {
    [1] = "リトルバスターズ!",
    },
   ["short"] = {
+   [1] = "lb!",
    },
   ["syn"] = {
    },
@@ -95337,6 +95311,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Busou Shinki: Armored War Goddess",
    },
   },
  [9239] = {
@@ -95525,6 +95500,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "creator`s world project 1",
    },
   },
  [9263] = {
@@ -96248,16 +96224,6 @@ return {
   ["syn"] = {
    },
   },
- [9343] = {
-  ["main"] = "Savanna Game",
-  ["official"] = {
-   [1] = "サバンナ・ゲーム",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9344] = {
   ["main"] = "Initial D Fifth Stage",
   ["official"] = {
@@ -96518,6 +96484,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cuticle Detective Inaba",
    },
   },
  [9372] = {
@@ -96788,16 +96755,6 @@ return {
   ["syn"] = {
    },
   },
- [9404] = {
-  ["main"] = "Pokemon Black 2 White 2: Shoukai SP Movie Kanzenban",
-  ["official"] = {
-   [1] = "『ポケモンブラック２・ホワイト２』紹介SPムービー 完全版",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9405] = {
   ["main"] = "Beast Saga",
   ["official"] = {
@@ -96965,6 +96922,139 @@ return {
   ["main"] = "Denpa Kyoushi",
   ["official"] = {
    [1] = "電波教師",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9430] = {
+  ["main"] = "Tsun Tsun Maid wa Ero Ero Desu",
+  ["official"] = {
+   [1] = "ツンツンメイドはエロエロです",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9431] = {
+  ["main"] = "Backstage Idol Story",
+  ["official"] = {
+   [1] = "バックステージ・アイドル・ストーリー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9432] = {
+  ["main"] = "One Piece: Romance Dawn",
+  ["official"] = {
+   [1] = "ワンピース ロマンスドーン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9433] = {
+  ["main"] = "Hitou Meguri Kakure Yu: Mao Hen",
+  ["official"] = {
+   [1] = "秘湯めぐり 隠れ湯 舞桜編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9434] = {
+  ["main"] = "Gokicha!! Cockroach Girls",
+  ["official"] = {
+   [1] = "ごきチャ!! Cockroach Girls",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9435] = {
+  ["main"] = "Ganbare! Lulu Lolo",
+  ["official"] = {
+   [1] = "がんばれ! ルルロロ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9436] = {
+  ["main"] = "Brothers Conflict",
+  ["official"] = {
+   [1] = "BROTHERS CONFLICT",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9437] = {
+  ["main"] = "Cardfight!! Vanguard 3",
+  ["official"] = {
+   [1] = "カードファイト!! ヴァンガード 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9439] = {
+  ["main"] = "Chikan no Licence",
+  ["official"] = {
+   [1] = "痴漢のライセンス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9440] = {
+  ["main"] = "Kanai",
+  ["official"] = {
+   [1] = "カナイ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "creator`s world project 2",
+   },
+  },
+ [9441] = {
+  ["main"] = "Interior",
+  ["official"] = {
+   [1] = "INTERIOR",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "creator`s world project 3",
+   },
+  },
+ [9442] = {
+  ["main"] = "Kaseki Dorobou to Kyouryuuseki",
+  ["official"] = {
+   [1] = "化石ドロボウと恐竜石",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "creator`s world project 4",
+   },
+  },
+ [9443] = {
+  ["main"] = "Unko-san: Tsuiteru Hito ni Shika Mienai Yousei Junjou Ha",
+  ["official"] = {
+   [1] = "うんこさん ツイてる人にしか見えない妖精 純情派",
    },
   ["short"] = {
    },
