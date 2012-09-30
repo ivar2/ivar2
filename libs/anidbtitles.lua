@@ -4641,9 +4641,10 @@ return {
    [1] = "Detective Conan",
    [2] = "Detective Conan tv",
    [3] = "Detectivul Conan",
-   [4] = "Thám tử lừng danh Conan",
-   [5] = "Детектив Конан",
-   [6] = "ยอดนักสืบจิ๋วโคนัน",
+   [4] = "Detektif Conan",
+   [5] = "Thám tử lừng danh Conan",
+   [6] = "Детектив Конан",
+   [7] = "ยอดนักสืบจิ๋วโคนัน",
    },
   },
  [267] = {
@@ -6324,9 +6325,8 @@ return {
    },
   ["short"] = {
    [1] = "Millennia",
-   [2] = "dkdtj",
-   [3] = "lrdfdt",
-   [4] = "qm",
+   [2] = "lrdfdt",
+   [3] = "qm",
    },
   ["syn"] = {
    [1] = "Die Königin der tausend Jahre",
@@ -8410,7 +8410,7 @@ return {
   ["official"] = {
    [1] = "Campeones - Oliver y Benji",
    [2] = "Campeões: Oliver e Benji - A Caminho da Glória",
-   [3] = "Die tollen Fußballstars",
+   [3] = "Die tollen Fußball-Stars",
    [4] = "Flash Kicker",
    [5] = "Holly e Benji, due fuoriclasse",
    [6] = "Kapitan Jastrząb",
@@ -8430,14 +8430,15 @@ return {
    },
   ["syn"] = {
    [1] = "Captain Tsubasa - Die tollen Fußballstars",
-   [2] = "Kapitan Hawk",
-   [3] = "Kapitan Tsubasa",
-   [4] = "Kaptan Bijar El Kahramane",
-   [5] = "Kaptan Tsubasa",
-   [6] = "Kyaputen Tsubasa",
-   [7] = "Olive et Tom",
-   [8] = "Oliver y Benji",
-   [9] = "Капитан Цубаса",
+   [2] = "Die tollen Fußballstars",
+   [3] = "Kapitan Hawk",
+   [4] = "Kapitan Tsubasa",
+   [5] = "Kaptan Bijar El Kahramane",
+   [6] = "Kaptan Tsubasa",
+   [7] = "Kyaputen Tsubasa",
+   [8] = "Olive et Tom",
+   [9] = "Oliver y Benji",
+   [10] = "Капитан Цубаса",
    },
   },
  [506] = {
@@ -9843,6 +9844,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "JUNGRE DE IKOU",
    },
   },
  [600] = {
@@ -14606,7 +14608,7 @@ return {
  [942] = {
   ["main"] = "City Hunter",
   ["official"] = {
-   [1] = "City Hunter (Staffel 1)",
+   [1] = "City Hunter",
    [2] = "City Hunter 1st Series",
    [3] = "Nicky Larson",
    [4] = "シティーハンター",
@@ -14615,9 +14617,10 @@ return {
    [1] = "CHun1",
    },
   ["syn"] = {
-   [1] = "city hunter 1",
-   [2] = "Şehir Avcısı",
-   [3] = "Городской охотник",
+   [1] = "City Hunter (1. Staffel)",
+   [2] = "city hunter 1",
+   [3] = "Şehir Avcısı",
+   [4] = "Городской охотник",
    },
   },
  [943] = {
@@ -17260,10 +17263,11 @@ return {
    [1] = "Bola de Drac: El Camí cap a el més fort",
    [2] = "Dragon Ball - Il cammino dell`eroe",
    [3] = "Dragon Ball 4 - L`armée du Ruban Rouge",
-   [4] = "Dragon Ball: El camino hacia el Poder",
-   [5] = "Dragon Ball: The Path to Power",
-   [6] = "ดราก้อนบอล มูฟวี่ 4 ตอน วิถีแห่งเจ้ายุทธจักร",
-   [7] = "ドラゴンボール 最強への道",
+   [4] = "Dragon Ball: A Lei do Mais Forte",
+   [5] = "Dragon Ball: El camino hacia el Poder",
+   [6] = "Dragon Ball: The Path to Power",
+   [7] = "ดราก้อนบอล มูฟวี่ 4 ตอน วิถีแห่งเจ้ายุทธจักร",
+   [8] = "ドラゴンボール 最強への道",
    },
   ["short"] = {
    [1] = "DB Movie 4",
@@ -21918,7 +21922,7 @@ return {
  [1498] = {
   ["main"] = "Jungle Taitei Susume Leo!",
   ["official"] = {
-   [1] = "Boubou, der Löwenkönig",
+   [1] = "Boubou, König der Tiere",
    [2] = "Le roi Léo (1966)",
    [3] = "الليث الأبيض",
    [4] = "ジャングル大帝 進めレオ!",
@@ -21926,11 +21930,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Der Löwenkönig",
-   [2] = "Jungle Emperor, Onward Leo!",
-   [3] = "Jungle Taitei Susume Leo",
-   [4] = "Leo the Lion",
-   [5] = "New Jungle Emperor, Go Ahead Leo!",
+   [1] = "Boubou, der Löwenkönig",
+   [2] = "Der Löwenkönig",
+   [3] = "Jungle Emperor, Onward Leo!",
+   [4] = "Jungle Taitei Susume Leo",
+   [5] = "Leo the Lion",
+   [6] = "New Jungle Emperor, Go Ahead Leo!",
    },
   },
  [1499] = {
@@ -22788,7 +22793,7 @@ return {
  [1563] = {
   ["main"] = "City Hunter 2",
   ["official"] = {
-   [1] = "City Hunter (Staffel 2)",
+   [1] = "City Hunter (2. Staffel)",
    [2] = "City Hunter 2nd Series",
    [3] = "Nicky Larson - Saison 2",
    [4] = "シティーハンター2",
@@ -23398,11 +23403,12 @@ return {
  [1617] = {
   ["main"] = "Boukensha",
   ["official"] = {
-   [1] = "Christophe Colomb",
-   [2] = "Christopher Columbus",
-   [3] = "Христофор Колумб",
-   [4] = "كريستوفر كولومبوس",
-   [5] = "冒険者",
+   [1] = "Christoph Columbus",
+   [2] = "Christophe Colomb",
+   [3] = "Christopher Columbus",
+   [4] = "Христофор Колумб",
+   [5] = "كريستوفر كولومبوس",
+   [6] = "冒険者",
    },
   ["short"] = {
    },
@@ -23654,6 +23660,7 @@ return {
    [2] = "Cream Lemon Vol. 1 - Le Mirroir des Perversions - Possesions diaboliques",
    [3] = "Offenders of the Universe",
    [4] = "Pandora, An Erotic Trilogy",
+   [5] = "くりぃむレモン",
    },
   },
  [1641] = {
@@ -24925,7 +24932,7 @@ return {
    [1] = "(2) אגדות האחים גרים",
    [2] = "Grimm legszebb meséi (2)",
    [3] = "Grimm`s Fairy Tale Classics (2)",
-   [4] = "Grimms Märchen (2)",
+   [4] = "Grimms Märchen (2. Staffel)",
    [5] = "Los cuentos de los hermanos Grimm",
    [6] = "Raconte-moi une histoire (suite)",
    [7] = "Приказките на братя Грим",
@@ -25628,11 +25635,11 @@ return {
   ["main"] = "Kerokko Demetan",
   ["official"] = {
    [1] = "Abenteuer am Regenbogenteich",
-   [2] = "Demetan: de Kikkerjongen",
-   [3] = "Démétan la petite grenouille",
-   [4] = "La Banda Dei Ranocchi",
-   [5] = "Rohkea sammakko",
-   [6] = "The Brave Frog`s Greatest Adventure",
+   [2] = "Adventures On Rainbow Pond",
+   [3] = "Demetan: de Kikkerjongen",
+   [4] = "Démétan la petite grenouille",
+   [5] = "La Banda Dei Ranocchi",
+   [6] = "Rohkea sammakko",
    [7] = "Zielone żabki",
    [8] = "Ο Γενναίος Βάτραχος",
    [9] = "الضفدع الشجاع",
@@ -25646,7 +25653,8 @@ return {
    [2] = "Demetan the Frog",
    [3] = "Przygody zielonych żabek",
    [4] = "The Brave Frog",
-   [5] = "Zielone żabki: Przygody nad Tęczowym Stawem",
+   [5] = "The Brave Frog`s Greatest Adventure",
+   [6] = "Zielone żabki: Przygody nad Tęczowym Stawem",
    },
   },
  [1812] = {
@@ -26090,7 +26098,7 @@ return {
  [1841] = {
   ["main"] = "Chibi Maruko-chan",
   ["official"] = {
-   [1] = "Chibi Maruko-chan",
+   [1] = "Chibi Maruko Chan",
    [2] = "ماروكو الصغيرة",
    [3] = "หนูน้อยจอมซ่า มารุโกะจัง",
    [4] = "ちびまる子ちゃん",
@@ -26099,9 +26107,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Little Miss Maruko",
-   [2] = "Petite Maruko-chan",
-   [3] = "樱桃小丸子(第一期)",
+   [1] = "Chibi Maruko-chan",
+   [2] = "Little Miss Maruko",
+   [3] = "Petite Maruko-chan",
+   [4] = "樱桃小丸子(第一期)",
    },
   },
  [1842] = {
@@ -31954,7 +31963,7 @@ return {
   ["official"] = {
    [1] = "A Familia Robinson",
    [2] = "De Familie Robinson",
-   [3] = "Die schweizer Familie Robinson",
+   [3] = "Familie Robinson",
    [4] = "Flo et les Robinson suisses",
    [5] = "Flo, la piccola Robinson",
    [6] = "La familia Robinson",
@@ -31965,11 +31974,11 @@ return {
    [11] = "家族ロビンソン漂流記ふしぎな島のフローネ",
    },
   ["short"] = {
-   [1] = "Familie Robinson",
    },
   ["syn"] = {
-   [1] = "Fushigi na Shima no Flone",
-   [2] = "Swiss Family Robinson",
+   [1] = "Die schweizer Familie Robinson",
+   [2] = "Fushigi na Shima no Flone",
+   [3] = "Swiss Family Robinson",
    },
   },
  [2303] = {
@@ -33284,12 +33293,12 @@ return {
  [2406] = {
   ["main"] = "Gokiburi-tachi no Tasogare",
   ["official"] = {
-   [1] = "ゴキブリたちの黄昏",
+   [1] = "Twilight of the Cockroaches",
+   [2] = "ゴキブリたちの黄昏",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Twilight of the Cockroaches",
    },
   },
  [2407] = {
@@ -36525,7 +36534,7 @@ return {
  [2708] = {
   ["main"] = "Chiisana Obake Acchi, Kocchi, Socchi",
   ["official"] = {
-   [1] = "Die drei kleinen Geister",
+   [1] = "Drei kleine Geister",
    [2] = "Les trois petits fantômes",
    [3] = "The Three Little Ghosts",
    [4] = "Trzy małe duszki",
@@ -36535,7 +36544,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Drei kleine Geister",
+   [1] = "Die drei kleinen Geister",
    [2] = "There, Here and Where",
    },
   },
@@ -36931,10 +36940,11 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Bob, o Gênio",
-   [2] = "Bottle Bob",
-   [3] = "O Gênio Maluco",
-   [4] = "The Genie Family",
+   [1] = "Bob der Flaschengeist",
+   [2] = "Bob, o Gênio",
+   [3] = "Bottle Bob",
+   [4] = "O Gênio Maluco",
+   [5] = "The Genie Family",
    },
   },
  [2742] = {
@@ -38481,7 +38491,6 @@ return {
    [11] = "あひるのクワック",
    },
   ["short"] = {
-   [1] = "Alfred Kwak",
    },
   ["syn"] = {
    [1] = "Alfred Jodocus Kwak",
@@ -42593,9 +42602,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Don Chuck Castoro",
-   [2] = "مغامرات سنان",
-   [3] = "ドン・チャック物語",
+   [1] = "Chuck, der Biber",
+   [2] = "Don Chuck Castoro",
+   [3] = "مغامرات سنان",
+   [4] = "ドン・チャック物語",
    },
   },
  [3370] = {
@@ -42666,7 +42676,7 @@ return {
  [3376] = {
   ["main"] = "Shin Don Chuck Monogatari",
   ["official"] = {
-   [1] = "Chuck, der Biber",
+   [1] = "Chuck, der schlaue Biber (2. Staffel)",
    [2] = "Le petit Castor (suite)",
    [3] = "New Don Chuck Stories",
    [4] = "سنان",
@@ -42675,8 +42685,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Don Chuck Story",
-   [2] = "新ドンチャック物語",
+   [1] = "Chuck, der Biber (2. Staffel)",
+   [2] = "Don Chuck Story",
+   [3] = "新ドンチャック物語",
    },
   },
  [3377] = {
@@ -44109,10 +44120,12 @@ return {
    [1] = "Die kleine Meerjungfrau Marina",
    [2] = "Le prince et la sirène",
    [3] = "Pieni Merenneito",
-   [4] = "Saban`s Adventures of the Little Mermaid",
-   [5] = "Η μικρή γοργόνα",
-   [6] = "בת הים הקטנה",
-   [7] = "人魚姫マリーナの冒険",
+   [4] = "Przygody Syrenki TV",
+   [5] = "Saban`s Adventures of the Little Mermaid",
+   [6] = "Una sirenetta innamorata",
+   [7] = "Η μικρή γοργόνα",
+   [8] = "בת הים הקטנה",
+   [9] = "人魚姫マリーナの冒険",
    },
   ["short"] = {
    },
@@ -44134,7 +44147,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Приключения чудесного домика, или Летающий дом",
+   [1] = "Das fliegende Haus",
+   [2] = "Приключения чудесного домика, или Летающий дом",
    },
   },
  [3499] = {
@@ -45405,8 +45419,9 @@ return {
   ["main"] = "Bouken Shounen Shadar",
   ["official"] = {
    [1] = "Adventure Boy Shadar",
-   [2] = "La spada di luce",
-   [3] = "冒険少年シャダー",
+   [2] = "As aventuras de Shadow Boy",
+   [3] = "La spada di luce",
+   [4] = "冒険少年シャダー",
    },
   ["short"] = {
    },
@@ -45976,7 +45991,7 @@ return {
  [3647] = {
   ["main"] = "Hoshi no Ouji-sama Petit Prince",
   ["official"] = {
-   [1] = "Der kleine Prinz",
+   [1] = "Der kleine Prinz und seine Abenteuer",
    [2] = "O pequeno princípe",
    [3] = "Przygody Małego Księcia",
    [4] = "The Adventures of the Little Prince",
@@ -46227,8 +46242,8 @@ return {
   ["main"] = "Shin Mitsubachi Maaya no Bouken",
   ["official"] = {
    [1] = "Arı Maya",
-   [2] = "Biene Maja",
-   [3] = "De nieuwe avonturen van Maja de Bij",
+   [2] = "De nieuwe avonturen van Maja de Bij",
+   [3] = "Die Biene Maja (2. Staffel)",
    [4] = "Maya l`abeille - Saison 2",
    [5] = "The New Adventures of Honeybee Maya",
    [6] = "新みつばちマーヤの冒険",
@@ -46236,8 +46251,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Shin Mitsubachi Maaya no Boken",
-   [2] = "زينة ونحول 2",
+   [1] = "Biene Maja (2. Staffel)",
+   [2] = "Shin Mitsubachi Maaya no Boken",
+   [3] = "زينة ونحول 2",
    },
   },
  [3664] = {
@@ -49546,9 +49562,10 @@ return {
   ["main"] = "Meitantei Conan: Tantei-tachi no Requiem",
   ["official"] = {
    [1] = "Detective Conan - Requiem of the Detectives",
-   [2] = "Detektiv Conan - 10. Film: Das Requiem der Detektive",
-   [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 10 ตอน บทเพลงมรณะแด่เหล่านักสืบ",
-   [4] = "名探偵コナン 探偵たちの鎮魂歌[レクイエム]",
+   [2] = "Detective Conan: Requiem Per Un Detective",
+   [3] = "Detektiv Conan - 10. Film: Das Requiem der Detektive",
+   [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 10 ตอน บทเพลงมรณะแด่เหล่านักสืบ",
+   [5] = "名探偵コナン 探偵たちの鎮魂歌[レクイエム]",
    },
   ["short"] = {
    [1] = "Case Closed: Movie 10",
@@ -54217,7 +54234,7 @@ return {
    },
   },
  [4661] = {
-  ["main"] = "Mama wa Poyopoyosaurus ga o Suki",
+  ["main"] = "Mama wa Poyopoyosaurus ga Osuki",
   ["official"] = {
    [1] = "BB保你大",
    [2] = "ママはぽよぽよザウルスがお好き",
@@ -58551,7 +58568,7 @@ return {
    },
   },
  [5095] = {
-  ["main"] = "Chibikko Kaijuu Yadamon (1967)",
+  ["main"] = "Chibikko Kaijuu Yadamon",
   ["official"] = {
    [1] = "ちびっこ怪獣ヤダモン",
    },
@@ -78500,12 +78517,13 @@ return {
  [7401] = {
   ["main"] = "Bakugan Battle Brawlers: New Vestroia",
   ["official"] = {
-   [1] = "Bakugan Battle Brawlers: New Vestroia",
-   [2] = "Bakugan Młodzi wojownicy: Nowa Vestroja",
-   [3] = "Bakugan Savascilari: Yeni Vestroia",
-   [4] = "Bakugan Szörny Bunyósok: Új Vestroia",
-   [5] = "Бакуган: Нова Вестроя",
-   [6] = "爆丸バトルブローラーズ ニューヴェストロイア",
+   [1] = "Bakugan - Spieler des Schicksals (2. Staffel)",
+   [2] = "Bakugan Battle Brawlers: New Vestroia",
+   [3] = "Bakugan Młodzi wojownicy: Nowa Vestroja",
+   [4] = "Bakugan Savascilari: Yeni Vestroia",
+   [5] = "Bakugan Szörny Bunyósok: Új Vestroia",
+   [6] = "Бакуган: Нова Вестроя",
+   [7] = "爆丸バトルブローラーズ ニューヴェストロイア",
    },
   ["short"] = {
    },
@@ -79549,7 +79567,8 @@ return {
  [7518] = {
   ["main"] = "Digimon Xros Wars",
   ["official"] = {
-   [1] = "デジモンクロスウォーズ",
+   [1] = "Digimon Fusion",
+   [2] = "デジモンクロスウォーズ",
    },
   ["short"] = {
    [1] = "digimon6",
@@ -87725,7 +87744,8 @@ return {
    [4] = "君僕",
    },
   ["syn"] = {
-   [1] = "تو و من",
+   [1] = "Kau dan Aku",
+   [2] = "تو و من",
    },
   },
  [8368] = {
@@ -90432,11 +90452,15 @@ return {
  [8668] = {
   ["main"] = "Scan2Go",
   ["official"] = {
-   [1] = "스캔2고",
+   [1] = "Scan2Go",
+   [2] = "ギャラクシーレーサー スキャン2ゴー",
+   [3] = "旋風四驅王Scan2Go",
+   [4] = "스캔2고",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Galaxy Racer Scan2Go",
    },
   },
  [8669] = {
@@ -90573,6 +90597,8 @@ return {
    [1] = "Kuroko no Basket",
    [2] = "Kuroko no Basuke",
    [3] = "The Basketball Which Kuroko Plays",
+   [4] = "Баскетбол Куроко",
+   [5] = "Баскетболът на Куроко",
    },
   },
  [8682] = {
@@ -90652,6 +90678,7 @@ return {
    [3] = "액셀 월드",
    },
   ["short"] = {
+   [1] = "AW",
    },
   ["syn"] = {
    [1] = "Ускорен Свят",
@@ -91895,9 +91922,9 @@ return {
    },
   },
  [8827] = {
-  ["main"] = "Hana-Saku Iroha: Home Sweet Home",
+  ["main"] = "Gekijouban Hana-Saku Iroha: Home Sweet Home",
   ["official"] = {
-   [1] = "花咲くいろは HOME SWEET HOME",
+   [1] = "劇場版 花咲くいろは HOME SWEET HOME",
    },
   ["short"] = {
    },
@@ -92380,6 +92407,7 @@ return {
    [1] = "KtB2",
    },
   ["syn"] = {
+   [1] = "Kau dan Aku 2",
    },
   },
  [8877] = {
@@ -92414,6 +92442,7 @@ return {
    },
   ["syn"] = {
    [1] = "So, I Can`t Fuck Her!",
+   [2] = "美少女死神 还我H之魂！",
    },
   },
  [8880] = {
@@ -92460,6 +92489,7 @@ return {
   ["official"] = {
    [1] = "Regardless of My Adolescent Delusions of Grandeur, I Want a Date!",
    [2] = "中二病でも恋がしたい!",
+   [3] = "중2병이라도 사랑이 하고 싶어!",
    },
   ["short"] = {
    [1] = "chuunibyo",
@@ -93594,7 +93624,7 @@ return {
    },
   },
  [9015] = {
-  ["main"] = "Hagure Yuusha no Estetica",
+  ["main"] = "Hagure Yuusha no Aesthetica",
   ["official"] = {
    [1] = "Aesthetica of a Rogue Hero",
    [2] = "はぐれ勇者の鬼畜美学 [エステティカ]",
@@ -93602,6 +93632,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hagure Yuusha no Estetica",
+   [2] = "Потерявшийся герой забрал девицу домой",
    },
   },
  [9016] = {
@@ -94098,9 +94130,9 @@ return {
    },
   },
  [9075] = {
-  ["main"] = "Minami-ke 4",
+  ["main"] = "Minami-ke Tadaima",
   ["official"] = {
-   [1] = "みなみけ 4",
+   [1] = "みなみけ ただいま",
    },
   ["short"] = {
    },
@@ -94208,7 +94240,8 @@ return {
  [9087] = {
   ["main"] = "Shin Hikari Shinwa: Palutena no Kagami",
   ["official"] = {
-   [1] = "新・光神話 パルテナの鏡",
+   [1] = "Kid Icarus 3D Anime",
+   [2] = "新・光神話 パルテナの鏡",
    },
   ["short"] = {
    },
@@ -94479,7 +94512,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Summer Snow Rendezvous",
+   [1] = "Snow-in-Summer Rendezvous",
+   [2] = "Summer Snow Rendezvous",
    },
   },
  [9127] = {
@@ -95124,13 +95158,15 @@ return {
    },
   },
  [9206] = {
-  ["main"] = "Boku wa Tomodachi ga Sukunai Add-on Disc",
+  ["main"] = "Boku wa Tomodachi ga Sukunai: Relay Shousetsu wa Ketsumatsu ga Hanpanai",
   ["official"] = {
-   [1] = "僕は友達が少ない あどおんでぃすく",
+   [1] = "僕は友達が少ない リレー小説は結末が半端ないL(゜□゜)",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Boku wa Tomodachi ga Sukunai Add-on Disc",
+   [2] = "僕は友達が少ない あどおんでぃすく",
    },
   },
  [9207] = {
@@ -95264,7 +95300,8 @@ return {
  [9230] = {
   ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
   ["official"] = {
-   [1] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+   [1] = "J`aime mon frère par amour !",
+   [2] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
    },
   ["short"] = {
    },
@@ -95272,9 +95309,9 @@ return {
    },
   },
  [9231] = {
-  ["main"] = "Tantei Opera Milky Holmes: Alternative One - Kobayashi Opera to 5-Mai no Kaiga",
+  ["main"] = "Tantei Opera Milky Holmes: Alternative",
   ["official"] = {
-   [1] = "探偵オペラ ミルキィホームズ Alternative ONE 小林オペラと5枚の絵画",
+   [1] = "探偵オペラ ミルキィホームズ Alternative",
    },
   ["short"] = {
    },
@@ -95881,6 +95918,7 @@ return {
    [1] = "俺の彼女と幼なじみが修羅場すぎる",
    },
   ["short"] = {
+   [1] = "OreShura",
    },
   ["syn"] = {
    },
@@ -96214,9 +96252,9 @@ return {
    },
   },
  [9342] = {
-  ["main"] = "Boku wa Tomodachi ga Sukunai Dai 2-ki",
+  ["main"] = "Boku wa Tomodachi ga Sukunai Next",
   ["official"] = {
-   [1] = "僕は友達が少ない 第2期",
+   [1] = "僕は友達が少ないNEXT",
    },
   ["short"] = {
    [1] = "Haganai 2",
@@ -97048,13 +97086,190 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "creator`s world project 4",
+   [1] = "Fossil Thief and the Dinosaur Stones",
+   [2] = "creator`s world project 4",
    },
   },
  [9443] = {
   ["main"] = "Unko-san: Tsuiteru Hito ni Shika Mienai Yousei Junjou Ha",
   ["official"] = {
    [1] = "うんこさん ツイてる人にしか見えない妖精 純情派",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9444] = {
+  ["main"] = "Picchipichi Shizuku-chan",
+  ["official"] = {
+   [1] = "ぴっちぴち♪しずくちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9445] = {
+  ["main"] = "Puchimas! Petit Idolmaster",
+  ["official"] = {
+   [1] = "ぷちます! プチ・アイドルマスタ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ぷちます! -PETIT IDOLM@STER-",
+   },
+  },
+ [9446] = {
+  ["main"] = "Phi Brain: Kami no Puzzle (2013)",
+  ["official"] = {
+   [1] = "ファイ・ブレイン 神のパズル (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9447] = {
+  ["main"] = "Kuma Seijin to Boku",
+  ["official"] = {
+   [1] = "クマ星人とぼく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9448] = {
+  ["main"] = "Glass no Chikyuu wo Sukue Unico Tokubetsu-hen",
+  ["official"] = {
+   [1] = "Saving Our Fragile Earth: Unico Special Chapter",
+   [2] = "ガラスの地球を救え ユニコ特別編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9449] = {
+  ["main"] = "Tetsuwan Atom: Chikyuu Saigo no Nichi",
+  ["official"] = {
+   [1] = "鉄腕アトム ~地球最後の日~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Tetsuwan Atom: Doomsday",
+   },
+  },
+ [9450] = {
+  ["main"] = "Astro Boy Tetsuwan Atom Tokubetsu-hen: Kagayakeru Chikyuu - Anata wa Aoku, Utsukushii...",
+  ["official"] = {
+   [1] = "ASTRO BOY 鉄腕アトム 特別編: 輝ける地球 ~あなたは青く、美しい...~",
+   [2] = "Tetsuwan Atom: The Glorious Earth",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9451] = {
+  ["main"] = "Astro Boy Tetsuwan Atom Tokubetsu-hen: Iwan no Wakusei - Robot to Ningen no Yuujou",
+  ["official"] = {
+   [1] = "ASTRO BOY 鉄腕アトム 特別編: イワンの惑星 ~ロボットと人間の友情~",
+   [2] = "Tetsuwan Atom: Ivan`s Planet",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9452] = {
+  ["main"] = "Majestic Prince",
+  ["official"] = {
+   [1] = "マジェスティックプリンス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9453] = {
+  ["main"] = "Nekomonogatari Kuro",
+  ["official"] = {
+   [1] = "猫物語 黒",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9454] = {
+  ["main"] = "Saint Oniisan",
+  ["official"] = {
+   [1] = "聖☆おにいさん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Saint Young Men",
+   },
+  },
+ [9455] = {
+  ["main"] = "Puchimas! Wakku Waku!!",
+  ["official"] = {
+   [1] = "ぷちます! わっくわくっ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9456] = {
+  ["main"] = "Saint Oniisan (2012)",
+  ["official"] = {
+   [1] = "聖☆おにいさん (2012)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9457] = {
+  ["main"] = "Nozoki Ana",
+  ["official"] = {
+   [1] = "ノ・ゾ・キ・ア・ナ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9458] = {
+  ["main"] = "Lupin Sansei: Touhou Kenbunroku - Another Page",
+  ["official"] = {
+   [1] = "ルパン三世 東方見聞録~アナザーページ~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9459] = {
+  ["main"] = "Haiyore! Nyaruko-san 2",
+  ["official"] = {
+   [1] = "這いよれ! ニャル子さん 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9460] = {
+  ["main"] = "Koiito Kinenbi The Animation",
+  ["official"] = {
+   [1] = "恋糸記念日 THE ANIMATION",
    },
   ["short"] = {
    },
