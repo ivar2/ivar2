@@ -120,10 +120,19 @@ local checkInput = function(value, from, to)
 end
 
 local handleExchange = function(self, source, destination, value, from, to)
-	-- Strip away to/in.
-	from = from:lower():gsub(' [toin]+', '')
+	-- Strip away to/in and spaces.
+	to = to:lower():gsub('[toin ]+ ', '')
+	from = from:lower()
+
+	-- Default to NOK.
+	if(to == '') then to = 'NOK' end
+
 	from = (conv[from] or from):upper()
 	to = (conv[to] or to):upper()
+
+	if(from == to) then
+		return self:Msg('privmsg', destination, source, 'wat ar u dewn... %s! STAHP!', source.nick)
+	end
 
 	local success, value = checkInput(value, from, to)
 	if(not success) then
@@ -143,7 +152,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!xe (.-) (.-) (%a+)$'] = handleExchange,
-		['^!cur (.-) (.-) (%a+)$'] = handleExchange,
+		['^!xe (%S+) (%S+) ?(.*)$'] = handleExchange,
+		['^!cur (%S+) (%S+) ?(.*)$'] = handleExchange,
 	},
 }
