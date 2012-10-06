@@ -27,6 +27,7 @@ local reply = {
 	'○|￣|＿',
 	'ಠ_ಠ',
 	'（╯°□°）╯︵ ┻━┻',
+	'┐(￣ー￣)┌',
 }
 
 local handleOutput = function(source, destination, choices)
