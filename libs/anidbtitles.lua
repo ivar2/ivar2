@@ -2644,10 +2644,10 @@ return {
    },
   },
  [148] = {
-  ["main"] = "Shen Diao Xia Lu",
+  ["main"] = "Shin Chou Kyou Ryo: Condor Hero",
   ["official"] = {
    [1] = "Legend of the Condor Hero",
-   [2] = "Shin Chou Kyou Ryo: Condor Hero",
+   [2] = "Shen Diao Xia Lu",
    [3] = "神鵰侠侶 コンドルヒーロー",
    },
   ["short"] = {
@@ -2872,7 +2872,8 @@ return {
    [14] = "星銃士 ビスマルク",
    },
   ["short"] = {
-   [1] = "sratss",
+   [1] = "Saber Rider",
+   [2] = "sratss",
    },
   ["syn"] = {
    [1] = "Saber Rider",
@@ -4571,14 +4572,14 @@ return {
   ["official"] = {
    [1] = "Candidate for Goddess - OAV",
    [2] = "Candidate for Goddess OVA",
-   [3] = "女神候補生 スペシャルカリキュラム",
+   [3] = "The Candidate for Goddess (OVA)",
+   [4] = "女神候補生 スペシャルカリキュラム",
    },
   ["short"] = {
    [1] = "CfG ova",
    },
   ["syn"] = {
    [1] = "Megami Kouhosei OVA",
-   [2] = "The Candidate for Goddess (OVA)",
    },
   },
  [264] = {
@@ -5717,15 +5718,16 @@ return {
    [9] = "Laputa, lendav kindlus",
    [10] = "Laputa: Castle in the Sky",
    [11] = "Laputa: Linna taivaalla",
-   [12] = "Le château dans le ciel",
-   [13] = "O Castelo no Céu",
-   [14] = "Το Κάστρο στον Ουρανό",
-   [15] = "Небесный замок Лапута",
-   [16] = "הטירה בשמיים",
-   [17] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
-   [18] = "天空の城ラピュタ",
-   [19] = "天空之城",
-   [20] = "천공의 성 라퓨타",
+   [12] = "Laputa: Nebeský zámek",
+   [13] = "Le château dans le ciel",
+   [14] = "O Castelo no Céu",
+   [15] = "Το Κάστρο στον Ουρανό",
+   [16] = "Небесный замок Лапута",
+   [17] = "הטירה בשמיים",
+   [18] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
+   [19] = "天空の城ラピュタ",
+   [20] = "天空之城",
+   [21] = "천공의 성 라퓨타",
    },
   ["short"] = {
    [1] = "Laputa",
@@ -14933,6 +14935,7 @@ return {
   ["short"] = {
    [1] = "SH",
    [2] = "SHE",
+   [3] = "Soul Hunter",
    },
   ["syn"] = {
    [1] = "Soul Hunter - Senkaiden Hōshin Engi",
@@ -15661,11 +15664,12 @@ return {
    [10] = "Muumioru lood",
    [11] = "Múmínálfarnir",
    [12] = "Troliai Mumiai",
-   [13] = "המומינים",
-   [14] = "وادي الأمان",
-   [15] = "小肥肥一族",
-   [16] = "楽しいムーミン一家",
-   [17] = "무민 잉글리쉬",
+   [13] = "Οι Μούμιν",
+   [14] = "המומינים",
+   [15] = "وادي الأمان",
+   [16] = "小肥肥一族",
+   [17] = "楽しいムーミン一家",
+   [18] = "무민 잉글리쉬",
    },
   ["short"] = {
    [1] = "TMI",
@@ -20018,30 +20022,30 @@ return {
    [1] = "A Abelha Maia",
    [2] = "Bitė Maja",
    [3] = "Die Biene Maja",
-   [4] = "Maija Mehiläinen",
-   [5] = "Maja de Bij",
-   [6] = "Maja,a méhecske",
-   [7] = "Maya l`abeille",
-   [8] = "Maya the Bee",
-   [9] = "Pszczółka Maja",
-   [10] = "Pčelica Maja",
-   [11] = "Včelka Mája",
-   [12] = "Včielka Maja",
-   [13] = "Čebelica Maja",
-   [14] = "Μάγια η Μέλισσα",
-   [15] = "Пчеличката Мая",
-   [16] = "Пчелка Майя",
-   [17] = "הדבורה מאיה",
-   [18] = "زينة ونحول",
-   [19] = "みつばちマーヤの冒険",
+   [4] = "L`ape Maia",
+   [5] = "Maija Mehiläinen",
+   [6] = "Maja de Bij",
+   [7] = "Maja,a méhecske",
+   [8] = "Maya l`abeille",
+   [9] = "Maya the Bee",
+   [10] = "Pszczółka Maja",
+   [11] = "Pčelica Maja",
+   [12] = "Včelka Mája",
+   [13] = "Včielka Maja",
+   [14] = "Čebelica Maja",
+   [15] = "Μάγια η Μέλισσα",
+   [16] = "Пчеличката Мая",
+   [17] = "Пчелка Майя",
+   [18] = "הדבורה מאיה",
+   [19] = "زينة ونحول",
+   [20] = "みつばちマーヤの冒険",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Adventures of Maya the Honeybee",
    [2] = "Biene Maya",
-   [3] = "L`ape Maia",
-   [4] = "La Abeja Maya",
+   [3] = "La Abeja Maya",
    },
   },
  [1352] = {
@@ -23412,9 +23416,10 @@ return {
    [1] = "Christoph Columbus",
    [2] = "Christophe Colomb",
    [3] = "Christopher Columbus",
-   [4] = "Христофор Колумб",
-   [5] = "كريستوفر كولومبوس",
-   [6] = "冒険者",
+   [4] = "Χριστόφορος Κολόμβος",
+   [5] = "Христофор Колумб",
+   [6] = "كريستوفر كولومبوس",
+   [7] = "冒険者",
    },
   ["short"] = {
    },
@@ -23779,13 +23784,13 @@ return {
  [1649] = {
   ["main"] = "Hamtarou no Otanjoubi: Mama o Tasunete Sanzen Techi Techi",
   ["official"] = {
-   [1] = "Hamtaro`s Birthday! - 3000 Hammy Steps in Search of Mommy",
-   [2] = "ハム太郎のおたんじょうび ～ママをたずねて三千てちてち～",
+   [1] = "ハム太郎のおたんじょうび ～ママをたずねて三千てちてち～",
    },
   ["short"] = {
    [1] = "Hamtaro`s Birthday!",
    },
   ["syn"] = {
+   [1] = "Hamtaro`s Birthday! - 3000 Hammy Steps in Search of Mommy",
    },
   },
  [1650] = {
@@ -24973,7 +24978,8 @@ return {
    [2] = "Locke the Superman",
    [3] = "Luck the galaxy fighter",
    [4] = "Superman de las Galaxias",
-   [5] = "超人ロック",
+   [5] = "Λοκ ο Σούπερμαν",
+   [6] = "超人ロック",
    },
   ["short"] = {
    },
@@ -27169,19 +27175,20 @@ return {
   ["syn"] = {
    [1] = "A Flor das Sete Cores",
    [2] = "Angel Cloud",
-   [3] = "Flower Angel",
-   [4] = "Hana no Ko Runrun",
-   [5] = "La fleur aux sept couleurs",
-   [6] = "La flor magica de 7 colores",
-   [7] = "Lili,a virágangyal",
-   [8] = "Lulu, le mystère de la fleur magique",
-   [9] = "Lun Lun the Flower Child",
-   [10] = "Lunlun, Flower Angel",
-   [11] = "Lunlun, a Filha das Flores",
-   [12] = "Lydie et la clef magique",
-   [13] = "The Flower Angel",
-   [14] = "Çiçek Kız Lunlun",
-   [15] = "Лулу, ангел цветов",
+   [3] = "Angel e a Flor de Sete Cores",
+   [4] = "Flower Angel",
+   [5] = "Hana no Ko Runrun",
+   [6] = "La fleur aux sept couleurs",
+   [7] = "La flor magica de 7 colores",
+   [8] = "Lili,a virágangyal",
+   [9] = "Lulu, le mystère de la fleur magique",
+   [10] = "Lun Lun the Flower Child",
+   [11] = "Lunlun, Flower Angel",
+   [12] = "Lunlun, a Filha das Flores",
+   [13] = "Lydie et la clef magique",
+   [14] = "The Flower Angel",
+   [15] = "Çiçek Kız Lunlun",
+   [16] = "Лулу, ангел цветов",
    },
   },
  [1920] = {
@@ -32709,11 +32716,12 @@ return {
    [6] = "Fullmetal Alchemist - The Movie: Conqueror of Shamballa",
    [7] = "Fullmetal Alchemist The Movie: Conqueror of Shamballa",
    [8] = "Fullmetal Alchemist: Il Conquistatore di Shambala",
-   [9] = "Стоманеният Алхимик - Завоевателят на Шамбала",
-   [10] = "แขนกลคนแปรธาตุ เดอะมูฟวี่ ฝ่ามิติพิชิตแดนสวรรค์",
-   [11] = "劇場版 鋼の錬金術師 シャンバラを征[ゆ]く者",
-   [12] = "钢之炼金术师剧场版 香巴拉的征服者",
-   [13] = "강철의 연금술사 - 샴발라의 정복자",
+   [9] = "Μεταλλικός Αλχημιστής, η Ταινία",
+   [10] = "Стоманеният Алхимик - Завоевателят на Шамбала",
+   [11] = "แขนกลคนแปรธาตุ เดอะมูฟวี่ ฝ่ามิติพิชิตแดนสวรรค์",
+   [12] = "劇場版 鋼の錬金術師 シャンバラを征[ゆ]く者",
+   [13] = "钢之炼金术师剧场版 香巴拉的征服者",
+   [14] = "강철의 연금술사 - 샴발라의 정복자",
    },
   ["short"] = {
    [1] = "fma movie",
@@ -33172,10 +33180,10 @@ return {
    },
   },
  [2395] = {
-  ["main"] = "Tottoko Hamtarou: Ham-Ham Land Daibouken",
+  ["main"] = "Gekijouban Tottoko Hamtarou: Ham-Ham Land Daibouken",
   ["official"] = {
    [1] = "Hamtaro - Aventures à Ham-Ham Land",
-   [2] = "とっとこハム太郎 ハムハムランド大冒険",
+   [2] = "劇場版 とっとこハム太郎 ハムハムランド大冒険",
    },
   ["short"] = {
    },
@@ -33184,10 +33192,10 @@ return {
    },
   },
  [2396] = {
-  ["main"] = "Tottoko Hamtarou: Ham-Ham Hamuuja! Maboroshi no Princess",
+  ["main"] = "Gekijouban Tottoko Hamtarou: Ham-Ham Hamuuja! Maboroshi no Princess",
   ["official"] = {
    [1] = "Hamtaro - La princesse captive",
-   [2] = "とっとこハム太郎 ハムハムハムージャ!幻のプリンセス",
+   [2] = "劇場版 とっとこハム太郎 ハムハムハムージャ!幻のプリンセス",
    },
   ["short"] = {
    },
@@ -33196,9 +33204,9 @@ return {
    },
   },
  [2397] = {
-  ["main"] = "Tottoko Hamtarou: Ham-Ham Grand Prix Aurora Tani no Kiseki - Ribbon-chan Kiki Ippatsu",
+  ["main"] = "Gekijouban Tottoko Hamtarou: Ham-Ham Grand Prix Aurora Tani no Kiseki - Ribbon-chan Kiki Ippatsu",
   ["official"] = {
-   [1] = "とっとこハム太郎 ハムハムグランプリン オーロラ谷の奇跡 ～リボンちゃん危機一髪!～",
+   [1] = "劇場版 とっとこハム太郎 ハムハムグランプリン オーロラ谷の奇跡 ～リボンちゃん危機一髪!～",
    },
   ["short"] = {
    },
@@ -33207,9 +33215,9 @@ return {
    },
   },
  [2398] = {
-  ["main"] = "Tottoko Hamtarou: Hamtarou to Fushigi no Oni no Emon Tou",
+  ["main"] = "Gekijouban Tottoko Hamtarou: Hamtarou to Fushigi no Oni no Emon Tou",
   ["official"] = {
-   [1] = "とっとこハム太郎 ハム太郎とふしぎのオニの絵本塔",
+   [1] = "劇場版 とっとこハム太郎 ハム太郎とふしぎのオニの絵本塔",
    },
   ["short"] = {
    },
@@ -35340,9 +35348,10 @@ return {
    [1] = "Pucca",
    [2] = "Pucca Funny Love",
    [3] = "Pucca Funny Love Story",
-   [4] = "Пукка",
-   [5] = "פוקה",
-   [6] = "푸카",
+   [4] = "Η ΜΙΚΡΗ ΠΟΥΚΑ",
+   [5] = "Пукка",
+   [6] = "פוקה",
+   [7] = "푸카",
    },
   ["short"] = {
    },
@@ -36570,8 +36579,9 @@ return {
    [4] = "Pinocchio (1976)",
    [5] = "Pinocchio (Nippon Animation)",
    [6] = "The Adventures of Piccolino",
-   [7] = "פינוקיו",
-   [8] = "ピノキオより ピコリーノの冒険",
+   [7] = "Οι Περιπέτειες του Πινόκιο",
+   [8] = "פינוקיו",
+   [9] = "ピノキオより ピコリーノの冒険",
    },
   ["short"] = {
    },
@@ -36807,11 +36817,12 @@ return {
   ["official"] = {
    [1] = "TSUBASA - RESERVoire CHRoNiCLE",
    [2] = "Tsubasa Chronicle",
-   [3] = "Tsubasa Reservoir Chronicles",
-   [4] = "Tsubasa: As Crónicas de Sakura",
-   [5] = "Tsubasa: RESERVoir CHRoNiCLE",
-   [6] = "สึบาสะ สงครามเทพข้ามมิติ",
-   [7] = "ツバサ・クロニクル",
+   [3] = "Tsubasa Chronicle (1. Staffel)",
+   [4] = "Tsubasa Reservoir Chronicles",
+   [5] = "Tsubasa: As Crónicas de Sakura",
+   [6] = "Tsubasa: RESERVoir CHRoNiCLE",
+   [7] = "สึบาสะ สงครามเทพข้ามมิติ",
+   [8] = "ツバサ・クロニクル",
    },
   ["short"] = {
    [1] = "Tsubasa",
@@ -37158,9 +37169,10 @@ return {
    [5] = "Yu-Gi-Oh! Film: Pyramida světla",
    [6] = "Yu-Gi-Oh! Ostateczne Starcie",
    [7] = "Yu-Gi-Oh!: The Movie",
-   [8] = "Югио!",
-   [9] = "יו-גי-הו!: הסרט",
-   [10] = "遊☆戯☆王 デュエルモンスターズ 光のピラミッド",
+   [8] = "Yu-Gi-Oh, Η Ταινία",
+   [9] = "Югио!",
+   [10] = "יו-גי-הו!: הסרט",
+   [11] = "遊☆戯☆王 デュエルモンスターズ 光のピラミッド",
    },
   ["short"] = {
    },
@@ -42155,34 +42167,34 @@ return {
  [3328] = {
   ["main"] = "Ham-chanz no Takara Sagashi Daisakusen: Ham wa! Suteki na Umi no Natsuyasumi",
   ["official"] = {
-   [1] = "Ham-Hams Ahoy!",
-   [2] = "ハムちゃんずの宝さがし大作戦～はむはー!すてきな海のなつやすみ～",
+   [1] = "ハムちゃんずの宝さがし大作戦～はむはー!すてきな海のなつやすみ～",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ham-Hams Ahoy!",
    },
   },
  [3329] = {
   ["main"] = "Ham-chanz to Niji no Kuni no Ouji-sama: Sekai de Ichiban no Takaramono",
   ["official"] = {
-   [1] = "Rainbow Rescue",
-   [2] = "ハムちゃんずと虹の国の王子さま～せかいでいちばんのたからもの～",
+   [1] = "ハムちゃんずと虹の国の王子さま~せかいでいちばんのたからもの~",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Rainbow Rescue",
    },
   },
  [3330] = {
   ["main"] = "Ham-chanz no Mezase! Ham-Ham Kin Medal: Hashire! Hashire! Daisakusen!",
   ["official"] = {
-   [1] = "Ham-Ham Games",
-   [2] = "ハムちゃんずのめざせ! ハムハム金メダル ～はしれ! はしれ! だいさくせん～",
+   [1] = "ハムちゃんずのめざせ! ハムハム金メダル ~はしれ! はしれ! だいさくせん~",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ham-Ham Games",
    },
   },
  [3331] = {
@@ -42439,14 +42451,14 @@ return {
  [3355] = {
   ["main"] = "Hijikata Toshizou Shiro no Kiseki",
   ["official"] = {
-   [1] = "Toshizo Hijikata: Cornerstone of Understanding",
-   [2] = "土方歳三 白の軌跡",
+   [1] = "土方歳三 白の軌跡",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Hijikata Toshizo: Shiru no Kiseki",
-   [2] = "Хиджиката Тошизо: На път към разбирането",
+   [2] = "Toshizo Hijikata: Cornerstone of Understanding",
+   [3] = "Хиджиката Тошизо: На път към разбирането",
    },
   },
  [3356] = {
@@ -42900,8 +42912,9 @@ return {
   ["official"] = {
    [1] = "Transformeriai: Užsimaskavę robotai",
    [2] = "Transformers: Robots in Disguise",
-   [3] = "רובוטריקים: רובוטים במסווה",
-   [4] = "トランスフォーマー・カーロボット",
+   [3] = "Αυτοκίνητα Ρομπότ",
+   [4] = "רובוטריקים: רובוטים במסווה",
+   [5] = "トランスフォーマー・カーロボット",
    },
   ["short"] = {
    [1] = "TF:RiD",
@@ -45208,7 +45221,8 @@ return {
    [1] = "Bajki japońskie",
    [2] = "Es war einmal",
    [3] = "Japanese Folklore Tales",
-   [4] = "まんが日本昔ばなし",
+   [4] = "Γιαπωνέζικα Παραμύθια",
+   [5] = "まんが日本昔ばなし",
    },
   ["short"] = {
    },
@@ -47853,7 +47867,7 @@ return {
  [4046] = {
   ["main"] = "Tsubasa Chronicle Dai 2 Series",
   ["official"] = {
-   [1] = "Tsubasa Chronicle - 2. Staffel",
+   [1] = "Tsubasa Chronicle (2. Staffel)",
    [2] = "Tsubasa Chronicle - Saison 2",
    [3] = "Tsubasa Chronicle - Sezon 2",
    [4] = "สึบาสะ สงครามเทพข้ามมิติ ปี 2",
@@ -58103,7 +58117,7 @@ return {
   ["main"] = "Topo Gigio",
   ["official"] = {
    [1] = "Bentornato Topo Gigio",
-   [2] = "Topo Gigio - Die Weltraum-Maus",
+   [2] = "Topo Gigio, die Weltraummaus (1. Staffel)",
    [3] = "مغامرات سوسان",
    [4] = "トッポ・ジージョ",
    },
@@ -58116,7 +58130,8 @@ return {
  [5055] = {
   ["main"] = "Yumemiru Topo Gigio",
   ["official"] = {
-   [1] = "夢見るトッポ・ジージョ",
+   [1] = "Topo Gigio, die Weltraummaus (2. Staffel)",
+   [2] = "夢見るトッポ・ジージョ",
    },
   ["short"] = {
    },
@@ -63392,6 +63407,7 @@ return {
   ["main"] = "One Piece: Episode of Chopper Plus - Fuyu ni Saku, Kiseki no Sakura",
   ["official"] = {
    [1] = "ONE PIECE(ワンピース) エピソードオブチョッパー+冬に咲く, 奇跡の桜",
+   [2] = "One Piece - Chopper und das Wunder der Winterkirschblüte",
    },
   ["short"] = {
    [1] = "OP Movie 9",
@@ -69156,13 +69172,14 @@ return {
  [6426] = {
   ["main"] = "Metal Fight Beyblade",
   ["official"] = {
-   [1] = "Beyblade Metal Fusion",
-   [2] = "Beyblade metal fusion",
-   [3] = "Beyblade(2)",
-   [4] = "Beyblade: Metal Fusion",
-   [5] = "בייבלייד: עידן המתכת",
-   [6] = "بي بليد المعركة الحديدية",
-   [7] = "メタルファイト ベイブレード",
+   [1] = "BEYBLADE",
+   [2] = "Beyblade Metal Fusion",
+   [3] = "Beyblade metal fusion",
+   [4] = "Beyblade(2)",
+   [5] = "Beyblade: Metal Fusion",
+   [6] = "בייבלייד: עידן המתכת",
+   [7] = "بي بليد المعركة الحديدية",
+   [8] = "メタルファイト ベイブレード",
    },
   ["short"] = {
    },
@@ -79296,7 +79313,8 @@ return {
  [7481] = {
   ["main"] = "Pokemon Ranger: Hikari no Kiseki",
   ["official"] = {
-   [1] = "ポケモンレンジャー 光の軌跡",
+   [1] = "Pokemon Ranger: Guardian Signs",
+   [2] = "ポケモンレンジャー 光の軌跡",
    },
   ["short"] = {
    },
@@ -82051,16 +82069,17 @@ return {
    },
   },
  [7773] = {
-  ["main"] = "Hello Kitty no Mahou no Mori no Ohime-sama",
+  ["main"] = "Hello Kitty: Mahou no Mori no Ohime-sama",
   ["official"] = {
    [1] = "Hello Kitty in The Sleeping Princess",
-   [2] = "ハローキティの魔法の森のお姫さま",
+   [2] = "ハローキティ 魔法の森のお姫さま",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Hello Kitty and Friends: The Sleeping Princess",
-   [2] = "ハローキティの魔法の森のお姫様",
+   [2] = "ハローキティの魔法の森のお姫さま",
+   [3] = "ハローキティの魔法の森のお姫様",
    },
   },
  [7774] = {
@@ -84975,9 +84994,10 @@ return {
  [8079] = {
   ["main"] = "Biohazard: Damnation",
   ["official"] = {
-   [1] = "Resident Evil: Damnation",
-   [2] = "Resident Evil: Potępienie",
-   [3] = "バイオハザード ダムネーション",
+   [1] = "A kaptár: Kárhozat",
+   [2] = "Resident Evil: Damnation",
+   [3] = "Resident Evil: Potępienie",
+   [4] = "バイオハザード ダムネーション",
    },
   ["short"] = {
    },
@@ -85826,7 +85846,8 @@ return {
   ["main"] = "Blade",
   ["official"] = {
    [1] = "Ašmenys",
-   [2] = "ブレイド",
+   [2] = "Penge",
+   [3] = "ブレイド",
    },
   ["short"] = {
    },
@@ -90336,9 +90357,9 @@ return {
    },
   },
  [8655] = {
-  ["main"] = "Gekijouban Steins;Gate",
+  ["main"] = "Gekijouban Steins;Gate: Fuka Ryouiki no Deja vu",
   ["official"] = {
-   [1] = "劇場版 シュタインズ･ゲート",
+   [1] = "劇場版 シュタインズ･ゲート 負荷領域のデジャヴ",
    },
   ["short"] = {
    },
@@ -90535,7 +90556,8 @@ return {
  [8673] = {
   ["main"] = "Code: Breaker",
   ["official"] = {
-   [1] = "CØDE:BREAKER",
+   [1] = "Code: Breaker",
+   [2] = "CØDE:BREAKER",
    },
   ["short"] = {
    },
@@ -90625,6 +90647,7 @@ return {
    [3] = "The Basketball Which Kuroko Plays",
    [4] = "Баскетбол Куроко",
    [5] = "Баскетболът на Куроко",
+   [6] = "黑子的篮球",
    },
   },
  [8682] = {
@@ -91705,6 +91728,7 @@ return {
    [2] = "エリ騎士",
    },
   ["syn"] = {
+   [1] = "禁区骑士",
    },
   },
  [8799] = {
@@ -92104,6 +92128,7 @@ return {
    },
   ["syn"] = {
    [1] = "Yuruyuri 2",
+   [2] = "摇曳百合2",
    },
   },
  [8845] = {
@@ -92334,6 +92359,7 @@ return {
    },
   ["syn"] = {
    [1] = "Space Bros.",
+   [2] = "إخوة الفضاء",
    },
   },
  [8866] = {
@@ -93303,7 +93329,7 @@ return {
  [8976] = {
   ["main"] = "X Yochou",
   ["official"] = {
-   [1] = "X OVA",
+   [1] = "X - Das Omen (OVA)",
    [2] = "X 予兆",
    },
   ["short"] = {
@@ -94173,8 +94199,10 @@ return {
    [1] = "ヨルムンガンド PERFECT ORDER",
    },
   ["short"] = {
+   [1] = "jormungand2",
    },
   ["syn"] = {
+   [1] = "Jormungand 2",
    },
   },
  [9077] = {
@@ -94510,6 +94538,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I Love You I Love You, I Love You The Animation",
    },
   },
  [9123] = {
@@ -94558,7 +94587,8 @@ return {
  [9128] = {
   ["main"] = "Robotics;Notes",
   ["official"] = {
-   [1] = "ロボティクス・ノーツ",
+   [1] = "Robotics;Notes",
+   [2] = "ロボティクス・ノーツ",
    },
   ["short"] = {
    [1] = "R;N",
@@ -94739,7 +94769,8 @@ return {
  [9153] = {
   ["main"] = "Sakurasou no Pet na Kanojo",
   ["official"] = {
-   [1] = "さくら荘のペットな彼女",
+   [1] = "The Pet Girl of Sakurasou",
+   [2] = "さくら荘のペットな彼女",
    },
   ["short"] = {
    },
@@ -95263,13 +95294,15 @@ return {
  [9214] = {
   ["main"] = "Zetsuen no Tempest: The Civilization Blaster",
   ["official"] = {
-   [1] = "絶園のテンペスト ~THE CIVILIZATION BLASTER~",
+   [1] = "Zetsuen no Tempest",
+   [2] = "絶園のテンペスト ~THE CIVILIZATION BLASTER~",
    },
   ["short"] = {
    [1] = "zetsuen",
    },
   ["syn"] = {
    [1] = "Forsaken Tempest",
+   [2] = "Буреносен удар: Унищожител на цивилизации",
    },
   },
  [9215] = {
@@ -95328,10 +95361,9 @@ return {
    },
   },
  [9230] = {
-  ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
+  ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankei Nai yo ne!",
   ["official"] = {
-   [1] = "J`aime mon frère par amour !",
-   [2] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+   [1] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
    },
   ["short"] = {
    [1] = "oniai",
@@ -95368,6 +95400,7 @@ return {
    [1] = "好きっていいなよ.",
    },
   ["short"] = {
+   [1] = "Sukinayo",
    },
   ["syn"] = {
    [1] = "Say I Love You",
@@ -95485,6 +95518,7 @@ return {
    [1] = "BTOOOM!",
    },
   ["short"] = {
+   [1] = "БУУУМ!",
    },
   ["syn"] = {
    [1] = "Btoom",
@@ -95632,6 +95666,9 @@ return {
    },
   ["syn"] = {
    [1] = "Magi: The Labyrinth of Magic",
+   [2] = "Маги",
+   [3] = "Маги: Вълшебният лабиринт",
+   [4] = "Маги: Магическият лабиринт",
    },
   },
  [9269] = {
@@ -95674,6 +95711,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Medaka Box 2",
    },
   },
  [9275] = {
@@ -95831,7 +95869,8 @@ return {
  [9291] = {
   ["main"] = "Hayate no Gotoku! Hayate the Combat Butler: Can`t Take My Eyes Off You",
   ["official"] = {
-   [1] = "ハヤテのごとく! Hayate the combat butler: CAN`T TAKE MY EYES OFF YOU",
+   [1] = "Hayate no Gotoku Can`t Take My Eyes Off You",
+   [2] = "ハヤテのごとく! Hayate the combat butler: CAN`T TAKE MY EYES OFF YOU",
    },
   ["short"] = {
    [1] = "hng3",
@@ -96851,9 +96890,9 @@ return {
    },
   },
  [9409] = {
-  ["main"] = "High School DxD Dai 2-ki",
+  ["main"] = "High School DxD New",
   ["official"] = {
-   [1] = "ハイスクールDxD 第2期",
+   [1] = "ハイスクールDxD NEW",
    },
   ["short"] = {
    },
@@ -96983,9 +97022,9 @@ return {
    },
   },
  [9427] = {
-  ["main"] = "Kintama",
+  ["main"] = "Kintama`",
   ["official"] = {
-   [1] = "金魂",
+   [1] = "金魂´",
    },
   ["short"] = {
    },
@@ -97212,9 +97251,9 @@ return {
    },
   },
  [9452] = {
-  ["main"] = "Ginga Kikou Sentai Majestic Prince",
+  ["main"] = "Ginga Kikoutai Majestic Prince",
   ["official"] = {
-   [1] = "銀河機攻戦隊マジェスティックプリンス",
+   [1] = "銀河機攻隊 マジェスティックプリンス",
    },
   ["short"] = {
    },
@@ -97340,12 +97379,82 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Majocco Classical",
    },
   },
  [9465] = {
   ["main"] = "Senki Zesshou Symphogear 2",
   ["official"] = {
    [1] = "戦姫絶唱シンフォギア 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9466] = {
+  ["main"] = "Hataraku Maou-sama!",
+  ["official"] = {
+   [1] = "はたらく魔王さま!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9467] = {
+  ["main"] = "Rou Kyuu Bu! (2013)",
+  ["official"] = {
+   [1] = "ロウきゅーぶ! (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9468] = {
+  ["main"] = "Iron Man: Rise of Technovore",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9469] = {
+  ["main"] = "Zettai Junshu Kyousei Kozukuri Kyokashou!!",
+  ["official"] = {
+   [1] = "ぜったい遵守☆強制子作り許可証!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9471] = {
+  ["main"] = "Sket Dance (2013)",
+  ["official"] = {
+   [1] = "SKET DANCE (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9473] = {
+  ["main"] = "Gudaguda Fairies 2",
+  ["official"] = {
+   [1] = "gdgd妖精s 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9474] = {
+  ["main"] = "Seitokai no Ichizon (2013)",
+  ["official"] = {
+   [1] = "生徒会の一存 (2013)",
    },
   ["short"] = {
    },
