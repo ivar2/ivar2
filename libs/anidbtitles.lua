@@ -4181,7 +4181,7 @@ return {
   ["main"] = "Armitage III: Dual Matrix",
   ["official"] = {
    [1] = "Armitage III - Dual Matrix",
-   [2] = "Armitage: Dual-Matrix",
+   [2] = "Armitage III: Dual Matrix",
    [3] = "Армитаж: Двойная матрица",
    [4] = "アミテージ・ザ・サード DUAL-MATRIX",
    },
@@ -11655,14 +11655,14 @@ return {
   ["official"] = {
    [1] = "Albator, le corsaire de l`espace",
    [2] = "Capitan Harlock",
-   [3] = "Die Abenteuer des fantastischen Weltraumpiraten Captain Harlock",
-   [4] = "Harlock kapitány",
-   [5] = "宇宙海賊・キャプテンハーロック",
+   [3] = "Captain Harlock",
+   [4] = "Die Abenteuer des fantastischen Weltraumpiraten Captain Harlock",
+   [5] = "Harlock kapitány",
+   [6] = "宇宙海賊・キャプテンハーロック",
    },
   ["short"] = {
    [1] = "Albator 78",
-   [2] = "Captain Harlock",
-   [3] = "Harlock TV",
+   [2] = "Harlock TV",
    },
   ["syn"] = {
    [1] = "Capitaine Albator, le pirate de l`espace",
@@ -12305,7 +12305,8 @@ return {
    [2] = "Blue Gender - The Warrior",
    [3] = "Blue Gender - Zrozen k boji",
    [4] = "Blue Gender: Războinicul",
-   [5] = "ブルージェンダー ザ・ウォリアー",
+   [5] = "Blue Gender: The Warrior",
+   [6] = "ブルージェンダー ザ・ウォリアー",
    },
   ["short"] = {
    [1] = "Blue Gender Movie",
@@ -30970,7 +30971,7 @@ return {
    },
   },
  [2222] = {
-  ["main"] = "Kore ga UFO da! Soratobu Enban",
+  ["main"] = "Kore ga UFO Da! Soratobu Enban",
   ["official"] = {
    [1] = "これがUFOだ! 空飛ぶ円盤",
    },
@@ -33280,13 +33281,13 @@ return {
  [2401] = {
   ["main"] = "Seikimatsu Darling",
   ["official"] = {
-   [1] = "End of Century - Darling",
-   [2] = "世紀末★ダーリン",
+   [1] = "世紀末★ダーリン",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "End-of-the-Century Darling",
+   [1] = "End of Century - Darling",
+   [2] = "End-of-the-Century Darling",
    },
   },
  [2402] = {
@@ -34671,13 +34672,15 @@ return {
   ["official"] = {
    [1] = "Lensman",
    [2] = "Lensman, Czyli Moc Soczewki",
-   [3] = "SF新世紀 レンズマン",
-   [4] = "עדשאי",
+   [3] = "SF Shin Seiki Lensman",
+   [4] = "SF新世紀 レンズマン",
+   [5] = "עדשאי",
    },
   ["short"] = {
    [1] = "Lensman",
    },
   ["syn"] = {
+   [1] = "SF Shin Seiki Lensman",
    },
   },
  [2532] = {
@@ -43602,8 +43605,9 @@ return {
  [3445] = {
   ["main"] = "Baldr Force Exe Resolution",
   ["official"] = {
-   [1] = "Виртуальный Спецназ",
-   [2] = "バルドフォース エグゼ レソリューション",
+   [1] = "Baldr Force EXE",
+   [2] = "Виртуальный Спецназ",
+   [3] = "バルドフォース エグゼ レソリューション",
    },
   ["short"] = {
    [1] = "bfexe",
@@ -44888,7 +44892,7 @@ return {
  [3561] = {
   ["main"] = "Captain Tsubasa: Sekai Daikessen!! Jr. World Cup",
   ["official"] = {
-   [1] = "Capitão Tsubasa: O Campeonato Mundial De Júniores",
+   [1] = "Capitão Tsubasa: O Campeonato Mundial de Juniores",
    [2] = "Olive et Tom - La Coupe du monde : la Coupe du monde junior",
    [3] = "キャプテン翼 世界大決戦!! Jr.ワールドカップ",
    },
@@ -46897,18 +46901,18 @@ return {
    },
   },
  [3955] = {
-  ["main"] = "Natsufuku no Shoujo-tachi",
+  ["main"] = "Natsufuku no Shoujo-tachi: Hiroshima, Shouwa 20-nen 8-gatsu 6-ka",
   ["official"] = {
    [1] = "Dziewczęta w letnich sukienkach",
    [2] = "Dívky v letních šatech",
-   [3] = "夏服の少女たち",
+   [3] = "夏服の少女たち ~ヒロシマ・昭和20年8月6日~",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Girls in Summer Clothes",
-   [2] = "Natsufuku no Shoujotachi",
-   [3] = "夏服の少女たち ヒロシマ・昭和20年8月6日",
+   [2] = "Natsufuku no Shoujo-tachi: Hiroshima, Shouwa Nijuunen Hachigatsu Muika",
+   [3] = "Natsufuku no Shoujotachi",
    },
   },
  [3956] = {
@@ -54401,13 +54405,14 @@ return {
    },
   },
  [4670] = {
-  ["main"] = "Kocchi Muite Miko",
+  ["main"] = "Kocchi Muite Miiko",
   ["official"] = {
    [1] = "こっちむいてみい子",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kocchi Muite Miko",
    },
   },
  [4671] = {
@@ -57541,9 +57546,9 @@ return {
    },
   },
  [4991] = {
-  ["main"] = "Akai Tori no Kokoro",
+  ["main"] = "Nihon Meisaku Douwa Series: Akai Tori no Kokoro",
   ["official"] = {
-   [1] = "赤い鳥のこころ",
+   [1] = "日本名作童話シリーズ 赤い鳥のこころ",
    },
   ["short"] = {
    },
@@ -60882,8 +60887,9 @@ return {
  [5356] = {
   ["main"] = "Bamboo Blade",
   ["official"] = {
-   [1] = "Bambusová čepeľ",
-   [2] = "バンブーブレード",
+   [1] = "Bamboo Blade",
+   [2] = "Bambusová čepeľ",
+   [3] = "バンブーブレード",
    },
   ["short"] = {
    },
@@ -62227,8 +62233,9 @@ return {
  [5531] = {
   ["main"] = "Blassreiter",
   ["official"] = {
-   [1] = "ブラスレイター",
-   [2] = "블라스레이터",
+   [1] = "Blassreiter",
+   [2] = "ブラスレイター",
+   [3] = "블라스레이터",
    },
   ["short"] = {
    },
@@ -71130,6 +71137,7 @@ return {
   ["main"] = "Black Lagoon: Roberta`s Blood Trail",
   ["official"] = {
    [1] = "BLACK LAGOON Roberta`s Blood Trail",
+   [2] = "Black Lagoon: Roberta`s Blood Trail",
    },
   ["short"] = {
    [1] = "BL3",
@@ -72646,7 +72654,7 @@ return {
    },
   },
  [6795] = {
-  ["main"] = "Yona Yona Penguin",
+  ["main"] = "Yonayona Penguin",
   ["official"] = {
    [1] = "Pingvinė Jona Jona",
    [2] = "Yona, a pingvinek királynője",
@@ -72654,8 +72662,11 @@ return {
    [4] = "よなよなペンギン",
    },
   ["short"] = {
+   [1] = "yonapen",
+   [2] = "よなペン",
    },
   ["syn"] = {
+   [1] = "Yona Yona Penguin",
    },
   },
  [6796] = {
@@ -77489,17 +77500,17 @@ return {
  [7280] = {
   ["main"] = "Shukufuku no Campanella",
   ["official"] = {
-   [1] = "祝福のカンパネラ -la campanella della benedizione-",
+   [1] = "Blessing of the Campanella",
+   [2] = "祝福のカンパネラ -la campanella della benedizione-",
    },
   ["short"] = {
    [1] = "Campanella",
    },
   ["syn"] = {
-   [1] = "Blessing of the Campanella",
-   [2] = "La Campanella Della Benedizione",
-   [3] = "祝福之鐘",
-   [4] = "祝福的鐘聲",
-   [5] = "祝福的钟声",
+   [1] = "La Campanella Della Benedizione",
+   [2] = "祝福之鐘",
+   [3] = "祝福的鐘聲",
+   [4] = "祝福的钟声",
    },
   },
  [7281] = {
@@ -77539,7 +77550,7 @@ return {
  [7286] = {
   ["main"] = "B Gata H Kei",
   ["official"] = {
-   [1] = "B Gata H Kei - Yamada`s First Time",
+   [1] = "B Gata H Kei: Yamada`s First Time",
    [2] = "B型H系",
    },
   ["short"] = {
@@ -81915,13 +81926,15 @@ return {
    },
   },
  [7751] = {
-  ["main"] = "Sore Ike! Anpanman: Yakisoba Pan Man to Black Sabotenman",
+  ["main"] = "Yakisobapanman to Black Sabotenman",
   ["official"] = {
-   [1] = "それいけ! アンパンマン やきそばパンマンとブラックサボテンマン",
+   [1] = "やきそばパンマンとブラックサボテンマン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Yakisoba Pan Man to Black Sabotenman",
+   [2] = "それいけ! アンパンマン やきそばパンマンとブラックサボテンマン",
    },
   },
  [7752] = {
@@ -84194,14 +84207,14 @@ return {
  [7985] = {
   ["main"] = "Yuri Seijin Naoko-san",
   ["official"] = {
-   [1] = "Naoko - kosmitka lesbijka",
-   [2] = "百合星人ナオコサン",
+   [1] = "百合星人ナオコサン",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Lesbian Citizen Naoko-san",
-   [2] = "百合星人奈绪子",
+   [2] = "Naoko - Lesbijka z Kosmosu",
+   [3] = "百合星人奈绪子",
    },
   },
  [7986] = {
@@ -84800,7 +84813,8 @@ return {
  [8055] = {
   ["main"] = "Appleseed XIII",
   ["official"] = {
-   [1] = "アップルシード XIII",
+   [1] = "Appleseed XIII",
+   [2] = "アップルシード XIII",
    },
   ["short"] = {
    },
@@ -85126,7 +85140,8 @@ return {
  [8085] = {
   ["main"] = "Baka to Test to Shoukanjuu: Matsuri",
   ["official"] = {
-   [1] = "バカとテストと召喚獣 ～祭～",
+   [1] = "Baka and Test: Summon the Beasts - OVA",
+   [2] = "バカとテストと召喚獣 ～祭～",
    },
   ["short"] = {
    [1] = "bakatest ova",
@@ -87116,12 +87131,12 @@ return {
  [8285] = {
   ["main"] = "Oni Chichi: Re-birth",
   ["official"] = {
-   [1] = "Oni Chichi: Od-rodzenie",
-   [2] = "鬼父 Re-birth",
+   [1] = "鬼父 Re-birth",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Oni Chichi: Od-rodzenie",
    },
   },
  [8286] = {
@@ -87966,7 +87981,8 @@ return {
  [8376] = {
   ["main"] = "C3: Cube x Cursed x Curious",
   ["official"] = {
-   [1] = "C3 -シーキューブ- Cube x Cursed x Curious",
+   [1] = "C3",
+   [2] = "C3 -シーキューブ- Cube x Cursed x Curious",
    },
   ["short"] = {
    [1] = "C3",
@@ -88878,12 +88894,12 @@ return {
  [8473] = {
   ["main"] = "Eroge! H mo Game mo Kaihatsu Zanmai",
   ["official"] = {
-   [1] = "Eroge! Oddanie się rozwijaniu erotyki i gier!",
-   [2] = "えろげー! ～Hもゲームも開発三昧～",
+   [1] = "えろげー! ～Hもゲームも開発三昧～",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Eroge! Oddanie się rozwijaniu erotyki i gier!",
    },
   },
  [8474] = {
@@ -89336,6 +89352,7 @@ return {
    [1] = "僕は友達が少ない 闇鍋は美少女が残念な臭い(;´∀`)",
    },
   ["short"] = {
+   [1] = "haganai ova",
    },
   ["syn"] = {
    [1] = "我的朋友很少OAD",
@@ -89516,7 +89533,8 @@ return {
    },
   ["syn"] = {
    [1] = "Ловец по Ловец (2011)",
-   [2] = "ハンター×ハンター (2011)",
+   [2] = "Ловец срещу Ловец (2011)",
+   [3] = "ハンター×ハンター (2011)",
    },
   },
  [8551] = {
@@ -89661,6 +89679,7 @@ return {
    [1] = "ハンター×ハンター",
    },
   ["short"] = {
+   [1] = "HxH 1998",
    },
   ["syn"] = {
    },
@@ -89835,7 +89854,8 @@ return {
  [8584] = {
   ["main"] = "Black Rock Shooter (2012)",
   ["official"] = {
-   [1] = "ブラック★ロックシューター (2012)",
+   [1] = "Black Rock Shooter",
+   [2] = "ブラック★ロックシューター (2012)",
    },
   ["short"] = {
    [1] = "brstv",
@@ -90630,10 +90650,11 @@ return {
  [8673] = {
   ["main"] = "Code: Breaker",
   ["official"] = {
-   [1] = "Code: Breaker",
+   [1] = "CODE:BREAKER",
    [2] = "CØDE:BREAKER",
    },
   ["short"] = {
+   [1] = "C:B",
    },
   ["syn"] = {
    [1] = "C0DE:BREAKER",
@@ -91464,12 +91485,12 @@ return {
  [8761] = {
   ["main"] = "Oni Chichi: Re-born",
   ["official"] = {
-   [1] = "Oni Chichi: Od-rodzona",
-   [2] = "鬼父 Re-born",
+   [1] = "鬼父 Re-born",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Oni Chichi: Od-rodzona",
    },
   },
  [8762] = {
@@ -91840,6 +91861,7 @@ return {
   ["syn"] = {
    [1] = "Natsuiro Kiseki",
    [2] = "Summer-colored Miracle",
+   [3] = "夏色奇迹",
    },
   },
  [8805] = {
@@ -92040,7 +92062,8 @@ return {
  [8826] = {
   ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Kyurem vs Seikenshi Keldeo",
   ["official"] = {
-   [1] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
+   [1] = "Pokemon the Movie: Kyurem vs. The Sword of Justice",
+   [2] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
    },
   ["short"] = {
    },
@@ -92180,7 +92203,8 @@ return {
    },
   ["syn"] = {
    [1] = "Scarlet Fragment",
-   [2] = "ヒイロノカケラ",
+   [2] = "Алые осколки",
+   [3] = "ヒイロノカケラ",
    },
   },
  [8842] = {
@@ -92428,9 +92452,10 @@ return {
   ["main"] = "Uchuu Kyoudai",
   ["official"] = {
    [1] = "Space Brothers",
-   [2] = "Сансрын ах дүүс",
-   [3] = "宇宙兄弟",
-   [4] = "우주형제",
+   [2] = "Космически братя",
+   [3] = "Сансрын ах дүүс",
+   [4] = "宇宙兄弟",
+   [5] = "우주형제",
    },
   ["short"] = {
    },
@@ -92617,7 +92642,7 @@ return {
  [8883] = {
   ["main"] = "Chuunibyou demo Koi ga Shitai!",
   ["official"] = {
-   [1] = "Regardless of My Adolescent Delusions of Grandeur, I Want a Date!",
+   [1] = "Chûnibyô Demo Koi ga Shitai!",
    [2] = "中二病でも恋がしたい!",
    [3] = "중2병이라도 사랑이 하고 싶어!",
    },
@@ -92627,6 +92652,8 @@ return {
    },
   ["syn"] = {
    [1] = "Chu-2 Byou demo Koi ga Shitai!",
+   [2] = "Love, Chunibyo & Other Delusions",
+   [3] = "Regardless of My Adolescent Delusions of Grandeur, I Want a Date!",
    },
   },
  [8885] = {
@@ -92660,7 +92687,8 @@ return {
  [8888] = {
   ["main"] = "Binbougami ga!",
   ["official"] = {
-   [1] = "貧乏神が!",
+   [1] = "Binbogami ga!",
+   [2] = "貧乏神が!",
    },
   ["short"] = {
    },
@@ -94371,7 +94399,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Pendulum",
+   [1] = "Exogenesis: Symphony Part 3 (Redemption)",
+   [2] = "Pendulum",
    },
   },
  [9087] = {
@@ -94727,6 +94756,7 @@ return {
   ["main"] = "To Love-Ru: Trouble - Darkness",
   ["official"] = {
    [1] = "To LOVEる -とらぶる- ダークネス",
+   [2] = "To Love Darkness",
    },
   ["short"] = {
    [1] = "tlrd",
@@ -95310,6 +95340,7 @@ return {
    [1] = "僕は友達が少ない リレー小説は結末が半端ないL(゜□゜)」",
    },
   ["short"] = {
+   [1] = "haganai ova 2",
    },
   ["syn"] = {
    [1] = "Boku wa Tomodachi ga Sukunai Add-on Disc",
@@ -95434,7 +95465,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ガールズ&パンツァー",
+   [1] = "Girls and Panzer",
+   [2] = "ガールズ&パンツァー",
    },
   },
  [9229] = {
@@ -95450,7 +95482,8 @@ return {
  [9230] = {
   ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
   ["official"] = {
-   [1] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+   [1] = "OniAi",
+   [2] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
    },
   ["short"] = {
    [1] = "oniai",
@@ -95496,7 +95529,8 @@ return {
  [9237] = {
   ["main"] = "Busou Shinki",
   ["official"] = {
-   [1] = "武装神姫",
+   [1] = "Busô Shinki",
+   [2] = "武装神姫",
    },
   ["short"] = {
    },
@@ -95654,9 +95688,9 @@ return {
    },
   },
  [9259] = {
-  ["main"] = "Arata-naru Sekai",
+  ["main"] = "Arata-naru Sekai: World`s/Start/Load/End",
   ["official"] = {
-   [1] = "アラタなるセカイ",
+   [1] = "アラタなるセカイ WORLD`S/START/LOAD/END",
    },
   ["short"] = {
    },
@@ -95749,7 +95783,8 @@ return {
  [9268] = {
   ["main"] = "Magi",
   ["official"] = {
-   [1] = "マギ",
+   [1] = "Magi, The Labyrinth of Magic",
+   [2] = "マギ",
    },
   ["short"] = {
    },
@@ -96874,9 +96909,9 @@ return {
    },
   },
  [9395] = {
-  ["main"] = "Choujigen Game Neptune",
+  ["main"] = "Kamijigen Game Neptune V",
   ["official"] = {
-   [1] = "超次元ゲイム ネプテューヌ",
+   [1] = "神次元ゲイム ネプテューヌV",
    },
   ["short"] = {
    },
@@ -97120,14 +97155,17 @@ return {
    },
   },
  [9427] = {
-  ["main"] = "Kintama`",
+  ["main"] = "Gintama` (2012)",
   ["official"] = {
-   [1] = "金魂´",
+   [1] = "銀魂´(2012)",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Gintama 3",
+   [2] = "Kintama",
+   [3] = "Mantama",
+   [4] = "金魂´",
    },
   },
  [9430] = {
@@ -97648,13 +97686,14 @@ return {
    },
   },
  [9484] = {
-  ["main"] = "Toaru Kagaku no Railgun Dai 2-ki",
+  ["main"] = "Toaru Kagaku no Railgun S",
   ["official"] = {
-   [1] = "とある科学の超電磁砲[レールガン] 第2期",
+   [1] = "とある科学の超電磁砲[レールガン]S",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "とある科学の超電磁砲S",
    },
   },
  [9485] = {
@@ -97707,6 +97746,70 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [9490] = {
+  ["main"] = "Saki: Zenkoku Hen",
+  ["official"] = {
+   [1] = "-Saki-全国編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Saki: Nationals",
+   },
+  },
+ [9491] = {
+  ["main"] = "Marriage Blue",
+  ["official"] = {
+   [1] = "マリッジブルー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9492] = {
+  ["main"] = "Miboujin Nikki: Akogare no Ano Hito to Hitotsu Yane no Shita",
+  ["official"] = {
+   [1] = "未亡人日記 ~憧れのあの女（ひと）と一つ屋根の下~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9493] = {
+  ["main"] = "Kick-Heart",
+  ["official"] = {
+   [1] = "KICK-HEART",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "キックハート",
+   [2] = "キック・ハート",
+   },
+  },
+ [9494] = {
+  ["main"] = "Lupan Shanshiei",
+  ["official"] = {
+   [1] = "ルパンしゃんしぇい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9495] = {
+  ["main"] = "Ai Mai Mi",
+  ["official"] = {
+   [1] = "あいまいみー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "I My Me",
    },
   },
 }
