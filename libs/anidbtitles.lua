@@ -1307,7 +1307,7 @@ return {
    },
   },
  [74] = {
-  ["main"] = "Ai Yori Aoshi",
+  ["main"] = "Ai yori Aoshi",
   ["official"] = {
    [1] = "Ai Yori Aoshi",
    [2] = "Темнее, чем индиго",
@@ -2393,7 +2393,7 @@ return {
    },
   },
  [132] = {
-  ["main"] = "Hunter X Hunter (1999)",
+  ["main"] = "Hunter x Hunter (1999)",
   ["official"] = {
    [1] = "Hunter X Hunter",
    [2] = "Hunter x Hunter",
@@ -2602,7 +2602,7 @@ return {
  [145] = {
   ["main"] = "Initial D Second Stage",
   ["official"] = {
-   [1] = "Initial D - 2e étape",
+   [1] = "Initial D - 2eme étape",
    [2] = "Initial D Second Stage",
    [3] = "頭文字[イニシャル]D Second Stage",
    },
@@ -3056,7 +3056,7 @@ return {
    },
   },
  [173] = {
-  ["main"] = "Hunter X Hunter: Original Video Animation",
+  ["main"] = "Hunter x Hunter: Original Video Animation",
   ["official"] = {
    [1] = "Hunter X Hunter - Original Video Animation",
    [2] = "ฮันเตอร์ x ฮันเตอร์ OVA",
@@ -4624,7 +4624,7 @@ return {
  [266] = {
   ["main"] = "Meitantei Conan",
   ["official"] = {
-   [1] = "Case Closed: One Truth Prevails",
+   [1] = "Case Closed",
    [2] = "Conan, a detektív",
    [3] = "Dedektif Conan",
    [4] = "Detectiu Conan",
@@ -4643,19 +4643,19 @@ return {
    [17] = "명탐정 코난",
    },
   ["short"] = {
-   [1] = "Case Closed",
-   [2] = "Conan",
-   [3] = "dctv",
-   [4] = "โคนัน",
+   [1] = "Conan",
+   [2] = "dctv",
+   [3] = "โคนัน",
    },
   ["syn"] = {
-   [1] = "Detective Conan",
-   [2] = "Detective Conan tv",
-   [3] = "Detectivul Conan",
-   [4] = "Detektif Conan",
-   [5] = "Thám tử lừng danh Conan",
-   [6] = "Детектив Конан",
-   [7] = "ยอดนักสืบจิ๋วโคนัน",
+   [1] = "Case Closed: One Truth Prevails",
+   [2] = "Detective Conan",
+   [3] = "Detective Conan tv",
+   [4] = "Detectivul Conan",
+   [5] = "Detektif Conan",
+   [6] = "Thám tử lừng danh Conan",
+   [7] = "Детектив Конан",
+   [8] = "ยอดนักสืบจิ๋วโคนัน",
    },
   },
  [267] = {
@@ -5275,7 +5275,7 @@ return {
  [304] = {
   ["main"] = "Meitantei Conan: Tokei Jikake no Matenrou",
   ["official"] = {
-   [1] = "Case Closed Movie: The Time Bombed Skyscraper",
+   [1] = "Case Closed Movie: The Time-Bombed Skyscraper",
    [2] = "Conan, a detektív - Bomba a felhőkarcolóban",
    [3] = "Detektiv Conan - 1. Film: Der tickende Wolkenkratzer",
    [4] = "Détective Conan - Le gratte-ciel infernal",
@@ -9061,7 +9061,7 @@ return {
    },
   },
  [545] = {
-  ["main"] = "Hunter X Hunter: Greed Island",
+  ["main"] = "Hunter x Hunter: Greed Island",
   ["official"] = {
    [1] = "Hunter X Hunter - Greed Island",
    [2] = "ฮันเตอร์ x ฮันเตอร์ OVA GI",
@@ -10884,7 +10884,7 @@ return {
    },
   },
  [671] = {
-  ["main"] = "Kiss Yori...",
+  ["main"] = "Kiss yori...",
   ["official"] = {
    [1] = "A Heat for All Seasons",
    [2] = "KISSより...",
@@ -13403,6 +13403,7 @@ return {
    [1] = "Banana Split",
    [2] = "Piaキャロットへようこそ!! 2",
    [3] = "Welcome to Pia Carrot 2",
+   [4] = "Wiedersehen bei Pia Carrot",
    },
   ["short"] = {
    [1] = "pc2",
@@ -13600,7 +13601,7 @@ return {
  [867] = {
   ["main"] = "Meitantei Conan: Baker Street no Bourei",
   ["official"] = {
-   [1] = "Detective Conan: Movie 6: The Phantom of Baker Street",
+   [1] = "Case Closed Movie: The Phantom of Baker Street",
    [2] = "Detektiv Conan - 6. Film: Das Phantom der Baker Street",
    [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 6 ตอน ปริศนาบนถนนสายมรณะ",
    [4] = "名探偵コナン ベイカー街[ストリート]の亡霊",
@@ -13612,7 +13613,7 @@ return {
   ["syn"] = {
    [1] = "Dedektif Conan: Baker Sokağı Hayaleti",
    [2] = "Detective Conan: Movie 6",
-   [3] = "Detective Conan: The Phantom of Baker Street",
+   [3] = "Detective Conan: Movie 6: The Phantom of Baker Street",
    [4] = "Détective Conan - Film 6",
    [5] = "Детектив Конан: Фантомът от улица Бейкър",
    [6] = "名探偵コナン ベイカー街の亡霊",
@@ -15295,7 +15296,7 @@ return {
    },
   },
  [987] = {
-  ["main"] = "Lupin Sansei: Russia Yori Ai o Komete",
+  ["main"] = "Lupin Sansei: Russia yori Ai o Komete",
   ["official"] = {
    [1] = "Lupin III: From Russia With Love",
    [2] = "Lupin III: Il tesoro degli zar",
@@ -16484,7 +16485,7 @@ return {
  [1065] = {
   ["main"] = "Meitantei Conan: Tengoku e no Count Down",
   ["official"] = {
-   [1] = "Detective Conan: Countdown To Heaven",
+   [1] = "Case Closed Movie: Countdown to Heaven",
    [2] = "Detektiv Conan - 5. Film: Countdown zum Himmel",
    [3] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 5 ตอน คดีปริศนาเส้นตายสู่สวรรค์",
    [4] = "名探偵コナン 天国へのカウントダウン",
@@ -18797,7 +18798,7 @@ return {
    },
   },
  [1249] = {
-  ["main"] = "Hana Yori Dango (1997)",
+  ["main"] = "Hana yori Dango (1997)",
   ["official"] = {
    [1] = "花より男子 (1997)",
    },
@@ -21053,7 +21054,7 @@ return {
    },
   },
  [1427] = {
-  ["main"] = "Hunter X Hunter: Greed Island Final",
+  ["main"] = "Hunter x Hunter: Greed Island Final",
   ["official"] = {
    [1] = "Hunter X Hunter - Greed Island Final",
    [2] = "ฮันเตอร์ x ฮันเตอร์ OVA GI FINAL",
@@ -21974,8 +21975,9 @@ return {
    [2] = "Der Löwenkönig",
    [3] = "Jungle Emperor, Onward Leo!",
    [4] = "Jungle Taitei Susume Leo",
-   [5] = "Leo the Lion",
-   [6] = "New Jungle Emperor, Go Ahead Leo!",
+   [5] = "Kimba Il Leone Bianco II",
+   [6] = "Leo the Lion",
+   [7] = "New Jungle Emperor, Go Ahead Leo!",
    },
   },
  [1499] = {
@@ -24656,7 +24658,7 @@ return {
  [1724] = {
   ["main"] = "Initial D Fourth Stage",
   ["official"] = {
-   [1] = "Initial D - 4e étape",
+   [1] = "Initial D - 4eme étape",
    [2] = "Initial D Fourth Stage",
    [3] = "頭文字[イニシャル]D Fourth Stage",
    },
@@ -35874,8 +35876,8 @@ return {
  [2646] = {
   ["main"] = "Meitantei Conan: Seikimatsu no Majutsushi",
   ["official"] = {
-   [1] = "Detective Conan - L`ultimo mago del secolo",
-   [2] = "Detective Conan: The Last Wizard of the Century",
+   [1] = "Case Closed Movie: The Last Wizard of the Century",
+   [2] = "Detective Conan - L`ultimo mago del secolo",
    [3] = "Detektiv Conan - 3. Film: Der Magier des letzten Jahrhunderts",
    [4] = "المحقق كونان: ساحر القرن الأخير",
    [5] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 3 ตอน ปริศนาพ่อมดคนสุดท้ายแห่งศตวรรษ",
@@ -35894,8 +35896,8 @@ return {
  [2647] = {
   ["main"] = "Meitantei Conan: Hitomi no Naka no Ansatsusha",
   ["official"] = {
-   [1] = "Detective Conan - Solo nei suoi occhi",
-   [2] = "Detective Conan: Captured In her Eyes",
+   [1] = "Case Closed Movie: Captured in Her Eyes",
+   [2] = "Detective Conan - Solo nei suoi occhi",
    [3] = "Detektiv Conan - 4. Film: Der Killer in ihren Augen",
    [4] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 4 ตอน ดดีฆาตกรรมนัยน์ตามรณะ",
    [5] = "名探偵コナン 瞳の中の暗殺者",
@@ -36511,7 +36513,7 @@ return {
    [2] = "Bumpety Boo",
    [3] = "Bumpety Boo - Der kleine gelbe Superflitzer",
    [4] = "הי בינבה",
-   [5] = "بومبو",
+   [5] = "بومبو - السيارة المرحة",
    [6] = "へーい! ブンブー",
    },
   ["short"] = {
@@ -44563,16 +44565,16 @@ return {
    },
   },
  [3530] = {
-  ["main"] = "Harbour Light Monogatari Fashion Lala Yori",
+  ["main"] = "Harbour Light Story: Fashion Lala yori",
   ["official"] = {
    [1] = "Fashion Lala: The Story of the Harbour Light",
-   [2] = "ハーバーライト物語 ファッションララより",
+   [2] = "ハーバーライト物語 [ストーリー] ファッションララより",
    },
   ["short"] = {
    [1] = "Fashion Lala",
    },
   ["syn"] = {
-   [1] = "Harbour Light Monogatari: Fashion Lala Yori",
+   [1] = "Harbour Light Monogatari: Fashion Lala yori",
    },
   },
  [3531] = {
@@ -45753,7 +45755,7 @@ return {
    },
   },
  [3624] = {
-  ["main"] = "Tekkamen o Oe \"d`Artagnan Monogatari\" Yori",
+  ["main"] = "Tekkamen o Oe \"d`Artagnan Monogatari\" yori",
   ["official"] = {
    [1] = "鉄仮面を追え 「ダルタニャン物語」より",
    },
@@ -52952,7 +52954,7 @@ return {
    },
   },
  [4531] = {
-  ["main"] = "Yoake Mae Yori Ruriiro na: Crescent Love",
+  ["main"] = "Yoake Mae yori Ruriiro na: Crescent Love",
   ["official"] = {
    [1] = "Brighter than the Dawning Blue",
    [2] = "夜明け前より瑠璃色な -Crescent Love-",
@@ -60608,6 +60610,7 @@ return {
    [1] = "100%[A Hundred Percents]",
    },
   ["short"] = {
+   [1] = "100%",
    },
   ["syn"] = {
    [1] = "A Hundred Percents",
@@ -65917,8 +65920,9 @@ return {
  [6032] = {
   ["main"] = "Casshern Sins",
   ["official"] = {
-   [1] = "Греховете на Кашан",
-   [2] = "キャシャーン Sins",
+   [1] = "Casshern Sins",
+   [2] = "Греховете на Кашан",
+   [3] = "キャシャーン Sins",
    },
   ["short"] = {
    [1] = "CS",
@@ -66350,7 +66354,7 @@ return {
    },
   },
  [6081] = {
-  ["main"] = "Suishou no Yoru: Aoi Kokuhaku Yori",
+  ["main"] = "Suishou no Yoru: Aoi Kokuhaku yori",
   ["official"] = {
    [1] = "水晶の夜 ~蒼い告白より~",
    },
@@ -66430,8 +66434,9 @@ return {
  [6088] = {
   ["main"] = "Chaos;Head",
   ["official"] = {
-   [1] = "カオス;ヘッド",
-   [2] = "카오스;헤드",
+   [1] = "Chaos; HEAd",
+   [2] = "カオス;ヘッド",
+   [3] = "카오스;헤드",
    },
   ["short"] = {
    },
@@ -70050,7 +70055,7 @@ return {
    },
   },
  [6525] = {
-  ["main"] = "Anne Frank Monogatari: Anne no Nikki to Douwa Yori",
+  ["main"] = "Anne Frank Monogatari: Anne no Nikki to Douwa yori",
   ["official"] = {
    [1] = "アンネ･フランク物語 アンネの日記と童話より",
    },
@@ -71115,9 +71120,8 @@ return {
   ["main"] = "Darker than Black: Ryuusei no Gemini",
   ["official"] = {
    [1] = "DARKER THAN BLACK -流星の双子(ジェミニ)-",
-   [2] = "Darker than BLACK -유성의 제미니-",
-   [3] = "Darker than Black: Gemini of the Meteor",
-   [4] = "По-тъмно от черното: Близнаците на Метеора",
+   [2] = "Darker Than Black: Gemini of the Meteor",
+   [3] = "Darker than BLACK -유성의 제미니-",
    },
   ["short"] = {
    [1] = "dtb2",
@@ -71128,9 +71132,10 @@ return {
    [2] = "Tamsiau už Juodą: Meteoro Dvyniai",
    [3] = "Zifiri Karanlık 2",
    [4] = "Близнюки метеора",
-   [5] = "Темнее черного: Близнецы и падающая звезда",
-   [6] = "Темніше чорного: Близнюки метеора",
-   [7] = "黑之契约者-流星的双子-",
+   [5] = "По-тъмно от черното: Близнаците на Метеора",
+   [6] = "Темнее черного: Близнецы и падающая звезда",
+   [7] = "Темніше чорного: Близнюки метеора",
+   [8] = "黑之契约者-流星的双子-",
    },
   },
  [6645] = {
@@ -85686,10 +85691,11 @@ return {
   ["official"] = {
    [1] = "From Up On Poppy Hill",
    [2] = "Kukkulan tyttö, sataman poika",
-   [3] = "La colline aux coquelicots",
-   [4] = "Makowe wzgórze",
-   [5] = "От върха на маковия хълм",
-   [6] = "コクリコ坂から",
+   [3] = "La collina dei papaveri",
+   [4] = "La colline aux coquelicots",
+   [5] = "Makowe wzgórze",
+   [6] = "От върха на маковия хълм",
+   [7] = "コクリコ坂から",
    },
   ["short"] = {
    },
@@ -86452,7 +86458,7 @@ return {
    [2] = "THE iDOLM@STER",
    },
   ["short"] = {
-   [1] = "imas",
+   [1] = "theimas",
    },
   ["syn"] = {
    [1] = "iM@S",
@@ -87008,6 +87014,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Strike Witches The Movie",
    },
   },
  [8273] = {
@@ -89219,7 +89226,8 @@ return {
  [8505] = {
   ["main"] = "Asobi ni Iku yo! Asobi ni Oide",
   ["official"] = {
-   [1] = "あそびにいくヨ! あそびにおいで",
+   [1] = "Cat Planet Cuties OVA",
+   [2] = "あそびにいくヨ! あそびにおいで",
    },
   ["short"] = {
    },
@@ -89674,7 +89682,7 @@ return {
    },
   },
  [8565] = {
-  ["main"] = "Hunter X Hunter",
+  ["main"] = "Hunter x Hunter",
   ["official"] = {
    [1] = "ハンター×ハンター",
    },
@@ -89940,7 +89948,8 @@ return {
  [8594] = {
   ["main"] = "Tantei Opera Milky Holmes Dai 2 Maku",
   ["official"] = {
-   [1] = "探偵オペラ ミルキィホームズ 第2幕",
+   [1] = "Detective Opera Milky Holmes 2",
+   [2] = "探偵オペラ ミルキィホームズ 第2幕",
    },
   ["short"] = {
    },
@@ -90651,7 +90660,8 @@ return {
   ["main"] = "Code: Breaker",
   ["official"] = {
    [1] = "CODE:BREAKER",
-   [2] = "CØDE:BREAKER",
+   [2] = "Code: Breaker",
+   [3] = "CØDE:BREAKER",
    },
   ["short"] = {
    [1] = "C:B",
@@ -91201,7 +91211,7 @@ return {
    },
   },
  [8733] = {
-  ["main"] = "Musekinin Kanchou Tylor: Chijou Yori Eien ni",
+  ["main"] = "Musekinin Kanchou Tylor: Chijou yori Eien ni",
   ["official"] = {
    [1] = "無責任艦長タイラー 地上より永遠に",
    },
@@ -93661,7 +93671,7 @@ return {
    },
   },
  [9002] = {
-  ["main"] = "Shinsekai Yori",
+  ["main"] = "Shinsekai yori",
   ["official"] = {
    [1] = "新世界より",
    },
@@ -94472,6 +94482,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "萌菌物语returns",
    },
   },
  [9094] = {
@@ -94817,7 +94828,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Pleasant Goat and Big Big Wolf 3",
+   [1] = "Moon Castle: The Space Adventure",
+   [2] = "Pleasant Goat and Big Big Wolf 3",
    },
   },
  [9144] = {
@@ -94889,6 +94901,7 @@ return {
    [2] = "さくら荘のペットな彼女",
    },
   ["short"] = {
+   [1] = "sakurasou",
    },
   ["syn"] = {
    },
@@ -95290,7 +95303,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Butt-Biting Insect",
+   [1] = "Butt Biting Bug",
+   [2] = "Butt-Biting Insect",
    },
   },
  [9200] = {
@@ -95375,6 +95389,7 @@ return {
    [1] = "STARLESS 21st Century nymphomaniacs.",
    },
   ["short"] = {
+   [1] = "Starless",
    },
   ["syn"] = {
    },
@@ -95463,6 +95478,7 @@ return {
    [1] = "GIRLS und PANZER",
    },
   ["short"] = {
+   [1] = "GuP",
    },
   ["syn"] = {
    [1] = "Girls and Panzer",
@@ -95517,7 +95533,8 @@ return {
  [9236] = {
   ["main"] = "Sukitte Ii na yo.",
   ["official"] = {
-   [1] = "好きっていいなよ.",
+   [1] = "Say \"I Love You\"",
+   [2] = "好きっていいなよ.",
    },
   ["short"] = {
    [1] = "Sukinayo",
@@ -95784,7 +95801,8 @@ return {
   ["main"] = "Magi",
   ["official"] = {
    [1] = "Magi, The Labyrinth of Magic",
-   [2] = "マギ",
+   [2] = "متاهة السحر",
+   [3] = "マギ",
    },
   ["short"] = {
    },
@@ -96343,9 +96361,9 @@ return {
    },
   },
  [9330] = {
-  ["main"] = "AKB0048 (2013)",
+  ["main"] = "AKB0048 Next Stage",
   ["official"] = {
-   [1] = "AKB0048 (2013)",
+   [1] = "AKB0048 next stage",
    },
   ["short"] = {
    },
@@ -96364,7 +96382,7 @@ return {
    },
   },
  [9332] = {
-  ["main"] = "Mondai-Ji-tachi ga Isekai Kara Kuru Sou Desu yo?",
+  ["main"] = "Mondai-Ji-tachi ga Isekai kara Kuru Sou Desu yo?",
   ["official"] = {
    [1] = "問題児たちが異世界から来るそうですよ?",
    },
@@ -97462,6 +97480,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lupin III: Record of Observations of the East - Another Page",
    },
   },
  [9459] = {
@@ -97770,9 +97789,9 @@ return {
    },
   },
  [9492] = {
-  ["main"] = "Miboujin Nikki: Akogare no Ano Hito to Hitotsu Yane no Shita",
+  ["main"] = "Miboujin Nikki The Animation",
   ["official"] = {
-   [1] = "未亡人日記 ~憧れのあの女（ひと）と一つ屋根の下~",
+   [1] = "未亡人日記 THE ANIMATION",
    },
   ["short"] = {
    },
@@ -97810,6 +97829,57 @@ return {
    },
   ["syn"] = {
    [1] = "I My Me",
+   },
+  },
+ [9496] = {
+  ["main"] = "Witchcraft Works",
+  ["official"] = {
+   [1] = "ウィッチクラフトワークス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9497] = {
+  ["main"] = "Chokin Senshi Cashman",
+  ["official"] = {
+   [1] = "貯金戦士CASHMAN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "貯金戦士キャッシュマン",
+   },
+  },
+ [9498] = {
+  ["main"] = "Sore Ike! Anpanman: Outa to Teasobi Tanoshii ne",
+  ["official"] = {
+   [1] = "それいけ! アンパンマン おうたとてあそび たのしいね",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9499] = {
+  ["main"] = "Bakumatsu Gijinden Roman",
+  ["official"] = {
+   [1] = "幕末義人伝 浪漫",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9500] = {
+  ["main"] = "Gekijouban Shimajirou to Fufu no Daibouken: Sukue! Nana-iro no Hana",
+  ["official"] = {
+   [1] = "劇場版 しまじろうと フフの だいぼうけん ~すくえ! 七色の花~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
