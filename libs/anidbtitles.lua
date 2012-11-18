@@ -1464,10 +1464,11 @@ return {
    },
   },
  [82] = {
-  ["main"] = "Dual! Parallel Trouble Adventures",
+  ["main"] = "Dual! Parallel Runrun Monogatari",
   ["official"] = {
    [1] = "Dual",
-   [2] = "デュアル! ぱられルンルン物語",
+   [2] = "Dual! Parallel Trouble Adventures",
+   [3] = "デュアル! ぱられルンルン物語",
    },
   ["short"] = {
    },
@@ -9300,10 +9301,11 @@ return {
    [1] = "Digimon",
    [2] = "Digimon 02",
    [3] = "Digimon 2",
-   [4] = "Les Digimon - Saison 2",
-   [5] = "דיג`ימון 2",
-   [6] = "أبطال الديجيتال الجزء الثاني",
-   [7] = "デジモンアドベンチャー02",
+   [4] = "Digimon Adventure 02",
+   [5] = "Les Digimon - Saison 2",
+   [6] = "דיג`ימון 2",
+   [7] = "أبطال الديجيتال الجزء الثاني",
+   [8] = "デジモンアドベンチャー02",
    },
   ["short"] = {
    [1] = "digimon2",
@@ -14150,7 +14152,7 @@ return {
   ["official"] = {
    [1] = "Dragon Ball Z 08 - Broly le super guerrier",
    [2] = "Dragon Ball Z 8 - A Força Suprema",
-   [3] = "Dragon Ball Z: Broly - The Legendary Super Saiyan",
+   [3] = "Dragon Ball Z: Broly, the Legendary Super Saiyan",
    [4] = "Dragonball Z - Der Legendäre Super-Saiyajin",
    [5] = "Estala o duelo",
    [6] = "ドラゴンボールZ 燃え尽きろ!! 熱戦・烈戦・超激戦",
@@ -16153,9 +16155,9 @@ return {
    [3] = "Dragon Ball Z - Garlicin jäljillä",
    [4] = "Dragon Ball Z - La vendetta divina",
    [5] = "Dragon Ball Z 01 - À la poursuite de Garlic",
-   [6] = "Dragon Ball Z: Dead Zone",
-   [7] = "Dragon Ball Z: Devolva-me Gohan",
-   [8] = "Dragon Ball Z: Martwa strefa",
+   [6] = "Dragon Ball Z: Devolva-me Gohan",
+   [7] = "Dragon Ball Z: Martwa strefa",
+   [8] = "Dragon Ball Z: The Dead Zone",
    [9] = "Dragonball Z - The Movie: Die Todeszone des Garlic Jr.",
    [10] = "ドラゴンボールZ オラの悟飯をかえせッ!!",
    },
@@ -27419,7 +27421,7 @@ return {
    },
   },
  [1934] = {
-  ["main"] = "Video Senshi Lezarion",
+  ["main"] = "Video Senshi Laserion",
   ["official"] = {
    [1] = "Laserion",
    [2] = "ビデオ戦士レザリオン",
@@ -29177,12 +29179,14 @@ return {
  [2084] = {
   ["main"] = "Magical Taruruuto-kun",
   ["official"] = {
-   [1] = "Talulu le magicien",
-   [2] = "まじかる★タルるートくん",
+   [1] = "Magical Taluluto",
+   [2] = "Talulu le magicien",
+   [3] = "まじかる★タルるートくん",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magical Taluluto-kun",
    },
   },
  [2085] = {
@@ -29193,6 +29197,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magical Taluluto (1991)",
+   [2] = "Magical Taluluto-kun (1991)",
    },
   },
  [2086] = {
@@ -29203,6 +29209,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magical Taluluto-kun: Moeru! Yuujou no Mahou Taisen",
    },
   },
  [2087] = {
@@ -29213,6 +29220,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magical Taluluto-kun: Sukisuki Takoyaki!",
    },
   },
  [2088] = {
@@ -31972,7 +31980,7 @@ return {
    },
   },
  [2300] = {
-  ["main"] = "Alps Monogatari Watashi no Annette",
+  ["main"] = "Alps Monogatari: Watashi no Annette",
   ["official"] = {
    [1] = "Alps Stories: My Annette",
    [2] = "Anette",
@@ -43592,7 +43600,7 @@ return {
  [3444] = {
   ["main"] = "Makai Senki Disgaea",
   ["official"] = {
-   [1] = "Disgaea: Netherworld Prince",
+   [1] = "Disgaea",
    [2] = "魔界戦記ディスガイア",
    },
   ["short"] = {
@@ -46294,17 +46302,17 @@ return {
  [3662] = {
   ["main"] = "Anime Yasei no Sakebi",
   ["official"] = {
-   [1] = "Anime Shout of the Wilderness",
-   [2] = "حياة البراري",
-   [3] = "アニメ野生のさけび",
+   [1] = "حياة البراري",
+   [2] = "アニメ野生のさけび",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Animated Call of the Wild",
-   [2] = "Call of the Wild",
-   [3] = "Cari amici animali",
-   [4] = "Gli amici animali",
+   [2] = "Anime Shout of the Wilderness",
+   [3] = "Call of the Wild",
+   [4] = "Cari amici animali",
+   [5] = "Gli amici animali",
    },
   },
  [3663] = {
@@ -55227,6 +55235,7 @@ return {
    [1] = "ひだまりスケッチ",
    },
   ["short"] = {
+   [1] = "hidasketch",
    },
   ["syn"] = {
    [1] = "Sunshine Sketch",
@@ -59693,6 +59702,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Holy Sleazy School",
    },
   },
  [5209] = {
@@ -60803,6 +60813,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Crazy Gate",
    },
   },
  [5334] = {
@@ -70563,15 +70574,16 @@ return {
    },
   },
  [6584] = {
-  ["main"] = "Doraemon: Nobita no Nejimaki Shitei Boukenki",
+  ["main"] = "Doraemon: Nobita no Nejimaki City Boukenki",
   ["official"] = {
    [1] = "Doraemon e a fábrica de xoguetes",
-   [2] = "ドラえもん のび太のねじ巻き都市冒険記",
+   [2] = "ドラえもん のび太のねじ巻き都市[シティー]冒険記",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Doraemon: Nobita`s Adventure in Clockwork City",
+   [1] = "Doraemon: Nobita no Nejimaki Shitei Boukenki",
+   [2] = "Doraemon: Nobita`s Adventure in Clockwork City",
    },
   },
  [6585] = {
@@ -72281,7 +72293,8 @@ return {
  [6763] = {
   ["main"] = "Higashi no Eden: Air Communication",
   ["official"] = {
-   [1] = "東のエデン Air Communication",
+   [1] = "Eden of the East: Air Communication",
+   [2] = "東のエデン Air Communication",
    },
   ["short"] = {
    [1] = "EotE AC",
@@ -81785,13 +81798,15 @@ return {
    },
   },
  [7737] = {
-  ["main"] = "Sore Ike! Anpanman: Dokin-chan no Dokidoki Calendar",
+  ["main"] = "Dokin-chan no Dokidoki Calendar",
   ["official"] = {
-   [1] = "それいけ! アンパンマン ドキンちゃんのドキドキカレンダー",
+   [1] = "ドキンちゃんのドキドキカレンダー",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Dokin-chan no Dokidoki Calendar",
+   [2] = "それいけ! アンパンマン ドキンちゃんのドキドキカレンダー",
    },
   },
  [7738] = {
@@ -82340,13 +82355,14 @@ return {
    },
   },
  [7790] = {
-  ["main"] = "Kero Kero Keroppi wa Su no Ue Town Kikiippatsu",
+  ["main"] = "Kero Kero Keroppi: Hasunoue Town Kikiippatsu!",
   ["official"] = {
-   [1] = "けろけろけろっぴはすのうえタウン危機一髪!",
+   [1] = "けろけろけろっぴ はすのうえタウン危機一髪!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kero Kero Keroppi wa Su no Ue Town Kikiippatsu",
    },
   },
  [7791] = {
@@ -89288,7 +89304,8 @@ return {
  [8513] = {
   ["main"] = "Busou Shinki Moon Angel",
   ["official"] = {
-   [1] = "武装神姫 MOON ANGEL",
+   [1] = "Armored Angels - Moon Angel",
+   [2] = "武装神姫 MOON ANGEL",
    },
   ["short"] = {
    },
@@ -90418,9 +90435,9 @@ return {
    },
   },
  [8646] = {
-  ["main"] = "Shiofuki Mermaid",
+  ["main"] = "Shiofuki Mermaid: Poolside no Hatsutaiken",
   ["official"] = {
-   [1] = "しおふきマーメイド",
+   [1] = "しおふきマーメイド プールサイドの初体験",
    },
   ["short"] = {
    },
@@ -92921,9 +92938,9 @@ return {
    },
   },
  [8921] = {
-  ["main"] = "Uta no Prince-sama: Maji Love 1000% 2",
+  ["main"] = "Uta no Prince-sama: Maji Love 2000%",
   ["official"] = {
-   [1] = "うたの☆プリンスさまっ♪ マジLOVE1000% 2",
+   [1] = "うたの☆プリンスさまっ♪マジLOVE2000%",
    },
   ["short"] = {
    },
@@ -95482,7 +95499,8 @@ return {
    },
   ["syn"] = {
    [1] = "Girls and Panzer",
-   [2] = "ガールズ&パンツァー",
+   [2] = "Karılar ve Panzerler",
+   [3] = "ガールズ&パンツァー",
    },
   },
  [9229] = {
@@ -95552,7 +95570,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Busou Shinki: Armored War Goddess",
+   [1] = "Armored Angels",
+   [2] = "Busou Shinki: Armored War Goddess",
    },
   },
  [9239] = {
@@ -95956,6 +95975,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hiiro no Kakera 2",
    },
   },
  [9285] = {
@@ -96493,6 +96513,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Initial D 5th stage",
    },
   },
  [9345] = {
@@ -97876,6 +97897,67 @@ return {
   ["main"] = "Gekijouban Shimajirou to Fufu no Daibouken: Sukue! Nana-iro no Hana",
   ["official"] = {
    [1] = "劇場版 しまじろうと フフの だいぼうけん ~すくえ! 七色の花~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9501] = {
+  ["main"] = "Yondemasu yo, Azazel-san. 2",
+  ["official"] = {
+   [1] = "よんでますよ, アザゼルさん. 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9502] = {
+  ["main"] = "Pyuu to Fuku! Jaguar",
+  ["official"] = {
+   [1] = "ピューと吹く！ジャガー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9503] = {
+  ["main"] = "Chitose Get You!! (2013)",
+  ["official"] = {
+   [1] = "ちとせげっちゅ!! (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9504] = {
+  ["main"] = "Next A-Class",
+  ["official"] = {
+   [1] = "NEXT A-Class",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9505] = {
+  ["main"] = "Meitantei Conan: Zekkai no Private Eye",
+  ["official"] = {
+   [1] = "名探偵コナン 絶海の探偵",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Detective Conan: Private Eye in the Distant Sea",
+   },
+  },
+ [9507] = {
+  ["main"] = "Ishida to Asakura",
+  ["official"] = {
+   [1] = "石田とあさくら",
    },
   ["short"] = {
    },
