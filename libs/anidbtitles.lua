@@ -562,7 +562,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Акіра",
+   [1] = "Akira",
+   [2] = "Акіра",
    },
   },
  [29] = {
@@ -4706,9 +4707,9 @@ return {
   ["official"] = {
    [1] = "Ailes Grises",
    [2] = "Ali Grigie",
-   [3] = "Haibane Renmei - Ailes Grises",
-   [4] = "Haibane renmei: Stowarzyszenie szaropiórych",
-   [5] = "Haibane-Renmei",
+   [3] = "Haibane Renmei",
+   [4] = "Haibane Renmei - Ailes Grises",
+   [5] = "Haibane renmei: Stowarzyszenie szaropiórych",
    [6] = "Союз Серокрылых",
    [7] = "灰羽連盟",
    },
@@ -13758,6 +13759,7 @@ return {
    [2] = "Inferno Road",
    [3] = "Urotsukidoji 4",
    [4] = "Urotsukidōji: Piekielna droga",
+   [5] = "초신전설 우로츠키 동자 방랑편",
    },
   },
  [878] = {
@@ -25376,7 +25378,7 @@ return {
    },
   },
  [1784] = {
-  ["main"] = "Rokushin Gattai God Mars Juunanasai no Densetsu",
+  ["main"] = "Rokushin Gattai GodMars: Juunanasai no Densetsu",
   ["official"] = {
    [1] = "六神合体ゴッドマーズ 十七歳の伝説",
    },
@@ -25384,7 +25386,8 @@ return {
    },
   ["syn"] = {
    [1] = "God Mars: The Legend of 17 Years",
-   [2] = "Six God Combination God Mars: Seventeen Year Old Legend",
+   [2] = "Rokushin Gattai God Mars Juunanasai no Densetsu",
+   [3] = "Six God Combination God Mars: Seventeen Year Old Legend",
    },
   },
  [1786] = {
@@ -32276,7 +32279,8 @@ return {
    [2] = "InuYasha The Movie 4: Fire on the Mystic Island",
    [3] = "Inuyasha - A Film 4: A vörösen lángoló Haurai sziget",
    [4] = "Inuyasha - Fuego En Las Islas Místicas",
-   [5] = "犬夜叉 紅蓮の蓬莱島",
+   [5] = "Inuyasha: L`isola del fuoco scarlatto",
+   [6] = "犬夜叉 紅蓮の蓬莱島",
    },
   ["short"] = {
    [1] = "IY GnH",
@@ -33043,12 +33047,13 @@ return {
   ["main"] = "Cat Ninden Teyandee",
   ["official"] = {
    [1] = "Los Gatos Samurai",
-   [2] = "Samourai Pizza Cats",
-   [3] = "Samurai Pizza Cats",
-   [4] = "Samuraje z Pizza Kot",
-   [5] = "Szamuráj Pizzacicák",
-   [6] = "החתולים הסמוראים",
-   [7] = "キャッ党忍伝てやんでえ",
+   [2] = "Os Gatos Samurai",
+   [3] = "Samourai Pizza Cats",
+   [4] = "Samurai Pizza Cats",
+   [5] = "Samuraje z Pizza Kot",
+   [6] = "Szamuráj Pizzacicák",
+   [7] = "החתולים הסמוראים",
+   [8] = "キャッ党忍伝てやんでえ",
    },
   ["short"] = {
    [1] = "SPC",
@@ -38143,7 +38148,7 @@ return {
  [2839] = {
   ["main"] = "Gun x Sword",
   ["official"] = {
-   [1] = "Gun Sword",
+   [1] = "Gun X Sword",
    [2] = "Gun x Sword",
    [3] = "ガン×ソード",
    },
@@ -38486,8 +38491,9 @@ return {
  [2866] = {
   ["main"] = "Ninpuu Kamui Gaiden",
   ["official"] = {
-   [1] = "L`invincibile Ninja Kamui",
-   [2] = "忍風カムイ外伝",
+   [1] = "Kamui, el Ninja Desertor",
+   [2] = "L`invincibile Ninja Kamui",
+   [3] = "忍風カムイ外伝",
    },
   ["short"] = {
    },
@@ -41260,8 +41266,9 @@ return {
   ["official"] = {
    [1] = "Guyver (2005)",
    [2] = "Guyver - The Bioboosted Armor",
-   [3] = "มนุษย์เกราะชีวะ",
-   [4] = "強殖装甲ガイバー (2005)",
+   [3] = "Guyver: The Bioboosted Armor",
+   [4] = "มนุษย์เกราะชีวะ",
+   [5] = "強殖装甲ガイバー (2005)",
    },
   ["short"] = {
    [1] = "Guyver tv",
@@ -41392,7 +41399,8 @@ return {
    [5] = "The Goddess is a Middle School Student",
    [6] = "Богиня-школьница",
    [7] = "Камічю! ~Богиня з середньої школи~",
-   [8] = "神是中學生",
+   [8] = "神是中学生",
+   [9] = "神是中學生",
    },
   },
  [3196] = {
@@ -58684,15 +58692,16 @@ return {
   ["official"] = {
    [1] = "Bakugan",
    [2] = "Bakugan - Spieler des Schicksals",
-   [3] = "Bakugan Savascilari",
-   [4] = "Bakugan: Młodzi wojownicy",
-   [5] = "Bakuganas",
-   [6] = "Бакуган",
-   [7] = "Бакуган. Отчаянные бойцы",
-   [8] = "בקוגן",
-   [9] = "باكوغان",
-   [10] = "บาคุกัน มอนสเตอร์บอลทะลุมิติ",
-   [11] = "爆丸バトルブローラーズ",
+   [3] = "Bakugan Battle Brawlers",
+   [4] = "Bakugan Savascilari",
+   [5] = "Bakugan: Młodzi wojownicy",
+   [6] = "Bakuganas",
+   [7] = "Бакуган",
+   [8] = "Бакуган. Отчаянные бойцы",
+   [9] = "בקוגן",
+   [10] = "باكوغان",
+   [11] = "บาคุกัน มอนสเตอร์บอลทะลุมิติ",
+   [12] = "爆丸バトルブローラーズ",
    },
   ["short"] = {
    },
@@ -64330,13 +64339,14 @@ return {
    },
   },
  [5812] = {
-  ["main"] = "Sore Ike! Anpanman: Kirakira Boshi no Namida",
+  ["main"] = "Sore Ike! Anpanman: Kirakiraboshi no Namida",
   ["official"] = {
    [1] = "それいけ! アンパンマン キラキラ星の涙",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Kirakira Boshi no Namida",
    },
   },
  [5813] = {
@@ -66729,8 +66739,9 @@ return {
  [6113] = {
   ["main"] = "Ga-Rei: Zero",
   ["official"] = {
-   [1] = "Ga-Rei: Zero",
-   [2] = "喰霊 -零-",
+   [1] = "Ga-Rei-Zero",
+   [2] = "Ga-Rei: Zero",
+   [3] = "喰霊 -零-",
    },
   ["short"] = {
    [1] = "GRZ",
@@ -66859,7 +66870,8 @@ return {
  [6128] = {
   ["main"] = "Gunslinger Girl: Il Teatrino OVA",
   ["official"] = {
-   [1] = "ガンスリンガー ガール -IL TEATRINO- OVA",
+   [1] = "Gunslinger Girl: Il Teatrino OVA",
+   [2] = "ガンスリンガー ガール -IL TEATRINO- OVA",
    },
   ["short"] = {
    },
@@ -75734,7 +75746,8 @@ return {
   ["official"] = {
    [1] = "Pokemon: Mewtwo Returns",
    [2] = "Pokémon - Mewtu kehrt zurück",
-   [3] = "ポケットモンスター ミュウツー! 我ハココニ在リ",
+   [3] = "Pokémon - O Regresso de Mewtwo",
+   [4] = "ポケットモンスター ミュウツー! 我ハココニ在リ",
    },
   ["short"] = {
    },
@@ -75817,8 +75830,9 @@ return {
  [7117] = {
   ["main"] = "Pocket Monsters Crystal: Raikou Ikazuchi no Densetsu",
   ["official"] = {
-   [1] = "The Legend of Thunder",
-   [2] = "ポケットモンスタークリスタル ライコウ雷の伝説",
+   [1] = "A Lenda do Trovão",
+   [2] = "The Legend of Thunder",
+   [3] = "ポケットモンスタークリスタル ライコウ雷の伝説",
    },
   ["short"] = {
    },
@@ -77755,7 +77769,8 @@ return {
  [7304] = {
   ["main"] = "Soukyuu no Fafner: Dead Aggressor - Heaven and Earth",
   ["official"] = {
-   [1] = "蒼穹のファフナー Dead Aggressor HEAVEN AND EARTH",
+   [1] = "Fafner: Heaven and Earth",
+   [2] = "蒼穹のファフナー Dead Aggressor HEAVEN AND EARTH",
    },
   ["short"] = {
    },
@@ -79881,10 +79896,11 @@ return {
  [7535] = {
   ["main"] = "Bakugan Battle Brawlers: Gundalian Invaders",
   ["official"] = {
-   [1] = "Bakugan: Najeźdźcy z Gundalii",
-   [2] = "Bakugan: a Gundalia-i megszállók",
-   [3] = "Бакуган: Нашествието на Гънделия",
-   [4] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
+   [1] = "Bakugan Battle Brawlers: Gundalian Invaders",
+   [2] = "Bakugan: Najeźdźcy z Gundalii",
+   [3] = "Bakugan: a Gundalia-i megszállók",
+   [4] = "Бакуган: Нашествието на Гънделия",
+   [5] = "爆丸バトルブローラーズ ガンダリアンインベーダーズ",
    },
   ["short"] = {
    },
@@ -80795,7 +80811,7 @@ return {
  [7628] = {
   ["main"] = "Sora no Otoshimono Forte",
   ["official"] = {
-   [1] = "Heaven`s Lost Property - Forte",
+   [1] = "Heaven`s Lost Property: Forte",
    [2] = "そらのおとしものf (フォルテ)",
    },
   ["short"] = {
@@ -81846,13 +81862,15 @@ return {
    },
   },
  [7741] = {
-  ["main"] = "Sore Ike! Anpanman: Minna Atsumare! Anpanman World",
+  ["main"] = "Minna Atsumare! Anpanman World",
   ["official"] = {
-   [1] = "それいけ! アンパンマン みんな集まれ! アンパンマンワールド",
+   [1] = "みんな集まれ! アンパンマンワールド",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Minna Atsumare! Anpanman World",
+   [2] = "それいけ! アンパンマン みんな集まれ! アンパンマンワールド",
    },
   },
  [7742] = {
@@ -81876,13 +81894,15 @@ return {
    },
   },
  [7744] = {
-  ["main"] = "Sore Ike! Anpanman: Kokin-chan to Aoi Namida",
+  ["main"] = "Kokin-chan to Aoi Namida",
   ["official"] = {
-   [1] = "それいけ! アンパンマン コキンちゃんとあおいなみだ",
+   [1] = "コキンちゃんとあおいなみだ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Kokin-chan to Aoi Namida",
+   [2] = "それいけ! アンパンマン コキンちゃんとあおいなみだ",
    },
   },
  [7745] = {
@@ -81978,23 +81998,27 @@ return {
    },
   },
  [7754] = {
-  ["main"] = "Sore Ike! Anpanman: Anpanman to Yukai na Nakama-tachi",
+  ["main"] = "Anpanman to Yukai na Nakama-tachi",
   ["official"] = {
-   [1] = "それいけ! アンパンマン アンパンマンとゆかいな仲間たち",
+   [1] = "アンパンマンとゆかいな仲間たち",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Anpanman to Yukai na Nakama-tachi",
+   [2] = "それいけ! アンパンマン アンパンマンとゆかいな仲間たち",
    },
   },
  [7755] = {
-  ["main"] = "Sore Ike! Anpanman: Anpanman to Happy Otanjoubi",
+  ["main"] = "Anpanman to Happy Otanjoubi",
   ["official"] = {
-   [1] = "それいけ! アンパンマン アンパンマンとハッピーおたんじょう日",
+   [1] = "アンパンマンとハッピーおたんじょう日",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Anpanman to Happy Otanjoubi",
+   [2] = "それいけ! アンパンマン アンパンマンとハッピーおたんじょう日",
    },
   },
  [7756] = {
@@ -82038,13 +82062,15 @@ return {
    },
   },
  [7760] = {
-  ["main"] = "Sore Ike! Anpanman: Tekka no Maki-chan to Kin no Kamame Shidon",
+  ["main"] = "Tekka no Maki-chan to Kin no Kamameshidon",
   ["official"] = {
-   [1] = "それいけ! アンパンマン 鉄火のマキちゃんと金のかまめしどん",
+   [1] = "鉄火のマキちゃんと金のかまめしどん",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Tekka no Maki-chan to Kin no Kamame Shidon",
+   [2] = "それいけ! アンパンマン 鉄火のマキちゃんと金のかまめしどん",
    },
   },
  [7761] = {
@@ -83890,7 +83916,8 @@ return {
  [7950] = {
   ["main"] = "Sora no Otoshimono (2010)",
   ["official"] = {
-   [1] = "そらのおとしもの (2010)",
+   [1] = "Heaven`s Lost Property OVA",
+   [2] = "そらのおとしもの (2010)",
    },
   ["short"] = {
    },
@@ -84275,8 +84302,9 @@ return {
  [7991] = {
   ["main"] = "Berserk: Ougon Jidai Hen",
   ["official"] = {
-   [1] = "Berserk: The Golden Age Arc",
-   [2] = "ベルセルク 黄金時代篇",
+   [1] = "Berserk: Das goldene Zeitalter",
+   [2] = "Berserk: The Golden Age Arc",
+   [3] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
@@ -85703,7 +85731,7 @@ return {
    },
   },
  [8141] = {
-  ["main"] = "Coquelicot Saka kara",
+  ["main"] = "Coquelicot-zaka kara",
   ["official"] = {
    [1] = "From Up On Poppy Hill",
    [2] = "Kukkulan tyttö, sataman poika",
@@ -85716,9 +85744,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kokuriko Saka kara",
-   [2] = "Kokuriko-Zaka Kara",
-   [3] = "Kokurikozaka Kara",
+   [1] = "Coquelicot Saka kara",
+   [2] = "Kokuriko Saka kara",
+   [3] = "Kokuriko-Zaka Kara",
+   [4] = "Kokurikozaka Kara",
    },
   },
  [8142] = {
@@ -88141,10 +88170,11 @@ return {
  [8391] = {
   ["main"] = "Bakugan: Mechtanium Surge",
   ["official"] = {
-   [1] = "Bakugan: Mechtanium Surge",
-   [2] = "Bakugan: Mechtanium kitörés",
-   [3] = "Bakugan: Świat Mechtoganów",
-   [4] = "Бакуган: Мектаниум се надига",
+   [1] = "Bakugan Battle Brawlers: Mechtanium Surge",
+   [2] = "Bakugan: Mechtanium Surge",
+   [3] = "Bakugan: Mechtanium kitörés",
+   [4] = "Bakugan: Świat Mechtoganów",
+   [5] = "Бакуган: Мектаниум се надига",
    },
   ["short"] = {
    },
@@ -88384,9 +88414,10 @@ return {
  [8419] = {
   ["main"] = "Boku wa Tomodachi ga Sukunai",
   ["official"] = {
-   [1] = "بوکو وا توموداچی گا سکونای",
-   [2] = "ชมรมคนไร้เพื่อน",
-   [3] = "僕は友達が少ない",
+   [1] = "Haganai",
+   [2] = "بوکو وا توموداچی گا سکونای",
+   [3] = "ชมรมคนไร้เพื่อน",
+   [4] = "僕は友達が少ない",
    },
   ["short"] = {
    [1] = "haganai",
@@ -92270,7 +92301,7 @@ return {
    },
   },
  [8847] = {
-  ["main"] = "Chou Soku Henkei Gyrozetter",
+  ["main"] = "Chousoku Henkei Gyrozetter",
   ["official"] = {
    [1] = "超速変形ジャイロゼッター",
    },
@@ -92758,9 +92789,9 @@ return {
    },
   },
  [8895] = {
-  ["main"] = "Evangelion Shin Gekijouban: ?",
+  ["main"] = "Shin Evangelion Gekijouban:||",
   ["official"] = {
-   [1] = "ヱヴァンゲリヲン新劇場版:?",
+   [1] = "シン・エヴァンゲリオン劇場版:||",
    },
   ["short"] = {
    },
@@ -96244,9 +96275,9 @@ return {
    },
   },
  [9314] = {
-  ["main"] = "Dragon Ball Z (2013)",
+  ["main"] = "Dragon Ball Z: Kami to Kami",
   ["official"] = {
-   [1] = "ドラゴンボールZ (2013)",
+   [1] = "ドラゴンボールZ 神と神",
    },
   ["short"] = {
    },
@@ -97687,7 +97718,8 @@ return {
  [9480] = {
   ["main"] = "Miracle Psychicer Seizan",
   ["official"] = {
-   [1] = "ミラクル・サイキッカーセイザン",
+   [1] = "Непобедимият Сейдзан",
+   [2] = "ミラクル・サイキッカーセイザン",
    },
   ["short"] = {
    },
@@ -97842,7 +97874,7 @@ return {
    },
   },
  [9495] = {
-  ["main"] = "Ai Mai Mi",
+  ["main"] = "Ai Mai Mii",
   ["official"] = {
    [1] = "あいまいみー",
    },
@@ -97946,7 +97978,7 @@ return {
  [9505] = {
   ["main"] = "Meitantei Conan: Zekkai no Private Eye",
   ["official"] = {
-   [1] = "名探偵コナン 絶海の探偵",
+   [1] = "名探偵コナン 絶海の探偵 [プライベート・アイ]",
    },
   ["short"] = {
    },
@@ -97958,6 +97990,87 @@ return {
   ["main"] = "Ishida to Asakura",
   ["official"] = {
    [1] = "石田とあさくら",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9508] = {
+  ["main"] = "Rozen Maiden 3",
+  ["official"] = {
+   [1] = "ローゼンメイデン 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9509] = {
+  ["main"] = "Love Lab",
+  ["official"] = {
+   [1] = "恋愛ラボ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9510] = {
+  ["main"] = "Dansai Bunri no Crime Edge",
+  ["official"] = {
+   [1] = "断裁分離のクライムエッジ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9511] = {
+  ["main"] = "Soushi Souai: Junai Mellow yori",
+  ["official"] = {
+   [1] = "窓視相愛 ~純愛メロウより~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9512] = {
+  ["main"] = "Aratanari Fukaki Ao",
+  ["official"] = {
+   [1] = "新たなり深き青",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9513] = {
+  ["main"] = "Vanquished Queens",
+  ["official"] = {
+   [1] = "ヴァンキッシュド・クイーンズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Queen`s Blade: Vanquished Queens",
+   },
+  },
+ [9514] = {
+  ["main"] = "Kaze Tachinu",
+  ["official"] = {
+   [1] = "風立ちぬ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9515] = {
+  ["main"] = "Kaguya-hime no Monogatari",
+  ["official"] = {
+   [1] = "かぐや姫の物語",
    },
   ["short"] = {
    },
