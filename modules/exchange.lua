@@ -36,7 +36,6 @@ local cc = {
 	["ILS"] = "New Israeli Sheqel (ILS)",
 	["INR"] = "Indian Rupee (INR)",
 
-	["ISK"] = "Icelandic Króna (ISK)",
 	["JPY"] = "Japanese Yen (JPY)",
 	["KRW"] = "South Korean Won (KRW)",
 	["KWD"] = "Kuwaiti Dinar (KWD)",
@@ -78,6 +77,7 @@ local cc = {
 
 local conv = {
 	['euro'] = 'eur',
+	['bux'] = 'usd',
 }
 
 -- make environment
