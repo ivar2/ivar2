@@ -117,6 +117,10 @@ end
 
 local parseData = function(data)
 	local data = data:match'<div id=currency_converter_result>(.-)</span>'
+	if(not data) then
+		return 'Some currency died? No exchange rates returned.'
+	end
+
 	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' ')
 end
 
