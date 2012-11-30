@@ -99,6 +99,7 @@ local cc = {
 
 local conv = {
 	['euro'] = 'eur',
+	['bux'] = 'usd',
 }
 
 -- make environment
