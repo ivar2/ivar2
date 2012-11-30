@@ -121,7 +121,7 @@ local parseData = function(data)
 		return 'Some currency died? No exchange rates returned.'
 	end
 
-	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' ')
+	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' '):gsub('%w+', cc)
 end
 
 local checkInput = function(value, from, to)
