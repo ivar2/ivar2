@@ -75,8 +75,10 @@ local katakana = {
 }
 
 local post = {
-	['(.)ー'] = '%1%1',
-	['ッ(.)'] = '%1%1',
+	{ 'ー', '\014' },
+	{ 'ッ', '\015' },
+	{ '(.)(\014+)', function(a, b) return a:rep(#b + 1) end },
+	{ '(\015+)(.)', function(a, b) return b:rep(#a + 1) end },
 }
 
 local split = function(str, pattern)
@@ -129,8 +131,9 @@ return {
 				output = output:gsub(find, replace)
 			end
 
-			for find, replace in next, post do
-				output = output:gsub(find, replace)
+			for i=1, #post do
+				local p = post[i]
+				output = output:gsub(p[1], p[2])
 			end
 
 			-- Add a space before numbers if there's text infront
