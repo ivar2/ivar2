@@ -5427,8 +5427,9 @@ return {
    [4] = "Yu Yu Hakusho - Yu Degli Spettri",
    [5] = "Yu Yu Hakusho: Ghost Files",
    [6] = "יו יו האקושו",
-   [7] = "คนเก่งฟ้าประทาน",
-   [8] = "幽☆遊☆白書",
+   [7] = "يو يو هاكوشو",
+   [8] = "คนเก่งฟ้าประทาน",
+   [9] = "幽☆遊☆白書",
    },
   ["short"] = {
    [1] = "YYH",
@@ -24572,15 +24573,17 @@ return {
    },
   },
  [1713] = {
-  ["main"] = "Makyou Gaiden Ladius",
+  ["main"] = "Makyou Gaiden Le Deus",
   ["official"] = {
    [1] = "Ladius",
-   [2] = "魔境外伝レディウス",
+   [2] = "魔境外伝レ・ディウス",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Makyou Gaiden Le Deus",
+   [1] = "LE·DEUS",
+   [2] = "Makyou Gaiden Ladius",
+   [3] = "魔境外伝レディウス",
    },
   },
  [1714] = {
@@ -37070,7 +37073,7 @@ return {
   ["main"] = "Peach Girl",
   ["official"] = {
    [1] = "Peach Girl",
-   [2] = "Peach Girl - Super Pop Love Hurricane",
+   [2] = "Peach Girl: Super Pop Love Hurricane",
    [3] = "ピーチガール",
    },
   ["short"] = {
@@ -39123,7 +39126,6 @@ return {
   ["main"] = "Angel Heart",
   ["official"] = {
    [1] = "Angel Heart",
-   [2] = "エンジェル・ハート",
    },
   ["short"] = {
    [1] = "AH",
@@ -39132,7 +39134,8 @@ return {
    [1] = "Melek Kalpli",
    [2] = "Сердце ангела",
    [3] = "قلب ملاك",
-   [4] = "天使心",
+   [4] = "エンジェル・ハート",
+   [5] = "天使心",
    },
   },
  [2962] = {
@@ -42892,12 +42895,11 @@ return {
  [3385] = {
   ["main"] = "Gin`iro no Kami no Agito",
   ["official"] = {
-   [1] = "Origin - Spirits of the Past",
-   [2] = "Origin - Spirits of the past",
-   [3] = "Origin: Spirits of the Past",
-   [4] = "Origine",
-   [5] = "Исток",
-   [6] = "銀色の髪のアギト",
+   [1] = "Origin - Spirits of the past",
+   [2] = "Origin: Spirits of the Past",
+   [3] = "Origine",
+   [4] = "Исток",
+   [5] = "銀色の髪のアギト",
    },
   ["short"] = {
    [1] = "Agito",
@@ -42953,17 +42955,17 @@ return {
   ["official"] = {
    [1] = "Itsudatte My Santa",
    [2] = "Itsudatte My Santa!",
-   [3] = "My Santa",
-   [4] = "My Santa!",
-   [5] = "ซานต้าบ๊องต้องเป็นเธอ!",
-   [6] = "いつだってMyサンタ!",
+   [3] = "My Santa!",
+   [4] = "ซานต้าบ๊องต้องเป็นเธอ!",
+   [5] = "いつだってMyサンタ!",
    },
   ["short"] = {
    [1] = "ims",
    },
   ["syn"] = {
-   [1] = "Itsudatte My Santa",
-   [2] = "我永远的圣诞老人",
+   [1] = "Always My Santa!",
+   [2] = "Itsudatte My Santa",
+   [3] = "我永远的圣诞老人",
    },
   },
  [3390] = {
@@ -48297,7 +48299,8 @@ return {
  [4074] = {
   ["main"] = "Magikano",
   ["official"] = {
-   [1] = "マジカノ",
+   [1] = "Magikano",
+   [2] = "マジカノ",
    },
   ["short"] = {
    },
@@ -52751,8 +52754,9 @@ return {
  [4510] = {
   ["main"] = "Negima!? Haru Special!?",
   ["official"] = {
-   [1] = "Negima!? Spring",
-   [2] = "ネギま!? 春 スペシャル!?",
+   [1] = "Negima!? Magister Negi Magi: Spring",
+   [2] = "Negima!? Spring",
+   [3] = "ネギま!? 春 スペシャル!?",
    },
   ["short"] = {
    [1] = "Negima OVA",
@@ -53321,9 +53325,10 @@ return {
   ["official"] = {
    [1] = "Magister Negi Magi Negima!?",
    [2] = "Magister Negi Magi Neo",
-   [3] = "Shin Negima!?",
-   [4] = "คุณครูจอมเวท เนกิมะ!?",
-   [5] = "ネギま!?",
+   [3] = "Negima!? Magister Negi Magi",
+   [4] = "Shin Negima!?",
+   [5] = "คุณครูจอมเวท เนกิมะ!?",
+   [6] = "ネギま!?",
    },
   ["short"] = {
    [1] = "negima2",
@@ -55875,8 +55880,9 @@ return {
  [4812] = {
   ["main"] = "Negima!? Natsu Special!?",
   ["official"] = {
-   [1] = "Negima!? Summer",
-   [2] = "ネギま!? 夏 スペシャル",
+   [1] = "Negima!? Magister Negi Magi: Summer",
+   [2] = "Negima!? Summer",
+   [3] = "ネギま!? 夏 スペシャル",
    },
   ["short"] = {
    },
@@ -56700,7 +56706,8 @@ return {
    [2] = "Yes! プリキュア5",
    },
   ["short"] = {
-   [1] = "precure5",
+   [1] = "YPC5",
+   [2] = "precure5",
    },
   ["syn"] = {
    [1] = "光之美少女 第5季",
@@ -66382,13 +66389,16 @@ return {
    },
   },
  [6079] = {
-  ["main"] = "Sore Ike! Anpanman: Hiya Hiya Hiyariko to Bafu Bafu Baikinman",
+  ["main"] = "Hiya Hiya Hiyariko to Babu Babu Baikinman",
   ["official"] = {
-   [1] = "それいけ! アンパンマン ヒヤ・ヒヤ・ヒヤリコとばぶ・ばぶ・ばいきんまん",
+   [1] = "ヒヤ・ヒヤ・ヒヤリコとばぶ・ばぶ・ばいきんまん",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hiyahiya Hiyariko to Babubabu Baikinman",
+   [2] = "Sore Ike! Anpanman: Hiya Hiya Hiyariko to Bafu Bafu Baikinman",
+   [3] = "それいけ! アンパンマン ヒヤ・ヒヤ・ヒヤリコとばぶ・ばぶ・ばいきんまん",
    },
   },
  [6080] = {
@@ -67894,6 +67904,7 @@ return {
   ["main"] = "Phantom: Requiem for the Phantom",
   ["official"] = {
    [1] = "Phantom ~Requiem for the Phantom~",
+   [2] = "Phantom: Requiem for the Phantom",
    },
   ["short"] = {
    },
@@ -68305,16 +68316,16 @@ return {
   ["main"] = "Hottarake no Shima: Haruka to Mahou no Kagami",
   ["official"] = {
    [1] = "Haruka und der Zauberspiegel",
-   [2] = "Ostrov zapomnění",
-   [3] = "Užmaršties sala",
-   [4] = "Остров забвения",
-   [5] = "ホッタラケの島 -遥と魔法の鏡",
+   [2] = "Oblivion Island: Haruka and the Magic Mirror",
+   [3] = "Ostrov zapomnění",
+   [4] = "Užmaršties sala",
+   [5] = "Остров забвения",
+   [6] = "ホッタラケの島 -遥と魔法の鏡",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Oblivion Island: Haruka and the Magic Mirror",
-   [2] = "جزيرة النسيانِ : هاروكا والمرآة السحرية",
+   [1] = "جزيرة النسيانِ : هاروكا والمرآة السحرية",
    },
   },
  [6300] = {
@@ -77609,6 +77620,7 @@ return {
   ["short"] = {
    [1] = "HCPC",
    [2] = "heartcatch",
+   [3] = "precure7",
    },
   ["syn"] = {
    [1] = "Heartcatch Pretty Cure",
@@ -78481,7 +78493,7 @@ return {
  [7381] = {
   ["main"] = "Ookami-san to Shichinin no Nakama-tachi",
   ["official"] = {
-   [1] = "Okami-San and Her Seven Companions",
+   [1] = "Okami-san and Her Seven Companions",
    [2] = "オオカミさんと七人の仲間たち",
    },
   ["short"] = {
@@ -79866,8 +79878,9 @@ return {
  [7529] = {
   ["main"] = "Panty & Stocking with Garterbelt",
   ["official"] = {
-   [1] = "Panty&Stocking with Garterbelt",
-   [2] = "Панти и Стокинг барабар с Гартербелт",
+   [1] = "Panty & Stocking with Garterbelt",
+   [2] = "Panty&Stocking with Garterbelt",
+   [3] = "Панти и Стокинг барабар с Гартербелт",
    },
   ["short"] = {
    [1] = "pansuto",
@@ -81925,13 +81938,15 @@ return {
    },
   },
  [7743] = {
-  ["main"] = "Sore Ike! Anpanman: Horrorman to Hora Horako",
+  ["main"] = "Horrorman to Hora Horako",
   ["official"] = {
-   [1] = "それいけ! アンパンマン ホラーマンとホラ♥ホラコ",
+   [1] = "ホラーマンとホラ♥ホラコ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sore Ike! Anpanman: Horrorman to Hora Horako",
+   [2] = "それいけ! アンパンマン ホラーマンとホラ♥ホラコ",
    },
   },
  [7744] = {
@@ -84930,7 +84945,8 @@ return {
  [8057] = {
   ["main"] = "Level E",
   ["official"] = {
-   [1] = "レベルE",
+   [1] = "Level E",
+   [2] = "レベルE",
    },
   ["short"] = {
    },
@@ -85284,10 +85300,11 @@ return {
   ["main"] = "Hagane no Renkinjutsushi: Milos no Sei-Naru Hoshi",
   ["official"] = {
    [1] = "Fullmetal Alchemist - Święta Gwiazda Milos",
-   [2] = "Fullmetal Alchemist: Milos szent csillaga",
-   [3] = "Fullmetal Alchemist: The Sacred Star of Milos",
-   [4] = "Цул Металлан Алхимич: Милосын ариун од",
-   [5] = "鋼の錬金術師 嘆きの丘[ミロス]の聖なる星",
+   [2] = "Fullmetal Alchemist le film: L`étoile sacrée de Milos",
+   [3] = "Fullmetal Alchemist: Milos szent csillaga",
+   [4] = "Fullmetal Alchemist: The Sacred Star of Milos",
+   [5] = "Цул Металлан Алхимич: Милосын ариун од",
+   [6] = "鋼の錬金術師 嘆きの丘[ミロス]の聖なる星",
    },
   ["short"] = {
    [1] = "fmab movie",
@@ -86172,6 +86189,7 @@ return {
    [1] = "スイートプリキュア♪",
    },
   ["short"] = {
+   [1] = "precure8",
    },
   ["syn"] = {
    [1] = "Suite PreCure!",
@@ -92096,7 +92114,6 @@ return {
    },
   ["short"] = {
    [1] = "precure9",
-   [2] = "smile precure",
    },
   ["syn"] = {
    },
@@ -92650,6 +92667,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "See Me After Class",
    },
   },
  [8874] = {
@@ -92759,7 +92777,7 @@ return {
    },
   ["short"] = {
    [1] = "chuu2koi",
-   [2] = "chuunibyo",
+   [2] = "chuunibyou",
    },
   ["syn"] = {
    [1] = "Chu-2 Byou demo Koi ga Shitai!",
@@ -92851,7 +92869,7 @@ return {
   ["syn"] = {
    [1] = "Evangelion 4.0",
    [2] = "Evangelion Final",
-   [3] = "Rebuild of Evangelion 4.0",
+   [3] = "Rebuild of Evangelion: 4.0",
    },
   },
  [8896] = {
@@ -94151,8 +94169,11 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "KTV",
-   [2] = "Project Key",
+   [1] = "K anime",
+   [2] = "K-Project",
+   [3] = "KTV",
+   [4] = "Project Key",
+   [5] = "「K」",
    },
   },
  [9044] = {
@@ -95538,8 +95559,9 @@ return {
    [1] = "zetsuen",
    },
   ["syn"] = {
-   [1] = "Forsaken Tempest",
-   [2] = "Буреносен удар: Унищожител на цивилизации",
+   [1] = "Blast of Tempest",
+   [2] = "Forsaken Tempest",
+   [3] = "Буреносен удар: Унищожител на цивилизации",
    },
   },
  [9215] = {
@@ -96338,6 +96360,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Dragon Ball Z: Battle of Gods",
    },
   },
  [9316] = {
@@ -97065,9 +97088,9 @@ return {
    },
   },
  [9398] = {
-  ["main"] = "Hyakka Ryouran: Samurai Girls Dai 2-ki",
+  ["main"] = "Hyakka Ryouran: Samurai Bride",
   ["official"] = {
-   [1] = "百花繚乱 サムライガールズ 第2期",
+   [1] = "百花繚乱 サムライブライド",
    },
   ["short"] = {
    },
@@ -97365,9 +97388,9 @@ return {
    },
   },
  [9437] = {
-  ["main"] = "Cardfight!! Vanguard 3",
+  ["main"] = "Cardfight!! Vanguard: Link Joker Hen",
   ["official"] = {
-   [1] = "カードファイト!! ヴァンガード 3",
+   [1] = "カードファイト!! ヴァンガード リンクジョーカー編",
    },
   ["short"] = {
    },
@@ -97732,13 +97755,14 @@ return {
    },
   },
  [9476] = {
-  ["main"] = "Vassalord",
+  ["main"] = "Vassalord.",
   ["official"] = {
-   [1] = "ヴァッサロード",
+   [1] = "Vassalord.",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ヴァッサロード",
    },
   },
  [9477] = {
@@ -98039,7 +98063,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Detective Conan: Private Eye in the Distant Sea",
+   [1] = "Detective Conan Movie 17",
+   [2] = "Detective Conan: Private Eye in the Distant Sea",
    },
   },
  [9507] = {
@@ -98352,6 +98377,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Angel`s Drop",
    },
   },
  [9538] = {
@@ -98385,14 +98411,177 @@ return {
    },
   },
  [9541] = {
-  ["main"] = "Attack",
+  ["main"] = "Shingeki no Kyojin",
   ["official"] = {
-   [1] = "ATTACK",
+   [1] = "進撃の巨人",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Project Attack",
+   [1] = "Attack on Titan",
+   },
+  },
+ [9542] = {
+  ["main"] = "Eiga Crayon Shin-chan: Bakauma! B-Kyuu Gourmet Survival Battle!!",
+  ["official"] = {
+   [1] = "映画クレヨンしんちゃん バカうまっ! B級グルメサバイバル!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9543] = {
+  ["main"] = "Kamen Rider Den-O: Imagin Anime",
+  ["official"] = {
+   [1] = "仮面ライダー電王: イマジンあにめ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9544] = {
+  ["main"] = "Kamen Rider Den-O: Imagin Anime 2",
+  ["official"] = {
+   [1] = "仮面ライダー電王: イマジンあにめ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9545] = {
+  ["main"] = "Kamen Rider Den-O: Imagin Anime 3",
+  ["official"] = {
+   [1] = "仮面ライダー電王: イマジンあにめ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9546] = {
+  ["main"] = "Saikin, Imouto no Yousu ga Chotto Okashiinda ga.",
+  ["official"] = {
+   [1] = "最近, 妹のようすがちょっとおかしいんだが.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9548] = {
+  ["main"] = "Mini Vanguard",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9549] = {
+  ["main"] = "Fault!! Service: Aratanaru Rival",
+  ["official"] = {
+   [1] = "フォルト!!S(サービス)~新たなる恋敵(ライバル)~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Fault!! S",
+   },
+  },
+ [9550] = {
+  ["main"] = "Nihon Omoshiro Mukashibanashi",
+  ["official"] = {
+   [1] = "日本おもしろ昔話",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9551] = {
+  ["main"] = "Arata Kangatari",
+  ["official"] = {
+   [1] = "アラタ カンガタリ ~革神語~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Arata: The Legend",
+   },
+  },
+ [9552] = {
+  ["main"] = "Ane Koi",
+  ["official"] = {
+   [1] = "姉恋",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9553] = {
+  ["main"] = "Kami nomi zo Shiru Sekai 3",
+  ["official"] = {
+   [1] = "神のみぞ知るセカイ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9554] = {
+  ["main"] = "Devil Survivor 2 The Animation",
+  ["official"] = {
+   [1] = "DEVIL SURVIVOR 2 the ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "デビルサバイバー2",
+   },
+  },
+ [9555] = {
+  ["main"] = "Danganronpa",
+  ["official"] = {
+   [1] = "ダンガンロンパ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9556] = {
+  ["main"] = "Suisei no Galgantia",
+  ["official"] = {
+   [1] = "翠星のガルガンティア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9557] = {
+  ["main"] = "Hal",
+  ["official"] = {
+   [1] = "ハル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Haru",
+   },
+  },
+ [9558] = {
+  ["main"] = "Transfer",
+  ["official"] = {
+   [1] = "Transfer",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
