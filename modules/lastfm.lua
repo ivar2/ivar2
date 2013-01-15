@@ -42,9 +42,15 @@ local parseTopArtists = function(source, destination, data)
 	end
 
 	local out = {}
-	for i=1, #info.artist do
-		local entry = info.artist[i]
+	-- Handle single entries.
+	if(info.artist.name) then
+		local entry = info.artist
 		table.insert(out, string.format('%s (%s)', entry.name, entry.playcount))
+	else
+		for i=1, #info.artist do
+			local entry = info.artist[i]
+			table.insert(out, string.format('%s (%s)', entry.name, entry.playcount))
+		end
 	end
 
 	ivar2:Msg(
