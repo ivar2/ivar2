@@ -40,11 +40,11 @@ local timeMatches = {
 			return os.time(date) - now
 		end
 	},
-	{'(%d+)w', function(w) return w * 60 * 60 * 24 * 7 end},
-	{'(%d+)d', function(d) return d * 60 * 60 * 24 end},
-	{'(%d+)[ht]', function(h) return h * 60 * 60 end},
-	{'(%d+)m', function(m) return m * 60 end},
-	{'(%d+)s', function(s) return s end},
+	{'^(%d+)w$', function(w) return w * 60 * 60 * 24 * 7 end},
+	{'^(%d+)d$', function(d) return d * 60 * 60 * 24 end},
+	{'^(%d+)[ht]$', function(h) return h * 60 * 60 end},
+	{'^(%d+)m$', function(m) return m * 60 end},
+	{'^(%d+)s$', function(s) return s end},
 }
 
 local parseTime = function(input)
