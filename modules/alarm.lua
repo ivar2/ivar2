@@ -44,6 +44,7 @@ local timeMatches = {
 	{'^(%d+)d$', function(d) return d * 60 * 60 * 24 end},
 	{'^(%d+)[ht]$', function(h) return h * 60 * 60 end},
 	{'^(%d+)m$', function(m) return m * 60 end},
+	{'^(%d+)[^%p%w]*$', function(m) return m * 60 end},
 	{'^(%d+)s$', function(s) return s end},
 }
 
