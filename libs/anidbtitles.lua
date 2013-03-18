@@ -9024,6 +9024,7 @@ return {
    [3] = "comet-san",
    },
   ["syn"] = {
+   [1] = "Cosmic Baton Girl コメットさん☆",
    },
   },
  [540] = {
@@ -13154,10 +13155,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Mistyczny Wojownik Seiya",
-   [2] = "Zodiac Knights",
-   [3] = "Áo Giáp Vàng",
-   [4] = "圣斗士星矢",
+   [1] = "Knights of the Zodiac - Saint Seiya",
+   [2] = "Mistyczny Wojownik Seiya",
+   [3] = "Saint Seiya",
+   [4] = "Zodiac Knights",
+   [5] = "Áo Giáp Vàng",
+   [6] = "圣斗士星矢",
    },
   },
  [828] = {
@@ -22429,10 +22432,11 @@ return {
    [2] = "dbztv",
    },
   ["syn"] = {
-   [1] = "Dragonball Z",
-   [2] = "Ejder Topu Z",
-   [3] = "Драконий жемчуг Зет",
-   [4] = "Драконова топка Зет",
+   [1] = "Dragon Ball Z",
+   [2] = "Dragonball Z",
+   [3] = "Ejder Topu Z",
+   [4] = "Драконий жемчуг Зет",
+   [5] = "Драконова топка Зет",
    },
   },
  [1531] = {
@@ -29036,7 +29040,7 @@ return {
    },
   },
  [2067] = {
-  ["main"] = "Hello! Lady Rin",
+  ["main"] = "Hello! Lady Lynn",
   ["official"] = {
    [1] = "Gwendoline - Saison 2",
    [2] = "Lady Lynn",
@@ -32206,6 +32210,7 @@ return {
    },
   ["syn"] = {
    [1] = "Der Waschbär Rascal",
+   [2] = "Єнотик Раскал",
    },
   },
  [2307] = {
@@ -43431,9 +43436,9 @@ return {
    },
   },
  [3423] = {
-  ["main"] = "Major 2nd Season",
+  ["main"] = "Major (2005)",
   ["official"] = {
-   [1] = "メジャー 2nd Season",
+   [1] = "メジャー (2005)",
    [2] = "메이저 2기",
    },
   ["short"] = {
@@ -43441,9 +43446,11 @@ return {
    [2] = "major2",
    },
   ["syn"] = {
-   [1] = "Major S2",
-   [2] = "Мейжър С2",
-   [3] = "棒球大联盟 第二季",
+   [1] = "Major 2nd Season",
+   [2] = "Major S2",
+   [3] = "Мейжър С2",
+   [4] = "メジャー 第2シリーズ",
+   [5] = "棒球大联盟 第二季",
    },
   },
  [3424] = {
@@ -47389,7 +47396,7 @@ return {
  [3988] = {
   ["main"] = "Nora",
   ["official"] = {
-   [1] = "NORA(ノーラ)",
+   [1] = "NORA",
    },
   ["short"] = {
    },
@@ -53324,18 +53331,20 @@ return {
    },
   },
  [4557] = {
-  ["main"] = "Major 3rd Season",
+  ["main"] = "Major (2007)",
   ["official"] = {
-   [1] = "メジャー (第3シリーズ)",
+   [1] = "メジャー (2007)",
    [2] = "메이저 3기",
    },
   ["short"] = {
    [1] = "major3",
    },
   ["syn"] = {
-   [1] = "Major S3",
-   [2] = "Мейжър С3",
-   [3] = "棒球大联盟 第3季",
+   [1] = "Major 3rd Season",
+   [2] = "Major S3",
+   [3] = "Мейжър С3",
+   [4] = "メジャー 第3シリーズ",
+   [5] = "棒球大联盟 第3季",
    },
   },
  [4558] = {
@@ -58970,19 +58979,19 @@ return {
    [1] = "Küçük Deniz Kızı Ponyo",
    [2] = "Ponyo",
    [3] = "Ponyo - Das grosse Abenteuer am Meer",
-   [4] = "Ponyo - Uma Amizade que Veio do Mar",
-   [5] = "Ponyo ant uolos prie jūros",
-   [6] = "Ponyo en el Acantilado",
-   [7] = "Ponyo mäe otsas",
-   [8] = "Ponyo on the Cliff by the Sea",
-   [9] = "Ponyo på klippan vid havet",
-   [10] = "Ponyo på klippen ved havet",
-   [11] = "Ponyo rantakalliolla",
-   [12] = "Ponyo sulla scogliera",
-   [13] = "Ponyo sur la falaise",
-   [14] = "Ponyo y el secreto de la Sirenita",
-   [15] = "Ponyo z útesu nad mořem",
-   [16] = "Ponyo à Beira-Mar",
+   [4] = "Ponyo ant uolos prie jūros",
+   [5] = "Ponyo en el Acantilado",
+   [6] = "Ponyo mäe otsas",
+   [7] = "Ponyo on the Cliff by the Sea",
+   [8] = "Ponyo på klippan vid havet",
+   [9] = "Ponyo på klippen ved havet",
+   [10] = "Ponyo rantakalliolla",
+   [11] = "Ponyo sulla scogliera",
+   [12] = "Ponyo sur la falaise",
+   [13] = "Ponyo y el secreto de la Sirenita",
+   [14] = "Ponyo z útesu nad mořem",
+   [15] = "Ponyo à Beira-Mar",
+   [16] = "Ponyo: Uma Amizade que Veio do Mar",
    [17] = "Рыбка Поньо на утесе",
    [18] = "פוניו על הצוק ליד הים",
    [19] = "崖の上のポニョ",
@@ -60608,7 +60617,7 @@ return {
    },
   },
  [5285] = {
-  ["main"] = "Tentou Mushi no Uta",
+  ["main"] = "Tentoumushi no Uta",
   ["official"] = {
    [1] = "Coccinella",
    [2] = "てんとう虫の歌",
@@ -60894,17 +60903,19 @@ return {
    },
   },
  [5316] = {
-  ["main"] = "Major 4th Season",
+  ["main"] = "Major (2008)",
   ["official"] = {
-   [1] = "メジャー (第4シリーズ)",
+   [1] = "メジャー (2008)",
    },
   ["short"] = {
    [1] = "major s4",
    [2] = "major4",
    },
   ["syn"] = {
-   [1] = "Мейжър С4",
-   [2] = "棒球大联盟第四季",
+   [1] = "Major 4th Season",
+   [2] = "Мейжър С4",
+   [3] = "メジャー 第4シリーズ",
+   [4] = "棒球大联盟第四季",
    },
   },
  [5317] = {
@@ -64011,8 +64022,9 @@ return {
    },
   ["syn"] = {
    [1] = "Binetsu Hime: Zange no Shou",
-   [2] = "奴隷人形～快楽を追求する獣たち～ (2)",
-   [3] = "微熱姫 懺悔の章",
+   [2] = "Dorei Ningyou",
+   [3] = "奴隷人形～快楽を追求する獣たち～ (2)",
+   [4] = "微熱姫 懺悔の章",
    },
   },
  [5739] = {
@@ -64616,7 +64628,7 @@ return {
   ["official"] = {
    [1] = "Slayers -A kis boszorkány",
    [2] = "Slayers Revolution",
-   [3] = "Непобедимите",
+   [3] = "Непобедимите (сезон 4)",
    [4] = "スレイヤーズ REVOLUTION",
    },
   ["short"] = {
@@ -65952,17 +65964,19 @@ return {
    },
   },
  [6013] = {
-  ["main"] = "Major 5th Season",
+  ["main"] = "Major (2009)",
   ["official"] = {
-   [1] = "メジャー MAJOR (第5シリーズ)",
+   [1] = "メジャー (2009)",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Major 5",
    [2] = "Major 5th",
-   [3] = "Major S5",
-   [4] = "Мейжър С5",
+   [3] = "Major 5th Season",
+   [4] = "Major S5",
+   [5] = "Мейжър С5",
+   [6] = "メジャー 第5シリーズ",
    },
   },
  [6014] = {
@@ -65986,7 +66000,8 @@ return {
   ["official"] = {
    [1] = "Vampire Knight Guilty",
    [2] = "Vampire Knight: Guilty",
-   [3] = "ヴァンパイア騎士 Guilty",
+   [3] = "Рицарят Вампир (сезон 2)",
+   [4] = "ヴァンパイア騎士 Guilty",
    },
   ["short"] = {
    [1] = "VKG",
@@ -65995,7 +66010,8 @@ return {
    },
   ["syn"] = {
    [1] = "Vampire Knight Guilty - 02",
-   [2] = "吸血鬼骑士.罪",
+   [2] = "Рицарят Вампир: Виновен",
+   [3] = "吸血鬼骑士.罪",
    },
   },
  [6018] = {
@@ -67388,7 +67404,8 @@ return {
   ["official"] = {
    [1] = "Slayers Evolution-R",
    [2] = "Slayers- A kis boszorkány",
-   [3] = "スレイヤーズEVOLUTION-R",
+   [3] = "Непобедимите (сезон 5)",
+   [4] = "スレイヤーズEVOLUTION-R",
    },
   ["short"] = {
    [1] = "スレイヤーズER",
@@ -67437,15 +67454,15 @@ return {
    },
   },
  [6183] = {
-  ["main"] = "Manga Edo Ero Banashi",
+  ["main"] = "Manga Edo Erobanashi",
   ["official"] = {
-   [1] = "漫画 江戸艶ばなし",
+   [1] = "漫画 江戸艶[えろ]ばなし",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Glorious Manga Tale of Old Edo",
-   [2] = "漫画 江戸艶(えろ)ばなし",
+   [2] = "漫画 江戸艶ばなし",
    },
   },
  [6184] = {
@@ -71124,6 +71141,7 @@ return {
    },
   ["syn"] = {
    [1] = "Momotarou of the Sea",
+   [2] = "Momotarou`s Underwater Adventure",
    },
   },
  [6613] = {
@@ -72353,8 +72371,10 @@ return {
    [1] = "證城寺の狸囃子",
    },
   ["short"] = {
+   [1] = "Belly Drum Dance at Shojoji Temple",
    },
   ["syn"] = {
+   [1] = "Belly Drumming at Shoujouji Temple",
    },
   },
  [6746] = {
@@ -77274,16 +77294,18 @@ return {
    },
   },
  [7236] = {
-  ["main"] = "Major 6th Season",
+  ["main"] = "Major (2010)",
   ["official"] = {
-   [1] = "メジャー 第6シリーズ",
+   [1] = "メジャー (2010)",
    },
   ["short"] = {
    [1] = "major6",
    },
   ["syn"] = {
-   [1] = "Major S6",
-   [2] = "Мейжър С6",
+   [1] = "Major 6th Season",
+   [2] = "Major S6",
+   [3] = "Мейжър С6",
+   [4] = "メジャー 第6シリーズ",
    },
   },
  [7237] = {
@@ -81994,13 +82016,15 @@ return {
    },
   },
  [7726] = {
-  ["main"] = "Mayoi Elle Otoko no Ko",
+  ["main"] = "Mayoeru Otoko no Ko",
   ["official"] = {
    [1] = "迷elleオトコノ娘",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mayoelle Otoko no Ko",
+   [2] = "Mayoi Elle Otoko no Ko",
    },
   },
  [7727] = {
@@ -92541,6 +92565,7 @@ return {
   ["official"] = {
    [1] = "NAKAIMO - My Little Sister Is Among Them!",
    [2] = "この中に1人, 妹がいる!",
+   [3] = "其中一个是妹妹",
    },
   ["short"] = {
    },
@@ -93151,6 +93176,7 @@ return {
   ["official"] = {
    [1] = "Binbogami ga!",
    [2] = "貧乏神が!",
+   [3] = "贫乏神来了!",
    },
   ["short"] = {
    },
@@ -94234,6 +94260,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Secretarial Section Drop The Animation",
    },
   },
  [9012] = {
@@ -96563,6 +96590,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hakkenden Eight Dogs of the East",
    },
   },
  [9293] = {
@@ -97380,9 +97408,9 @@ return {
    },
   },
  [9384] = {
-  ["main"] = "Gintama (2013)",
+  ["main"] = "Gekijouban Gintama Kanketsuhen: Yorozuya yo Eien Nare",
   ["official"] = {
-   [1] = "銀魂 (2013)",
+   [1] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
    },
   ["short"] = {
    },
@@ -97484,6 +97512,7 @@ return {
    [2] = "코토우라 양",
    },
   ["short"] = {
+   [1] = "kotoura",
    },
   ["syn"] = {
    },
@@ -98139,9 +98168,9 @@ return {
    },
   },
  [9467] = {
-  ["main"] = "Rou Kyuu Bu! (2013)",
+  ["main"] = "Rou Kyuu Bu! Tomoka no Ichigo Sunday",
   ["official"] = {
-   [1] = "ロウきゅーぶ! (2013)",
+   [1] = "ロウきゅーぶ! 智花のいちごサンデー",
    },
   ["short"] = {
    },
@@ -98355,7 +98384,7 @@ return {
  [9490] = {
   ["main"] = "Saki: Zenkoku Hen",
   ["official"] = {
-   [1] = "-Saki-全国編",
+   [1] = "咲 -Saki- 全国編",
    },
   ["short"] = {
    },
@@ -98644,6 +98673,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Megane Hen",
+   [2] = "メガネ編",
    },
   },
  [9519] = {
@@ -99521,7 +99552,7 @@ return {
    },
   },
  [9620] = {
-  ["main"] = "Tokubetsu Sochi Dantai Stella Jo-Gakuin Koutou-ka C3-Bu",
+  ["main"] = "Tokurei Sochi Dantai Stella Jo-Gakuin Koutou-ka C3-Bu",
   ["official"] = {
    [1] = "特例措置団体ステラ女学院高等科C3部",
    },
@@ -100388,6 +100419,7 @@ return {
  [9723] = {
   ["main"] = "30th Gundam Perfect Mission",
   ["official"] = {
+   [1] = "30th GUNDAM PERFECT MISSION",
    },
   ["short"] = {
    },
@@ -100398,16 +100430,6 @@ return {
   ["main"] = "Mameshiba Animation Short",
   ["official"] = {
    [1] = "Mameshiba Animation Short",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [9725] = {
-  ["main"] = "Neon the Animation",
-  ["official"] = {
-   [1] = "音々アニメーション",
    },
   ["short"] = {
    },
@@ -100528,11 +100550,12 @@ return {
  [9740] = {
   ["main"] = "Naked Wolves",
   ["official"] = {
-   [1] = "ネイキッドウルブズ",
+   [1] = "NAKED WOLVES",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ネイキッドウルブズ",
    },
   },
  [9741] = {
@@ -100639,6 +100662,147 @@ return {
   ["main"] = "Kakushi Dere",
   ["official"] = {
    [1] = "かくしデレ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9754] = {
+  ["main"] = "Planetarium Uchuu Kyoudai: Itten no Hikari",
+  ["official"] = {
+   [1] = "プラネタリウム　宇宙兄弟～一点のひかり～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9755] = {
+  ["main"] = "Hassou Hen",
+  ["official"] = {
+   [1] = "発想編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9757] = {
+  ["main"] = "Kasa Hen",
+  ["official"] = {
+   [1] = "傘編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9758] = {
+  ["main"] = "Iki Taku Naru o Mise Hen",
+  ["official"] = {
+   [1] = "行きたくなるお店編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9762] = {
+  ["main"] = "Nuki Doki! Tenshi to Akuma no Sakusei Battle",
+  ["official"] = {
+   [1] = "ヌキどきッ! ~天使と悪魔の搾精バトル~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9763] = {
+  ["main"] = "Mikosuri Han-Gekijou",
+  ["official"] = {
+   [1] = "みこすり半劇場",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9764] = {
+  ["main"] = "Pocket Monsters: Best Wishes Season 2 - Decolora Adventure Da!",
+  ["official"] = {
+   [1] = "ポケットモンスター ベストウイッシュ シーズン2 デコロラアドベンチャー Da!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9765] = {
+  ["main"] = "Daitoshokan no Hitsujikai",
+  ["official"] = {
+   [1] = "大図書館の羊飼い",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9766] = {
+  ["main"] = "Shima Kousaku no Asia Risshiden",
+  ["official"] = {
+   [1] = "島耕作のアジア立志伝",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9767] = {
+  ["main"] = "Baku Tech! Bakugan Gachi",
+  ["official"] = {
+   [1] = "爆TECH!爆丸ガチ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9769] = {
+  ["main"] = "Minna de Teasobi: Anpanman to Itazura Obake",
+  ["official"] = {
+   [1] = "みんなでてあそび アンパンマンといたずらオバケ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Playtime for Everyone: Anpanman and the Mischievous Ghost",
+   },
+  },
+ [9770] = {
+  ["main"] = "Namiuchigiwa no Muromi-san OAD",
+  ["official"] = {
+   [1] = "波打際のむろみさん OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9771] = {
+  ["main"] = "Golden Time",
+  ["official"] = {
+   [1] = "ゴールデンタイム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9772] = {
+  ["main"] = "Strike the Blood",
+  ["official"] = {
+   [1] = "ストライク・ザ・ブラッド",
    },
   ["short"] = {
    },
