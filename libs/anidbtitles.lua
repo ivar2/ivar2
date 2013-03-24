@@ -3877,6 +3877,7 @@ return {
   ["main"] = "Colorful",
   ["official"] = {
    [1] = "COLORFUL",
+   [2] = "Colorful",
    },
   ["short"] = {
    },
@@ -13083,7 +13084,8 @@ return {
  [822] = {
   ["main"] = "Divergence Eve",
   ["official"] = {
-   [1] = "ダイバージェンス・イヴ",
+   [1] = "Divergence Eve",
+   [2] = "ダイバージェンス・イヴ",
    },
   ["short"] = {
    [1] = "DE",
@@ -28986,9 +28988,10 @@ return {
   ["syn"] = {
    [1] = "YGO",
    [2] = "Yu-Gi-Oh ! À toi de jouer !",
-   [3] = "Yu-Gi-Oh: Duel Monsters",
-   [4] = "يو جي أوه",
-   [5] = "يوغي",
+   [3] = "Yu-Gi-Oh! Duel Monsters",
+   [4] = "Yu-Gi-Oh: Duel Monsters",
+   [5] = "يو جي أوه",
+   [6] = "يوغي",
    },
   },
  [2063] = {
@@ -37137,8 +37140,9 @@ return {
    [2] = "Bob, o Gênio",
    [3] = "Bottle Bob",
    [4] = "O Gênio Maluco",
-   [5] = "The Genie Family",
-   [6] = "الفتى برهان",
+   [5] = "Sneezing Magician",
+   [6] = "The Genie Family",
+   [7] = "الفتى برهان",
    },
   },
  [2742] = {
@@ -51682,12 +51686,12 @@ return {
  [4361] = {
   ["main"] = "Tabako to Hai",
   ["official"] = {
-   [1] = "Cigarettes and Ashes",
-   [2] = "たばこと灰",
+   [1] = "たばこと灰",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cigarettes and Ashes",
    },
   },
  [4362] = {
@@ -57121,7 +57125,8 @@ return {
  [4925] = {
   ["main"] = "Skull Man",
   ["official"] = {
-   [1] = "スカルマン THE SKULL MAN",
+   [1] = "The Skull Man",
+   [2] = "スカルマン THE SKULL MAN",
    },
   ["short"] = {
    },
@@ -59676,6 +59681,7 @@ return {
    },
   ["syn"] = {
    [1] = "Naruto Shippuuden Movie 1",
+   [2] = "Naruto Shippuuden Movie 1 - Clash of Ninja Revolution",
    },
   },
  [5182] = {
@@ -62033,13 +62039,14 @@ return {
    },
   },
  [5480] = {
-  ["main"] = "Tamala 2010",
+  ["main"] = "Tamala on Parade",
   ["official"] = {
-   [1] = "Tamala 2010",
+   [1] = "TAMALA ON PARADE",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "TAMALA 2010",
    },
   },
  [5481] = {
@@ -63073,8 +63080,9 @@ return {
  [5587] = {
   ["main"] = "Detroit Metal City",
   ["official"] = {
-   [1] = "デトロイト・メタル・シティ",
-   [2] = "디트로이트 메탈 씨티",
+   [1] = "Detroit Metal City",
+   [2] = "デトロイト・メタル・シティ",
+   [3] = "디트로이트 메탈 씨티",
    },
   ["short"] = {
    [1] = "demc",
@@ -63244,7 +63252,8 @@ return {
  [5623] = {
   ["main"] = "Neo Angelique Abyss",
   ["official"] = {
-   [1] = "ネオアンジェリーク Abyss",
+   [1] = "Neo Angelique Abyss",
+   [2] = "ネオアンジェリーク Abyss",
    },
   ["short"] = {
    [1] = "NAA",
@@ -65893,7 +65902,8 @@ return {
  [5988] = {
   ["main"] = "Neo Angelique Abyss: Second Age",
   ["official"] = {
-   [1] = "ネオ アンジェリーク Abyss -Second Age-",
+   [1] = "Neo Angelique Abyss: Second Age",
+   [2] = "ネオ アンジェリーク Abyss -Second Age-",
    },
   ["short"] = {
    [1] = "NAA2",
@@ -65953,10 +65963,10 @@ return {
    },
   },
  [6011] = {
-  ["main"] = "Bokura Mangaka - Tokiwa So Monogatari",
+  ["main"] = "Bokura Mangaka: Tokiwasou Monogatari",
   ["official"] = {
    [1] = "We`re Manga Artist: Tokiwa Villa Story",
-   [2] = "ぼくらマンガ家・トキワ荘物語",
+   [2] = "ぼくらマンガ家 トキワ荘物語",
    },
   ["short"] = {
    },
@@ -69538,7 +69548,8 @@ return {
  [6428] = {
   ["main"] = "Nyan Koi!",
   ["official"] = {
-   [1] = "にゃんこい!",
+   [1] = "Nyan Koi!",
+   [2] = "にゃんこい!",
    },
   ["short"] = {
    [1] = "Nyan Koi",
@@ -69899,14 +69910,14 @@ return {
  [6467] = {
   ["main"] = "Needless",
   ["official"] = {
-   [1] = "ニードレス",
+   [1] = "Needless",
+   [2] = "ニードレス",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Needless",
-   [2] = "Изгои",
-   [3] = "超能力大战/死刑判决",
+   [1] = "Изгои",
+   [2] = "超能力大战/死刑判决",
    },
   },
  [6468] = {
@@ -79883,7 +79894,8 @@ return {
   ["main"] = "Barbapapa (1977)",
   ["official"] = {
    [1] = "Barbapapa",
-   [2] = "バーバパパ (1977)",
+   [2] = "باربا الشاطر",
+   [3] = "バーバパパ (1977)",
    },
   ["short"] = {
    },
@@ -80086,9 +80098,10 @@ return {
  [7525] = {
   ["main"] = "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
   ["official"] = {
-   [1] = "Oreimo",
-   [2] = "俺の妹がこんなに可愛いわけがない",
-   [3] = "내 여동생이 이렇게 귀여울 리가 없어",
+   [1] = "Ore no Imoto ga Konna ni Kawaii Wake ga Nai",
+   [2] = "Oreimo",
+   [3] = "俺の妹がこんなに可愛いわけがない",
+   [4] = "내 여동생이 이렇게 귀여울 리가 없어",
    },
   ["short"] = {
    [1] = "oreimo",
@@ -86084,10 +86097,11 @@ return {
    [3] = "La collina dei papaveri",
    [4] = "La colline aux coquelicots",
    [5] = "Makowe wzgórze",
-   [6] = "Uppe på vallmokullen",
-   [7] = "От върха на маковия хълм",
-   [8] = "Со склонов Кокурико",
-   [9] = "コクリコ坂から",
+   [6] = "Oppe på Valmuebakken",
+   [7] = "Uppe på vallmokullen",
+   [8] = "От върха на маковия хълм",
+   [9] = "Со склонов Кокурико",
+   [10] = "コクリコ坂から",
    },
   ["short"] = {
    },
@@ -86165,8 +86179,9 @@ return {
   ["main"] = "Ao no Exorcist",
   ["official"] = {
    [1] = "Blue Exorcist",
-   [2] = "جنگیر آبی",
-   [3] = "青の祓魔師",
+   [2] = "المعوذ الأزرق",
+   [3] = "جنگیر آبی",
+   [4] = "青の祓魔師",
    },
   ["short"] = {
    [1] = "AnE",
@@ -86785,6 +86800,7 @@ return {
   ["main"] = "No.6",
   ["official"] = {
    [1] = "NO.6",
+   [2] = "No. 6",
    },
   ["short"] = {
    [1] = "no6",
@@ -90179,7 +90195,8 @@ return {
  [8573] = {
   ["main"] = "Amagami SS Plus",
   ["official"] = {
-   [1] = "アマガミSS+ plus",
+   [1] = "Amagami SS +Plus",
+   [2] = "アマガミSS+ plus",
    },
   ["short"] = {
    },
@@ -92181,6 +92198,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fairy Tail Movie 1:Priestess of the Pheniox",
    },
   },
  [8789] = {
@@ -92563,7 +92581,7 @@ return {
  [8830] = {
   ["main"] = "Kono Naka ni Hitori, Imouto ga Iru!",
   ["official"] = {
-   [1] = "NAKAIMO - My Little Sister Is Among Them!",
+   [1] = "Nakaimo: My Little Sister Is Among Them!",
    [2] = "この中に1人, 妹がいる!",
    [3] = "其中一个是妹妹",
    },
@@ -95201,7 +95219,8 @@ return {
  [9126] = {
   ["main"] = "Natsuyuki Rendezvous",
   ["official"] = {
-   [1] = "夏雪ランデブー",
+   [1] = "Natsuyuki Rendexvous",
+   [2] = "夏雪ランデブー",
    },
   ["short"] = {
    },
@@ -96028,7 +96047,7 @@ return {
    },
   },
  [9230] = {
-  ["main"] = "Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!",
+  ["main"] = "Onii-chan Dakedo Ai sae Areba Kankei Nai yo ne!",
   ["official"] = {
    [1] = "OniAi",
    [2] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
@@ -96037,6 +96056,7 @@ return {
    [1] = "oniai",
    },
   ["syn"] = {
+   [1] = "Onii-chan Dakedo Ai sae Areba Kankeinai yo ne!",
    },
   },
  [9231] = {
@@ -96132,11 +96152,11 @@ return {
    [2] = "비비드 레드 오퍼레이션",
    },
   ["short"] = {
-   [1] = "vividass",
-   [2] = "vividred",
+   [1] = "vividred",
    },
   ["syn"] = {
    [1] = "Vivid Red Operation",
+   [2] = "vividass",
    },
   },
  [9243] = {
@@ -96936,6 +96956,7 @@ return {
   ["main"] = "AKB0048 Next Stage",
   ["official"] = {
    [1] = "AKB0048 next stage",
+   [2] = "AKB0048: Next Stage",
    },
   ["short"] = {
    },
@@ -97936,6 +97957,7 @@ return {
    [2] = "ぷちます! プチ・アイドルマスタ",
    },
   ["short"] = {
+   [1] = "puchimas",
    },
   ["syn"] = {
    [1] = "ぷちます! -PETIT IDOLM@STER-",
@@ -98708,7 +98730,7 @@ return {
    },
   },
  [9522] = {
-  ["main"] = "Boku no Imouto wa \"Oosaka Okan\"",
+  ["main"] = "Boku no Imouto wa \"Osaka Okan\"",
   ["official"] = {
    [1] = "僕の妹は「大阪おかん」",
    [2] = "나의 여동생은 \"오사카 아줌마\"",
@@ -100267,9 +100289,9 @@ return {
    },
   },
  [9707] = {
-  ["main"] = "2020 Ujuui Wonder Kiddy",
+  ["main"] = "2020 Nyeon Ujuui Wonder Kiddy",
   ["official"] = {
-   [1] = "2020 우주의 원더키디",
+   [1] = "2020년 우주의 원더키디",
    },
   ["short"] = {
    },
@@ -100304,6 +100326,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Dooly`s Backpacking",
    },
   },
  [9712] = {
@@ -100540,11 +100563,12 @@ return {
  [9738] = {
   ["main"] = "Danball Senki Wars",
   ["official"] = {
-   [1] = "ダンボール戦機ウォーズ",
+   [1] = "ダンボール戦機WARS",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ダンボール戦機ウォーズ",
    },
   },
  [9740] = {
@@ -100803,6 +100827,126 @@ return {
   ["main"] = "Strike the Blood",
   ["official"] = {
    [1] = "ストライク・ザ・ブラッド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9774] = {
+  ["main"] = "Peeping Life 5.0ch",
+  ["official"] = {
+   [1] = "Peeping Life 5.0ch",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9775] = {
+  ["main"] = "Himitsukessha Taka no Tsume Max",
+  ["official"] = {
+   [1] = "秘密結社 鷹の爪 MAX",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9777] = {
+  ["main"] = "inferno cop",
+  ["official"] = {
+   [1] = "インフェルノコップ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9778] = {
+  ["main"] = "Kidou Senshi Gundam Senki: Avant-Title",
+  ["official"] = {
+   [1] = "機動戦士ガンダム戦記 アバンタイトル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9779] = {
+  ["main"] = "Dendou Sakusen Gattaioh",
+  ["official"] = {
+   [1] = "電動作戦 ガッタイオー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9781] = {
+  ["main"] = "Hana wa Saku",
+  ["official"] = {
+   [1] = "花は咲く",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9782] = {
+  ["main"] = "Uchouten Kazoku",
+  ["official"] = {
+   [1] = "有頂天家族",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9783] = {
+  ["main"] = "Blue Uru",
+  ["official"] = {
+   [1] = "Aoki Uru",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9784] = {
+  ["main"] = "Tanken Driland: 1000-nen no Mahou",
+  ["official"] = {
+   [1] = "探検ドリランド－1000年の真宝－",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9785] = {
+  ["main"] = "Saimin Jutsu Zero",
+  ["official"] = {
+   [1] = "催眠術ZERO",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9786] = {
+  ["main"] = "Line Town",
+  ["official"] = {
+   [1] = "LINE TOWN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9787] = {
+  ["main"] = "Ore no Nounai Sentakushi ga, Gakuen Love Come o Zenryoku de Jama Shiteiru",
+  ["official"] = {
+   [1] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
    },
   ["short"] = {
    },
