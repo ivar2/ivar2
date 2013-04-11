@@ -14,7 +14,7 @@ local parseJSON = function(data)
 	data = json.decode(data)
 
 	if(data.has_related_words) then
-		return data.list[1].definition
+		return data.list[1].definition:gsub('\r\n', ' ')
 	end
 end
 
