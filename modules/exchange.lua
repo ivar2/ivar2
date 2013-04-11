@@ -180,5 +180,8 @@ return {
 	PRIVMSG = {
 		['^!xe (%S+) (%S+) ?(.*)$'] = handleExchange,
 		['^!cur (%S+) (%S+) ?(.*)$'] = handleExchange,
+		['^!jpy'] = function(self, source, destination)
+			handleExchange(self, source, destination, 100, 'JPY', 'NOK')
+		end
 	},
 }
