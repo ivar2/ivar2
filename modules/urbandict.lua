@@ -35,7 +35,7 @@ return {
 						end
 						self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
 					else
-						self:Msg('privmsg', destination, source, "I'm afraid I can't let you know that, %s.", source.nick)
+						self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
 					end
 				end
 			)
