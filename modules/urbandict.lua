@@ -1,6 +1,10 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
 
+local trim = function(s)
+	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
 local urlEncode = function(str)
 	return str:gsub(
 		'([^%w ])',
@@ -22,6 +26,7 @@ local APIBase = 'http://api.urbandictionary.com/v0/define?term=%s'
 return {
 	PRIVMSG = {
 		['^!ud (.+)$'] = function(self, source, destination, input)
+			input = trim(input)
 			simplehttp(
 				APIBase:format(urlEncode(input)),
 
