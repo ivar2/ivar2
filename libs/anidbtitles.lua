@@ -34,6 +34,7 @@ return {
    [2] = "3x3 глаза",
    [3] = "Sazan Eyes",
    [4] = "サザンアイズ",
+   [5] = "三隻眼",
    },
   },
  [3] = {
@@ -4432,13 +4433,13 @@ return {
    [2] = "Dívčí četa",
    [3] = "Kiddy Grade",
    [4] = "คิดดี้เกรด",
-   [5] = "キディ・グレイド",
    },
   ["short"] = {
    [1] = "kg",
    [2] = "kgrade",
    },
   ["syn"] = {
+   [1] = "キディ・グレイド",
    },
   },
  [252] = {
@@ -9823,8 +9824,9 @@ return {
   ["syn"] = {
    [1] = "Game King!",
    [2] = "Yu-Gi-Oh!",
-   [3] = "Yuugiou",
-   [4] = "遊戯王",
+   [3] = "Yu-Gi-Oh! Zero",
+   [4] = "Yuugiou",
+   [5] = "遊戯王",
    },
   },
  [594] = {
@@ -11775,21 +11777,23 @@ return {
    },
   },
  [729] = {
-  ["main"] = "Kidou Senshi Gundam I: Tokubetsu Hen",
+  ["main"] = "Kidou Senshi Gundam (1981)",
   ["official"] = {
    [1] = "Mobile Suit Gundam - Film I",
    [2] = "Mobile Suit Gundam - Movie I",
    [3] = "Mobile Suit Gundam I",
    [4] = "Mobile Suit Gundam Movie I",
    [5] = "โมบิลสูท กันดั้ม เดอะมูวี่ I",
-   [6] = "劇場版 機動戦士ガンダムI 特別編",
+   [6] = "機動戦士ガンダム (1981)",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Gundam 0079 Movie Trilogy Part I",
-   [2] = "Mobile Suit Gundam - The Movie Trilogy Part I",
-   [3] = "机动战士高达.电影第1部.大地上的高达",
+   [2] = "Kidou Senshi Gundam I: Tokubetsu Hen",
+   [3] = "Mobile Suit Gundam - The Movie Trilogy Part I",
+   [4] = "劇場版 機動戦士ガンダムI 特別編",
+   [5] = "机动战士高达.电影第1部.大地上的高达",
    },
   },
  [730] = {
@@ -14704,8 +14708,7 @@ return {
   ["official"] = {
    [1] = "CITY HUNTER",
    [2] = "City Hunter",
-   [3] = "City Hunter 1 serie",
-   [4] = "Nicky Larson",
+   [3] = "Nicky Larson",
    },
   ["short"] = {
    [1] = "CHun1",
@@ -14822,7 +14825,9 @@ return {
   ["syn"] = {
    [1] = "Change!! Getter Robo",
    [2] = "Change!! True Getter Robo - The Final Days of the World",
-   [3] = "Shin Getter Robo: The Last Day",
+   [3] = "Shin (Change!!) Getter Robo - The Final Days of the World",
+   [4] = "Shin Getter Robo: The Last Day",
+   [5] = "True (Change!!) Getter Robo - The Final Days of the World",
    },
   },
  [950] = {
@@ -22918,7 +22923,7 @@ return {
   ["official"] = {
    [1] = "CITY HUNTER 2",
    [2] = "City Hunter (2. Staffel)",
-   [3] = "City Hunter 2nd Series",
+   [3] = "City Hunter 2",
    [4] = "Nicky Larson - Saison 2",
    },
   ["short"] = {
@@ -26196,6 +26201,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Getter Robo Re:Model",
    },
   },
  [1839] = {
@@ -28693,9 +28699,11 @@ return {
    [2] = "Die Schatzinsel",
    [3] = "L`isola del tesoro",
    [4] = "L`île au trésor",
-   [5] = "Treasure Island",
-   [6] = "جزيرة الكنز",
-   [7] = "宝島",
+   [5] = "Schateiland",
+   [6] = "Skateiland (Afrikaans)",
+   [7] = "Treasure Island",
+   [8] = "جزيرة الكنز",
+   [9] = "宝島",
    },
   ["short"] = {
    [1] = "たからじま",
@@ -28991,9 +28999,10 @@ return {
    [2] = "Yu-Gi-Oh",
    [3] = "Yu-Gi-Oh !",
    [4] = "Yu-Gi-Oh!",
-   [5] = "Ю-ГИ-О!",
-   [6] = "ดูเอลมอนสเตอร์ ยูกิโอ",
-   [7] = "遊☆戯☆王 デュエルモンスターズ",
+   [5] = "Yu-Gi-Oh! Duel Monsters",
+   [6] = "Ю-ГИ-О!",
+   [7] = "ดูเอลมอนสเตอร์ ยูกิโอ",
+   [8] = "遊☆戯☆王 デュエルモンスターズ",
    },
   ["short"] = {
    [1] = "yugioh",
@@ -33083,7 +33092,7 @@ return {
    },
   ["syn"] = {
    [1] = "Final Approach",
-   [2] = "φ（ふぁい）なる・あぷろーち",
+   [2] = "φ(ふぁい)なる・あぷろーち",
    [3] = "Последняя попытка",
    [4] = "爱情泡泡糖",
    },
@@ -36035,11 +36044,12 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dedektif Conan: Yüzyılın Son Sihirbazı",
-   [2] = "Detective Conan: Movie 3",
-   [3] = "Détective Conan - Film 3",
-   [4] = "Детектив Конан: Последният магьосник на века",
-   [5] = "世纪末的魔术师",
+   [1] = "Case Closed: The Last Magician of the Century",
+   [2] = "Dedektif Conan: Yüzyılın Son Sihirbazı",
+   [3] = "Detective Conan: Movie 3",
+   [4] = "Détective Conan - Film 3",
+   [5] = "Детектив Конан: Последният магьосник на века",
+   [6] = "世纪末的魔术师",
    },
   },
  [2647] = {
@@ -37079,9 +37089,10 @@ return {
    [8] = "Opowieści Byczka",
    [9] = "Ox Tales",
    [10] = "Ödön,az ökör",
-   [11] = "סיפורי מוש",
-   [12] = "مغامرات بسيط",
-   [13] = "げらげらブース物語",
+   [11] = "Περιπέτειες με Ζώα της Ζούγκλας",
+   [12] = "סיפורי מוש",
+   [13] = "مغامرات بسيط",
+   [14] = "げらげらブース物語",
    },
   ["short"] = {
    },
@@ -37090,6 +37101,7 @@ return {
    [2] = "De avonturen van Boes en zijn vrienden",
    [3] = "Geragera Bus Monogatari",
    [4] = "Ollie Ollie Oxen",
+   [5] = "Μπους Μπους",
    },
   },
  [2738] = {
@@ -49199,9 +49211,9 @@ return {
    },
   },
  [4141] = {
-  ["main"] = "Ichigo 100% Original DVD Animation",
+  ["main"] = "Ichigo 100%: Original DVD Anime",
   ["official"] = {
-   [1] = "いちご100% オリジナルDVDアニメーション",
+   [1] = "いちご100% オリジナルDVDアニメ",
    },
   ["short"] = {
    [1] = "i100 ova",
@@ -50444,12 +50456,13 @@ return {
  [4236] = {
   ["main"] = "Ushiro no Hyakutarou",
   ["official"] = {
-   [1] = "心霊恐怖レポート うしろの百太郎",
+   [1] = "うしろの百太郎",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "うしろの百太郎",
+   [1] = "Shinrei Kyoufu Report: Ushiro no Hyakutarou",
+   [2] = "心霊恐怖レポート うしろの百太郎",
    },
   },
  [4237] = {
@@ -58407,7 +58420,7 @@ return {
    [1] = "Bentornato Topo Gigio",
    [2] = "Topo Gigio, die Weltraummaus (1. Staffel)",
    [3] = "مغامرات سوسان",
-   [4] = "トッポ・ジージョ",
+   [4] = "トッポ♡ジージョ",
    },
   ["short"] = {
    [1] = "Topo Gigio",
@@ -58771,33 +58784,35 @@ return {
    },
   },
  [5085] = {
-  ["main"] = "Kiddy Grade: Ignition",
+  ["main"] = "Kiddy Grade I: Ignition",
   ["official"] = {
-   [1] = "キディ・グレイド 劇場版 第一部: 覚醒篇",
+   [1] = "Kiddy Grade I IGNITION",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Kiddy Grade - Kakusei Hen",
    [2] = "Kiddy Grade Movie 1",
+   [3] = "キディ・グレイド 劇場版 第一部: 覚醒篇",
    },
   },
  [5086] = {
-  ["main"] = "Kiddy Grade: Maelstrom",
+  ["main"] = "Kiddy Grade II: Maelstrom",
   ["official"] = {
-   [1] = "キディ・グレイド 劇場版 第二部: 氾濫篇",
+   [1] = "Kiddy Grade II MAELSTROM",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Kiddy Grade - Hanran Hen",
    [2] = "Kiddy Grade Movie 2",
+   [3] = "キディ・グレイド 劇場版 第二部: 氾濫篇",
    },
   },
  [5087] = {
-  ["main"] = "Kiddy Grade: Truth Dawn",
+  ["main"] = "Kiddy Grade III: Truth Dawn",
   ["official"] = {
-   [1] = "キディ・グレイド 劇場版 第三部: 黎明篇",
+   [1] = "Kiddy Grade III TRUTH DAWN",
    },
   ["short"] = {
    },
@@ -71380,7 +71395,7 @@ return {
    },
   },
  [6636] = {
-  ["main"] = "Higashi no Eden: Gekijouban I The King of Eden",
+  ["main"] = "Higashi no Eden: Gekijouban I - The King of Eden",
   ["official"] = {
    [1] = "Eden of the East - Der König von Eden",
    [2] = "Eden of the East: The King of Eden",
@@ -71395,7 +71410,7 @@ return {
    },
   },
  [6637] = {
-  ["main"] = "Higashi no Eden: Gekijouban II Paradise Lost",
+  ["main"] = "Higashi no Eden: Gekijouban II - Paradise Lost",
   ["official"] = {
    [1] = "Eden of the East - Das verlorene Paradies",
    [2] = "Eden of the East: Paradise Lost",
@@ -82020,16 +82035,6 @@ return {
   ["syn"] = {
    },
   },
- [7722] = {
-  ["main"] = "Anime V Comic Rentaman",
-  ["official"] = {
-   [1] = "アニメ・V・コミック レンタマン",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [7723] = {
   ["main"] = "Iron Man",
   ["official"] = {
@@ -83608,7 +83613,7 @@ return {
    },
   },
  [7874] = {
-  ["main"] = "Hana-Saku Iroha",
+  ["main"] = "Hanasaku Iroha",
   ["official"] = {
    [1] = "Hanasaku Iroha: Blossoms for Tomorrow",
    [2] = "花咲くいろは",
@@ -83618,12 +83623,11 @@ return {
    [2] = "花いろ",
    },
   ["syn"] = {
-   [1] = "Hanasaku Iroha",
-   [2] = "How to Bloom a Flower",
-   [3] = "Азбука цветов",
-   [4] = "چگونه یک گل را پرورش دهیم",
-   [5] = "花开伊吕波",
-   [6] = "花開物語",
+   [1] = "How to Bloom a Flower",
+   [2] = "Азбука цветов",
+   [3] = "چگونه یک گل را پرورش دهیم",
+   [4] = "花开伊吕波",
+   [5] = "花開物語",
    },
   },
  [7876] = {
@@ -83763,7 +83767,7 @@ return {
    },
   },
  [7891] = {
-  ["main"] = "Pocket Monsters: Best Wishes",
+  ["main"] = "Pocket Monsters: Best Wishes!",
   ["official"] = {
    [1] = "Pokemon Nero & Bianco",
    [2] = "Pokemon: Black & White",
@@ -84029,7 +84033,7 @@ return {
  [7923] = {
   ["main"] = "Bust to Bust: Chotto Kurai Kusatteru no ga Oishiin Desu yo?",
   ["official"] = {
-   [1] = "BUST TO BUST －ちちはちちに－ ちょっとくらい腐ってるのが美味いんですよ?",
+   [1] = "BUST TO BUST -ちちはちちに- ちょっとくらい腐ってるのが美味いんですよ?",
    },
   ["short"] = {
    },
@@ -84897,7 +84901,7 @@ return {
    },
   },
  [8012] = {
-  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Victini to Kuroki Eiyuu Zekrom",
+  ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Victini to Kuroki Eiyuu Zekrom",
   ["official"] = {
    [1] = "Pokemon The Movie: White - Victini and Zekrom",
    [2] = "Pokémon - Der Film: Weiß - Victini und Zekrom",
@@ -87434,7 +87438,7 @@ return {
    },
   },
  [8269] = {
-  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Victini to Shiroki Eiyuu Reshiram",
+  ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Victini to Shiroki Eiyuu Reshiram",
   ["official"] = {
    [1] = "Pokemon The Movie: Black - Victini and Reshiram",
    [2] = "Pokémon - Der Film: Schwarz - Victini und Reshiram",
@@ -92246,7 +92250,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Fairy Tail Movie 1:Priestess of the Pheniox",
+   [1] = "Fairy Tail Movie 1: Priestess of the Phoenix",
    },
   },
  [8789] = {
@@ -92588,7 +92592,7 @@ return {
    },
   },
  [8826] = {
-  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Kyurem vs Seikenshi Keldeo",
+  ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Kyurem vs Seikenshi Keldeo",
   ["official"] = {
    [1] = "Pokemon the Movie: Kyurem vs. The Sword of Justice",
    [2] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
@@ -92600,7 +92604,7 @@ return {
    },
   },
  [8827] = {
-  ["main"] = "Gekijouban Hana-Saku Iroha: Home Sweet Home",
+  ["main"] = "Gekijouban Hanasaku Iroha: Home Sweet Home",
   ["official"] = {
    [1] = "劇場版 花咲くいろは HOME SWEET HOME",
    },
@@ -92672,6 +92676,7 @@ return {
    [1] = "The Wolf Children Ame and Yuki",
    [2] = "Вовченята Аме та Юкі",
    [3] = "Вовчі діти Аме та Юкі",
+   [4] = "Волчьи дети Амэ и Юки",
    },
   },
  [8833] = {
@@ -94450,13 +94455,15 @@ return {
    },
   },
  [9023] = {
-  ["main"] = "Naruto the Movie: Road to Ninja",
+  ["main"] = "Road to Ninja: Naruto the Movie",
   ["official"] = {
-   [1] = "Naruto the Movie Road to Ninja",
+   [1] = "ROAD TO NINJA NARUTO THE MOVIE",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Naruto Shippuuden Movie 6",
+   [2] = "ロード・トゥ・ニンジャ ナルト・ザ・ムービー",
    },
   },
  [9025] = {
@@ -96064,7 +96071,7 @@ return {
    },
   },
  [9216] = {
-  ["main"] = "Pocket Monsters: Best Wishes Season 2",
+  ["main"] = "Pocket Monsters: Best Wishes! Season 2",
   ["official"] = {
    [1] = "Pokemon: BW: Adventures in Unova",
    [2] = "ポケットモンスター ベストウイッシュ シーズン2",
@@ -97734,9 +97741,9 @@ return {
    },
   },
  [9406] = {
-  ["main"] = "Maken-ki! 2",
+  ["main"] = "Maken-ki! Two",
   ["official"] = {
-   [1] = "マケン姫っ! 2",
+   [1] = "マケン姫っ! 通[つう]",
    },
   ["short"] = {
    },
@@ -98211,7 +98218,8 @@ return {
    [2] = "nyarlko w",
    },
   ["syn"] = {
-   [1] = "Haiyore! Nyaruko-san 2",
+   [1] = "Haiyore! Nyarlko W",
+   [2] = "Haiyore! Nyaruko-san 2",
    },
   },
  [9460] = {
@@ -98498,7 +98506,7 @@ return {
  [9489] = {
   ["main"] = "Robotica * Robotics",
   ["official"] = {
-   [1] = "ロボティカ＊ロボティクス",
+   [1] = "ロボティカ * ロボティクス",
    },
   ["short"] = {
    },
@@ -98962,6 +98970,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Holy Yariman Academy Compensated Dating Diaries",
    },
   },
  [9534] = {
@@ -99176,7 +99185,7 @@ return {
    },
   },
  [9564] = {
-  ["main"] = "Gekijouban Pocket Monsters: Best Wishes - Shinsoku no Genosect: Mewtwo Kakusei",
+  ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Shinsoku no Genosect: Mewtwo Kakusei",
   ["official"] = {
    [1] = "劇場版 ポケットモンスター ベストウイッシュ 神速のゲノセクト ミュウツー覚醒",
    },
@@ -99229,6 +99238,7 @@ return {
    },
   ["syn"] = {
    [1] = "Valvrave the Liberator",
+   [2] = "والوراو ازادی بخش",
    },
   },
  [9569] = {
@@ -99994,7 +100004,7 @@ return {
    },
   },
  [9653] = {
-  ["main"] = "Pocket Monsters: Best Wishes Season 2 Episode N",
+  ["main"] = "Pocket Monsters: Best Wishes! Season 2 - Episode N",
   ["official"] = {
    [1] = "ポケットモンスター ベストウイッシュ シーズン2 エピソードN",
    },
@@ -100137,7 +100147,7 @@ return {
  [9668] = {
   ["main"] = "Kotowari: Kimi no Kokoro no Koboreta Kakera",
   ["official"] = {
-   [1] = "理－コトワリ－ ~キミの心の零れた欠片~",
+   [1] = "理 -コトワリ- ~キミの心の零れた欠片~",
    },
   ["short"] = {
    },
@@ -100858,15 +100868,19 @@ return {
    },
   },
  [9764] = {
-  ["main"] = "Pocket Monsters: Best Wishes Season 2 - Decolora Adventure Da!",
+  ["main"] = "Pocket Monsters: Best Wishes! Season 2 - Decolora Adventure",
   ["official"] = {
-   [1] = "ポケットモンスター ベストウイッシュ シーズン2 デコロラアドベンチャー Da!",
+   [1] = "ポケットモンスター ベストウイッシュ シーズン2 デコロラアドベンチャー",
    },
   ["short"] = {
    [1] = "pmbw2d",
-   [2] = "pmbw2dad",
+   [2] = "pmbw2da",
    },
   ["syn"] = {
+   [1] = "Pocket Monsters: Best Wishes! Da!",
+   [2] = "Pocket Monsters: Decolora Adventure Da!",
+   [3] = "ポケットモンスター デコロラアドベンチャー Da!",
+   [4] = "ポケットモンスター ベストウイッシュ Da!",
    },
   },
  [9765] = {
@@ -101695,6 +101709,137 @@ return {
  [9870] = {
   ["main"] = "Redial",
   ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9871] = {
+  ["main"] = "TV-ban Pocket Monsters Special Masara Town Hen Soushuuhen",
+  ["official"] = {
+   [1] = "TV版 ポケットモンスター スペシャル マサラタウン編 総集編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9872] = {
+  ["main"] = "Video Ehon",
+  ["official"] = {
+   [1] = "ビデオ絵本",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9873] = {
+  ["main"] = "Kami-sama Hajimemashita (2013)",
+  ["official"] = {
+   [1] = "神様はじめました (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9874] = {
+  ["main"] = "Chuunibyou demo Koi ga Shitai! 2",
+  ["official"] = {
+   [1] = "中二病でも恋がしたい! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9875] = {
+  ["main"] = "Kill La Kill",
+  ["official"] = {
+   [1] = "キルラキル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "KILL la KILL",
+   },
+  },
+ [9877] = {
+  ["main"] = "Joshikousei no Koshitsuki",
+  ["official"] = {
+   [1] = "女子高生の腰つき",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9878] = {
+  ["main"] = "Tenioha!",
+  ["official"] = {
+   [1] = "てにおはっ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9879] = {
+  ["main"] = "Toriko no Chigiri",
+  ["official"] = {
+   [1] = "虜ノ契",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9880] = {
+  ["main"] = "Tokyo ESP",
+  ["official"] = {
+   [1] = "東京ESP",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9881] = {
+  ["main"] = "Daiya no Ace",
+  ["official"] = {
+   [1] = "ダイヤのA[エース]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9882] = {
+  ["main"] = "Nobunagun",
+  ["official"] = {
+   [1] = "ノブナガン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9885] = {
+  ["main"] = "Star Dust",
+  ["official"] = {
+   [1] = "ＳＴＡＲ　ＤＵＳＴ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9886] = {
+  ["main"] = "Gekikara Gag Gekijou: Tabasco Shower",
+  ["official"] = {
+   [1] = "激辛ギャグ劇場　タバスコシャワー",
    },
   ["short"] = {
    },
