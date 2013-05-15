@@ -1,6 +1,5 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
-local html2unicode = require'html'
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -31,7 +30,7 @@ local parseData = function(source, destination, data)
 	data = utify8(data)
 	data = json.decode(data)
 
-	if(data) then
+	if(data and not data.error) then
 		local out = {}
 		data = data[1]
 
@@ -65,7 +64,7 @@ local parseData = function(source, destination, data)
 
 		ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
 	else
-		ivar2:Msg('privmsg', destination, source, '=/')
+		ivar2:Msg('privmsg', destination, source, '(%d) %s', data.code, data.error)
 	end
 end
 
