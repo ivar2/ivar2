@@ -3,7 +3,6 @@ local uri = require"handler.uri"
 local idn = require'idn'
 local ev = require'ev'
 
-local client = httpclient.new(ev.Loop.default)
 local uri_parse = uri.parse
 
 local toIDN = function(url)
@@ -28,6 +27,17 @@ local function simplehttp(url, callback, stream, limit, visited)
 	local sinkSize = 0
 	local sink = {}
 	local visited = visited or {}
+
+	local client = httpclient.new(ev.Loop.default)
+	if(type(url) == "table") then
+		if(url.headers) then
+			for k, v in next, url.headers do
+				client.headers[k] = v
+			end
+		end
+
+		url = url.url or url[1]
+	end
 
 	-- Add support for IDNs.
 	url = toIDN(url)
@@ -58,6 +68,13 @@ local function simplehttp(url, callback, stream, limit, visited)
 				if(location:sub(1, 4) ~= 'http') then
 					local info = uri_parse(url)
 					location = string.format('%s://%s/', info.scheme, info.host, location)
+				end
+
+				if(url.headers) then
+					location = {
+						url = location,
+						headers = url.headers
+					}
 				end
 
 				return simplehttp(location, callback, stream, limit, visited)
