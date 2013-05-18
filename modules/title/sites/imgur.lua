@@ -54,24 +54,24 @@ local function handleOutput(queue, hash, data, withURL)
 		end
 
 		table.insert(out, gallery.title)
-
-		local tags = {}
-		table.insert(tags, string.format("%dx%d", gallery.width, gallery.height))
-
-		if(gallery.ups and gallery.downs) then
-			table.insert(tags, string.format("+%d/-%d", gallery.ups, gallery.downs))
-		end
-
-		if(gallery.nsfw and not gallery.title:match("[nN][sS][fF][wW]")) then
-			table.insert(tags, "NSFW")
-		end
-
-		if(gallery.animated) then
-			table.insert(tags, "gif")
-		end
-
-		table.insert(out, string.format("[%s]", table.concat(tags, ", ")))
 	end
+
+	local tags = {}
+	table.insert(tags, string.format("%dx%d", gallery.width, gallery.height))
+
+	if(gallery.ups and gallery.downs) then
+		table.insert(tags, string.format("+%d/-%d", gallery.ups, gallery.downs))
+	end
+
+	if(gallery.nsfw) then
+		table.insert(tags, "NSFW")
+	end
+
+	if(gallery.animated) then
+		table.insert(tags, "gif")
+	end
+
+	table.insert(out, string.format("[%s]", table.concat(tags, ", ")))
 
 	queue:done(table.concat(out, " "))
 end
@@ -79,8 +79,12 @@ end
 customHosts['^imgur%.com'] = function(queue, info)
 	if(not info.path) then return end
 
-	local type, hash = info.path:match('/(%w+)/([^.]+)$')
+	local type, hash = info.path:match('/(r?/?%w+)/([^.]+)$')
 	if(not hash) then return end
+
+	if(type:sub(1, 2) == "r/") then
+		type = "gallery/" .. type
+	end
 
 	local url = ('https://api.imgur.com/3/%s/%s.json'):format(type, hash)
 	simplehttp(
