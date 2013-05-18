@@ -49,7 +49,10 @@ local function handleOutput(queue, hash, data, withURL)
 	end
 
 	if(type(gallery.title) == "string") then
-		table.insert(out, "-")
+		if(withURL) then
+			table.insert(out, "-")
+		end
+
 		table.insert(out, gallery.title)
 
 		local tags = {}
