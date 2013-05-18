@@ -21,7 +21,7 @@ local headers = {
 	['Authorization'] = string.format("Client-ID %s", ivar2.config.imgurClientID)
 }
 
-local function handleOutput(queue, hash, data)
+local function handleOutput(queue, hash, data, withURL)
 	data = utify8(data)
 	data = json.decode(data)
 	local gallery = data.data
@@ -35,7 +35,7 @@ local function handleOutput(queue, hash, data)
 			},
 
 			function(data)
-				return handleOutput(queue, hash, data)
+				return handleOutput(queue, hash, data, withURL)
 			end,
 			true,
 			DL_LIMIT
@@ -44,7 +44,9 @@ local function handleOutput(queue, hash, data)
 
 	local out = {}
 
-	table.insert(out, string.format("http://imgur.com/%s", gallery.id))
+	if(withURL) then
+		table.insert(out, string.format("http://imgur.com/%s", gallery.id))
+	end
 
 	if(type(gallery.title) == "string") then
 		table.insert(out, "-")
@@ -71,6 +73,29 @@ local function handleOutput(queue, hash, data)
 	queue:done(table.concat(out, " "))
 end
 
+customHosts['^imgur%.com'] = function(queue, info)
+	if(not info.path) then return end
+
+	local type, hash = info.path:match('/(%w+)/([^.]+)$')
+	if(not hash) then return end
+
+	local url = ('https://api.imgur.com/3/%s/%s.json'):format(type, hash)
+	simplehttp(
+		{
+			url = url,
+			headers = headers,
+		},
+
+		function(data, _, response)
+			return handleOutput(queue, hash, data)
+		end,
+		true,
+		DL_LIMIT
+	)
+
+	return true
+end
+
 customHosts['i%.imgur%.com'] = function(queue, info)
 	if(not info.path) then return end
 
@@ -85,7 +110,7 @@ customHosts['i%.imgur%.com'] = function(queue, info)
 		},
 
 		function(data, _, response)
-			return handleOutput(queue, hash, data)
+			return handleOutput(queue, hash, data, true)
 		end,
 		true,
 		DL_LIMIT
