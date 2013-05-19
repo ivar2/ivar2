@@ -50,8 +50,8 @@ local parseData = function(source, destination, data, search)
 
 	local movie = data.movies[found] or data.movies[1]
 	local out = string.format(
-		"\002%s\002 (%d) %d min, %s - Critics: %d%% (%s) Audience: %d%% (%s) - %s",
-		movie['title'], movie['year'], movie['runtime'], movie['mpaa_rating'],
+		"\002%s\002 (%d) %s/%d min - Critics: %d%% (%s) Audience: %d%% (%s) - %s",
+		movie['title'], movie['year'], movie['mpaa_rating'], movie['runtime'],
 		movie['ratings']['critics_score'], movie['ratings']['critics_rating'],
 		movie['ratings']['audience_score'], movie['ratings']['audience_rating'],
 		movie['critics_consensus']
