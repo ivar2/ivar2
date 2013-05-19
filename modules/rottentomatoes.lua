@@ -26,15 +26,29 @@ local urlEncode = function(str)
 	):gsub(' ', '+')
 end
 
-local parseData = function(source, destination, data)
+local trim = function(s)
+	return s:match('^%s*(.-)%s*$')
+end
+
+local parseData = function(source, destination, data, search)
 	data = utify8(data)
 	data = json.decode(data)
 
-	local movie = data.movies[1]
-	if(not movie) then
+	local found
+	for i=1, #data.movies do
+		local title = data.movies[i].title:lower()
+		-- ha! ha! ha!
+		if(title == search) then
+			found = i
+			break
+		end
+	end
+
+	if(not found and not data.movies[1]) then
 		return ivar2:Msg('privmsg', destination, source, "Not even Rotten Tomatoes would rate that movie.")
 	end
 
+	local movie = data.movies[found] or data.movies[1]
 	local out = string.format(
 		"\002%s\002 (%d) %d min, %s - Critics: %d%% (%s) Audience: %d%% (%s) - %s",
 		movie['title'], movie['year'], movie['runtime'], movie['mpaa_rating'],
@@ -46,14 +60,14 @@ local parseData = function(source, destination, data)
 	ivar2:Msg('privmsg', destination, source, out)
 end
 
-local urlFormat = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?page_limit=1&apikey=%s&q=%s'
+local urlFormat = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?page_limit=5&apikey=%s&q=%s'
 local handler = function(self, source, destination, input)
-	local search = urlEncode(input)
+	local search = urlEncode(trim(input))
 
 	simplehttp(
 		urlFormat:format(self.config.rottenTomatoesAPIKey, search),
 		function(data)
-			parseData(source, destination, data)
+			parseData(source, destination, data, input:lower())
 		end
 	)
 end
