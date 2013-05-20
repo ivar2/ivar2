@@ -1,7 +1,9 @@
 local simplehttp = require'simplehttp'
-require'tokyocabinet'
+local sql = require'lsqlite3'
 
-local places = tokyocabinet.hdbnew()
+local trim = function(s)
+	return s:match('^%s*(.-)%s*$')
+end
 
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
@@ -93,13 +95,16 @@ return {
 		['^!yr (.+)$'] = function(self, source, destination, input)
 			input = (input:gsub("^%l", string.upper))
 
-			places:open("cache/places", places.OREADER)
-			local place = places[input]
-			places:close()
+			local db = sql.open("cache/places")
+			local selectStmt = db:prepare("SELECT place, url FROM places WHERE place LIKE ?")
+			selectStmt:bind_values(trim(input))
+
+			local iter, vm = selectStmt:nrows()
+			local place = iter(vm)
 
 			if(place) then
 				simplehttp(
-					place,
+					place.url,
 					function(data)
 						handleOutput(source, destination, data)
 					end
