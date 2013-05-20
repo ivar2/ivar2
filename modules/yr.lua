@@ -56,7 +56,12 @@ local handleOutput = function(source, destination, data)
 		table.insert(periods, time)
 	end
 
-	local nextDay = os.time() - (os.time() % 86400) + 86400
+	local time = os.time("*t")
+	time.day = time.day + 1
+	time.hour = 0
+	time.min = 0
+	time.sec = 0
+	local nextDay = os.time(time)
 	local now = periods[1]
 	local later = periods[2]
 
