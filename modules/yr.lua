@@ -58,20 +58,14 @@ local handleOutput = function(source, destination, data)
 
 	local nextDay = os.time() - (os.time() % 86400) + 86400
 	local now = periods[1]
-	local later, laterKey
-	if(now.period ~= "3") then
-		for i=2, #periods do
-			local period = periods[i]
-			if(period.period == "2") then
-				laterKey = i
-				later = period
-				break
-			end
-		end
+	local later = periods[2]
+
+	if(later.from >= nextDay) then
+		later = nil
 	end
 
 	local tomorrow
-	for i=laterKey, #periods do
+	for i=3, #periods do
 		local period = periods[i]
 		if(period.from > nextDay and period.period == "2") then
 			tomorrow = period
@@ -82,7 +76,11 @@ local handleOutput = function(source, destination, data)
 
 	local out = {}
 	table.insert(out, string.format("Current weather in %s (%s): %s", name, country, formatPeriod(now)))
-	table.insert(out, string.format("Tonight: %s", formatPeriod(later)))
+
+	if(later) then
+		table.insert(out, string.format("Tonight: %s", formatPeriod(later)))
+	end
+
 	if(tomorrow) then
 		table.insert(out, string.format("Tomorrow: %s", formatPeriod(tomorrow)))
 	end
