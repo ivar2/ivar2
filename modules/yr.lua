@@ -56,7 +56,7 @@ local handleOutput = function(source, destination, data)
 		table.insert(periods, time)
 	end
 
-	local time = os.time("*t")
+	local time = os.date("*t")
 	time.day = time.day + 1
 	time.hour = 0
 	time.min = 0
