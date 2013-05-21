@@ -63,10 +63,6 @@ local function handleOutput(queue, hash, data, withURL)
 		table.insert(tags, string.format("+%d/-%d", gallery.ups, gallery.downs))
 	end
 
-	if(gallery.nsfw) then
-		table.insert(tags, "NSFW")
-	end
-
 	if(gallery.animated) then
 		table.insert(tags, "gif")
 	end
