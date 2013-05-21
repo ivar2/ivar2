@@ -21,6 +21,12 @@ local headers = {
 	['Authorization'] = string.format("Client-ID %s", ivar2.config.imgurClientID)
 }
 
+-- Yes...
+local nsfw = {
+	['nsfw'] = true,
+	['gonewild'] = true,
+}
+
 local function handleOutput(queue, hash, data, withURL)
 	data = utify8(data)
 	data = json.decode(data)
@@ -61,6 +67,10 @@ local function handleOutput(queue, hash, data, withURL)
 
 	if(gallery.ups and gallery.downs) then
 		table.insert(tags, string.format("+%d/-%d", gallery.ups, gallery.downs))
+	end
+
+	if(nsfw[gallery.section]) then
+		table.insert(tags, 'NSFW')
 	end
 
 	if(gallery.animated) then
