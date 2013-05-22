@@ -1,5 +1,8 @@
 local simplehttp = require'simplehttp'
 local sql = require'lsqlite3'
+local iconv = require'iconv'
+
+local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
 local trim = function(s)
 	return s:match('^%s*(.-)%s*$')
@@ -96,11 +99,12 @@ end
 return {
 	PRIVMSG = {
 		['^!yr (.+)$'] = function(self, source, destination, input)
-			input = (input:gsub("^%l", string.upper))
+			input = trim(input:gsub("^%l", string.upper))
 
+			local inputISO = utf2iso:iconv(input)
 			local db = sql.open("cache/places")
-			local selectStmt = db:prepare("SELECT place, url FROM places WHERE place LIKE ?")
-			selectStmt:bind_values(trim(input))
+			local selectStmt = db:prepare("SELECT place, url FROM places WHERE place LIKE ? OR place LIKE ?")
+			selectStmt:bind_values(input, inputISO)
 
 			local iter, vm = selectStmt:nrows()
 			local place = iter(vm)
