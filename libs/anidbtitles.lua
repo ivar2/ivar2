@@ -33054,12 +33054,12 @@ return {
  [2333] = {
   ["main"] = "Sukeban Deka",
   ["official"] = {
-   [1] = "Delinquent Detective",
-   [2] = "スケバン刑事[スケバン・デカ]",
+   [1] = "スケバン刑事[スケバン・デカ]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Delinquent Detective",
    },
   },
  [2334] = {
@@ -73825,6 +73825,7 @@ return {
    [2] = "Fate/stay night Unlimited Blade Works",
    [3] = "Fate/stay night: UNLIMITED BLADE WORKS",
    [4] = "Fate/stay night: Unlimited Blade Works",
+   [5] = "سرنوشت شب اقامت: نبرد بی‌پایان شمشیرها",
    },
   ["short"] = {
    [1] = "f/sn ubw",
@@ -78037,6 +78038,7 @@ return {
   ["official"] = {
    [1] = "Fate/stay night (2010)",
    [2] = "Fate/stay night TV Reproduction",
+   [3] = "Fate/stay night TV reproduction",
    },
   ["short"] = {
    [1] = "fsnr",
@@ -102755,8 +102757,9 @@ return {
   ["main"] = "Ore no Nounai Sentakushi ga, Gakuen Lovecome o Zenryoku de Jama Shiteiru",
   ["official"] = {
    [1] = "My Mental Choices Are Completely Interfering with My School Romantic Comedy",
-   [2] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
-   [3] = "我的脑内恋碍选项",
+   [2] = "Что ни выбирай, а школьной романтической комедии уже не видать",
+   [3] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
+   [4] = "我的脑内恋碍选项",
    },
   ["short"] = {
    [1] = "Nokome",
@@ -104470,7 +104473,8 @@ return {
  [9977] = {
   ["main"] = "Fate/Stay Night: Unlimited Blade Works (2014)",
   ["official"] = {
-   [1] = "Fate/stay night [Unlimited Blade Works]",
+   [1] = "(سرنوشت شب اقامت (نبرد بی‌ پایان شمشیرها",
+   [2] = "Fate/stay night [Unlimited Blade Works]",
    },
   ["short"] = {
    [1] = "F/SN 2014",
@@ -107408,7 +107412,7 @@ return {
    },
   },
  [10323] = {
-  ["main"] = "Ore, Twintails ni Narimasu.",
+  ["main"] = "Ore, Twintail ni Narimasu.",
   ["official"] = {
    [1] = "Gonna Be the Twin-Tail!!",
    [2] = "俺, ツインテールになります.",
@@ -107418,7 +107422,7 @@ return {
    [2] = "oretwi",
    },
   ["syn"] = {
-   [1] = "Ore, Twintails ni Narimasu",
+   [1] = "Ore, Twintails ni Narimasu.",
    },
   },
  [10325] = {
@@ -107667,7 +107671,8 @@ return {
   ["main"] = "Ushinawareta Mirai o Motomete",
   ["official"] = {
    [1] = "In Search of Lost Future",
-   [2] = "失われた未来を求めて",
+   [2] = "В поисках потерянного будущего",
+   [3] = "失われた未来を求めて",
    },
   ["short"] = {
    [1] = "waremete",
@@ -108049,6 +108054,7 @@ return {
    [5] = "斩! 赤红之瞳",
    },
   ["short"] = {
+   [1] = "AkaKill",
    },
   ["syn"] = {
    [1] = "murder city",
@@ -108317,6 +108323,7 @@ return {
    [1] = "TERRA FORMARS",
    [2] = "TERRAFORMARS",
    [3] = "Terraformars",
+   [4] = "پس‌گرفتن مریخ",
    },
   ["short"] = {
    },
@@ -109038,8 +109045,11 @@ return {
    [1] = "冴えない彼女の育てかた",
    },
   ["short"] = {
+   [1] = "Saekano",
+   [2] = "冴えカノ",
    },
   ["syn"] = {
+   [1] = "Saekano: How to Raise a Boring Girlfriend",
    },
   },
  [10539] = {
@@ -110307,9 +110317,9 @@ return {
    },
   },
  [10688] = {
-  ["main"] = "Gekijouban Date a Live",
+  ["main"] = "Gekijouban Date a Live: Mayuri Judgement",
   ["official"] = {
-   [1] = "劇場版 デート・ア・ライブ",
+   [1] = "劇場版デート・ア・ライブ 万由里ジャッジメント",
    },
   ["short"] = {
    },
@@ -110379,8 +110389,9 @@ return {
  [10698] = {
   ["main"] = "Selector Spread WIXOSS",
   ["official"] = {
-   [1] = "Selector Spread Wixoss",
-   [2] = "selector spread WIXOSS",
+   [1] = "Selector Spread WIXOSS",
+   [2] = "Selector Spread Wixoss",
+   [3] = "selector spread WIXOSS",
    },
   ["short"] = {
    },
@@ -110986,9 +110997,9 @@ return {
    },
   },
  [10767] = {
-  ["main"] = "Tamayura Kanketsuhen",
+  ["main"] = "Tamayura: Sotsugyou Shashin",
   ["official"] = {
-   [1] = "たまゆら 完結編",
+   [1] = "たまゆら~卒業写真~",
    },
   ["short"] = {
    },
@@ -111364,6 +111375,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tha Vanishing of Nagato Yuki-chan",
    },
   },
  [10816] = {
@@ -111507,14 +111519,14 @@ return {
    },
   },
  [10835] = {
-  ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders (2015)",
+  ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders - Egypt Hen",
   ["official"] = {
-   [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders (2015)",
-   [2] = "ジョジョの奇妙な冒険 スターダストクルセイダース (2015)",
+   [1] = "ジョジョの奇妙な冒険 スターダストクルセイダース エジプト編",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders (2015)",
    },
   },
  [10836] = {
@@ -112112,6 +112124,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Парад на смъртта",
    },
   },
  [10906] = {
@@ -112582,9 +112595,9 @@ return {
    },
   },
  [10958] = {
-  ["main"] = "Houkago no Pleiades TV",
+  ["main"] = "Houkago no Pleiades (2015)",
   ["official"] = {
-   [1] = "放課後のプレアデス TV",
+   [1] = "放課後のプレアデス (2015)",
    },
   ["short"] = {
    },
@@ -112771,6 +112784,144 @@ return {
   ["main"] = "Toubousha Mouri Kogorou",
   ["official"] = {
    [1] = "逃亡者・毛利小五郎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10977] = {
+  ["main"] = "Wake Up, Girls! Zoku Hen Gekijouban",
+  ["official"] = {
+   [1] = "Wake Up, Girls! 続編劇場版",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10978] = {
+  ["main"] = "Takamiya Nasuno Desu!",
+  ["official"] = {
+   [1] = "高宮なすのです!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10980] = {
+  ["main"] = "Hidan no Aria AA",
+  ["official"] = {
+   [1] = "緋弾のアリアAA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10981] = {
+  ["main"] = "Haikyuu!! 2",
+  ["official"] = {
+   [1] = "ハイキュー!! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10982] = {
+  ["main"] = "Gate: Jieitai Kanochi nite, Kaku Tatakaeri",
+  ["official"] = {
+   [1] = "GATE 自衛隊 彼の地にて, 斯く戦えり",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10983] = {
+  ["main"] = "Katekano: Idol Sister",
+  ["official"] = {
+   [1] = "かてかの アイドル☆シスター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10984] = {
+  ["main"] = "Owari no Seraph 2",
+  ["official"] = {
+   [1] = "終わりのセラフ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10985] = {
+  ["main"] = "Vampire Holmes",
+  ["official"] = {
+   [1] = "VAMPIRE HOLMES",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10986] = {
+  ["main"] = "Nekota no Koto ga Ki ni Natte Shikatanai.",
+  ["official"] = {
+   [1] = "猫田のことが気になって仕方ない.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10987] = {
+  ["main"] = "Psychedelic Afternoon",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10988] = {
+  ["main"] = "By Your Side",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10989] = {
+  ["main"] = "i-City",
+  ["official"] = {
+   [1] = "I-城 (限量版) (香港版)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10990] = {
+  ["main"] = "Submarine Bubble Bubble",
+  ["official"] = {
+   [1] = "보글보글 보물선",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10991] = {
+  ["main"] = "Mushishi Zoku Shou: Suzu no Shizuku",
+  ["official"] = {
+   [1] = "蟲師 続章 鈴の雫",
    },
   ["short"] = {
    },
