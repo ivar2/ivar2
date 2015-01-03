@@ -47,17 +47,17 @@ local trim = function(s)
 end
 
 local split = function(str, delim)
-  if str == "" or str == nil then
-    return { }
-  end
-  str = str .. delim
-  local _accum_0 = { }
-  local _len_0 = 1
-  for m in str:gmatch("(.-)" .. delim) do
-    _accum_0[_len_0] = m
-    _len_0 = _len_0 + 1
-  end
-  return _accum_0
+	if str == "" or str == nil then
+		return { }
+	end
+	str = str .. delim
+	local _accum_0 = { }
+	local _len_0 = 1
+	for m in str:gmatch("(.-)" .. delim) do
+		_accum_0[_len_0] = m
+		_len_0 = _len_0 + 1
+	end
+	return _accum_0
 end
 
 local translateWords = function(str, callback, fixCase, nickpat)
@@ -118,7 +118,6 @@ local nonickalert = function(nicklist, str)
 			return x:sub(1, 1) .. zwsp .. x:sub(2)
 		end
 	end, nil, true)
-
 end
 
 return {
