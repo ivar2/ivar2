@@ -1,8 +1,8 @@
 local simplehttp = require'simplehttp'
-local x0 = ivar2.persist
 
 return {
 	lookup = function(url, callback)
+		local x0 = ivar2.persist
 		if(x0["x0:" .. url]) then
 			local url = x0["x0:" .. url]
 
