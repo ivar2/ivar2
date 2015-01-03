@@ -827,7 +827,7 @@ function ivar2:Reload()
 		message.util = require'util'
 		-- Reload irclib
 		package.loaded.irc = nil
-		irc = require'util'
+		irc = require'irc'
 		message.network = self.network
 		message.hostmask = self.hostmask
 		message.maxNickLength = self.maxNickLength
