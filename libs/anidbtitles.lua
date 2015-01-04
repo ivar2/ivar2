@@ -774,11 +774,12 @@ return {
    [4] = "Nadia: Secret of Blue Water",
    [5] = "Nadia: el Secret de l`Aigua Blau",
    [6] = "Nadia: el Secreto del Agua Azul",
-   [7] = "The Secret of Blue Water",
-   [8] = "Надя c загадочного моря",
-   [9] = "不可思议之海的娜迪娅",
-   [10] = "冒險少女娜汀亞",
-   [11] = "신비한 바다의 나디아",
+   [7] = "Nadja z tajemných moří",
+   [8] = "The Secret of Blue Water",
+   [9] = "Надя c загадочного моря",
+   [10] = "不可思议之海的娜迪娅",
+   [11] = "冒險少女娜汀亞",
+   [12] = "신비한 바다의 나디아",
    },
   },
  [42] = {
@@ -4654,12 +4655,12 @@ return {
    [1] = "Anılar",
    [2] = "Atsiminimai",
    [3] = "Emlékek",
-   [4] = "Memories",
-   [5] = "Memories - muistoja tulevaisuudesta",
-   [6] = "Recuerdos",
-   [7] = "Recuerdos peligrosos",
-   [8] = "Воспоминания о будущем",
-   [9] = "メモリーズ",
+   [4] = "MEMORIES",
+   [5] = "Memories",
+   [6] = "Memories - muistoja tulevaisuudesta",
+   [7] = "Recuerdos",
+   [8] = "Recuerdos peligrosos",
+   [9] = "Воспоминания о будущем",
    },
   ["short"] = {
    },
@@ -4669,9 +4670,10 @@ return {
    [3] = "Wspomnienia",
    [4] = "Спогади",
    [5] = "Спомени",
-   [6] = "回忆三部曲",
-   [7] = "回憶三部曲",
-   [8] = "메모리즈",
+   [6] = "メモリーズ",
+   [7] = "回忆三部曲",
+   [8] = "回憶三部曲",
+   [9] = "메모리즈",
    },
   },
  [263] = {
@@ -5030,7 +5032,8 @@ return {
   ["official"] = {
    [1] = "Project A-ko",
    [2] = "Projekt A-ko",
-   [3] = "プロジェクトA子",
+   [3] = "Proyecto A-ko",
+   [4] = "プロジェクトA子",
    },
   ["short"] = {
    [1] = "pako",
@@ -8808,19 +8811,19 @@ return {
  [516] = {
   ["main"] = "Princess Tutu",
   ["official"] = {
-   [1] = "Księżniczka Tutu",
-   [2] = "Princess Tutu",
-   [3] = "プリンセスチュチュ",
+   [1] = "Princess Tutu",
+   [2] = "プリンセスチュチュ",
    },
   ["short"] = {
    [1] = "tutu",
    },
   ["syn"] = {
-   [1] = "Prenses Tutu",
-   [2] = "Prinzessin Tutu",
-   [3] = "Принцесса Тютю",
-   [4] = "الأميرة توتو",
-   [5] = "پرنسس توتو",
+   [1] = "Księżniczka Tutu",
+   [2] = "Prenses Tutu",
+   [3] = "Prinzessin Tutu",
+   [4] = "Принцесса Тютю",
+   [5] = "الأميرة توتو",
+   [6] = "پرنسس توتو",
    },
   },
  [517] = {
@@ -9504,8 +9507,9 @@ return {
    [1] = "digimon2",
    },
   ["syn"] = {
-   [1] = "Digimon Zero Two",
-   [2] = "デジモン02",
+   [1] = "Digimon Adventure Zero Two",
+   [2] = "Digimon Zero Two",
+   [3] = "デジモン02",
    },
   },
  [562] = {
@@ -18000,6 +18004,7 @@ return {
    },
   ["syn"] = {
    [1] = "Daft Punk & Leiji Matsumoto`s INTERSTELLA 5555: The 5tory of the 5ecret 5tar 5ystem",
+   [2] = "SSSS",
    },
   },
  [1154] = {
@@ -65165,7 +65170,7 @@ return {
    },
   },
  [5779] = {
-  ["main"] = "Michiko to Hatchin",
+  ["main"] = "Michiko to Hacchin",
   ["official"] = {
    [1] = "Michiko & Hatchin",
    [2] = "Michiko e Hatchin",
@@ -65178,10 +65183,11 @@ return {
   ["syn"] = {
    [1] = "Michiko and Hatchin",
    [2] = "Michiko e Hatchin",
-   [3] = "Michiko İle Hatchin",
-   [4] = "Mičiko ir Hana",
-   [5] = "Мичико и Хатчин",
-   [6] = "道子与哈金",
+   [3] = "Michiko to Hatchin",
+   [4] = "Michiko İle Hatchin",
+   [5] = "Mičiko ir Hana",
+   [6] = "Мичико и Хатчин",
+   [7] = "道子与哈金",
    },
   },
  [5783] = {
@@ -71643,7 +71649,6 @@ return {
   ["official"] = {
    [1] = "Angel Beats!",
    [2] = "แองเจิลบีทส์ แผนพิชิตนางฟ้า",
-   [3] = "エンジェル ビーツ!",
    },
   ["short"] = {
    [1] = "AB!",
@@ -71654,8 +71659,9 @@ return {
    [3] = "Eņģeļa Pulss",
    [4] = "Ангельские ритмы!",
    [5] = "Пульс ангела!",
-   [6] = "天使的心跳",
-   [7] = "엔젤비트!, 엔젤비츠!",
+   [6] = "エンジェル ビーツ!",
+   [7] = "天使的心跳",
+   [8] = "엔젤비트!, 엔젤비츠!",
    },
   },
  [6566] = {
@@ -79715,7 +79721,8 @@ return {
   ["main"] = "Kuroshitsuji II",
   ["official"] = {
    [1] = "Black Butler II",
-   [2] = "黒執事II",
+   [2] = "خادم سیاه 2",
+   [3] = "黒執事II",
    },
   ["short"] = {
    },
@@ -87911,10 +87918,10 @@ return {
    },
   ["short"] = {
    [1] = "SYD 2011",
-   [2] = "SYD OVA",
+   [2] = "SYD OAD",
    },
   ["syn"] = {
-   [1] = "Seitokai Yakuindomo OVA",
+   [1] = "Seitokai Yakuindomo OAD",
    [2] = "Seitokai Yakuindomo: Kaette Kita",
    [3] = "Seitokai Yakuindomo: The Return of Seitokai Yakuindomo",
    },
@@ -92461,7 +92468,8 @@ return {
   ["main"] = "Kuroko no Baske",
   ["official"] = {
    [1] = "Kuroko`s Basketball",
-   [2] = "黒子のバスケ",
+   [2] = "kuroko no basket",
+   [3] = "黒子のバスケ",
    },
   ["short"] = {
    [1] = "Kurobas",
@@ -94596,7 +94604,7 @@ return {
   ["syn"] = {
    [1] = "Evangelion 3.0+1.0",
    [2] = "Evangelion 4.0",
-   [3] = "Evangelion Final",
+   [3] = "Evangelion: Final",
    [4] = "Rebuild of Evangelion: 4.0",
    [5] = "シン・エヴァンゲリオン劇場版𝄇",
    },
@@ -101088,9 +101096,10 @@ return {
    [1] = "yowapeda",
    },
   ["syn"] = {
-   [1] = "Плахият велосипедист",
-   [2] = "Плахият колоездач",
-   [3] = "Трусливый Велосипедист",
+   [1] = "Yowamushi Pedal",
+   [2] = "Плахият велосипедист",
+   [3] = "Плахият колоездач",
+   [4] = "Трусливый Велосипедист",
    },
   },
  [9592] = {
@@ -103295,7 +103304,7 @@ return {
  [9848] = {
   ["main"] = "Koikishi Purely Kiss The Animation",
   ["official"] = {
-   [1] = "恋騎士Purely☆Kiss The Animation",
+   [1] = "恋騎士 Purely☆Kiss The Animation",
    },
   ["short"] = {
    },
@@ -103470,6 +103479,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "JK and the Orc Corps: The Assault on Seijo Academy by Evil Demon Pigs",
    },
   },
  [9869] = {
@@ -104487,6 +104497,7 @@ return {
    [1] = "F/SN 2014",
    [2] = "FSN 2014",
    [3] = "FSN UBW 2014",
+   [4] = "[UBW] 2014",
    },
   ["syn"] = {
    [1] = "Fate Stay Night - Unlimited Blade Works",
@@ -106856,6 +106867,7 @@ return {
   ["main"] = "Stand By Me Doraemon",
   ["official"] = {
    [1] = "STAND BY ME ドラえもん",
+   [2] = "STAND BY ME 哆啦A夢",
    },
   ["short"] = {
    },
@@ -107998,7 +108010,8 @@ return {
   ["official"] = {
    [1] = "Black Butler: Book of Circus",
    [2] = "Mroczny kamerdyner III",
-   [3] = "黒執事 Book of Circus",
+   [3] = "خادم سیاه: کتاب سیرک",
+   [4] = "黒執事 Book of Circus",
    },
   ["short"] = {
    },
@@ -109123,7 +109136,8 @@ return {
  [10548] = {
   ["main"] = "Kuroshitsuji: Book of Murder",
   ["official"] = {
-   [1] = "黒執事 Book of Murder",
+   [1] = "خادم سیاه: کتاب قتل",
+   [2] = "黒執事 Book of Murder",
    },
   ["short"] = {
    },
@@ -109711,6 +109725,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sacred Prostitutes The Animation",
    },
   },
  [10613] = {
@@ -110940,6 +110955,7 @@ return {
    [1] = "F/SN 2015",
    [2] = "FSN 2015",
    [3] = "FSN UBW 2015",
+   [4] = "[UBW] 2015",
    },
   ["syn"] = {
    [1] = "Fate Stay Night 2015",
@@ -110955,6 +110971,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "SYD* OAD",
    },
   },
  [10762] = {
@@ -111217,6 +111234,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Breast Academy Marching Band Club",
    },
   },
  [10795] = {
@@ -111332,7 +111350,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Seitokai Yakuindomo 2#15",
+   [1] = "SYD* OVA",
    },
   },
  [10811] = {
@@ -111649,7 +111667,8 @@ return {
  [10853] = {
   ["main"] = "Binan Koukou Chikyuu Bouei Bu Love!",
   ["official"] = {
-   [1] = "美男高校地球防衛部LOVE!",
+   [1] = "Cute High Earth Defense Club LOVE!",
+   [2] = "美男高校地球防衛部LOVE!",
    },
   ["short"] = {
    [1] = "boueibu",
@@ -111977,13 +111996,14 @@ return {
    },
   },
  [10889] = {
-  ["main"] = "Hibiku! Euphonium Kitauji Koukou Suisougaku-bu e Youkoso",
+  ["main"] = "Hibike! Euphonium",
   ["official"] = {
-   [1] = "響け! ユーフォニアム~北宇治高校吹奏楽部へようこそ~",
+   [1] = "響け! ユーフォニアム",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sound! Euphonium",
    },
   },
  [10890] = {
@@ -112194,13 +112214,14 @@ return {
    },
   },
  [10912] = {
-  ["main"] = "Mix Master Final Force",
+  ["main"] = "Kadeu Wang Mikseu Maseuteo",
   ["official"] = {
    [1] = "최강 합체 믹스마스터",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mix Master Final Force",
    },
   },
  [10913] = {
@@ -112804,6 +112825,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fugitive: Mouri Kogorou",
+   [2] = "Happy New Year Mouri Kogoro",
+   [3] = "謹賀新年 毛利小五郎",
    },
   },
  [10977] = {
@@ -113064,6 +113088,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Flowers Will Bloom",
+   [2] = "Hana wa Saku - Flowers Will Bloom",
    },
   },
  [11007] = {
@@ -113090,6 +113116,26 @@ return {
   ["main"] = "Grisaia no Rakuen",
   ["official"] = {
    [1] = "グリザイアの楽園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11011] = {
+  ["main"] = "Sore ga Seiyuu!",
+  ["official"] = {
+   [1] = "それが声優!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11015] = {
+  ["main"] = "Boku wa Kuma",
+  ["official"] = {
+   [1] = "ぼくはくま",
    },
   ["short"] = {
    },
