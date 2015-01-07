@@ -129,7 +129,7 @@ return {
 			if(tonumber(input)) then
 				lookup(self, source, destination, input)
 			else
-				search(self, source, destination,input)
+				search(self, source, destination, input)
 			end
 		end,
 	},
