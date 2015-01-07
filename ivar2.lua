@@ -322,10 +322,6 @@ setmetatable(ivar2, client_mt)
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
 	if(message) then
-		if(level == 'error' and self.nma) then
-			self.nma(message)
-		end
-
 		log[level](log, message)
 	end
 end
@@ -724,10 +720,6 @@ function ivar2:Connect(config)
 		self.control:start(self.Loop)
 	end
 
-	if(not self.nma) then
-		self.nma = assert(loadfile('core/nma.lua'))(ivar2)
-	end
-
 	if(not self.x0) then
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
 	end
@@ -820,7 +812,6 @@ function ivar2:Reload()
 		self = message
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
-		self.nma = assert(loadfile('core/nma.lua'))(self)
 		self.control = assert(loadfile('core/control.lua'))(self)
 		self.control:start(self.Loop)
 
