@@ -112,8 +112,6 @@ local search = function(self, source, destination, title)
 			end
 
 			say(table.concat(self:LimitOutput(destination, out, 1), ' '))
-
-			return books
 		end,
 		true,
 		2^16
