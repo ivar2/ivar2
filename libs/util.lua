@@ -134,10 +134,8 @@ end
 
 function util.translateWords(str, callback, fixCase, nickpat)
 	-- Usage: etc.translateWords(s ,callback) the callback can return new word, false to skip, or nil to keep the same word.
-	local str = assert(str)
-	local callback = assert(callback, "Callback expected")
-	local fixCase = fixCase == nil or fixCase == true
-	local nickpat = nickpat
+	assert(str)
+	assert(callback, "Callback expected")
 
 	local prev = 1
 	local result = ""
@@ -145,6 +143,7 @@ function util.translateWords(str, callback, fixCase, nickpat)
 	if nickpat then
 		pat = "()([%w_'%-%{%}%[%]`%^]+)()"
 	end
+
 	for wpos, w, wposEnd in str:gmatch(pat) do
 		local wnew = callback(w)
 		if wnew ~= false then
