@@ -40,7 +40,6 @@ local parseData = function(data)
 	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)<div id="slutt">'):gsub('&nbsp;', '')
 
 	local words = {}
-	local lookup = data:match('>([^<]+)</a>')
 	data = data:match('(<span class="oppslagsord b".->.-)</td>')
 
 	if(data) then
@@ -137,7 +136,6 @@ local handleInput = function(self, source, destination, word, ordbok)
 			local words, err = parseData(data)
 			local out = {}
 			if(words) then
-				local n =  #word + 23
 				for i=1, #words do
 					local word = words[i]
 					local lookup = table.concat(word.lookup, ', ')
@@ -153,7 +151,6 @@ local handleInput = function(self, source, destination, word, ordbok)
 					if(definition) then
 						local message = string.format('\002[%s]\002: %s', lookup, definition)
 
-						n = n + #message
 						table.insert(out, message)
 					end
 				end
