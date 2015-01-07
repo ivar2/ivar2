@@ -58,7 +58,7 @@ end
 local handleXML = function(xml)
 	local error = xml:match('<error>([^<]+)</error>')
 	if(error) then
-		ivar2:Log('error', tring.format('anidb: %s', error))
+		ivar2:Log('error', string.format('anidb: %s', error))
 		return string.format('Error: %s', error)
 	end
 
