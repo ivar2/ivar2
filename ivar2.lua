@@ -24,9 +24,9 @@ local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 local irc = require 'irc'
-require'logging.console'
+local lconsole = require'logging.console'
 
-local log = logging.console()
+local log = lconsole()
 
 local ivar2 = {
 	ignores = {},
