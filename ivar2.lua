@@ -509,8 +509,8 @@ function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
 			npattern = channel.modulePatterns[moduleName] or npattern
 		end
 	end
-	local patt, n = pattern:gsub('%^%%p', '%^'..npattern)
-	return patt
+
+	return (pattern:gsub('%^%%p', '%^'..npattern))
 end
 
 function ivar2:Ignore(mask)
