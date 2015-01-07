@@ -1,5 +1,5 @@
 local ivar2 = ...
-local util = require'simplehttp'
+local util = require'util'
 
 return function(url, callback)
 	local x0 = ivar2.persist
