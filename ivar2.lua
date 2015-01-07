@@ -191,8 +191,8 @@ local events = {
 			function(self, source, _, argument)
 				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
 
-				local chanModes = self.channels[chan].modes
 				chan = chan:lower()
+				local chanModes = self.channels[chan].modes
 				for mode in modes:gmatch('[a-zA-Z]') do
 					table.insert(chanModes, mode)
 				end
