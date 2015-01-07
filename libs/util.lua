@@ -132,43 +132,13 @@ function util.split(str, delim)
 	return _accum_0
 end
 
-function util.translateWords(str, callback, fixCase, nickpat)
-	-- Usage: etc.translateWords(s ,callback) the callback can return new word, false to skip, or nil to keep the same word.
-	assert(str)
-	assert(callback, "Callback expected")
-
-	local prev = 1
-	local result = ""
-	local pat = "()([%w'%-]+)()"
-	if nickpat then
-		pat = "()([%w_'%-%{%}%[%]`%^]+)()"
+function util.translateWords(str, callback, nickpat)
+	local pat = "([%w'%-]+)"
+	if(nickpat) then
+		pat = "([%w_'%-%{%}%[%]`%^]+)"
 	end
 
-	for wpos, w, wposEnd in str:gmatch(pat) do
-		local wnew = callback(w)
-		if wnew ~= false then
-			result = result .. str:sub(prev, wpos - 1)
-			if wnew then
-				if fixCase then
-					if w == w:lower() then
-					elseif w == w:upper() then
-						wnew = wnew:upper()
-					elseif w:sub(1, 1) == w:sub(1, 1):upper() then
-						wnew = wnew:sub(1, 1):upper() .. wnew:sub(2)
-					end
-				end
-				result = result .. wnew
-			else
-				result = result .. w
-			end
-			if not wnew then
-				wnew = w
-			end
-		end
-		prev = wposEnd
-	end
-	result = result .. str:sub(prev)
-	return result
+	return (str:gsub(pat, callback))
 end
 
 function util.nonickalert(nicklist, str)
@@ -188,7 +158,7 @@ function util.nonickalert(nicklist, str)
 		if nlkeys[x:lower()] then
 			return x:sub(1, 1) .. zwsp .. x:sub(2)
 		end
-	end, nil, true)
+	end, true)
 end
 
 local utf8 = {
