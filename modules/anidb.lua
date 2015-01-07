@@ -1,4 +1,4 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
 local html2unicode = require'html'
@@ -161,7 +161,7 @@ local doLookup = function(say, source, aid)
 	else
 		ivar2:Log('info', string.format('anidb: Requesting information on %d.', aid))
 
-		simplehttp(
+		util.simplehttp(
 			('http://api.anidb.net:9001/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1'):format(aid),
 			function(data)
 				local xml = zlib.inflate() (data)
