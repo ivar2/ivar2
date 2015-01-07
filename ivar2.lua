@@ -595,8 +595,8 @@ function ivar2:LoadModule(moduleName)
 		ivar2 = self,
 		package = package,
 	}
-	local proxy = setmetatable(env, {__index = _G })
-	setfenv(moduleFile, proxy)
+	setmetatable(env, {__index = _G })
+	setfenv(moduleFile, env)
 
 	local success, message = pcall(moduleFile, self)
 	if(not success) then
@@ -656,7 +656,8 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 			self:Reply(destination, source, str, ...)
 		end
 	}
-	local proxy = setmetatable(env, {__index = _G })
+
+	setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
 	return pcall(func, self, source, destination, ...)
@@ -676,8 +677,8 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 		ivar2 = self,
 		package = package,
 	}
-	local proxy = setmetatable(env, {__index = _G })
-	setfenv(handler, proxy)
+	setmetatable(env, {__index = _G })
+	setfenv(handler, env)
 	self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
 
 	if(not events[event][handlerName]) then
