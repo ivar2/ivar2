@@ -34,12 +34,7 @@ end
 
 -- yr has it's own quirks for URL encoding
 local yrUrlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '_')
+	return ivar2.util.urlEncode(str):gsub('%+', '_')
 end
 
 local formatPeriod = function(period)
