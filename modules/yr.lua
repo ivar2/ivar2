@@ -230,16 +230,16 @@ local getUrl = function(self, source, destination, place)
 end
 
 local getPlace = function(self, source, destination, input)
-    if(not input or input == '') then
-        local place = self.persist['yr:place:'..source.nick]
-        if(not place) then
-            local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
-            self:Msg('privmsg', destination, source, 'Usage: '..patt)
-            return
-        else
-            input = place
-        end
-    end
+	if(not input or input == '') then
+		local place = self.persist['yr:place:'..source.nick]
+		if(not place) then
+			local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
+			self:Msg('privmsg', destination, source, 'Usage: '..patt)
+			return
+		else
+			input = place
+		end
+	end
 	input = ivar2.util.trim(input):lower()
 	local inputISO = utf2iso:iconv(input)
 
@@ -260,10 +260,10 @@ local getPlace = function(self, source, destination, input)
 
 	db:close()
 
-    if(place) then
-        place.name = ivar2.util.trim(place.name)
-        place.url = ivar2.util.trim(place.url)
-        return place
+	if(place) then
+		place.name = ivar2.util.trim(place.name)
+		place.url = ivar2.util.trim(place.url)
+		return place
 	else
 		local db = sql.open("cache/places.sql")
 		local selectStmt
@@ -299,7 +299,7 @@ local getPlace = function(self, source, destination, input)
 		if(place) then
 			return place
 		end
-    end
+	end
 end
 
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
