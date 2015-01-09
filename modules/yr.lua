@@ -32,6 +32,16 @@ local feelsLike = function(celsius, wind)
 	return math.floor(13.12 + 0.6215 * celsius - 11.37 * V^0.16 + 0.3965 * celsius * V^0.16 + .5)
 end
 
+-- yr has it's own quirks for URL encoding
+local yrUrlEncode = function(str)
+	return str:gsub(
+		'([^%w ])',
+		function (c)
+			return string.format ("%%%02X", string.byte(c))
+		end
+	):gsub(' ', '_')
+end
+
 local formatPeriod = function(period)
 	local out = {}
 
@@ -114,9 +124,9 @@ local function handleOutput(source, destination, seven, data, city, try)
 	if(not location and not try) then
 		ivar2.util.simplehttp(
 			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
-				ivar2.util.urlEncode(city.countryName),
-				ivar2.util.urlEncode(city.adminName1),
-				ivar2.util.urlEncode(city.toponymName),
+				yrUrlEncode(city.countryName),
+				yrUrlEncode(city.adminName1),
+				yrUrlEncode(city.toponymName),
 				city.geonameId
 			),
 			function(data)
@@ -321,9 +331,9 @@ return {
 
 							ivar2.util.simplehttp(
 								("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-									ivar2.util.urlEncode(city.countryName),
-									ivar2.util.urlEncode(city.adminName1),
-									ivar2.util.urlEncode(city.toponymName)
+									yrUrlEncode(city.countryName),
+									yrUrlEncode(city.adminName1),
+									yrUrlEncode(city.toponymName)
 								),
 								function(data)
 									handleOutput(source, destination, seven == '7', data, city)
