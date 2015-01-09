@@ -83,6 +83,7 @@ end
 
 local handleObservationOutput = function(self, source, destination, data)
 	local location = data:match("<location>(.-)</location>")
+	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 
 	local tabular = data:match("<observations>(.*)</observations>")
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
@@ -246,46 +247,18 @@ local getPlace = function(self, source, destination, input)
 
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
+
+	db:close()
+
     if(place) then
         place.name = ivar2.util.trim(place.name)
         place.url = ivar2.util.trim(place.url)
-    end
-
-	db:close()
-	return place
-end
-
-local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
-return {
-	PRIVMSG = {
-		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
-			input = ivar2.util.trim(input):lower()
-			local place = getPlace(self, source, destination, input)
-
-			if(place) then
-				ivar2.util.simplehttp(
-					getUrl(self, source, destination, place),
-					function(data)
-						handleOutput(source, destination, seven == '7', data)
-					end
-				)
-				return
-			end
-
-			local inputISO = utf2iso:iconv(input)
-
-			local country
-			local _
-			if(input:find(',', 1, true)) then
-				input, country = input:match('([^,]+),(.+)')
-				country = ivar2.util.trim(country):upper()
-				inputISO, _ = input:match('([^,]+),(.+)')
-			end
-
-			local db = sql.open("cache/places.sql")
-			local selectStmt
-			if(country) then
-				selectStmt = db:prepare([[
+        return place
+	else
+		local db = sql.open("cache/places.sql")
+		local selectStmt
+		if(country) then
+			selectStmt = db:prepare([[
 				SELECT
 					geonameid, name,countryCode, population
 				FROM places
@@ -294,10 +267,10 @@ return {
 					AND countryCode = ?
 				ORDER BY
 				population DESC
-				]])
-				selectStmt:bind_values(input, inputISO, country)
-			else
-				selectStmt = db:prepare([[
+			]])
+			selectStmt:bind_values(input, inputISO, country)
+		else
+			selectStmt = db:prepare([[
 				SELECT
 					geonameid, name,countryCode, population
 				FROM places
@@ -305,35 +278,60 @@ return {
 					(name = ? OR name = ?)
 				ORDER BY
 				population DESC
-				]])
-				selectStmt:bind_values(input, inputISO)
-			end
+			]])
+			selectStmt:bind_values(input, inputISO)
+		end
 
-			local iter, vm = selectStmt:nrows()
-			local place = iter(vm)
+		local iter, vm = selectStmt:nrows()
+		local place = iter(vm)
 
-			db:close()
+		db:close()
+		if(place) then
+			return place
+		end
+    end
+end
+
+local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
+
+return {
+	PRIVMSG = {
+		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
+			input = ivar2.util.trim(input):lower()
+			local place = getPlace(self, source, destination, input)
 
 			if(place) then
-				ivar2.util.simplehttp(
-					urlBase:format(place.geonameid),
-					function(data)
-						data = ivar2.util.json.decode(data)
-						local city = data.geonames[#data.geonames]
-						if(city.adminName1 == "") then city.adminName1 = "Other" end
+				if(place.url) then
+					ivar2.util.simplehttp(
+						place.url,
+						function(data)
+							handleOutput(source, destination, seven == '7', data)
+						end
+					)
+					return
+				end
 
-						ivar2.util.simplehttp(
-							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-								ivar2.util.urlEncode(city.countryName),
-								ivar2.util.urlEncode(city.adminName1),
-								ivar2.util.urlEncode(city.toponymName)
-							),
-							function(data)
-								handleOutput(source, destination, seven == '7', data, city)
-							end
-						)
-					end
-				)
+				if(place.geonameid) then
+					ivar2.util.simplehttp(
+						urlBase:format(place.geonameid),
+						function(data)
+							data = ivar2.util.json.decode(data)
+							local city = data.geonames[#data.geonames]
+							if(city.adminName1 == "") then city.adminName1 = "Other" end
+
+							ivar2.util.simplehttp(
+								("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
+									ivar2.util.urlEncode(city.countryName),
+									ivar2.util.urlEncode(city.adminName1),
+									ivar2.util.urlEncode(city.toponymName)
+								),
+								function(data)
+									handleOutput(source, destination, seven == '7', data, city)
+								end
+							)
+						end
+					)
+				end
 			else
 				ivar2:Msg('privmsg', destination, source, "Does that place even exist?")
 			end
