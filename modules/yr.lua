@@ -130,7 +130,7 @@ local function handleOutput(source, destination, seven, data, city, try)
 		)
 	end
 
-	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
+	local name = location:match("<name>([^<]+)</name>")
 	local country = location:match("<country>([^<]+)</country>")
 
 	local overview = data:match('<link id="overview" url="([^"]+)" />')
