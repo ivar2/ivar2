@@ -7,12 +7,7 @@ local iso2utf = iconv.new('utf-8', 'iso-8859-15')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
-local lower = string.lower
-
--- patch string.lower
-string.lower = function(s)
-	return lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
-end
+local lower = ivar2.util.utf8.lower
 
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
@@ -88,7 +83,7 @@ end
 
 local handleObservationOutput = function(self, source, destination, data)
 	local location = data:match("<location>(.-)</location>")
-	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
+	local name = lower(location:match("<name>([^<]+)</name>")):gsub("^%l", string.upper)
 
 	local tabular = data:match("<observations>(.*)</observations>")
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
@@ -235,7 +230,7 @@ local getPlace = function(self, source, destination, input)
 			input = place
 		end
 	end
-	input = ivar2.util.trim(input):lower()
+	input = lower(ivar2.util.trim(input))
 	local inputISO = utf2iso:iconv(input)
 
 	local country
@@ -302,7 +297,7 @@ local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=has
 return {
 	PRIVMSG = {
 		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
-			input = ivar2.util.trim(input):lower()
+			input = lower(ivar2.util.trim(input))
 			local place = getPlace(self, source, destination, input)
 
 			if(place) then
@@ -374,7 +369,7 @@ return {
 			reply('Location set to %s', location)
 		end,
 		['^%pset yrlang (.+)$'] = function(self, source, destination, lang)
-			lang = ivar2.util.trim(lang:lower())
+			lang = lower(ivar2.util.trim(lang))
 			local langISO = iso2utf:iconv(lang)
 			if(lang == 'nynorsk' or lang == 'bokmål' or lang == 'english' or langISO == 'bokmål') then
 				if(lang == 'nynorsk') then
