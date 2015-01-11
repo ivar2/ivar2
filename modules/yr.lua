@@ -368,17 +368,16 @@ return {
 			self.persist['yr:place:'..source.nick] = location
 			reply('Location set to %s', location)
 		end,
-		['^%pset yrlang (.+)$'] = function(self, source, destination, lang)
-			lang = lower(ivar2.util.trim(lang))
-			local langISO = iso2utf:iconv(lang)
-			if(lang == 'nynorsk' or lang == 'bokmål' or lang == 'english' or langISO == 'bokmål') then
-				if(lang == 'nynorsk') then
-					lang = 'stad'
-				elseif(lang == 'bokmål' or langISO == 'bokmål') then
-					lang = 'sted'
-				elseif(lang == 'english') then
-					lang = 'place'
-				end
+		['^%pset yrlang (.+)$'] = function(self, source, destination, input)
+			local languages = {
+				['nynorsk'] = 'stad',
+				['bokmål'] = 'sted',
+				['english'] = 'place',
+			}
+
+			input = lower(ivar2.util.trim(input))
+			local lang = languages[input]
+			if(lang) then
 				self.persist['yr:lang:'..source.nick] = lang
 				reply('I shall not forget. I am good at remembering things.')
 			else
