@@ -348,11 +348,9 @@ return {
 						say(handleObservationOutput(self, source, destination, data))
 					end
 				)
-				return
 			end
 		end,
 		['^%ptemp$'] = function(self, source, destination)
-
 			local place = getPlace(self, source, destination)
 
 			if(place) then
@@ -362,8 +360,6 @@ return {
 						say(handleObservationOutput(self, source, destination, data))
 					end
 				)
-				return
-
 			end
 		end,
 		['^%pset yr (.+)$'] = function(self, source, destination, location)
