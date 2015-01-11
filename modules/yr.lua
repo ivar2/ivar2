@@ -338,6 +338,7 @@ return {
 				ivar2:Msg('privmsg', destination, source, "Does that place even exist?")
 			end
 		end,
+
 		['^%ptemp (.+)$'] = function(self, source, destination, input)
 			local place = getPlace(self, source, destination, input)
 
@@ -350,6 +351,7 @@ return {
 				)
 			end
 		end,
+
 		['^%ptemp$'] = function(self, source, destination)
 			local place = getPlace(self, source, destination)
 
@@ -362,10 +364,12 @@ return {
 				)
 			end
 		end,
+
 		['^%pset yr (.+)$'] = function(self, source, destination, location)
 			self.persist['yr:place:'..source.nick] = location
 			reply('Location set to %s', location)
 		end,
+
 		['^%pset yrlang (.+)$'] = function(self, source, destination, input)
 			local languages = {
 				['nynorsk'] = 'stad',
