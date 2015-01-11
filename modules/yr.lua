@@ -251,8 +251,6 @@ local getPlace = function(self, source, destination, input)
 	db:close()
 
 	if(place) then
-		place.name = ivar2.util.trim(place.name)
-		place.url = ivar2.util.trim(place.url)
 		return place
 	else
 		local db = sql.open("cache/places.sql")
