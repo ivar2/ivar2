@@ -339,21 +339,8 @@ return {
 			end
 		end,
 
-		['^%ptemp (.+)$'] = function(self, source, destination, input)
+		['^%ptemp%s*(.*)$'] = function(self, source, destination, input)
 			local place = getPlace(self, source, destination, input)
-
-			if(place) then
-				ivar2.util.simplehttp(
-					getUrl(self, source, destination, place),
-					function(data)
-						say(handleObservationOutput(self, source, destination, data))
-					end
-				)
-			end
-		end,
-
-		['^%ptemp$'] = function(self, source, destination)
-			local place = getPlace(self, source, destination)
 
 			if(place) then
 				ivar2.util.simplehttp(
