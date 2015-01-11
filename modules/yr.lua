@@ -3,7 +3,6 @@ local sql = require'lsqlite3'
 local iconv = require'iconv'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
-local iso2utf = iconv.new('utf-8', 'iso-8859-15')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
@@ -82,9 +81,6 @@ local handleData = function(type, line)
 end
 
 local handleObservationOutput = function(self, source, destination, data)
-	local location = data:match("<location>(.-)</location>")
-	local name = lower(location:match("<name>([^<]+)</name>")):gsub("^%l", string.upper)
-
 	local tabular = data:match("<observations>(.*)</observations>")
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
 		local windDirection = handleData('windDirection', data)
@@ -255,11 +251,11 @@ local getPlaceNorway = function(place)
 	selectStmt:bind_values(place, placeISO)
 
 	local iter, vm = selectStmt:nrows()
-	local place = iter(vm)
+	local data = iter(vm)
 
 	db:close()
 
-	return place
+	return data
 end
 
 local apiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&username=haste'
