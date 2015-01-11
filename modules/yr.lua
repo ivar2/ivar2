@@ -210,6 +210,19 @@ local function handleOutput(source, destination, seven, data, city, try)
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
 
+local splitInput = function(input)
+	input = lower(ivar2.util.trim(input))
+
+	if(input:find(',', 1, true)) then
+		local place, country = input:match('([^,]+),(.+)')
+		country = ivar2.util.trim(country):upper()
+
+		return place, country
+	end
+
+	return input
+end
+
 local getUrl = function(self, source, destination, place)
 	local lang = self.persist['yr:lang:'..source.nick]
 	if(not lang) then
@@ -220,30 +233,22 @@ local getUrl = function(self, source, destination, place)
 end
 
 local getPlace = function(self, source, destination, input)
+	local place, country
 	if(not input or input == '') then
-		local place = self.persist['yr:place:'..source.nick]
+		place = self.persist['yr:place:'..source.nick]
 		if(not place) then
 			local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
 			self:Msg('privmsg', destination, source, 'Usage: '..patt)
 			return
-		else
-			input = place
 		end
-	end
-	input = lower(ivar2.util.trim(input))
-	local inputISO = utf2iso:iconv(input)
-
-	local country
-	local _
-	if(input:find(',', 1, true)) then
-		input, country = input:match('([^,]+),(.+)')
-		country = ivar2.util.trim(country):upper()
-		inputISO, _ = input:match('([^,]+),(.+)')
+	else
+		place, country = splitInput(input)
 	end
 
+	local placeISO = utf2iso:iconv(place)
 	local db = sql.open("cache/places-norway.sql")
 	local selectStmt = db:prepare("SELECT name, url FROM places WHERE name = ? OR name = ?")
-	selectStmt:bind_values(input, inputISO)
+	selectStmt:bind_values(place, placeISO)
 
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
@@ -266,7 +271,7 @@ local getPlace = function(self, source, destination, input)
 				ORDER BY
 				population DESC
 			]])
-			selectStmt:bind_values(input, inputISO, country)
+			selectStmt:bind_values(place, placeISO, country)
 		else
 			selectStmt = db:prepare([[
 				SELECT
@@ -277,7 +282,7 @@ local getPlace = function(self, source, destination, input)
 				ORDER BY
 				population DESC
 			]])
-			selectStmt:bind_values(input, inputISO)
+			selectStmt:bind_values(place, placeISO)
 		end
 
 		local iter, vm = selectStmt:nrows()
@@ -295,7 +300,6 @@ local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=has
 return {
 	PRIVMSG = {
 		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
-			input = lower(ivar2.util.trim(input))
 			local place = getPlace(self, source, destination, input)
 
 			if(place) then
