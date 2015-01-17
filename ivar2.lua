@@ -615,8 +615,7 @@ function ivar2:LoadModules()
 end
 
 function ivar2:CommandSplitter(command)
-	local first
-	local remainder = ''
+	local first, remainder
 
 	local pipeStart, pipeEnd = command:match('()%s*|%s*()')
 	if(pipeStart and pipeEnd) then
@@ -626,7 +625,7 @@ function ivar2:CommandSplitter(command)
 		first = command
 	end
 
-	if remainder ~= '' then
+	if(remainder) then
 		self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
 	end
 
@@ -644,7 +643,7 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 		else
 			local command, remainder = self:CommandSplitter(remainder)
 			local newline = command .. " " .. output
-			if remainder ~= '' then
+			if(remainder) then
 				newline = newline .. "|" .. remainder
 			end
 			self:DispatchCommand('PRIVMSG', newline, source, destination)
