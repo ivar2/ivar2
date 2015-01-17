@@ -5,7 +5,7 @@ require'logging.console'
 local log = logging.console()
 local loop = ev.Loop.default
 
-local server = nil
+local server
 
 local webserver = {}
 
@@ -27,7 +27,7 @@ local on_data = function(req, res, data)
 end
 
 local on_request = function(server, req, res)
-	local found = false
+	local found
 	for pattern, handler in pairs(handlers) do
 		if req.url:match(pattern) then
 			log:info('webserver> request for pattern :%s', pattern)
