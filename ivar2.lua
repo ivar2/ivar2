@@ -473,8 +473,7 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 				end
 
 				if(not success and message) then
-					local output = string.format('Unable to execute handler %s from %s: %s', pattern, moduleName, message)
-					self:Log('error', output)
+					self:Log('error', 'Unable to execute handler %s from %s: %s', pattern, moduleName, message)
 				end
 			end
 		end
