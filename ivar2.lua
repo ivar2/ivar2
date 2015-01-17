@@ -461,18 +461,13 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
 					-- Check command for filters, aka | operator
 					-- Ex: !joke|!translate en no|!gay
-					local cutarg
-					local remainder = false
-
-					local pipeStart, pipeEnd = argument:match('()%s*|%s*()')
-					if(pipeStart and pipeEnd) then
-						cutarg = argument:sub(0,pipeStart-1)
-						remainder = argument:sub(pipeEnd)
-					else
-						cutarg = argument
-					end
+					local cutarg, remainder = self:CommandSplitter(argument)
 
 					if(cutarg:match(channelPattern)) then
+						if(remainder) then
+							self:Log('debug', 'Splitting command: %s into %s and %s', command, cutarg, remainder)
+						end
+
 						success, message = self:ModuleCall(callback, source, destination, remainder, cutarg:match(channelPattern))
 					end
 				end
@@ -625,10 +620,6 @@ function ivar2:CommandSplitter(command)
 		first = command
 	end
 
-	if(remainder) then
-		self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
-	end
-
 	return first, remainder
 end
 
@@ -646,6 +637,7 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 			if(remainder) then
 				newline = newline .. "|" .. remainder
 			end
+
 			self:DispatchCommand('PRIVMSG', newline, source, destination)
 		end
 	end
