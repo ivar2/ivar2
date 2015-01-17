@@ -14,7 +14,6 @@ local handlers = {
 		-- return 404 Not found error
 		res:set_status(404)
 		res:send()
-		return
 	end,
 }
 
@@ -42,7 +41,6 @@ local on_request = function(server, req, res)
 		req.on_finished = function(req, res)
 			res:set_status(404)
 			res:send()
-			return
 		end
 	end
 	res.on_response_sent = on_response_sent
