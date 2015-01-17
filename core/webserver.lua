@@ -64,6 +64,8 @@ webserver.start = function(host, port)
 end
 
 webserver.stop = function()
+	if(not server) then return end
+
 	log:info('webserver> stopping webserver.')
 	server.acceptors[1]:close()
 end
