@@ -15953,7 +15953,7 @@ return {
    [2] = "De gåtfulla guldstäderna",
    [3] = "Die geheimnisvollen Städte des Goldes",
    [4] = "Esteban",
-   [5] = "Les mystérieuses cités d`or",
+   [5] = "Les Mystérieuses Cités d`or",
    [6] = "Tajemnicze złote miasta",
    [7] = "The Mysterious Cities of Gold",
    [8] = "Тайнствените златни градове",
@@ -41493,9 +41493,9 @@ return {
   ["main"] = "Paradise Kiss",
   ["official"] = {
    [1] = "Paradise Kiss",
-   [2] = "قبلة الجنة",
-   [3] = "พาราไดซ์ คิส",
-   [4] = "パラダイス・キス",
+   [2] = "Paradise kiss",
+   [3] = "قبلة الجنة",
+   [4] = "พาราไดซ์ คิส",
    },
   ["short"] = {
    [1] = "PKiss",
@@ -41507,7 +41507,8 @@ return {
    [1] = "Cennet Öpücüğü",
    [2] = "Парадайз Кисс",
    [3] = "Райський цілунок",
-   [4] = "天堂之吻",
+   [4] = "パラダイス・キス",
+   [5] = "天堂之吻",
    },
   },
  [3146] = {
@@ -48727,8 +48728,9 @@ return {
    [2] = "Tsubasa Chronicle - Saison 2",
    [3] = "Tsubasa Chronicle - Sezon 2",
    [4] = "Tsubasa, Las Crónicas de Sakura 2",
-   [5] = "สึบาสะ สงครามเทพข้ามมิติ ปี 2",
-   [6] = "ツバサ・クロニクル 第2シリーズ",
+   [5] = "Tsubasa: RESERVoir CHRoNiCLE (2)",
+   [6] = "สึบาสะ สงครามเทพข้ามมิติ ปี 2",
+   [7] = "ツバサ・クロニクル 第2シリーズ",
    },
   ["short"] = {
    [1] = "Tsubasa S2",
@@ -53712,11 +53714,12 @@ return {
   ["main"] = "Code Geass: Hangyaku no Lelouch",
   ["official"] = {
    [1] = "Code Geass",
-   [2] = "Code Geass 反叛的鲁鲁修",
-   [3] = "Code Geass: Lelouch of the Rebellion",
-   [4] = "โค้ด กีอัส ภาคการปฏิวัติของลูลูช",
-   [5] = "コードギアス 反逆のルルーシュ",
-   [6] = "코드기어스 반역의 를르슈",
+   [2] = "Code Geass 反叛的魯路修",
+   [3] = "Code Geass 反叛的鲁鲁修",
+   [4] = "Code Geass: Lelouch of the Rebellion",
+   [5] = "โค้ด กีอัส ภาคการปฏิวัติของลูลูช",
+   [6] = "コードギアス 反逆のルルーシュ",
+   [7] = "코드기어스 반역의 를르슈",
    },
   ["short"] = {
    [1] = "CodeGeass",
@@ -53997,7 +54000,8 @@ return {
    [2] = "D.Gray-man",
    [3] = "Ди Грей Мен",
    [4] = "ดีเกรย์แมน",
-   [5] = "디그레이맨",
+   [5] = "驅魔少年",
+   [6] = "디그레이맨",
    },
   ["short"] = {
    [1] = "D.g",
@@ -69482,7 +69486,8 @@ return {
  [6300] = {
   ["main"] = "Manga Hajimete Monogatari",
   ["official"] = {
-   [1] = "まんがはじめて物語",
+   [1] = "البدايات المضيئة",
+   [2] = "まんがはじめて物語",
    },
   ["short"] = {
    },
@@ -72455,6 +72460,7 @@ return {
   ["main"] = "Hanamaru Youchien",
   ["official"] = {
    [1] = "はなまる幼稚園",
+   [2] = "花圈圈幼稚園",
    },
   ["short"] = {
    [1] = "Hanamaru",
@@ -72938,7 +72944,7 @@ return {
    },
   },
  [6699] = {
-  ["main"] = "Nihon-ichi Momotarou",
+  ["main"] = "Nihon`ichi Momotarou",
   ["official"] = {
    [1] = "日本一桃太郎",
    },
@@ -80392,7 +80398,8 @@ return {
   ["main"] = "Hyakka Ryouran: Samurai Girls",
   ["official"] = {
    [1] = "Samurai Girls",
-   [2] = "百花繚乱 サムライガールズ",
+   [2] = "فتيات الساموراي",
+   [3] = "百花繚乱 サムライガールズ",
    },
   ["short"] = {
    [1] = "hyakka ryouran",
@@ -85179,6 +85186,7 @@ return {
   ["syn"] = {
    [1] = "Princess Iron Fan",
    [2] = "Tiě shàn gōngzhǔ",
+   [3] = "西遊記 鉄扇公主の巻",
    },
   },
  [7928] = {
@@ -85295,6 +85303,7 @@ return {
   ["official"] = {
    [1] = "The Mystic Archives of Dantalian",
    [2] = "ダンタリアンの書架",
+   [3] = "丹特麗安的書架",
    },
   ["short"] = {
    },
@@ -86870,6 +86879,7 @@ return {
   ["official"] = {
    [1] = "Carnival Phantasm",
    [2] = "幻想嘉年华",
+   [3] = "幻想嘉年華",
    },
   ["short"] = {
    },
@@ -89425,7 +89435,8 @@ return {
  [8351] = {
   ["main"] = "Oretachi ni Tsubasa wa Nai: Under the Innocent Sky. - Hada-iro Ritsu Kyuu-wari Zou",
   ["official"] = {
-   [1] = "俺たちに翼はない -under the innocent sky. 肌色率九割増",
+   [1] = "We Without Wings: More than 90% Flesh-Toned",
+   [2] = "俺たちに翼はない -under the innocent sky. 肌色率九割増",
    },
   ["short"] = {
    },
@@ -92598,6 +92609,7 @@ return {
    [4] = "هنر شمشیر زنی آنلاین",
    [5] = "ソードアート・オンライン",
    [6] = "刀剑神域",
+   [7] = "刀劍神域",
    },
   ["short"] = {
    [1] = "SAO",
@@ -95627,12 +95639,12 @@ return {
  [9007] = {
   ["main"] = "Satsujinkyou Jidai",
   ["official"] = {
-   [1] = "殺人狂時代",
+   [1] = "Au Fou!",
+   [2] = "殺人狂時代",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Au Fou!",
    },
   },
  [9008] = {
@@ -96639,14 +96651,14 @@ return {
  [9125] = {
   ["main"] = "Hi no Youjin",
   ["official"] = {
-   [1] = "火要鎮",
+   [1] = "Combustible",
+   [2] = "火要鎮",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Combustible",
-   [2] = "Short Peace: Hi no Youjin",
-   [3] = "ショート・ピース 火要鎮",
+   [1] = "Short Peace: Hi no Youjin",
+   [2] = "ショート・ピース 火要鎮",
    },
   },
  [9126] = {
@@ -100003,6 +100015,7 @@ return {
    [2] = "Toaru Kagaku no Choudenjihou S",
    [3] = "railgun s",
    [4] = "とある科学の超電磁砲S",
+   [5] = "某科学的超电磁炮 S",
    },
   },
  [9485] = {
@@ -100878,14 +100891,14 @@ return {
  [9569] = {
   ["main"] = "Tsukumo",
   ["official"] = {
-   [1] = "九十九",
+   [1] = "Possessions",
+   [2] = "九十九",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Possessions",
-   [2] = "Short Peace: Tsukumo",
-   [3] = "ショート・ピース 九十九",
+   [1] = "Short Peace: Tsukumo",
+   [2] = "ショート・ピース 九十九",
    },
   },
  [9570] = {
@@ -101883,6 +101896,7 @@ return {
   ["main"] = "Kingdom (2013)",
   ["official"] = {
    [1] = "キングダム (2013)",
+   [2] = "王者天下",
    },
   ["short"] = {
    },
@@ -104310,6 +104324,7 @@ return {
    },
   ["syn"] = {
    [1] = "Valvrave the Liberator (2013)",
+   [2] = "Valvrave the Liberator 2",
    },
   },
  [9950] = {
@@ -106222,6 +106237,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sorciere de gre, pucelle de force",
    },
   },
  [10179] = {
@@ -106465,8 +106481,9 @@ return {
  [10206] = {
   ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders",
   ["official"] = {
-   [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders",
-   [2] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
+   [1] = "JOJO 的奇妙冒險 星塵鬥士",
+   [2] = "JoJo`s Bizarre Adventure: Stardust Crusaders",
+   [3] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
    },
   ["short"] = {
    [1] = "JJBA 2014",
@@ -106678,13 +106695,14 @@ return {
    },
   },
  [10231] = {
-  ["main"] = "Oppai Infinity! The Animation",
+  ["main"] = "Oppa Infinity! The Animation",
   ["official"] = {
    [1] = "おっぱインフィニティ∞! THE ANIMATION",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Oppai Infinity",
    },
   },
  [10232] = {
@@ -107263,7 +107281,8 @@ return {
  [10298] = {
   ["main"] = "Sengoku Musou SP: Sanada no Shou",
   ["official"] = {
-   [1] = "戦国無双SP 真田の章",
+   [1] = "Samurai Warriors: Legend of the Sanada",
+   [2] = "戦国無双SP 真田の章",
    },
   ["short"] = {
    },
@@ -108361,14 +108380,14 @@ return {
  [10438] = {
   ["main"] = "Seiken Tsukai no World Break",
   ["official"] = {
-   [1] = "聖剣使いの禁呪詠唱",
+   [1] = "World Break: Aria of Curse for a Holy Swordsman",
+   [2] = "聖剣使いの禁呪詠唱",
    },
   ["short"] = {
    [1] = "warubure",
    },
   ["syn"] = {
    [1] = "Seiken Tsukai no Kinju Eishou",
-   [2] = "World Break: Aria of Curse for a Holy Swordsman",
    },
   },
  [10439] = {
@@ -109520,6 +109539,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "THE IDOLM@STER CINDERELLA GIRLS",
    },
   },
  [10586] = {
@@ -109647,6 +109667,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Antimagic Academy 35th Test Platoon",
    },
   },
  [10599] = {
@@ -109746,9 +109767,9 @@ return {
    },
   },
  [10611] = {
-  ["main"] = "Sarusuberi",
+  ["main"] = "Sarusuberi: Miss Hokusai",
   ["official"] = {
-   [1] = "百日紅",
+   [1] = "百日紅~Miss HOKUSAI~",
    },
   ["short"] = {
    },
@@ -110483,8 +110504,9 @@ return {
  [10702] = {
   ["main"] = "Ansatsu Kyoushitsu (2015)",
   ["official"] = {
-   [1] = "暗殺教室",
-   [2] = "暗殺教室 (2015)",
+   [1] = "暗杀教室",
+   [2] = "暗殺教室",
+   [3] = "暗殺教室 (2015)",
    },
   ["short"] = {
    },
@@ -110725,9 +110747,9 @@ return {
    },
   },
  [10729] = {
-  ["main"] = "Ore ga Ojou-sama Gakkou ni \"Shomin Sample\" Toshite Rachirareta Ken",
+  ["main"] = "Ore ga Ojou-sama Gakkou ni \"Shomin Sample\" Toshite Gets-sareta Ken",
   ["official"] = {
-   [1] = "俺がお嬢様学校に「庶民サンプル」として拉致られた件",
+   [1] = "俺がお嬢様学校に「庶民サンプル」としてゲッツされた件",
    },
   ["short"] = {
    },
@@ -111169,6 +111191,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Nutcracker (2014)",
    },
   },
  [10778] = {
@@ -111939,8 +111962,9 @@ return {
  [10875] = {
   ["main"] = "Tokyo Ghoul A",
   ["official"] = {
-   [1] = "√A توکیو غول",
-   [2] = "東京喰種√A",
+   [1] = "Tokyo Ghoul √ A",
+   [2] = "√A توکیو غول",
+   [3] = "東京喰種√A",
    },
   ["short"] = {
    },
@@ -112134,6 +112158,7 @@ return {
    [1] = "Japan Animator Expo Short Films",
    [2] = "Japan Animator`s Exhibition",
    [3] = "Nihon Animator Mihonichi",
+   [4] = "The Japan Animator Expo",
    },
   },
  [10897] = {
@@ -112492,7 +112517,8 @@ return {
  [10936] = {
   ["main"] = "Kyoukai no Rinne",
   ["official"] = {
-   [1] = "境界のRINNE",
+   [1] = "Rinne",
+   [2] = "境界のRINNE",
    },
   ["short"] = {
    },
@@ -112709,8 +112735,10 @@ return {
    [1] = "心が叫びたがってるんだ.",
    },
   ["short"] = {
+   [1] = "kokosake",
    },
   ["syn"] = {
+   [1] = "My Heart Wants to Shout",
    },
   },
  [10960] = {
@@ -113001,13 +113029,14 @@ return {
    },
   },
  [10989] = {
-  ["main"] = "i-City",
+  ["main"] = "I-Cheng",
   ["official"] = {
-   [1] = "I-城 (限量版) (香港版)",
+   [1] = "I-城",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I-City",
    },
   },
  [10990] = {
@@ -113352,6 +113381,145 @@ return {
   ["official"] = {
    [1] = "Horror News",
    [2] = "恐怖新聞 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11032] = {
+  ["main"] = "Duel Masters VSR",
+  ["official"] = {
+   [1] = "デュエル・マスターズ VSR",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11033] = {
+  ["main"] = "Ikoku na Retro",
+  ["official"] = {
+   [1] = "異国なレトロ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11034] = {
+  ["main"] = "Shoujo Kyouiku",
+  ["official"] = {
+   [1] = "少女教育",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11035] = {
+  ["main"] = "Ienai Koto The Animation",
+  ["official"] = {
+   [1] = "イエナイコト THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11036] = {
+  ["main"] = "Yodaka no Hoshi",
+  ["official"] = {
+   [1] = "よだかの星",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11037] = {
+  ["main"] = "Nar Doma",
+  ["official"] = {
+   [1] = "ナルどマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11038] = {
+  ["main"] = "Kino no Tabi: The Beautiful World - Tou no Kuni",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11039] = {
+  ["main"] = "Taboo-Tattoo",
+  ["official"] = {
+   [1] = "タブー・タトゥー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11040] = {
+  ["main"] = "Gekijouban Haikyuu!!",
+  ["official"] = {
+   [1] = "劇場版ハイキュー!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11041] = {
+  ["main"] = "Sinbad: Soratobu Hime to Himitsu no Shima",
+  ["official"] = {
+   [1] = "シンドバッド 空とぶ姫と秘密の島",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11044] = {
+  ["main"] = "Boku no Yayoi-san",
+  ["official"] = {
+   [1] = "ボクの弥生さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11045] = {
+  ["main"] = "Namaiki ~Kissuisou e Youkoso!~ The Animation",
+  ["official"] = {
+   [1] = "なまイキ ～生粋荘へようこそ!～ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11046] = {
+  ["main"] = "3Ping Lovers! Ippu Nisai no Sekai e Youkoso The Animation",
+  ["official"] = {
+   [1] = "3PingLovers!☆一夫二妻の世界へようこそ♪ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11047] = {
+  ["main"] = "Honoo no Haramase Paidol My Star Gakuen Z The Animation",
+  ["official"] = {
+   [1] = "炎の孕ませ乳(パイ)ドルマイ★スター学園Z THE ANIMATION",
    },
   ["short"] = {
    },
