@@ -11525,7 +11525,7 @@ return {
    },
   },
  [699] = {
-  ["main"] = "Sexy Commando Gaiden: Sugoiyo!! Masaru-san",
+  ["main"] = "Sexy Commando Gaiden: Sugoi yo!! Masaru-san",
   ["official"] = {
    [1] = "セクシーコマンドー外伝 すごいよ!! マサルさん",
    },
@@ -13485,8 +13485,9 @@ return {
  [834] = {
   ["main"] = "Green Green (2003)",
   ["official"] = {
-   [1] = "Жаркое лето",
-   [2] = "グリーングリーン (2003)",
+   [1] = "Green Green (2003)",
+   [2] = "Жаркое лето",
+   [3] = "グリーングリーン (2003)",
    },
   ["short"] = {
    [1] = "GGTV",
@@ -45298,18 +45299,6 @@ return {
    [1] = "Gangrape School",
    },
   },
- [3526] = {
-  ["main"] = "Sentou Yousei Yukikaze FAF Koukuu Senshi",
-  ["official"] = {
-   [1] = "戦闘妖精雪風FAF航空戦史",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "Fairy Air Force at War",
-   [2] = "Sento Yosei Yukikaze FAF Koku Senshi",
-   },
-  },
  [3527] = {
   ["main"] = "Sora no Iro, Mizu no Iro",
   ["official"] = {
@@ -53794,7 +53783,8 @@ return {
  [4526] = {
   ["main"] = "Top o Nerae! (2006)",
   ["official"] = {
-   [1] = "トップをねらえ! (2006)",
+   [1] = "Gunbuster the Movie",
+   [2] = "トップをねらえ! (2006)",
    },
   ["short"] = {
    },
@@ -53809,7 +53799,8 @@ return {
  [4527] = {
   ["main"] = "Top o Nerae 2! Gekijouban",
   ["official"] = {
-   [1] = "トップをねらえ2! 劇場版",
+   [1] = "Diebuster the Movie",
+   [2] = "トップをねらえ2! 劇場版",
    },
   ["short"] = {
    },
@@ -54004,7 +53995,7 @@ return {
    [6] = "디그레이맨",
    },
   ["short"] = {
-   [1] = "D.g",
+   [1] = "D.G",
    [2] = "DGM",
    },
   ["syn"] = {
@@ -78537,16 +78528,16 @@ return {
  [7249] = {
   ["main"] = "Eve no Jikan Gekijouban",
   ["official"] = {
-   [1] = "فیلم زمان عصرگاهی",
-   [2] = "イヴの時間 劇場版",
-   [3] = "夏娃的时间 剧场版",
+   [1] = "Time of Eve: The Movie",
+   [2] = "فیلم زمان عصرگاهی",
+   [3] = "イヴの時間 劇場版",
+   [4] = "夏娃的时间 剧场版",
    },
   ["short"] = {
    [1] = "EnJ Movie",
    },
   ["syn"] = {
    [1] = "Evos metas Filmas",
-   [2] = "Time Of Eve: The Movie",
    },
   },
  [7250] = {
@@ -100423,9 +100414,10 @@ return {
  [9519] = {
   ["main"] = "Mondaiji-tachi ga Isekai kara Kuru Sou Desu yo? (2013)",
   ["official"] = {
-   [1] = "問題児たちが異世界から来るそうですよ? (2013)",
-   [2] = "问题儿童都来自异世界？ (2013)",
-   [3] = "문제아들이 이세계에 온다는 모양인데요?",
+   [1] = "Problem Children Are Coming from Another World, Aren`t They?: The Hot Spring Fun Trip",
+   [2] = "問題児たちが異世界から来るそうですよ? (2013)",
+   [3] = "问题儿童都来自异世界？ (2013)",
+   [4] = "문제아들이 이세계에 온다는 모양인데요?",
    },
   ["short"] = {
    },
@@ -104926,8 +104918,9 @@ return {
   ["main"] = "Sword Art Online: Extra Edition",
   ["official"] = {
    [1] = "Sword Art Online Extra Edition",
-   [2] = "هنر شمشیرزنی آنلاین: ویرایش اضافی",
-   [3] = "ソードアート・オンライン Extra Edition",
+   [2] = "Sword Art Online: Extra Edition",
+   [3] = "هنر شمشیرزنی آنلاین: ویرایش اضافی",
+   [4] = "ソードアート・オンライン Extra Edition",
    },
   ["short"] = {
    [1] = "SAOEE",
@@ -107436,6 +107429,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pokemon: Movie 17",
    },
   },
  [10319] = {
@@ -107446,6 +107440,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pokemon: Movie 17 Short",
    },
   },
  [10320] = {
@@ -109121,8 +109116,8 @@ return {
  [10538] = {
   ["main"] = "Saenai Heroine no Sodatekata",
   ["official"] = {
-   [1] = "冴えない彼女の育てかた",
-   [2] = "路人女主的养成方法",
+   [1] = "不起眼女主角培育法",
+   [2] = "冴えない彼女の育てかた",
    },
   ["short"] = {
    [1] = "Saekano",
@@ -110674,9 +110669,9 @@ return {
    },
   },
  [10720] = {
-  ["main"] = "Gekijouban Love Live!",
+  ["main"] = "Love Live! The School Idol Movie",
   ["official"] = {
-   [1] = "劇場版 ラブライブ!",
+   [1] = "ラブライブ! The School Idol Movie",
    },
   ["short"] = {
    },
@@ -111031,9 +111026,10 @@ return {
    [4] = "[UBW] 2015",
    },
   ["syn"] = {
-   [1] = "Fate Stay Night 2015",
-   [2] = "UBWTV2",
-   [3] = "フェイト/ステイナイト (2015)",
+   [1] = "Fate Stay Night - Unlimited Blade Works S2",
+   [2] = "Fate Stay Night 2015",
+   [3] = "UBWTV2",
+   [4] = "フェイト/ステイナイト (2015)",
    },
   },
  [10761] = {
@@ -111704,7 +111700,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "アルドノア・ゼロ (2015)",
+   [1] = "Aldnoah.Zero S2",
+   [2] = "アルドノア・ゼロ (2015)",
    },
   },
  [10847] = {
@@ -111771,6 +111768,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "プラスティック・メモリーズ",
    },
   },
  [10855] = {
@@ -112804,14 +112802,15 @@ return {
    },
   },
  [10966] = {
-  ["main"] = "Pokemon the Movie XY 2015",
+  ["main"] = "Pokemon the Movie XY: Ring no Choumajin Hoopa",
   ["official"] = {
-   [1] = "Pokemon the movie XY 2015",
+   [1] = "ポケモン・ザ・ムービーXY 光輪[リング]の超魔神 フーパ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ポケモン・ザ・ムービーXY",
+   [1] = "Pokemon: Movie 18",
+   [2] = "ポケモン・ザ・ムービーXY",
    },
   },
  [10967] = {
@@ -113447,15 +113446,6 @@ return {
   ["syn"] = {
    },
   },
- [11038] = {
-  ["main"] = "Kino no Tabi: The Beautiful World - Tou no Kuni",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [11039] = {
   ["main"] = "Taboo-Tattoo",
   ["official"] = {
@@ -113497,9 +113487,9 @@ return {
    },
   },
  [11045] = {
-  ["main"] = "Namaiki ~Kissuisou e Youkoso!~ The Animation",
+  ["main"] = "Namaiki: Kissuisou e Youkoso! The Animation",
   ["official"] = {
-   [1] = "なまイキ ～生粋荘へようこそ!～ THE ANIMATION",
+   [1] = "なまイキ ~生粋荘へようこそ!~ THE ANIMATION",
    },
   ["short"] = {
    },
@@ -113524,6 +113514,37 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [11048] = {
+  ["main"] = "Jitsu wa Watashi wa",
+  ["official"] = {
+   [1] = "実は私は",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11049] = {
+  ["main"] = "Gochuumon wa Usagi Desuka? 2",
+  ["official"] = {
+   [1] = "ご注文はうさぎですか? 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11050] = {
+  ["main"] = "Pikachu to Pokemon Ongakutai",
+  ["official"] = {
+   [1] = "ピカチュウとポケモンおんがくたい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Pokemon: Movie 18 Short",
    },
   },
 }
