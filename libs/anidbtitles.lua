@@ -9506,7 +9506,8 @@ return {
    [7] = "デジモンアドベンチャー02",
    },
   ["short"] = {
-   [1] = "digimon2",
+   [1] = "DA02",
+   [2] = "digimon2",
    },
   ["syn"] = {
    [1] = "Digimon Adventure Zero Two",
@@ -15669,8 +15670,9 @@ return {
    [12] = "Pokémon: den första filmen - Mewtvå slår tillbaka",
    [13] = "Pokémon: İlk Film",
    [14] = "Покемон Филмът",
-   [15] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
-   [16] = "劇場版ポケットモンスター ミュウツーの逆襲",
+   [15] = "Покемон: Фильм первый — Мьюту наносит ответный удар",
+   [16] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
+   [17] = "劇場版ポケットモンスター ミュウツーの逆襲",
    },
   ["short"] = {
    },
@@ -57722,9 +57724,10 @@ return {
    [1] = "Monkey King Conquers the Demon",
    [2] = "Saiyuuki Songokuu Tai Hakkotsu Fujin",
    [3] = "Sun Ukun: The Monkey King Conquers the Demon",
-   [4] = "The Monkey King and the Skeleton Ghost",
-   [5] = "Сунь Укун: Царь обезьян побеждает демонов",
-   [6] = "西遊記 孫悟空対白骨婦人",
+   [4] = "The Golden Monkey Conquers the Evil",
+   [5] = "The Monkey King and the Skeleton Ghost",
+   [6] = "Сунь Укун: Царь обезьян побеждает демонов",
+   [7] = "西遊記 孫悟空対白骨婦人",
    },
   },
  [4909] = {
@@ -63076,8 +63079,9 @@ return {
  [5503] = {
   ["main"] = "Druaga no Tou: the Aegis of Uruk",
   ["official"] = {
-   [1] = "The Tower of Druaga: The Aegis of Uruk",
-   [2] = "ドルアーガの塔 ~the Aegis of URUK~",
+   [1] = "La Tour de Druaga",
+   [2] = "The Tower of Druaga: The Aegis of Uruk",
+   [3] = "ドルアーガの塔 ~the Aegis of URUK~",
    },
   ["short"] = {
    [1] = "druaga",
@@ -63969,6 +63973,7 @@ return {
    [1] = "Yes!プリキュア5 GoGo!",
    },
   ["short"] = {
+   [1] = "precure5",
    },
   ["syn"] = {
    },
@@ -70898,8 +70903,9 @@ return {
   ["official"] = {
    [1] = "Les Chevaliers du Zodiaque - The Lost Canvas",
    [2] = "Os Cavaleiros do Zodíaco: The Lost Canvas - A Saga de Hades",
-   [3] = "Saint Seiya The Lost Canvas",
-   [4] = "聖闘士星矢 THE LOST CANVAS 冥王神話",
+   [3] = "Saint Seiya - A tela perdida",
+   [4] = "Saint Seiya The Lost Canvas",
+   [5] = "聖闘士星矢 THE LOST CANVAS 冥王神話",
    },
   ["short"] = {
    [1] = "loscan",
@@ -74005,7 +74011,8 @@ return {
    [2] = "Pikachu`s Vacation",
    [3] = "Pokémon, az első mozifilm: Pikachu vakációja",
    [4] = "Wakacje Pikachu",
-   [5] = "ピカチュウのなつやすみ",
+   [5] = "Каникулы Пикачу",
+   [6] = "ピカチュウのなつやすみ",
    },
   ["short"] = {
    },
@@ -78956,6 +78963,7 @@ return {
   ["official"] = {
    [1] = "B Gata H Kei: Yamada`s First Time",
    [2] = "B型H系",
+   [3] = "Yamada ma première fois",
    },
   ["short"] = {
    [1] = "BGHK",
@@ -97886,8 +97894,9 @@ return {
    },
   ["syn"] = {
    [1] = "Ixion Saga DT",
-   [2] = "Сага за Иксион: Пространствен Преход",
-   [3] = "イクシオン サーガ DT",
+   [2] = "Ixion Saga Dimensional Transfer",
+   [3] = "Сага за Иксион: Пространствен Преход",
+   [4] = "イクシオン サーガ DT",
    },
   },
  [9270] = {
@@ -104895,12 +104904,12 @@ return {
   ["main"] = "Donten ni Warau",
   ["official"] = {
    [1] = "Laughing Under the Clouds",
-   [2] = "Смях под облаците",
-   [3] = "曇天に笑う",
+   [2] = "曇天に笑う",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Смях под облаците",
    },
   },
  [10021] = {
@@ -105250,6 +105259,7 @@ return {
    },
   ["syn"] = {
    [1] = "PP2",
+   [2] = "Психо-паспорт 2",
    },
   },
  [10066] = {
@@ -107071,7 +107081,7 @@ return {
  [10278] = {
   ["main"] = "Garo: Honoo no Kokuin",
   ["official"] = {
-   [1] = "牙狼〈GARO〉-炎の刻印-",
+   [1] = "牙狼[GARO]-炎の刻印-",
    },
   ["short"] = {
    [1] = "garo",
@@ -109425,7 +109435,7 @@ return {
  [10574] = {
   ["main"] = "Go-Go Tamagotchi!",
   ["official"] = {
-   [1] = "GO‐GO たまごっち!",
+   [1] = "GO-GO たまごっち!",
    },
   ["short"] = {
    },
@@ -109443,13 +109453,15 @@ return {
    },
   },
  [10576] = {
-  ["main"] = "D.backup",
+  ["main"] = "Glass no Hana to Kowasu Sekai",
   ["official"] = {
-   [1] = "D.backup",
+   [1] = "ガラスの花と壊す世界",
    },
   ["short"] = {
+   [1] = "garakowa",
    },
   ["syn"] = {
+   [1] = "Vitreous Flower Destroy the World",
    },
   },
  [10577] = {
@@ -111958,7 +111970,7 @@ return {
    },
   },
  [10875] = {
-  ["main"] = "Tokyo Ghoul A",
+  ["main"] = "Tokyo Ghoul Root A",
   ["official"] = {
    [1] = "Tokyo Ghoul √ A",
    [2] = "√A توکیو غول",
@@ -111968,8 +111980,7 @@ return {
    },
   ["syn"] = {
    [1] = "A توکیو غول ریشه",
-   [2] = "Tokyo Ghoul Root A",
-   [3] = "Tokyo Ghoul √A",
+   [2] = "Tokyo Ghoul √A",
    },
   },
  [10876] = {
@@ -112227,7 +112238,8 @@ return {
    [1] = "Go! プリンセスプリキュア",
    },
   ["short"] = {
-   [1] = "precure12",
+   [1] = "gopri",
+   [2] = "precure12",
    },
   ["syn"] = {
    },
@@ -112597,7 +112609,8 @@ return {
   ["main"] = "Pac-World",
   ["official"] = {
    [1] = "Pac-Man and the Ghostly Adventures",
-   [2] = "パックワールド",
+   [2] = "Pac-Man i upiorne przygody",
+   [3] = "パックワールド",
    },
   ["short"] = {
    },
@@ -113434,6 +113447,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Nighthawk Star",
    },
   },
  [11037] = {
@@ -113545,6 +113559,118 @@ return {
    },
   ["syn"] = {
    [1] = "Pokemon: Movie 18 Short",
+   },
+  },
+ [11053] = {
+  ["main"] = "Ushio to Tora (2015)",
+  ["official"] = {
+   [1] = "うしおととら (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11054] = {
+  ["main"] = "Anata o Zutto Aishiteru",
+  ["official"] = {
+   [1] = "あなたをずっとあいしてる",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11055] = {
+  ["main"] = "Bar Kiraware Yasai",
+  ["official"] = {
+   [1] = "BAR 嫌われ野菜",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11056] = {
+  ["main"] = "Saint Seiya: Soul of Gold",
+  ["official"] = {
+   [1] = "聖闘士星矢 -黄金魂 soul of gold-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11058] = {
+  ["main"] = "Omakase Mamitasu",
+  ["official"] = {
+   [1] = "おまかせマミタス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11059] = {
+  ["main"] = "Aria the Avvenire",
+  ["official"] = {
+   [1] = "ARIA The AVVENIRE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11060] = {
+  ["main"] = "Chengyu Donghua Lang",
+  ["official"] = {
+   [1] = "成語動畫廊",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Chinese Idiom Anime",
+   },
+  },
+ [11061] = {
+  ["main"] = "Jun`ai Maniac",
+  ["official"] = {
+   [1] = "純愛まにあっく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11062] = {
+  ["main"] = "Kedamono-tachi no Sumu Ie de",
+  ["official"] = {
+   [1] = "ケダモノたちの住む家で",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11063] = {
+  ["main"] = "Sore Ike! Anpanman: Mija to Mahou no Lamp",
+  ["official"] = {
+   [1] = "それいけ! アンパンマン ミージャと魔法のランプ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11064] = {
+  ["main"] = "Eikoku Ikke, Nihon o Taberu",
+  ["official"] = {
+   [1] = "英国一家, 日本を食べる",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Sushi and Beyond",
    },
   },
 }
