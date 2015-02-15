@@ -12314,10 +12314,11 @@ return {
  [753] = {
   ["main"] = "Yuu Yuu Hakusho: Meikai Shitou Hen - Honoo no Kizuna",
   ["official"] = {
-   [1] = "Yu Yu Hakusho - The Movie - Poltergeist Report",
-   [2] = "Yu Yu Hakusho : A Batalha Mortal no Meikai",
-   [3] = "Yu Yu Hakusho: The Movie - Poltergeist Report",
-   [4] = "幽遊白書 冥界死闘篇 炎の絆",
+   [1] = "Yu Yu Hakusho - La légende du royaume des ombres",
+   [2] = "Yu Yu Hakusho - The Movie - Poltergeist Report",
+   [3] = "Yu Yu Hakusho : A Batalha Mortal no Meikai",
+   [4] = "Yu Yu Hakusho: The Movie - Poltergeist Report",
+   [5] = "幽遊白書 冥界死闘篇 炎の絆",
    },
   ["short"] = {
    },
@@ -23954,10 +23955,10 @@ return {
    },
   },
  [1622] = {
-  ["main"] = "Kawarazaki-ke no Ichizoku 2",
+  ["main"] = "Kawarazaki-ke no Ichizoku 2 The Animation",
   ["official"] = {
    [1] = "La mansión Kawarazaki 2",
-   [2] = "河原崎家の一族2",
+   [2] = "河原崎家の一族2 THE ANIMATION",
    },
   ["short"] = {
    },
@@ -63973,7 +63974,7 @@ return {
    [1] = "Yes!プリキュア5 GoGo!",
    },
   ["short"] = {
-   [1] = "precure5",
+   [1] = "precure5go",
    },
   ["syn"] = {
    },
@@ -65395,6 +65396,7 @@ return {
   ["syn"] = {
    [1] = "Our house`s three sisters",
    [2] = "Uchi no San Shimai",
+   [3] = "うちの3姉妹 おかわりぱれたい",
    },
   },
  [5804] = {
@@ -86036,16 +86038,6 @@ return {
    [3] = "Victini and the Dark Hero: Zekrom",
    },
   },
- [8013] = {
-  ["main"] = "Uchi no 3 Shimai: Okawari Paretai",
-  ["official"] = {
-   [1] = "うちの3姉妹 おかわりぱれたい",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8014] = {
   ["main"] = "Kimi ni Todoke 2nd Season",
   ["official"] = {
@@ -87747,8 +87739,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Милый дом: А вы любите извращённую старшую сестрёнку?",
-   [2] = "스위트 홈: H한 누나 좋아해?",
+   [1] = "Sweet Home: Do You Like Horny Elder Sisters?",
+   [2] = "Милый дом: А вы любите извращённую старшую сестрёнку?",
+   [3] = "스위트 홈: H한 누나 좋아해?",
    },
   },
  [8179] = {
@@ -92981,6 +92974,7 @@ return {
   ["syn"] = {
    [1] = "Śliczny dzień",
    [2] = "ラブリディ",
+   [3] = "ラブリデイ ～僕と彼女の七日間～",
    },
   },
  [8732] = {
@@ -96399,7 +96393,8 @@ return {
    },
   ["syn"] = {
    [1] = "Exiled From Paradise",
-   [2] = "Wygnani z raju",
+   [2] = "Rakuen Tsuihou",
+   [3] = "Wygnani z raju",
    },
   },
  [9089] = {
@@ -107192,14 +107187,14 @@ return {
  [10290] = {
   ["main"] = "Meitantei Conan: Ijigen no Sniper",
   ["official"] = {
-   [1] = "Case Closed: Dimensional Sniper",
-   [2] = "名探偵コナン・異次元の狙撃手[スナイパー]",
+   [1] = "名探偵コナン・異次元の狙撃手[スナイパー]",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Detective Conan Movie 18: The Sniper from Another Dimension",
-   [2] = "المحقق كونان: القناص من بعد آخر",
+   [1] = "Case Closed: Dimensional Sniper",
+   [2] = "Detective Conan Movie 18: The Sniper from Another Dimension",
+   [3] = "المحقق كونان: القناص من بعد آخر",
    },
   },
  [10291] = {
@@ -107327,7 +107322,7 @@ return {
   ["main"] = "Kamigami no Asobi",
   ["official"] = {
    [1] = "Kamigami no Asobi",
-   [2] = "神々の悪戯",
+   [2] = "神々の悪戯[あそび] Ludere deorum",
    },
   ["short"] = {
    [1] = "kamiaso",
@@ -111996,7 +111991,8 @@ return {
  [10877] = {
   ["main"] = "Anime de Wakaru Shinryounaika",
   ["official"] = {
-   [1] = "アニメで分かる心療内科",
+   [1] = "Comical Psychosomatic Medicine",
+   [2] = "アニメで分かる心療内科",
    },
   ["short"] = {
    },
@@ -112586,13 +112582,14 @@ return {
    },
   },
  [10943] = {
-  ["main"] = "Nosewasure",
+  ["main"] = "Nosewasure The Animation: Onna Kyoushi Chuuzenji Ayano no Inutsu na Kore kara",
   ["official"] = {
-   [1] = "のせわすれ",
+   [1] = "のせわすれ THE ANIMATION 女教師中善寺綾乃の淫鬱なこれから",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Nosewasure The Animation: Female Teacher Chuuzenji Ayano`s Upcoming Sexual Frustrations",
    },
   },
  [10944] = {
@@ -113650,6 +113647,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ケダモノ(家族)たちの住む家で",
    },
   },
  [11063] = {
@@ -113671,6 +113669,106 @@ return {
    },
   ["syn"] = {
    [1] = "Sushi and Beyond",
+   },
+  },
+ [11066] = {
+  ["main"] = "Million Doll",
+  ["official"] = {
+   [1] = "ミリオンドール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11067] = {
+  ["main"] = "Dance with Devils",
+  ["official"] = {
+   [1] = "Dance with Devils",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11068] = {
+  ["main"] = "Diabolik Lovers 2",
+  ["official"] = {
+   [1] = "DIABOLIK LOVERS 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11071] = {
+  ["main"] = "Frame Arms: A Violent Struggle",
+  ["official"] = {
+   [1] = "フレームアーム A violent struggle",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11072] = {
+  ["main"] = "Super Short Comics",
+  ["official"] = {
+   [1] = "スーパーショートコミックス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11073] = {
+  ["main"] = "Momokuri",
+  ["official"] = {
+   [1] = "ももくり",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11074] = {
+  ["main"] = "Relife",
+  ["official"] = {
+   [1] = "ReLIFE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11075] = {
+  ["main"] = "Nambaka",
+  ["official"] = {
+   [1] = "ナンバカ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11076] = {
+  ["main"] = "Jewelpet: Magical Change",
+  ["official"] = {
+   [1] = "ジュエルペット マジカルチェンジ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11077] = {
+  ["main"] = "Future Card Buddyfight 100",
+  ["official"] = {
+   [1] = "フューチャーカード バディファイト100",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
