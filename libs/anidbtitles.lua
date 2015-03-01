@@ -111,7 +111,7 @@ return {
    },
   },
  [7] = {
-  ["main"] = "Mononoke Hime",
+  ["main"] = "Mononoke-hime",
   ["official"] = {
    [1] = "A vadon hercegnője",
    [2] = "Księżniczka Mononoke",
@@ -18434,7 +18434,7 @@ return {
    },
   },
  [1190] = {
-  ["main"] = "Arete Hime",
+  ["main"] = "Arete-hime",
   ["official"] = {
    [1] = "Princess Arete",
    [2] = "アリーテ姫",
@@ -30597,7 +30597,7 @@ return {
    },
   },
  [2151] = {
-  ["main"] = "Bishoujo Senshi Sailor Moon S: Kaguya Hime no Koibito",
+  ["main"] = "Bishoujo Senshi Sailor Moon S: Kaguya-hime no Koibito",
   ["official"] = {
    [1] = "Czarodziejka z Księżyca: Sailor Moon S - the Movie",
    [2] = "Sailor Moon S Der Spielfilm: Schneeprinzessin Kaguya",
@@ -51957,6 +51957,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Galaxy Express 999 TV Special 2: Eternal Voyager Emeraldas",
    },
   },
  [4316] = {
@@ -70890,7 +70891,7 @@ return {
    },
   },
  [6468] = {
-  ["main"] = "Kaguya Hime: Taketori Monogatari",
+  ["main"] = "Kaguya-hime: Taketori Monogatari",
   ["official"] = {
    [1] = "かぐや姫 竹取物語",
    },
@@ -74289,7 +74290,7 @@ return {
    },
   },
  [6821] = {
-  ["main"] = "Kaguya Hime",
+  ["main"] = "Kaguya-hime",
   ["official"] = {
    [1] = "かぐや姫",
    },
@@ -81210,12 +81211,13 @@ return {
  [7525] = {
   ["main"] = "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
   ["official"] = {
-   [1] = "Ore no Imoto ga Konna ni Kawaii Wake ga Nai (saison 1)",
-   [2] = "Oreimo",
-   [3] = "Ну не может сестренка быть такой милой",
-   [4] = "俺の妹がこんなに可愛いわけがない",
-   [5] = "我的妹妹哪有这么可爱！",
-   [6] = "내 여동생이 이렇게 귀여울 리가 없어",
+   [1] = "Mijn Zusje kan Onmogelijk zo Schattig zijn",
+   [2] = "Ore no Imoto ga Konna ni Kawaii Wake ga Nai (saison 1)",
+   [3] = "Oreimo",
+   [4] = "Ну не может сестренка быть такой милой",
+   [5] = "俺の妹がこんなに可愛いわけがない",
+   [6] = "我的妹妹哪有这么可爱！",
+   [7] = "내 여동생이 이렇게 귀여울 리가 없어",
    },
   ["short"] = {
    [1] = "oreimo",
@@ -83734,7 +83736,7 @@ return {
    },
   },
  [7779] = {
-  ["main"] = "Hello Kitty no Kaguya Hime",
+  ["main"] = "Hello Kitty no Kaguya-hime",
   ["official"] = {
    [1] = "Hello Kitty`s The Bamboo Princess",
    [2] = "ハローキティのかぐや姫",
@@ -91000,7 +91002,8 @@ return {
  [8517] = {
   ["main"] = "Kidou Senshi Gundam: The Origin",
   ["official"] = {
-   [1] = "機動戦士ガンダムTHE ORIGIN",
+   [1] = "Mobile Suit Gundam: The Origin",
+   [2] = "機動戦士ガンダムTHE ORIGIN",
    },
   ["short"] = {
    },
@@ -92623,7 +92626,8 @@ return {
  [8694] = {
   ["main"] = "Gekijouban Toaru Majutsu no Index: Endymion no Kiseki",
   ["official"] = {
-   [1] = "劇場版 とある魔術の禁書目録[インデックス] エンデュミオンの奇蹟",
+   [1] = "A Certain Magical Index: The Miracle of Endymion",
+   [2] = "劇場版 とある魔術の禁書目録[インデックス] エンデュミオンの奇蹟",
    },
   ["short"] = {
    [1] = "Index Movie",
@@ -94404,6 +94408,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Love Live! 4",
+   [2] = "Love Live! Mo Gyutto Love de Sekkin Chu",
    },
   },
  [8875] = {
@@ -96761,11 +96767,12 @@ return {
  [9134] = {
   ["main"] = "Ore no Imouto ga Konna ni Kawaii Wake ga Nai.",
   ["official"] = {
-   [1] = "Ore no Imouto ga Konnani Kawaii Wake ga Nai. (saison 2)",
-   [2] = "Oreimo 2",
-   [3] = "俺の妹がこんなに可愛いわけがない.",
-   [4] = "我的妹妹哪有这么可爱。",
-   [5] = "내 여동생이 이렇게 귀여울 리가 없어.",
+   [1] = "Mijn Zusje kan Onmogelijk zo Schattig zijn.",
+   [2] = "Ore no Imouto ga Konnani Kawaii Wake ga Nai. (saison 2)",
+   [3] = "Oreimo 2",
+   [4] = "俺の妹がこんなに可愛いわけがない.",
+   [5] = "我的妹妹哪有这么可爱。",
+   [6] = "내 여동생이 이렇게 귀여울 리가 없어.",
    },
   ["short"] = {
    [1] = "oreimo2",
@@ -102011,11 +102018,12 @@ return {
  [9687] = {
   ["main"] = "Space Pirate Captain Harlock",
   ["official"] = {
-   [1] = "Capitão Harlock: Pirata do Espaço",
-   [2] = "Căpitanul Harlock: Pirat Spațial",
-   [3] = "SPACE PIRATE CAPTAIN HARLOCK",
-   [4] = "Space Pirate Captain Harlock",
-   [5] = "Космический пират Харлок",
+   [1] = "Albator Corsaire de l`Espace",
+   [2] = "Capitão Harlock: Pirata do Espaço",
+   [3] = "Căpitanul Harlock: Pirat Spațial",
+   [4] = "SPACE PIRATE CAPTAIN HARLOCK",
+   [5] = "Space Pirate Captain Harlock",
+   [6] = "Космический пират Харлок",
    },
   ["short"] = {
    },
@@ -104826,6 +104834,7 @@ return {
    [1] = "GuP Anzio OVA",
    },
   ["syn"] = {
+   [1] = "Girls und Panzer: This is the Real Anzio Battle!",
    },
   },
  [10010] = {
@@ -108127,7 +108136,8 @@ return {
    },
   ["syn"] = {
    [1] = "murder city",
-   [2] = "Убийцата Акаме",
+   [2] = "Убийца Акаме",
+   [3] = "Убийцата Акаме",
    },
   },
  [10409] = {
@@ -108478,9 +108488,10 @@ return {
  [10446] = {
   ["main"] = "Jinsei Soudan TV Animation: Jinsei",
   ["official"] = {
-   [1] = "La Bonne Vie",
-   [2] = "人生",
-   [3] = "人生相談テレビアニメーション「人生」",
+   [1] = "Jinsei: Life Consulting",
+   [2] = "La Bonne Vie",
+   [3] = "人生",
+   [4] = "人生相談テレビアニメーション「人生」",
    },
   ["short"] = {
    },
@@ -108865,6 +108876,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Complete Control: Brainwashed and Subordinated - Raw Sex Life!",
+   [2] = "いいなり！催眠彼女 ～隷属洗脳・生ハメ性活!!～",
    },
   },
  [10513] = {
@@ -109038,6 +109051,7 @@ return {
    [2] = "ガンダム Gのレコンギスタ",
    },
   ["short"] = {
+   [1] = "G Reco",
    },
   ["syn"] = {
    [1] = "Gundam Reconguista in G",
@@ -111430,7 +111444,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "SYD* OVA",
+   [1] = "2#15",
+   [2] = "SYD* OVA",
    },
   },
  [10811] = {
@@ -112098,8 +112113,10 @@ return {
    [1] = "下ネタという概念が存在しない退屈な世界",
    },
   ["short"] = {
+   [1] = "shimoseka",
    },
   ["syn"] = {
+   [1] = "A Boring World Where the Concept of Dirty Jokes Doesn`t Exist",
    },
   },
  [10889] = {
@@ -112154,7 +112171,7 @@ return {
    },
   },
  [10894] = {
-  ["main"] = "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darou ka",
+  ["main"] = "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka",
   ["official"] = {
    [1] = "ダンジョンに出会いを求めるのは間違っているだろうか",
    },
@@ -112367,6 +112384,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "She Has Sex with Anybody",
    },
   },
  [10916] = {
@@ -112424,16 +112442,6 @@ return {
   ["main"] = "Koi Maguwai",
   ["official"] = {
    [1] = "恋まぐわい",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10924] = {
-  ["main"] = "Ansatsu Kyoushitsu Episode 0: Deai no Jikan",
-  ["official"] = {
-   [1] = "暗殺教室 episode:0 出会いの時間",
    },
   ["short"] = {
    },
@@ -112546,7 +112554,8 @@ return {
  [10937] = {
   ["main"] = "Koe no Katachi",
   ["official"] = {
-   [1] = "聲の形",
+   [1] = "A Silent Voice",
+   [2] = "聲の形",
    },
   ["short"] = {
    },
@@ -113120,6 +113129,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Working!! 3",
    },
   },
  [10997] = {
@@ -113164,9 +113174,9 @@ return {
    },
   },
  [11002] = {
-  ["main"] = "Danna ga Nani o Itteiruka Wakaranai Ken (2015)",
+  ["main"] = "Danna ga Nani o Itteiruka Wakaranai Ken 2 Sureme",
   ["official"] = {
-   [1] = "旦那が何を言っているかわからない件 (2015)",
+   [1] = "旦那が何を言っているかわからない件 2スレ目",
    },
   ["short"] = {
    },
@@ -113243,6 +113253,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "That is a Voice Actor!",
    },
   },
  [11015] = {
@@ -113316,9 +113327,9 @@ return {
    },
   },
  [11022] = {
-  ["main"] = "Fukubiki! Triangle: Futaba More Futa?",
+  ["main"] = "Fukubiki! Triangle: Futaba wa Atafuta",
   ["official"] = {
-   [1] = "ふくびき! トライアングル~双葉もあふた?~",
+   [1] = "ふくびき! トライアングル~双葉はあたふた~❤~",
    },
   ["short"] = {
    },
@@ -113333,7 +113344,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Ghost in the Shell: Arise (2015)",
+   [1] = "Ghost in the Shell Arise: Alternative Architecture",
    [2] = "攻殻機動隊ARISE ALTERNATIVE ARCHITECTURE",
    },
   },
@@ -113822,6 +113833,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Snow White with the Red Hair",
    },
   },
  [11083] = {
@@ -113905,7 +113917,7 @@ return {
    },
   },
  [11092] = {
-  ["main"] = "Okonji Youruri",
+  ["main"] = "Okonjoururi",
   ["official"] = {
    [1] = "おこんじょうるり",
    },
@@ -113935,9 +113947,11 @@ return {
    },
   },
  [11095] = {
-  ["main"] = "Roujintoumi",
+  ["main"] = "Roujin to Umi",
   ["official"] = {
-   [1] = "老人と海",
+   [1] = "The Old Man and the Sea",
+   [2] = "Старик и море",
+   [3] = "老人と海",
    },
   ["short"] = {
    },
@@ -113972,12 +113986,103 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Crazy Little Thing",
+   [2] = "Crazy Little thing",
    },
   },
  [11099] = {
   ["main"] = "Nyuru Nyuru!! Kakusen-kun 2-ki",
   ["official"] = {
    [1] = "にゅるにゅる!!KAKUSENくん2期",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11100] = {
+  ["main"] = "Aki no Kanade",
+  ["official"] = {
+   [1] = "アキの奏で",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11101] = {
+  ["main"] = "Happy ComeCome",
+  ["official"] = {
+   [1] = "ハッピーカムカム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11102] = {
+  ["main"] = "Ongaku Shoujo",
+  ["official"] = {
+   [1] = "音楽少女",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11103] = {
+  ["main"] = "Kumi to Tulip",
+  ["official"] = {
+   [1] = "クミとチューリップ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11104] = {
+  ["main"] = "Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru",
+  ["official"] = {
+   [1] = "櫻子さんの足下には死体が埋まっている",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11105] = {
+  ["main"] = "Doubutsu Tonarigumi",
+  ["official"] = {
+   [1] = "動物となり組",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11110] = {
+  ["main"] = "Aoharu x Kikanjuu",
+  ["official"] = {
+   [1] = "青春x機関銃",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11112] = {
+  ["main"] = "Shishou Series",
+  ["official"] = {
+   [1] = "師匠シリーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11113] = {
+  ["main"] = "Tonari no Kashiwagi-san",
+  ["official"] = {
    },
   ["short"] = {
    },
