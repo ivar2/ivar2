@@ -60472,7 +60472,8 @@ return {
  [5174] = {
   ["main"] = "Shin SOS Dai Tokyo Tankentai",
   ["official"] = {
-   [1] = "新SOS大東京探検隊",
+   [1] = "SOS! Tokyo Metro Explorers: The Next",
+   [2] = "新SOS大東京探検隊",
    },
   ["short"] = {
    },
@@ -70112,9 +70113,10 @@ return {
  [6382] = {
   ["main"] = "Eiga Doraemon: Nobita to Midori no Kyojin Den",
   ["official"] = {
-   [1] = "Doraemon y el Reino de Kibo",
-   [2] = "โดราเอมอน: โนบิตะ กับตำนานยักษ์พฤกษา",
-   [3] = "映画ドラえもん のび太と緑の巨人伝",
+   [1] = "Doraemon e o Reino de Kibo",
+   [2] = "Doraemon y el Reino de Kibo",
+   [3] = "โดราเอมอน: โนบิตะ กับตำนานยักษ์พฤกษา",
+   [4] = "映画ドラえもん のび太と緑の巨人伝",
    },
   ["short"] = {
    },
@@ -71591,8 +71593,9 @@ return {
  [6556] = {
   ["main"] = "Seitokai no Ichizon",
   ["official"] = {
-   [1] = "قرار مجلس الطلبة",
-   [2] = "生徒会の一存",
+   [1] = "Student Council`s Discretion",
+   [2] = "قرار مجلس الطلبة",
+   [3] = "生徒会の一存",
    },
   ["short"] = {
    [1] = "Seitokai",
@@ -73959,7 +73962,8 @@ return {
    },
   ["syn"] = {
    [1] = "Pikachu Exploration Club",
-   [2] = "Pokemon: Movie 10 Short",
+   [2] = "Pikachu`s Exploration Club",
+   [3] = "Pokemon: Movie 10 Short",
    },
   },
  [6793] = {
@@ -78829,7 +78833,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "バラの花とジョー",
+   [1] = "The Rose and Joe",
+   [2] = "バラの花とジョー",
    },
   },
  [7274] = {
@@ -86037,7 +86042,8 @@ return {
   ["syn"] = {
    [1] = "Pokemon: Movie 14",
    [2] = "Pokemon: Movie 14B",
-   [3] = "Victini and the Dark Hero: Zekrom",
+   [3] = "Victini and the Black Hero: Zekrom",
+   [4] = "Victini and the Dark Hero: Zekrom",
    },
   },
  [8014] = {
@@ -88822,8 +88828,9 @@ return {
  [8288] = {
   ["main"] = "Yondemasu yo, Azazel-san. (2011)",
   ["official"] = {
-   [1] = "よんでますよ, アザゼルさん. (2011)",
-   [2] = "부르잖아요, 아자젤 씨.",
+   [1] = "You`re Being Summoned, Azazel",
+   [2] = "よんでますよ, アザゼルさん. (2011)",
+   [3] = "부르잖아요, 아자젤 씨.",
    },
   ["short"] = {
    [1] = "AzazelTV",
@@ -92626,14 +92633,14 @@ return {
  [8694] = {
   ["main"] = "Gekijouban Toaru Majutsu no Index: Endymion no Kiseki",
   ["official"] = {
-   [1] = "A Certain Magical Index: The Miracle of Endymion",
+   [1] = "A Certain Magical Index The Movie: The Miracle of Endymion",
    [2] = "劇場版 とある魔術の禁書目録[インデックス] エンデュミオンの奇蹟",
    },
   ["short"] = {
    [1] = "Index Movie",
    },
   ["syn"] = {
-   [1] = "A Certain Magical Index The Movie: Miracle of Endymion",
+   [1] = "A Certain Magical Index: The Miracle of Endymion",
    },
   },
  [8695] = {
@@ -96412,7 +96419,8 @@ return {
  [9090] = {
   ["main"] = "Seitokai no Ichizon Lv.2",
   ["official"] = {
-   [1] = "生徒会の一存 Lv.2",
+   [1] = "Student Council`s Discretion Lv. 2",
+   [2] = "生徒会の一存 Lv.2",
    },
   ["short"] = {
    [1] = "seizon 2",
@@ -100199,7 +100207,8 @@ return {
  [9501] = {
   ["main"] = "Yondemasu yo, Azazel-san. Z",
   ["official"] = {
-   [1] = "よんでますよ, アザゼルさん. Z",
+   [1] = "You`re Being Summoned, Azazel Z",
+   [2] = "よんでますよ, アザゼルさん. Z",
    },
   ["short"] = {
    [1] = "azazel z",
@@ -109248,7 +109257,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Log Horizon 2",
+   [1] = "Log Horizon II",
    [2] = "database 2",
    },
   },
@@ -109709,6 +109718,7 @@ return {
    [1] = "やはり俺の青春ラブコメはまちがっている. 続",
    },
   ["short"] = {
+   [1] = "Oregairu 2",
    },
   ["syn"] = {
    },
@@ -109729,9 +109739,11 @@ return {
    [1] = "ハロー!! きんいろモザイク",
    },
   ["short"] = {
+   [1] = "Kinmosa 2",
    },
   ["syn"] = {
-   [1] = "Kiniro Mosaic 2",
+   [1] = "Hello!! Kiniro Mosaic",
+   [2] = "Kiniro Mosaic 2",
    },
   },
  [10605] = {
@@ -110653,7 +110665,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "姉キュン！ ～女子が家に来た～",
    },
   },
  [10717] = {
@@ -111506,7 +111517,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Tha Vanishing of Nagato Yuki-chan",
+   [1] = "The Disappearance of Nagato Yuki-chan",
+   [2] = "The Vanishing of Nagato Yuki-chan",
    },
   },
  [10816] = {
@@ -112176,6 +112188,7 @@ return {
    [1] = "ダンジョンに出会いを求めるのは間違っているだろうか",
    },
   ["short"] = {
+   [1] = "danmachi",
    },
   ["syn"] = {
    [1] = "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
@@ -112292,16 +112305,6 @@ return {
    [1] = "Парад на смъртта",
    },
   },
- [10906] = {
-  ["main"] = "Kekkai Sensen (2015)",
-  ["official"] = {
-   [1] = "血界戦線 (2015)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10907] = {
   ["main"] = "Fastening Days",
   ["official"] = {
@@ -112337,7 +112340,8 @@ return {
  [10910] = {
   ["main"] = "Arslan Senki (2015)",
   ["official"] = {
-   [1] = "アルスラーン戦記 THE HEROIC LEGEND OF ARSLAN",
+   [1] = "ارسلان ، قهرمان افسانه ای",
+   [2] = "アルスラーン戦記 THE HEROIC LEGEND OF ARSLAN",
    },
   ["short"] = {
    },
@@ -112385,6 +112389,7 @@ return {
    },
   ["syn"] = {
    [1] = "She Has Sex with Anybody",
+   [2] = "She Has Sex with Just About Anyone.",
    },
   },
  [10916] = {
@@ -113452,9 +113457,9 @@ return {
    },
   },
  [11035] = {
-  ["main"] = "Ienai Koto The Animation",
+  ["main"] = "Ienai Koto",
   ["official"] = {
-   [1] = "イエナイコト THE ANIMATION",
+   [1] = "イエナイコト",
    },
   ["short"] = {
    },
@@ -114080,9 +114085,111 @@ return {
   ["syn"] = {
    },
   },
- [11113] = {
-  ["main"] = "Tonari no Kashiwagi-san",
+ [11114] = {
+  ["main"] = "I`m Stuck!!: Life of the Dead",
   ["official"] = {
+   [1] = "I`m stuck!! ～life of the dead～",
+   [2] = "Zombie Clay Anime",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11115] = {
+  ["main"] = "Dia no Ace: Second Season",
+  ["official"] = {
+   [1] = "ダイヤのA ~Second Season~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11116] = {
+  ["main"] = "Ren`ai Senka",
+  ["official"] = {
+   [1] = "恋愛専科",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11117] = {
+  ["main"] = "Kuro no Kyoushitsu",
+  ["official"] = {
+   [1] = "黒の教室",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11118] = {
+  ["main"] = "Gakuen de Jikan yo Tomare",
+  ["official"] = {
+   [1] = "学園で時間よ止まれ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11119] = {
+  ["main"] = "Ima, Futari no Michi",
+  ["official"] = {
+   [1] = "今, ふたりの道",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11120] = {
+  ["main"] = "Momoiro Milk",
+  ["official"] = {
+   [1] = "ももいろみるく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11121] = {
+  ["main"] = "Triage X (2015)",
+  ["official"] = {
+   [1] = "トリアージX (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11122] = {
+  ["main"] = "Venus Project",
+  ["official"] = {
+   [1] = "VENUS PROJECT",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11123] = {
+  ["main"] = "One-Punch Man",
+  ["official"] = {
+   [1] = "ワンパンマン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11124] = {
+  ["main"] = "Yuru Yuri 3",
+  ["official"] = {
+   [1] = "ゆるゆり 3",
    },
   ["short"] = {
    },
