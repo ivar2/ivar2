@@ -26953,7 +26953,8 @@ return {
    },
   ["syn"] = {
    [1] = "Hikari - Die kleinen Superstars",
-   [2] = "The Story of Hikari",
+   [2] = "Legenda Światła",
+   [3] = "The Story of Hikari",
    },
   },
  [1865] = {
@@ -38216,7 +38217,7 @@ return {
    },
   },
  [2787] = {
-  ["main"] = "Ichigo Mashimaro",
+  ["main"] = "Ichigo Marshmallow",
   ["official"] = {
    [1] = "Strawberry Marshmallow",
    [2] = "苺ましまろ",
@@ -54094,7 +54095,7 @@ return {
    },
   },
  [4559] = {
-  ["main"] = "Ichigo Mashimaro OVA",
+  ["main"] = "Ichigo Marshmallow OVA",
   ["official"] = {
    [1] = "Strawberry Marshmallow OVA",
    [2] = "苺ましまろ OVA",
@@ -67282,7 +67283,8 @@ return {
  [6051] = {
   ["main"] = "Umineko no Naku Koro ni",
   ["official"] = {
-   [1] = "うみねこのなく頃に",
+   [1] = "Umineko: When They Cry",
+   [2] = "うみねこのなく頃に",
    },
   ["short"] = {
    [1] = "umineko",
@@ -68664,7 +68666,7 @@ return {
    },
   },
  [6212] = {
-  ["main"] = "Ichigo Mashimaro Encore",
+  ["main"] = "Ichigo Marshmallow Encore",
   ["official"] = {
    [1] = "Strawberry Marshmallow Encore",
    [2] = "苺ましまろ encore",
@@ -78208,24 +78210,24 @@ return {
   ["official"] = {
    [1] = "Das Verschwinden der Haruhi Suzumiya",
    [2] = "Haruhi Suzumiya kadumine",
-   [3] = "The Disappearance of Haruhi Suzumiya",
-   [4] = "Исчезновение Харухи Судзумии",
-   [5] = "凉宫春日的消失",
-   [6] = "涼宮ハルヒの消失",
-   [7] = "스즈미야 하루히의 소실",
+   [3] = "La Disparition de Haruhi Suzumiya",
+   [4] = "The Disappearance of Haruhi Suzumiya",
+   [5] = "Исчезновение Харухи Судзумии",
+   [6] = "凉宫春日的消失",
+   [7] = "涼宮ハルヒの消失",
+   [8] = "스즈미야 하루히의 소실",
    },
   ["short"] = {
    [1] = "haruhi movie",
    },
   ["syn"] = {
-   [1] = "La Disparition de Haruhi Suzumiya",
-   [2] = "La scomparsa di Haruhi Suzumiya",
-   [3] = "O Desaparecimento de Haruhi Suzumiya",
-   [4] = "O Desaparecimento de Suzumiya Haruhi",
-   [5] = "The Vanishment of Haruhi Suzumiya",
-   [6] = "Vanishment of Haruhi Suzumiya",
-   [7] = "Zniknięcie Haruhi Suzumii",
-   [8] = "Зникнення Харухі Судзумії",
+   [1] = "La scomparsa di Haruhi Suzumiya",
+   [2] = "O Desaparecimento de Haruhi Suzumiya",
+   [3] = "O Desaparecimento de Suzumiya Haruhi",
+   [4] = "The Vanishment of Haruhi Suzumiya",
+   [5] = "Vanishment of Haruhi Suzumiya",
+   [6] = "Zniknięcie Haruhi Suzumii",
+   [7] = "Зникнення Харухі Судзумії",
    },
   },
  [7222] = {
@@ -82506,8 +82508,9 @@ return {
  [7656] = {
   ["main"] = "Yosuga no Sora: In Solitude, Where We Are Least Alone.",
   ["official"] = {
-   [1] = "ヨスガノソラ In solitude, where we are least alone.",
-   [2] = "緣之空",
+   [1] = "سماء الاتصال: في العزلة, عندما نكون وحدنا",
+   [2] = "ヨスガノソラ In solitude, where we are least alone.",
+   [3] = "緣之空",
    },
   ["short"] = {
    [1] = "yns",
@@ -83585,7 +83588,8 @@ return {
  [7765] = {
   ["main"] = "The Doraemons: Dokidoki Kikansha Daibakusou!",
   ["official"] = {
-   [1] = "ザ☆ドラえもんズ ドキドキ機関車大爆走!",
+   [1] = "Doraemon - Aventuras no Comboio",
+   [2] = "ザ☆ドラえもんズ ドキドキ機関車大爆走!",
    },
   ["short"] = {
    },
@@ -88717,8 +88721,9 @@ return {
   ["main"] = "Saint Seiya: Legend of Sanctuary",
   ["official"] = {
    [1] = "I Cavalieri dello Zodiaco: La Leggenda del Grande Tempio",
-   [2] = "Os Cavaleiros do Zodíaco: A Lenda do Santuário",
-   [3] = "聖闘士星矢 Legend of Sanctuary",
+   [2] = "Les Chevaliers du Zodiaque - La Légende du Sanctuaire",
+   [3] = "Os Cavaleiros do Zodíaco: A Lenda do Santuário",
+   [4] = "聖闘士星矢 Legend of Sanctuary",
    },
   ["short"] = {
    },
@@ -93703,7 +93708,8 @@ return {
   ["main"] = "Meitantei Conan: 11-ninme no Striker",
   ["official"] = {
    [1] = "Detective Conan: L`undicesimo attaccante",
-   [2] = "名探偵コナン 11人目のストライカー",
+   [2] = "Detektiv Conan - 16. Film: Der elfte Stürmer",
+   [3] = "名探偵コナン 11人目のストライカー",
    },
   ["short"] = {
    },
@@ -94932,7 +94938,8 @@ return {
  [8932] = {
   ["main"] = "Nekogami Yaoyorozu: Ohanami Ghostbusters",
   ["official"] = {
-   [1] = "猫神やおよろず お花見ゴーストバスターズ",
+   [1] = "The Everyday Tales of a Cat God - Cherry Blossom Viewing Ghost Busters",
+   [2] = "猫神やおよろず お花見ゴーストバスターズ",
    },
   ["short"] = {
    },
@@ -96253,7 +96260,8 @@ return {
  [9074] = {
   ["main"] = "Fuse: Teppou Musume no Torimonochou",
   ["official"] = {
-   [1] = "伏 鉄砲娘の捕物帳",
+   [1] = "Fuse: Memoirs of a Huntress",
+   [2] = "伏 鉄砲娘の捕物帳",
    },
   ["short"] = {
    },
@@ -98786,7 +98794,8 @@ return {
  [9356] = {
   ["main"] = "Gekijouban Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai.",
   ["official"] = {
-   [1] = "劇場版あの日見た花の名前を僕達はまだ知らない.",
+   [1] = "AnoHana: The Flower We Saw That Day: The Movie",
+   [2] = "劇場版あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
    [1] = "Anohana Movie",
@@ -99011,8 +99020,9 @@ return {
   ["main"] = "Gekijouban Gintama Kanketsuhen: Yorozuya yo Eien Nare",
   ["official"] = {
    [1] = "Gintama: The Movie: The Final Chapter: Be Forever Yorozuya",
-   [2] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
-   [3] = "银魂剧场版 完结篇 永远的万事屋",
+   [2] = "Гинтама: Финальная глава - Йородзуя навсегда",
+   [3] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
+   [4] = "银魂剧场版 完结篇 永远的万事屋",
    },
   ["short"] = {
    },
@@ -99745,8 +99755,9 @@ return {
  [9459] = {
   ["main"] = "Haiyore! Nyaruko-san W",
   ["official"] = {
-   [1] = "潜行吧！奈亚子W",
-   [2] = "這いよれ! ニャル子さんW",
+   [1] = "Nyaruko: Crawling with Love! (2)",
+   [2] = "潜行吧！奈亚子W",
+   [3] = "這いよれ! ニャル子さんW",
    },
   ["short"] = {
    [1] = "Haiyore 2",
@@ -101074,16 +101085,6 @@ return {
    },
   ["syn"] = {
    [1] = "The Future Diary Redial: Data Migration",
-   },
-  },
- [9586] = {
-  ["main"] = "Kaiou",
-  ["official"] = {
-   [1] = "海王",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
    },
   },
  [9588] = {
@@ -107024,8 +107025,8 @@ return {
  [10272] = {
   ["main"] = "Kiseijuu: Sei no Kakuritsu",
   ["official"] = {
-   [1] = "Parasyte - the maxim",
-   [2] = "Parasyte -the maxim-",
+   [1] = "Parasyte -the maxim-",
+   [2] = "Parasyte: The Maxim",
    [3] = "寄生兽 生命的准则",
    [4] = "寄生獣 セイの格率",
    },
@@ -107208,7 +107209,8 @@ return {
   ["syn"] = {
    [1] = "Case Closed: Dimensional Sniper",
    [2] = "Detective Conan Movie 18: The Sniper from Another Dimension",
-   [3] = "المحقق كونان: القناص من بعد آخر",
+   [3] = "Detektiv Conan - 18. Film: Scharfschütze aus einer anderen Dimension",
+   [4] = "المحقق كونان: القناص من بعد آخر",
    },
   },
  [10291] = {
@@ -107498,6 +107500,7 @@ return {
   ["official"] = {
    [1] = "Gonna Be the Twin-Tail!!",
    [2] = "俺, ツインテールになります.",
+   [3] = "我，要成为双马尾",
    },
   ["short"] = {
    [1] = "oretsui",
@@ -108065,8 +108068,9 @@ return {
    },
   ["syn"] = {
    [1] = "Токийски гул",
-   [2] = "Токийско чудовище",
-   [3] = "آزارگر توکیو",
+   [2] = "Токийский гуль",
+   [3] = "Токийско чудовище",
+   [4] = "آزارگر توکیو",
    },
   },
  [10402] = {
@@ -109155,14 +109159,14 @@ return {
  [10539] = {
   ["main"] = "Shigatsu wa Kimi no Uso",
   ["official"] = {
-   [1] = "四月は君の嘘",
-   [2] = "四月是你的谎言",
+   [1] = "Your Lie in April",
+   [2] = "四月は君の嘘",
+   [3] = "四月是你的谎言",
    },
   ["short"] = {
    [1] = "kimiuso",
    },
   ["syn"] = {
-   [1] = "Your Lie in April",
    },
   },
  [10540] = {
@@ -109173,6 +109177,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Genocidal Organ",
    },
   },
  [10541] = {
@@ -109414,7 +109419,8 @@ return {
  [10571] = {
   ["main"] = "Mushishi Zoku Shou (2014)",
   ["official"] = {
-   [1] = "蟲師 続章 (2014)",
+   [1] = "Мастер Муси [TV-3]",
+   [2] = "蟲師 続章 (2014)",
    },
   ["short"] = {
    },
@@ -110531,7 +110537,7 @@ return {
   ["official"] = {
    [1] = "暗杀教室",
    [2] = "暗殺教室",
-   [3] = "暗殺教室 (2015)",
+   [3] = "暗殺教室 ASSASSINATION CLASSROOM (2015)",
    },
   ["short"] = {
    },
@@ -110971,7 +110977,7 @@ return {
  [10750] = {
   ["main"] = "Yuuki Yuuna wa Yuusha de Aru",
   ["official"] = {
-   [1] = "Yuuki Yuna is a Hero",
+   [1] = "Yuuki Yuna Is a Hero",
    [2] = "結城友奈は勇者である",
    [3] = "结城友奈是勇者",
    },
@@ -111389,6 +111395,7 @@ return {
  [10800] = {
   ["main"] = "Under the Dog",
   ["official"] = {
+   [1] = "UNDER THE DOG",
    },
   ["short"] = {
    },
@@ -112710,6 +112717,7 @@ return {
   ["syn"] = {
    [1] = "Detective Conan Movie 19",
    [2] = "Detective Conan: Sunflowers of Inferno",
+   [3] = "Detektiv Conan - 19. Film: Die Sonnenblumen der Hölle",
    },
   },
  [10954] = {
@@ -112823,6 +112831,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Futa Club 2",
+   [2] = "Futabu 2",
    },
   },
  [10965] = {
@@ -112910,6 +112920,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Beautiful Little Sister! Umaru-chan",
    },
   },
  [10973] = {
@@ -113149,9 +113160,9 @@ return {
    },
   },
  [10998] = {
-  ["main"] = "Wooser no Sono Higurashi (2015)",
+  ["main"] = "Wooser no Sono Higurashi Mugen Hen",
   ["official"] = {
-   [1] = "うーさーのその日暮らし (2015)",
+   [1] = "うーさーのその日暮らし 夢幻編",
    },
   ["short"] = {
    },
@@ -113828,6 +113839,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Big Difference",
    },
   },
  [11082] = {
@@ -114106,16 +114118,6 @@ return {
   ["syn"] = {
    },
   },
- [11116] = {
-  ["main"] = "Ren`ai Senka",
-  ["official"] = {
-   [1] = "恋愛専科",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [11117] = {
   ["main"] = "Kuro no Kyoushitsu",
   ["official"] = {
@@ -114187,9 +114189,109 @@ return {
    },
   },
  [11124] = {
-  ["main"] = "Yuru Yuri 3",
+  ["main"] = "Yuru Yuri-san High!",
   ["official"] = {
-   [1] = "ゆるゆり 3",
+   [1] = "ゆるゆり さん☆ハイ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11125] = {
+  ["main"] = "Chim Chim Cher-ee",
+  ["official"] = {
+   [1] = "チムチムチェリー ChimChimCheree",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11126] = {
+  ["main"] = "Rakudai Kishi no Cavalry",
+  ["official"] = {
+   [1] = "落第騎士の英雄譚[キャバルリィ]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11128] = {
+  ["main"] = "The Embryo Develops into a Fetus",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11129] = {
+  ["main"] = "Shousei Shikisai Gensou",
+  ["official"] = {
+   [1] = "鐘声色彩幻想",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11130] = {
+  ["main"] = "Monster Musume no Iru Nichijou",
+  ["official"] = {
+   [1] = "モンスター娘のいる日常",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Everyday Life with Monster Girls",
+   },
+  },
+ [11131] = {
+  ["main"] = "Yuuyake Dandan",
+  ["official"] = {
+   [1] = "夕やけだん団",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11132] = {
+  ["main"] = "Xuccess Heaven",
+  ["official"] = {
+   [1] = "ザクセスヘブン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11133] = {
+  ["main"] = "Eiga Kaiketsu Zorori: Uchuu no Yuusha-tachi",
+  ["official"] = {
+   [1] = "映画かいけつゾロリ　うちゅうの勇者たち",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11134] = {
+  ["main"] = "Doukyuusei",
+  ["official"] = {
+   [1] = "同級生",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11135] = {
+  ["main"] = "Idolmaster: Cinderella Girls Second Series",
+  ["official"] = {
+   [1] = "アイドルマスター シンデレラガールズ 2ndシーズン",
    },
   ["short"] = {
    },
