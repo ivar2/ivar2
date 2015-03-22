@@ -10265,8 +10265,9 @@ return {
    [1] = "Hungry Heart",
    [2] = "Hungry Heart - Wild Striker",
    [3] = "La squadra del cuore",
-   [4] = "قلب تشنه: گلزن وحشی",
-   [5] = "ハングリーハート Wild Striker",
+   [4] = "Şimşek Santrafor",
+   [5] = "قلب تشنه: گلزن وحشی",
+   [6] = "ハングリーハート Wild Striker",
    },
   ["short"] = {
    [1] = "hh",
@@ -10276,8 +10277,7 @@ return {
   ["syn"] = {
    [1] = "Wild Striker",
    [2] = "Wildstriker",
-   [3] = "Çılgın Santrafor",
-   [4] = "قلب گشنه: استرایکر وحشی",
+   [3] = "قلب گشنه: استرایکر وحشی",
    },
   },
  [613] = {
@@ -25763,6 +25763,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ゾイドフューザーズ",
    },
   },
  [1776] = {
@@ -26639,9 +26640,10 @@ return {
    [1] = "Blue Legend Shoot!",
    [2] = "Die Champions - Anpfiff für elf Freunde",
    [3] = "Piłka w grze",
-   [4] = "Γκολ!",
-   [5] = "شوت",
-   [6] = "蒼き伝説 シュート!",
+   [4] = "Şut ve Gol",
+   [5] = "Γκολ!",
+   [6] = "شوت",
+   [7] = "蒼き伝説 シュート!",
    },
   ["short"] = {
    [1] = "ADS!",
@@ -37406,8 +37408,10 @@ return {
  [2717] = {
   ["main"] = "Doraemon: Nobita to Fushigi Kaze Tsukai",
   ["official"] = {
-   [1] = "Doraemon e os deuses do vento",
-   [2] = "ドラえもん のび太とふしぎ風使い",
+   [1] = "Doraemon e os Deuses do Vento",
+   [2] = "Doraemon e os deuses do vento",
+   [3] = "Doraemon y los Dioses del Viento",
+   [4] = "ドラえもん のび太とふしぎ風使い",
    },
   ["short"] = {
    },
@@ -38227,10 +38231,11 @@ return {
    [2] = "IchiMashi",
    },
   ["syn"] = {
-   [1] = "Les petites fraises",
-   [2] = "Çilek Lokumu",
-   [3] = "Клубничный зефир",
-   [4] = "草莓棉花糖",
+   [1] = "Ichigo Mashimaro",
+   [2] = "Les petites fraises",
+   [3] = "Çilek Lokumu",
+   [4] = "Клубничный зефир",
+   [5] = "草莓棉花糖",
    },
   },
  [2788] = {
@@ -42796,9 +42801,10 @@ return {
  [3315] = {
   ["main"] = "Doraemon: Nobita no Nankai Daibouken",
   ["official"] = {
-   [1] = "Doraemon e Os Piratas Dos Mares Do Sul",
+   [1] = "Doraemon e os Piratas dos Mares do Sul",
    [2] = "Doraemon e os piratas dos mares do Sur",
-   [3] = "ドラえもん のび太の南海大冒険",
+   [3] = "Doraemon y los Piratas de los Mares del Sur",
+   [4] = "ドラえもん のび太の南海大冒険",
    },
   ["short"] = {
    },
@@ -54103,9 +54109,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Çilek Lokumu OVA",
-   [2] = "Клубничный Зефир OVA",
-   [3] = "草莓棉花糖ova",
+   [1] = "Ichigo Mashimaro OVA",
+   [2] = "Çilek Lokumu OVA",
+   [3] = "Клубничный Зефир OVA",
+   [4] = "草莓棉花糖ova",
    },
   },
  [4560] = {
@@ -55384,7 +55391,8 @@ return {
  [4673] = {
   ["main"] = "Doraemon: Nobita to Animal Planet",
   ["official"] = {
-   [1] = "ドラえもん のび太とアニマル惑星(プラネット)",
+   [1] = "Doraemon - Animal Planet",
+   [2] = "ドラえもん のび太とアニマル惑星(プラネット)",
    },
   ["short"] = {
    },
@@ -56328,8 +56336,9 @@ return {
   ["main"] = "Doraemon: Nobita no Kyouryuu (2006)",
   ["official"] = {
    [1] = "Doraemon - Nobitův dinosaurus",
-   [2] = "โดราเอมอน เดอะมูฟวี่ ตอน ไดไนเสาร์ของโนบิตะ",
-   [3] = "ドラえもん のび太の恐竜2006",
+   [2] = "Doraemon y el Pequeño Dinosaurio",
+   [3] = "โดราเอมอน เดอะมูฟวี่ ตอน ไดไนเสาร์ของโนบิตะ",
+   [4] = "ドラえもん のび太の恐竜2006",
    },
   ["short"] = {
    },
@@ -58401,12 +58410,15 @@ return {
  [4967] = {
   ["main"] = "Doraemon: Nobita to Tsubasa no Yuusha-tachi",
   ["official"] = {
-   [1] = "ドラえもん のび太と翼の勇者たち",
+   [1] = "Doraemon No Mágico Mundo das Aves",
+   [2] = "Doraemon en el Mágico Mundo de las Aves",
+   [3] = "ドラえもん のび太と翼の勇者たち",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Doraemon: Nobita`s Winged Heroes",
+   [1] = "Doraemon Viaja al Mágico Mundo de las Aves",
+   [2] = "Doraemon: Nobita`s Winged Heroes",
    },
   },
  [4968] = {
@@ -59083,7 +59095,8 @@ return {
   ["official"] = {
    [1] = "Doraemon e o Expresso do Tempo",
    [2] = "Doraemon e o tren do tempo",
-   [3] = "ドラえもん のび太と銀河超特急(エクスプレス)",
+   [3] = "Doraemon y el Tren del Tiempo",
+   [4] = "ドラえもん のび太と銀河超特急(エクスプレス)",
    },
   ["short"] = {
    },
@@ -59096,7 +59109,8 @@ return {
   ["official"] = {
    [1] = "As mil e unha noites de Doraemon",
    [2] = "Doraemon e as Mil e Uma Noites",
-   [3] = "ドラえもん のび太のドラビアンナイト",
+   [3] = "Doraemon y las mil y una Aventuras",
+   [4] = "ドラえもん のび太のドラビアンナイト",
    },
   ["short"] = {
    },
@@ -62536,7 +62550,8 @@ return {
  [5432] = {
   ["main"] = "Doraemon: Nobita no Shin Makai Daibouken - Shichinin no Mahou Tsukai",
   ["official"] = {
-   [1] = "ドラえもん のび太の新魔界大冒険~7人の魔法使い~",
+   [1] = "Doraemon y los Siete Magos",
+   [2] = "ドラえもん のび太の新魔界大冒険~7人の魔法使い~",
    },
   ["short"] = {
    },
@@ -68674,8 +68689,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Клубничный Зефир: На бис",
-   [2] = "草莓棉花糖 再来一次",
+   [1] = "Ichigo Mashimaro Encore",
+   [2] = "Клубничный Зефир: На бис",
+   [3] = "草莓棉花糖 再来一次",
    },
   },
  [6213] = {
@@ -70129,12 +70145,15 @@ return {
  [6383] = {
   ["main"] = "Eiga Doraemon: Shin Nobita no Uchuu Kaitakushi",
   ["official"] = {
-   [1] = "映画ドラえもん 新・のび太の宇宙開拓史",
+   [1] = "Doraemon The Hero - Pioneiros do Espaço",
+   [2] = "Doraemon The Hero: Pioneros del Espacio",
+   [3] = "映画ドラえもん 新・のび太の宇宙開拓史",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Doraemon: The New Record of Nobita - Spaceblazer",
+   [1] = "Doraemon, o Herói",
+   [2] = "Doraemon: The New Record of Nobita - Spaceblazer",
    },
   },
  [6384] = {
@@ -71834,9 +71853,10 @@ return {
  [6582] = {
   ["main"] = "Doraemon: Nobita to Robot Kingdom",
   ["official"] = {
-   [1] = "Doraemon: El gladiador",
-   [2] = "Doraemon: O gladiador",
-   [3] = "ドラえもん のび太とロボット王国",
+   [1] = "Doraemon - Gladiador",
+   [2] = "Doraemon: El gladiador",
+   [3] = "Doraemon: O gladiador",
+   [4] = "ドラえもん のび太とロボット王国",
    },
   ["short"] = {
    },
@@ -71848,8 +71868,10 @@ return {
  [6583] = {
   ["main"] = "Doraemon: Nobita no Taiyou Ou Densetsu",
   ["official"] = {
-   [1] = "Doraemon e o imperio Maya",
-   [2] = "ドラえもん のび太の太陽王伝説",
+   [1] = "Doraemon e o Império Maia",
+   [2] = "Doraemon e o imperio Maya",
+   [3] = "Doraemon y el Imperio Maya",
+   [4] = "ドラえもん のび太の太陽王伝説",
    },
   ["short"] = {
    },
@@ -71860,8 +71882,10 @@ return {
  [6584] = {
   ["main"] = "Doraemon: Nobita no Nejimaki City Boukenki",
   ["official"] = {
-   [1] = "Doraemon e a fábrica de xoguetes",
-   [2] = "ドラえもん のび太のねじ巻き都市[シティー]冒険記",
+   [1] = "Doraemon e a Fábrica de Brinquedos",
+   [2] = "Doraemon e a fábrica de xoguetes",
+   [3] = "Doraemon y la Fábrica de Juguetes",
+   [4] = "ドラえもん のび太のねじ巻き都市[シティー]冒険記",
    },
   ["short"] = {
    },
@@ -71905,8 +71929,10 @@ return {
  [6588] = {
   ["main"] = "Doraemon: Nobita to Kumo no Oukoku",
   ["official"] = {
-   [1] = "Doraemon e o misterio das nubes",
-   [2] = "ドラえもん のび太と雲の王国",
+   [1] = "Doraemon e o Mistério das Nuvens",
+   [2] = "Doraemon e o misterio das nubes",
+   [3] = "Doraemon y el Misterio de las Nubes",
+   [4] = "ドラえもん のび太と雲の王国",
    },
   ["short"] = {
    },
@@ -71932,7 +71958,8 @@ return {
  [6590] = {
   ["main"] = "Doraemon: Nobita no Uchuu Kaitakushi",
   ["official"] = {
-   [1] = "ドラえもん のび太の宇宙開拓史",
+   [1] = "Doraemon: The Space Hero",
+   [2] = "ドラえもん のび太の宇宙開拓史",
    },
   ["short"] = {
    },
@@ -71965,7 +71992,8 @@ return {
  [6593] = {
   ["main"] = "Doraemon: Nobita to Ryuu no Kishi",
   ["official"] = {
-   [1] = "ドラえもん のび太と竜の騎士",
+   [1] = "Doraemon y los Caballeros Enmascarados",
+   [2] = "ドラえもん のび太と竜の騎士",
    },
   ["short"] = {
    },
@@ -71997,7 +72025,9 @@ return {
  [6596] = {
   ["main"] = "Doraemon: Nobita no Kaitei Kiganjou",
   ["official"] = {
-   [1] = "ドラえもん のび太の海底鬼岩城",
+   [1] = "Doraemon - Atlântida",
+   [2] = "Doraemon Atlantis: El Castillo del Mal",
+   [3] = "ドラえもん のび太の海底鬼岩城",
    },
   ["short"] = {
    },
@@ -72011,7 +72041,8 @@ return {
   ["main"] = "Doraemon: Nobita no Daimakyou",
   ["official"] = {
    [1] = "Doraemon e o Mundo Perdido",
-   [2] = "ドラえもん のび太の大魔境",
+   [2] = "Doraemon y el Mundo Perdido",
+   [3] = "ドラえもん のび太の大魔境",
    },
   ["short"] = {
    },
@@ -72033,7 +72064,8 @@ return {
  [6599] = {
   ["main"] = "Doraemon: Nobita no Uchuu Hyouryuuki",
   ["official"] = {
-   [1] = "ドラえもん のび太の宇宙漂流記",
+   [1] = "Doraemon Odisea en el Espacio",
+   [2] = "ドラえもん のび太の宇宙漂流記",
    },
   ["short"] = {
    },
@@ -73148,7 +73180,9 @@ return {
  [6719] = {
   ["main"] = "Eiga Doraemon: Nobita no Ningyo Daikaisen",
   ["official"] = {
-   [1] = "映画ドラえもん のび太の人魚大海戦",
+   [1] = "Doraemon - A Lenda das Sereias",
+   [2] = "Doraemon - La Leyenda de las Sirenas",
+   [3] = "映画ドラえもん のび太の人魚大海戦",
    },
   ["short"] = {
    [1] = "Doraeiga 2010",
@@ -76156,7 +76190,9 @@ return {
  [7014] = {
   ["main"] = "Boku no Umareta Hi",
   ["official"] = {
-   [1] = "ぼくの生まれた日",
+   [1] = "El día que nací",
+   [2] = "O Dia em que Nasci",
+   [3] = "ぼくの生まれた日",
    },
   ["short"] = {
    },
@@ -81071,6 +81107,7 @@ return {
   ["official"] = {
    [1] = "Code Geass 亡国的阿基德",
    [2] = "コードギアス 亡国のアキト",
+   [3] = "反叛的魯路修",
    },
   ["short"] = {
    },
@@ -83589,7 +83626,8 @@ return {
   ["main"] = "The Doraemons: Dokidoki Kikansha Daibakusou!",
   ["official"] = {
    [1] = "Doraemon - Aventuras no Comboio",
-   [2] = "ザ☆ドラえもんズ ドキドキ機関車大爆走!",
+   [2] = "The Doraemons: Aventuras en un tren",
+   [3] = "ザ☆ドラえもんズ ドキドキ機関車大爆走!",
    },
   ["short"] = {
    },
@@ -83643,7 +83681,9 @@ return {
  [7770] = {
   ["main"] = "Eiga Doraemon: Shin Nobita to Tetsujin Heidan - Habatake Tenshi-tachi",
   ["official"] = {
-   [1] = "映画ドラえもん 新・のび太と鉄人兵団 ~はばたけ 天使たち~",
+   [1] = "Doraemon e a Revolução dos Robôs",
+   [2] = "Doraemon y la revolución de los robots",
+   [3] = "映画ドラえもん 新・のび太と鉄人兵団 ~はばたけ 天使たち~",
    },
   ["short"] = {
    [1] = "Doraemon The Movie 2011",
@@ -86598,23 +86638,23 @@ return {
   ["main"] = "Hoshi o Ou Kodomo",
   ["official"] = {
    [1] = "Children Who Chase Lost Voices",
-   [2] = "Děti, které následují hvězdy",
-   [3] = "Vaikai, kurie vijosi žvaigždes",
-   [4] = "Viaje a Agartha",
-   [5] = "Voyage vers Agartha",
-   [6] = "Ловцы забытых голосов",
-   [7] = "เด็กสาวกับเสียงเพรียกแห่งพิภพเทวา",
-   [8] = "星を追う子ども",
+   [2] = "Die Reise nach Agartha",
+   [3] = "Děti, které následují hvězdy",
+   [4] = "Vaikai, kurie vijosi žvaigždes",
+   [5] = "Viaje a Agartha",
+   [6] = "Voyage vers Agartha",
+   [7] = "Ловцы забытых голосов",
+   [8] = "เด็กสาวกับเสียงเพรียกแห่งพิภพเทวา",
+   [9] = "星を追う子ども",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Children Who Chase Stars",
-   [2] = "Die Reise nach Agartha",
-   [3] = "Hoshi wo Ou Kodomo",
-   [4] = "Journey to Agartha",
-   [5] = "Децата, които преследваха загубените гласове",
-   [6] = "Діти, що женуться за зорями",
+   [2] = "Hoshi wo Ou Kodomo",
+   [3] = "Journey to Agartha",
+   [4] = "Децата, които преследваха загубените гласове",
+   [5] = "Діти, що женуться за зорями",
    },
   },
  [8074] = {
@@ -87080,7 +87120,7 @@ return {
  [8121] = {
   ["main"] = "Meitantei Conan: Chinmoku no Quarter",
   ["official"] = {
-   [1] = "Detektiv Conan: Die 15 Minuten der Stille",
+   [1] = "Detektiv Conan - 15. Film: Die 15 Minuten der Stille",
    [2] = "名探偵コナン 沈黙の15分(クォーター)",
    },
   ["short"] = {
@@ -98363,7 +98403,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Joshi Kosei to Ero Giin-sensei",
+   [1] = "Erotic JK and the Public Representative",
+   [2] = "Joshi Kosei to Ero Giin-sensei",
    },
   },
  [9314] = {
@@ -100058,17 +100099,6 @@ return {
    [1] = "Mouryou`s Sacrifice",
    },
   },
- [9487] = {
-  ["main"] = "Nanatsu no Taizai OVA",
-  ["official"] = {
-   [1] = "七つの大罪",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "The Seven Deadly Sins",
-   },
-  },
  [9488] = {
   ["main"] = "Utsu-Musume Sayuri",
   ["official"] = {
@@ -100260,7 +100290,7 @@ return {
  [9505] = {
   ["main"] = "Meitantei Conan: Zekkai no Private Eye",
   ["official"] = {
-   [1] = "Detektiv Conan 17. Film Detektiv auf hoher See",
+   [1] = "Detektiv Conan - 17. Film: Detektiv auf hoher See",
    [2] = "名探偵コナン 絶海の探偵 [プライベート・アイ]",
    },
   ["short"] = {
@@ -104623,7 +104653,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Assassination Classroom",
+   [1] = "Assassination Classroom (2013)",
    },
   },
  [9987] = {
@@ -106913,7 +106943,7 @@ return {
    },
   },
  [10252] = {
-  ["main"] = "Eiga Crayon Shin-chan: Gachinko! Gyakushuu no Robo To-chan",
+  ["main"] = "Eiga Crayon Shin-chan: Gachinko! Gyakushuu no Robo Tou-chan",
   ["official"] = {
    [1] = "映画クレヨンしんちゃん ガチンコ! 逆襲のロボとーちゃん",
    },
@@ -106928,6 +106958,7 @@ return {
   ["official"] = {
    [1] = "STAND BY ME ドラえもん",
    [2] = "STAND BY ME 哆啦A夢",
+   [3] = "Stand By Me Doraemon",
    },
   ["short"] = {
    },
@@ -107344,6 +107375,7 @@ return {
    [1] = "kamiaso",
    },
   ["syn"] = {
+   [1] = "Забавы богов",
    },
   },
  [10306] = {
@@ -107475,9 +107507,9 @@ return {
    },
   },
  [10321] = {
-  ["main"] = "Senki Zesshou Symphogear 3",
+  ["main"] = "Senki Zesshou Symphogear GX: Believe in Justice and Hold a Determination to Fist.",
   ["official"] = {
-   [1] = "戦姫絶唱シンフォギア 3",
+   [1] = "戦姫絶唱シンフォギアGX Believe in justice and hold a determination to fist.",
    },
   ["short"] = {
    },
@@ -109276,6 +109308,7 @@ return {
   ["syn"] = {
    [1] = "Космический Денди 2",
    [2] = "Космическото конте 2",
+   [3] = "宇宙浪子 第二季",
    },
   },
  [10554] = {
@@ -110161,13 +110194,14 @@ return {
    },
   },
  [10648] = {
-  ["main"] = "Hitsugi no Chaika OAD",
+  ["main"] = "Hitsugi no Chaika: Nerawareta Hitsugi / Yomigaeru Iseki",
   ["official"] = {
-   [1] = "棺姫のチャイカ OAD",
+   [1] = "棺姫のチャイカ ねらわれた棺 / 蘇る遺跡",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hitsugi no Chaika OAD",
    },
   },
  [10649] = {
@@ -110355,6 +110389,7 @@ return {
    [2] = "旦那が何を言っているかわからない件",
    },
   ["short"] = {
+   [1] = "ダンナ",
    },
   ["syn"] = {
    [1] = "Danna ga Nani wo Itteiru ka Wakaranai Ken",
@@ -110535,9 +110570,10 @@ return {
  [10702] = {
   ["main"] = "Ansatsu Kyoushitsu (2015)",
   ["official"] = {
-   [1] = "暗杀教室",
-   [2] = "暗殺教室",
-   [3] = "暗殺教室 ASSASSINATION CLASSROOM (2015)",
+   [1] = "Assassination Classroom",
+   [2] = "暗杀教室",
+   [3] = "暗殺教室",
+   [4] = "暗殺教室 ASSASSINATION CLASSROOM (2015)",
    },
   ["short"] = {
    },
@@ -111065,8 +111101,10 @@ return {
   ["syn"] = {
    [1] = "Fate Stay Night - Unlimited Blade Works S2",
    [2] = "Fate Stay Night 2015",
-   [3] = "UBWTV2",
-   [4] = "フェイト/ステイナイト (2015)",
+   [3] = "Fate/stay night 『Unlimited Blade Works』 (2015)",
+   [4] = "Fate/stay night: Unlimited Blade Works (2015)",
+   [5] = "UBWTV2",
+   [6] = "フェイト/ステイナイト (2015)",
    },
   },
  [10761] = {
@@ -111529,13 +111567,14 @@ return {
    },
   },
  [10816] = {
-  ["main"] = "Over Lord",
+  ["main"] = "Overlord",
   ["official"] = {
    [1] = "オーバーロード",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Over Lord",
    },
   },
  [10818] = {
@@ -112014,7 +112053,7 @@ return {
   ["official"] = {
    [1] = "Tokyo Ghoul √ A",
    [2] = "√A توکیو غول",
-   [3] = "東京喰種√A",
+   [3] = "東京喰種[トーキョーグール]√A",
    },
   ["short"] = {
    },
@@ -112093,6 +112132,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Blue jacket",
    },
   },
  [10885] = {
@@ -112658,7 +112698,7 @@ return {
    },
   },
  [10948] = {
-  ["main"] = "Punchline",
+  ["main"] = "Punch Line",
   ["official"] = {
    [1] = "パンチライン",
    },
@@ -112736,6 +112776,7 @@ return {
    [1] = "山田くんと7人の魔女 (2015)",
    },
   ["short"] = {
+   [1] = "yamajo TV",
    },
   ["syn"] = {
    },
@@ -112781,6 +112822,7 @@ return {
    },
   ["syn"] = {
    [1] = "My Heart Wants to Shout",
+   [2] = "The Anthem of the Heart",
    },
   },
  [10960] = {
@@ -112832,7 +112874,8 @@ return {
    },
   ["syn"] = {
    [1] = "Futa Club 2",
-   [2] = "Futabu 2",
+   [2] = "Futa Club!!",
+   [3] = "Futabu 2",
    },
   },
  [10965] = {
@@ -112967,9 +113010,9 @@ return {
    },
   },
  [10977] = {
-  ["main"] = "Wake Up, Girls! Zoku Hen Gekijouban",
+  ["main"] = "Wake Up, Girls! Zoku Gekijouban",
   ["official"] = {
-   [1] = "Wake Up, Girls! 続編劇場版",
+   [1] = "Wake Up, Girls! 続・劇場版",
    },
   ["short"] = {
    },
@@ -114292,6 +114335,176 @@ return {
   ["main"] = "Idolmaster: Cinderella Girls Second Series",
   ["official"] = {
    [1] = "アイドルマスター シンデレラガールズ 2ndシーズン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11136] = {
+  ["main"] = "Strike the Blood OVA",
+  ["official"] = {
+   [1] = "ストライク・ザ・ブラッド OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11137] = {
+  ["main"] = "Funasshi no Funafunafuna Hiyori",
+  ["official"] = {
+   [1] = "ふなっしーのふなふなふな日和",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11138] = {
+  ["main"] = "Nanatsu no Taizai (2015)",
+  ["official"] = {
+   [1] = "七つの大罪 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11139] = {
+  ["main"] = "Wakaba Girl",
+  ["official"] = {
+   [1] = "わかば*ガール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11140] = {
+  ["main"] = "Eun-sil-i",
+  ["official"] = {
+   [1] = "은실이",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11142] = {
+  ["main"] = "Shinmai Maou no Testament Burst",
+  ["official"] = {
+   [1] = "新妹魔王の契約者 BURST",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11143] = {
+  ["main"] = "Akatsuki no Yona OAD",
+  ["official"] = {
+   [1] = "暁のヨナ OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11144] = {
+  ["main"] = "High School Star Musical",
+  ["official"] = {
+   [1] = "ハイスクールスター・ミュージカル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11145] = {
+  ["main"] = "Tamagotchi! Tama Tomo Daishuu Go",
+  ["official"] = {
+   [1] = "たまごっち! たまともだいしゅーGO",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11146] = {
+  ["main"] = "Sanzoku Diary",
+  ["official"] = {
+   [1] = "山賊ダイアリー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11147] = {
+  ["main"] = "Classroom Crisis",
+  ["official"] = {
+   [1] = "Classroom☆Crisis",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11148] = {
+  ["main"] = "Valkyrie Drive: Mermaid",
+  ["official"] = {
+   [1] = "VALKYRIE DRIVE -MERMAID-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11149] = {
+  ["main"] = "Pikaia!",
+  ["official"] = {
+   [1] = "ピカイア!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11150] = {
+  ["main"] = "Aquarion Logos",
+  ["official"] = {
+   [1] = "アクエリオンロゴス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11151] = {
+  ["main"] = "Sousei no Aquarion Evol",
+  ["official"] = {
+   [1] = "創勢のアクエリオンEVOL",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11152] = {
+  ["main"] = "Miss Monochrome The Animation (2015)",
+  ["official"] = {
+   [1] = "ミス・モノクローム -The Animation- (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11153] = {
+  ["main"] = "Gon (2015)",
+  ["official"] = {
+   [1] = "GON-ゴン- (2015)",
    },
   ["short"] = {
    },
