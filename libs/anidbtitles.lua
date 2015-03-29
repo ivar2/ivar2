@@ -409,12 +409,13 @@ return {
    },
   ["syn"] = {
    [1] = "Evangelion",
-   [2] = "Neon Genesis Evangelion Platinum",
-   [3] = "Neon Genesis Evangelion Renewal",
-   [4] = "Євангеліон",
-   [5] = "Євангеліон нового покоління",
-   [6] = "Евангелион",
-   [7] = "Нова ера: Євангеліон",
+   [2] = "Evangelion TV",
+   [3] = "Neon Genesis Evangelion Platinum",
+   [4] = "Neon Genesis Evangelion Renewal",
+   [5] = "Євангеліон",
+   [6] = "Євангеліон нового покоління",
+   [7] = "Евангелион",
+   [8] = "Нова ера: Євангеліон",
    },
   },
  [23] = {
@@ -32182,9 +32183,10 @@ return {
    [1] = "علاء الدين",
    },
   ["syn"] = {
-   [1] = "Aladdin and the Magic Lamp",
-   [2] = "Aladdin to Mahou no Lamp",
-   [3] = "O Aladynie i Zaczarowanej Lampie",
+   [1] = "Alaaddin`in Sihirli Lambası",
+   [2] = "Aladdin and the Magic Lamp",
+   [3] = "Aladdin to Mahou no Lamp",
+   [4] = "O Aladynie i Zaczarowanej Lampie",
    },
   },
  [2272] = {
@@ -37827,12 +37829,13 @@ return {
  [2750] = {
   ["main"] = "Oedo wa Nemurenai!",
   ["official"] = {
-   [1] = "Sleepless Oedo",
-   [2] = "お江戸はねむれない!",
+   [1] = "お江戸はねむれない!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Edo Never Sleeps",
+   [2] = "Sleepless Oedo",
    },
   },
  [2753] = {
@@ -56278,7 +56281,8 @@ return {
   ["main"] = "Haha o Tazunete Sanzenri (1980)",
   ["official"] = {
    [1] = "From the Apennines to the Andes: The Movie",
-   [2] = "母をたずねて三千里 (1980)",
+   [2] = "Marco - O Filme",
+   [3] = "母をたずねて三千里 (1980)",
    },
   ["short"] = {
    },
@@ -61707,6 +61711,7 @@ return {
    },
   ["syn"] = {
    [1] = "Небесные Скитальцы",
+   [2] = "زاحفين السماء",
    },
   },
  [5311] = {
@@ -73453,12 +73458,12 @@ return {
  [6746] = {
   ["main"] = "Kupuu!! Mamegoma!",
   ["official"] = {
-   [1] = "MAMEGOMA, teeny tiny seals",
-   [2] = "クプ~!!まめゴマ!",
+   [1] = "クプ~!!まめゴマ!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mamegoma, Teeny Tiny Seals",
    },
   },
  [6747] = {
@@ -82564,8 +82569,9 @@ return {
   ["main"] = "Alps no Shoujo Heidi: Alm no Yama Hen",
   ["official"] = {
    [1] = "Heidi - Kindheit in den Bergen",
-   [2] = "Heidi a hegyek lánya",
-   [3] = "アルプスの少女ハイジ アルムの山編",
+   [2] = "Heidi Volta à Montanha - O Filme",
+   [3] = "Heidi a hegyek lánya",
+   [4] = "アルプスの少女ハイジ アルムの山編",
    },
   ["short"] = {
    },
@@ -82578,8 +82584,9 @@ return {
   ["main"] = "Alps no Shoujo Heidi: Heidi to Clara Hen",
   ["official"] = {
    [1] = "Heidi - Ein Sommer voller Glück",
-   [2] = "Heidi és Clara - Egy nyár a hegyekben",
-   [3] = "アルプスの少女ハイジ ハイジとクララ編",
+   [2] = "Heidi na Cidade - O Filme",
+   [3] = "Heidi és Clara - Egy nyár a hegyekben",
+   [4] = "アルプスの少女ハイジ ハイジとクララ編",
    },
   ["short"] = {
    },
@@ -82589,7 +82596,8 @@ return {
  [7660] = {
   ["main"] = "Alps no Shoujo Heidi (1979)",
   ["official"] = {
-   [1] = "アルプスの少女ハイジ (1979)",
+   [1] = "Heidi - O Filme",
+   [2] = "アルプスの少女ハイジ (1979)",
    },
   ["short"] = {
    },
@@ -97630,7 +97638,8 @@ return {
   ["syn"] = {
    [1] = "Say I Love You",
    [2] = "Sukitte Iinayo",
-   [3] = "大声说爱你",
+   [3] = "قولي احبـــــك",
+   [4] = "大声说爱你",
    },
   },
  [9237] = {
@@ -99342,7 +99351,8 @@ return {
  [9414] = {
   ["main"] = "Cross Fight B-Daman eS",
   ["official"] = {
-   [1] = "クロスファイト ビーダマン eS",
+   [1] = "B-Daman Fire Blast",
+   [2] = "クロスファイト ビーダマン eS",
    },
   ["short"] = {
    },
@@ -101297,10 +101307,11 @@ return {
    [2] = "knb 2",
    },
   ["syn"] = {
-   [1] = "Kuroko no Basuke 2",
-   [2] = "Kuroko`s Basketball 2",
-   [3] = "Баскетболът на Куроко 2",
-   [4] = "黑子的篮球 2",
+   [1] = "Kuroko no Basket 2",
+   [2] = "Kuroko no Basuke 2",
+   [3] = "Kuroko`s Basketball 2",
+   [4] = "Баскетболът на Куроко 2",
+   [5] = "黑子的篮球 2",
    },
   },
  [9605] = {
@@ -104402,8 +104413,9 @@ return {
   ["main"] = "Pocket Monsters XY",
   ["official"] = {
    [1] = "Pokemon the Series: XY",
-   [2] = "Pokémon – Die TV-Serie: XY",
-   [3] = "ポケットモンスターXY",
+   [2] = "Pokémon - Série XY",
+   [3] = "Pokémon – Die TV-Serie: XY",
+   [4] = "ポケットモンスターXY",
    },
   ["short"] = {
    [1] = "pmxy",
@@ -104778,6 +104790,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "رقصة سيوف مستخدمي الارواح",
    },
   },
  [10000] = {
@@ -107067,7 +107080,8 @@ return {
    [1] = "Parasyte",
    [2] = "Parazit: Mravní zásady života",
    [3] = "Паразит",
-   [4] = "Паразит: Основно правило",
+   [4] = "Паразит: Жизненный принцип",
+   [5] = "Паразит: Основно правило",
    },
   },
  [10273] = {
@@ -109958,7 +109972,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "のぶながコンツェルト",
+   [1] = "Концерт Нобунаги",
+   [2] = "のぶながコンツェルト",
    },
   },
  [10625] = {
@@ -110294,6 +110309,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kuroko no Basket 3",
    },
   },
  [10663] = {
@@ -110573,7 +110589,7 @@ return {
    [1] = "Assassination Classroom",
    [2] = "暗杀教室",
    [3] = "暗殺教室",
-   [4] = "暗殺教室 ASSASSINATION CLASSROOM (2015)",
+   [4] = "暗殺教室 ASSASSINATION CLASSROOM",
    },
   ["short"] = {
    },
@@ -111648,15 +111664,6 @@ return {
   ["syn"] = {
    },
   },
- [10828] = {
-  ["main"] = "War of the Worlds: Goliath",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10829] = {
   ["main"] = "Ganbare! Lulu Lolo (2014)",
   ["official"] = {
@@ -112350,6 +112357,8 @@ return {
    },
   ["syn"] = {
    [1] = "Парад на смъртта",
+   [2] = "Парад смерти",
+   [3] = "Парад смерті",
    },
   },
  [10907] = {
@@ -113040,9 +113049,9 @@ return {
    },
   },
  [10981] = {
-  ["main"] = "Haikyuu!! 2",
+  ["main"] = "Haikyuu!! Second Season",
   ["official"] = {
-   [1] = "ハイキュー!! 2",
+   [1] = "ハイキュー!! セカンドシーズン",
    },
   ["short"] = {
    },
@@ -113326,13 +113335,14 @@ return {
    },
   },
  [11016] = {
-  ["main"] = "Akazukin to Kenko",
+  ["main"] = "Akazukin to Kenkou",
   ["official"] = {
    [1] = "赤ずきんと健康",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Little Red Riding Hood and Health",
    },
   },
  [11017] = {
@@ -113683,13 +113693,14 @@ return {
    },
   },
  [11058] = {
-  ["main"] = "Omakase Mamitasu",
+  ["main"] = "Omakase! Miracle Cat-dan",
   ["official"] = {
-   [1] = "おまかせマミタス",
+   [1] = "おまかせ! みらくるキャット団",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "おまかせマミタス",
    },
   },
  [11059] = {
@@ -114229,6 +114240,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "One Punch Man",
+   [2] = "One Punch-Man",
    },
   },
  [11124] = {
@@ -114286,6 +114299,7 @@ return {
    [1] = "モンスター娘のいる日常",
    },
   ["short"] = {
+   [1] = "monmusu",
    },
   ["syn"] = {
    [1] = "Everyday Life with Monster Girls",
@@ -114449,6 +114463,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "クラスルーム☆クライシス",
    },
   },
  [11148] = {
@@ -114509,6 +114524,139 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [11154] = {
+  ["main"] = "Gekijouban Yowamushi Pedal",
+  ["official"] = {
+   [1] = "劇場版 弱虫ペダル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11155] = {
+  ["main"] = "High Speed!: Free! Starting Days",
+  ["official"] = {
+   [1] = "ハイ☆スピード! -Free! Starting Days-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11156] = {
+  ["main"] = "Tetsuwan Atom: Ao Kishi no Kan",
+  ["official"] = {
+   [1] = "鉄腕アトム ~青騎士の巻~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11157] = {
+  ["main"] = "Wakako-zake",
+  ["official"] = {
+   [1] = "ワカコ酒",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11158] = {
+  ["main"] = "Mirai Arise",
+  ["official"] = {
+   [1] = "ミライアライズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11160] = {
+  ["main"] = "Maro no Kanja wa Gatenkei",
+  ["official"] = {
+   [1] = "麻呂の患者はガテン系",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11161] = {
+  ["main"] = "Kantai Collection: KanColle 2",
+  ["official"] = {
+   [1] = "艦隊これくしょん -艦これ- 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11162] = {
+  ["main"] = "Kanojo ga Nekomimi ni Kigaetara",
+  ["official"] = {
+   [1] = "彼女がネコミミに着替えたら",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11163] = {
+  ["main"] = "Nagato Yuki-chan no Shoushitsu OAD",
+  ["official"] = {
+   [1] = "長門有希ちゃんの消失 OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11164] = {
+  ["main"] = "Drifters",
+  ["official"] = {
+   [1] = "ドリフターズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11165] = {
+  ["main"] = "Nemure Omoi Ko Sora no Shitone ni",
+  ["official"] = {
+   [1] = "ねむれ思い子 空のしとねに",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Sleep Tight My Baby, Cradled in the Sky",
+   },
+  },
+ [11166] = {
+  ["main"] = "Chaos;Child",
+  ["official"] = {
+   [1] = "CHAOS;CHILD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "カオスチャイルド",
+   },
+  },
+ [11167] = {
+  ["main"] = "Steins;Gate 0",
+  ["official"] = {
+   [1] = "Steins;Gate0",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "シュタインズ・ゲート0",
    },
   },
 }
