@@ -7950,8 +7950,7 @@ return {
   ["syn"] = {
    [1] = "Armor Legend Samurai Troopers",
    [2] = "Legendary Armor Samurai Troopers",
-   [3] = "Samurai Warriors",
-   [4] = "魔神坛斗士",
+   [3] = "魔神坛斗士",
    },
   },
  [461] = {
@@ -22916,10 +22915,10 @@ return {
  [1539] = {
   ["main"] = "Monster",
   ["official"] = {
-   [1] = "Monster",
-   [2] = "Monstre",
-   [3] = "O Monstro",
-   [4] = "モンスター",
+   [1] = "MONSTER",
+   [2] = "Monster",
+   [3] = "Monstre",
+   [4] = "O Monstro",
    },
   ["short"] = {
    [1] = "Monster TV",
@@ -30618,14 +30617,15 @@ return {
  [2152] = {
   ["main"] = "Bishoujo Senshi Sailor Moon R (1993)",
   ["official"] = {
-   [1] = "Czarodziejka z Księżyca: Sailor Moon R the Movie",
-   [2] = "Sailor Moon R Movie: Gefährliche Blumen",
-   [3] = "Sailor Moon R: A Promessa da Rosa",
-   [4] = "Sailor Moon R: The Movie - The Promise of the Rose",
-   [5] = "Sailor Moon, le film",
-   [6] = "Varázslatos álmok - A rózsa ígérete",
-   [7] = "เซเลอร์มูน R \"สงครามปีศาจดอกไม้จากอวกาศ\"",
-   [8] = "美少女戦士セーラームーンR",
+   [1] = "As Navegantes da Lua R - A promessa de uma rosa",
+   [2] = "Czarodziejka z Księżyca: Sailor Moon R the Movie",
+   [3] = "Sailor Moon R Movie: Gefährliche Blumen",
+   [4] = "Sailor Moon R: A Promessa da Rosa",
+   [5] = "Sailor Moon R: The Movie - The Promise of the Rose",
+   [6] = "Sailor Moon, le film",
+   [7] = "Varázslatos álmok - A rózsa ígérete",
+   [8] = "เซเลอร์มูน R \"สงครามปีศาจดอกไม้จากอวกาศ\"",
+   [9] = "美少女戦士セーラームーンR",
    },
   ["short"] = {
    [1] = "SM R Movie",
@@ -32625,7 +32625,8 @@ return {
    },
   ["syn"] = {
    [1] = "Sui monti con Annette",
-   [2] = "داستان های آلپ: آنت من",
+   [2] = "The Alps Story: My Annette",
+   [3] = "داستان های آلپ: آنت من",
    },
   },
  [2301] = {
@@ -35871,6 +35872,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kijutsushi x Majutsushi: Ousaka Gakuen Tanteibu no Jikenbo",
+   [2] = "Magician x Sorcerer: The Case Files of Ousaka Academy`s Detective Club",
    },
   },
  [2573] = {
@@ -54470,6 +54473,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kazama Ai",
+   [2] = "夜勤病棟ヒロインシリーズ 2",
    },
   },
  [4581] = {
@@ -54483,6 +54487,7 @@ return {
    [1] = "Nanase Ren",
    },
   ["syn"] = {
+   [1] = "夜勤病棟ヒロインシリーズ 1",
    },
   },
  [4583] = {
@@ -57374,6 +57379,7 @@ return {
    },
   ["syn"] = {
    [1] = "アニメ八神優",
+   [2] = "夜勤病棟ヒロインシリーズ 3",
    },
   },
  [4878] = {
@@ -59074,7 +59080,8 @@ return {
    [2] = "Urotsukidoji V: The Final Chapter",
    [3] = "Urotsukidōji V: Ostatni rozdział",
    [4] = "超神伝説うろつき童子 完結篇",
-   [5] = "초신전설 우로츠키 동자 완결편",
+   [5] = "超神伝説うろつき童子 超神誕生篇",
+   [6] = "초신전설 우로츠키 동자 완결편",
    },
   },
  [5044] = {
@@ -64276,8 +64283,9 @@ return {
  [5635] = {
   ["main"] = "Zero no Tsukaima: Princess no Rondo",
   ["official"] = {
-   [1] = "ゼロの使い魔~三美姫[プリンセッセ]の輪舞[ロンド]~",
-   [2] = "제로의 사역마: 삼미희의 윤무",
+   [1] = "The Familiar of Zero: \"Rondo\" of Princesses",
+   [2] = "ゼロの使い魔~三美姫[プリンセッセ]の輪舞[ロンド]~",
+   [3] = "제로의 사역마: 삼미희의 윤무",
    },
   ["short"] = {
    [1] = "ZnT 3",
@@ -81453,6 +81461,7 @@ return {
    [1] = "その花びらにくちづけを",
    },
   ["short"] = {
+   [1] = "sonohana",
    },
   ["syn"] = {
    [1] = "A Kiss for the Petals",
@@ -91704,7 +91713,7 @@ return {
  [8593] = {
   ["main"] = "Zero no Tsukaima F",
   ["official"] = {
-   [1] = "Familiar of Zero F",
+   [1] = "The Familiar of Zero F",
    [2] = "ゼロの使い魔F",
    [3] = "제로의 사역마 F",
    },
@@ -106684,6 +106693,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "デカくてHな俺の姉",
    },
   },
  [10222] = {
@@ -107737,7 +107747,8 @@ return {
  [10365] = {
   ["main"] = "Fuuun Ishin Dai Shougun",
   ["official"] = {
-   [1] = "風雲維新ダイ☆ショーグン",
+   [1] = "Dai Shogun: Great Revolution",
+   [2] = "風雲維新ダイ☆ショーグン",
    },
   ["short"] = {
    },
@@ -108983,6 +108994,7 @@ return {
    [2] = "少年ハリウッド -HOLLY STAGE FOR 49-",
    },
   ["short"] = {
+   [1] = "ShoHari",
    },
   ["syn"] = {
    },
@@ -109081,13 +109093,13 @@ return {
  [10529] = {
   ["main"] = "Shinmai Maou no Testament",
   ["official"] = {
-   [1] = "新妹魔王の契約者[テスタメント]",
-   [2] = "新妹魔王的契约者",
+   [1] = "The Testament of Sister New Devil",
+   [2] = "新妹魔王の契約者[テスタメント]",
+   [3] = "新妹魔王的契约者",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Testament of Sister New Devil",
    },
   },
  [10530] = {
@@ -109768,12 +109780,14 @@ return {
  [10601] = {
   ["main"] = "Yahari Ore no Seishun Lovecome wa Machigatte Iru. Zoku",
   ["official"] = {
-   [1] = "やはり俺の青春ラブコメはまちがっている. 続",
+   [1] = "My Teen Romantic Comedy: SNAFU Too!",
+   [2] = "やはり俺の青春ラブコメはまちがっている. 続",
    },
   ["short"] = {
    [1] = "Oregairu 2",
    },
   ["syn"] = {
+   [1] = "Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku",
    },
   },
  [10602] = {
@@ -110264,7 +110278,8 @@ return {
  [10657] = {
   ["main"] = "World Trigger",
   ["official"] = {
-   [1] = "ワールドトリガー",
+   [1] = "World Trigger",
+   [2] = "ワールドトリガー",
    },
   ["short"] = {
    },
@@ -110595,6 +110610,7 @@ return {
    },
   ["syn"] = {
    [1] = "Assassination Classroom (2015)",
+   [2] = "ass class",
    },
   },
  [10704] = {
@@ -110665,13 +110681,13 @@ return {
  [10710] = {
   ["main"] = "Juuou Mujin no Fafnir",
   ["official"] = {
-   [1] = "銃皇無尽のファフニール",
-   [2] = "铳皇无尽的法夫纳",
+   [1] = "Unlimited Fafnir",
+   [2] = "銃皇無尽のファフニール",
+   [3] = "铳皇无尽的法夫纳",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Unlimited Fafnir",
    },
   },
  [10712] = {
@@ -111572,14 +111588,14 @@ return {
  [10815] = {
   ["main"] = "Nagato Yuki-chan no Shoushitsu",
   ["official"] = {
-   [1] = "長門有希ちゃんの消失",
-   [2] = "나가토 유키짱의 소실",
+   [1] = "The Disappearance of Nagato Yuki-chan",
+   [2] = "長門有希ちゃんの消失",
+   [3] = "나가토 유키짱의 소실",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Disappearance of Nagato Yuki-chan",
-   [2] = "The Vanishing of Nagato Yuki-chan",
+   [1] = "The Vanishing of Nagato Yuki-chan",
    },
   },
  [10816] = {
@@ -111866,6 +111882,7 @@ return {
    [2] = "少年ハリウッド -HOLLY STAGE FOR 50-",
    },
   ["short"] = {
+   [1] = "ShoHari 2",
    },
   ["syn"] = {
    },
@@ -112239,7 +112256,8 @@ return {
  [10894] = {
   ["main"] = "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka",
   ["official"] = {
-   [1] = "ダンジョンに出会いを求めるのは間違っているだろうか",
+   [1] = "Is het Verkeerd om Meisjes Op te Pikken in Een Dungeon?",
+   [2] = "ダンジョンに出会いを求めるのは間違っているだろうか",
    },
   ["short"] = {
    [1] = "danmachi",
@@ -112418,8 +112436,9 @@ return {
  [10913] = {
   ["main"] = "Sengoku Musou",
   ["official"] = {
-   [1] = "战国无双",
-   [2] = "戦国無双",
+   [1] = "Samurai Warriors",
+   [2] = "战国无双",
+   [3] = "戦国無双",
    },
   ["short"] = {
    },
@@ -112471,7 +112490,8 @@ return {
  [10918] = {
   ["main"] = "Ore Monogatari!!",
   ["official"] = {
-   [1] = "俺物語!!",
+   [1] = "Mon histoire",
+   [2] = "俺物語!!",
    },
   ["short"] = {
    },
@@ -112975,16 +112995,6 @@ return {
    [1] = "Beautiful Little Sister! Umaru-chan",
    },
   },
- [10973] = {
-  ["main"] = "PriPara (2015)",
-  ["official"] = {
-   [1] = "プリパラ (2015)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10974] = {
   ["main"] = "Tesagure! Bukatsumono Spin-off Purupurun Sharumu to Asobou",
   ["official"] = {
@@ -113003,6 +113013,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Shabura Rental: The Slutty Nee-chan and the Super Erotic Lesson The Animation",
    },
   },
  [10976] = {
@@ -113249,6 +113260,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I Can`t Understand What My Husband Is Saying 2nd Thread",
    },
   },
  [11003] = {
@@ -113301,6 +113313,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Labyrinth of Grisaia",
    },
   },
  [11009] = {
@@ -113311,6 +113324,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Eden of Grisaia",
    },
   },
  [11011] = {
@@ -113928,9 +113942,9 @@ return {
    },
   },
  [11085] = {
-  ["main"] = "Etsuraku no Tane The Animation",
+  ["main"] = "Etsuraku no Tane",
   ["official"] = {
-   [1] = "悦楽の胤 THE ANIMATION",
+   [1] = "悦楽の胤",
    },
   ["short"] = {
    },
@@ -114099,6 +114113,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Music Girl",
    },
   },
  [11103] = {
@@ -114657,6 +114672,106 @@ return {
    },
   ["syn"] = {
    [1] = "シュタインズ・ゲート0",
+   },
+  },
+ [11168] = {
+  ["main"] = "Chi Jian Chuan Qi",
+  ["official"] = {
+   [1] = "赤剑传奇",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11169] = {
+  ["main"] = "Cyborg 009 (2015)",
+  ["official"] = {
+   [1] = "サイボーグ009 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11170] = {
+  ["main"] = "Noragami 2",
+  ["official"] = {
+   [1] = "ノラガミ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11171] = {
+  ["main"] = "Hero Company",
+  ["official"] = {
+   [1] = "ヒーローカンパニー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11172] = {
+  ["main"] = "Fushigi na Somera-chan",
+  ["official"] = {
+   [1] = "不思議なソメラちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11173] = {
+  ["main"] = "Kagewani",
+  ["official"] = {
+   [1] = "影鰐 -KAGEWANI-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11174] = {
+  ["main"] = "Gakuen Handsome the Animation",
+  ["official"] = {
+   [1] = "学園ハンサム The Animation",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11175] = {
+  ["main"] = "Rasen Sokou no Dystopia",
+  ["official"] = {
+   [1] = "螺旋遡行のディストピア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11176] = {
+  ["main"] = "Soukyuu no Fafner: Dead Aggressor - Exodus 2",
+  ["official"] = {
+   [1] = "蒼穹のファフナー Dead Aggressor EXODUS 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11177] = {
+  ["main"] = "Gakusen Toshi Asterisk",
+  ["official"] = {
+   [1] = "学戦都市アスタリスク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
