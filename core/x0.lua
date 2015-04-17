@@ -10,7 +10,7 @@ return function(url, callback)
 	end
 
 	util.simplehttp(
-		'http://api.x0.no/?' .. url,
+		'https://x0.no/api/?' .. url,
 		function(data, url)
 			if(data:sub(8,9) =='x0') then
 				x0["x0:" .. url] = data
