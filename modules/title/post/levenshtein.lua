@@ -49,9 +49,7 @@ do
 			return
 		end
 		local ratio = levratio(queue.url, queue.output)
-		for k, v in pairs(queue) do
-			print(k,v)
-		end
+
 		ivar2:Log('debug', 'title/post/levenshtein: %s', ratio)
 		if (ratio < cutoff) then
 			queue.output = false
