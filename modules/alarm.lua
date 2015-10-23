@@ -84,8 +84,8 @@ local alarm = function(self, source, destination, message)
 					'privmsg',
 					destination,
 					source,
-					nick .. ': '..
-					'Previously active timer set to trigger at %s with message "%s" has been removed.',
+					'%s: Previously active timer set to trigger at %s with message "%s" has been removed.',
+					nick,
 					os.date(dateFormat, runningTimer.utimestamp),
 					runningTimer.message
 				)
@@ -94,8 +94,8 @@ local alarm = function(self, source, destination, message)
 					'privmsg',
 					destination,
 					source,
-					nick .. ': '..
-					'Previously active timer set to trigger at %s has been removed.',
+					'%s: Previously active timer set to trigger at %s has been removed.',
+					nick,
 					os.date(dateFormat, runningTimer.utimestamp)
 				)
 			end
@@ -104,7 +104,7 @@ local alarm = function(self, source, destination, message)
 
 	local timer = self:Timer(id, duration, function(loop, timer, revents)
 		if(#message == 0) then message = 'Timer finished.' end
-		self:Msg('privmsg', destination, source, nick .. ': %s', message or 'Timer finished.')
+		self:Msg('privmsg', destination, source, '%s: %s', nick, message or 'Timer finished.')
 	end)
 
 	if(#message > 0) then timer.message = message end
