@@ -62,15 +62,10 @@ local function handleSearch(self, source, destination, name)
 
     db:close()
 
-<<<<<<< HEAD
-    if(#out) then
-        self:Msg('privmsg', destination, source, table.concat(out, ', '))
-=======
     if #out > 0 then
         say(table.concat(out, ', '))
     else
         say('No match. ಠ_ಠ')
->>>>>>> 527be1c... unicode: gfind -> gmatch. Proper check for matches
     end
 end
 
@@ -86,15 +81,10 @@ local function handleSearchShort(self, source, destination, name)
 
     db:close()
 
-<<<<<<< HEAD
-    if(#out) then
-        self:Msg('privmsg', destination, source, table.concat(out, ''))
-=======
     if #out > 0 then
         say(table.concat(out, ''))
     else
         say('No match. ಠ_ಠ')
->>>>>>> 527be1c... unicode: gfind -> gmatch. Proper check for matches
     end
 end
 
