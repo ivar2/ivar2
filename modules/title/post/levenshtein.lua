@@ -32,7 +32,7 @@ local function strclean(str)
 	return str
 end
 
-function levratio(str1, str2)
+local function levratio(str1, str2)
 	str1 = strclean(str1)
 	str2 = strclean(str2)
 	local maxlen = math.max(#str1, #str2)
