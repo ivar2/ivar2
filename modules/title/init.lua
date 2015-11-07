@@ -260,7 +260,7 @@ local fetchInformation = function(queue)
 	end
 
 	simplehttp(
-		parseAJAX(queue.url):gsub('#.*$', ''),
+		parseAJAX(queue.url),
 
 		function(data, _, response)
 			local message = handleData(response.headers, data)
