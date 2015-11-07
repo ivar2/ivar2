@@ -120,6 +120,10 @@ local search = function(input)
 					seq:add(episode(links.nextepisode.href, 'Next'))
 				end
 
+				seq:add(function(seq)
+					seq:success(data.url)
+				end)
+
 				seq:success(table.concat(out, ' '))
 			end
 		)
