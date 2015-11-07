@@ -56,6 +56,9 @@ local function simplehttp(url, callback, stream, limit, visited)
 		url = url.url or url[1]
 	end
 
+	-- Don't include fragments in the request.
+	url = url:gsub('#.*$', '')
+
 	-- Add support for IDNs.
 	url = toIDN(url)
 
