@@ -140,7 +140,7 @@ local handle = function(self, source, destination, input)
 
 		-- Fail
 		function(sef, results, ...)
-			say('%s', source.nick, 'Invalid show? :(')
+			say('%s: %s', source.nick, 'Invalid show? :(')
 		end
 	)
 
