@@ -1,4 +1,3 @@
-
 PRIVMSG:
   '^%pupper (.+)$': (source, destination, arg) =>
     say arg\upper!
@@ -9,7 +8,7 @@ PRIVMSG:
   '^%plen (.+)$': (source, destination, arg) =>
     say tostring(arg\len!)
   '^%pnicks$': (source, destination) =>
-    say table.concat([ivar2.util.nonickalert(ivar2.channels[destination].nicks, n) for n,k in pairs(ivar2.channels[destination].nicks)], ' ')
+    say table.concat([ivar2.util.nonickalert(ivar2.channels[destination\lower!].nicks, n) for n,k in pairs(ivar2.channels[destination\lower!].nicks)], ' ')
   '^%prandom (.+)$': (source, destination, arg) =>
     words = [word for word in arg\gmatch('%S+')]
     say words[math.random(1, #words)]
@@ -44,3 +43,9 @@ PRIVMSG:
         return w)
   '^%prot13 (.+)$': (source, destination, arg) =>
     say ivar2.util.rot13(arg)
+  '^%phex (.+)$': (source, destination, arg) =>
+    say arg\gsub '.', (b) ->
+      ('%02x ')\format(b\byte!)
+  --'^%prepeat (%d+) (.*)$': (source, destination, nr, command) =>
+  --  for i=1, nr
+  --    @DispatchCommand 'PRIVMSG', command, source, destination
