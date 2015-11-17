@@ -172,6 +172,7 @@ function MatrixServer:http_cb(command)
         if not success then
             print(('error\t%s during json load: %s'):format(js, data))
             js = {}
+            return
         end
         if js['errcode'] then
             if command:find'login' then
@@ -1061,10 +1062,11 @@ function Room:parseChunk(chunk, backlog, chunktype)
                 self.conn:DispatchCommand('PRIVMSG', body, source, self.fullname or self.name)
             end
         elseif content['msgtype'] == 'm.image' then
-            local url = content['url']:gsub('mxc://',
-                self.conn.url
-                .. '_matrix/media/v1/download/')
-            body = content['body'] .. ' ' .. url
+            --local url = content['url']:gsub('mxc://',
+            --    self.conn.url
+            --    .. '_matrix/media/v1/download/')
+            --body = content['body'] .. ' ' .. url
+            body = ''
         elseif content['msgtype'] == 'm.notice' then
             body = content['body']
         elseif content['msgtype'] == 'm.emote' then
