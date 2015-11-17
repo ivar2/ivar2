@@ -171,7 +171,6 @@ function MatrixServer:http_cb(command)
         local success, js = pcall(json.decode, data)
         if not success then
             print(('error\t%s during json load: %s'):format(js, data))
-            js = {}
             return
         end
         if js['errcode'] then
@@ -243,12 +242,11 @@ function MatrixServer:http_cb(command)
             end)
             self:LoadModules()
             -- Auto join configured channels
-            for channel, data in next, self.config.channels do
+            for channel, _ in next, self.config.channels do
                 if not self.channels[channel] then
                     self:Join(channel)
                 end
             end
-        elseif command:find'messages' then
         elseif command:find'/join/' then
             -- We came from a join command, fecth some messages
             local found = false
@@ -262,13 +260,13 @@ function MatrixServer:http_cb(command)
                 end
             end
             if not found then
-                local data = urllib.urlencode({
+                local pd = urllib.urlencode({
                     access_token= self.access_token,
                     --limit= w.config_get_plugin('backlog_lines'),
                     limit = 10,
                 })
                 self:http(('/rooms/%s/initialSync?%s'):format(
-                    urllib.quote(js.room_id), data), {},
+                    urllib.quote(js.room_id), pd), {},
                     self:http_cb'initialSync')
             end
         elseif command:find'leave' then
@@ -455,6 +453,7 @@ function MatrixServer:pollcheck()
     if ((os.time() - self.polltime) > (polling_interval)) then
         self:Log('info', 'Resetting polling status!')
         self.polling = false
+        self:poll()
     end
 end
 
@@ -462,7 +461,7 @@ function MatrixServer:poll()
     if (self.connected == false or self.polling) then
         return
     end
-	self:Log('info', 'Polling for events with end token: %s', self.end_token)
+    self:Log('info', 'Polling for events with end token: %s', self.end_token)
     self.polling = true
     self.polltime = os.time()
     local data = urllib.urlencode({
@@ -677,7 +676,7 @@ function MatrixServer:LoadModule(moduleName)
     for _,ending in pairs(endings) do
         local fileName = 'modules/' .. moduleName .. ending
         -- Check if file exist and is readable before we try to loadfile it
-        local access, errCode, accessError = nixio.fs.access(fileName, 'r')
+        local access, _, _ = nixio.fs.access(fileName, 'r')
         if(access) then
             if(fileName:match('.lua')) then
                 moduleFile, moduleError = loadfile(fileName)
@@ -1243,7 +1242,6 @@ end
 
 if reload then
     -- TODO implement conf/code reload
-    return ivar2
 end
 
 local config = assert(loadfile(configFile))()
