@@ -30,7 +30,7 @@ handlers = {
   commit_comment: (repo, destination, json) ->
     --commenter = json.comment.user.login
     body = json.comment.body
-    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: commented #{body}"
+    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: <#{util.nonickalertword json.sender.login}> #{body}"
   pull_request: (repo, destination, json) ->
     action = json.action
     number = util.bold json.number
@@ -42,7 +42,7 @@ handlers = {
   issue_comment: (repo, destination, json) ->
     action = json.action
     nr = util.bold json.issue.number
-    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: comment on issue ##{nr}: #{json.comment.body} #{json.issue.html_url}"
+    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: Issue ##{nr} <#{util.nonickalertword json.sender.login}> #{json.comment.body} #{json.issue.html_url}"
   fork: (repo, destination, json) ->
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: forked to #{json.forkee.html_url}"
   create: (repo, destination, json) ->
