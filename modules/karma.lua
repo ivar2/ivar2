@@ -34,8 +34,10 @@ local function outputKarma(self, source, destination, item)
 
 	db:close()
 
-	if(karma) then
+	if(karma and karma.sum) then
 		self:Msg('privmsg', destination, source, "\002%s\002 karma is %s", item, karma.sum)
+	else
+		self:Msg('privmsg', destination, source, "\002%s\002 aint got no karma. No love - no hate", item)
 	end
 end
 
