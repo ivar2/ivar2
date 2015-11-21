@@ -46,6 +46,10 @@ PRIVMSG:
   '^%phex (.+)$': (source, destination, arg) =>
     say arg\gsub '.', (b) ->
       ('%02x ')\format(b\byte!)
+  '^%prtl (.+)$': (source, destination, arg) =>
+    say '‮'..arg
+  '^%pltr (.+)$': (source, destination, arg) =>
+    say '‎'..arg
   --'^%prepeat (%d+) (.*)$': (source, destination, nr, command) =>
   --  for i=1, nr
   --    @DispatchCommand 'PRIVMSG', command, source, destination
