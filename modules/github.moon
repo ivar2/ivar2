@@ -35,6 +35,10 @@ handlers = {
     action = json.action
     number = util.bold json.number
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} PR ##{number}: #{json.pull_request.title} #{json.pull_request.html_url}"
+  pull_request_review_comment: (repo, destination, json) ->
+    body = json.comment.body
+    number = util.bold json.pull_request.number
+    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: PR ##{number} <#{util.nonickalertword json.sender.login}> #{body}"
   issues: (repo, destination, json) ->
     action = json.action
     nr = util.bold json.issue.number
