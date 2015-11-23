@@ -277,16 +277,16 @@ return {
         ['^%ptweet (%d+)%s*$'] = function(self, source, destination, tid)
             getStatus(say, source, destination, tid)
         end,
-        ['^%ptwitter ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
+        ['^%ptwitter @?([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
             getLatestStatuses(say, source, destination, screen_name)
         end,
-        ['^%ptweet ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
+        ['^%ptweet @?([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
             getLatestStatuses(say, source, destination, screen_name)
         end,
-        ['^%ptwitter ([a-zA-Z0-9_]+) (%d+)%s*$'] = function(self, source, destination, screen_name, count)
+        ['^%ptwitter @?([a-zA-Z0-9_]+) (%d+)%s*$'] = function(self, source, destination, screen_name, count)
             getLatestStatuses(say, source, destination, screen_name, count)
         end,
-        ['^%ptweet ([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
+        ['^%ptweet @?([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
             getLatestStatuses(say, source, destination, screen_name, count)
         end,
         ['^%ptfollow ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
