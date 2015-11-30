@@ -32,6 +32,8 @@ local polling_interval = 30
 
 local log = lconsole()
 
+local ivar2
+
 local safeFormat = function(format, ...)
     if(select('#', ...) > 0) then
         local success, message = pcall(string.format, format, ...)
@@ -308,7 +310,7 @@ function MatrixServer:http_cb(command)
         elseif command:find'/events' then
             self.end_token = js['end']
             self.polling = false
-            for _, chunk in pairs(js.chunk) do
+            for _, chunk in ipairs(js.chunk or {}) do
                 if chunk.room_id then
                     local room = self.rooms[chunk['room_id']]
                     if room then
@@ -316,7 +318,8 @@ function MatrixServer:http_cb(command)
                     else
                         -- Chunk for non-existing room, maybe we just got
                         -- invited, so lets create a room
-                        self:addRoom(chunk)
+                        local newroom = self:addRoom(chunk)
+                        newroom:parseChunk(chunk, false, 'messages')
                     end
                 elseif chunk.type == 'm.presence' then
                     self:UpdatePresence(chunk.content)
@@ -349,6 +352,8 @@ end
 function MatrixServer:findRoom(fullname)
     for id, room in pairs(self.rooms) do
         if room.fullname == fullname then
+            return room
+        elseif room.name == fullname then
             return room
         end
     end
@@ -453,7 +458,7 @@ function MatrixServer:pollcheck()
     if ((os.time() - self.polltime) > (polling_interval)) then
         self:Log('info', 'Resetting polling status!')
         self.polling = false
-        self:poll()
+        --self:poll()
     end
 end
 
@@ -812,7 +817,8 @@ function MatrixServer:ModuleCall(func, source, destination, remainder, ...)
         if(not remainder) then
             self:Say(destination, source, output)
         else
-            local command, remainder = self:CommandSplitter(remainder)
+            local command
+            command, remainder = self:CommandSplitter(remainder)
             local newline = command .. " " .. output
             if(remainder) then
                 newline = newline .. "|" .. remainder
@@ -903,10 +909,21 @@ Room.create = function(obj, conn)
     -- We might not be a member yet
     local state_events = obj.state or {}
     for _, state in pairs(state_events) do
-        if state['type'] == 'm.room.aliases' then
-            local name = state['content']['aliases'][1] or ''
-            room.name, room.server = name:match('(.+):(.+)')
-            room.fullname = name
+        if state['type'] == 'm.room.name' then
+            local name = state['content']['name']
+            if name ~= '' or name ~= json.null then
+                room.name = name
+                room.fullname = name
+            end
+        end
+    end
+    if not room.name then
+        for _, state in pairs(state_events) do
+            if state['type'] == 'm.room.aliases' then
+                local name = state['content']['aliases'][1] or ''
+                room.name, room.server = name:match('(.+):(.+)')
+                room.fullname = name
+            end
         end
     end
     if not room.name then
@@ -918,8 +935,11 @@ Room.create = function(obj, conn)
     end
 
     if obj.membership == 'invite' then
-        print(('You have been invited to join room %s by %s. Type /join %s to join.'):format(room.identifier, obj.inviter, room.identifier))
+        conn:Log('info', 'You have been invited to join room %s by %s.', room.identifier, obj.inviter)
         room:addNick(obj.inviter)
+        if conn.config.join_on_invite then
+            conn:Join(room.identifier)
+        end
     end
 
     return room
@@ -975,6 +995,7 @@ end
 
 function Room:ParseMask(user_id)
     if type(user_id) == 'table' then return user_id end
+    if type(user_id) == 'nil' then return nil end
     local source = {
         mask = user_id,
         nick = self.users[user_id],
@@ -1036,10 +1057,15 @@ function Room:parseChunk(chunk, backlog, chunktype)
     end
 
     local is_self = false
+
+    local myself = self.conn.user_id
+
     -- Check if own message
-    if chunk.user_id == self.conn.user_id then
+    if chunk.user_id == myself then
         is_self = true
     end
+
+    local source = self:ParseMask(chunk.user_id)
 
     if chunk['type'] == 'm.room.message' then
         local time_int = chunk['origin_server_ts']/1000
@@ -1057,8 +1083,7 @@ function Room:parseChunk(chunk, backlog, chunktype)
             -- content.format = 'org.matrix.custom.html'
             -- fontent.formatted_body...
             if not backlog and not is_self then
-                local source = self:ParseMask(chunk.user_id)
-                self.conn:DispatchCommand('PRIVMSG', body, source, self.fullname or self.name)
+                self.conn:DispatchCommand('PRIVMSG', body, source, self.name or self.fullname)
             end
         elseif content['msgtype'] == 'm.image' then
             --local url = content['url']:gsub('mxc://',
@@ -1084,7 +1109,7 @@ function Room:parseChunk(chunk, backlog, chunktype)
     elseif chunk['type'] == 'm.room.name' then
         local name = chunk['content']['name']
         if name ~= '' or name ~= json.null then
-            self.conn:Log('warn', 'Ignoring chunk with room name: %s', name)
+            self.name = chunk.content.name
             --self:setName(name)
         end
     elseif chunk['type'] == 'm.room.member' then
@@ -1126,21 +1151,16 @@ function Room:parseChunk(chunk, backlog, chunktype)
                 self:delNick(nick)
             end
             if chunktype == 'messages' then
+                if chunk.state_key == myself then
+                    self.conn:DispatchCommand('KICK', 'Kicked '..tostring(myself), source, self.name or self.fullname)
+                end
                 --w.print_date_tags(self.buffer, time_int, tags(), data)
             end
         elseif chunk['content']['membership'] == 'invite' then
-            if chunk.state_key == self.user_id and
+            if chunk.state_key == myself and
                 (not backlog and chunktype=='messages') then
-                if tableHasValue(self.config.owners, chunk.user_id) then
+                if self.conn.config.join_on_invite then
                     self.conn:Join(self.identifier)
-                    print(('%s invited you'):format(
-                      chunk.user_id))
-                else
-                    print(('You have been invited to join room %s by %s.')
-                      :format(
-                      self.identifier,
-                      chunk.user_id,
-                      self.identifier))
                 end
             end
         end
@@ -1169,9 +1189,10 @@ function Room:parseChunk(chunk, backlog, chunktype)
     elseif chunk['type'] == 'm.presence' then
     elseif chunk['type'] == 'm.room.aliases' then
         -- Use first alias
-        self:setName(chunk.content.aliases[1])
+       -- self:setName(chunk.content.aliases[1])
+    elseif chunk['type'] == 'm.receipt' then -- ignore
     else
-        print 'unknown chunk'
+        self.conn:Log('warn', 'unknown chunk of type: '..tostring(chunk['type']))
     end
 end
 
@@ -1247,6 +1268,6 @@ end
 local config = assert(loadfile(configFile))()
 -- Store the config file name in the config so it can be accessed later
 config.configFile = configFile
-local ivar2 = MatrixServer.create()
+ivar2 = MatrixServer.create()
 ivar2:connect(config)
 ivar2.Loop:loop()
