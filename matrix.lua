@@ -172,7 +172,15 @@ function MatrixServer:http_cb(command)
         -- Protected call in case of JSON errors
         local success, js = pcall(json.decode, data)
         if not success then
-            print(('error\t%s during json load: %s'):format(js, data))
+            self:Log('error', 'http_cb, command: %s, error: %s, during json load of: %s', command, js, data)
+            -- reset polling if error during events
+            if command:find'events' then
+                self.polling = false
+                -- Wait a bit so it's not super spammy
+                self:Timer('_errpoll', 30, 0, function()
+                    self:poll()
+                end)
+            end
             return
         end
         if js['errcode'] then
