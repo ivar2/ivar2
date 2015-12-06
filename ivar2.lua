@@ -499,7 +499,7 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 				if(type(pattern) == 'number' and not source) then
 					success, message = pcall(callback, self, argument)
 				elseif(type(pattern) == 'number' and source) then
-					success, message = self:ModuleCall(callback, source, destination, false, argument)
+					success, message = self:ModuleCall(command, callback, source, destination, false, argument)
 				else
 					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
 					-- Check command for filters, aka | operator
@@ -511,7 +511,7 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 							self:Log('debug', 'Splitting command: %s into %s and %s', command, cutarg, remainder)
 						end
 
-						success, message = self:ModuleCall(callback, source, destination, remainder, cutarg:match(channelPattern))
+						success, message = self:ModuleCall(command, callback, source, destination, remainder, cutarg:match(channelPattern))
 					end
 				end
 
@@ -669,7 +669,7 @@ function ivar2:CommandSplitter(command)
 	return first, remainder
 end
 
-function ivar2:ModuleCall(func, source, destination, remainder, ...)
+function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
 	local env = getfenv(func)
@@ -678,15 +678,14 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 		if(not remainder) then
 			self:Say(destination, source, output)
 		else
-			local command
-			command, remainder = self:CommandSplitter(remainder)
-			local newline = command .. " " .. output
+			local newcommand
+			newcommand, remainder = self:CommandSplitter(remainder)
+			local newline = newcommand .. " " .. output
 			if(remainder) then
 				newline = newline .. "|" .. remainder
 			end
 
-			-- TODO: Check that it's actually a privmsg
-			self:DispatchCommand('PRIVMSG', newline, source, destination)
+			self:DispatchCommand(command, newline, source, destination)
 		end
 	end
 	env.reply = function(str, ...)
