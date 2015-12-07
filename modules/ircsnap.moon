@@ -94,13 +94,15 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     --body = fd\read '*a'
     --fd\close!
     content_type = 'image/jpeg'
-    if file\match '.png'
+    if file\lower!\match '.png'
       content_type = 'image/png'
-    if file\match '.svg'
+    if file\lower!\match '.svg'
       content_type = 'image/svg'
-    if file\match '.mp4'
+    if file\lower!\match '.mp4'
       content_type = 'video/mp4'
-    if file\match '.mp3'
+    if file\lower!\match '.mov'
+      content_type = 'video/quicktime'
+    if file\lower!\match '.mp3'
       content_type = 'audio/mp3'
 
     res\set_status code
