@@ -289,6 +289,11 @@ return {
 			-- We don't want to pick up URLs from commands.
 			if(argument:match'^%p') then return end
 
+			-- Handle CTCTP ACTION
+			if(argument:sub(1,1) == '\001' and argument:sub(-1) == '\001') then
+				argument = argument:sub(9, -2)
+			end
+
 			local tmp = {}
 			local tmpOrder = {}
 			local index = 1
