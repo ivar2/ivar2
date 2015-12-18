@@ -7,6 +7,18 @@ hex_to_char = (x) ->
 unescape = (url) ->
   url\gsub("%%(%x%x)", hex_to_char)
 
+acolor = (action) ->
+  if action == 'opened'
+    return util.green action
+  if action == 'closed'
+    return util.red action
+  if action == 'deleted'
+    return util.red action
+  if action == 'synchronize'
+    return util.purple action
+
+  return action
+
 handlers = {
   push: (repo, destination, json) ->
     branch = util.bold(json.ref\gsub 'refs/heads/', '')
@@ -22,7 +34,7 @@ handlers = {
   watch: (repo, destination, json) ->
     action = json.action
     if action == 'started'
-      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: +1 ★ (Total: #{json.repository.stargazers_count})"
+      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: +1 #{util.yellow '★'} (Total: #{json.repository.stargazers_count})"
     else
       ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} watching"
   ping: (repo, destination, json) ->
@@ -32,7 +44,7 @@ handlers = {
     body = json.comment.body
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: <#{util.nonickalertword json.sender.login}> #{body}"
   pull_request: (repo, destination, json) ->
-    action = json.action
+    action = acolor json.action
     number = util.bold json.number
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} PR ##{number}: #{json.pull_request.title} #{json.pull_request.html_url}"
   pull_request_review_comment: (repo, destination, json) ->
@@ -40,11 +52,11 @@ handlers = {
     number = util.bold json.pull_request.number
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: PR ##{number} <#{util.nonickalertword json.sender.login}> #{body}"
   issues: (repo, destination, json) ->
-    action = json.action
+    action = acolor json.action
     nr = util.bold json.issue.number
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} issue ##{nr}: #{json.issue.title} #{json.issue.html_url}"
   issue_comment: (repo, destination, json) ->
-    action = json.action
+    action = acolor json.action
     nr = util.bold json.issue.number
     ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: Issue ##{nr} <#{util.nonickalertword json.sender.login}> #{json.comment.body} #{json.issue.html_url}"
   fork: (repo, destination, json) ->
