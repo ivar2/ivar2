@@ -1,4 +1,8 @@
-alot = (source, destination) =>
-  say 'http://hyperboleandahalf.blogspot.no/2010/04/alot-is-better-than-you-at-everything.html'
+alot = (source, destination, arg, arg2) =>
+  -- Ignore URLs
+  if arg\match'https?://'
+    return
+  elseif arg\match'%f[%a][aA][lL][oO][tT]%f[%A]'
+    say 'http://hyperboleandahalf.blogspot.no/2010/04/alot-is-better-than-you-at-everything.html'
 PRIVMSG:
-  '%f[%a][aA][lL][oO][tT]%f[%A]': alot
+  '.*[aA][lL][oO][tT].*': alot
