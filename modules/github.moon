@@ -16,6 +16,8 @@ acolor = (action) ->
     return util.red action
   if action == 'synchronize'
     return util.purple action
+  if action == 'labeled'
+    return util.yellow action
 
   return action
 
@@ -54,7 +56,10 @@ handlers = {
   issues: (repo, destination, json) ->
     action = acolor json.action
     nr = util.bold json.issue.number
-    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} issue ##{nr}: #{json.issue.title} #{json.issue.html_url}"
+    extra = ''
+    if json.action == 'labeled' -- Add label and color if action is label
+      extra = "#{json.label.name}, ##{json.label.color} "
+    ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{util.nonickalertword json.sender.login}: #{action} issue ##{nr}: #{extra}#{json.issue.title} #{json.issue.html_url}"
   issue_comment: (repo, destination, json) ->
     action = acolor json.action
     nr = util.bold json.issue.number
@@ -69,6 +74,10 @@ handlers = {
     return
   release: (repo, destination, json) ->
     return
+  status: (repo, destination, json) -> -- Travis CI event
+    -- NYI
+    return
+
 }
 
 ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
