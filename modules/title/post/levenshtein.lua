@@ -48,6 +48,12 @@ do
 		if not queue.output or queue.output == '' or queue.customHandler then
 			return
 		end
+
+		-- Check if title is Olds, then we report anyway, some things matter more than others in life.
+		if queue.output:match('Olds?!') then
+				return
+		end
+
 		local ratio = levratio(queue.url, queue.output)
 
 		ivar2:Log('debug', 'title/post/levenshtein: %s', ratio)
