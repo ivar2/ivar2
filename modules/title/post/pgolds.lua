@@ -1,7 +1,5 @@
 local DBI = require 'DBI'
 local util = require'util'
-require'logging.console'
-local log = logging.console()
 
 -- Connection handle
 local conn = false
@@ -11,7 +9,7 @@ local conn = false
 local connect = function()
     local dbh, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
     if not dbh then
-        log:error("Unable to connect to DB: %s", err)
+        ivar2:Log('error', "Unable to connect to DB: %s", err)
         return
     end
     conn = dbh
@@ -30,7 +28,7 @@ local openDb = function()
 
     local success, err = DBI.Do(conn, 'SELECT NOW()')
     if not success then
-        log:error("SQL Connection: %s", err)
+        ivar2:Log('error', "SQL Connection: %s", err)
         connect()
     end
 
@@ -103,7 +101,6 @@ local checkOlds = function(dbh, source, destination, url)
         if count == 1 then
             ago = row[2]
             nick = row[3]
-            return nick, count, ago
         end
     end
 
@@ -115,7 +112,7 @@ end
 local dbLogUrl = function(dbh, source, destination, url, msg)
     local nick = source.nick
 
-    log:info(string.format('Inserting URL into db. %s,%s, %s, %s', nick, destination, msg, url))
+    ivar2:Log('info', string.format('Inserting URL into db. %s,%s, %s, %s', nick, destination, msg, url))
 
     -- check status of the connection
     -- local alive = dbh:ping()
@@ -158,6 +155,5 @@ do
                 queue.output = prepend
             end
         end
-	end
+    end
 end
-
