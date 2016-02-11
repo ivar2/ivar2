@@ -8,6 +8,8 @@ local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
 local lower = ivar2.util.utf8.lower
 
+local lang = 'en'
+
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
 	return os.time{
@@ -18,6 +20,63 @@ local parseDate = function(datestr)
 		min = min,
 		sec = sec,
 	}
+end
+
+local i18n = {
+	['Current weather in'] = {
+		nn = 'Vêret no,',
+		nb = 'Nåværende,'
+	},
+	['feels like'] = {
+		nn = 'følt',
+		nb = 'følt'
+	},
+	['Tonight'] = {
+		nn = 'I kveld',
+		nb = 'I kveld'
+	},
+	['Tomorrow'] = {
+		nn = 'I morgon',
+		nb = 'I morgen'
+	},
+	['Sun'] = {
+		nn = 'Sun',
+		nb = 'Søn'
+	},
+	['Mon'] = {
+		nn = 'Mån',
+		nb = 'Man'
+	},
+	['Tue'] = {
+		nn = 'Tys',
+		nb = 'Tir'
+	},
+	['We'] = {
+		nn = 'Ons',
+		nb = 'Ons'
+	},
+	['Thu'] = {
+		nn = 'Tor',
+		nb = 'Tor'
+	},
+	['Fri'] = {
+		nn = 'Fre',
+		nb = 'Fre'
+	},
+	['Sat'] = {
+		nn = 'Lau',
+		nb = 'Lør'
+	},
+	['Longterm for'] = {
+		nn = 'Langtidsvarsel for',
+		nb = 'Langtidsvarsel for'
+	},
+}
+local _ = function(s)
+	if i18n[s] and i18n[s][lang] then
+		return i18n[s][lang]
+	end
+	return s
 end
 
 local feelsLike = function(celsius, wind)
@@ -34,7 +93,7 @@ end
 local formatPeriod = function(period)
 	local out = {}
 
-	table.insert(out, string.format("%s, %s°C (feels like %s°C)", period.symbol.name, period.temperature.value, period.temperature.feels, period.temperature.feels))
+	table.insert(out, string.format("%s, %s°C (%s %s°C)", period.symbol.name, period.temperature.value, _('feels like'), period.temperature.feels, period.temperature.feels))
 
 	local rain = period.precipitation
 	if(rain.value ~= "0") then
@@ -60,10 +119,11 @@ end
 local formatShortPeriod = function(period)
 	local wday = os.date('*t', period.from)['wday']
 	return string.format(
-		"\002%s\002: %s, %s°C (feels like %s°C)",
-		days[wday],
+		"\002%s\002: %s, %s°C (%s %s°C)",
+		_(days[wday]),
 		period.symbol.name,
 		period.temperature.value,
+		_('feels like'),
 		period.temperature.feels
 	)
 end
@@ -100,7 +160,7 @@ local handleObservationOutput = function(self, source, destination, data)
 				color = self.util.lightblue
 			end
 			-- Use the first result
-			return '%s °C (feels like %s °C), %s %s (%s, %s)', color(temperature.value), color(feelsLike(temperature.value, windSpeed)), windDirection, windSpeedname, name, time
+			return '%s °C (%s %s °C), %s %s (%s, %s)', color(temperature.value), _('feels like'), color(feelsLike(temperature.value, windSpeed)), windDirection, windSpeedname, name, time
 		end
 	end
 end
@@ -108,14 +168,14 @@ end
 local function handleOutput(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
+		local curl = {url=("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
+			yrUrlEncode(city.countryName),
+			yrUrlEncode(city.adminName1),
+			yrUrlEncode(city.toponymName),
+			city.geonameId
+		)}
 		ivar2.util.simplehttp(
-			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
-				yrUrlEncode(city.countryName),
-				yrUrlEncode(city.adminName1),
-				yrUrlEncode(city.toponymName),
-				city.geonameId
-			),
-			function(data)
+			getUrl(self, source, destination, curl), function(data)
 				handleOutput(source, destination, seven, data, city, true)
 			end
 		)
@@ -147,6 +207,16 @@ local function handleOutput(source, destination, seven, data, city, try)
 		table.insert(periods, time)
 	end
 
+	local clocale = ivar2:DestinationLocale(destination)
+	-- TODO support personal language here too
+	if (clocale:match('^nn')) then
+		lang = 'nn'
+	elseif(clocale:match('^nb')) then
+		lang = 'nb'
+	else -- The default
+		lang = 'en'
+	end
+
 	local time = os.date("*t")
 	time.day = time.day + 1
 	time.hour = 0
@@ -170,7 +240,7 @@ local function handleOutput(source, destination, seven, data, city, try)
 			out[i] = formatShortPeriod(out[i])
 		end
 
-		table.insert(out, 1, string.format('Longterm for \002%s\002 (%s)', name, country))
+		table.insert(out, 1, string.format('%s \002%s\002 (%s)', _('Longterm for'), name, country))
 		table.insert(out, longterm)
 	else
 		local now = periods[1]
@@ -190,14 +260,14 @@ local function handleOutput(source, destination, seven, data, city, try)
 			end
 		end
 
-		table.insert(out, string.format("Current weather in \002%s\002 (%s): %s", name, country, formatPeriod(now)))
+		table.insert(out, string.format("%s \002%s\002 (%s): %s", _('Current weather in'), name, country, formatPeriod(now)))
 
 		if(later) then
-			table.insert(out, string.format("\002Tonight\002: %s", formatPeriod(later)))
+			table.insert(out, string.format("\002%s\002: %s", _('Tonight'), formatPeriod(later)))
 		end
 
 		if(tomorrow) then
-			table.insert(out, string.format("\002Tomorrow\002: %s", formatPeriod(tomorrow)))
+			table.insert(out, string.format("\002%s\002: %s", _('Tomorrow'), formatPeriod(tomorrow)))
 		end
 
 		table.insert(out, overview)
@@ -220,12 +290,20 @@ local splitInput = function(input)
 end
 
 local getUrl = function(self, source, destination, place)
+	-- Get language specific URL
 	local lang = self.persist['yr:lang:'..source.nick]
-	if(not lang) then
-		return place.url
-	else
+	if lang then
 		return place.url:gsub('/place/', '/'..lang..'/')
 	end
+
+	local clocale = self:DestinationLocale(destination)
+	if (clocale:match('^nn')) then
+		return place.url:gsub('/place/', '/stad/')
+	elseif(clocale:match('^nb')) then
+		return place.url:gsub('/place/', '/sted/')
+	end
+
+	return place.url
 end
 
 local getPlace = function(self, source, destination, input)
@@ -267,7 +345,7 @@ return {
 
 			if(result) then
 				self.util.simplehttp(
-					result.url,
+					getUrl(self, source, destination, result),
 					function(data)
 						handleOutput(source, destination, seven == '7', data)
 					end
@@ -290,14 +368,14 @@ return {
 
 					local city = json.geonames[1]
 					if(city.adminName1 == "") then city.adminName1 = "Other" end
+					local curl = {url=("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
+						yrUrlEncode(city.countryName),
+						yrUrlEncode(city.adminName1),
+						yrUrlEncode(city.toponymName))
+					}
 
 					self.util.simplehttp(
-						("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-							yrUrlEncode(city.countryName),
-							yrUrlEncode(city.adminName1),
-							yrUrlEncode(city.toponymName)
-						),
-						function(data)
+						getUrl(self, source, destination, curl), function(data)
 							handleOutput(source, destination, seven == '7', data, city)
 						end
 					)
@@ -333,12 +411,12 @@ return {
 			}
 
 			input = lower(self.util.trim(input))
-			local lang = languages[input]
-			if(lang) then
-				self.persist['yr:lang:'..source.nick] = lang
+			local lng = languages[input]
+			if(lng) then
+				self.persist['yr:lang:'..source.nick] = lng
 				reply('I shall not forget. I am good at remembering things.')
 			else
-				reply('Unknown language: %s, use bokmål, nynorsk, english', lang)
+				reply('Unknown language: %s, use bokmål, nynorsk, english', lng)
 			end
 		end,
 	}
