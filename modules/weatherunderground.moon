@@ -12,7 +12,6 @@ unless key
   return {}
 
 geoApiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&username=haste'
-language = 'EN'
 
 tempColor = (v) ->
   v = tonumber(v)
@@ -55,6 +54,19 @@ windSpeedToName = (ws) ->
     windtext = 'vindstille'
   return windtext
 
+_ = (s, lang) ->
+ if lang == 'EN'
+   return s
+
+ if s == 'feels like'
+   if lang == 'NO'
+     return 'følt'
+
+ if s == 'Variable' and lang == 'NO'
+   return 'Vekslende'
+
+ return s
+
 findLocation = (source, destination, name, cb) =>
   gurl = geoApiBase\format(util.urlEncode(name))
   util.simplehttp gurl, (data) ->
@@ -73,6 +85,12 @@ lookupConditions = (source, destination, input, pws) =>
       pws = 'pws:1/'
     else
       pws = 'pws:0/'
+    language = 'EN'
+    cl = self\DestinationLocale(destination)
+    if cl\match'^nn'
+      language = 'NO'
+    elseif cl\match'^nb'
+      language = 'NO'
     url = "http://api.wunderground.com/api/#{key}/lang:#{language}/#{pws}conditions/q/#{lat},#{lon}.json"
     @Log 'debug', "Fetching WU URL: %s", url
     util.simplehttp url, (data) ->
@@ -90,13 +108,13 @@ lookupConditions = (source, destination, input, pws) =>
 
       windSpeedname = windSpeedToName(current.wind_kph/3.6)
 
-      windDirection = current.wind_dir
+      windDirection = _(current.wind_dir, language)
 
       rain = current.precip_today_metric
 
       time = os.date('%H:%M', tonumber(current.observation_epoch))
 
-      @Msg 'privmsg', destination, source, '%s, %s °C (feels like %s °C), %s %s, %s mm, (%s, %s)', weather, tempColor(temp), tempColor(feelsLike), windDirection, windSpeedname, rain, city, time
+      @Msg 'privmsg', destination, source, '%s, %s °C (%s %s °C), %s %s, %s mm, (%s, %s)', weather, tempColor(temp), _('feels like', language), tempColor(feelsLike), windDirection, windSpeedname, rain, city, time
 
 lookupConditionsPWS = (source, destination, input) =>
   lookupConditions(@, source, destination, input, true)
