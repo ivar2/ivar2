@@ -531,6 +531,35 @@ function ivar2:IsModuleDisabled(moduleName, destination)
 	end
 end
 
+function ivar2:DestinationLocale(destination)
+	-- Get configured language for a destination, can be global or channel
+	-- specific. Locale string should be a POSIX locale string, e.g.
+	-- nn_NO, nb_NO, en_US,
+
+	-- Modules can then opt into looking for this information and use it
+	-- however it wants, for example by switching output language in its
+	-- functions to another language than default
+	--
+
+	local default = 'en_US'
+	local channel = self.config.channels[destination]
+
+	if(type(channel) == 'table') then
+		local dconf = channel.locale
+		if(dconf) then
+			return dconf
+		end
+	end
+
+	local global = self.config.locale
+	if(global) then
+		return global
+	end
+
+	return default
+
+end
+
 function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
 	if not destination then
 		return pattern
