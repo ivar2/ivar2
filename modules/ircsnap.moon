@@ -1,4 +1,4 @@
-{:simplehttp, :json, :urlEncode} = require'util'
+{:urlEncode} = require'util'
 html2unicode = require 'html'
 nixio = require'nixio'
 fs = require'nixio.fs'
@@ -25,7 +25,7 @@ video_html = (video) ->
       height: auto !important;
     }
     button {
-    padding: 20px;
+      padding: 20px;
       box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
       border: medium none;
       border-radius: 2px;
@@ -143,7 +143,11 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   <title>IRCSNAP</title>
 
   <style type="text/css">
-  html { height: 100% }
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
   body {
     height: 100%;
     margin: 0;
@@ -159,16 +163,19 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     overflow-x: hidden;
     position: relative;
     max-width: 768px;
+    padding: 0;
     padding-left: 5px;
     padding-right: 5px;
+  }
+  form {
+    display: inline;
+    margin: 0;
+    padding: 0;
   }
   #buttons, #status, .content {
     display: flex;
     flex-flow: column wrap;
-    margin: 0px auto;
-    width: 100%;
     align-items: stretch;
-    margin-bottom: 30px;
   }
   h3 {
     background-color: #8f4099;
