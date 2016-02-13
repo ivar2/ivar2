@@ -200,23 +200,15 @@ function MatrixServer:http_cb(command)
             end
             self.connected = true
             self:initial_sync()
-        elseif command:find'/rooms/.*/initialSync' then
-            local myroom = self:addRoom(js)
-            for _, chunk in pairs(js['presence']) do
-                myroom:parseChunk(chunk, true, 'presence')
-            end
-            for _, chunk in pairs(js['messages']['chunk']) do
-                myroom:parseChunk(chunk, true, 'messages')
-            end
         elseif command:find'v1/initialSync' then
             -- Start with setting the global presence variable on the server
             -- so when the nicks get added to the room they can get added to
             -- the correct nicklist group according to if they have presence
             -- or not
-            for _, chunk in pairs(js.presence) do
+            for _, chunk in ipairs(js.presence) do
                 self:UpdatePresence(chunk.content)
             end
-            for _, room in pairs(js['rooms']) do
+            for _, room in ipairs(js['rooms']) do
                 local myroom = self:addRoom(room)
 
                 -- Parse states before messages so we can add nicks and stuff
@@ -224,7 +216,7 @@ function MatrixServer:http_cb(command)
                 local states = room.state
                 if states then
                     local chunks = room.state or {}
-                    for _, chunk in pairs(chunks) do
+                    for _, chunk in ipairs(chunks) do
                         myroom:parseChunk(chunk, true, 'states')
                     end
                 end
@@ -232,7 +224,7 @@ function MatrixServer:http_cb(command)
                 local messages = room.messages
                 if messages then
                     local chunks = messages.chunk or {}
-                    for _, chunk in pairs(chunks) do
+                    for _, chunk in ipairs(chunks) do
                         myroom:parseChunk(chunk, true, 'messages')
                     end
                 end
@@ -253,8 +245,21 @@ function MatrixServer:http_cb(command)
             self:LoadModules()
             -- Auto join configured channels
             for channel, _ in next, self.config.channels do
-                if not self.channels[channel] then
-                    self:Join(channel)
+                -- Check for :, can only join rooms with :
+                if not self.channels[channel] and channel:match':' then
+                    local found = false
+                    for id, room in pairs(self.rooms) do
+                        if channel == id or
+                           channel == room.shortname or
+                           channel == room.fullname or
+                           channel == room.name then
+                           found = true
+                           break
+                       end
+                    end
+                    if not found then
+                        self:Join(channel)
+                    end
                 end
             end
         elseif command:find'/join/' then
@@ -488,6 +493,14 @@ end
 function MatrixServer:addRoom(room)
     local myroom = Room.create(room, self)
     self.rooms[room['room_id']] = myroom
+    local name = myroom.name
+    if(not self.channels[name]) then
+        self:Log('info', 'Adding room <%s>', name)
+        self.channels[name] = {
+            nicks = {},
+            modes = {},
+        }
+    end
     return myroom
 end
 
@@ -921,6 +934,7 @@ Room.create = function(obj, conn)
             local name = state['content']['name']
             if name ~= '' or name ~= json.null then
                 room.name = name
+                room.shortname = name
                 room.fullname = name
             end
         end
@@ -929,7 +943,8 @@ Room.create = function(obj, conn)
         for _, state in pairs(state_events) do
             if state['type'] == 'm.room.aliases' then
                 local name = state['content']['aliases'][1] or ''
-                room.name, room.server = name:match('(.+):(.+)')
+                room.shortname, room.server = name:match('(.+):(.+)')
+                room.name = name
                 room.fullname = name
             end
         end
@@ -956,13 +971,6 @@ end
 function Room:setName(name)
     if not name or name == '' or name == json.null then
         return
-    end
-    if(not self.conn.channels[name]) then
-        self.conn:Log('info', 'Adding room <%s>', name)
-        self.conn.channels[name] = {
-            nicks = {},
-            modes = {},
-        }
     end
 end
 
@@ -1118,7 +1126,7 @@ function Room:parseChunk(chunk, backlog, chunktype)
         local name = chunk['content']['name']
         if name ~= '' or name ~= json.null then
             self.name = chunk.content.name
-            --self:setName(name)
+            self:setName(name)
         end
     elseif chunk['type'] == 'm.room.member' then
         if chunk['content']['membership'] == 'join' then
