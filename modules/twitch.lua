@@ -169,6 +169,9 @@ end
 local delAlert = function(self, source, destination, name)
 	local gamesKey = key..':'..destination
 	local games = store[gamesKey] or {}
+	if not games[name] then
+		return reply('No alerting found. Check name and be sensitive, to the case!')
+	end
 	games[name] = nil
 	store[gamesKey] = games
 	reply('Ok. Removed twitch alert.')
