@@ -7,6 +7,7 @@ local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
 local lower = ivar2.util.utf8.lower
+local arrow = ivar2.util.utf8.arrow
 
 local lang = 'en'
 
@@ -106,7 +107,8 @@ local formatPeriod = function(period)
 
 	table.insert(out,
 		string.format(
-			"%s, %s %s mps",
+			"%s %s %s %s mps",
+			arrow(period.windDirection.code:sub(-2, -1)),
 			period.windSpeed.name,
 			period.windDirection.name,
 			period.windSpeed.mps
@@ -146,12 +148,17 @@ local handleObservationOutput = function(self, source, destination, data)
 		local windDirection = handleData('windDirection', data)
 		local windSpeed = handleData("windSpeed", data)
 		local windSpeedname = ''
+		local windDirectionarrow = ''
 		if windSpeed then windSpeedname = windSpeed.name end
 		if windSpeed then windSpeed = windSpeed.mps else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		-- Continue to next observation if no temperature
 		if temperature then
 			local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
+			if windDirection then
+				ivar2:Log( 'error', windDirection.code)
+				windDirectionarrow = arrow(windDirection.code:sub(-2, -1)) .. ' '
+			end
 			if windDirection then windDirection = windDirection.name else windDirection = '' end
 			local color
 			if tonumber(temperature.value) > 0 then
@@ -160,7 +167,7 @@ local handleObservationOutput = function(self, source, destination, data)
 				color = self.util.lightblue
 			end
 			-- Use the first result
-			return '%s °C (%s %s °C), %s %s (%s, %s)', color(temperature.value), _('feels like'), color(feelsLike(temperature.value, windSpeed)), windDirection, windSpeedname, name, time
+			return '%s °C (%s %s °C), %s%s %s (%s, %s)', color(temperature.value), _('feels like'), color(feelsLike(temperature.value, windSpeed)), windDirectionarrow, windDirection, windSpeedname, name, time
 		end
 	end
 end
