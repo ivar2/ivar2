@@ -213,6 +213,18 @@ utf8.lower = function(s)
 	return (string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å'))
 end
 
+utf8.arrow = function(direction)
+	if direction == 'N' then return '↑' end
+	if direction == 'NE' then return '↗' end
+	if direction == 'E' then return '→' end
+	if direction == 'SE' then return '↘' end
+	if direction == 'S' then return '↓' end
+	if direction == 'SW' then return '↙' end
+	if direction == 'W' then return '←' end
+	if direction == 'NW' then return '↖' end
+	return ''
+end
+
 util.utf8 = utf8
 
 return util
