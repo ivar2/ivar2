@@ -1,7 +1,9 @@
--- http://developer.spotify.com/en/metadata-api/overview/
+-- OLD: http://developer.spotify.com/en/metadata-api/overview/
+-- NEW: https://developer.spotify.com/web-api/migration-guide/
+-- NEW: https://api.spotify.com/v1/tracks/3tLAA1LA06ecIaRSRbMFbi
 local util = ivar2.util
 local simplehttp = util.simplehttp
-local json = util.json
+local decode = util.json.decode
 
 local spotify = ivar2.persist
 
@@ -14,12 +16,13 @@ local validType = {
 local handlers = {
 	track = function(json)
 		if(json.description) then return nil, json.description end
+		if(json.error) then return nil, json.error.message end
 
-		local title = json.track.name
-		local album = json.track.album.name
+		local title = json.name
+		local album = json.album.name
 
 		local artists = {}
-		for _, artist in ipairs(json.track.artists) do
+		for _, artist in ipairs(json.artists) do
 			table.insert(artists, artist.name)
 		end
 
@@ -28,17 +31,22 @@ local handlers = {
 
 	album = function(json)
 		if(json.description) then return json.description end
+		if(json.error) then return nil, json.error.message end
 
-		local artist = json.album.artist
-		local album = json.album.name
+		local artists = {}
+		for _, artist in ipairs(json.artists) do
+			table.insert(artists, artist.name)
+		end
+		local album = json.name
 
-		return true, string.format('%s - %s', artist, album)
+		return true, string.format('%s - %s', table.concat(artists, ', '), album)
 	end,
 
 	artist = function(json)
 		if(json.description) then return json.description end
+		if(json.error) then return nil, json.error.message end
 
-		return true, json.artist.name
+		return true, json.name
 	end,
 }
 
@@ -47,43 +55,7 @@ local handleData = function(metadata, json)
 	if(success) then
 		return message
 	else
-		return string.format('%s is not a valid Spotify link', metadata.uri)
-	end
-end
-
-local parseRFC1123
-do
-	local monthName = {
-		Jan = '01',
-		Feb = '02',
-		Mar = '03',
-		Apr = '04',
-		May = '05',
-		Jun = '06',
-		Jul = '07',
-		Aug = '08',
-		Sep = '09',
-		Oct = '10',
-		Nov = '11',
-		Dec = '12'
-	}
-
-	parseRFC1123 = function(date)
-		-- RFC 1123: http://www.ietf.org/rfc/rfc1123.txt
-		-- RFC 822: http://www.ietf.org/rfc/rfc822.txt
-		local day = tonumber(date:sub(6, 7))
-		local month = tonumber(monthName[date:sub(9, 11)])
-		local year = tonumber(date:sub(13, 16))
-		local hour = tonumber(date:sub(18, 19))
-		local minute = tonumber(date:sub(21, 22))
-		local seconds = tonumber(date:sub(24, 25))
-		-- TODO: Handle EST and friends.
-		-- local tz = date:sub(27)
-
-		hour = hour + os.date('%H') - os.date('!%H')
-		minute = minute + os.date('%M') - os.date('!%M')
-
-		return os.time{day = day, month = month, year = year, hour = hour, min = minute, sec = seconds}
+		return string.format('%s error %s', metadata.uri, message)
 	end
 end
 
@@ -114,9 +86,9 @@ local handleOutput = function(data)
 	end
 end
 
--- http://ws.spotify.com/lookup/1/.json?uri=spotify:artist:4YrKBkKSVeqDamzBPWVnSJ
--- http://ws.spotify.com/lookup/1/.json?uri=spotify:album:6G9fHYDCoyEErUkHrFYfs4
--- http://ws.spotify.com/lookup/1/.json?uri=spotify:track:6NmXV4o6bmp704aPGyTVVG
+-- https://api.spotify.com/v1/tracks/3tLAA1LA06ecIaRSRbMFbi
+-- https://api.spotify.com/v1/albums/6G9fHYDCoyEErUkHrFYfs4
+-- https://api.spotify.com/v1/artists/4YrKBkKSVeqDamzBPWVnSJ
 local fetchInformation = function(output, n, info)
 	if(spotify['spotify:'..info.uri] and tonumber(spotify['spotify:'.. info.uri .. ':timestamp']) > os.time()) then
 		ivar2:Log('debug', string.format('spotify: Fetching %s from cache.', info.uri))
@@ -130,11 +102,14 @@ local fetchInformation = function(output, n, info)
 		ivar2:Log('info', string.format('spotify: Requesting information on %s.', info.uri))
 
 		simplehttp(
-			('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
+			('https://api.spotify.com/v1/%ss/%s'):format(info.type, info.hash),
 
 			function(data, url, response)
-				local message = handleData(info, json.decode(data))
-				local expires = parseRFC1123(response.headers.Expires)
+				local message = handleData(info, decode(data))
+				-- New API doesn't provide a Expires header, but they do set
+				-- cache-control public max-age 7200. If we were good citizens we
+				-- could parse this. Alas, I'm lazy.
+				local expires = os.time() + 7200
 
 				spotify['spotify:'..info.uri] = message
 				spotify['spotify:'..info.uri .. ':timestamp'] = expires
@@ -161,6 +136,7 @@ return {
 					tmp[index] = {
 						uri = uri,
 						type = type,
+						hash = hash,
 						open = ('http://open.spotify.com/%s/%s'):format(type, hash)
 					}
 				end
