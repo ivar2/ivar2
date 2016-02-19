@@ -26,7 +26,10 @@ local handlers = {
 			table.insert(artists, artist.name)
 		end
 
-		return true, string.format('%s - [%s] %s', table.concat(artists, ', '), album, title)
+		local popularity = json.popularity .. '%'
+		local preview = json.preview_url .. '.mp3'
+
+		return true, string.format('%s - [%s] %s [%s] ➤ %s ♫♪', table.concat(artists, ', '), album, title, popularity, preview)
 	end,
 
 	album = function(json)
