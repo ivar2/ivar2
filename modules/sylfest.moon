@@ -16,7 +16,7 @@ bend = P("ene") + P("en") + P("et") + P("ing") + P("ar") + P("ane") + P("er")
 -- Separated by or line end
 wend = S(',.? ') + P(-1)
 -- Linestart exceptions
-bstart = maybe(P(' ')) * S[["'-]]
+bstart = maybe(P(' ')) * S[["'-«]]
 
 -- Capture word with bad endings followed by good word end
 sylfestpatt = C(word^1 * apo * bend) * P(wend)
