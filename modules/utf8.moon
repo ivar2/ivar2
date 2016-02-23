@@ -15,6 +15,7 @@ bi: [[𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹�
 bs: [[𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃]]
 pt: [[⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵0⑴⑵⑶⑷⑸⑹⑺⑻⑼]]
 tl: [[ค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאzค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאz0123456789,.؟!"'`()[]{}«»&_]]
+ru: [[ДЬCDЗFGHIJКLMИФPQЯSTЦVШЖУZДЪCDЭFGHIJКLMЙФPQЯSTЦVЩЖЧZ0123456789,.?!"'`()[]{}<>&_]]
 }
 codepoints = (str) ->
   str\gmatch("[%z\1-\127\194-\244][\128-\191]*")
@@ -192,6 +193,8 @@ PRIVMSG:
     say remap(maps.bs, arg)
   '^%pthai (.+)$': (source, destination, arg) =>
     say remap(maps.tl, arg)
+  '^%prussian (.+)$': (source, destination, arg) =>
+    say remap(maps.ru, arg)
   '^%putfuk (.+)$': (source, destination, arg) =>
     keys = [x for x,_ in pairs(maps)]
     say table.concat([remap(maps[keys[math.random(#keys)]], letter) for letter in codepoints(arg)])
