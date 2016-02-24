@@ -225,6 +225,24 @@ utf8.arrow = function(direction)
 	return ''
 end
 
+utf8.char = function(cp)
+	local string_char = string.char
+	if cp < 128 then
+		return string_char(cp)
+	end
+	local s = ""
+	local prefix_max = 32
+	while true do
+		local suffix = cp % 64
+		s = string_char(128 + suffix)..s
+		cp = (cp - suffix) / 64
+		if cp < prefix_max then
+			return string_char((256 - (2 * prefix_max)) + cp)..s
+		end
+		prefix_max = prefix_max / 2
+	end
+end
+
 util.utf8 = utf8
 
 return util
