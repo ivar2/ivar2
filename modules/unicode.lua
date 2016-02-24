@@ -3,33 +3,15 @@ local util = require'util'
 -- utf-8 functions (C) Rici Lake
 -- http://luaparse.luaforge.net/libquery.lua.html
 local function X(str) return tonumber(str, 16) end
-local elevenBits = X"7FF"
-local sixteenBits = X"FFFF"
 local math = require 'math'
-local mod = math.mod
-local strchar = string.char
 local strbyte = string.byte
 local strfind = string.find
 local offset2 = X"C0" * 64 + X"80"
 local offset3 = X"E0" * 4096 + X"80" * (64 + 1)
 local offset4 = X"F0" * 262144 + X"80" * (4096 + 64 + 1)
 
-
-local function toUtf8(i)
-    i = X(i)
-    if i <= 127 then return strchar(i)
-    elseif i <= elevenBits then
-        return strchar(i / 64 + 192, mod(i, 64) + 128)
-    elseif i <= sixteenBits then
-        return strchar(i / 4096 + 224,
-        mod(i / 64, 64) + 128,
-        mod(i, 64) + 128)
-    else
-        return strchar(i / 262144 + 240,
-        mod(i / 4096, 64) + 128,
-        mod(i / 64, 64) + 128,
-        mod(i, 64) + 128)
-    end
+local toUtf8 = function(hexcp)
+    return util.utf8.char(tonumber(hexcp, 16))
 end
 
 local function fromUtf8(str)
@@ -91,7 +73,7 @@ end
 local function handleLookup(self, source, destination, str)
     local db = sql.open("cache/unicode.sql")
     local out = {}
-    for uchar in string.gmatch(str, "([%z\1-\127\194-\244][\128-\191]*)") do
+    for uchar in util.utf8.chars(str) do
         uchar = fromUtf8(uchar)
         if uchar then
             local cp = string.format('%04x', uchar)
