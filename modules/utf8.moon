@@ -17,6 +17,7 @@ pt: [[⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳�
 tl: [[ค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאzค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאz0123456789,.؟!"'`()[]{}«»&_]]
 ru: [[ДЬCDЗFGHIJКLMИФPQЯSTЦVШЖУZДЪCDЭFGHIJКLMЙФPQЯSTЦVЩЖЧZ0123456789,.?!"'`()[]{}<>&_]]
 }
+
 codepoints = (str) ->
   str\gmatch("[%z\1-\127\194-\244][\128-\191]*")
 
@@ -207,5 +208,6 @@ PRIVMSG:
         else
           out[#out+1] = uchar
       say table.concat(out)
-
-
+  '^%pul (.+)$': (source, destination, arg) =>
+    -- combining low line 0332 => CC B2
+    say table.concat([letter .. string.char(0xCC) .. string.char(0xB2) for letter in codepoints(arg)])
