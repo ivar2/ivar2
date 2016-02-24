@@ -1,4 +1,5 @@
 local mod = math.mod
+local util = require 'util'
 local entities = setmetatable(
 	{
 		quot = '"', apos = "'", amp = "&", lt = "<", gt = ">", nbsp = " ",
@@ -53,19 +54,7 @@ return function(str)
 	if not str then return '' end
 	str = str:gsub("&#([x]?%x+);", function(n)
 		n = tonumber(n) or tonumber(n:sub(2), 16)
-
-		if(n < 128) then
-			return string.char(n)
-		elseif(n < 2048) then
-			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
-		elseif(n <= 65535) then
-			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
-		else
-			return string.char(n / 262144 + 240,
-			mod(n / 4096, 64) + 128,
-			mod(n / 64, 64) + 128,
-			mod(n, 64) + 128)
-		end
+		return util.utf8.char(n)
 	end)
 
 	return (str:gsub("&(%w+);", entities))
