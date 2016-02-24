@@ -1,5 +1,4 @@
 util = require'util'
-html2unicode = require'html'
 
 an = [[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?!"'`()[]{}<>&_]]
 charmaps = {
@@ -119,9 +118,6 @@ for charmap, chars in pairs charmaps
     maps[charmap][an\sub(i,i)] = uchar
     i = i +1
 
-unichr = (n) ->
-  html2unicode('&#x%x;'\format(n))
-
 wireplace = (offset, arg) ->
     s = arg or ''
     t = {}
@@ -133,7 +129,7 @@ wireplace = (offset, arg) ->
       elseif bc == 32
         t[#t + 1] = ' '
       elseif bc < 0x80 then
-        t[#t + 1] = html2unicode("&#" .. (offset + bc) .. ";")
+        t[#t + 1] = util.utf8.char(offset + bc)
       else
         t[#t + 1] = s\sub(i, i)
 
@@ -147,10 +143,10 @@ zalgo = (text, intensity=50) ->
   text = text\sub(1,512)
   zalgo_chars = {}
   for i=0x0300, 0x036f
-    zalgo_chars[i-0x2ff] = unichr(i)
+    zalgo_chars[i-0x2ff] = util.utf8.char(i)
 
-  zalgo_chars[#zalgo_chars + 1] = unichr(0x0488)
-  zalgo_chars[#zalgo_chars + 0] = unichr(0x0489)
+  zalgo_chars[#zalgo_chars + 1] = util.utf8.char(0x0488)
+  zalgo_chars[#zalgo_chars + 0] = util.utf8.char(0x0489)
 
   zalgoized = {}
   for letter in codepoints(text)
@@ -210,4 +206,4 @@ PRIVMSG:
       say table.concat(out)
   '^%pul (.+)$': (source, destination, arg) =>
     -- combining low line 0332 => CC B2
-    say table.concat([letter .. string.char(0xCC) .. string.char(0xB2) for letter in codepoints(arg)])
+    say table.concat([letter .. util.utf8.char(0x0332) for letter in codepoints(arg)])
