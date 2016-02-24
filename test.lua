@@ -15,6 +15,9 @@ package.cpath = table.concat({
 local util = require 'util'
 local irc = require 'irc'
 local utf8 = util.utf8
+local busted = require'busted'
+local describe = busted.describe
+local it = busted.it
 
 describe("test IRC lib", function()
     describe("parse 352 message", function()
@@ -69,6 +72,14 @@ describe("test IRC lib", function()
             assert.are_equal('', message)
             assert.are_equal(nil, extra)
         end)
+        it("should parse ACTION with stripping the 01 at the end", function()
+              local line = ':server.server.com 352 botnick #channel user 2a00:dd52:211g::2 server.server.com nick H :0 Realname'
+              local line = ":tx!tx@127.0.0.1 PRIVMSG #testchan :\001ACTION testing\001"
+              local command, argument, source, destination = irc.parse(line)
+              assert.are_equal('PRIVMSG', command)
+              assert.are_equal('#testchan', destination)
+              assert.are_equal('\001ACTION testing\001', argument)
+        end)
     end)
 end)
 
@@ -90,6 +101,8 @@ describe("test util lib", function()
 
             assert.are_equal('foo æøå😀', utf8.lower(table.concat(line)))
 
+            assert.are_equal(utf8.char(97), 'a')
+            assert.are_equal(utf8.char(0x1f600), '😀')
         end)
     end)
 end)
