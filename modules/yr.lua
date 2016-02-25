@@ -7,9 +7,21 @@ local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
 local lower = ivar2.util.utf8.lower
-local arrow = ivar2.util.utf8.arrow
 
 local lang = 'en'
+
+local arrow = function(dir)
+	-- Turn the direction of arrow to the way wind is coming from
+	local utf8arrow = ivar2.util.utf8.arrow
+	local ndir = dir:gsub('.', function(n)
+		if     n == 'N' then n = 'S'
+		elseif n == 'E' then n = 'W'
+		elseif n == 'S' then n = 'N'
+		elseif n == 'W' then n = 'E' end
+		return n
+	end)
+	return utf8arrow(ndir)
+end
 
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
@@ -156,7 +168,6 @@ local handleObservationOutput = function(self, source, destination, data)
 		if temperature then
 			local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
 			if windDirection then
-				ivar2:Log( 'error', windDirection.code)
 				windDirectionarrow = arrow(windDirection.code:sub(-2, -1)) .. ' '
 			end
 			if windDirection then windDirection = windDirection.name else windDirection = '' end
