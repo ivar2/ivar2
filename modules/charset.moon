@@ -9,14 +9,14 @@ toUtf = (s) ->
 toIso = (s) ->
   utf2iso\iconv(s)
 
-latinpattern = "^#{toIso'æøå'}%??"
+latinpattern = "^#{toIso'æøå'}%??$"
 
 
 PRIVMSG:
   '^æøå%??$': =>
     reply "UTF-8. Relax, you're doing fine."
-  latinpattern: =>
-    reply 'ISO-8559-1. Pls stahp.'
+  [latinpattern]: =>
+    reply 'ISO-8859-1. Pls stahp.'
   '^Ã¦Ã¸Ã¥%??$': =>
     reply 'WTF8. Is very nice.'
   '^fxe%??$': =>
@@ -25,6 +25,8 @@ PRIVMSG:
     reply 'du sender NS-4551-1 (aka. ISO-646-NO).. og det er jo litt ut.'
   '^��?%??$': =>
     reply 'du sender replacement chars.'
+  '^aeoeaa%?$': =>
+    reply 'ASCII!'
   '^���?%??$': =>
     reply 'du sender replacement chars.'
   '^+AOYA+ADl?%??$': =>
