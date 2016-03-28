@@ -89,10 +89,6 @@ end
 
 do
 	return function(source, destination, queue)
-		-- do not want
-		do
-			return
-		end
 		local nick, count, age = checkOld(source, destination, queue.url)
 		updateDB(source, destination, queue.url)
 
