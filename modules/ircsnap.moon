@@ -140,7 +140,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   <meta name="apple-mobile-web-app-title" content="IRCSNAP ]]..unescaped_channel..[[">
   <meta name="theme-color" content="#8f4099">
 
-  <title>IRCSNAP</title>
+  <title>IRCSNAP ]]..unescaped_channel..[[</title>
 
   <style type="text/css">
   html {
