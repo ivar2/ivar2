@@ -149,9 +149,13 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     padding: 0;
   }
   body {
-    height: 100%;
-    margin: 0;
     font-family: "Roboto","Segoe UI","Arial",sans-serif !important;
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    height: 100%;
+    margin: auto;
     background-color: #FAFAFA;
     font-size: 14px;
     font-weight: 400;
@@ -172,18 +176,37 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     margin: 0;
     padding: 0;
   }
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    color: rgb(158, 158, 158);
+  }
+    .footer p {
+      padding: 5px;
+      max-width: 768px;
+      margin: auto;
+    }
+    .footer a {
+      color: white;
+    }
   #buttons, #status, .content {
     display: flex;
     flex-flow: column wrap;
     align-items: stretch;
   }
-  h3 {
+  header {
+    width: 100%;
     background-color: #8f4099;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
     color: white;
-    padding: 20px;
+  }
+  header h3 {
+    max-width: 768px;
     margin-top: 0;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin: auto;
+    padding: 20px;
   }
   .group            {
     position:relative;
@@ -305,7 +328,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     background-color: #E6B85C;
   }
     .pictake .icon {
-      font-size: 2em;
+      font-size: 28px;
     }
   #progress {
     display: block;
@@ -321,21 +344,23 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   </style>
   <body>
+  <header>
+    <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
+  </header>
   <div class="content">
-  <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
     <p>Fill in your nick/name and optional text and then click on one of the yellow buttons to attach image. It will appear instantly on IRC!</p>
     <form>
       <div class="group">
         <input id="sender" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Your name</label>
+        <label>Your nickname</label>
       </div>
       <div class="group">
         <input id="text" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Attach text</label>
+        <label>Attach text, if you want</label>
       </div>
     </form>
 
@@ -352,13 +377,14 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     <!--
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
-    <div class="footer">
-      <p>
-        <strong>What is this?</strong>
-      </p>
-      <p>Share to IRC is a simple web app for sharing media directly from your device to an IRC channel.</p>
-      <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
-    </div>
+  </div>
+  <div class="footer">
+    <p>
+      <strong>What is this?</strong>
+    </p>
+    <p><i>Share to IRC</i> is a simple web app for sharing media directly from your device to an IRC channel.</p>
+    <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
+    <p>Made by <a href="//github.com/torhve/">xt</a></p>
   </div>
   <script>
 
