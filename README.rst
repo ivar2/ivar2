@@ -94,6 +94,11 @@ Launch bot
     # If you want to try the Matrix adapter
     lua(jit) matrix.lua yourmatrixconfigfile.lua
 
+    # Or install the provided systemd service
+    sudo cp scripts/ivar2.service /etc/systemd/system/ivar2.service
+    sudo systemctl daemon-reload
+    sudo systemctl start ivar2
+
 
 
 Modules
