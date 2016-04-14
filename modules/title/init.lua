@@ -266,7 +266,7 @@ local fetchInformation = function(queue)
 			local message = handleData(response.headers, data)
 			if(#queue.url > 110 and message) then
 				ivar2.x0(queue.url, function(short)
-					queue:done(string.format('Downgraded URL: %s - %s', short, message))
+					queue:done(string.format('Shortened URL: %s - %s', short, message))
 				end)
 			else
 				queue:done(message)
