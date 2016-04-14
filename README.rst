@@ -4,23 +4,15 @@ ivar2 - DO-OH!
 
 Introduction
 ------------
-ivar2 is an irc-bot on speed, with a mentally unstable mind.
+ivar2 is an IRC bot on speed, with a mentally unstable mind.
 Partially because its written in lua, which could make the most sane mind go unstable.
 
 Installation
 ------------------
 
-Either use the provided Dockerfile in scripts/Dockerfile or follow its command list to install all the required dependencies.
+The installation instructions are made for Debian Jessie, you might have to adapt yourself for other distributions. Some additional dependencies are required for some of the modules, like PostgreSQL for pgolds.lua. Persisting data can be done using either sqlite og Redis, naturally lua-redis and redis-server is required as a dependency if you want to use redis.
 
-Build the Dockerfile:
-
-::
-
-    cd scripts
-    docker build -t torhve/ivar2 .
-
-
-Or install manually:
+Install deps:
 
 ::
 
@@ -35,7 +27,7 @@ Or install manually:
     sudo luarocks install luabitop
 
 
-Uncompress the required data files in cache directory.
+Decompress the required data files in cache directory.
 
 Configuration File
 ------------------
@@ -51,6 +43,7 @@ Create a bot config sort of like this
         autoReconnect = true,
         ident = 'ivar2',
         uri = 'tcp://irc.efnet.no:6667/',
+        password = false,
         realname = 'ivar',
         owners = {
             'nick!ident@my.host.name'
@@ -94,16 +87,17 @@ Launch bot
 
 ::
 
+    # Using Lua
     lua ivar2.lua myconfig.lua
+    # Using LuaJIT (apt-get install luajit)
+    luajit ivar2.lua myconfig.lua
+    # If you want to try the Matrix adapter
+    lua(jit) matrix.lua yourmatrixconfigfile.lua
 
-or using Docker
-
-::
-
-    sudo docker run -i -t -v=/home/ivar2:/ivar2 -w=/ivar2 torhve/ivar2 lua ivar2.lua myconfig.lua
 
 
 Modules
 -------
 
-THERES TONS!
+So. Many. Useless. Modules!
+And they are written in either Lua or MoonScript.
