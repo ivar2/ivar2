@@ -76,6 +76,9 @@ illnesses = {
   [[ireehpnf]],
   [[ivfvba gurencl]],
   [[jvaq]],
+  [[travgny tnaterar]],
+  [[ubezbany vzonynapr]]
+  [[urecrf]]
 }
 
 illness = ->
