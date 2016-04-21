@@ -6,7 +6,7 @@ local util = {
 }
 
 local color = function(s, color)
-	return string.format("\03%02d%s%s", color, s, util.reset())
+	return string.format("\03%02d%s\03", color, s)
 end
 util.color = color
 
