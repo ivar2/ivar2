@@ -106,15 +106,18 @@ lookupConditions = (source, destination, input, pws) =>
       temp = current.temp_c
       feelsLike = current.feelslike_c
 
-      windSpeedname = windSpeedToName(current.wind_kph/3.6)
+      windString = "Wind " .. current.wind_string
 
-      windDirection = _(current.wind_dir, language)
+      if language == 'NO'
+        windSpeedname = windSpeedToName(current.wind_kph/3.6)
+        windDirection = _(current.wind_dir, language)
+        windString = windDirection .. " " .. windSpeedname
 
       rain = current.precip_today_metric
 
       time = os.date('%H:%M', tonumber(current.observation_epoch))
 
-      @Msg 'privmsg', destination, source, '%s, %s °C (%s %s °C), %s %s, %s mm, (%s, %s)', weather, tempColor(temp), _('feels like', language), tempColor(feelsLike), windDirection, windSpeedname, rain, city, time
+      @Msg 'privmsg', destination, source, '%s, %s °C (%s %s °C), %s, %s mm, (%s, %s)', weather, tempColor(temp), _('feels like', language), tempColor(feelsLike), windString, rain, city, time
 
 lookupConditionsPWS = (source, destination, input) =>
   lookupConditions(@, source, destination, input, true)
