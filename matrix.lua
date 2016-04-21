@@ -1006,11 +1006,11 @@ Room.create = function(obj, conn)
         elseif event['type'] == 'm.room.join_rule' then
             room.join_rule = event.content.join_rule
         elseif event['type'] == 'm.room.member' then
-            if event.state_key == self.conn.user_id then
+            if event.state_key == conn.user_id then
                 room.membership = 'invite'
                 room.inviter = event.sender
-                conn:Log('info', 'You have been invited to join room %s by %s.', room.identifier, obj.inviter)
-                room:addNick(obj.inviter)
+                conn:Log('info', 'You have been invited to join room %s by %s.', room.identifier, room.inviter)
+                room:addNick(room.inviter)
                 if conn.config.join_on_invite then
                     conn:Join(room.identifier)
                 end
