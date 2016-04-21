@@ -104,10 +104,19 @@ local function irc_formatting_to_html(s)
     s = byte_to_tag(s, '\02', '<em>', '</em>')
     s = byte_to_tag(s, '\029', '<i>', '</i>')
     s = byte_to_tag(s, '\031', '<u>', '</u>')
+    -- First do full color strings with reset.
+    -- Iterate backwards to catch long colors before short
+    for i=#ct,1,-1 do
+        s = s:gsub(
+            '\0030?'..tostring(i-1)..'(.-)\003',
+            '<font color="'..ct[i]..'">%1</font>')
+    end
+
+    -- Then replace unmatch colors
     -- Iterate backwards to catch long colors before short
     for i=#ct,1,-1 do
         local c = ct[i]
-        s = byte_to_tag(s, '\003'..tostring(i-1),
+        s = byte_to_tag(s, '\0030?'..tostring(i-1),
             '<font color="'..c..'">', '</font>')
     end
     return s
@@ -997,7 +1006,7 @@ Room.create = function(obj, conn)
         elseif event['type'] == 'm.room.join_rule' then
             room.join_rule = event.content.join_rule
         elseif event['type'] == 'm.room.member' then
-            if event.state_key == SERVER.user_id then
+            if event.state_key == self.conn.user_id then
                 room.membership = 'invite'
                 room.inviter = event.sender
                 conn:Log('info', 'You have been invited to join room %s by %s.', room.identifier, obj.inviter)
