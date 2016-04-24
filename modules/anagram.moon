@@ -6,6 +6,8 @@ PRIVMSG:
       s = s\match "(Displaying%s.-)</?[Pp][ />]"
       unless s
         return say "Did not find result"
+      s = s\gsub "[\r\n]", ""
+      s = s\gsub "<script>.*", ""
       s = s\gsub "<[Bb][Rr][ />]", ", "
       -- Strip tags
       s = s\gsub "%b<>", ""
