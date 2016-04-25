@@ -26,6 +26,8 @@ local util = require 'util'
 local irc = require 'irc'
 local lconsole = require'logging.console'
 
+math.randomseed(os.time())
+
 local log = lconsole()
 
 local ivar2 = {
