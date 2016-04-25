@@ -160,7 +160,9 @@ return {
   PRIVMSG: {
     '^%pseen (.+)$': seen
     '^%plast$': (source, destination) =>
-      say history(source,destination,1)
+      -- Last message is the command requesting last, so get the next to last
+      last_two =  history(source,destination, 2)
+      say last_two[2].message
     '^%plastlog (.+)$': (source, destination, arg) =>
       out = {}
       for k,v in *lastlog(source, destination, arg)
