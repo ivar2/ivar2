@@ -670,6 +670,19 @@ function MatrixServer:set_membership(room_id, userid, data)
         }, self:http_cb'state')
 end
 
+function MatrixServer:Kick(destination, userid, reason)
+    local room = self:findRoom(destination)
+    if not room then
+        self:Log('WARNING', 'Room %s not found during kick', destination)
+        return
+    end
+    local data = {
+        membership = 'leave',
+        reason = 'Kicked by '..self.user_id
+    }
+    self:set_membership(room.identifier, userid, data)
+end
+
 function MatrixServer:CreateRoom(public, alias, invites)
     local data = {}
     if alias then
@@ -949,6 +962,35 @@ function MatrixServer:UnregisterCommand(handlerName, pattern, event)
     self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
 end
 
+function MatrixServer:DestinationLocale(destination)
+	-- Get configured language for a destination, can be global or channel
+	-- specific. Locale string should be a POSIX locale string, e.g.
+	-- nn_NO, nb_NO, en_US,
+
+	-- Modules can then opt into looking for this information and use it
+	-- however it wants, for example by switching output language in its
+	-- functions to another language than default
+	--
+
+	local default = 'en_US'
+	local channel = self.config.channels[destination]
+
+	if(type(channel) == 'table') then
+		local dconf = channel.locale
+		if(dconf) then
+			return dconf
+		end
+	end
+
+	local global = self.config.locale
+	if(global) then
+		return global
+	end
+
+	return default
+
+end
+
 Room.create = function(obj, conn)
     local room = {}
     setmetatable(room, Room)
@@ -1057,15 +1099,18 @@ Room.create = function(obj, conn)
 end
 
 function Room:SetName(name)
+    if not name or name == '' or name == json.null then
+        return
+    end
     -- override hierarchy
     if self.roomname then
         name = self.roomname
     elseif self.canonical_alias then
         name = self.canonical_alias
-        local short_name, _ = self.canonical_alias:match('(.+):(.+)')
-        if short_name then
-            name = short_name
-        end
+        --local short_name, _ = self.canonical_alias:match('(.+):(.+)')
+        --if short_name then
+        --    name = short_name
+        --end
     elseif self.aliases then
         local alias = self.aliases[1]
         if name then
@@ -1086,6 +1131,11 @@ function Room:SetName(name)
 
     if not name or name == '' or name == json.null then
         return
+    end
+
+    if name ~= self.name then
+        self.conn:Log('info', 'Updated name: %s to %s', self.name, name)
+        self.name = name
     end
 end
 
@@ -1223,7 +1273,7 @@ function Room:ParseChunk(chunk, backlog, chunktype)
             -- content.format = 'org.matrix.custom.html'
             -- fontent.formatted_body...
             if not backlog and not is_self then
-                self.conn:DispatchCommand('PRIVMSG', body, source, self.name or self.fullname)
+                self.conn:DispatchCommand('PRIVMSG', body, source, self.name)
             end
         elseif content['msgtype'] == 'm.image' then
             --local url = content['url']:gsub('mxc://',
@@ -1249,7 +1299,7 @@ function Room:ParseChunk(chunk, backlog, chunktype)
     elseif chunk['type'] == 'm.room.name' then
         local name = chunk['content']['name']
         if name ~= '' or name ~= json.null then
-            self.name = chunk.content.name
+            self.roomname = name
             self:SetName(name)
         end
     elseif chunk['type'] == 'm.room.member' then
@@ -1292,7 +1342,7 @@ function Room:ParseChunk(chunk, backlog, chunktype)
             end
             if chunktype == 'messages' then
                 if chunk.state_key == myself then
-                    self.conn:DispatchCommand('KICK', 'Kicked '..tostring(myself), source, self.name or self.fullname)
+                    self.conn:DispatchCommand('KICK', 'Kicked '..tostring(myself), source, self.name)
                 end
                 --w.print_date_tags(self.buffer, time_int, tags(), data)
             end
