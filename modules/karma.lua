@@ -25,6 +25,7 @@ local itemIsNick = function(nick)
 end
 
 local function outputKarma(self, source, destination, item)
+	item = ivar2.util.trim(item)
 	local db = openDB()
 	local selectStmt  = db:prepare('SELECT SUM(change) AS sum FROM karma WHERE LOWER(item) = LOWER(?)')
 	selectStmt:bind_values(item)
