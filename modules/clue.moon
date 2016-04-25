@@ -85,21 +85,21 @@ lookup = (source, destination, lookup) =>
 upper = (s) ->
   (string.upper(s)\gsub('æ','Æ')\gsub('ø','Ø')\gsub('å','Å'))
 
-getWord = (wordclass) ->
+getWord = (lang, wordclass, count, maxlen) ->
   stmt = dbh!\prepare [[
     SELECT
      *
     FROM
-      clnono
+      ]]..lang..[[
     WHERE
       grammar = ?
     AND
-      length(word) < 8
+      length(word) < ?
     ORDER BY
       random()
-    LIMIT 1
+    LIMIT ?
   ]]
-  stmt\execute wordclass
+  stmt\execute wordclass, maxlen, count
   out = {}
   for row in stmt\rows(true) -- true for column names
     table.insert(out, row)
@@ -107,12 +107,78 @@ getWord = (wordclass) ->
 
 bankid = (source, destination) =>
 
-  adj = getWord 'adj'
-  sub = getWord 's'
+  adj = getWord 'clnono', 'adj', 1, 8
+  sub = getWord 'clnono', 's', 1, 10
 
   say "#{upper adj[1].word} #{upper sub[1].word}"
+
+isLogWord = (word) ->
+  myconn = dbh!
+  sql = [[
+    SELECT
+     count(*)
+    FROM
+      log
+    WHERE
+      message ~* '\y]]..word..[[\y'
+  ]]
+  stmt = myconn\prepare sql
+  stmt\execute!
+  count = 0
+  row = stmt\fetch!
+  count = row[1]
+  return tonumber(count) > 0
+
+bankid2 = (source, destination) =>
+
+  adj = ""
+  sub = ""
+  while true
+    adj = getWord 'clnono', 'adj', 1, 20
+    adj = adj[1].word
+    continue unless isLogWord(adj)
+  while true
+    sub = getWord 'clnono', 's', 1, 20
+    sub = sub[1].word
+    continue unless isLogWord(sub)
+
+  say "#{upper adj} #{upper sub}"
+
+bankidmany = (source, destination, count) =>
+  count = math.min(count, 100)
+
+  adj = getWord 'clnono', 'adj', count, 8
+  sub = getWord 'clnono', 's', count, 10
+
+  out = {}
+  for i=1, count
+    table.insert(out, "#{upper adj[i].word} #{upper sub[i].word}")
+  say table.concat(out, ', ')
+
+adjsub = (source, destination, count) =>
+  count = tonumber count
+  if not count
+    count = 1
+  count = math.min(count, 100)
+
+  adj = getWord 'clukuk', 'adj', count, 8
+  sub = getWord 'clukuk', 'n', count, 10
+
+  out = {}
+  for i=1, count
+    table.insert(out, "#{adj[i].word} #{sub[i].word}")
+  say table.concat(out, ', ')
 
 PRIVMSG:
   '^%pclue (.+)$': lookup
   '^%pbankid$': bankid
+  '^%pbankid (%d+)$': bankidmany
+  '^%padjsub$': adjsub
+  '^%padjsub (%d+)$': adjsub
+  '^%pfluffle (.+)$': (source, destination, arg) =>
+    adj = getWord 'clukuk', 'adj', 1, 8
+    sub = getWord 'clukuk', 'n', 1, 10
+    say "#{ivar2.util.trim arg} got fluffled by a #{adj[1].word} #{sub[1].word}"
+  --'^%pbankid2$': bankid2
+
 
