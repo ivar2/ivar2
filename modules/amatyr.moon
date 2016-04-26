@@ -39,10 +39,10 @@ handleWeather = (source, destination, url) =>
       if result
         result = result[1]
         temp = result.outtemp
-        ws = result.windspeed / 3.6 -- correct unit
+        ws = result.windspeed
         rain = result.dayrain
         windtext = windSpeedToName(ws)
-        wgs = windSpeedToName(result.windgust/3.6)
+        wgs = windSpeedToName(result.windgust)
         if wgs ~= windtext
           wgs = ", #{wgs} i kasta"
         else
