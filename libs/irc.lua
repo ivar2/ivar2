@@ -105,7 +105,12 @@ local split = function(hostmask, destination, message, trail)
 	return message, extra
 end
 
+local formatCtcp = function(message, type)
+	return string.format('\001%s %s\001', type, message)
+end
+
 return {
-    parse=parse,
+	parse=parse,
 	split=split,
+	formatCtcp=formatCtcp,
 }

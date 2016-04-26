@@ -187,8 +187,14 @@ function ivar2:Privmsg(destination, format, ...)
 	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
+function ivar2:Action(destination, format, ...)
+	local message = safeFormat(format, ...)
+	message = irc.formatCtcp(message, 'ACTION')
+	return self:Privmsg(destination, message)
+end
+
 function ivar2:Msg(type, destination, source, ...)
-	local handler = type == 'notice' and 'Notice' or 'Privmsg'
+	local handler = type == 'notice' and 'Notice' or 'Privmsg' or 'Action'
 	if(destination == self.config.nick) then
 		-- Send the respons as a PM.
 		return self[handler](self, source.nick or source, ...)
