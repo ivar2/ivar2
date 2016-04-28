@@ -242,7 +242,7 @@ do
 	end
 end
 
-local fetchInformation = function(queue)
+local fetchInformation = function(queue, lang)
 	local info = uri_parse(queue.url)
 	info.url = queue.url
 	if(info.path == '') then
@@ -259,9 +259,11 @@ local fetchInformation = function(queue)
 		end
 	end
 
-	simplehttp(
-		parseAJAX(queue.url),
-
+	simplehttp({
+		url = parseAJAX(queue.url),
+		headers = {
+			['Accept-Language'] = lang
+		}},
 		function(data, _, response)
 			local message = handleData(response.headers, data)
 			if(#queue.url > 110 and message) then
@@ -325,6 +327,15 @@ return {
 				end
 			end
 
+			local lang = self:DestinationLocale(destination)
+			if (lang:match('^nn')) then
+				lang = 'nn, nb'
+			elseif(lang:match('^nb')) then
+				lang = 'nb, nn'
+			else -- The default
+				lang = 'en'
+			end
+
 			if(#tmpOrder > 0) then
 				local output = {
 					num = #tmpOrder,
@@ -345,7 +356,7 @@ return {
 							handleOutput(output)
 						end,
 					}
-					fetchInformation(output.queue[i])
+					fetchInformation(output.queue[i], lang)
 				end
 			end
 		end,
