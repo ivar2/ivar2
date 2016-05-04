@@ -53,6 +53,35 @@ PRIVMSG:
     say '‎'..arg
   '^%pemote (.+)$': (source, destination, arg) =>
     @Action destination, arg
+  'botsnack': =>
+    replies = {
+      'Nom nom nom.'
+      'Ooooh'
+      'Yummi!'
+      'Delightful.'
+      'That makes me happy'
+      'How kind!'
+      'Sweet.'
+      "Sorry, but I can't handle more right now."
+      "*burp*"
+      "Ah.. Hiccup!"
+    }
+    reply replies[math.random #replies]
+  "#{ivar2.config.nick}.?%?": =>
+    replies = {
+      "Sorry, but I tried my best"
+      "I am not fully sentient yet, but I'm learning every day"
+      "Please, I tried my best."
+      "That was what my very best, just for you"
+      "Maybe another time"
+      "Sorry, not feeling so good"
+      "Oof."
+      "Whoopsie."
+      "Just give me some time, I will get it eventually"
+      "ಠ_ಠ"
+      "( ͡° ͜ʖ ͡°) "
+    }
+    reply replies[math.random #replies]
   --'^%prepeat (%d+) (.*)$': (source, destination, nr, command) =>
   --  for i=1, nr
   --    @DispatchCommand 'PRIVMSG', command, source, destination
