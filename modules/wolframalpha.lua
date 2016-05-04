@@ -44,10 +44,8 @@ return {
 
 				function(data)
 					local results = parseXML(data)
-					local out = self:LimitOutput(destination, results, 2)
-
-					if(#out > 0) then
-						say(table.concat(out, ' '))
+					if(#results > 0) then
+						say(table.concat(results, ' '))
 					else
 						say('%s: That made no sense at all.', source.nick)
 					end
