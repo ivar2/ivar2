@@ -1,41 +1,45 @@
--- ported from luabot's google module. Thanks!
-html2unicode = require'html'
+key = ivar2.config.youtubeAPIKey
+cxid = ivar2.config.googleCSEKey
+-- general google api key + google custom searcn engine api key
+-- https://console.developers.google.com/apis/
 
-imagesearch = (source, destination, term, num=1) =>
-    data, err = ivar2.util.simplehttp 'http://ajax.googleapis.com/ajax/services/search/images?safe=off&v=1.0&q='..ivar2.util.urlEncode(term), (data) ->
-      res = ivar2.util.json.decode(data)
-      results = res.responseData.results
+gsearch = (source, destination, term, stype) =>
+  nr = 1
+  m_nr, m_term = term\match '^([0-9]+) (.*)'
+  if m_nr and m_term
+    nr = m_nr
+    term = m_term
+  if not stype
+    stype = ''
+  else
+    stype = '&searchType='..stype
+  data, err = ivar2.util.simplehttp 'https://www.googleapis.com/customsearch/v1?key='..key..'&cx='..cxid..stype..'&q='..ivar2.util.urlEncode(term), (data) ->
 
-      total = #results
+    if query == 'google'
+      return reply "wow. That's really clever."
 
-      if num >= total or num < 0
-          say "Couldn't find anything matching \002#{term}\002."
-          return
+    unless data
+      return reply "no response"
 
-      url = results[num]['unescapedUrl']
-      say "(#{num} of #{total}) #{url}"
+    if data\sub(1, 1) ~= '{' then
+      return false, 'invalid reply?'
+
+    res = ivar2.util.json.decode(data)
+    if res.error then
+      return reply "Error #{res.error.code}, #{res.error.message}"
+
+    unless res.items
+      return reply 'no results'
+
+    out = {}
+    for i, item in ipairs res.items
+      out[#out+1] = '['..ivar2.util.bold(tostring(i))..'] '.. item.title .. ' ' .. item.link
+      if i == nr
+        break
+    say table.concat(out, ', ')
 
 PRIVMSG:
-  '^%pimage (.+)': imagesearch
-  '^%pimage (.+) ([0-9]+)': imagesearch
-  '^%pg (.+)': (source, destination, query) =>
-    data, err = ivar2.util.simplehttp 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q='..ivar2.util.urlEncode(query), (data) ->
+  '^%pimage (.+)': (s,d,a) =>
+    gsearch(@, s, d, a, 'image')
+  '^%pg (.+)': gsearch
 
-      if query == 'google'
-        return reply "wow. That's really clever."
-
-      unless data
-        return reply "no response"
-
-      if data\sub(1, 1) ~= '{' then
-        return false, 'invalid reply?'
-
-      resp = ivar2.util.json.decode(data)
-      unless resp.responseData
-        return reply 'no response data'
-
-      res = resp.responseData.results
-      if res[1]
-        say(html2unicode(res[1].titleNoFormatting)..': '..res[1].unescapedUrl)
-      else
-        return reply 'no results'
