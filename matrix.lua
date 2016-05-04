@@ -136,6 +136,8 @@ MatrixServer.create = function()
     server.connected = false
     server.rooms = {}
     server.out = {}
+    -- hardcoded value, could maybe parse homeserver URI?
+    server.network = 'matrix'
     -- Store user presences here since they are not local to the rooms
     server.presence = {}
     server.end_token = 'END'
@@ -314,6 +316,7 @@ function MatrixServer:http_cb(command)
                             if channel == id or
                                channel == room.shortname or
                                channel == room.fullname or
+                               channel == room.canonical_alias or
                                channel == room.name then
                                found = true
                                break
@@ -391,6 +394,9 @@ function MatrixServer:findRoom(fullname)
         if room.fullname == fullname then
             return room
         elseif room.name == fullname then
+            return room
+         -- because of IRC heritage
+        elseif room.name:lower() == fullname:lower() then
             return room
         end
     end
@@ -563,7 +569,7 @@ function MatrixServer:_msg(room_id, body, msgtype)
     self:send()
 end
 
-function MatrixServer:Privmsg(destination, source, ...)
+function MatrixServer:Privmsg(destination, ...)
     local room = self:findRoom(destination)
     local body = safeFormat(...)
     self:SimpleDispatch('PRIVMSG_OUT', body, {nick=self.config.nick}, destination)
@@ -1135,6 +1141,8 @@ function Room:SetName(name)
 
     if name ~= self.name then
         self.conn:Log('info', 'Updated name: %s to %s', self.name, name)
+        self.conn.channels[name] = self.conn.channels[self.name]
+        self.conn.channels[self.name] = nil
         self.name = name
     end
 end
@@ -1176,6 +1184,11 @@ function Room:addNick(user_id, displayname)
 
     if self.users[user_id] ~= displayname then
         self.users[user_id] = displayname
+    end
+
+    local channel = self.conn.channels[self.name]
+    if channel and channel.nicks then
+        channel.nicks[displayname] = user_id
     end
 
     return displayname
@@ -1234,8 +1247,11 @@ end
 function Room:delNick(id)
     if self.users[id] then
         self.users[id] = nil
+        -- TODO remove nick
+        local channel = self.conn.channels[self.name]
         return true
     end
+
 end
 
 -- Parses a chunk of json meant for a room
