@@ -85,8 +85,12 @@ lookup = (source, destination, lookup) =>
 upper = (s) ->
   (string.upper(s)\gsub('æ','Æ')\gsub('ø','Ø')\gsub('å','Å'))
 
-getWord = (lang, wordclass, count, maxlen) ->
-  stmt = dbh!\prepare [[
+getWord = (lang, wordclass, count, maxlen, startswith) ->
+  unless startswith
+    startswith = ''
+  else
+    startswith = "AND left(word,1) = '#{startswith}'"
+  sql = [[
     SELECT
      *
     FROM
@@ -95,10 +99,12 @@ getWord = (lang, wordclass, count, maxlen) ->
       grammar = ?
     AND
       length(word) < ?
+    ]]..startswith..[[
     ORDER BY
       random()
     LIMIT ?
   ]]
+  stmt = dbh!\prepare sql
   stmt\execute wordclass, maxlen, count
   out = {}
   for row in stmt\rows(true) -- true for column names
@@ -175,10 +181,15 @@ PRIVMSG:
   '^%pbankid (%d+)$': bankidmany
   '^%padjsub$': adjsub
   '^%padjsub (%d+)$': adjsub
-  '^%pfluffle (.+)$': (source, destination, arg) =>
-    adj = getWord 'clukuk', 'adj', 1, 8
-    sub = getWord 'clukuk', 'n', 1, 10
-    say "#{ivar2.util.trim arg} got fluffled by a #{adj[1].word} #{sub[1].word}"
+  '^%p?fluffle (.+)$': (source, destination, arg) =>
+    choice = math.random(1, 26)
+    alliteration = ('abcdefghjijklmnopqrstuvxyz')\sub(choice, choice)
+    adj = getWord 'clukuk', 'adj', 1, 8, alliteration
+    sub = getWord 'clukuk', 'n', 1, 10, alliteration
+    n = ''
+    if alliteration\match '[aeiou]'
+      n = 'n'
+    say "#{ivar2.util.trim arg} got fluffled by a#{n} #{adj[1].word} #{sub[1].word}"
   --'^%pbankid2$': bankid2
 
 
