@@ -5,8 +5,13 @@ local util = {
 	simplehttp = require'simplehttp',
 }
 
-local color = function(s, color)
-	return string.format("\03%02d%s\03", color, s)
+local color = function(s, color, background)
+	if not background then
+		background = ''
+	else
+		background = string.format(',%02d', background)
+	end
+	return string.format("\03%02d%s%s\03", color, background, s)
 end
 util.color = color
 
@@ -181,7 +186,6 @@ function util.nonickalert(nicklist, str)
 		end
 	end, true)
 end
-
 
 local utf8 = {
 	pattern = "([%z\1-\127\194-\244][\128-\191]*)",
