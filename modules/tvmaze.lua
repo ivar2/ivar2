@@ -1,4 +1,5 @@
 local util = require'util'
+local date = require'idate'
 local simplehttp = util.simplehttp
 local urlEncode = util.urlEncode
 local json = util.json
@@ -62,12 +63,28 @@ local episode = function(url, pre)
 
 			function(data)
 				data = json.decode(data)
+				local eta = ''
+				local year, month, day = data.airdate:match('^(%d+)-(%d+)-(%d+)$')
+				local hour, minute = data.airtime:match'^(%d+):(%d+)$'
+				local time_s = {
+						year=year,
+						month=month,
+						day=day,
+						hour=hour or 0,
+						min=minute or 0,
+						sec=0,
+				}
+				local air_s = os.time(time_s)
+				if air_s > os.time() then
+						local age = date.relativeTimeShort(air_s)
+						eta = 'ETA: '..age:gsub(' %d*s$', '')
+				end
 				seq:success(
 					string.format(
-						'%s: %02dx%02d %s %s',
+						'%s: %02dx%02d %s %s %s',
 						pre,
 						data.season, data.number,
-						data.airdate, data.airtime
+						data.airdate, data.airtime, eta
 					)
 				)
 			end
