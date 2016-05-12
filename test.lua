@@ -33,7 +33,9 @@ describe("test IRC lib", function()
                   server = 'server.server.com',
                   nick = 'nick',
                   realname = 'Realname',
-                  user = 'user'
+                  user = 'user',
+                  sourcenick = 'botnick',
+                  host = '2a00:dd52:211g::2',
               }, argument)
         end)
     end)

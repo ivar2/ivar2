@@ -20,8 +20,10 @@ local function parse(line)
                 argument.user = user
                 argument.server = server
                 argument.nick = nick
+                argument.sourcenick = sourcenick
                 argument.hopcount = hopcount
                 argument.realname = realname
+                argument.host = host
                 -- Return here. This command does not need further
                 -- parsing or checking for ignore.
                 return tcommand, argument, tsource, tdestination
