@@ -2,8 +2,10 @@ local httpclient = require'handler.http.client'
 local uri = require"handler.uri"
 local idn = require'idn'
 local ev = require'ev'
-require'logging.console'
-local log = logging.console()
+local lconsole = require'logging.console'
+local log = lconsole()
+-- Change to DEBUG if you want to see full URL fetch log
+log:setLevel('INFO')
 
 local uri_parse = uri.parse
 
@@ -33,7 +35,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 	local sink = {}
 	visited = visited or {}
 	local method = "GET"
-	local data = nil
+	local body
 
 	local client = httpclient.new(ev.Loop.default)
 	-- Set header for non keepalive
@@ -50,7 +52,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 		end
 
 		if(url.data) then
-			data = url.data
+			body = url.data
 		end
 
 		url = url.url or url[1]
@@ -65,12 +67,12 @@ local function simplehttp(url, callback, stream, limit, visited)
 	-- Prevent infinite loops!
 	if(visited[url]) then return end
 	visited[url] = true
-	log:info('simplehttp> fetching url %s', url)
+	log:debug('simplehttp> fetching url %s', url)
 
 	client:request{
 		url = url,
 		method = method,
-		body = data,
+		body = body,
 		stream_response = stream,
 
 		on_data = function(request, response, data)
