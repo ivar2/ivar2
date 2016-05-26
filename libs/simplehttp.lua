@@ -1,13 +1,39 @@
-local httpclient = require'handler.http.client'
-local uri = require"handler.uri"
+local httpclient = require'http.request'
+local urip = require"handler.uri"
 local idn = require'idn'
 local ev = require'ev'
+local cqueues = require "cqueues"
+local cq = cqueues.new()
+local zlib = require'zlib'
 local lconsole = require'logging.console'
 local log = lconsole()
+local ev_loop = ev.Loop.default
 -- Change to DEBUG if you want to see full URL fetch log
-log:setLevel('INFO')
+--
+--log:setLevel('INFO')
 
-local uri_parse = uri.parse
+local timer
+local function step()
+	-- luacheck: ignore errno
+	local ok, err, errno, thd = cq:step(0)
+	if not ok then
+		print("ERROR", debug.traceback(thd, err))
+	end
+	local timeout = cq:timeout()
+	if timeout then
+		timer:again(ev_loop, timeout)
+	else
+		timer:stop(ev_loop)
+	end
+end
+timer = ev.Timer.new(step, math.huge)
+local io = ev.IO.new(step, cq:pollfd(), ev.READ)
+timer:start(ev_loop)
+io:start(ev_loop)
+
+--cq:wrap(function() while true do print("PING") cqueues.sleep(1) end end)
+
+local uri_parse = urip.parse
 
 local toIDN = function(url)
 	local info = uri_parse(url, nil, true)
@@ -30,88 +56,90 @@ local toIDN = function(url)
 	)
 end
 
-local function simplehttp(url, callback, stream, limit, visited)
+local function simplehttp(url, callback, unused, limit)
 	local sinkSize = 0
 	local sink = {}
-	visited = visited or {}
-	local method = "GET"
-	local body
+	local uri
+	if(type(url) == "table") then
+		uri = url.url or url[1]
+	else
+		uri = url
+	end
 
-	local client = httpclient.new(ev.Loop.default)
-	-- Set header for non keepalive
-	client.headers['Connection'] = 'Close'
+	-- Don't include fragments in the request.
+	uri = uri:gsub('#.*$', '')
+
+	-- Add support for IDNs.
+	uri = toIDN(uri)
+
+	log:debug('simplehttp> request :%s.', uri)
+	local client = httpclient.new_from_uri(uri)
+
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
-				client.headers[k] = v
+				client.headers:append(k, v)
 			end
 		end
 
 		if(url.method) then
-			method = url.method
+			client.headers:upsert(":method", url.method)
 		end
 
 		if(url.data) then
-			body = url.data
+			client:set_body(url.data)
 		end
-
-		url = url.url or url[1]
 	end
 
-	-- Don't include fragments in the request.
-	url = url:gsub('#.*$', '')
+	local req_timeout = 30
+	cq:wrap(function()
+		local data
+		local status_code
+		--for k,v in client.headers:each() do
+		--	print(k,v)
+		--end
 
-	-- Add support for IDNs.
-	url = toIDN(url)
+		local headers, stream = client:go(req_timeout)
 
-	-- Prevent infinite loops!
-	if(visited[url]) then return end
-	visited[url] = true
-	log:debug('simplehttp> fetching url %s', url)
+		if not headers then
+			log:error('simplehttp> request %s, error :%s.', uri, stream)
+			return
+		end
+		status_code = headers:get(':status')
 
-	client:request{
-		url = url,
-		method = method,
-		body = body,
-		stream_response = stream,
+		local simple_headers = {}
+		for k,v in headers:each() do
+			--print(k,v)
+			simple_headers[k] = v
+		end
 
-		on_data = function(request, response, data)
-			if(request.is_cancelled) then return end
-
-			if(data) then
-				sinkSize = sinkSize + #data
-				sink[#sink + 1] = data
-				if(limit and sinkSize > limit) then
-					request.on_finished(request, response)
-					-- Cancel it
-					request:close()
+		if stream then
+			if(limit) then
+				while true do
+					-- luacheck: ignore err errno
+					local more_data, err, errno = stream:get_next_chunk(req_timeout)
+					if not more_data or #sink*8192 > limit then
+						break
+					end
+					sinkSize = sinkSize + #more_data
+					sink[#sink + 1] = more_data
 				end
+				data = table.concat(sink)
+			else
+				data = stream:get_body_as_string()
 			end
-		end,
-
-		on_finished = function(request, response)
-			if(response.status_code == 301 or response.status_code == 302 or response.status_code == 303) then
-				local location = response.headers.Location
-				if(location:sub(1, 4) ~= 'http') then
-					local info = uri_parse(url)
-					location = string.format('%s://%s%s', info.scheme, info.host, location)
-				end
-
-				if(url.headers) then
-					location = {
-						url = location,
-						headers = url.headers
-					}
-				end
-
-				return simplehttp(location, callback, stream, limit, visited)
+			-- Some servers send gzip even if not requested
+			if simple_headers['content-encoding'] == 'gzip' then
+				data = zlib.inflate()(data)
 			end
+		end
 
-			callback(table.concat(sink), url, response)
-			-- We don't support any pipelining or keepalive
-			request:close()
-		end,
-	}
+		local response = {
+			headers = simple_headers,
+			status_code = status_code -- for compability with old simplehttp API
+		}
+		callback(data, uri, response)
+	end)
 end
 
 return simplehttp
