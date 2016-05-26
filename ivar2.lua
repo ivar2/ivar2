@@ -18,13 +18,18 @@ local configFile, reload = ...
 local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
-local connection = require'handler.connection'
-local nixio = require'nixio'
-local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 local irc = require 'irc'
 local lconsole = require'logging.console'
+local lfs = require 'lfs'
+local cqueues = require'cqueues'
+local socket = require'cqueues.socket'
+local uri_patts = require "lpeg_patterns.uri"
+local lpeg = require'lpeg'
+local EOF = lpeg.P(-1)
+local uri_patt = uri_patts.uri * EOF
+local queue = cqueues.new()
 
 math.randomseed(os.time())
 
@@ -32,13 +37,14 @@ local log = lconsole()
 
 local ivar2 = {
 	ignores = {},
-	Loop = ev.Loop.default,
+	--Loop = ev.Loop.default,
 	events = require'core/ircevents',
 	event = event,
 	channels = {},
 	more = {},
 	timers = {},
 	util = util,
+	timeout = 30,
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -115,8 +121,8 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
-		self.timeout:again(self.Loop)
-		self.socket:send(message .. '\r\n')
+		--self.timeout:again(self.Loop)
+		self.socket:write(message .. '\r\n')
 	end
 end
 
@@ -430,7 +436,7 @@ function ivar2:LoadModule(moduleName)
 	for _,ending in pairs(endings) do
 		local fileName = 'modules/' .. moduleName .. ending
 		-- Check if file exist and is readable before we try to loadfile it
-		local access, errCode, accessError = nixio.fs.access(fileName, 'r')
+		local access = lfs.attributes(fileName)
 		if(access) then
 			if(fileName:match('.lua')) then
 				moduleFile, moduleError = loadfile(fileName)
@@ -564,42 +570,58 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 			end
 		end
 	end
-	local timer = ev.Timer.new(callbackHandler(callback), interval, repeat_interval)
-	timer:start(self.Loop)
-	-- Only allow one timer per id
-	-- Cancel any running
-	if(self.timers[id]) then
-		self.timers[id]:stop(self.Loop)
-	end
-	self.timers[id] = timer
+	--local timer = ev.Timer.new(callbackHandler(callback), interval, repeat_interval)
+	--timer:start(self.Loop)
+	local timer
+	timer = queue:wrap(function()
+		print('timer', id, interval, repeat_interval)
+		cqueues.sleep(interval)
+		print('wut')
+		callbackHandler(callback)()
+		-- Only allow one timer per id
+		-- Cancel any running
+		if(self.timers[id]) then
+			cqueues.cancel(self.timers[id])
+		end
+		self.timers[id] = timer
+		if repeat_interval then
+			while true do
+				cqueues.sleep(repeat_interval)
+				callbackHandler(callback)()
+			end
+		end
+	end)
 	return timer
 end
 
 function ivar2:Connect(config)
 	self.config = config
 
-	if(not self.control) then
-		self.control = assert(loadfile('core/control.lua'))(ivar2)
-		self.control:start(self.Loop)
-	end
+	--if(not self.control) then
+	--	self.control = assert(loadfile('core/control.lua'))(ivar2)
+	--	self.control:start(self.Loop)
+	--end
 
 	if(not self.x0) then
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
 	end
 
-	if(not self.webserver) then
-		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
-		self.webserver.start(self.config.webserverhost, self.config.webserverport)
-	end
+--	if(not self.webserver) then
+--		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+--		self.webserver.start(self.config.webserverhost, self.config.webserverport)
+--	end
 
-	if(self.timeout) then
-		self.timeout:stop(self.Loop)
-	end
+--	if(self.timeout) then
+--		self.timeout:stop(self.Loop)
+--	end
 
 	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
-	self.socket = assert(connection.uri(self.Loop, self, self.config.uri))
+	local urip = uri_patt:match(self.config.uri)
+	print('host', urip.host)
+	print('port', urip.port)
+	self.socket = assert(socket.connect(urip.host, urip.port))
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -612,6 +634,12 @@ function ivar2:Connect(config)
 	end
 	self:DisableAllModules()
 	self:LoadModules()
+
+	self:handle_connected()
+	for line in self.socket:lines() do
+		--xpcall(self.handle_data, self.handle_error, self, line)
+		self:ParseInput(line)
+	end
 end
 
 function ivar2:Reconnect()
@@ -704,28 +732,30 @@ function ivar2:Reload()
 	end
 end
 
-function ivar2:ParseInput(data)
-	self.timeout:again(self.Loop)
+function ivar2:ParseInput(line)
+	--XXX self.timeout:again(self.Loop)
 
-	if(self.overflow) then
-		data = self.overflow .. data
-		self.overflow = nil
-	end
+	--if(self.overflow) then
+--		data = self.overflow .. data
+--		self.overflow = nil
+--	end
 
-	for line in data:gmatch('[^\n]+') do
-		if(line:sub(-1) ~= '\r') then
-			self.overflow = line
-		else
+	--for line in data:gmatch('[^\n]+') do
+	--	if(line:sub(-1) ~= '\r') then
+	--		self.overflow = line
+--		else
 			-- Strip of \r.
-			line = line:sub(1, -2)
+	--		line = line:sub(1, -2)
 			self:Log('debug', line)
 			local command, argument, source, destination = irc.parse(line)
 			if(not self:IsIgnored(destination, source)) then
-				self:DispatchCommand(command, argument, source, destination)
+				queue:wrap(function()
+					self:DispatchCommand(command, argument, source, destination)
+				end)
 			end
 
-		end
-	end
+	--	end
+	--end
 end
 
 if(reload) then
@@ -733,9 +763,11 @@ if(reload) then
 end
 
 -- Attempt to create the cache folder.
-nixio.fs.mkdir('cache')
-local config = assert(loadfile(configFile))()
--- Store the config file name in the config so it can be accessed later
-config.configFile = configFile
-ivar2:Connect(config)
-ivar2.Loop:loop()
+lfs.mkdir('cache')
+queue:wrap(function()
+		local config = assert(loadfile(configFile))()
+		-- Store the config file name in the config so it can be accessed later
+		config.configFile = configFile
+		ivar2:Connect(config)
+end)
+assert(queue:loop())

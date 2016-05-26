@@ -1,36 +1,51 @@
 local httpclient = require'http.request'
 local urip = require"handler.uri"
 local idn = require'idn'
-local ev = require'ev'
+--local ev = require'ev'
 local cqueues = require'cqueues'
 local zlib = require'zlib'
 local lconsole = require'logging.console'
 local log = lconsole()
+--local cq = cqueues.new()
 --local ev_loop = ev.Loop.default
 -- Change to DEBUG if you want to see full URL fetch log
 --
 --log:setLevel('INFO')
 
-local cq = cqueues.new()
-local timer
-local function step()
-	-- luacheck: ignore errno
-	local ok, err, errno, thd = cq:step(0)
-	if not ok then
-		print("ERROR", debug.traceback(thd, err))
-	end
-	local timeout = cq:timeout()
-	if timeout then
-		timer:again(ev.Loop.default, timeout)
-	else
-		timer:stop(ev.Loop.default)
-	end
-end
-timer = ev.Timer.new(step, math.huge)
-local io = ev.IO.new(step, cq:pollfd(), ev.READ)
-timer:start(ev.Loop.default)
-io:start(ev.Loop.default)
-cq:wrap(function() while true do print("simplehttp") cqueues.sleep(10) end end)
+
+--do -- initialize
+--	if timer then
+--		timer:stop(ev.Loop.default)
+--		eio:stop(ev.Loop.default)
+--		cq:cancel()
+--		wrapper:cancel()
+--	end
+--	cq = cqueues.new()
+--
+--	-- TODO: figure out reloading
+--	local function step()
+--		-- luacheck: ignore errno
+--		local ok, err, errno, thd = cq:step(0)
+--		if not ok then
+--			print("ERROR", debug.traceback(thd, err))
+--		end
+--		local timeout = cq:timeout()
+--		if timeout then
+--			timer:again(ev.Loop.default, timeout)
+--		else
+--			timer:stop(ev.Loop.default)
+--			if cq:empty() then
+--				eio:stop(ev.Loop.default)
+--			end
+--		end
+--	end
+--	timer = ev.Timer.new(step, math.huge)
+--	eio = ev.IO.new(step, cq:pollfd(), ev.READ)
+--	timer:start(ev.Loop.default)
+--	eio:start(ev.Loop.default)
+--end
+--local rnd = math.random(100)
+--local wrapper = cq:wrap(function() while true do print("simplehttp " ..tostring(rnd)) cqueues.sleep(10) end end)
 
 local uri_parse = urip.parse
 
@@ -65,8 +80,10 @@ local function simplehttp(url, callback, unused, limit)
 
 	-- Don't include fragments in the request.
 	uri = uri:gsub('#.*$', '')
+	-- Trim trailing whitespace
+	uri = uri:gsub('%s+$', '')
 
-	log:debug('simplehttp> request :%s.', uri)
+	log:debug('simplehttp> request <%s>', uri)
 
 	-- Add support for IDNs.
 	uri = toIDN(uri)
@@ -92,7 +109,7 @@ local function simplehttp(url, callback, unused, limit)
 
 	local req_timeout = 30
 
-	cq:wrap(function()
+	--cq:wrap(function()
 		local data
 		local status_code
 		--for k,v in client.headers:each() do
@@ -134,7 +151,7 @@ local function simplehttp(url, callback, unused, limit)
 			status_code = status_code -- for compability with old simplehttp API
 		}
 		callback(data, uri, response)
-	end)
+	--end)
 end
 
 return simplehttp
