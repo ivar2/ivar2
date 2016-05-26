@@ -14,19 +14,19 @@ local log = lconsole()
 local cq = cqueues.new()
 local timer
 local function step()
-		-- luacheck: ignore errno
-		local ok, err, errno, thd = cq:step(0)
-		if not ok then
-				print("ERROR", debug.traceback(thd, err))
-		end
-		local timeout = cq:timeout()
-		if timeout then
-				timer:again(ev.Loop.default)
-		else
-				timer:stop(ev.Loop.default)
-		end
+	-- luacheck: ignore errno
+	local ok, err, errno, thd = cq:step(0)
+	if not ok then
+		print("ERROR", debug.traceback(thd, err))
+	end
+	local timeout = cq:timeout()
+	if timeout then
+		timer:again(ev.Loop.default, timeout)
+	else
+		timer:stop(ev.Loop.default)
+	end
 end
-timer = ev.Timer.new(step, math.huge, 1)
+timer = ev.Timer.new(step, math.huge)
 local io = ev.IO.new(step, cq:pollfd(), ev.READ)
 timer:start(ev.Loop.default)
 io:start(ev.Loop.default)
@@ -56,8 +56,6 @@ local toIDN = function(url)
 end
 
 local function simplehttp(url, callback, unused, limit)
-	local sinkSize = 0
-	local sink = {}
 	local uri
 	if(type(url) == "table") then
 		uri = url.url or url[1]
@@ -68,16 +66,18 @@ local function simplehttp(url, callback, unused, limit)
 	-- Don't include fragments in the request.
 	uri = uri:gsub('#.*$', '')
 
+	log:debug('simplehttp> request :%s.', uri)
+
 	-- Add support for IDNs.
 	uri = toIDN(uri)
 
-	log:debug('simplehttp> request :%s.', uri)
 	local client = httpclient.new_from_uri(uri)
 
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
-				client.headers:append(k, v)
+				-- Overwrite any existing
+				client.headers:upsert(k, v)
 			end
 		end
 
@@ -106,6 +106,8 @@ local function simplehttp(url, callback, unused, limit)
 			return
 		end
 		status_code = headers:get(':status')
+		-- H2 might not be number
+		status_code = tonumber(status_code, 10) or status_code
 
 		local simple_headers = {}
 		for k,v in headers:each() do
@@ -115,19 +117,12 @@ local function simplehttp(url, callback, unused, limit)
 
 		if stream then
 			if(limit) then
-				while true do
-					-- luacheck: ignore err errno
-					local more_data, err, errno = stream:get_next_chunk(req_timeout)
-					if not more_data or #sink*8192 > limit then
-						break
-					end
-					sinkSize = sinkSize + #more_data
-					sink[#sink + 1] = more_data
-				end
-				data = table.concat(sink)
+				data = stream:get_body_chars(limit, req_timeout)
 			else
-				data = stream:get_body_as_string()
+				data = stream:get_body_as_string(req_timeout)
 			end
+			-- Stream shutdown lets luahttp reuse I'm told
+			stream:shutdown()
 			-- Some servers send gzip even if not requested
 			if simple_headers['content-encoding'] == 'gzip' then
 				data = zlib.inflate()(data)
