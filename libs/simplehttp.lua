@@ -2,36 +2,35 @@ local httpclient = require'http.request'
 local urip = require"handler.uri"
 local idn = require'idn'
 local ev = require'ev'
-local cqueues = require "cqueues"
-local cq = cqueues.new()
+local cqueues = require'cqueues'
 local zlib = require'zlib'
 local lconsole = require'logging.console'
 local log = lconsole()
-local ev_loop = ev.Loop.default
+--local ev_loop = ev.Loop.default
 -- Change to DEBUG if you want to see full URL fetch log
 --
 --log:setLevel('INFO')
 
+local cq = cqueues.new()
 local timer
 local function step()
-	-- luacheck: ignore errno
-	local ok, err, errno, thd = cq:step(0)
-	if not ok then
-		print("ERROR", debug.traceback(thd, err))
-	end
-	local timeout = cq:timeout()
-	if timeout then
-		timer:again(ev_loop, timeout)
-	else
-		timer:stop(ev_loop)
-	end
+		-- luacheck: ignore errno
+		local ok, err, errno, thd = cq:step(0)
+		if not ok then
+				print("ERROR", debug.traceback(thd, err))
+		end
+		local timeout = cq:timeout()
+		if timeout then
+				timer:again(ev.Loop.default)
+		else
+				timer:stop(ev.Loop.default)
+		end
 end
-timer = ev.Timer.new(step, math.huge)
+timer = ev.Timer.new(step, math.huge, 1)
 local io = ev.IO.new(step, cq:pollfd(), ev.READ)
-timer:start(ev_loop)
-io:start(ev_loop)
-
---cq:wrap(function() while true do print("PING") cqueues.sleep(1) end end)
+timer:start(ev.Loop.default)
+io:start(ev.Loop.default)
+cq:wrap(function() while true do print("simplehttp") cqueues.sleep(10) end end)
 
 local uri_parse = urip.parse
 
@@ -92,6 +91,7 @@ local function simplehttp(url, callback, unused, limit)
 	end
 
 	local req_timeout = 30
+
 	cq:wrap(function()
 		local data
 		local status_code
