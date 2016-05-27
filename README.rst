@@ -27,6 +27,7 @@ Install deps:
     sudo luarocks install luabitop
     sudo luarocks install luarocks #newer version of luarocks to support git+https
     sudo luarocks install --server=http://luarocks.org/dev http
+    sudo luarocks install luafilesystem
 
 
 

@@ -1,30 +1,32 @@
 -- vim: set noexpandtab:
-local httpserver = require'handler.http.server'
-local ev = require'ev'
-local nixio = require'nixio'
+local server = require'http.server'
+local new_headers = require "http.headers".new
 local lconsole = require'logging.console'
 local log = lconsole()
-local loop = ev.Loop.default
 
 -- Keep this amount in mem before handler has to read from tmpfile
 local BODY_BUFFER_SIZE = 2^17
 
-local server
+local timeout = 30
+
+local runningserver
 
 local webserver = {}
 
+local handlerNotFound = function(stream, res)
+	res:upsert(":status", "404")
+	stream:write_headers(res, false, timeout)
+	stream:write_body_from_string('Nyet. I am four oh four', timeout)
+end
+
 local handlers = {
-	['/favicon.ico'] = function(req, res)
-		-- return 404 Not found error
-		res:set_status(404)
-		res:send()
-	end,
+	['/favicon.ico'] = handlerNotFound
 }
 
 local on_response_sent = function(res)
 	if res.filename then
 		log:info('webserver> on_response_sent: deleting tmp file: %s', res.filename)
-		nixio.fs.unlink(res.filename)
+		os.remove(res.filename)
 	end
 end
 
@@ -70,7 +72,6 @@ local on_request = function(cur_server, req, res)
 	for pattern, handler in pairs(handlers) do
 		if req.url:match(pattern) then
 			log:info('webserver> request for pattern :%s', pattern)
-			found = true
 			req.on_finished = on_finish(req, handler)
 			req.on_data = on_data
 			req.on_error = on_error
@@ -89,22 +90,55 @@ local on_request = function(cur_server, req, res)
 	end
 end
 
+webserver.on_stream = function(stream)
+	print(tostring(stream))
+	local headers = stream:get_headers(30)
+	local path
+	--print('tls', stream:checktls())
+	--print('peer', stream:peername())
+	--print('local', stream:localname())
+	local res = new_headers()
+	if headers then
+		for k, v in headers:each() do
+			if k == ':path' then
+				path = v
+				stream.url = v -- for compability
+			end
+			if k ~= 'connection' then -- yeah...
+				print('setting', k,v)
+				stream[k] = v
+			end
+		end
+	end
+	local found
+	for pattern, handler in pairs(handlers) do
+		if path:match(pattern) then
+			log:info('webserver> request for pattern :%s', pattern)
+			found = true
+			local ok, err = pcall(handler, stream, res)
+			if not ok then
+				log:error('webserver> error for URL pattern: %s: %s', pattern, err)
+			end
+			break
+		end
+	end
+	if not found then
+		log:info('webserver> returning 404 for request: %s', path)
+		handlerNotFound(stream, res)
+	end
+	print('Shutdown', stream:shutdown())
+end
+
 webserver.start = function(host, port)
 	if not (host and port) then
 		return
 	end
 	log:info('webserver> starting webserver: %s:%s', host, port)
-	server = httpserver.new(loop, {
-		name = "ivar2-HTTPServer/0.0.1",
-		on_request = on_request,
-		--on_error = on_error,
-		request_head_timeout = 15.0,
-		request_body_timeout = 60.0, -- for file upload I guess
-		write_timeout = 15.0,
-		keep_alive_timeout = 15.0,
-		max_keep_alive_requests = 10,
-	})
-	server:listen_uri("tcp6://"..host..":"..tostring(port).."/")
+	runningserver = server.listen{
+		host = host,
+		port = port,
+	}
+	return runningserver
 end
 
 webserver.stop = function()

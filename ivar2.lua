@@ -47,10 +47,16 @@ local ivar2 = {
 	timeout = 30,
 
 	timeoutFunc = function(ivar2)
-		return function(loop, timer, revents)
-			ivar2:Log('error', 'Socket stalled for 6 minutes.')
-			if(ivar2.config.autoReconnect) then
-				ivar2:Reconnect()
+		local last = false
+		return function()
+			local stat = ivar2.socket:stat()
+			print('sent', stat.sent.time)
+			print('rcvd', stat.rcvd.time)
+			if (last) then
+				ivar2:Log('error', 'Socket stalled for 6 minutes.')
+				if(ivar2.config.autoReconnect) then
+					ivar2:Reconnect()
+				end
 			end
 		end
 	end,
@@ -570,27 +576,45 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 			end
 		end
 	end
-	--local timer = ev.Timer.new(callbackHandler(callback), interval, repeat_interval)
-	--timer:start(self.Loop)
-	local timer
-	timer = queue:wrap(function()
-		print('timer', id, interval, repeat_interval)
-		cqueues.sleep(interval)
-		print('wut')
-		callbackHandler(callback)()
+	local func = callbackHandler(callback)
+	-- Check for existing
+	if self.timers[id] then
 		-- Only allow one timer per id
 		-- Cancel any running
-		if(self.timers[id]) then
-			cqueues.cancel(self.timers[id])
-		end
-		self.timers[id] = timer
-		if repeat_interval then
-			while true do
-				cqueues.sleep(repeat_interval)
-				callbackHandler(callback)()
+		self:Log('info', 'Deleting existing timer: %s', id)
+		print(cqueues.cancel(self.timers[id].controller))
+		self.timers[id].cancelled = true
+		-- delete func
+		self.timers[id].run = nil
+		print('cont',self.timers[id].controller)
+		--- XXX will this work ? self.timers[id] = nil
+	end
+	local timer = {
+		cancelled = false,
+		stop = function()
+			print('!!! Someone tried to stop me: ', id)
+		end,
+		run = function()
+			local runningTimer = self.timers[id]
+			print('timer', id, interval, repeat_interval, runningTimer.cancelled)
+			cqueues.sleep(interval)
+			func()
+			if repeat_interval then
+				while cqueues.sleep(repeat_interval) do
+					for k, v in pairs(runningTimer) do
+						print('k', k, v)
+					end
+					if runningTimer.cancelled then
+						print('KANKER',id)
+						return -- never to be seen again!
+					end
+					func()
+				end
 			end
 		end
-	end)
+	}
+	timer.controller = queue:wrap(timer.run)
+	self.timers[id] = timer
 	return timer
 end
 
@@ -606,10 +630,16 @@ function ivar2:Connect(config)
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
 	end
 
---	if(not self.webserver) then
---		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
---		self.webserver.start(self.config.webserverhost, self.config.webserverport)
---	end
+	if(not self.webserver) then
+		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+		local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
+		queue:wrap(function()
+			pcall(function()
+				-- server:listen()
+				server:run(self.webserver.on_stream, queue)
+			end)
+		end)
+	end
 
 --	if(self.timeout) then
 --		self.timeout:stop(self.Loop)
@@ -622,6 +652,9 @@ function ivar2:Connect(config)
 	print('host', urip.host)
 	print('port', urip.port)
 	self.socket = assert(socket.connect(urip.host, urip.port))
+	self.socket:onerror(function(err)
+		self:handle_error(err)
+	end)
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -636,16 +669,22 @@ function ivar2:Connect(config)
 	self:LoadModules()
 
 	self:handle_connected()
-	for line in self.socket:lines() do
-		--xpcall(self.handle_data, self.handle_error, self, line)
-		self:ParseInput(line)
+
+	local ok, err = pcall(function()
+		for line in self.socket:lines() do
+			self:ParseInput(line)
+		end
+	end)
+	if not ok then
+		print (err)
+		self:handle_error(err)
 	end
 end
 
 function ivar2:Reconnect()
 	self:Log('info', 'Reconnecting to servers.')
 
-	-- Doesn't exsist if connection.tcp() in :Connect() fails.
+	-- Doesn't exist if connection.tcp() in :Connect() fails.
 	if(self.socket) then
 		self.socket:close()
 	end
@@ -663,9 +702,9 @@ function ivar2:Reload()
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
-		self.control:stop(self.Loop)
-		self.timeout:stop(self.Loop)
-		self.webserver:stop()
+		--self.control:stop(self.Loop)
+		--self.timeout:stop(self.Loop)
+		--XXX self.webserver:stop()
 
 		message.socket = self.socket
 		-- reload configuration file
@@ -674,8 +713,8 @@ function ivar2:Reload()
 			self:Log('error', 'Unable to reload config file: %s.', err)
 			message.config = self.config
 		else
-			local success, mess = pcall(config)
-			if(not success) then
+			local csuccess, mess = pcall(config)
+			if(not csuccess) then
 				self:Log('error', 'Unable to execute new config file: %s.', mess)
 			else
 				message.config = mess
@@ -685,7 +724,7 @@ function ivar2:Reload()
 		-- Store the config file name in the config so it can be accessed later
 		message.config.configFile = configFile
 		message.timers = self.timers
-		message.Loop = self.Loop
+		--message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
 		-- Reload IRC events
@@ -699,8 +738,8 @@ function ivar2:Reload()
 		package.loaded.irc = nil
 		irc = require'irc'
 		-- Reload webserver
-		message.webserver = assert(loadfile('core/webserver.lua'))(message)
-		message.webserver.start(message.config.webserverhost, message.config.webserverport)
+		--XXX message.webserver = assert(loadfile('core/webserver.lua'))(message)
+		--XXX message.webserver.start(message.config.webserverhost, message.config.webserverport)
 		-- Reload persist
 		package.loaded[message.config.persistbackend or 'sqlpersist'] = nil
 		message.persist = require(message.config.persistbackend or 'sqlpersist')({
@@ -721,11 +760,10 @@ function ivar2:Reload()
 
 		self = message
 		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
-		self.socket:sethandler(message)
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
-		self.control = assert(loadfile('core/control.lua'))(self)
-		self.control:start(self.Loop)
+		--self.control = assert(loadfile('core/control.lua'))(self)
+		--self.control:start(self.Loop)
 
 
 		self:Log('info', 'Successfully update core.')

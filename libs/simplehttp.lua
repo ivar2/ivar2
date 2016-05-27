@@ -2,7 +2,6 @@ local httpclient = require'http.request'
 local urip = require"handler.uri"
 local idn = require'idn'
 --local ev = require'ev'
-local cqueues = require'cqueues'
 local zlib = require'zlib'
 local lconsole = require'logging.console'
 local log = lconsole()
