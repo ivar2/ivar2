@@ -43,6 +43,7 @@ local ivar2 = {
 	channels = {},
 	more = {},
 	timers = {},
+	cancelled_timers = {},
 	util = util,
 	timeout = 30,
 
@@ -581,33 +582,32 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 	if self.timers[id] then
 		-- Only allow one timer per id
 		-- Cancel any running
-		self:Log('info', 'Deleting existing timer: %s', id)
-		print(cqueues.cancel(self.timers[id].controller))
-		self.timers[id].cancelled = true
-		-- delete func
-		self.timers[id].run = nil
-		print('cont',self.timers[id].controller)
-		--- XXX will this work ? self.timers[id] = nil
+		self:Log('info', 'Cancelling existing timer: %s', id)
+		self.timers[id]:stop()
+	end
+	local is_cancelled = function()
+		for i, t in ipairs(self.cancelled_timers) do
+			if t.id == id then
+				table.remove(self.cancelled_timers, i)
+				return true
+			end
+		end
 	end
 	local timer = {
+		id = id,
 		cancelled = false,
-		stop = function()
-			print('!!! Someone tried to stop me: ', id)
+		stop = function(timer)
+			self.timers[id].cancelled = true
+			table.insert(self.cancelled_timers, self.timers[id])
+			self.timers[id] = nil
 		end,
 		run = function()
-			local runningTimer = self.timers[id]
-			print('timer', id, interval, repeat_interval, runningTimer.cancelled)
 			cqueues.sleep(interval)
+			if is_cancelled() then return end
 			func()
 			if repeat_interval then
 				while cqueues.sleep(repeat_interval) do
-					for k, v in pairs(runningTimer) do
-						print('k', k, v)
-					end
-					if runningTimer.cancelled then
-						print('KANKER',id)
-						return -- never to be seen again!
-					end
+					if is_cancelled() then return end
 					func()
 				end
 			end
@@ -632,9 +632,9 @@ function ivar2:Connect(config)
 
 	if(not self.webserver) then
 		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
-		local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
 		queue:wrap(function()
 			pcall(function()
+				local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
 				-- server:listen()
 				server:run(self.webserver.on_stream, queue)
 			end)
@@ -704,7 +704,9 @@ function ivar2:Reload()
 	else
 		--self.control:stop(self.Loop)
 		--self.timeout:stop(self.Loop)
-		--XXX self.webserver:stop()
+		pcall(function()
+			self.webserver:close()
+		end)
 
 		message.socket = self.socket
 		-- reload configuration file
@@ -724,6 +726,7 @@ function ivar2:Reload()
 		-- Store the config file name in the config so it can be accessed later
 		message.config.configFile = configFile
 		message.timers = self.timers
+		message.cancelled_timers = self.cancelled_timers
 		--message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
@@ -740,6 +743,14 @@ function ivar2:Reload()
 		-- Reload webserver
 		--XXX message.webserver = assert(loadfile('core/webserver.lua'))(message)
 		--XXX message.webserver.start(message.config.webserverhost, message.config.webserverport)
+		message.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+		queue:wrap(function()
+			pcall(function()
+				-- server:listen()
+				local server = message.webserver.start(message.config.webserverhost, message.config.webserverport)
+				server:run(message.webserver.on_stream, queue)
+			end)
+		end)
 		-- Reload persist
 		package.loaded[message.config.persistbackend or 'sqlpersist'] = nil
 		message.persist = require(message.config.persistbackend or 'sqlpersist')({
