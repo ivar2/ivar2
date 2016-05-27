@@ -1,12 +1,10 @@
 local util = require'util'
 local simplehttp = util.simplehttp
 local trim = util.trim
+local uri_parse = util.uri_parse
 local iconv = require"iconv"
-local uri = require"handler.uri"
 local html2unicode = require'html'
-local nixio = require'nixio'
-
-local uri_parse = uri.parse
+local lfs = require'lfs'
 local DL_LIMIT = 2^17
 
 local patterns = {
@@ -223,7 +221,7 @@ do
 		local path = 'modules/title/sites/'
 		_PROXY.customHosts = customHosts
 
-		for fn in nixio.fs.dir(path) do
+		for fn in lfs.dir(path) do
 			loadFile('custom',  path, fn)
 		end
 
@@ -233,7 +231,7 @@ do
 	-- Custom post processing
 	do
 		local path = 'modules/title/post/'
-		for fn in nixio.fs.dir(path) do
+		for fn in lfs.dir(path) do
 			local func = loadFile('post',  path, fn)
 			if(func) then
 				table.insert(customPost, func)
@@ -244,18 +242,20 @@ end
 
 local fetchInformation = function(queue, lang)
 	local info = uri_parse(queue.url)
-	info.url = queue.url
-	if(info.path == '') then
-		queue.url = queue.url .. '/'
-	end
+	if(info) then
+		info.url = queue.url
+		if(info.path == '') then
+			queue.url = queue.url .. '/'
+		end
 
-	local host = info.host:gsub('^www%.', '')
-	for pattern, customHandler in next, customHosts do
-		if(host:match(pattern) and customHandler(queue, info)) then
-			-- Let the queue know it's being customhandled
-			-- Can be used in postproc to make better decisions
-			queue.customHandler = true
-			return
+		local host = info.host:gsub('^www%.', '')
+		for pattern, customHandler in next, customHosts do
+			if(host:match(pattern) and customHandler(queue, info)) then
+				-- Let the queue know it's being customhandled
+				-- Can be used in postproc to make better decisions
+				queue.customHandler = true
+				return
+			end
 		end
 	end
 

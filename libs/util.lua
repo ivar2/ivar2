@@ -3,6 +3,7 @@
 local util = {
 	json = require'cjson',
 	simplehttp = require'simplehttp',
+	uri_parse = require'uriparse'
 }
 
 local color = function(s, color, background)

@@ -25,10 +25,6 @@ local lconsole = require'logging.console'
 local lfs = require 'lfs'
 local cqueues = require'cqueues'
 local socket = require'cqueues.socket'
-local uri_patts = require "lpeg_patterns.uri"
-local lpeg = require'lpeg'
-local EOF = lpeg.P(-1)
-local uri_patt = uri_patts.uri * EOF
 local queue = cqueues.new()
 
 math.randomseed(os.time())
@@ -648,7 +644,7 @@ function ivar2:Connect(config)
 	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
-	local urip = uri_patt:match(self.config.uri)
+	local urip = util.uri_parse(self.config.uri)
 	print('host', urip.host)
 	print('port', urip.port)
 	self.socket = assert(socket.connect(urip.host, urip.port))
