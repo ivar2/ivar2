@@ -16,14 +16,8 @@ Install deps:
 
 ::
 
-    sudo apt-get install luarocks libev-dev liblua5.1-iconv0 lua-cjson cmake libsqlite3-dev git libssl-dev m4
-    sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
-    sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
+    sudo apt-get install luarocks liblua5.1-iconv0 lua-cjson cmake libsqlite3-dev git libssl-dev m4
     sudo luarocks install lsqlite3
-    sudo luarocks install luasocket
     sudo luarocks install luabitop
     sudo luarocks install luarocks #newer version of luarocks to support git+https
     sudo luarocks install --server=http://luarocks.org/dev http
@@ -52,7 +46,7 @@ Create a bot config sort of like this
         owners = {
             'nick!ident@my.host.name'
         },
-        webserverhost = '*',
+        webserverhost = '::',
         webserverport = 9000,
         webserverprefix = 'https://my.web.proxy/', -- optional URL if bot is behind proxy
         commandPattern = "!",
