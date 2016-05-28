@@ -24,6 +24,7 @@ local irc = require 'irc'
 local lconsole = require'logging.console'
 local lfs = require 'lfs'
 local cqueues = require'cqueues'
+local signal = require'cqueues.signal'
 local socket = require'cqueues.socket'
 local queue = cqueues.new()
 
@@ -785,12 +786,41 @@ function ivar2:ParseInput(line)
 	end
 end
 
+function ivar2:SignalHandle()
+	local TERM = signal.SIGTERM
+	local INT = signal.SIGINT
+	local HUP = signal.SIGHUP
+
+	while true do
+		-- NOTE: Delivered signals cannot be caught by Linux signalfd or
+		-- Solaris sigtimedwait. Works without blocking on *BSD and OS X.
+		signal.block(TERM, INT, HUP)
+
+		local signo = assert(assert(signal.listen(TERM, INT, HUP)):wait())
+
+		if signo == HUP then
+			self:Log('info', 'Got SIGHUP, reloading.')
+			self:Reload()
+		else
+			io.stderr:write("exiting on signal ", signal[signo], "\n")
+			os.exit(0)
+		end
+	end
+end
+
+-- Install Linux signal handler
+queue:wrap(function ()
+	ivar2:SignalHandle()
+end)
+
 if(reload) then
 	return ivar2
 end
 
 -- Attempt to create the cache folder.
 lfs.mkdir('cache')
+
+-- Load config and start the bot
 queue:wrap(function()
 		local config = assert(loadfile(configFile))()
 		-- Store the config file name in the config so it can be accessed later
