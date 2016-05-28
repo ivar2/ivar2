@@ -73,7 +73,7 @@ local ivar2 = {
 			local stat = ivar2.socket:stat()
 			print('sent', stat.sent.time)
 			print('rcvd', stat.rcvd.time)
-			if not last_r or last_s then
+			if not last_r or not last_s then
 				last_r = stat.rcvd.time
 				last_s = stat.sent.time
 				return
@@ -633,7 +633,6 @@ function ivar2:Connect(config)
 		queue:wrap(function()
 			pcall(function()
 				local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
-				-- server:listen()
 				server:run(self.webserver.on_stream, queue)
 			end)
 		end)
@@ -642,7 +641,6 @@ function ivar2:Connect(config)
 --	if(self.timeout) then
 --		self.timeout:stop(self.Loop)
 --	end
-
 	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
@@ -738,7 +736,7 @@ function ivar2:Reload()
 		-- Reload webserver
 		--XXX message.webserver = assert(loadfile('core/webserver.lua'))(message)
 		--XXX message.webserver.start(message.config.webserverhost, message.config.webserverport)
-		message.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+		message.webserver = assert(loadfile('core/webserver.lua'))(message)
 		queue:wrap(function()
 			pcall(function()
 				-- server:listen()
@@ -771,7 +769,6 @@ function ivar2:Reload()
 		--self.control = assert(loadfile('core/control.lua'))(self)
 		--self.control:start(self.Loop)
 
-
 		self:Log('info', 'Successfully update core.')
 	end
 end
@@ -786,9 +783,6 @@ function ivar2:ParseInput(line)
 			self:DispatchCommand(command, argument, source, destination)
 		end)
 	end
-
-	--	end
-	--end
 end
 
 if(reload) then
