@@ -33,7 +33,6 @@ local log = lconsole()
 
 local ivar2 = {
 	ignores = {},
-	--Loop = ev.Loop.default,
 	events = require'core/ircevents',
 	event = event,
 	channels = {},
@@ -43,13 +42,45 @@ local ivar2 = {
 	util = util,
 	timeout = 30,
 
+	handle_error = function(self, err)
+		self:Log('error', err)
+		if(self.config.autoReconnect) then
+			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
+			self:Timer('_reconnect', 60, function(loop, timer, revents)
+				self:Reconnect()
+			end)
+		else
+			queue:cancel() -- TODO: check if this works
+		end
+	end,
+
+	handle_connected = function(self)
+		if(not self.updated) then
+			if self.config.password then
+				self:Send('PASS %s', self.config.password)
+			end
+			self:Nick(self.config.nick)
+			self:Send('USER %s 0 * :%s', self.config.ident, self.config.realname)
+		else
+			self.updated = nil
+		end
+	end,
+
 	timeoutFunc = function(ivar2)
-		local last = false
+		local last_r = false
+		local last_s = false
 		return function()
 			local stat = ivar2.socket:stat()
 			print('sent', stat.sent.time)
 			print('rcvd', stat.rcvd.time)
-			if (last) then
+			if not last_r or last_s then
+				last_r = stat.rcvd.time
+				last_s = stat.sent.time
+				return
+			end
+			local now = os.time()
+			print('now', now)
+			if (last_r+60*6 < now or last_s+60*6 < now ) then
 				ivar2:Log('error', 'Socket stalled for 6 minutes.')
 				if(ivar2.config.autoReconnect) then
 					ivar2:Reconnect()
@@ -78,37 +109,8 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local client_mt = {
-	handle_error = function(self, err)
-		self:Log('error', err)
-		if(self.config.autoReconnect) then
-			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
-			self:Timer('_reconnect', 60, function(loop, timer, revents)
-				self:Reconnect()
-			end)
-		else
-			self.Loop:unloop()
-		end
-	end,
-
-	handle_connected = function(self)
-		if(not self.updated) then
-			if self.config.password then
-				self:Send('PASS %s', self.config.password)
-			end
-			self:Nick(self.config.nick)
-			self:Send('USER %s 0 * :%s', self.config.ident, self.config.realname)
-		else
-			self.updated = nil
-		end
-	end,
-
-	handle_data = function(self, data)
-		return self:ParseInput(data)
-	end,
-}
-client_mt.__index = client_mt
-setmetatable(ivar2, client_mt)
+--client_mt.__index = client_mt
+--setmetatable(ivar2, client_mt)
 
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
@@ -645,8 +647,6 @@ function ivar2:Connect(config)
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
 	local urip = util.uri_parse(self.config.uri)
-	print('host', urip.host)
-	print('port', urip.port)
 	self.socket = assert(socket.connect(urip.host, urip.port))
 	self.socket:onerror(function(err)
 		self:handle_error(err)
@@ -672,7 +672,6 @@ function ivar2:Connect(config)
 		end
 	end)
 	if not ok then
-		print (err)
 		self:handle_error(err)
 	end
 end
@@ -778,26 +777,15 @@ function ivar2:Reload()
 end
 
 function ivar2:ParseInput(line)
-	--XXX self.timeout:again(self.Loop)
-
-	--if(self.overflow) then
---		data = self.overflow .. data
---		self.overflow = nil
---	end
-
-	--for line in data:gmatch('[^\n]+') do
-	--	if(line:sub(-1) ~= '\r') then
-	--		self.overflow = line
---		else
-			-- Strip of \r.
-	--		line = line:sub(1, -2)
-			self:Log('debug', line)
-			local command, argument, source, destination = irc.parse(line)
-			if(not self:IsIgnored(destination, source)) then
-				queue:wrap(function()
-					self:DispatchCommand(command, argument, source, destination)
-				end)
-			end
+	self:Log('debug', line)
+	local command, argument, source, destination = irc.parse(line)
+	if(not self:IsIgnored(destination, source)) then
+		-- Order on wrap execution is undefined,
+		-- so do not rely on messages being processed in order
+		queue:wrap(function()
+			self:DispatchCommand(command, argument, source, destination)
+		end)
+	end
 
 	--	end
 	--end

@@ -16,6 +16,8 @@ local util = require 'util'
 local irc = require 'irc'
 local utf8 = util.utf8
 local busted = require'busted'
+local cqueues = require'cqueues'
+local queue = cqueues.new()
 local describe = busted.describe
 local it = busted.it
 
@@ -110,6 +112,53 @@ describe("test util lib", function()
 
             assert.are_equal(utf8.char(97), 'a')
             assert.are_equal(utf8.char(0x1f600), '😀')
+        end)
+    end)
+end)
+
+local TEST_TIMEOUT = 2
+
+local function assert_loop(cq, timeout)
+    local ok, err, _, thd = cq:loop(timeout)
+    if not ok then
+        if thd then
+            err = debug.traceback(thd, err)
+        end
+        error(err, 2)
+    end
+end
+
+describe("test webserver", function()
+    describe("webserver tests", function()
+        it("should listen", function()
+            local webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+            local server = webserver.start('127.0.0.1', '9999')
+            queue:wrap(function()
+                server:listen()
+                server:run(webserver.on_stream, queue)
+            end)
+            webserver.regUrl('/test', function(req, res)
+              assert.are_equal(req.url, '/test')
+              res:append(":status", "200")
+              req:write_headers(res, false)
+              req:write_body_from_string('Hello world!')
+            end)
+            queue:wrap(function()
+                util.simplehttp('http://127.0.0.1:9999/asdf', function(data)
+                    assert.are_equal(data, 'Nyet. I am four oh four')
+                end)
+                util.simplehttp('http://127.0.0.1:9999/test', function(data)
+                    assert.are_equal(data, 'Hello world!')
+                end)
+                util.simplehttp({
+                    url='http://127.0.0.1:9999/test',
+                    --headers={Connection='close'}
+                }, function(data)
+                    assert.are_equal(data, 'Hello world!')
+                end)
+            end)
+            assert_loop(queue, TEST_TIMEOUT)
+
         end)
     end)
 end)
