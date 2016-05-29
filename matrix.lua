@@ -21,16 +21,19 @@ local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
 
-local nixio = require 'nixio'
-local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 local lconsole = require'logging.console'
+local lfs = require 'lfs'
+local cqueues = require'cqueues'
+--local signal = require'cqueues.signal'
+local queue = cqueues.new()
 local json = util.json
 
 local polling_interval = 30
 
 local log = lconsole()
+math.randomseed(os.time())
 
 local ivar2
 
@@ -142,12 +145,12 @@ MatrixServer.create = function()
     server.presence = {}
     server.end_token = 'END'
 
-    server.Loop = ev.Loop.default
     server.ignores = {}
     server.event = event
     server.channels = {}
     server.more = {}
     server.timers = {}
+    server.cancelled_timers = {}
     server.events = {}
     server.util = util
 
@@ -329,6 +332,7 @@ function MatrixServer:http_cb(command)
                 end
             end
             self:poll()
+        -- luacheck: ignore
         elseif command:find'/join/' then
             -- Don't do anything
         elseif command:find'leave' then
@@ -493,13 +497,57 @@ function MatrixServer:Timer(id, interval, repeat_interval, callback)
         callback = repeat_interval
         repeat_interval = nil
     end
-    local timer = ev.Timer.new(callback, interval, repeat_interval)
-    timer:start(self.Loop)
-    -- Only allow one timer per id
-    -- Cancel any running
-    if(self.timers[id]) then
-        self.timers[id]:stop(self.Loop)
+    -- Construct callback
+    local callbackHandler = function(cb)
+        return function(...)
+            local success, message = pcall(cb, ...)
+            if(not success) then
+                self:Log('error', 'Error during timer callback %s: %s.', id, message)
+            end
+            -- Delete expired timer
+            if(not repeat_interval and self.timers[id]) then
+                self.timers[id] = nil
+            end
+        end
     end
+    local func = callbackHandler(callback)
+    -- Check for existing
+    if self.timers[id] then
+        -- Only allow one timer per id
+        -- Cancel any running
+        self:Log('info', 'Cancelling existing timer: %s', id)
+        self.timers[id]:stop()
+    end
+    local is_cancelled = function()
+        for i, t in ipairs(self.cancelled_timers) do
+            if t.id == id then
+                table.remove(self.cancelled_timers, i)
+                return true
+            end
+        end
+    end
+    local timer = {
+        id = id,
+        cancelled = false,
+        stop = function(timer)
+            self.timers[id].cancelled = true
+            table.insert(self.cancelled_timers, self.timers[id])
+            self.timers[id] = nil
+        end,
+        run = function()
+            cqueues.sleep(interval)
+            if is_cancelled() then return end
+            func()
+            if repeat_interval then
+                while true do
+                    cqueues.sleep(repeat_interval)
+                    if is_cancelled() then return end
+                    func()
+                end
+            end
+        end
+    }
+    timer.controller = queue:wrap(timer.run)
     self.timers[id] = timer
     return timer
 end
@@ -757,7 +805,7 @@ function MatrixServer:LoadModule(moduleName)
     for _,ending in pairs(endings) do
         local fileName = 'modules/' .. moduleName .. ending
         -- Check if file exist and is readable before we try to loadfile it
-        local access, _, _ = nixio.fs.access(fileName, 'r')
+        local access = lfs.attributes(fileName)
         if(access) then
             if(fileName:match('.lua')) then
                 moduleFile, moduleError = loadfile(fileName)
@@ -1070,10 +1118,6 @@ Room.create = function(obj, conn)
                     room.name = room.users[room.inviter] or room.inviter
                     room.roomname = room.users[room.inviter] or room.inviter
                 end
-            end
-        else
-            if DEBUG then
-                dbg{err='Unhandled invite_state event',event=event}
             end
         end
     end
@@ -1475,9 +1519,15 @@ if reload then
     -- TODO implement conf/code reload
 end
 
-local config = assert(loadfile(configFile))()
--- Store the config file name in the config so it can be accessed later
-config.configFile = configFile
-ivar2 = MatrixServer.create()
-ivar2:connect(config)
-ivar2.Loop:loop()
+-- Attempt to create the cache folder.
+lfs.mkdir('cache')
+
+-- Load config and start the bot
+queue:wrap(function()
+    local config = assert(loadfile(configFile))()
+    -- Store the config file name in the config so it can be accessed later
+    config.configFile = configFile
+    ivar2 = MatrixServer.create()
+    ivar2:connect(config)
+end)
+assert(queue:loop())
