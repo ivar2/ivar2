@@ -16,12 +16,18 @@ Install deps:
 
 ::
 
-    sudo apt-get install luarocks liblua5.1-iconv0 lua-cjson cmake libsqlite3-dev git libssl-dev m4
+    sudo apt-get install luarocks liblua5.1-iconv0 lua-zlib lua-cjson cmake libsqlite3-dev git libssl-dev m4
     sudo luarocks install lsqlite3
     sudo luarocks install luabitop
     sudo luarocks install luarocks #newer version of luarocks to support git+https
     sudo luarocks install --server=http://luarocks.org/dev http
     sudo luarocks install luafilesystem
+    # if you want to use LuaJIT instead of Lua
+    sudo apt-get install luajit
+    # if you want postgresql support
+    sudo apt-get install lua-dbi-postgresql
+    # if you want redis persist
+    sudo apt-get install redis-server lua-redis
 
 
 
