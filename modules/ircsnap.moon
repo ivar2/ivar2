@@ -1,7 +1,6 @@
 {:urlEncode} = require'util'
 html2unicode = require 'html'
-nixio = require'nixio'
-fs = require'nixio.fs'
+lfs = require'lfs'
 ltn12 = require'ltn12'
 
 -- All URLs in this module is under this prefix
@@ -75,24 +74,21 @@ video_html = (video) ->
 
 
 ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
+  url = req.url
   send = (body, code, content_type) ->
-    if not code then code = 200
+    if not code then code = "200"
     if not content_type then content_type = 'text/html'
-    res\set_status code
-    res\set_header 'Content-Type', content_type
-    res\set_header 'Content-Length', #body
-    res\set_body body
-    res\send!
-    res.on_error = (res, req, err) ->
-      ivar2\Log 'error', 'imageupload: error: %s', err
+    res\append ':status', code
+    res\append 'Content-Type', content_type
+    res\append 'Content-Length', tostring(#body)
+    req\write_headers(res, false, 30)
+    req\write_body_from_string(body, 30)
 
-  file = req.url\match '/file/(.*)$'
+  file = url\match '/file/(.*)$'
   if file
     fn = "cache/images/#{safe file}"
-    size = nixio.fs.stat(fn).size
-    fd = ltn12.source.file(io.open fn, 'rb')
+    size = lfs.attributes(fn).size
     --body = fd\read '*a'
-    --fd\close!
     content_type = 'image/jpeg'
     if file\lower!\match '.png'
       content_type = 'image/png'
@@ -105,20 +101,21 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     if file\lower!\match '.mp3'
       content_type = 'audio/mp3'
 
-    res\set_status code
-    res\set_header 'Content-Type', content_type
-    res\set_header 'Content-Length', size
-    res\set_body fd
-    res\send!
-    ivar2\Log 'error', 'imageupload: serving: %s', fn
+    res\append ':status', '200'
+    res\append 'Content-Type', content_type
+    res\append 'Content-Length', tostring(size)
+    req\write_headers(res, false, 30)
+    fd = io.open(fn, 'rb')
+    req\write_body_from_file(fd, 5*60)
+    fd\close!
     return
 
   -- Serve video player page
-  video = req.url\match '/video/(.*)$'
+  video = url\match '/video/(.*)$'
   if video then
     return send video_html(video)
 
-  channel = req.url\match('channel=(.+)%s*')
+  channel = url\match('channel=(.+)%s*')
   unless channel
     send 'Invalid channel', 404
     return
@@ -504,21 +501,17 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   </html>
   ]]
   if req.method == 'POST'
-    fn = req.headers['X-Filename']
-    sender = req.headers['X-Sender'] or ''
-    text = req.headers['X-Text'] or ''
+    fn = req.headers['x-filename']
+    sender = req.headers['x-sender'] or ''
+    text = req.headers['x-text'] or ''
     file = req.filename
     ivar2\Log 'info', "imageupload: Recieved file name: <#{fn}> datalen: #{#file}, sender: <#{sender}> text: <#{text}>, channel: <#{unescaped_channel}>"
     if fn and file
       html = 'Ok'
       realfn = "#{os.time!}-#{safe fn}"
       save = ->
-        --fd = nixio.open "cache/images/#{realfn}", 'w+', 0400
-        --written = fd\write file
-        --fd\sync!
-        --fd\close!
         -- Move tempfile to real location
-        fs.move req.filename, "cache/images/#{realfn}"
+        os.rename req.filename, "cache/images/#{realfn}"
         if sender ~= ''
           sender = "<#{sender\sub(1, 100)}> "
         if text ~= ''
@@ -538,7 +531,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
 
 -- Attempt to create the cache folder.
-nixio.fs.mkdir('cache/images')
+lfs.mkdir('cache/images')
 
 PRIVMSG:
   '^%pircsnap$': (source, destination) =>
