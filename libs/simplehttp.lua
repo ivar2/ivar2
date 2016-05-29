@@ -4,9 +4,11 @@ local idn = require'idn'
 local zlib = require'zlib'
 local lconsole = require'logging.console'
 local log = lconsole()
+
 -- Change to DEBUG if you want to see full URL fetch log
---
 --log:setLevel('INFO')
+
+local REQ_TIMEOUT = 60
 
 local function simplehttp(url, callback, unused, limit)
 	local uri
@@ -51,15 +53,10 @@ local function simplehttp(url, callback, unused, limit)
 		end
 	end
 
-	local req_timeout = 30
-
 	local data
 	local status_code
-	--for k,v in client.headers:each() do
-	--	print(k,v)
-	--end
 
-	local headers, stream = client:go(req_timeout)
+	local headers, stream = client:go(REQ_TIMEOUT)
 
 	if not headers then
 		log:error('simplehttp> request %s, error :%s.', uri, stream)
@@ -71,15 +68,15 @@ local function simplehttp(url, callback, unused, limit)
 
 	local simple_headers = {}
 	for k,v in headers:each() do
-		--print(k,v)
+		-- Will overwrite duplicate headers.
 		simple_headers[k] = v
 	end
 
 	if stream then
 		if(limit) then
-			data = stream:get_body_chars(limit, req_timeout)
+			data = stream:get_body_chars(limit, REQ_TIMEOUT)
 		else
-			data = stream:get_body_as_string(req_timeout)
+			data = stream:get_body_as_string(REQ_TIMEOUT)
 		end
 		-- Stream shutdown lets luahttp reuse I'm told
 		stream:shutdown()
