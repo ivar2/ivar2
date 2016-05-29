@@ -87,16 +87,16 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
 
   repo = json.repository.full_name
 
-  event = req.headers['X-GitHub-Event']
+  event = req.headers['x-github-event']
   handler = handlers[event]
   if handler
     handler(repo, destination, json)
   else
     ivar2\Log('error', 'Unknown github event: %s', event)
 
-  res\set_status(200)
-  res\set_header('Content-Type', 'text/plain')
-  res\set_body('ok')
-  res\send()
+  res\append ':status', "200"
+  res\append 'Content-Type', 'text/plain'
+  req\write_headers(res, false, 30)
+  req\write_body_from_string('ok', 30)
 
 return {}
