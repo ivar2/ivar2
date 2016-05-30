@@ -72,15 +72,13 @@ local ivar2 = {
 		local last_s = false
 		return function()
 			local stat = ivar2.socket:stat()
-			print('sent', stat.sent.time)
-			print('rcvd', stat.rcvd.time)
+			--print('CQUEUES count', queue:count())
+			local now = os.time()
 			if not last_r or not last_s then
 				last_r = stat.rcvd.time
 				last_s = stat.sent.time
 				return
 			end
-			local now = os.time()
-			print('now', now)
 			if (last_r+60*6 < now or last_s+60*6 < now ) then
 				ivar2:Log('error', 'Socket stalled for 6 minutes.')
 				if(ivar2.config.autoReconnect) then
@@ -605,14 +603,16 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 			if is_cancelled() then return end
 			func()
 			if repeat_interval then
-				while cqueues.sleep(repeat_interval) do
+				while true do
+					cqueues.sleep(repeat_interval)
 					if is_cancelled() then return end
 					func()
 				end
 			end
 		end
 	}
-	timer.controller = queue:wrap(timer.run)
+	local controller = cqueues.running()
+	timer.controller = controller:wrap(timer.run)
 	self.timers[id] = timer
 	return timer
 end
@@ -631,10 +631,11 @@ function ivar2:Connect(config)
 
 	if(not self.webserver) then
 		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
-		queue:wrap(function()
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
 			pcall(function()
 				local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
-				server:run(self.webserver.on_stream, queue)
+				server:run(self.webserver.on_stream, cqueue)
 			end)
 		end)
 	end
@@ -738,11 +739,12 @@ function ivar2:Reload()
 		--XXX message.webserver = assert(loadfile('core/webserver.lua'))(message)
 		--XXX message.webserver.start(message.config.webserverhost, message.config.webserverport)
 		message.webserver = assert(loadfile('core/webserver.lua'))(message)
-		queue:wrap(function()
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
 			pcall(function()
 				-- server:listen()
 				local server = message.webserver.start(message.config.webserverhost, message.config.webserverport)
-				server:run(message.webserver.on_stream, queue)
+				server:run(message.webserver.on_stream, cqueue)
 			end)
 		end)
 		-- Reload persist
@@ -780,7 +782,8 @@ function ivar2:ParseInput(line)
 	if(not self:IsIgnored(destination, source)) then
 		-- Order on wrap execution is undefined,
 		-- so do not rely on messages being processed in order
-		queue:wrap(function()
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
 			self:DispatchCommand(command, argument, source, destination)
 		end)
 	end
