@@ -6,7 +6,7 @@ local lconsole = require'logging.console'
 local log = lconsole()
 
 -- Change to DEBUG if you want to see full URL fetch log
---log:setLevel('INFO')
+log:setLevel('INFO')
 
 local REQ_TIMEOUT = 60
 
@@ -80,6 +80,9 @@ local function simplehttp(url, callback, unused, limit)
 		end
 		-- Stream shutdown lets luahttp reuse I'm told
 		stream:shutdown()
+		-- without these two, seems to be leaking fds
+		stream.connection:shutdown()
+		stream.connection:close()
 		-- Some servers send gzip even if not requested
 		if simple_headers['content-encoding'] == 'gzip' then
 			data = zlib.inflate()(data)
