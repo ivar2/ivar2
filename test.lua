@@ -116,7 +116,7 @@ describe("test util lib", function()
     end)
 end)
 
-local TEST_TIMEOUT = 2
+local TEST_TIMEOUT = 200
 
 local function assert_loop(cq, timeout)
     local ok, err, _, thd = cq:loop(timeout)
@@ -157,6 +157,11 @@ describe("test webserver", function()
                     assert.are_equal(data, 'Hello world!')
                 end)
             end)
+                util.simplehttp({
+                    url='http://ip.xt.gg/ip',
+                }, function(data)
+                    assert.are_equal(data, '<h2 style="color: #4d8fc8; padding: 0; margin: 0; font-size:18px">79.161.98.187</h2>')
+                end)
             assert_loop(queue, TEST_TIMEOUT)
 
         end)
