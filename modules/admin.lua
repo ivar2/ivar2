@@ -1,16 +1,17 @@
 -- vim: set noexpandtab:
-local verifyOwner = function(src)
+local verifyOwner = function(self, src, destination)
 	for _, mask in next, ivar2.config.owners do
 		if(src.mask:match(mask)) then
 			return true
 		end
 	end
+	self:reply('You don\'t look like an admin to my eyes.')
 end
 
 return {
 	PRIVMSG = {
 		['madd>%s*(%S+)$'] = function(self, source, destination, module)
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			self:LoadModule(module)
 
@@ -18,7 +19,7 @@ return {
 		end,
 
 		['mdel>%s*(%S+)$'] = function(self, source, destination, module)
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			self:DisableModule(module)
 
@@ -26,7 +27,7 @@ return {
 		end,
 
 		['irc> (%S+) (.+)$'] = function(self, source, destination, command, argument)
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			command = command:lower()
 			if(command == "join") then
@@ -38,8 +39,8 @@ return {
 			elseif(command == "nick") then
 				self:Nick(argument)
 			elseif(command == "mode") then
-				local destination, mode = argument:match('^(%S+) (.+)$')
-				self:Mode(destination, mode)
+				local dest, mode = argument:match('^(%S+) (.+)$')
+				self:Mode(dest, mode)
 			elseif(command == "topic") then
 				local chan, topic = argument:match('^(%S+) (.+)$')
 				self:Topic(chan, topic)
@@ -50,14 +51,14 @@ return {
 		end,
 
 		['^reload>$'] = function(self, source, destination)
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			self:Msg('privmsg', destination, source, "Triggered reload.")
 			self:Reload()
 		end,
 
 		['reload>%s*(%S+)$'] = function(self, source, destination, module)
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			self:Msg('privmsg', destination, source, "Reloading module: %s", module)
 			self:DisableModule(module)
@@ -66,7 +67,7 @@ return {
 
 
 		['timers> (%S+) ?(.*)$'] = function(self, source, destination, command, argument )
-			if(not verifyOwner(source)) then return end
+			if(not verifyOwner(self, source, destination)) then return end
 
 			command = command:lower()
 			if(command == "list") then
