@@ -124,4 +124,5 @@ lookupConditionsPWS = (source, destination, input) =>
 
 PRIVMSG:
   '^%pwu (.+)$': lookupConditions
+  '^%pweather (.+)$': lookupConditions
   '^%ppws (.+)$': lookupConditionsPWS
