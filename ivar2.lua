@@ -72,15 +72,16 @@ local ivar2 = {
 		local last_s = false
 		return function()
 			local stat = ivar2.socket:stat()
-			--print('CQUEUES count', queue:count())
 			local now = os.time()
-			if not last_r or not last_s then
+			if stat and (not last_r or not last_s) then
 				last_r = stat.rcvd.time
 				last_s = stat.sent.time
 				return
 			end
-			if (last_r+60*6 < now or last_s+60*6 < now ) then
-				ivar2:Log('error', 'Socket stalled for 6 minutes.')
+			last_r = stat.rcvd.time
+			last_s = stat.sent.time
+			if (not stat) or (last_r+60*10 < now or last_s+60*10 < now ) then
+				ivar2:Log('error', 'Socket stalled for 10 minutes.')
 				if(ivar2.config.autoReconnect) then
 					ivar2:Reconnect()
 				end
@@ -108,9 +109,6 @@ local tableHasValue = function(table, value)
 	end
 end
 
---client_mt.__index = client_mt
---setmetatable(ivar2, client_mt)
-
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
 	if(message) then
@@ -125,7 +123,6 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
-		--self.timeout:again(self.Loop)
 		self.socket:write(message .. '\r\n')
 	end
 end
@@ -640,17 +637,19 @@ function ivar2:Connect(config)
 		end)
 	end
 
---	if(self.timeout) then
---		self.timeout:stop(self.Loop)
---	end
-	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
+	self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
 	local urip = util.uri_parse(self.config.uri)
 	self.socket = assert(socket.connect(urip.host, urip.port))
+
 	self.socket:onerror(function(err)
 		self:handle_error(err)
 	end)
+
+	if urip.scheme == 'tls' then
+		self.socket:starttls()
+	end
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -666,13 +665,8 @@ function ivar2:Connect(config)
 
 	self:handle_connected()
 
-	local ok, err = pcall(function()
-		for line in self.socket:lines() do
-			self:ParseInput(line)
-		end
-	end)
-	if not ok then
-		self:handle_error(err)
+	for line in self.socket:lines() do
+		self:ParseInput(line)
 	end
 end
 
@@ -766,7 +760,7 @@ function ivar2:Reload()
 		message.updated = true
 
 		self = message
-		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
+		self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
 		--self.control = assert(loadfile('core/control.lua'))(self)
@@ -805,6 +799,7 @@ function ivar2:SignalHandle()
 			self:Log('info', 'Got SIGHUP, reloading.')
 			self:Reload()
 		else
+			self:Quit('Ouch. Someone handed me the '..signal[signo]..'. RIP!')
 			io.stderr:write("exiting on signal ", signal[signo], "\n")
 			os.exit(0)
 		end
