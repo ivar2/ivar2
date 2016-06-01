@@ -547,7 +547,8 @@ function MatrixServer:Timer(id, interval, repeat_interval, callback)
             end
         end
     }
-    timer.controller = queue:wrap(timer.run)
+    local controller = cqueues.running()
+    timer.controller = controller:wrap(timer.run)
     self.timers[id] = timer
     return timer
 end
