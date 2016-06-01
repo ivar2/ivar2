@@ -107,7 +107,7 @@ poll = ->
   for c,_ in pairs(ivar2.channels)
     channels[c] = true
   for row in db\rows "SELECT DISTINCT feed.id, rssurl, lastmodified, name, etag, destination FROM feed JOIN subscription ON subscription.feed_id = feed.id"
-  -- Ignore feeds this particular instance of the bot does not subscribe to
+    -- Ignore feeds this particular instance of the bot does not subscribe to
     if not channels[row[6]]
       continue
     id = row[1]
@@ -170,12 +170,12 @@ poll = ->
           if not ins then
             ivar2\Log 'error', "#{moduleName}: Error during inserting entry: <#{err}> feed: <#{name}> with URL <#{url}> and position: #{i}"
           else
-            ivar2\Log 'info', "#{moduleName}: Inserting entry: #{e.link}, #{e.title}"
+            ivar2\Log 'debug', "#{moduleName}: Inserting entry: #{e.link}, #{e.title}"
             code = ins\bind_values id, guid, e.title, e.author, e.link, e.updated, e.content, e.summary
             code = ins\step!
             code = ins\finalize!
             if code == sql.CONSTRAINT -- duplicate value
-              ivar2\Log 'info', "Reached duplicate link, breaking"
+              ivar2\Log 'debug', "Reached duplicate link, breaking"
               break
       sdb\close!
       announce(id)
@@ -224,7 +224,8 @@ list = (source, destination) =>
   db\close!
 
 -- Start the subscribe poller
-ivar2\Timer(moduleName, 60*5, 60*5, poll)
+interval = 60*60
+ivar2\Timer(moduleName, interval, interval, poll)
 
 PRIVMSG:
   '^%prss latest (.*)': getLatest
