@@ -181,7 +181,7 @@ PRIVMSG:
   '^%pbankid (%d+)$': bankidmany
   '^%padjsub$': adjsub
   '^%padjsub (%d+)$': adjsub
-  '^%p?fluffle (.+)$': (source, destination, arg) =>
+  '^%p?[Ff]lu+ffle (.+)$': (source, destination, arg) =>
     choice = math.random(1, 26)
     alliteration = ('abcdefghjijklmnopqrstuvxyz')\sub(choice, choice)
     adj = getWord 'clukuk', 'adj', 1, 8, alliteration
