@@ -9,6 +9,7 @@ local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 local lower = ivar2.util.utf8.lower
 
 local lang = 'en'
+local getUrl
 
 local arrow = function(dir)
 	-- Turn the direction of arrow to the way wind is coming from
@@ -307,9 +308,9 @@ local splitInput = function(input)
 	return input
 end
 
-local getUrl = function(self, source, destination, place)
+getUrl = function(self, source, destination, place)
 	-- Get language specific URL
-	local lang = self.persist['yr:lang:'..source.nick]
+	local lang = ivar2.persist['yr:lang:'..source.nick]
 	if lang then
 		return place.url:gsub('/place/', '/'..lang..'/')
 	end
