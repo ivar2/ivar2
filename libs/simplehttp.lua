@@ -36,6 +36,11 @@ local function simplehttp(url, callback, unused, limit)
 	local uri_t = uri_parse(uri)
 	local client = httpclient.new_from_uri(uri_t)
 
+	-- Current version of lua-http / cqueues has issues with lingering eventloops
+	-- with HTTP2. So we explicitly set version 1.1 for now until this is fixed
+	-- upstream.
+	client.version = 1.1
+
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
