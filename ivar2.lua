@@ -44,7 +44,8 @@ local ivar2 = {
 	timeout = 30,
 
 	handle_error = function(self, err)
-		self:Log('error', err)
+		self:Log('error', 'Socket error: %s', self.socket:error())
+		self.socket:clearerr()
 		if(self.config.autoReconnect) then
 			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
 			self:Timer('_reconnect', 60, function(loop, timer, revents)
@@ -558,20 +559,16 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 		callback = repeat_interval
 		repeat_interval = nil
 	end
-	-- Construct callback
-	local callbackHandler = function(cb)
-		return function(...)
-			local success, message = pcall(cb, ...)
-			if(not success) then
-				self:Log('error', 'Error during timer callback %s: %s.', id, message)
-			end
-			-- Delete expired timer
-			if(not repeat_interval and self.timers[id]) then
-				self.timers[id] = nil
-			end
+	local func = function()
+		local success, message = pcall(callback)
+		if(not success) then
+			self:Log('error', 'Error during timer callback %s: %s.', id, message)
+		end
+		-- Delete expired timer
+		if(not repeat_interval and self.timers[id]) then
+			self.timers[id] = nil
 		end
 	end
-	local func = callbackHandler(callback)
 	-- Check for existing
 	if self.timers[id] then
 		-- Only allow one timer per id
