@@ -51,14 +51,14 @@ dbh = ->
 dblog = (type, source, destination, arg) =>
   nick = source.nick
 
+  unless arg
+    arg = ''
+
   if type == 'PRIVMSG'
     -- action
     if arg\sub(1,1) == '\001' and arg\sub(-1) == '\001'
       arg = arg\sub(9, -2)
       type = 'ACTION'
-
-  unless arg
-    arg = ''
 
   insert = ->
     ins = dbh!\prepare('INSERT INTO log(nick,channel,message,type) values(?,?,?,?)')
