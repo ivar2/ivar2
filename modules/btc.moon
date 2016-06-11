@@ -1,8 +1,5 @@
-simplehttp = require'simplehttp'
-json = require'json'
+{:simplehttp, :json, :bold} = require'util'
 
-PRIVMSG: 
-  '^%pbtc$': (source, destination, input) =>
-    simplehttp 'https://blockchain.info/no/ticker', (data) ->
-      if result = json.decode data
-        say '\0021\002 BTC is worth \002%s\002 € (~15m)', result["EUR"]["15m"]
+PRIVMSG:
+  '^%pbtc$': =>
+    say "#{bold '1'} BTC is worth #{bold '%s'} € (~15m)", json.decode((simplehttp 'https://blockchain.info/no/ticker'))['EUR']['15m']
