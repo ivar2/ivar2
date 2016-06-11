@@ -164,7 +164,7 @@ function MatrixServer:Log(level, ...)
     end
 end
 
-function MatrixServer:http(url, post, cb)
+function MatrixServer:http(url, post, command)
     local homeserver_url = self.config.uri
     homeserver_url = homeserver_url .. "_matrix/client/r0"
     url = homeserver_url .. url
@@ -181,200 +181,202 @@ function MatrixServer:http(url, post, cb)
         data = post.postfields,
     }
 
-    util.simplehttp(data, cb)
+    local res, r_url, response = util.simplehttp(data)
+    if not res then
+        -- error being logged by simplehttp
+        return
+    end
+    return self:http_cb(command, res, r_url, response)
 end
 
-function MatrixServer:http_cb(command)
-    return function(data, url, response)
-        if response.status_code ~= 200 or not data then
-            self:Log('error', 'http_cb, command: %s, status: %s, data: %s', command, response.status_code, data)
-            return
-        end
+function MatrixServer:http_cb(command, data, url, response)
+    if response.status_code ~= 200 or not data then
+        self:Log('error', 'http_cb, command: %s, status: %s, data: %s', command, response.status_code, data)
+        return
+    end
 
-        -- Protected call in case of JSON errors
-        local success, js = pcall(json.decode, data)
-        if not success then
-            self:Log('error', 'http_cb, command: %s, error: %s, during json load of: %s', command, js, data)
-            -- reset polling if error during events
-            if command:find'/sync' then
-                self.polling = false
-                -- Wait a bit so it's not super spammy
-                self:Timer('_errpoll', 30, 0, function()
-                    self:poll()
-                end)
-            end
-            return
-        end
-        if js['errcode'] then
-            if command:find'login' then
-                print(('matrix: Error code during login: %s'):format(
-                    js['errcode']))
-            else
-                print(js.errcode)
-                print(js['error'])
-            end
-            return
-        end
-        -- Get correct handler
-        if command:find('login') then
-            for k, v in pairs(js) do
-                self[k] = v
-            end
-            self.connected = true
-            self:initial_sync()
-        elseif command:find'/sync' or command:find'/initialsync' then
+    -- Protected call in case of JSON errors
+    local success, js = pcall(json.decode, data)
+    if not success then
+        self:Log('error', 'http_cb, command: %s, error: %s, during json load of: %s', command, js, data)
+        -- reset polling if error during events
+        if command:find'/sync' then
             self.polling = false
-            local backlog = false
-            local initial = false
-
-            self.end_token = js.next_batch
-
-            if command:find'/initialsync' then
-                initial = true
-                backlog = true
-            end
-
-            -- Start with setting the global presence variable on the server
-            -- so when the nicks get added to the room they can get added to
-            -- the correct nicklist group according to if they have presence
-            -- or not
-            for _, e in ipairs(js.presence.events) do
-                self:UpdatePresence(e)
-            end
-            for membership, rooms in pairs(js['rooms']) do
-                -- If we left the room, simply ignore it
-                if membership ~= 'leave' then
-                    for identifier, room in pairs(rooms) do
-                        -- Monkey patch it to look like v1 object
-                        room.room_id = identifier
-                        local myroom
-                        if initial then
-                            myroom = self:addRoom(room)
-                        else
-                            myroom = self.rooms[identifier]
-                            -- Chunk for non-existing room
-                            if not myroom then
-                                myroom = self:addRoom(room)
-                                if not membership == 'invite' then
-                                    print('Event for unknown room')
-                                end
-                            end
-                        end
-                        -- Parse states before messages so we can add nicks and stuff
-                        -- before messages start appearing
-                        local states = room.state
-                        if states then
-                            local chunks = room.state.events or {}
-                            for _, chunk in ipairs(chunks) do
-                                myroom:ParseChunk(chunk, backlog, 'states')
-                            end
-                        end
-                        local timeline = room.timeline
-                        if timeline then
-                            -- Save the prev_batch on the initial message so we
-                            -- know for later when we picked up the sync
-                            if initial then
-                                myroom.prev_batch = timeline.prev_batch
-                            end
-                            local chunks = timeline.events or {}
-                            for _, chunk in ipairs(chunks) do
-                                myroom:ParseChunk(chunk, backlog, 'messages')
-                            end
-                        end
-                        local ephemeral = room.ephemeral
-                        -- Ignore Ephemeral Events during initial sync
-                        if not initial and ephemeral then
-                            local chunks = ephemeral.events or {}
-                            for _, chunk in ipairs(chunks) do
-                                myroom:ParseChunk(chunk, backlog, 'states')
-                            end
-                        end
-                        if backlog then
-                            -- All the state should be done. Try to get a good name for the room now.
-                            myroom:SetName(myroom.identifier)
-                        end
-                    end
-                end
-            end
-            -- Now we have created rooms and can go over the rooms and update
-            -- the presence for each nick
-            for _, e in pairs(js.presence.events) do
-                self:UpdatePresence(e)
-            end
-
-            -- We have our backlog, lets start listening for new events
-            if initial then
-                -- Timer used in cased of errors to restart the polling cycle
-                -- During normal operation the polling should re-invoke itself
-                self.polltimer = self:Timer('_poll', polling_interval+1, polling_interval+1, function()
-                    self:pollcheck()
-                end)
-                self:LoadModules()
-                -- Auto join configured channels
-                for channel, _ in next, self.config.channels do
-                    -- Check for :, can only join rooms with :
-                    if not self.channels[channel] and channel:match':' then
-                        local found = false
-                        for id, room in pairs(self.rooms) do
-                            if channel == id or
-                               channel == room.shortname or
-                               channel == room.fullname or
-                               channel == room.canonical_alias or
-                               channel == room.name then
-                               found = true
-                               break
-                           end
-                        end
-                        if not found then
-                            self:Join(channel)
-                        end
-                    end
-                end
-            end
-            self:poll()
-        -- luacheck: ignore
-        elseif command:find'/join/' then
-            -- Don't do anything
-        elseif command:find'leave' then
-            -- We store room_id in data
-            local room_id = data
-            self:delRoom(room_id)
-        elseif command:find'upload' then
-            -- We store room_id in data
-            local room_id = data
-            if js.content_uri then
-                self:_msg(room_id, js.content_uri)
-            end
-        elseif command:find'/typing/' then
-            -- either it errs or it is empty
-        elseif command:find'/state/' then
-            -- either it errs or it is empty
-        elseif command:find'/send/' then
-            -- XXX Errorhandling
-        elseif command:find'createRoom' then
-            local room_id = js.room_id
-            -- We get join events, so we don't have to do anything
-        elseif command:find'/publicRooms' then
-            print 'Public rooms:'
-            print '\tName\tUsers\tTopic\tAliases'
-            for _, r in pairs(js.chunk) do
-                local name = ''
-                if r.name ~= json.null then
-                    name = r.name
-                end
-                print(('%s %s %s %s')
-                    :format(
-                        name,
-                        r.num_joined_members,
-                        r.topic,
-                        table.concat(r.aliases, ', ')))
-            end
-        elseif command:find'/invite' then
-            local room_id = js.room_id
+            -- Wait a bit so it's not super spammy
+            self:Timer('_errpoll', 30, 0, function()
+                self:poll()
+            end)
         end
+        return
+    end
+    if js['errcode'] then
+        if command:find'login' then
+            print(('matrix: Error code during login: %s'):format(
+                js['errcode']))
+        else
+            print(js.errcode)
+            print(js['error'])
+        end
+        return
+    end
+    -- Get correct handler
+    if command:find('login') then
+        for k, v in pairs(js) do
+            self[k] = v
+        end
+        self.connected = true
+        self:initial_sync()
+    elseif command:find'/sync' or command:find'/initialsync' then
+        self.polling = false
+        local backlog = false
+        local initial = false
+
+        self.end_token = js.next_batch
+
+        if command:find'/initialsync' then
+            initial = true
+            backlog = true
+        end
+
+        -- Start with setting the global presence variable on the server
+        -- so when the nicks get added to the room they can get added to
+        -- the correct nicklist group according to if they have presence
+        -- or not
+        for _, e in ipairs(js.presence.events) do
+            self:UpdatePresence(e)
+        end
+        for membership, rooms in pairs(js['rooms']) do
+            -- If we left the room, simply ignore it
+            if membership ~= 'leave' then
+                for identifier, room in pairs(rooms) do
+                    -- Monkey patch it to look like v1 object
+                    room.room_id = identifier
+                    local myroom
+                    if initial then
+                        myroom = self:addRoom(room)
+                    else
+                        myroom = self.rooms[identifier]
+                        -- Chunk for non-existing room
+                        if not myroom then
+                            myroom = self:addRoom(room)
+                            if not membership == 'invite' then
+                                print('Event for unknown room')
+                            end
+                        end
+                    end
+                    -- Parse states before messages so we can add nicks and stuff
+                    -- before messages start appearing
+                    local states = room.state
+                    if states then
+                        local chunks = room.state.events or {}
+                        for _, chunk in ipairs(chunks) do
+                            myroom:ParseChunk(chunk, backlog, 'states')
+                        end
+                    end
+                    local timeline = room.timeline
+                    if timeline then
+                        -- Save the prev_batch on the initial message so we
+                        -- know for later when we picked up the sync
+                        if initial then
+                            myroom.prev_batch = timeline.prev_batch
+                        end
+                        local chunks = timeline.events or {}
+                        for _, chunk in ipairs(chunks) do
+                            myroom:ParseChunk(chunk, backlog, 'messages')
+                        end
+                    end
+                    local ephemeral = room.ephemeral
+                    -- Ignore Ephemeral Events during initial sync
+                    if not initial and ephemeral then
+                        local chunks = ephemeral.events or {}
+                        for _, chunk in ipairs(chunks) do
+                            myroom:ParseChunk(chunk, backlog, 'states')
+                        end
+                    end
+                    if backlog then
+                        -- All the state should be done. Try to get a good name for the room now.
+                        myroom:SetName(myroom.identifier)
+                    end
+                end
+            end
+        end
+        -- Now we have created rooms and can go over the rooms and update
+        -- the presence for each nick
+        for _, e in pairs(js.presence.events) do
+            self:UpdatePresence(e)
+        end
+
+        -- We have our backlog, lets start listening for new events
+        if initial then
+            -- Timer used in cased of errors to restart the polling cycle
+            -- During normal operation the polling should re-invoke itself
+            self.polltimer = self:Timer('_poll', polling_interval+1, polling_interval+1, function()
+                self:pollcheck()
+            end)
+            self:LoadModules()
+            -- Auto join configured channels
+            for channel, _ in next, self.config.channels do
+                -- Check for :, can only join rooms with :
+                if not self.channels[channel] and channel:match':' then
+                    local found = false
+                    for id, room in pairs(self.rooms) do
+                        if channel == id or
+                           channel == room.shortname or
+                           channel == room.fullname or
+                           channel == room.canonical_alias or
+                           channel == room.name then
+                           found = true
+                           break
+                       end
+                    end
+                    if not found then
+                        self:Join(channel)
+                    end
+                end
+            end
+        end
+        self:poll()
+    -- luacheck: ignore
+    elseif command:find'/join/' then
+        -- Don't do anything
+    elseif command:find'leave' then
+        -- We store room_id in data
+        local room_id = data
+        self:delRoom(room_id)
+    elseif command:find'upload' then
+        -- We store room_id in data
+        local room_id = data
+        if js.content_uri then
+            self:_msg(room_id, js.content_uri)
+        end
+    elseif command:find'/typing/' then
+        -- either it errs or it is empty
+    elseif command:find'/state/' then
+        -- either it errs or it is empty
+    elseif command:find'/send/' then
+        -- XXX Errorhandling
+    elseif command:find'createRoom' then
+        local room_id = js.room_id
+        -- We get join events, so we don't have to do anything
+    elseif command:find'/publicRooms' then
+        print 'Public rooms:'
+        print '\tName\tUsers\tTopic\tAliases'
+        for _, r in pairs(js.chunk) do
+            local name = ''
+            if r.name ~= json.null then
+                name = r.name
+            end
+            print(('%s %s %s %s')
+                :format(
+                    name,
+                    r.num_joined_members,
+                    r.topic,
+                    table.concat(r.aliases, ', ')))
+        end
+    elseif command:find'/invite' then
+        local room_id = js.room_id
     end
 end
-
 
 function MatrixServer:UpdatePresence(c)
     local user_id = c.sender or c.content.user_id
@@ -429,10 +431,16 @@ function MatrixServer:connect(config)
 
         if(not self.webserver) then
             self.webserver = assert(loadfile('core/webserver.lua'))(self)
-            self.webserver.start(self.config.webserverhost, self.config.webserverport)
+            local cqueue = cqueues.running()
+            cqueue:wrap(function()
+                pcall(function()
+                    local server = self.webserver.start(self.config.webserverhost, self.config.webserverport)
+                    server:run(self.webserver.on_stream, cqueue)
+                end)
+            end)
         end
 
-        self:http('/login', self:_getPost(post), self:http_cb('login'))
+        self:http('/login', self:_getPost(post), ('login'))
 
         self.nick = config.nick
     end
@@ -451,7 +459,7 @@ function MatrixServer:initial_sync()
             }
         })
     })
-    self:http('/sync?'..data, {}, self:http_cb('/initialsync'))
+    self:http('/sync?'..data, {}, ('/initialsync'))
 end
 
 function MatrixServer:getMessages(room_id)
@@ -462,7 +470,7 @@ function MatrixServer:getMessages(room_id)
         limit = 0, -- nobacklog
     })
     self:http(('/rooms/%s/messages?%s')
-        :format(urllib.quote(room_id), data), {}, self:http_cb'messages')
+        :format(urllib.quote(room_id), data), {}, 'messages')
 end
 
 function MatrixServer:Join(room)
@@ -473,7 +481,7 @@ function MatrixServer:Join(room)
 
     self:Log('info', 'Joining room %s', room)
     self:http('/join/' .. urllib.quote(room)..'?access_token='..self.access_token,
-        {customrequest = 'POST'}, self:http_cb'/join/')
+        {customrequest = 'POST'}, '/join/')
 end
 
 function MatrixServer:part(room)
@@ -488,7 +496,7 @@ function MatrixServer:part(room)
     })
     -- TODO: close buffer, delete data, etc
     self:http(('/rooms/%s/leave?%s'):format(id, data), {postfields= "{}"},
-        self:http_cb'/leave')
+        '/leave')
 end
 
 function MatrixServer:Timer(id, interval, repeat_interval, callback)
@@ -578,7 +586,7 @@ function MatrixServer:poll()
         full_state = 'false',
         since = self.end_token
     })
-    self:http('/sync?'..data, {}, self:http_cb('/sync'))
+    self:http('/sync?'..data, {}, ('/sync'))
 end
 
 function MatrixServer:addRoom(room)
@@ -628,7 +636,7 @@ end
 function MatrixServer:Msg(msgtype, destination, source, ...)
     local room = self:findRoom(destination)
     if(room) then
-        local body = safeFormat(...)
+       local body = safeFormat(...)
 
         self:SimpleDispatch('PRIVMSG_OUT', body, {nick=self.config.nick}, destination)
         self:_msg(room.identifier, body)
@@ -694,7 +702,7 @@ function MatrixServer:send()
               urllib.quote(self.access_token)
             ),
               data,
-              self:http_cb'/send/'
+              '/send/'
             )
     end
 end
@@ -711,7 +719,7 @@ function MatrixServer:state(room_id, key, data)
         {customrequest = 'PUT',
          accept_encoding = 'application/json',
          postfields= json.encode(data),
-        }, self:http_cb'/state/')
+        }, '/state/')
 end
 
 function MatrixServer:set_membership(room_id, userid, data)
@@ -722,7 +730,7 @@ function MatrixServer:set_membership(room_id, userid, data)
         {customrequest = 'PUT',
          accept_encoding = 'application/json',
          postfields= json.encode(data),
-        }, self:http_cb'state')
+        }, 'state')
 end
 
 function MatrixServer:Kick(destination, userid, reason)
@@ -756,7 +764,7 @@ function MatrixServer:CreateRoom(public, alias, invites)
         {customrequest = 'POST',
          accept_encoding = 'application/json',
          postfields= json.encode(data),
-        }, self:http_cb'/createRoom')
+        }, '/createRoom')
 end
 
 function MatrixServer:ListRooms()
@@ -764,7 +772,7 @@ function MatrixServer:ListRooms()
         :format(urllib.quote(self.access_token)),
         {
             accept_encoding = 'application/json',
-        }, self:http_cb'/publicRooms')
+        }, '/publicRooms')
 end
 
 function MatrixServer:invite(room_id, user_id)
@@ -777,7 +785,7 @@ function MatrixServer:invite(room_id, user_id)
         {customrequest = 'POST',
          accept_encoding = 'application/json',
          postfields= json.encode(data),
-        }, self:http_cb'invite')
+        }, 'invite')
 end
 
 function MatrixServer:Nick(displayname)
@@ -791,7 +799,7 @@ function MatrixServer:Nick(displayname)
         {customrequest = 'PUT',
          accept_encoding = 'application/json',
          postfields= json.encode(data),
-        }, self:http_cb'profile')
+        }, 'profile')
 end
 
 function MatrixServer:Events()
@@ -841,12 +849,23 @@ function MatrixServer:LoadModule(moduleName)
 end
 
 function MatrixServer:EnableModule(moduleName, moduleTable)
-	self:Log('info', 'Loading module %s.', moduleName)
+    self:Log('info', 'Loading module %s.', moduleName)
 
     for command, handlers in next, moduleTable do
         if(not self.events[command]) then self.events[command] = {} end
         self.events[command][moduleName] = handlers
-	end
+    end
+end
+
+function MatrixServer:DisableModule(moduleName)
+    if(moduleName == 'core') then return end
+    for command, modules in next, self.events do
+        if(modules[moduleName]) then
+            self:Log('info', 'Disabling module: %s', moduleName)
+            modules[moduleName] = nil
+            event:ClearModule(moduleName)
+        end
+    end
 end
 
 function MatrixServer:LoadModules()
