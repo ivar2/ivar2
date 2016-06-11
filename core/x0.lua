@@ -9,8 +9,13 @@ return function(url, callback)
 		return callback(nurl)
 	end
 
+	-- Since httplib is strange right now, just hack around it
+	url = util.json.encode{url=url}
 	util.simplehttp(
-		'https://xt.gg/url?url=' .. util.urlEncode(url),
+		{url = 'https://xt.gg/url',
+		method = 'POST',
+		data = url,
+		},
 		function(data, realurl)
 			data = util.json.decode(data).url
 			x0["x0:" .. realurl] = data
