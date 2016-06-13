@@ -624,7 +624,7 @@ function ivar2:Connect(config)
 	end
 
 	if(not self.webserver) then
-		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+		self.webserver = assert(loadfile('core/webserver.lua'))(self)
 		local cqueue = cqueues.running()
 		cqueue:wrap(function()
 			pcall(function()
@@ -822,4 +822,9 @@ queue:wrap(function()
 		config.configFile = configFile
 		ivar2:Connect(config)
 end)
-assert(queue:loop())
+while true do
+	local ok, err, ctx, ecode, thread, obj, fd = queue:step()
+	if not ok then
+		ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
+	end
+end
