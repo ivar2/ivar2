@@ -28,7 +28,7 @@ webserver.on_stream = function(stream)
 	local ok, err = pcall(function()
 		local headers = stream:get_headers(30)
 		stream.headers = {}
-		local path
+		local path = '/'
 		--print('tls', stream:checktls())
 		local _, peer = stream:peername()
 		--print('local', stream:localname())
