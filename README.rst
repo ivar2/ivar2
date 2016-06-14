@@ -117,7 +117,7 @@ Writing modules
 Example module that fetches some content over HTTP, parses JSON and returns some text when triggered:
 
 
-.. code::lua
+.. code:: lua
 
     -- Util lib contains lots of helpful stuff for modules, like HTTP, JSON,
     -- IRC formatting, some utf8-helpers, etc.
@@ -157,7 +157,7 @@ Example module that fetches some content over HTTP, parses JSON and returns some
 
 Example of module that is responding to HTTP:
 
-::lua
+.. code:: lua
 
     ivar2.webserver.regUrl('/test/html/(.*)', function(self, req, res)
        self:Log('error', 'testtestest')
