@@ -3,6 +3,7 @@ local server = require'http.server'
 local new_headers = require "http.headers".new
 local lconsole = require'logging.console'
 local lfs = require'lfs'
+local ivar2 = ...
 local log = lconsole()
 
 -- Keep this amount in mem before handler has to read from tmpfile
@@ -14,10 +15,20 @@ local runningserver
 
 local webserver = {}
 
-local handlerNotFound = function(stream, res)
-	res:upsert(":status", "404")
+local respond = function(stream, res, body, code, headers)
+	if not code then code = '200' end
+	if not body then body = '' end
+	if not headers then headers = {} end
+	for k, v in pairs(headers) do
+		res:upsert(k, v)
+	end
+	res:upsert(":status", tostring(code))
 	stream:write_headers(res, false, timeout)
-	stream:write_body_from_string('Nyet. I am four oh four', timeout)
+	stream:write_body_from_string(body, timeout)
+end
+
+local handlerNotFound = function(stream, res)
+	respond(stream, res, 'Nyet. I am four oh four', 404)
 end
 
 local handlers = {
@@ -67,9 +78,15 @@ webserver.on_stream = function(stream)
 			if path:match(pattern) then
 				log:info('webserver> %s %s %s handler :%s', stream.method, peer, stream.url, pattern)
 				found = true
-				local ok, err = pcall(handler, stream, res)
+				local ok, body, code, response_headers = pcall(handler, ivar2, stream, res)
 				if not ok then
-					log:error('webserver> error for URL pattern: %s: %s', pattern, err)
+					log:error('webserver> error for URL pattern: %s: %s', pattern, body)
+				else
+					-- Handlers can also write to stream directly, so check for body
+					if body then
+						respond(stream, res, body, code, response_headers)
+					end
+					-- Assume handler has already sent response.
 				end
 				break
 			end
