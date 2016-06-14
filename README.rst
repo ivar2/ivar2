@@ -40,7 +40,7 @@ Create a bot config sort of like this
 
 **myconfig.lua**
 
-::
+.. code:: lua
 
     return {
         nick = 'ivar2',
@@ -136,7 +136,6 @@ Example module that fetches some content over HTTP, parses JSON and returns some
       -- unless you want to inform the user of errors with HTTP or JSON etc.
       -- All module functions are called with pcall (protected call) to prevent
       -- crashes. Errors will result in error lines in the log.
-      -- you want to
       local result = json.decode((http'http://api.icndb.com/jokes/random'))
 
       -- Send the reply back to the destination where it came from using ivar2
