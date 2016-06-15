@@ -55,6 +55,10 @@ webserver.on_stream = function(stream)
 				stream.headers[k] = v
 			end
 		end
+		-- Check if X-Real-IP is set, and blindly trust it
+		if stream.headers['x-real-ip'] then
+			peer = stream.headers['x-real-ip']
+		end
 		-- TODO: check content length and decide if needed
 		local filename
 		-- Save body into a temp file
@@ -74,9 +78,10 @@ webserver.on_stream = function(stream)
 			end
 		end
 		local found
+		log:info('webserver> %s %s %s', stream.method, peer, stream.url)
 		for pattern, handler in pairs(handlers) do
 			if path:match(pattern) then
-				log:info('webserver> %s %s %s handler :%s', stream.method, peer, stream.url, pattern)
+				log:debug('webserver> serving handler :%s', pattern)
 				found = true
 				local ok, body, code, response_headers = pcall(handler, ivar2, stream, res)
 				if not ok then
