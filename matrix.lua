@@ -850,6 +850,11 @@ end
 
 function MatrixServer:EnableModule(moduleName, moduleTable)
     self:Log('info', 'Loading module %s.', moduleName)
+	-- Some modules don't return handlers, for example webservermodules,
+	-- or pure timermodules, etc.
+	if type(moduleTable) ~= 'table' then
+		return
+	end
 
     for command, handlers in next, moduleTable do
         if(not self.events[command]) then self.events[command] = {} end
