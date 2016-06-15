@@ -27,6 +27,13 @@ acolor = (action) ->
 
   return action
 
+strip_email = (text) ->
+  out = {}
+  for line in text\gmatch'[^\r\n]+'
+    unless line\match'^%s*>'
+      out[#out+1] = line
+  table.concat out
+
 handlers = {
   push: (repo, destination, json) ->
     branch = util.bold(json.ref\gsub 'refs/heads/', '')
@@ -69,7 +76,7 @@ handlers = {
   issue_comment: (repo, destination, json) ->
     action = acolor json.action
     nr = util.bold json.issue.number
-    "[#{repo}]: Issue ##{nr} <#{util.nonickalertword json.sender.login}> #{json.comment.body} #{json.issue.html_url}"
+    "[#{repo}]: Issue ##{nr} <#{util.nonickalertword json.sender.login}> #{strip_email json.comment.body} #{json.issue.html_url}"
   fork: (repo, destination, json) ->
     "[#{repo}]: #{util.nonickalertword json.sender.login}: forked to #{json.forkee.html_url}"
   create: (repo, destination, json) ->
@@ -86,7 +93,7 @@ handlers = {
 
 }
 
-ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
+ivar2.webserver.regUrl '/github/(.*)', (req, res) =>
   destination = req.url\match('/github/(.+)/?$')
   destination = unescape(destination)
   json = util.json.decode(req.body)
@@ -120,5 +127,3 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
   res\append 'Content-Type', 'text/plain'
   req\write_headers(res, false, 30)
   req\write_body_from_string('ok', 30)
-
-return {}
