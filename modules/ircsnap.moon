@@ -1,7 +1,6 @@
 {:urlEncode} = require'util'
 html2unicode = require 'html'
 lfs = require'lfs'
-ltn12 = require'ltn12'
 
 -- All URLs in this module is under this prefix
 urlbase = '/image/'
@@ -73,7 +72,7 @@ video_html = (video) ->
   ]]
 
 
-ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
+ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   url = req.url
   send = (body, code, content_type) ->
     if not code then code = "200"
