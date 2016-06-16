@@ -344,11 +344,7 @@ function MatrixServer:http_cb(command, data, url, response)
         local room_id = data
         self:delRoom(room_id)
     elseif command:find'upload' then
-        -- We store room_id in data
-        local room_id = data
-        if js.content_uri then
-            self:_msg(room_id, js.content_uri)
-        end
+        return js.content_uri
     elseif command:find'/typing/' then
         -- either it errs or it is empty
     elseif command:find'/state/' then
@@ -614,7 +610,7 @@ function MatrixServer:delRoom(room_id)
     end
 end
 
-function MatrixServer:_msg(room_id, body, msgtype)
+function MatrixServer:_msg(room_id, body, msgtype, url)
     if not msgtype then
         msgtype = 'm.notice'
     end
@@ -622,7 +618,7 @@ function MatrixServer:_msg(room_id, body, msgtype)
     if not self.out[room_id] then
         self.out[room_id] = {}
     end
-    table.insert(self.out[room_id], {msgtype, body})
+    table.insert(self.out[room_id], {msgtype, body, url})
     self:send()
 end
 
@@ -662,6 +658,7 @@ function MatrixServer:send()
         local body = {}
         local htmlbody = {}
         local msgtype
+        local url
 
         local ishtml = false
 
@@ -675,6 +672,9 @@ function MatrixServer:send()
             end
             table.insert(htmlbody, html )
             table.insert(body, msg[2] )
+            if msg[3] then -- Primarily image upload
+                url = msg[3]
+            end
         end
         body = table.concat(body, '\n')
 
@@ -683,6 +683,7 @@ function MatrixServer:send()
             postfields= {
                 msgtype = msgtype,
                 body = body,
+                url = url,
         }}
 
         if ishtml then
@@ -744,6 +745,36 @@ function MatrixServer:Kick(destination, userid, reason)
         reason = 'Kicked by '..self.user_id
     }
     self:set_membership(room.identifier, userid, data)
+end
+
+function MatrixServer:Upload(destination, remoteurl, message)
+    local room = self:findRoom(destination)
+    local filedata, _, res = util.simplehttp(remoteurl)
+    local content_type = res.headers['content-type']
+
+    local homeserver_url = self.config.uri
+    homeserver_url = homeserver_url .. "_matrix/media/r0"
+    local url = homeserver_url .. ('/upload?access_token=%s')
+        :format( urllib.quote(self.access_token))
+    local data = {
+        url = url,
+        method = 'POST',
+        data = filedata,
+        headers = {
+            ['Content-Type'] = content_type,
+           -- ['Content-Length'] = tostring(#filedata),
+        },
+    }
+    local js, r_url, response = util.simplehttp(data)
+    if not res then
+        -- error being logged by simplehttp
+        return
+    end
+    local content_uri = self:http_cb('upload', js, r_url, response)
+    if not content_uri then return end
+    local body = message or 'image.'..content_type:match('/(.-)$')
+    local msgtype = 'm.image'
+    self:_msg(room.identifier, body, msgtype, content_uri)
 end
 
 function MatrixServer:CreateRoom(public, alias, invites)
@@ -848,6 +879,24 @@ function MatrixServer:LoadModule(moduleName)
     end
 end
 
+function MatrixServer:IsIgnored(destination, source)
+    if(not destination) then return false end
+    if(not source) then return false end
+    if(self.ignores[source]) then return true end
+
+    local channel = self.config.channels[destination]
+    if(type(channel) == 'table') then
+        if tableHasValue(channel.ignoredNicks, source.nick) then
+            return true
+        end
+    end
+    if(type(channel) == 'table') then
+        if tableHasValue(channel.ignoredNicks, source.mask) then
+            return true
+        end
+    end
+end
+
 function MatrixServer:EnableModule(moduleName, moduleTable)
     self:Log('info', 'Loading module %s.', moduleName)
 	-- Some modules don't return handlers, for example webservermodules,
@@ -909,6 +958,9 @@ end
 
 function MatrixServer:DispatchCommand(command, argument, source, destination)
     self:Log('info', '%s %s <%s> %s', command, destination, source.mask, argument)
+    if self:IsIgnored(destination, source) then
+        return
+    end
     local events = self.events
     if(not events[command]) then return end
 
@@ -1220,8 +1272,8 @@ function Room:Topic(topic)
     self.conn:state(self.identifier, 'm.room.topic', {topic=topic})
 end
 
-function Room:upload(filename)
-    self.conn:upload(self.identifier, filename)
+function Room:Upload(url)
+    self.conn:Upload(self.identifier, url)
 end
 
 function Room:Msg(msg)
