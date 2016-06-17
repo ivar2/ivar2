@@ -610,7 +610,7 @@ function MatrixServer:delRoom(room_id)
     end
 end
 
-function MatrixServer:_msg(room_id, body, msgtype, url)
+function MatrixServer:_msg(room_id, body, msgtype, url, info)
     if not msgtype then
         msgtype = 'm.notice'
     end
@@ -618,7 +618,7 @@ function MatrixServer:_msg(room_id, body, msgtype, url)
     if not self.out[room_id] then
         self.out[room_id] = {}
     end
-    table.insert(self.out[room_id], {msgtype, body, url})
+    table.insert(self.out[room_id], {msgtype, body, url, info})
     self:send()
 end
 
@@ -659,11 +659,12 @@ function MatrixServer:send()
         local htmlbody = {}
         local msgtype
         local url
+        local info
 
         local ishtml = false
 
 
-        for _, msg in pairs(msgs) do
+        for _, msg in ipairs(msgs) do
             -- last msgtype will override any other for simplicity's sake
             msgtype = msg[1]
             local html = irc_formatting_to_html(msg[2])
@@ -675,6 +676,9 @@ function MatrixServer:send()
             if msg[3] then -- Primarily image upload
                 url = msg[3]
             end
+            if msg[4] then -- Image upload info possibly more in the future?
+                info = msg[4]
+            end
         end
         body = table.concat(body, '\n')
 
@@ -684,7 +688,9 @@ function MatrixServer:send()
                 msgtype = msgtype,
                 body = body,
                 url = url,
-        }}
+                info = info,
+            }
+        }
 
         if ishtml then
             htmlbody = table.concat(htmlbody, '\n')
@@ -774,7 +780,12 @@ function MatrixServer:Upload(destination, remoteurl, message)
     if not content_uri then return end
     local body = message or 'image.'..content_type:match('/(.-)$')
     local msgtype = 'm.image'
-    self:_msg(room.identifier, body, msgtype, content_uri)
+    local info = {
+        -- TODO, width, height, size
+        size = #filedata,
+        mimetype = content_type,
+    }
+    self:_msg(room.identifier, body, msgtype, content_uri, info)
 end
 
 function MatrixServer:CreateRoom(public, alias, invites)
