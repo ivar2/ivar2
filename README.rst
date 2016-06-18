@@ -6,7 +6,7 @@ Introduction
 ------------
 ivar2 is an IRC/Matrix bot on speed, with a mentally unstable mind.
 Partially because its written in Lua, which could make the most sane mind go unstable.
-If that's not obscure enough for you, ivar2 also supports running `MoonScript <http://moonscript.org/`_ modules.
+If that's not obscure enough for you, ivar2 also supports running `MoonScript <http://moonscript.org/>`_ modules.
 
 Installation
 ------------------
@@ -17,7 +17,7 @@ Instructions for containing Lua and all deps inside a single directory, almost l
 
 ::
 
-    # Install `hererocks <https://github.com/mpeterv/hererocks/>`_, using pip or wget https://raw.githubusercontent.com/mpeterv/hererocks/latest/hererocks.py
+    # Install ``hererocks`` <https://github.com/mpeterv/hererocks/>, using pip or wget https://raw.githubusercontent.com/mpeterv/hererocks/latest/hererocks.py
     pip install hererocks
     # Install lua + deps in a directory called ivarenv
     hererocks -j 2.1 -r\^ ivarenv
