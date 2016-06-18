@@ -1,18 +1,7 @@
 local sql = require'lsqlite3'
 local date = require'idate'
-local uri = require"handler.uri"
-
-local uri_parse = uri.parse
-
-local patterns = {
-	-- X://Y url
-	"^(https?://%S+)",
-	"^<(https?://%S+)>",
-	"%f[%S](https?://%S+)",
-	-- www.X.Y url
-	"^(www%.[%w_-%%]+%.%S+)",
-	"%f[%S](www%.[%w_-%%]+%.%S+)",
-}
+local util = require"util"
+local uri_parse = util.uri_parse
 
 local openDB = function()
 	local dbfilename = string.format("cache/urls.%s.sql", ivar2.network)
@@ -34,7 +23,7 @@ end
 local checkOld = function(source, destination, url)
 	-- Don't lookup root path URLs.
 	local info = uri_parse(url)
-	if(info.path == '' or info.path == '/') then
+	if(info and (info.path == '' or info.path == '/')) then
 		return
 	end
 
@@ -89,10 +78,6 @@ end
 
 do
 	return function(source, destination, queue)
-		-- do not want
-		do
-			return
-		end
 		local nick, count, age = checkOld(source, destination, queue.url)
 		updateDB(source, destination, queue.url)
 
