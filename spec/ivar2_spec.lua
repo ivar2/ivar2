@@ -119,7 +119,12 @@ describe("test util lib", function()
         it("should work with utf8 chars", function()
             local yrurl = 'http://www.yr.no/stad/Norway/Akershus/Bærum/Kolsås~2333471/forecast.xml'
             local urip = util.uri_parse(yrurl)
-            for k, v in pairs(urip) do print (k,v)end
+            assert.are_same({
+                host  = 'www.yr.no',
+                path  = '/stad/Norway/Akershus/Bærum/Kolsås~2333471/forecast.xml',
+                scheme = 'http',
+            }, urip)
+
         end)
     end)
 end)
