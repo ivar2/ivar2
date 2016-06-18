@@ -17,6 +17,7 @@ local irc = require 'irc'
 local utf8 = util.utf8
 local busted = require'busted'
 local cqueues = require'cqueues'
+local new_headers = require "http.headers".new
 local queue = cqueues.new()
 local describe = busted.describe
 local it = busted.it
@@ -114,19 +115,14 @@ describe("test util lib", function()
             assert.are_equal(utf8.char(0x1f600), '😀')
         end)
     end)
+    describe("uri parse", function()
+        it("should work with utf8 chars", function()
+            local yrurl = 'http://www.yr.no/stad/Norway/Akershus/Bærum/Kolsås~2333471/forecast.xml'
+            local urip = util.uri_parse(yrurl)
+            for k, v in pairs(urip) do print (k,v)end
+        end)
+    end)
 end)
-
-local TEST_TIMEOUT = 200
-
-local function assert_loop(cq, timeout)
-    local ok, err, _, thd = cq:loop(timeout)
-    if not ok then
-        if thd then
-            err = debug.traceback(thd, err)
-        end
-        error(err, 2)
-    end
-end
 
 describe("test webserver", function()
     describe("webserver tests", function()
@@ -138,11 +134,14 @@ describe("test webserver", function()
                 local cqueue = cqueues.running()
                 server:run(webserver.on_stream, cqueue)
             end)
-            webserver.regUrl('/test', function(req, res)
+            webserver.regUrl('/test', function(self, req, res)
               assert.are_equal(req.url, '/test')
               res:append(":status", "200")
               req:write_headers(res, false)
               req:write_body_from_string('Hello world!')
+            end)
+            webserver.regUrl('/simplereturn', function(self, req, res)
+              return 'OK'
             end)
             queue:wrap(function()
                 util.simplehttp('http://127.0.0.1:9999/asdf', function(data)
@@ -153,6 +152,8 @@ describe("test webserver", function()
                 util.simplehttp('http://[::1]:9999/test', function(data)
                     assert.are_equal(data, 'Hello world!')
                 end)
+                local data = util.simplehttp('http://[::1]:9999/simplereturn')
+                assert.are_equal(data, 'OK')
             end)
             queue:wrap(function()
                 util.simplehttp({
@@ -169,7 +170,7 @@ describe("test webserver", function()
                     assert.are_equal(data, 'Hello world!\n')
                 end)
             end)
-            for i=1,50 do
+            for i=1,10 do
                 queue:wrap(function()
                     local data = util.simplehttp('http://[2a02:cc41:100f::10]/test.txt')
                     assert.are_equal(data, 'Hello world!\n')
