@@ -6,51 +6,56 @@ sql = require'lsqlite3'
 
 moduleName = 'rss'
 
+-- share a db reference
+dbref = false
+
 get_db = ->
-  db = sql.open 'cache/rss.sql'
+  unless dbref
+    dbref = sql.open 'cache/rss.sql'
+    code = dbref\exec [[
+      CREATE TABLE IF NOT EXISTS feed (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        rssurl VARCHAR(1024) NOT NULL,
+        url VARCHAR(1024),
+        title VARCHAR(1024),
+        author VARCHAR(1024),
+        etag TEXT,
+        lastmodified TEXT
+      );
 
-  code = db\exec [[
-    CREATE TABLE IF NOT EXISTS feed (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT,
-      rssurl VARCHAR(1024) NOT NULL,
-      url VARCHAR(1024),
-      title VARCHAR(1024),
-      author VARCHAR(1024),
-      etag TEXT,
-      lastmodified TEXT
-    );
+      CREATE TABLE IF NOT EXISTS item (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        feed_id INTEGER NOT NULL,
+        guid VARCHAR(64),
+        title VARCHAR(1024),
+        author VARCHAR(1024),
+        url VARCHAR(1024),
+        feedurl VARCHAR(1024),
+        pubDate TEXT,
+        summary TEXT,
+        content TEXT,
+        FOREIGN KEY(feed_id) REFERENCES feed(id),
+        UNIQUE (guid, feed_id)
+      );
 
-    CREATE TABLE IF NOT EXISTS item (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      feed_id INTEGER NOT NULL,
-      guid VARCHAR(64),
-      title VARCHAR(1024),
-      author VARCHAR(1024),
-      url VARCHAR(1024),
-      feedurl VARCHAR(1024),
-      pubDate TEXT,
-      summary TEXT,
-      content TEXT,
-      FOREIGN KEY(feed_id) REFERENCES feed(id),
-      UNIQUE (guid, feed_id)
-    );
+      CREATE TABLE IF NOT EXISTS subscription (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        destination varchar(100),
+        feed_id INTEGER,
+        last INTEGER DEFAULT 0,
+        created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY(feed_id) REFERENCES feed(id)
+      );
+      ]]
+    if code != sql.OK
+      ivar2\Log 'error', "Error during opendb: #{dbref\errmsg!}"
+      return nil
 
-    CREATE TABLE IF NOT EXISTS subscription (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      destination varchar(100),
-      feed_id INTEGER,
-      last INTEGER DEFAULT 0,
-      created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(feed_id) REFERENCES feed(id)
-    );
-    ]]
+  unless dbref\isopen!
+    dbref = sql.open 'cache/rss.sql'
 
-  if code != sql.OK
-    ivar2\Log 'error', "Error during opendb: #{db\errmsg!}"
-    return nil
-
-  return db
+  return dbref
 
 prepare = (db, stmt, ...) ->
   code = db\prepare stmt
@@ -70,8 +75,7 @@ feedSpecific = (feedurl, link, title, summary, content) ->
 
   return "#{title} - #{link}"
 
-announce = (id) ->
-  db = get_db!
+announce = (db, id) ->
   stmt = prepare db, "SELECT DISTINCT feed.id, destination FROM feed JOIN subscription ON subscription.feed_id = feed.id WHERE feed.id = ?", id
   for row in stmt\rows!
     destination = row[2]
@@ -95,11 +99,10 @@ announce = (id) ->
         table.insert out, "[#{bold .name}]: #{feedSpecific(.rssurl, .link, .title, .summary, .content)}"
     if #out > 0
       ivar2\Msg 'privmsg', destination, ivar2.nick, "RSS "..table.concat(out, ', ')
-    -- Update last red
+    -- Update last read
     ins = prepare db, 'UPDATE subscription SET last=? WHERE feed_id = ? and destination = ?', highest, id, destination
     code, err = ins\step!
     code, err = ins\finalize!
-  db\close!
 
 poll = ->
   db = get_db!
@@ -121,64 +124,65 @@ poll = ->
     if etag and etag != '' then
       headers['If-None-Match'] = etag
 
-    simplehttp {url:rssurl,headers:headers}, (data, url, response) ->
+    data, url, response = simplehttp {url:rssurl,headers:headers}
       -- Reopen DB because of async
-      sdb = get_db!
+      --sdb = get_db!
+    sdb = db
 
-      lastModified = response.headers['Last-Modified']
-      if not lastModified
-        lastModified = response.headers['Date']
+    lastModified = response.headers['Last-Modified']
+    if not lastModified
+      lastModified = response.headers['Date']
 
-      -- Unmodified content
-      if response.status_code == 304 or not data
-        -- return from the simplehttp callback
-        return
+    -- Unmodified content
+    if response.status_code == 304 or not data
+      -- return from the simplehttp callback
+      return
 
-      ok, feed, err = pcall -> feedparser.parse data
-      if not ok
-        ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{feed}> data for feed: <#{name}> with URL <#{url}>"
-        return
-      if err
-        ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{err}> data for feed: <#{name}> with URL <#{url}>"
-        return
-      else
-        title = feed.title
-        author = feed.author
-        url = feed.link
+    ok, feed, err = pcall -> feedparser.parse data
+    if not ok
+      ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{feed}> data for feed: <#{name}> with URL <#{url}>"
+      return
+    if err
+      ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{err}> data for feed: <#{name}> with URL <#{url}>"
+      return
+    else
+      title = feed.title
+      author = feed.author
+      url = feed.link
 
-        -- Update feed with new values
-        ins = sdb\prepare 'UPDATE feed SET title=?, author=?, url=?, lastmodified=? WHERE id=?'
-        code, err = ins\bind_values title, author, url, lastModified, id
-        code, err = ins\step!
-        code, err = ins\finalize!
+      -- Update feed with new values
+      ins = sdb\prepare 'UPDATE feed SET title=?, author=?, url=?, lastmodified=? WHERE id=?'
+      code, err = ins\bind_values title, author, url, lastModified, id
+      code, err = ins\step!
+      code, err = ins\finalize!
 
-        out = {}
-        for i, e in ipairs(feed.entries)
-          -- Attempt to get a unique entry ID
-          guid = e.guid
-          if not guid then guid = e.id
-          if not guid then guid = e.link
-          if not guid
-            ivar2\Log 'error', "#{moduleName}: No GUID when parsing entry: <#{e}> data for feed: <#{name}> with URL <#{url}>"
+      out = {}
+      for i, e in ipairs(feed.entries)
+        -- Attempt to get a unique entry ID
+        guid = e.guid
+        if not guid then guid = e.id
+        if not guid then guid = e.link
+        if not guid
+          ivar2\Log 'error', "#{moduleName}: No GUID when parsing entry: <#{e}> data for feed: <#{name}> with URL <#{url}>"
+          break
+
+        ins = sdb\prepare [[
+          INSERT OR ABORT INTO
+            item(feed_id, guid, title, author, url, pubDate, content, summary)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]
+        if not ins then
+          ivar2\Log 'error', "#{moduleName}: Error during inserting entry: <#{err}> feed: <#{name}> with URL <#{url}> and position: #{i}"
+        else
+          ivar2\Log 'debug', "#{moduleName}: Inserting entry: #{e.link}, #{e.title}"
+          code = ins\bind_values id, guid, e.title, e.author, e.link, e.updated, e.content, e.summary
+          code = ins\step!
+          code = ins\finalize!
+          if code == sql.CONSTRAINT -- duplicate value
+            ivar2\Log 'debug', "Reached duplicate link, breaking"
             break
-
-          ins = sdb\prepare [[
-            INSERT OR ABORT INTO
-              item(feed_id, guid, title, author, url, pubDate, content, summary)
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-          ]]
-          if not ins then
-            ivar2\Log 'error', "#{moduleName}: Error during inserting entry: <#{err}> feed: <#{name}> with URL <#{url}> and position: #{i}"
-          else
-            ivar2\Log 'debug', "#{moduleName}: Inserting entry: #{e.link}, #{e.title}"
-            code = ins\bind_values id, guid, e.title, e.author, e.link, e.updated, e.content, e.summary
-            code = ins\step!
-            code = ins\finalize!
-            if code == sql.CONSTRAINT -- duplicate value
-              ivar2\Log 'debug', "Reached duplicate link, breaking"
-              break
-      sdb\close!
-      announce(id)
+    --sdb\close!
+    announce(db, id)
   db\close!
 
 
