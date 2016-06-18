@@ -853,7 +853,7 @@ function MatrixServer:LoadModule(moduleName)
     local moduleError
     local endings = {'.lua', '/init.lua', '.moon', '/init.moon'}
 
-    for _,ending in pairs(endings) do
+    for _, ending in ipairs(endings) do
         local fileName = 'modules/' .. moduleName .. ending
         -- Check if file exist and is readable before we try to loadfile it
         local access = lfs.attributes(fileName)
@@ -868,6 +868,7 @@ function MatrixServer:LoadModule(moduleName)
                 -- return here.
                 return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
             end
+            break
         end
     end
     if(not moduleFile) then

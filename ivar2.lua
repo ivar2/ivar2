@@ -440,8 +440,9 @@ function ivar2:LoadModule(moduleName)
 	local moduleError
 	local endings = {'.lua', '/init.lua', '.moon', '/init.moon'}
 
-	for _,ending in pairs(endings) do
+	for _, ending in ipairs(endings) do
 		local fileName = 'modules/' .. moduleName .. ending
+		print(fileName)
 		-- Check if file exist and is readable before we try to loadfile it
 		local access = lfs.attributes(fileName)
 		if(access) then
@@ -455,6 +456,7 @@ function ivar2:LoadModule(moduleName)
 				-- return here.
 				return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 			end
+			break
 		end
 	end
 	if(not moduleFile) then
