@@ -20,8 +20,9 @@ local function simplehttp(url, callback, unused, limit)
 
 	-- Don't include fragments in the request.
 	uri = uri:gsub('#.*$', '')
-	-- Trim trailing whitespace
+	-- Trim whitespace
 	uri = uri:gsub('%s+$', '')
+	uri = uri:gsub('^%s+', '')
 
 	-- IDN hack for now, until http/uriparse supports it
 	uri = uri:gsub('://(.-)%.', function(match)
@@ -36,10 +37,15 @@ local function simplehttp(url, callback, unused, limit)
 	local uri_t = uri_parse(uri)
 	local client = httpclient.new_from_uri(uri_t)
 
-	-- Current version of lua-http / cqueues has issues with lingering eventloops
-	-- with HTTP2. So we explicitly set version 1.1 for now until this is fixed
-	-- upstream.
-	client.version = 1.1
+	-- Allow override
+	if url.version then
+		client.version = url.version
+	else
+		-- Current version of lua-http / cqueues has issues with lingering eventloops
+		-- with HTTP2. So we explicitly set version 1.1 for now until this is fixed
+		-- upstream.
+		client.version = 1.1
+	end
 
 	if(type(url) == "table") then
 		if(url.headers) then
