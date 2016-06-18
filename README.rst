@@ -4,15 +4,44 @@ ivar2 - DO-OH!
 
 Introduction
 ------------
-ivar2 is an IRC bot on speed, with a mentally unstable mind.
-Partially because its written in lua, which could make the most sane mind go unstable.
+ivar2 is an IRC/Matrix bot on speed, with a mentally unstable mind.
+Partially because its written in Lua, which could make the most sane mind go unstable.
+If that's not obscure enough for you, ivar2 also supports running `MoonScript <http://moonscript.org/`_ modules.
 
 Installation
 ------------------
 
 The installation instructions are made for Debian Jessie, you might have to adapt yourself for other distributions. Some additional dependencies are required for some of the modules, like PostgreSQL for pgolds.lua. Persisting data can be done using either sqlite og Redis, naturally lua-redis and redis-server is required as a dependency if you want to use redis.
 
-Install deps:
+Instructions for containing Lua and all deps inside a single directory, almost like python virtualenv or npm.:
+
+::
+
+    # Install `hererocks <https://github.com/mpeterv/hererocks/>`_, using pip or wget https://raw.githubusercontent.com/mpeterv/hererocks/latest/hererocks.py
+    pip install hererocks
+    # Install lua + deps in a directory called ivarenv
+    hererocks -j 2.1 -r\^ ivarenv
+    # Change dir to ivarenv
+    cd ivarenv
+    # Run Luarocks from ivarenv
+    bin/luarocks install --server=http://luarocks.org/dev http
+    bin/luarocks install lua-cjson
+    bin/luarocks install lua-zlib
+    bin/luarocks install lua-iconv
+    bin/luarocks install luafilesystem
+    bin/luarocks install lsqlite3
+    # Optional
+    bin/luarocks install luadbi-postgresql
+    # Optional
+    bin/luarocks install redis-lua
+
+
+    # Now you have a self contained Lua environment with deps that you can run the bot.
+    cd ivar2
+    ivarenv/bin/lua ivar2.lua myconfig.lua
+
+
+Alternate instructions for install Lua(JIT) + deps, trying to use some system packages:
 
 ::
 
@@ -28,7 +57,6 @@ Install deps:
     sudo apt-get install lua-dbi-postgresql
     # if you want redis persist
     sudo apt-get install redis-server lua-redis
-
 
 
 Decompress the required data files in cache directory.
@@ -165,14 +193,14 @@ Example of module that is responding to HTTP:
        self:Privmsg(unescaped_channel, 'test')
        return [[
        <html>
-       <head>
-       <title> ivartest </title>
-       </head>
-       <body>
-       <h1>
-       Test
-       </h1>
-       </body>
+           <head>
+               <title> ivartest </title>
+           </head>
+           <body>
+               <h1>
+                   Test
+               </h1>
+           </body>
        </html>
        ]]
      end)
