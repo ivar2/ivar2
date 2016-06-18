@@ -442,7 +442,6 @@ function ivar2:LoadModule(moduleName)
 
 	for _, ending in ipairs(endings) do
 		local fileName = 'modules/' .. moduleName .. ending
-		print(fileName)
 		-- Check if file exist and is readable before we try to loadfile it
 		local access = lfs.attributes(fileName)
 		if(access) then
