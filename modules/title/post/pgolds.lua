@@ -4,7 +4,6 @@ local util = require'util'
 -- Connection handle
 local conn = false
 
-
 -- Open connection to the postgresql database using DBI lib and ivar2 global config
 local connect = function()
     local dbh, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
@@ -126,11 +125,19 @@ local dbLogUrl = function(dbh, source, destination, url, msg)
     -- commit the transaction
     dbh:commit()
 
-    --local ok = dbh:close()
+    -- there was some problems with inserted URLs getting the timestamp
+    -- of the previous URL. Almost like default now() was buggy. But somehow
+    -- closing the connection for each URL helps? I don't understand
+    --insert:close()
+    --dbh:close()
 end
 
 do
     return function(source, destination, queue, msg)
+        -- Check if postgresql is configured
+        if not ivar2.config.host then
+            return
+        end
         local dbh = openDb()
         local nick, count, ago = checkOlds(dbh, source, destination, queue.url)
         dbLogUrl(dbh, source, destination, queue.url, msg)
