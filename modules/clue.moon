@@ -1,36 +1,46 @@
 -- Clue module requires clue data files and tosql.py from emnh/clue2
 
-dbi = require 'DBI'
 require'logging.console'
 log = logging.console()
+pgsql = require "cqueues_pgsql"
+
 conn = false
 
 attrs = {'grammar','reference', 'country', 'context', 'text'}
 
 connect = ->
-  conn, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
-  unless conn
-    log\error "Unable to connect to DB: #{err}"
+  conn = pgsql.connectdb("dbname=#{ivar2.config.dbname} user=#{ivar2.config.dbuser} password=#{ivar2.config.dbpass} host=#{ivar2.config.dbhost} port=#{ivar2.config.dbport}")
+  if conn\status! != pgsql.CONNECTION_OK
+    log\error conn\errorMessage
     return
-
-  conn\autocommit(true)
 
 dbh = ->
   connect! unless conn
 
-  -- Check if connection is alive
-  alive = conn\ping!
-  connect! unless alive
+  if conn\status() != pgsql.CONNECTION_OK
+    log\error conn\errorMessage
+    connect!
 
-  success, err = DBI.Do(conn, 'SELECT NOW()')
+  success, err = conn\exec('SELECT NOW()')
   unless success
     log\error "SQL Connection :#{err}"
     connect!
 
   return conn
 
+res2rows = (res) ->
+  if not res\status! == 2 then error(res\errorMessage(), nil)
+  rows = {}
+
+  for i=1, res\ntuples()
+    row = {}
+    for j=1, res\nfields!
+      row[res\fname(j)] = res\getvalue(i, j)
+    rows[#rows+1] = row
+  return rows
+
 lookup = (source, destination, lookup) =>
-  stmt = dbh!\prepare [[
+  stmt = dbh!\exec [[
     SELECT
       tablename
     from
@@ -38,26 +48,21 @@ lookup = (source, destination, lookup) =>
     where
       tablename like 'cl%'
     ]]
-  stmt\execute!
   tables = {}
-  for row in stmt\rows(true) -- true for column names
-    tables[#tables+1] = row.tablename
+  if not stmt\status! == 2 then error(stmt\errorMessage(), nil)
+  for i=1, stmt\ntuples()
+    tables[#tables+1] = stmt\getvalue(i, 1)
 
   out = {}
   for dict in *tables
-    out[dict] = {}
-    stmt = dbh!\prepare [[
+    out[dict] = res2rows dbh!\execParams [[
       SELECT
         *
       FROM
         ]]..dict..[[
       WHERE
-        word = ?
-      ]]
-    stmt\execute lookup
-    for row in stmt\rows(true) -- true for column names
-      table.insert(out[dict], row)
-
+        word = $1
+      ]], lookup
 
   i = 0
   for dict, rows in pairs out
@@ -78,7 +83,8 @@ lookup = (source, destination, lookup) =>
             table.insert(res, "(#{row[attr]}. )")
           else
             table.insert(res, row[attr])
-    say table.concat(res, ' ')
+    if #res > 0
+      say table.concat(res, ' ')
   if i == 0
     reply 'Nope.'
 
@@ -96,20 +102,15 @@ getWord = (lang, wordclass, count, maxlen, startswith) ->
     FROM
       ]]..lang..[[
     WHERE
-      grammar = ?
+      grammar = $1
     AND
-      length(word) < ?
+      length(word) < $2
     ]]..startswith..[[
     ORDER BY
       random()
-    LIMIT ?
+    LIMIT $3
   ]]
-  stmt = dbh!\prepare sql
-  stmt\execute wordclass, maxlen, count
-  out = {}
-  for row in stmt\rows(true) -- true for column names
-    table.insert(out, row)
-  return out
+  res2rows dbh!\execParams(sql, wordclass, maxlen, count)
 
 bankid = (source, destination) =>
 
@@ -128,11 +129,8 @@ isLogWord = (word) ->
     WHERE
       message ~* '\y]]..word..[[\y'
   ]]
-  stmt = myconn\prepare sql
-  stmt\execute!
-  count = 0
-  row = stmt\fetch!
-  count = row[1]
+  stmt = myconn\exec sql
+  count = stmt.getvalue(1, 1)
   return tonumber(count) > 0
 
 bankid2 = (source, destination) =>
