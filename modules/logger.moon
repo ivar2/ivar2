@@ -1,4 +1,4 @@
-dbi = require 'DBI'
+pgsql = require "cqueues_pgsql"
 require'logging.console'
 iconv = require'iconv'
 iso2utf = iconv.new('UTF-8'.."//TRANSLIT", 'ISO-8859-1')
@@ -22,31 +22,35 @@ toutf = (s) ->
   iso2utf\iconv(s)
 
 connect = ->
-  conn, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
-  unless conn
-    log\error "Unable to connect to DB: #{err}"
+  conn = pgsql.connectdb("dbname=#{ivar2.config.dbname} user=#{ivar2.config.dbuser} password=#{ivar2.config.dbpass} host=#{ivar2.config.dbhost} port=#{ivar2.config.dbport}")
+  if conn\status! != pgsql.CONNECTION_OK
+    log\error conn\errorMessage
     return
-
-  conn\autocommit(true)
-
-  --for s in *schemas
-  --  a,b = DBI.Do(conn, s)
-
 
 dbh = ->
   connect! unless conn
 
-  -- Check if connection is alive
-  alive = conn\ping!
-  connect! unless alive
+  if conn\status() != pgsql.CONNECTION_OK
+    log\error conn\errorMessage
+    connect!
 
-  success, err = DBI.Do(conn, 'SELECT NOW()')
+  success, err = conn\exec('SELECT NOW()')
   unless success
     log\error "SQL Connection :#{err}"
     connect!
 
   return conn
 
+res2rows = (res) ->
+  if not res\status! == 2 then error(res\errorMessage(), nil)
+  rows = {}
+
+  for i=1, res\ntuples()
+    row = {}
+    for j=1, res\nfields!
+      row[res\fname(j)] = res\getvalue(i, j)
+    rows[#rows+1] = row
+  return rows
 
 dblog = (type, source, destination, arg) =>
   nick = source.nick
@@ -61,56 +65,47 @@ dblog = (type, source, destination, arg) =>
       type = 'ACTION'
 
   insert = ->
-    ins = dbh!\prepare('INSERT INTO log(nick,channel,message,type) values(?,?,?,?)')
-    ins\execute(nick, destination, arg, type)
+    dbh!\execParams('INSERT INTO log(nick,channel,message,type) values($1,$2,$3,$4)', nick, destination, arg, type)
 
   -- First try to insert statement directly
   -- if that doesn't work; convert it from iso to utf and try again
-  stmt, err = insert!
-  unless stmt
+  stmt = insert!
+  if stmt\status() ~= pgsql.PGRES_COMMAND_OK
     arg, err = toutf(arg)
-    stmt, err = insert!
-    unless stmt
-      log\error err
+    stmt = insert!
+    if stmt\status() ~= pgsql.PGRES_COMMAND_OK
+      ivar2\Log('error', "logger: error when inserting line: \"%s\": %s", stmt\errorMessage())
 
 history = (source, destination, nr) ->
   nr = tonumber(nr) or 1
   -- TODO ignore messages that are commands
-  stmt = dbh!\prepare [[
+  sql = [[
     SELECT
       *
       FROM log
-      WHERE channel=?
+      WHERE channel=$1
       AND (type = 'PRIVMSG' OR type = 'ACTION')
       ORDER BY time
-      DESC LIMIT ?
+      DESC LIMIT $2
     ]]
-  stmt\execute destination, nr
-  out = {}
-  for row in stmt\rows(true) -- true for column names
-    out[#out+1] = row
-
+  out = res2rows(dbh!\execParams sql, destination, nr)
   if #out == 1
     return out[1].message
   return out
 
 lastlog = (source, destination, arg) ->
-  nr = tonumber(nr) or 1
   arg = '%'..arg..'%'
-  stmt = dbh!\prepare [[
+  sql = [[
     SELECT
       *
       FROM log
-      WHERE channel=?
+      WHERE channel=$1
       AND (type = 'PRIVMSG' OR type = 'ACTION')
-      AND message LIKE ?
+      AND message LIKE $2
       ORDER BY time DESC
       LIMIT 20
     ]]
-  stmt\execute destination, arg
-  out = {}
-  for row in stmt\rows(true) -- true for column names
-    out[#out+1] = row
+  out = res2rows(dbh!\execParams sql, destination, arg)
 
   if #out == 1
     return out[1].message
@@ -118,22 +113,17 @@ lastlog = (source, destination, arg) ->
 
 seen = (source, destination, nick) =>
   nick = ivar2.util.trim(nick)
-  stmt, err = dbh!\prepare [[
+  sql = [[
     SELECT
         *,
         date_trunc('second', time) as sectime,
         date_trunc('second', age(now(), date_trunc('second', time))) as ago
       FROM log
-      WHERE nick = ?
+      WHERE nick = $1
       ORDER BY time DESC
       LIMIT 1
     ]]
-  unless stmt
-    print(err)
-  stmt\execute nick
-  out = {}
-  for row in stmt\rows(true) -- true for column names
-    out[#out+1] = row
+  out = res2rows(dbh!\execParams sql, nick)
 
   actions =
     'ACTION': 'talking in third person'
@@ -161,7 +151,7 @@ return {
     '^%pseen (.+)$': seen
     '^%plast$': (source, destination) =>
       -- Last message is the command requesting last, so get the next to last
-      last_two =  history(source,destination, 2)
+      last_two = history(source,destination, 2)
       say last_two[2].message
     '^%plastlog (.+)$': (source, destination, arg) =>
       out = {}
