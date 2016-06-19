@@ -1,4 +1,4 @@
-local DBI = require 'DBI'
+local pgsql = require "cqueues_pgsql"
 local util = require'util'
 
 -- Connection handle
@@ -6,28 +6,34 @@ local conn = false
 
 -- Open connection to the postgresql database using DBI lib and ivar2 global config
 local connect = function()
-    local dbh, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
-    if not dbh then
-        ivar2:Log('error', "Unable to connect to DB: %s", err)
+    conn = pgsql.connectdb("dbname=" .. tostring(ivar2.config.dbname) .. " user=" .. tostring(ivar2.config.dbuser) .. " password=" .. tostring(ivar2.config.dbpass) .. " host=" .. tostring(ivar2.config.dbhost) .. " port=" .. tostring(ivar2.config.dbport))
+    if conn:status() ~= pgsql.CONNECTION_OK then
+        ivar2:Log('error', "Unable to connect to DB: %s", conn:errorMessage())
         return
     end
-    conn = dbh
+end
+
+local res2rows = function(res)
+  if not res:status() == 2 then
+    error(res:errorMessage(), nil)
+  end
+  local rows = {}
+  for i = 1, res:ntuples() do
+    local row = {}
+    for j = 1, res:nfields() do
+      row[res:fname(j)] = res:getvalue(i, j)
+    end
+    rows[#rows + 1] = row
+  end
+  return rows
 end
 
 local openDb = function()
     if not conn then
         connect()
     end
-
-    -- Check if connection is alive
-    local alive = conn:ping()
-    if not alive then
-        connect()
-    end
-
-    local success, err = DBI.Do(conn, 'SELECT NOW()')
-    if not success then
-        ivar2:Log('error', "SQL Connection: %s", err)
+    if conn:status() ~= pgsql.CONNECTION_OK then
+        ivar2:Log('error', "Reconnecting to DB: %s", conn:errorMessage())
         connect()
     end
 
@@ -61,14 +67,14 @@ local checkOlds = function(dbh, source, destination, url)
     -- create a select handle
     local query = [[
             SELECT
-                date_trunc('second', time),
-                date_trunc('second', age(now(), date_trunc('second', time))),
+                date_trunc('second', time) as time,
+                date_trunc('second', age(now(), date_trunc('second', time))) as age,
                 nick
             FROM urls
             WHERE
-                url LIKE ?
+                url LIKE $1
             AND
-                channel = ?
+                channel = $2
             ORDER BY time ASC
     ]]
 
@@ -78,28 +84,19 @@ local checkOlds = function(dbh, source, destination, url)
         url = '%youtube.com%v='..vid..'%'
     end
     url = url_to_pattern(url)
-    local sth = assert(dbh:prepare(query))
 
-    -- execute select with a url bound to variable
-    sth:execute(url, destination)
-
-    -- get list of column names in the result set
-    --local columns = sth:columns()
+    local rows = res2rows(dbh:execParams(query, url, destination))
 
     local count = 0
     local nick
     local ago
 
     -- iterate over the returned data
-    for row in sth:rows() do
+    for _, row in ipairs(rows) do
         count = count + 1
-        -- rows() with no arguments (or false) returns
-        -- the data as a numerically indexed table
-        -- passing it true returns a table indexed by
-        -- column names
         if count == 1 then
-            ago = row[2]
-            nick = row[3]
+            ago = row.age
+            nick = row.nick
         end
     end
 
@@ -111,33 +108,22 @@ end
 local dbLogUrl = function(dbh, source, destination, url, msg)
     local nick = source.nick
 
-    ivar2:Log('info', string.format('Inserting URL into db. %s,%s, %s, %s', nick, destination, msg, url))
-
-    -- check status of the connection
-    -- local alive = dbh:ping()
+    ivar2:Log('info', string.format('pgolds: Inserting URL: <%s>', url))
 
     -- create a handle for an insert
-    local insert = dbh:prepare('INSERT INTO urls(nick,channel,url,message) values(?,?,?,?)')
-
-    -- execute the handle with bind parameters
-    insert:execute(nick, destination, url, msg)
-
-    -- commit the transaction
-    dbh:commit()
-
-    -- there was some problems with inserted URLs getting the timestamp
-    -- of the previous URL. Almost like default now() was buggy. But somehow
-    -- closing the connection for each URL helps? I don't understand
-    --insert:close()
-    --dbh:close()
+    local res = dbh:execParams('INSERT INTO urls(nick,channel,url,message) values($1,$2,$3,$4)', nick, destination, url, msg)
+    if res:status() ~= pgsql.PGRES_COMMAND_OK then
+        ivar2:Log('error', "pgolds: %s", res:errorMessage())
+    end
 end
 
 do
+    -- Check if postgresql is configured
+    if not ivar2.config.dbhost then
+        ivar2:Log('warning', "pgolds: PostgreSQL not configured, disabling handler")
+        return function() end
+    end
     return function(source, destination, queue, msg)
-        -- Check if postgresql is configured
-        if not ivar2.config.host then
-            return
-        end
         local dbh = openDb()
         local nick, count, ago = checkOlds(dbh, source, destination, queue.url)
         dbLogUrl(dbh, source, destination, queue.url, msg)
