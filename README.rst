@@ -31,7 +31,8 @@ Instructions for containing Lua and all deps inside a single directory, almost l
     bin/luarocks install luafilesystem
     bin/luarocks install lsqlite3
     # Optional
-    bin/luarocks install luadbi-postgresql
+    bin/luarocks install --server=http://luarocks.org/dev cqueues-pgsql  PQ_INCDIR=/usr/include/postgresql # requires libpq-dev system package
+
     # Optional
     bin/luarocks install redis-lua
 
@@ -54,7 +55,7 @@ Alternate instructions for install Lua(JIT) + deps, trying to use some system pa
     # if you want to use LuaJIT instead of Lua
     sudo apt-get install luajit
     # if you want postgresql support
-    sudo apt-get install lua-dbi-postgresql
+    sudo luarocks install --server=http://luarocks.org/dev cqueues-pgsql  PQ_INCDIR=/usr/include/postgresql # requires libpq-dev system package
     # if you want redis persist
     sudo apt-get install redis-server lua-redis
 
