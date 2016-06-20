@@ -125,8 +125,8 @@ poll = ->
       headers['If-None-Match'] = etag
 
     data, url, response = simplehttp {url:rssurl,headers:headers}
-      -- Reopen DB because of async
-      --sdb = get_db!
+    if not data or not url or not response
+      continue
     sdb = db
 
     lastModified = response.headers['Last-Modified']
@@ -135,16 +135,15 @@ poll = ->
 
     -- Unmodified content
     if response.status_code == 304 or not data
-      -- return from the simplehttp callback
-      return
+      continue
 
     ok, feed, err = pcall -> feedparser.parse data
     if not ok
       ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{feed}> data for feed: <#{name}> with URL <#{url}>"
-      return
+      continue
     if err
       ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{err}> data for feed: <#{name}> with URL <#{url}>"
-      return
+      continue
     else
       title = feed.title
       author = feed.author
@@ -181,7 +180,6 @@ poll = ->
           if code == sql.CONSTRAINT -- duplicate value
             ivar2\Log 'debug', "Reached duplicate link, breaking"
             break
-    --sdb\close!
     announce(db, id)
   db\close!
 
