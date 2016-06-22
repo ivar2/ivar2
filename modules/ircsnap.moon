@@ -2,6 +2,12 @@
 html2unicode = require 'html'
 lfs = require'lfs'
 
+hex_to_char = (x) ->
+  string.char(tonumber(x, 16))
+
+unescape = (url) ->
+  url\gsub("%%(%x%x)", hex_to_char)
+
 -- All URLs in this module is under this prefix
 urlbase = '/image/'
 
@@ -82,6 +88,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     res\append 'Content-Length', tostring(#body)
     req\write_headers(res, false, 30)
     req\write_body_from_string(body, 30)
+    return -- empty return
 
   file = url\match '/file/(.*)$'
   if file
@@ -112,7 +119,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   -- Serve video player page
   video = url\match '/video/(.*)$'
   if video then
-    return send video_html(video)
+    send video_html(video)
+    return
 
   channel = url\match('channel=(.+)%s*')
   unless channel
@@ -120,7 +128,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     return
 
   channel = html2unicode channel
-  unescaped_channel = channel\gsub '%%23', '#'
+  unescaped_channel = unescape channel
 
   html = [[
   <!DOCTYPE html>
