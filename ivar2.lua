@@ -39,6 +39,7 @@ local ivar2 = {
 	channels = {},
 	more = {},
 	timers = {},
+	config = {},
 	cancelled_timers = {},
 	util = util,
 	timeout = 30,
@@ -48,7 +49,7 @@ local ivar2 = {
 		self.socket:clearerr()
 		if(self.config.autoReconnect) then
 			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
-			self:Timer('_reconnect', 60, function(loop, timer, revents)
+			self:Timer('_reconnect', 60, 60, function()
 				self:Reconnect()
 			end)
 		else
@@ -809,11 +810,6 @@ function ivar2:SignalHandle()
 	end
 end
 
--- Install Linux signal handler
-queue:wrap(function ()
-	ivar2:SignalHandle()
-end)
-
 if(reload) then
 	return ivar2
 end
@@ -822,15 +818,29 @@ end
 lfs.mkdir('cache')
 
 -- Load config and start the bot
-queue:wrap(function()
-		local config = assert(loadfile(configFile))()
-		-- Store the config file name in the config so it can be accessed later
-		config.configFile = configFile
-		ivar2:Connect(config)
-end)
-while true do
-	local ok, err, ctx, ecode, thread, obj, fd = queue:step()
-	if not ok then
-		ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
+if configFile then
+	queue:wrap(function()
+			local ok, config = pcall(loadfile(configFile))
+			if not ok then
+				io.stderr:write("Unable to load config "..tostring(configFile)..'\n')
+				os.exit(1)
+			end
+			-- Store the config file name in the config so it can be accessed later
+			config.configFile = configFile
+			ivar2:Connect(config)
+	end)
+	-- Install Linux signal handler
+	queue:wrap(function ()
+		ivar2:SignalHandle()
+	end)
+	while true do
+		-- luacheck: ignore obj fd
+		local ok, err, ctx, ecode, thread, obj, fd = queue:step()
+		if not ok then
+			ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
+			ivar2:Log('error', debug.traceback(thread, err))
+		end
 	end
+else
+	ivar2:Log('error', 'No config file specified')
 end
