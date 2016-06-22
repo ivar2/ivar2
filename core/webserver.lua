@@ -88,7 +88,7 @@ webserver.on_stream = function(stream)
 					log:error('webserver> error for URL pattern: %s: %s', pattern, body)
 				else
 					-- Handlers can also write to stream directly, so check for body
-					if body then
+					if body and stream.state ~= 'closed' then -- check if not closed
 						respond(stream, res, body, code, response_headers)
 					end
 					-- Assume handler has already sent response.
