@@ -698,7 +698,7 @@ function ivar2:Reload()
 		--self.control:stop(self.Loop)
 		--self.timeout:stop(self.Loop)
 		pcall(function()
-			self.webserver:close()
+			self.webserver.stop()
 		end)
 
 		message.socket = self.socket
