@@ -222,7 +222,9 @@ do
 		_PROXY.customHosts = customHosts
 
 		for fn in lfs.dir(path) do
-			loadFile('custom',  path, fn)
+			if fn:match'%.lua$' then
+				loadFile('custom',  path, fn)
+			end
 		end
 
 		_PROXY.customHosts = nil
@@ -232,9 +234,11 @@ do
 	do
 		local path = 'modules/title/post/'
 		for fn in lfs.dir(path) do
-			local func = loadFile('post',  path, fn)
-			if(func) then
-				table.insert(customPost, func)
+			if fn:match'%.lua$' then
+				local func = loadFile('post',  path, fn)
+				if(func) then
+					table.insert(customPost, func)
+				end
 			end
 		end
 	end
