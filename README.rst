@@ -34,7 +34,7 @@ Instructions for containing Lua and all deps inside a single directory, almost l
     bin/luarocks install --server=http://luarocks.org/dev cqueues-pgsql  PQ_INCDIR=/usr/include/postgresql # requires libpq-dev system package
 
     # Optional
-    bin/luarocks install redis-lua
+    bin/luarocks install --server=http://luarocks.org/dev lredis
 
 
     # Now you have a self contained Lua environment with deps that you can run the bot.
@@ -57,7 +57,8 @@ Alternate instructions for install Lua(JIT) + deps, trying to use some system pa
     # if you want postgresql support
     sudo luarocks install --server=http://luarocks.org/dev cqueues-pgsql  PQ_INCDIR=/usr/include/postgresql # requires libpq-dev system package
     # if you want redis persist
-    sudo apt-get install redis-server lua-redis
+    sudo luarocks install --server=http://luarocks.org/dev lredis
+    sudo apt-get install redis-server
 
 
 Decompress the required data files in cache directory.
