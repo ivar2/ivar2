@@ -10,7 +10,7 @@ end
 
 return {
 	PRIVMSG = {
-		['madd>%s*(%S+)$'] = function(self, source, destination, module)
+		['^%pmadd%s*(%S+)$'] = function(self, source, destination, module)
 			if(not verifyOwner(self, source, destination)) then return end
 
 			self:LoadModule(module)
@@ -18,7 +18,7 @@ return {
 			self:Msg('privmsg', destination, source, "Loaded module: %s", module)
 		end,
 
-		['mdel>%s*(%S+)$'] = function(self, source, destination, module)
+		['^%pmdel%s*(%S+)$'] = function(self, source, destination, module)
 			if(not verifyOwner(self, source, destination)) then return end
 
 			self:DisableModule(module)
@@ -26,7 +26,7 @@ return {
 			self:Msg('privmsg', destination, source, "Disable module: %s", module)
 		end,
 
-		['irc> (%S+) (.+)$'] = function(self, source, destination, command, argument)
+		['^%pirc (%S+) (.+)$'] = function(self, source, destination, command, argument)
 			if(not verifyOwner(self, source, destination)) then return end
 
 			command = command:lower()
@@ -50,14 +50,14 @@ return {
 			end
 		end,
 
-		['^reload>$'] = function(self, source, destination)
+		['^%preload$'] = function(self, source, destination)
 			if(not verifyOwner(self, source, destination)) then return end
 
 			self:Msg('privmsg', destination, source, "Triggered reload.")
 			self:Reload()
 		end,
 
-		['reload>%s*(%S+)$'] = function(self, source, destination, module)
+		['^%preload%s*(%S+)$'] = function(self, source, destination, module)
 			if(not verifyOwner(self, source, destination)) then return end
 
 			self:Msg('privmsg', destination, source, "Reloading module: %s", module)
@@ -66,7 +66,7 @@ return {
 		end,
 
 
-		['timers> (%S+) ?(.*)$'] = function(self, source, destination, command, argument )
+		['^%ptimers%s*(%S+) ?(.*)$'] = function(self, source, destination, command, argument )
 			if(not verifyOwner(self, source, destination)) then return end
 
 			command = command:lower()
