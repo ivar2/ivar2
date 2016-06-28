@@ -532,10 +532,10 @@ function ivar2:Events()
 end
 
 -- Let modules register commands
-function ivar2:RegisterCommand(handlerName, pattern, handler, event)
-	-- Default event is PRIVMSG
-	if(not event) then
-		event = 'PRIVMSG'
+function ivar2:RegisterCommand(handlerName, pattern, handler, verb)
+	-- Default verb is PRIVMSG
+	if(not verb) then
+		verb = 'PRIVMSG'
 	end
 	local env = {
 		ivar2 = self,
@@ -545,18 +545,18 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 	setfenv(handler, env)
 	self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
 
-	if(not self.events[event][handlerName]) then
-		self.events[event][handlerName] = {}
+	if(not self.events[verb][handlerName]) then
+		self.events[verb][handlerName] = {}
 	end
-	self.events[event][handlerName][pattern] = handler
+	self.events[verb][handlerName][pattern] = handler
 end
 
-function ivar2:UnregisterCommand(handlerName, pattern, event)
-	-- Default event is PRIVMSG
-	if(not event) then
-		event = 'PRIVMSG'
+function ivar2:UnregisterCommand(handlerName, pattern, verb)
+	-- Default verb is PRIVMSG
+	if(not verb) then
+		verb = 'PRIVMSG'
 	end
-	self.events[event][handlerName][pattern] = nil
+	self.events[verb][handlerName][pattern] = nil
 	self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
 end
 
