@@ -11,7 +11,10 @@ local function handler(self, source, destination, args, domain)
 			if not entry or not entry.extract then
 				say('Missing entry')
 			else
-				say(entry.extract)
+				-- Sometimes text is very long, let's try to snip some
+				local text = entry.extract
+				text = text:match('(.-)\n') or text
+				say(text)
 			end
 		end
 	)

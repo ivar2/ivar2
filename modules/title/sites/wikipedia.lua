@@ -17,7 +17,10 @@ customHosts['wikipedia.org'] = function(queue, info)
 				if not entry or not entry.extract then
 				queue:done('Missing entry')
 				else
-					queue:done(entry.extract)
+					-- Sometimes text is very long, let's try to snip some
+					local text = entry.extract
+					text = text:match('(.-)\n') or text
+					queue:done(text)
 				end
 			end
 		)
