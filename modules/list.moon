@@ -27,8 +27,27 @@ listPatterns = (source, destination, moduleName) =>
   if #out > 0
     say "%s patterns:\n %s", moduleName, table.concat(out, ',\n ')
 
+Apropos = (s, d, what) =>
+  moduleTable = @Events!['PRIVMSG']
+  unless moduleTable
+    return
+
+  out = {}
+  for moduleName, moduleTable in next, moduleTable
+    if @IsModuleDisabled moduleName, destination
+      return
+
+    for pattern, callback in next, moduleTable
+      if type(pattern) == 'string'
+        patt = @ChannelCommandPattern(pattern, moduleName, destination)
+        if patt and type(patt) == 'string' and patt\match what
+          out[#out+1] = "#{ivar2.util.bold moduleName} module has pattern #{ivar2.util.italic patt}"
+  say table.concat(out, ',\n')
+
+
 PRIVMSG:
   '^%plist$': listModules
   '^%plist (%w+)$': listPatterns
   '^%phelp$': listModules
   '^%phelp (%w+)$': listPatterns
+  '^%papropos (.*)$': Apropos
