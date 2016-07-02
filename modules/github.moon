@@ -37,15 +37,22 @@ strip_email = (text) ->
 handlers = {
   push: (repo, destination, json) ->
     branch = util.bold(json.ref\gsub 'refs/heads/', '')
-    for i, c in pairs(json.commits)
+    out = {"[#{repo}]: #{branch}"}
+    lastauthor = ''
+    for i, c in ipairs json.commits
       if i > 3
         break
       message = c.message\gsub '\n.*', ''
       if i == 1
-        message = message .. ' ' .. json.compare
-      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{util.nonickalertword c.author.username}: #{message}"
+        message ..= ' ' .. json.compare
+      author = ''
+      if c.author.username ~= lastauthor
+        author = "<#{util.nonickalertword c.author.username}>"
+      out[#out+1] = "#{author} #{message}\n"
+      lastauthor = c.author.username
     if #json.commits >= 4
-      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{#json.commits-3} more commits not displayed."
+      out[#out+1] = "#{#json.commits-3} more commits not displayed."
+    table.concat out, ' '
   watch: (repo, destination, json) ->
     action = json.action
     if action == 'started'
