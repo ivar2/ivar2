@@ -115,18 +115,6 @@ describe("test util lib", function()
             assert.are_equal(utf8.char(0x1f600), '😀')
         end)
     end)
-    describe("uri parse", function()
-        it("should work with utf8 chars", function()
-            local yrurl = 'http://www.yr.no/stad/Norway/Akershus/Bærum/Kolsås~2333471/forecast.xml'
-            local urip = util.uri_parse(yrurl)
-            assert.are_same({
-                host  = 'www.yr.no',
-                path  = '/stad/Norway/Akershus/Bærum/Kolsås~2333471/forecast.xml',
-                scheme = 'http',
-            }, urip)
-
-        end)
-    end)
 end)
 
 describe("test webserver", function()
