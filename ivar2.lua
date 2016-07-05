@@ -59,7 +59,7 @@ local ivar2 = {
 
 	handle_connected = function(self)
 		if(not self.updated) then
-			if self.config.password then
+			if(self.config.password) then
 				self:Send('PASS %s', self.config.password)
 			end
 			self:Nick(self.config.nick)
@@ -125,7 +125,9 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
-		self.socket:write(message .. '\r\n')
+		if(self.socket) then
+			self.socket:write(message .. '\r\n')
+		end
 	end
 end
 
@@ -620,6 +622,10 @@ end
 
 function ivar2:Connect(config)
 	self.config = config
+	if(not self.config.uri) then
+		self:Log('error', 'No URI defined in config, aborting.')
+		return
+	end
 
 	--if(not self.control) then
 	--	self.control = assert(loadfile('core/control.lua'))(ivar2)
@@ -677,7 +683,7 @@ end
 function ivar2:Reconnect()
 	self:Log('info', 'Reconnecting to servers.')
 
-	-- Doesn't exist if connection.tcp() in :Connect() fails.
+	-- Doesn't exist if connecting in :Connect() fails.
 	if(self.socket) then
 		self.socket:close()
 	end
@@ -819,24 +825,27 @@ lfs.mkdir('cache')
 
 -- Load config and start the bot
 if configFile then
+	local ok, config = pcall(loadfile(configFile))
+	if not ok then
+		io.stderr:write("Unable to load config "..tostring(configFile)..': '..tostring(config)..'\n')
+		os.exit(1)
+	end
+	-- Store the config file name in the config so it can be accessed later
+	config.configFile = configFile
 	queue:wrap(function()
-			local ok, config = pcall(loadfile(configFile))
-			if not ok then
-				io.stderr:write("Unable to load config "..tostring(configFile)..'\n')
-				os.exit(1)
+			if(not ivar2:Connect(config)) then
+				os.exit(0)
 			end
-			-- Store the config file name in the config so it can be accessed later
-			config.configFile = configFile
-			ivar2:Connect(config)
 	end)
 	-- Install Linux signal handler
 	queue:wrap(function ()
 		ivar2:SignalHandle()
 	end)
+	-- Run the cqueues main loop through a stepping function to catch errors
 	while true do
 		-- luacheck: ignore obj fd
-		local ok, err, ctx, ecode, thread, obj, fd = queue:step()
-		if not ok then
+		local stepok, err, ctx, ecode, thread, obj, fd = queue:step()
+		if(not stepok) then
 			ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
 			ivar2:Log('error', debug.traceback(thread, err))
 		end
