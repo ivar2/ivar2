@@ -1,3 +1,4 @@
+--- HTML Title resolving module
 local util = require'util'
 local simplehttp = util.simplehttp
 local trim = util.trim
@@ -295,7 +296,7 @@ return {
 			-- We don't want to pick up URLs from commands.
 			if(argument:match'^%p') then return end
 
-			-- Handle CTCTP ACTION
+			-- Handle CTCP ACTION
 			if(argument:sub(1,1) == '\001' and argument:sub(-1) == '\001') then
 				argument = argument:sub(9, -2)
 			end
@@ -353,10 +354,10 @@ return {
 					output.queue[i] = {
 						index = tmp[url],
 						url = url,
-						done = function(self, msg)
-							self.output = msg
+						done = function(myself, msg)
+							myself.output = msg
 
-							postProcess(source, destination, self, argument)
+							postProcess(source, destination, myself, argument)
 							handleOutput(output)
 						end,
 					}
