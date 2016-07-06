@@ -193,7 +193,7 @@ local function run(untrusted_code)
 end
 
 local parseData = function(data)
-	local data = data:match'<div id=currency_converter_result>(.-)</span>'
+	data = data:match'<div id=currency_converter_result>(.-)</span>'
 	if(not data) then
 		return 'Some currency died? No exchange rates returned.'
 	end
@@ -208,7 +208,9 @@ local checkInput = function(value, from, to)
 
 	-- Control the input.
 	value = value:gsub(',', '.')
-	local success, value, err = run('return ' .. value)
+	-- luacheck: ignore success
+	local success, err
+	success, value, err = run('return ' .. value)
 	if(err) then
 		return nil, string.format('Parsing of input failed: %s', err)
 	end
@@ -236,7 +238,8 @@ local handleExchange = function(self, source, destination, value, from, to)
 		return say( 'wat ar u dewn... %s! STAHP!', source.nick)
 	end
 
-	local success, value = checkInput(value, from, to)
+	local success
+	success, value = checkInput(value, from, to)
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
