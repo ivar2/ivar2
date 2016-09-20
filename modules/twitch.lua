@@ -69,8 +69,11 @@ end
 local gameHandler= function(self, source, destination, input, limit)
 	limit = limit or 5
 	--	'http://api.twitch.tv/kraken/streams?limit=20&offset=0&game='..util.urlEncode(input)..'&on_site=1',
-	simplehttp(
-		'https://api.twitch.tv/kraken/search/streams?limit='..tostring(limit)..'&offset=0&query='..util.urlEncode(input),
+	simplehttp({
+		url='https://api.twitch.tv/kraken/search/streams?limit='..tostring(limit)..'&offset=0&query='..util.urlEncode(input),
+		headers={
+			['Client-ID'] = ivar2.config.twitchApiKey,
+		}},
 		function(data)
 			local streams = parseData(self, source, destination, data)
 			if #streams == 0 then
@@ -88,8 +91,11 @@ end
 
 local allHandler = function(self, source, destination)
 	local url = 'https://api.twitch.tv/kraken/streams'
-	simplehttp(
-		url,
+	simplehttp({
+		url=url,
+		headers={
+			['Client-ID'] = ivar2.config.twitchApiKey,
+		}},
 		function(data)
 			local streams = parseData(self, source, destination, data)
 			local out = formatData(self, source, destination, streams)
@@ -108,12 +114,15 @@ local checkStreams = function()
 		local alerts = store[alertsKey] or {}
 		for name, game in pairs(games) do
 			local limit = 5
-			simplehttp(
-				string.format(
+			simplehttp({
+				url=string.format(
 					'https://api.twitch.tv/kraken/search/streams?limit=%s&offset=0&query=%s',
 					tostring(limit),
 					util.urlEncode(game.name)
 				),
+				headers={
+					['Client-ID'] = ivar2.config.twitchApiKey,
+				}},
 				function(data)
 					local streams = parseData(ivar2, nil, c, data, game.name)
 					for _, stream in pairs(streams) do
