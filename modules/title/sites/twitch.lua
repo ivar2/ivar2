@@ -3,6 +3,10 @@ local simplehttp = util.simplehttp
 local json = util.json
 
 customHosts['twitch%.tv'] = function(queue, info)
+	if not ivar2.config.twitchApiKey then
+		return
+	end
+
 	local path = info.path
 
 	if(not path) then
@@ -27,8 +31,11 @@ customHosts['twitch%.tv'] = function(queue, info)
 		url = string.format('https://api.twitch.tv/kraken/channels/%s', username)
 	end
 
-	simplehttp(
-		url,
+	simplehttp({
+		url=url,
+		headers={
+			['Client-ID'] = ivar2.config.twitchApiKey,
+		}},
 
 		function(data, url, response)
 			local resp = json.decode(data)
