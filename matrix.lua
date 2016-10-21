@@ -74,6 +74,16 @@ urllib.urlencode = function(tbl)
     end
     return table.concat(out, '&')
 end
+urllib.html_escape = function(s)
+    return (string.gsub(s, "[}{\">/<'&]", {
+        ["&"] = "&amp;",
+        ["<"] = "&lt;",
+        [">"] = "&gt;",
+        ['"'] = "&quot;",
+        ["'"] = "&#39;",
+        ["/"] = "&#47;"
+    }))
+end
 
 local function byte_to_tag(s, byte, open_tag, close_tag)
     if s:match(byte) then
@@ -99,6 +109,7 @@ local function byte_to_tag(s, byte, open_tag, close_tag)
 end
 
 local function irc_formatting_to_html(s)
+    s = urllib.html_escape(s)
     -- TODO, support foreground and background?
     local ct = {'white','black','blue','green','red','maroon','purple',
         'orange','yellow','lightgreen','teal','cyan', 'lightblue',
@@ -436,6 +447,10 @@ function MatrixServer:connect(config)
             end)
         end
 
+        if(not self.x0) then
+            self.x0 = assert(loadfile('core/x0.lua'))(self)
+        end
+
         self:http('/login', self:_getPost(post), ('login'))
 
         self.nick = config.nick
@@ -452,7 +467,10 @@ function MatrixServer:initial_sync()
                 timeline = {
                     limit = 0, -- dont want backlog
                 }
-            }
+            },
+            presence = {
+                not_types = {'*'}, -- dont want presence
+            },
         })
     })
     self:http('/sync?'..data, {}, ('/initialsync'))
@@ -1612,11 +1630,26 @@ end
 lfs.mkdir('cache')
 
 -- Load config and start the bot
-queue:wrap(function()
-    local config = assert(loadfile(configFile))()
-    -- Store the config file name in the config so it can be accessed later
-    config.configFile = configFile
+if configFile then
     ivar2 = MatrixServer.create()
-    ivar2:connect(config)
-end)
-assert(queue:loop())
+    queue:wrap(function()
+        local ok, config = pcall(loadfile(configFile))
+        if not ok then
+            io.stderr:write("Unable to load config "..tostring(configFile)..'\n')
+            os.exit(1)
+        end
+        -- Store the config file name in the config so it can be accessed later
+        config.configFile = configFile
+        ivar2:connect(config)
+    end)
+    while true do
+        -- luacheck: ignore obj fd
+        local ok, err, ctx, ecode, thread, obj, fd = queue:step()
+        if not ok then
+            ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
+            ivar2:Log('error', debug.traceback(thread, err))
+        end
+    end
+else
+    MatrixServer:Log('error', 'No config file specified')
+end
