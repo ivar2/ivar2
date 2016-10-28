@@ -130,7 +130,7 @@ local handleInput = function(self, source, destination, word, ordbok)
 	if not ordbok then ordbok = 'bokmaal' end
 	local query = ivar2.util.urlEncode(word)
 	ivar2.util.simplehttp(
-		"http://www.nob-ordbok.uio.no/perl/ordbok.cgi?ordbok="..ordbok.."&"..ordbok.."=+&OPP=" .. query,
+		"http://ordbok.uib.no/perl/ordbok.cgi?ordbok="..ordbok.."&"..ordbok.."=+&OPP=" .. query,
 
 		function(data)
 			local words, err = parseData(data)
