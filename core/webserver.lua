@@ -35,7 +35,7 @@ local handlers = {
 	['/favicon.ico'] = handlerNotFound
 }
 
-webserver.on_stream = function(stream)
+webserver.on_stream = function(myserver, stream)
 	local ok, err = pcall(function()
 		local headers = stream:get_headers(30)
 		stream.headers = {}
@@ -78,7 +78,15 @@ webserver.on_stream = function(stream)
 			end
 		end
 		local found
-		log:info('webserver> %s %s %s', stream.method, peer, stream.url)
+		log:info('webserver> "%s %s HTTP/%g" "%s" "%s" "%s"\n',
+			headers:get(":method") or "",
+			headers:get(":path") or "",
+			stream.connection.version,
+			peer,
+			headers:get("referer") or "-",
+			headers:get("user-agent") or "-"
+		)
+
 		for pattern, handler in pairs(handlers) do
 			if path:match(pattern) then
 				log:debug('webserver> serving handler :%s', pattern)
@@ -111,7 +119,7 @@ webserver.on_stream = function(stream)
 	end
 end
 
-webserver.start = function(host, port)
+webserver.start = function(host, port, cq)
 	if not (host and port) then
 		return
 	end
@@ -119,6 +127,16 @@ webserver.start = function(host, port)
 	runningserver = server.listen{
 		host = host,
 		port = port,
+		onstream = webserver.on_stream,
+		cq = cq,
+		onerror = function(myserver, context, op, err, errno)
+			if op == "onstream" and err == 32 then return end
+			local msg = op .. " on " .. tostring(context) .. " failed"
+			if err then
+				msg = msg .. ": " .. tostring(err)
+			end
+			log:error('webserver> %s', msg)
+		end;
 	}
 	return runningserver
 end
