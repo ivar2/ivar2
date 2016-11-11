@@ -73,6 +73,11 @@ handlers = {
     body = json.comment.body
     number = util.bold json.pull_request.number
     "[#{repo}]: PR ##{number} <#{util.nonickalertword json.sender.login}> #{body}"
+  pull_request_review: (repo, destinatino, json) ->
+    body = json.review.body
+    number = util.bold json.pull_request.number
+    state = json.review.state\gsub('_', ' ')
+    "[#{repo}]: PR ##{number} Review #{state} <#{util.nonickalertword json.sender.login}> #{body}"
   issues: (repo, destination, json) ->
     action = acolor json.action
     nr = util.bold json.issue.number
