@@ -13,7 +13,7 @@ phrases = {
 }
 
 PRIVMSG:
-  '^%pmotivate (.*)$': (s, d, n) => say PickOne(phrases), n
+  '^%pmotivate (.*)$': (s, d, n) => say PickOne(phrases), ivar2.util.trim(n)
   '^%^5 (.*)$': => reply '⁵!!'
   '^%^5$': => say '⁵!!'
 
