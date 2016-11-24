@@ -9,7 +9,7 @@ http_tls = require'http.tls'
 pkey = require'openssl.pkey'
 auxlib = require"openssl.auxlib"
 util = require'util'
-{:bold, :split, :green, :red, :simplehttp, :json, :urlEncode} = require'util'
+{:simplehttp, :bold, :split, :green, :red, :simplehttp, :json, :urlEncode} = require'util'
 
 cache = {}
 
@@ -139,6 +139,34 @@ Query = (host, types='AAAA,A', timeout=15) ->
       @Send "WHO #{destination}"
     '^%pipv6 stats (.*)$': (source, destination, dest) =>
       @Send "WHO #{dest}"
+    '^%phttp (.*)$': (source, destination, arg) =>
+      args = split arg, ' '
+      argc = #args
+      url = args[1]
+      field = ''
+      if argc == 2
+        field = args[1]
+        url = args[2]
+      unless url\match '^http'
+        url = 'http://' .. url
+      data, uri, response = simplehttp(url)
+      unless data
+        reply 'Error: '..tostring(uri)
+      unless response
+        reply data..uri
+      status = response.status_code
+      headers = {}
+      if argc == 1
+        for k, v in pairs response.headers
+          headers[#headers+1] = "#{k}:#{v}"
+        table.sort(headers)
+        headers = table.concat(headers, ', ')
+        say "HTTP v#{response.version} #{headers}"
+      elseif argc == 2
+        field = field\lower!
+        say "#{field} : #{response.headers[field] or 'Header not found'}"
+
+
   }
   ['352']: {
     (source, destination, input) =>
