@@ -164,7 +164,11 @@ Query = (host, types='AAAA,A', timeout=15) ->
         say "HTTP v#{response.version} #{headers}"
       elseif argc == 2
         field = field\lower!
-        say "#{field} : #{response.headers[field] or 'Header not found'}"
+        value = response.headers[field]
+        if field == 'version'
+          value = response.version
+
+        say "#{field} : #{value or 'Header not found'}"
 
 
   }
