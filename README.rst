@@ -24,7 +24,7 @@ Instructions for containing Lua and all deps inside a single directory, almost l
     # Change dir to ivarenv
     cd ivarenv
     # Run Luarocks from ivarenv
-    bin/luarocks install --server=http://luarocks.org/dev http
+    bin/luarocks install http
     bin/luarocks install lua-cjson
     bin/luarocks install lua-zlib
     bin/luarocks install lua-iconv
@@ -50,7 +50,7 @@ Alternate instructions for install Lua(JIT) + deps, trying to use some system pa
     sudo luarocks install lsqlite3
     sudo luarocks install luabitop
     sudo luarocks install luarocks #newer version of luarocks to support git+https
-    sudo luarocks install --server=http://luarocks.org/dev http
+    sudo luarocks install http
     sudo luarocks install luafilesystem
     # if you want to use LuaJIT instead of Lua
     sudo apt-get install luajit
