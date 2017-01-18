@@ -1,4 +1,5 @@
 local httpclient = require'http.request'
+local monotime = require "cqueues".monotime
 local uri_parse = require'uriparse'
 local idn = require'idn'
 local zlib = require'zlib'
@@ -8,9 +9,9 @@ local log = lconsole()
 -- Change to DEBUG if you want to see full URL fetch log
 log:setLevel('INFO')
 
-local REQ_TIMEOUT = 60
-
 local function simplehttp(url, callback, unused, limit)
+	local req_timeout = 60
+
 	local uri
 	if(type(url) == "table") then
 		uri = url.url or url[1]
@@ -37,14 +38,14 @@ local function simplehttp(url, callback, unused, limit)
 	local uri_t = uri_parse(uri)
 	local client = httpclient.new_from_uri(uri_t)
 
-	-- Allow override
+	-- Allow override of client HTTP version
 	if url.version then
 		client.version = url.version
-	else
-		-- Current version of lua-http / cqueues has issues with lingering eventloops
-		-- with HTTP2. So we explicitly set version 1.1 for now until this is fixed
-		-- upstream.
-		client.version = 1.1
+	end
+
+	-- Allow client to overide request timeout, note that this isn't super precise because we reuse the same timeout for reading headers and such
+	if client.timeout then
+		req_timeout = client.timeout
 	end
 
 	if(type(url) == "table") then
@@ -67,11 +68,13 @@ local function simplehttp(url, callback, unused, limit)
 	local data
 	local status_code
 
-	local headers, stream = client:go(REQ_TIMEOUT)
+	local before = monotime()
+	local headers, stream = client:go(req_timeout)
+	local after = monotime()
 
 	if not headers then
-		log:error('simplehttp> request %s, error :%s.', uri, stream)
-		return
+		log:error('simplehttp> request %s, error :%s. After %s', uri, stream, (after-before))
+		return nil, stream
 	end
 	status_code = headers:get(':status')
 	-- H2 might not be number
@@ -85,16 +88,12 @@ local function simplehttp(url, callback, unused, limit)
 
 	if stream then
 		if(limit) then
-			data = stream:get_body_chars(limit, REQ_TIMEOUT)
+			data = stream:get_body_chars(limit, req_timeout)
 		else
-			data = stream:get_body_as_string(REQ_TIMEOUT)
+			data = stream:get_body_as_string(req_timeout)
 		end
 		-- Stream shutdown lets luahttp reuse I'm told
 		stream:shutdown()
-		-- without these two, seems to be leaking fds
-		stream.connection:shutdown()
-		stream.connection:close()
-		-- Some servers send gzip even if not requested
 		if simple_headers['content-encoding'] == 'gzip' then
 			data = zlib.inflate()(data)
 		end
@@ -102,6 +101,7 @@ local function simplehttp(url, callback, unused, limit)
 
 	local response = {
 		headers = simple_headers,
+		version = stream.connection.version,
 		status_code = status_code -- for compability with old simplehttp API
 	}
 	-- Old style callback
