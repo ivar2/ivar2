@@ -844,7 +844,7 @@ if configFile then
 		local stepok, err, ctx, ecode, thread, obj, fd = queue:step()
 		if(not stepok) then
 			ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
-			ivar2:Log('error', debug.traceback(thread, err))
+			ivar2:Log('debug', 'Traceback: %s', debug.traceback(thread, tostring(err)))
 		end
 	end
 else
