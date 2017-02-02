@@ -2,7 +2,7 @@ PRIVMSG:
   '^%pupper (.+)$': (source, destination, arg) =>
     say arg\upper!
   '^%plower (.+)$': (source, destination, arg) =>
-    say arg\lower!
+    say ivar2.util.utf8.lower(arg)
   '^%preverse (.+)$': (source, destination, arg) =>
     say arg\reverse!
   '^%plen (.+)$': (source, destination, arg) =>
