@@ -3,7 +3,8 @@
 local util = {
 	json = require'cjson',
 	simplehttp = require'simplehttp',
-	uri_parse = require'uriparse'
+	uri_parse = require'uriparse',
+	spark = require'spark',
 }
 
 local color = function(s, color, background)
@@ -172,9 +173,10 @@ end
 
 function util.nonickalert(nicklist, str)
 	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
+	--local zwsp = "\226\128\142" -- LTR mark buggy in term
 	local s = str or ''
 	local nl = nicklist or {} -- nicklist
-	local zwsp = "\226\128\142" -- LTR
+	local zwsp = "\226\128\139" -- zwspace
 
 	local nlkeys = {}
 	for nick, t in pairs(nl) do
