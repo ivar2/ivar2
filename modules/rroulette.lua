@@ -42,7 +42,7 @@ return {
 				else
 					deaths = deaths + 1
 					self:Kick(destination, nick, 'BANG!')
-					say('BANG! %s died a gruesome death. R.I.P.', source.nick)
+					say('BANG! %s died a gruesome death. † R.I.P. †', source.nick)
 				end
 			else
 				chamber = chamber - 1
