@@ -1,3 +1,10 @@
+Prettyfi = (patt) ->
+  -- Make them prettier
+  patt = patt\gsub('%^%%p', '!')
+  patt = patt\gsub('%$$', '')
+  patt = patt\gsub('^%^', '')
+  patt = patt\gsub '%$', ''
+  return patt
 
 listModules = (source, destination, arg) =>
   out = {}
@@ -18,10 +25,7 @@ listPatterns = (source, destination, moduleName) =>
   out = {}
   for pattern, callback in next, moduleTable
     patt = @ChannelCommandPattern(pattern, moduleName, destination)
-    -- Make them prettier
-    patt = patt\gsub('%^%%p', '!')
-    patt = patt\gsub('%$$', '')
-    patt = patt\gsub('^%^', '')
+    patt = Prettyfi patt
     table.insert out, patt
 
   if #out > 0
@@ -40,9 +44,12 @@ Apropos = (s, d, what) =>
     for pattern, callback in next, moduleTable
       if type(pattern) == 'string'
         patt = @ChannelCommandPattern(pattern, moduleName, destination)
-        if patt and type(patt) == 'string' and patt\match what
-          out[#out+1] = "#{ivar2.util.bold moduleName} module has pattern #{ivar2.util.italic patt}"
-  say table.concat(out, ',\n')
+        if patt and type(patt) == 'string' and patt\match(what)
+          out[#out+1] = "#{ivar2.util.bold moduleName} module has pattern #{ivar2.util.italic Prettyfi patt}"
+  if #out == 0
+    say "Could not find a command pattern that matches that."
+  else
+    say table.concat(out, ',\n')
 
 
 PRIVMSG:
