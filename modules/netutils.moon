@@ -169,6 +169,29 @@ Query = (host, types='AAAA,A', timeout=15) ->
           value = response.version
 
         say "#{field} : #{value or 'Header not found'}"
+    '^%pwhereis (.*)$': (source, destination, arg) =>
+      -- Download from http://dev.maxmind.com/geoip/geoip2/geolite2/
+      geodb = (require "mmdb").open("GeoLite2-City.mmdb")
+      -- if space, use first
+      if arg\match'(.-) .*'
+        arg = arg\match'(.-) .*'
+      p = (obj) ->
+        out = {}
+        if obj.city and obj.city.names and obj.city.names.en
+          out[#out+1] = obj.city.names.en
+        if obj.subdivisions and obj.subdivisions[1] and obj.subdivisions[1].names and obj.subdivisions[1].names.en
+          out[#out+1] = obj.subdivisions[1].names.en
+        if obj.country and obj.country.names and obj.country.names.en
+          out[#out+1] = obj.country.names.en
+        say table.concat(out, ', ')
+      if arg\match '%d+%.%d+%.%d+%.%d+'
+        obj = geodb\search_ipv4 arg
+        p obj
+      elseif arg\match ':'
+        obj = geodb\search_ipv6 arg
+        p obj
+      else
+        reply 'Needs valid IPv4'
 
 
   }
