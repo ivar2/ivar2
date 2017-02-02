@@ -23,11 +23,20 @@ sylfestpatt = C(word^1 * apo * bend) * P(wend)
 -- Search anywhere in string, capture all sylfestwords, do not match if line starts with excepted linestarts
 fullpatt = Ct(anywhere(sylfestpatt)^1 - bstart)
 
--- run our handler on any message that contains '
+dannedHandler = (s, d, a) =>
+  if string.lower(d) == '#tihlde'
+    reply "Du henger her i #TIHLDE og tror du er dannet? Det heter «verre», ingen æ."
+  if string.lower(d) == '#lart'
+    reply "Her på kanalen vert det forventa ørlite språkinnsats, Det heiter «verre», ingen æ."
+
+
 PRIVMSG:
+  -- run our handler on any message that contains '
   ".*['`].*": (source, destination, line) =>
     matches = fullpatt\match(line)
     if matches
       say "Sylfest likar ikkje: %s", concat(matches, ', ')
+  'værst': dannedHandler
+  'værre': dannedHandler
 
 
