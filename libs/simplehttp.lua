@@ -1,115 +1,115 @@
-local httpclient = require'handler.http.client'
-local uri = require"handler.uri"
+local httpclient = require'http.request'
+local monotime = require "cqueues".monotime
+local uri_parse = require'uriparse'
 local idn = require'idn'
-local ev = require'ev'
-require'logging.console'
-local log = logging.console()
+local zlib = require'zlib'
+local lconsole = require'logging.console'
+local log = lconsole()
 
-local uri_parse = uri.parse
+-- Change to DEBUG if you want to see full URL fetch log
+log:setLevel('INFO')
 
-local toIDN = function(url)
-	local info = uri_parse(url, nil, true)
-	-- Support IPv6 [host]
-	if (info.host:sub(1, 1) ~= '[') then
-		info.host = idn.encode(info.host)
+local function simplehttp(url, callback, unused, limit)
+	local req_timeout = 60
+
+	local uri
+	if(type(url) == "table") then
+		uri = url.url or url[1]
+	else
+		uri = url
 	end
 
-	if(info.port) then
-		info.host = info.host .. ':' .. info.port
+	-- Don't include fragments in the request.
+	uri = uri:gsub('#.*$', '')
+	-- Trim whitespace
+	uri = uri:gsub('%s+$', '')
+	uri = uri:gsub('^%s+', '')
+
+	-- IDN hack for now, until http/uriparse supports it
+	uri = uri:gsub('://(.-)%.', function(match)
+		if match:sub(1,1) ~= '[' then
+			match = idn.encode(match)
+		end
+		return '://'..match..'.'
+	end, 1)
+
+	log:debug('simplehttp> request <%s>', uri)
+
+	local uri_t = uri_parse(uri)
+	local client = httpclient.new_from_uri(uri_t)
+
+	-- Allow override of client HTTP version
+	if url.version then
+		client.version = url.version
 	end
 
-	return string.format(
-		'%s://%s%s%s',
+	-- Allow client to overide request timeout, note that this isn't super precise because we reuse the same timeout for reading headers and such
+	if client.timeout then
+		req_timeout = client.timeout
+	end
 
-		info.scheme,
-		info.userinfo or '',
-		info.host,
-		info.path or ''
-	)
-end
-
-local function simplehttp(url, callback, stream, limit, visited)
-	local sinkSize = 0
-	local sink = {}
-	visited = visited or {}
-	local method = "GET"
-	local data = nil
-
-	local client = httpclient.new(ev.Loop.default)
-	-- Set header for non keepalive
-	client.headers['Connection'] = 'Close'
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
-				client.headers[k] = v
+				-- Overwrite any existing
+				client.headers:upsert(k, v)
 			end
 		end
 
 		if(url.method) then
-			method = url.method
+			client.headers:upsert(":method", url.method)
 		end
 
 		if(url.data) then
-			data = url.data
+			client:set_body(url.data)
 		end
-
-		url = url.url or url[1]
 	end
 
-	-- Don't include fragments in the request.
-	url = url:gsub('#.*$', '')
+	local data
+	local status_code
 
-	-- Add support for IDNs.
-	url = toIDN(url)
+	local before = monotime()
+	local headers, stream = client:go(req_timeout)
+	local after = monotime()
 
-	-- Prevent infinite loops!
-	if(visited[url]) then return end
-	visited[url] = true
-	log:info('simplehttp> fetching url %s', url)
+	if not headers then
+		log:error('simplehttp> request %s, error :%s. After %s', uri, stream, (after-before))
+		return nil, stream
+	end
+	status_code = headers:get(':status')
+	-- H2 might not be number
+	status_code = tonumber(status_code, 10) or status_code
 
-	client:request{
-		url = url,
-		method = method,
-		body = data,
-		stream_response = stream,
+	local simple_headers = {}
+	for k,v in headers:each() do
+		-- Will overwrite duplicate headers.
+		simple_headers[k] = v
+	end
 
-		on_data = function(request, response, data)
-			if(request.is_cancelled) then return end
+	if stream then
+		if(limit) then
+			data = stream:get_body_chars(limit, req_timeout)
+		else
+			data = stream:get_body_as_string(req_timeout)
+		end
+		-- Stream shutdown lets luahttp reuse I'm told
+		stream:shutdown()
+		if simple_headers['content-encoding'] == 'gzip' then
+			data = zlib.inflate()(data)
+		end
+	end
 
-			if(data) then
-				sinkSize = sinkSize + #data
-				sink[#sink + 1] = data
-				if(limit and sinkSize > limit) then
-					request.on_finished(request, response)
-					-- Cancel it
-					request:close()
-				end
-			end
-		end,
-
-		on_finished = function(request, response)
-			if(response.status_code == 301 or response.status_code == 302 or response.status_code == 303) then
-				local location = response.headers.Location
-				if(location:sub(1, 4) ~= 'http') then
-					local info = uri_parse(url)
-					location = string.format('%s://%s%s', info.scheme, info.host, location)
-				end
-
-				if(url.headers) then
-					location = {
-						url = location,
-						headers = url.headers
-					}
-				end
-
-				return simplehttp(location, callback, stream, limit, visited)
-			end
-
-			callback(table.concat(sink), url, response)
-			-- We don't support any pipelining or keepalive
-			request:close()
-		end,
+	local response = {
+		headers = simple_headers,
+		version = stream.connection.version,
+		status_code = status_code -- for compability with old simplehttp API
 	}
+	-- Old style callback
+	if callback then
+		callback(data, uri, response)
+	end
+	-- New style.
+	return data, uri, response
 end
 
 return simplehttp

@@ -4,6 +4,7 @@
 local util = ivar2.util
 local simplehttp = util.simplehttp
 local decode = util.json.decode
+local null = util.json.null
 
 local spotify = ivar2.persist
 
@@ -27,7 +28,10 @@ local handlers = {
 		end
 
 		local popularity = json.popularity .. '%'
-		local preview = json.preview_url .. '.mp3'
+		local preview = ''
+		if json.preview_url ~= null then
+			preview = json.preview_url .. '.mp3'
+		end
 
 		return true, string.format('%s - [%s] %s [%s] ➤ %s ♫♪', table.concat(artists, ', '), album, title, popularity, preview)
 	end,

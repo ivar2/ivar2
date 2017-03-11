@@ -39,7 +39,7 @@ local parseData = function(source, destination, data)
 
 		say(table.concat(out, ' '))
 	else
-		say('%s', data.Error)
+		say('(%d) %s', data.code, data.error)
 	end
 end
 

@@ -1,8 +1,12 @@
 {:urlEncode} = require'util'
 html2unicode = require 'html'
-nixio = require'nixio'
-fs = require'nixio.fs'
-ltn12 = require'ltn12'
+lfs = require'lfs'
+
+hex_to_char = (x) ->
+  string.char(tonumber(x, 16))
+
+unescape = (url) ->
+  url\gsub("%%(%x%x)", hex_to_char)
 
 -- All URLs in this module is under this prefix
 urlbase = '/image/'
@@ -74,25 +78,23 @@ video_html = (video) ->
   ]]
 
 
-ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
+ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
+  url = req.url
   send = (body, code, content_type) ->
-    if not code then code = 200
+    if not code then code = "200"
     if not content_type then content_type = 'text/html'
-    res\set_status code
-    res\set_header 'Content-Type', content_type
-    res\set_header 'Content-Length', #body
-    res\set_body body
-    res\send!
-    res.on_error = (res, req, err) ->
-      ivar2\Log 'error', 'imageupload: error: %s', err
+    res\append ':status', code
+    res\append 'Content-Type', content_type
+    res\append 'Content-Length', tostring(#body)
+    req\write_headers(res, false, 30)
+    req\write_body_from_string(body, 30)
+    return -- empty return
 
-  file = req.url\match '/file/(.*)$'
+  file = url\match '/file/(.*)$'
   if file
     fn = "cache/images/#{safe file}"
-    size = nixio.fs.stat(fn).size
-    fd = ltn12.source.file(io.open fn, 'rb')
+    size = lfs.attributes(fn).size
     --body = fd\read '*a'
-    --fd\close!
     content_type = 'image/jpeg'
     if file\lower!\match '.png'
       content_type = 'image/png'
@@ -105,26 +107,28 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     if file\lower!\match '.mp3'
       content_type = 'audio/mp3'
 
-    res\set_status code
-    res\set_header 'Content-Type', content_type
-    res\set_header 'Content-Length', size
-    res\set_body fd
-    res\send!
-    ivar2\Log 'error', 'imageupload: serving: %s', fn
+    res\append ':status', '200'
+    res\append 'Content-Type', content_type
+    res\append 'Content-Length', tostring(size)
+    req\write_headers(res, false, 30)
+    fd = io.open(fn, 'rb')
+    req\write_body_from_file(fd, 5*60)
+    fd\close!
     return
 
   -- Serve video player page
-  video = req.url\match '/video/(.*)$'
+  video = url\match '/video/(.*)$'
   if video then
-    return send video_html(video)
+    send video_html(video)
+    return
 
-  channel = req.url\match('channel=(.+)%s*')
+  channel = url\match('channel=(.+)%s*')
   unless channel
     send 'Invalid channel', 404
     return
 
   channel = html2unicode channel
-  unescaped_channel = channel\gsub '%%23', '#'
+  unescaped_channel = unescape channel
 
   html = [[
   <!DOCTYPE html>
@@ -140,7 +144,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   <meta name="apple-mobile-web-app-title" content="IRCSNAP ]]..unescaped_channel..[[">
   <meta name="theme-color" content="#8f4099">
 
-  <title>IRCSNAP</title>
+  <title>IRCSNAP ]]..unescaped_channel..[[</title>
 
   <style type="text/css">
   html {
@@ -149,9 +153,13 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     padding: 0;
   }
   body {
-    height: 100%;
-    margin: 0;
     font-family: "Roboto","Segoe UI","Arial",sans-serif !important;
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    height: 100%;
+    margin: auto;
     background-color: #FAFAFA;
     font-size: 14px;
     font-weight: 400;
@@ -172,18 +180,37 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     margin: 0;
     padding: 0;
   }
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    color: rgb(158, 158, 158);
+  }
+    .footer p {
+      padding: 5px;
+      max-width: 768px;
+      margin: auto;
+    }
+    .footer a {
+      color: white;
+    }
   #buttons, #status, .content {
     display: flex;
     flex-flow: column wrap;
     align-items: stretch;
   }
-  h3 {
+  header {
+    width: 100%;
     background-color: #8f4099;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
     color: white;
-    padding: 20px;
+  }
+  header h3 {
+    max-width: 768px;
     margin-top: 0;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin: auto;
+    padding: 20px;
   }
   .group            {
     position:relative;
@@ -305,7 +332,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     background-color: #E6B85C;
   }
     .pictake .icon {
-      font-size: 2em;
+      font-size: 28px;
     }
   #progress {
     display: block;
@@ -321,21 +348,23 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   </style>
   <body>
+  <header>
+    <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
+  </header>
   <div class="content">
-  <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
     <p>Fill in your nick/name and optional text and then click on one of the yellow buttons to attach image. It will appear instantly on IRC!</p>
     <form>
       <div class="group">
         <input id="sender" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Your name</label>
+        <label>Your nickname</label>
       </div>
       <div class="group">
         <input id="text" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Attach text</label>
+        <label>Attach text, if you want</label>
       </div>
     </form>
 
@@ -352,13 +381,14 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     <!--
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
-    <div class="footer">
-      <p>
-        <strong>What is this?</strong>
-      </p>
-      <p>Share to IRC is a simple web app for sharing media directly from your device to an IRC channel.</p>
-      <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
-    </div>
+  </div>
+  <div class="footer">
+    <p>
+      <strong>What is this?</strong>
+    </p>
+    <p><i>Share to IRC</i> is a simple web app for sharing media directly from your device to an IRC channel.</p>
+    <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
+    <p>Made by <a href="//github.com/torhve/">xt</a></p>
   </div>
   <script>
 
@@ -478,21 +508,17 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   </html>
   ]]
   if req.method == 'POST'
-    fn = req.headers['X-Filename']
-    sender = req.headers['X-Sender'] or ''
-    text = req.headers['X-Text'] or ''
+    fn = req.headers['x-filename']
+    sender = req.headers['x-sender'] or ''
+    text = req.headers['x-text'] or ''
     file = req.filename
     ivar2\Log 'info', "imageupload: Recieved file name: <#{fn}> datalen: #{#file}, sender: <#{sender}> text: <#{text}>, channel: <#{unescaped_channel}>"
     if fn and file
       html = 'Ok'
       realfn = "#{os.time!}-#{safe fn}"
       save = ->
-        --fd = nixio.open "cache/images/#{realfn}", 'w+', 0400
-        --written = fd\write file
-        --fd\sync!
-        --fd\close!
         -- Move tempfile to real location
-        fs.move req.filename, "cache/images/#{realfn}"
+        os.rename req.filename, "cache/images/#{realfn}"
         if sender ~= ''
           sender = "<#{sender\sub(1, 100)}> "
         if text ~= ''
@@ -512,7 +538,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
 
 -- Attempt to create the cache folder.
-nixio.fs.mkdir('cache/images')
+lfs.mkdir('cache/images')
 
 PRIVMSG:
   '^%pircsnap$': (source, destination) =>

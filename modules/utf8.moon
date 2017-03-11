@@ -207,3 +207,6 @@ PRIVMSG:
   '^%pul (.+)$': (source, destination, arg) =>
     -- combining low line 0332 => CC B2
     say table.concat([letter .. util.utf8.char(0x0332) for letter in codepoints(arg)])
+  '^%pstrike (.+)$': (source, destination, arg) =>
+    -- U+0305 (COMBINING OVERLINE), U+0332 (COMBINING LOW LINE), U+0333 (COMBINING DOUBLE LOW LINE), and U+0336 (COMBINING LONG STROKE OVERLAY)
+    say table.concat([letter .. util.utf8.char(0x0336) for letter in codepoints(arg)])

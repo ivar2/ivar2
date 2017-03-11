@@ -244,7 +244,7 @@ local function main()
 		os_exit(1)
 	end
 
-	local func,err = loadstring(script, "=weblua")
+	local func, err = loadstring(script, "=lua")
 	if type(func) ~= "function" then
 		-- We officially have nothing to run, bail out with the first error
 		print("ERR:" .. tostring(err))
@@ -275,7 +275,7 @@ local function main()
 
 		local handler = function(msg)
 			local stack = traceback()
-			stack = stack:gsub("%S+sputnik%-weblua[^\n]+%s+", "")
+			stack = stack:gsub("%S+sputnik%-lua[^\n]+%s+", "")
 			stack = stack:gsub("%s+%[C%]: in function 'xpcall'.+$", "")
 			return tostring(msg) .. stack
 		end

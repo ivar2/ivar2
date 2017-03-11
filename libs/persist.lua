@@ -1,7 +1,7 @@
 -- Persist from
 -- https://github.com/clementfarabet/persist
 
-local redis = require'redis' -- luarocks install lua-redis
+local redis = require "lredis.cqueues" --luarocks install --server=http://luarocks.org/dev lredis
 local json = require 'cjson'
 local lconsole = require'logging.console'
 
@@ -26,7 +26,7 @@ local function connect(opt)
 
    local conn = function()
        -- Connect:
-       local ok, connection = pcall(function() return redis.connect(url,port) end)
+       local ok, connection = pcall(function() return redis.connect_tcp(url, port) end)
        if not ok then
            log:error('persist> error connecting to redis @ ' .. url .. ':' .. port)
            log:error('persist> make sure you have a running redis server (redis-server)')
@@ -49,12 +49,12 @@ local function connect(opt)
          if not client then conn() end
          if v then
             v = json.encode(v)
-            client:set(namespace..k,v)
+            client:call('set', namespace..k,v)
             if verbose then
                log:info('persist> stored ' .. k)
             end
          else
-            client:del(namespace..k)
+            client:call('del', namespace..k)
             if verbose then
                log:info('persist> cleared ' .. k)
             end
@@ -63,7 +63,7 @@ local function connect(opt)
       __index = function(self,k)
          if k=="_" then return __cached end
          if not client then conn() end
-         local v = client:get(namespace..k)
+         local v = client:call('get', namespace..k)
          v = v and json.decode(v)
          if verbose then
             log:info('persist> restored ' .. k)
@@ -72,20 +72,20 @@ local function connect(opt)
       end,
       __tostring = function(self)
          if not client then conn() end
-         local keys = client:keys(namespace..'*')
+         local keys = client:call('keys', namespace..'*')
          local n = #keys
          return '<persisting table @ redis://'..namespace..'*, #keys='..n..'>'
       end,
       keys = function(self)
          if not client then conn() end
-         local keys = client:keys(namespace..'*')
+         local keys = client:call('keys', namespace..'*')
          return keys
       end
    })
 
    -- Restore:
    if cache then
-      local keys = client:keys(namespace..'*')
+      local keys = client:call('keys', namespace..'*')
       for _,key in ipairs(keys) do
          local k = key:gsub('^'..namespace,'')
          __cached[k] = persist[k]
@@ -94,11 +94,11 @@ local function connect(opt)
 
    -- Clear?
    if clear then
-      local keys = client:keys(namespace..'*')
+      local keys = client:call('keys', namespace..'*')
       local n = #keys
       for _,key in ipairs(keys) do
          local k = key:gsub('^'..namespace,'')
-         client:del(namespace..k)
+         client:call('del', namespace..k)
       end
       if verbose then
          log:info('persist> cleared ' .. n .. ' entries')
@@ -108,7 +108,7 @@ local function connect(opt)
    -- Verbose:
    if verbose then
       -- N Keys:
-      local keys = client:keys(namespace..'*')
+      local keys = client:call('keys', namespace..'*')
       local n = #keys
       if n == 0 then
          log:info('persist> new session started @ ' .. url .. ':' .. port)

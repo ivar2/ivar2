@@ -124,14 +124,12 @@ local function tFollowing(self, source, destination)
     end
 end
 
-local function saveSince(tweet)
+local function saveSince(db, tweet)
     if tweet then
-        local db = openDb()
         local insStmt = db:prepare("UPDATE last SET since_id = ? WHERE screen_name = ?")
-        local code = insStmt:bind_values(tweet.id_str, tweet.user.screen_name)
-        code = insStmt:step()
-        code = insStmt:finalize()
-        db:close()
+        insStmt:bind_values(tweet.id_str, tweet.user.screen_name)
+        insStmt:step()
+        insStmt:finalize()
     end
 end
 
@@ -146,33 +144,32 @@ local function tPoll()
             local initial_count = 1
             url = url .. string.format('&count=%s', initial_count)
         end
-        simplehttp({
-                url,
-                headers = {
-                    ['Authorization'] = string.format("Bearer %s", access_token)
-                },
+        local data, _, _ = simplehttp({
+            url,
+            headers = {
+                ['Authorization'] = string.format("Bearer %s", access_token)
             },
-            function(data)
-                local info = json.decode(data)
-                local tweet = info[1]
-                if tweet then
-                    saveSince(tweet)
+        })
+        local ok, info = pcall(json.decode, data or '{}')
+        if ok then
+            local tweet = info[1]
+            if tweet then
+                saveSince(db, tweet)
 
-                    local destinations = {}
-                    local stmt = openDb():prepare('SELECT destination FROM twitter WHERE screen_name=?')
-                    stmt:bind_values(tweet.user.screen_name)
-                    for rrow in stmt:nrows() do
-                        table.insert(destinations, rrow.destination)
-                    end
+                local destinations = {}
+                local stmt = db:prepare('SELECT destination FROM twitter WHERE screen_name=?')
+                stmt:bind_values(tweet.user.screen_name)
+                for rrow in stmt:nrows() do
+                    table.insert(destinations, rrow.destination)
+                end
 
-                    for _, ttweet in pairs(info) do
-                        for _, destination in pairs(destinations) do
-                            outputTweet(nil, nil, destination, ttweet)
-                        end
+                for _, ttweet in pairs(info) do
+                    for _, destination in pairs(destinations) do
+                        outputTweet(nil, nil, destination, ttweet)
                     end
                 end
             end
-        )
+        end
     end
     db:close()
 end
@@ -182,14 +179,14 @@ local function tFollow(self, source, destination, screen_name)
         destination = source.nick
     end
     local db = openDb()
-    local insStmt = db:prepare("INSERT INTO twitter (screen_name, destination) VALUES(?, ?)")
-    insStmt:bind_values(screen_name, destination)
-    insStmt:step()
-    insStmt:finalize()
-    db:prepare("INSERT INTO last (screen_name, since_id) VALUES(?, ?)")
-    insStmt:bind_values(screen_name, '0')
-    insStmt:step()
-    insStmt:finalize()
+    local insStmt = assert(db:prepare("INSERT INTO twitter (screen_name, destination) VALUES(?, ?)"))
+    assert(insStmt:bind_values(screen_name, destination))
+    assert(insStmt:step())
+    assert(insStmt:finalize())
+    insStmt = assert(db:prepare("INSERT INTO last (screen_name, since_id) VALUES(?, ?)"))
+    assert(insStmt:bind_values(screen_name, '0'))
+    assert(insStmt:step())
+    assert(insStmt:finalize())
     db:close()
     self:Msg('privmsg', destination, source, 'Now following \002%s\002', screen_name)
 end
@@ -199,21 +196,21 @@ local function tunFollow(self, source, destination, screen_name)
         destination = source.nick
     end
     local db = openDb()
-    --[[local insStmt = db:prepare("DELETE FROM last WHERE screen_name = ?")
-    if insStmt then
-        local code = insStmt:bind_values(screen_name)
-        code = insStmt:step()
-        code = insStmt:finalize()
-    end
-    --]]
-    local insStmt = db:prepare("DELETE FROM twitter WHERE screen_name = ? AND destination = ?")
-    if insStmt then
-        insStmt:bind_values(screen_name, destination)
-        insStmt:step()
-        insStmt:finalize()
-    end
+    local insStmt = db:prepare("DELETE FROM last WHERE screen_name = ?")
+    insStmt:bind_values(screen_name)
+    insStmt:step()
+    insStmt:finalize()
+    insStmt = db:prepare("DELETE FROM twitter WHERE screen_name = ? AND destination = ?")
+    insStmt:bind_values(screen_name, destination)
+    insStmt:step()
+    insStmt:finalize()
+    local total_changes = db:total_changes()
     db:close()
-    self:Msg('privmsg', destination, source, 'Stopped following \002%s\002', screen_name)
+    if total_changes < 1 then
+        self:Msg('privmsg', destination, source, 'Did not find a follow for that tweeter and this destination')
+    else
+        self:Msg('privmsg', destination, source, 'Stopped following \002%s\002', screen_name)
+    end
 end
 
 local function getLatestStatuses(say, source, destination, screen_name, count)

@@ -176,6 +176,8 @@ local cc = {
 local conv = {
 	['euro'] = 'eur',
 	['bux'] = 'usd',
+	['buck'] = 'usd',
+	['bucks'] = 'usd',
 }
 
 -- make environment
@@ -193,12 +195,30 @@ local function run(untrusted_code)
 end
 
 local parseData = function(data)
-	local data = data:match'<div id=currency_converter_result>(.-)</span>'
+	data = data:match'<div id=currency_converter_result>(.-)</span>'
 	if(not data) then
 		return 'Some currency died? No exchange rates returned.'
 	end
 
 	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' '):gsub('%w+', cc)
+end
+
+local parseHistData = function(data)
+	if not data then return end
+	local i = 0
+	local out = {}
+	for line in data:gmatch'(.-)\n' do
+		-- interesting data starts on line 8
+		if i > 7 then
+			-- luacheck: ignore day
+			local day, value = line:match('^(.-),(.*)$')
+			if(tonumber(value)) then
+				out[#out+1] = tonumber(value)*100
+			end
+		end
+		i = i + 1
+	end
+	return out
 end
 
 local checkInput = function(value, from, to)
@@ -208,7 +228,9 @@ local checkInput = function(value, from, to)
 
 	-- Control the input.
 	value = value:gsub(',', '.')
-	local success, value, err = run('return ' .. value)
+	-- luacheck: ignore success
+	local success, err
+	success, value, err = run('return ' .. value)
 	if(err) then
 		return nil, string.format('Parsing of input failed: %s', err)
 	end
@@ -236,19 +258,23 @@ local handleExchange = function(self, source, destination, value, from, to)
 		return say( 'wat ar u dewn... %s! STAHP!', source.nick)
 	end
 
-	local success, value = checkInput(value, from, to)
+	local success
+	success, value = checkInput(value, from, to)
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
-		simplehttp(
-			('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to),
-			function(data)
-				local message = parseData(data)
-				if(message) then
-					say( '%s: %s', source.nick, message)
-				end
+		local data = simplehttp(
+			('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to))
+		local message = parseData(data)
+		local timestamp = os.time() -- 86400*7
+		data = simplehttp(('http://www.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
+		local numbers = parseHistData(data)
+		if(message) then
+			if(numbers) then
+				message = message ..  ', 30d trend ' .. util.spark.sparkline(numbers)
 			end
-		)
+			say( '%s: %s', source.nick, message)
+		end
 	end
 end
 
@@ -264,6 +290,9 @@ return {
 		end,
 		['^%pjpy$'] = function(self, source, destination)
 			handleExchange(self, source, destination, '100', 'JPY', 'NOK')
-		end
+		end,
+		['^%p฿$'] = function(self, source, destination)
+			handleExchange(self, source, destination, '1', 'BTC', 'USD')
+		end,
 	},
 }

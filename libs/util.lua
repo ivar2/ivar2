@@ -3,10 +3,17 @@
 local util = {
 	json = require'cjson',
 	simplehttp = require'simplehttp',
+	uri_parse = require'uriparse',
+	spark = require'spark',
 }
 
-local color = function(s, color)
-	return string.format("\03%02d%s%s", color, s, util.reset())
+local color = function(s, color, background)
+	if not background then
+		background = ''
+	else
+		background = string.format(',%02d', background)
+	end
+	return string.format("\03%02d%s%s\03", color, background, s)
 end
 util.color = color
 
@@ -166,9 +173,10 @@ end
 
 function util.nonickalert(nicklist, str)
 	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
+	--local zwsp = "\226\128\142" -- LTR mark buggy in term
 	local s = str or ''
 	local nl = nicklist or {} -- nicklist
-	local zwsp = "\226\128\142" -- LTR
+	local zwsp = "\226\128\139" -- zwspace
 
 	local nlkeys = {}
 	for nick, t in pairs(nl) do
@@ -181,7 +189,6 @@ function util.nonickalert(nicklist, str)
 		end
 	end, true)
 end
-
 
 local utf8 = {
 	pattern = "([%z\1-\127\194-\244][\128-\191]*)",

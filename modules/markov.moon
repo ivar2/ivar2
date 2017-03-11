@@ -14,21 +14,24 @@ getbot = (destination) ->
 
 markov = (source, destination, arg) =>
   brain = getbot(destination)
-  say brain\reply(arg)
+  words = math.random(5, 30)
+  say brain\reply(arg, words)
 
-return {
-  PRIVMSG: {
-    '^%pm (.+)$': markov
-    '^%pm$': markov
-    (source, destination, arg) =>
-      brain = getbot(destination)
-      nick = source.nick
-      if arg\sub(1,1) == '\001' and arg\sub(-1) == '\001'
-        arg = arg\sub(9, -2)
+PRIVMSG: {
+  '^%pm (.+)$': markov
+  '^%pm$': markov
+  '^%pmstats$': (source, destination) =>
+    brain = getbot destination
+    stats = brain.db\get_stats()
+    say(string.format("-- generated %d tokens, %d states, %d transitions", stats.tokens, stats.states, stats.transitions))
+  (source, destination, arg) =>
+    brain = getbot(destination)
+    nick = source.nick
+    if arg\sub(1,1) == '\001' and arg\sub(-1) == '\001'
+      arg = arg\sub(9, -2)
 
-      brain\begin_batch!
-      brain\learn arg
-      -- Close db (commit)
-      brain\end_batch!
-  }
+    brain\begin_batch!
+    brain\learn arg
+    -- Close db (commit)
+    brain\end_batch!
 }

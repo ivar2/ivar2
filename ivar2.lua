@@ -18,254 +18,78 @@ local configFile, reload = ...
 local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
-local connection = require'handler.connection'
-local nixio = require'nixio'
-local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 local irc = require 'irc'
 local lconsole = require'logging.console'
+local lfs = require 'lfs'
+local cqueues = require'cqueues'
+local signal = require'cqueues.signal'
+local socket = require'cqueues.socket'
+local queue = cqueues.new()
+
+math.randomseed(os.time())
 
 local log = lconsole()
 
 local ivar2 = {
 	ignores = {},
-	Loop = ev.Loop.default,
+	events = require'core/ircevents',
 	event = event,
 	channels = {},
 	more = {},
 	timers = {},
+	config = {},
+	cancelled_timers = {},
 	util = util,
+	timeout = 30,
+
+	handle_error = function(self, err)
+		self:Log('error', 'Socket error: %s', self.socket:error())
+		self.socket:clearerr()
+		if(self.config.autoReconnect) then
+			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
+			self:Timer('_reconnect', 60, 60, function()
+				self:Reconnect()
+			end)
+		else
+			queue:cancel() -- TODO: check if this works
+		end
+	end,
+
+	handle_connected = function(self)
+		if(not self.updated) then
+			if(self.config.password) then
+				self:Send('PASS %s', self.config.password)
+			end
+			self:Nick(self.config.nick)
+			self:Send('USER %s 0 * :%s', self.config.ident, self.config.realname)
+		else
+			self.updated = nil
+		end
+	end,
 
 	timeoutFunc = function(ivar2)
-		return function(loop, timer, revents)
-			ivar2:Log('error', 'Socket stalled for 6 minutes.')
-			if(ivar2.config.autoReconnect) then
-				ivar2:Reconnect()
+		local last_r = false
+		local last_s = false
+		return function()
+			local stat = ivar2.socket:stat()
+			local now = os.time()
+			if stat and (not last_r or not last_s) then
+				last_r = stat.rcvd.time
+				last_s = stat.sent.time
+				return
+			end
+			last_r = stat.rcvd.time
+			last_s = stat.sent.time
+			if (not stat) or (last_r+60*10 < now or last_s+60*10 < now ) then
+				ivar2:Log('error', 'Socket stalled for 10 minutes.')
+				if(ivar2.config.autoReconnect) then
+					ivar2:Reconnect()
+				end
 			end
 		end
 	end,
-}
-
-local matchFirst = function(pattern, ...)
-	for i=1, select('#', ...) do
-		local arg = select(i, ...)
-		if(arg) then
-			local match = arg:match(pattern)
-			if(match) then return match end
-		end
-	end
-end
-
-local events = {
-	['PING'] = {
-		core = {
-			function(self, source, destination, server)
-				self:Send('PONG %s', server)
-			end,
-		},
-	},
-
-	['JOIN'] = {
-		core = {
-			function(self, source, chan)
-				chan = chan:lower()
-
-				if(not self.channels[chan]) then
-					self.channels[chan] = {
-						nicks = {},
-						modes = {},
-					}
-				end
-
-				if(source.nick == self.config.nick) then
-					self:Mode(chan, '')
-					-- Servers sends us our hostmask on joins, use that to set it
-					self.hostmask = source.mask
-				end
-
-				self.channels[chan].nicks[source.nick] = {
-					modes = {},
-				}
-			end,
-		},
-	},
-
-	['PART'] = {
-		core = {
-			function(self, source, chan)
-				chan = chan:lower()
-
-				if(source.nick == self.config.nick) then
-					self.channels[chan] = nil
-				else
-					self.channels[chan].nicks[source.nick] = nil
-				end
-			end,
-		},
-	},
-
-	['KICK'] = {
-		core = {
-			function(self, source, destination, message)
-				local chan, nick = destination:match("^(%S+) (%S+)$")
-				chan = chan:lower()
-
-				if(nick == self.config.nick) then
-					self.channels[chan] = nil
-				else
-					self.channels[chan].nicks[nick] = nil
-				end
-			end,
-		},
-	},
-
-	['NICK'] = {
-		core = {
-			function(self, source, nick)
-				for channel, data in pairs(self.channels) do
-					data.nicks[nick] = data.nicks[source.nick]
-					data.nicks[source.nick] = nil
-				end
-			end,
-		},
-	},
-
-	['MODE'] = {
-		core = {
-			function(self, source, channel, modeLine)
-				if(channel == self.config.nick) then return end
-
-				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
-				local modes
-
-				channel = channel:lower()
-				if(self.channels[channel].nicks[nick]) then
-					modes = self.channels[channel].nicks[nick].modes
-				elseif(nick == '') then
-					modes = self.channels[channel].modes
-				end
-
-				if(not modes) then
-					return
-				end
-
-				if(dir == '+') then
-					for m in mode:gmatch('[a-zA-Z]') do
-						table.insert(modes, m)
-					end
-				elseif(dir == '-') then
-					for m in mode:gmatch('[a-zA-Z]') do
-						for i=1, #modes do
-							if(modes[i] == m) then
-								table.remove(modes, i)
-								break
-							end
-						end
-					end
-				end
-			end,
-		},
-	},
-
-	['005'] = {
-		core = {
-			-- XXX: We should probably parse out everything and move it to
-			-- self.server or something.
-			function(self, source, param, param2)
-				local network = matchFirst("NETWORK=(%S+)", param, param2)
-				if(network) then
-					self.network = network
-				end
-
-				local maxNickLength = matchFirst("MAXNICKLEN=(%d+)", param, param2)
-				if(maxNickLength) then
-					self.maxNickLength = maxNickLength
-				end
-			end,
-		},
-	},
-
-	['324'] = {
-		core = {
-			function(self, source, _, argument)
-				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
-
-				chan = chan:lower()
-				local chanModes = self.channels[chan].modes
-				for mode in modes:gmatch('[a-zA-Z]') do
-					table.insert(chanModes, mode)
-				end
-			end,
-		},
-	},
-
-	['353'] = {
-		core = {
-			function(self, source, chan, nicks)
-				chan = chan:match('[=*@] (.*)$')
-				chan = chan:lower()
-
-				local convert = {
-					['+'] = 'v',
-					['@'] = 'o',
-				}
-
-				if(not self.channels[chan]) then
-					self.channels[chan] = {
-						nicks = {},
-						modes = {},
-					}
-				end
-				for nick in nicks:gmatch("%S+") do
-					local prefix = nick:sub(1, 1)
-					if(convert[prefix]) then
-						nick = nick:sub(2)
-					else
-						prefix = nil
-					end
-
-					self.channels[chan].nicks[nick] = {
-						modes = {
-							convert[prefix]
-						},
-					}
-				end
-			end,
-		},
-	},
-
-	['433'] = {
-		core = {
-			function(self)
-				local nick = self.config.nick:sub(1,8) .. '_'
-				self:Nick(nick)
-			end,
-		},
-	},
-
-	['437'] = {
-		core = {
-			function(self, source, chan, argument)
-				chan = chan:lower()
-
-				local password
-				for channel, data in next, self.config.channels do
-					if(channel == chan) then
-						if(type(data) == 'table' and data.password) then
-							password = data.password
-						end
-
-						break
-					end
-				end
-
-				self:Timer('_join', 30, function(loop, timer, revents)
-					self:Join(chan, password)
-				end)
-			end,
-		},
-	},
 }
 
 local safeFormat = function(format, ...)
@@ -287,38 +111,6 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local client_mt = {
-	handle_error = function(self, err)
-		self:Log('error', err)
-		if(self.config.autoReconnect) then
-			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
-			self:Timer('_reconnect', 60, function(loop, timer, revents)
-				self:Reconnect()
-			end)
-		else
-			self.Loop:unloop()
-		end
-	end,
-
-	handle_connected = function(self)
-		if(not self.updated) then
-			if self.config.password then
-				self:Send('PASS %s', self.config.password)
-			end
-			self:Nick(self.config.nick)
-			self:Send('USER %s 0 * :%s', self.config.ident, self.config.realname)
-		else
-			self.updated = nil
-		end
-	end,
-
-	handle_data = function(self, data)
-		return self:ParseInput(data)
-	end,
-}
-client_mt.__index = client_mt
-setmetatable(ivar2, client_mt)
-
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
 	if(message) then
@@ -333,8 +125,9 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
-		self.timeout:again(self.Loop)
-		self.socket:send(message .. '\r\n')
+		if(self.socket) then
+			self.socket:write(message .. '\r\n')
+		end
 	end
 end
 
@@ -405,8 +198,14 @@ function ivar2:Privmsg(destination, format, ...)
 	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
+function ivar2:Action(destination, format, ...)
+	local message = safeFormat(format, ...)
+	message = irc.formatCtcp(message, 'ACTION')
+	return self:Privmsg(destination, message)
+end
+
 function ivar2:Msg(type, destination, source, ...)
-	local handler = type == 'notice' and 'Notice' or 'Privmsg'
+	local handler = type == 'notice' and 'Notice' or 'Privmsg' or 'Action'
 	if(destination == self.config.nick) then
 		-- Send the respons as a PM.
 		return self[handler](self, source.nick or source, ...)
@@ -463,11 +262,11 @@ end
 function ivar2:SimpleDispatch(command, argument, source, destination)
 	-- Function that dispatches commands in the events table without
 	-- splitting arguments and setting up function environment
-	if(not events[command]) then return end
+	if(not self.events[command]) then return end
 
 	if(source) then source = self:ParseMask(source) end
 
-	for moduleName, moduleTable in next, events[command] do
+	for moduleName, moduleTable in next, self.events[command] do
 		if(not self:IsModuleDisabled(moduleName, destination)) then
 			for pattern, callback in next, moduleTable do
 				local success, message
@@ -488,11 +287,11 @@ function ivar2:SimpleDispatch(command, argument, source, destination)
 end
 
 function ivar2:DispatchCommand(command, argument, source, destination)
-	if(not events[command]) then return end
+	if(not self.events[command]) then return end
 
 	if(source) then source = self:ParseMask(source) end
 
-	for moduleName, moduleTable in next, events[command] do
+	for moduleName, moduleTable in next, self.events[command] do
 		if(not self:IsModuleDisabled(moduleName, destination)) then
 			for pattern, callback in next, moduleTable do
 				local success, message
@@ -605,16 +404,21 @@ end
 
 function ivar2:EnableModule(moduleName, moduleTable)
 	self:Log('info', 'Loading module %s.', moduleName)
+	-- Some modules don't return handlers, for example webservermodules,
+	-- or pure timermodules, etc.
+	if type(moduleTable) ~= 'table' then
+		return
+	end
 
 	for command, handlers in next, moduleTable do
-		if(not events[command]) then events[command] = {} end
-		events[command][moduleName] = handlers
+		if(not self.events[command]) then self.events[command] = {} end
+		self.events[command][moduleName] = handlers
 	end
 end
 
 function ivar2:DisableModule(moduleName)
 	if(moduleName == 'core') then return end
-	for command, modules in next, events do
+	for command, modules in next, self.events do
 		if(modules[moduleName]) then
 			self:Log('info', 'Disabling module: %s', moduleName)
 			modules[moduleName] = nil
@@ -624,7 +428,7 @@ function ivar2:DisableModule(moduleName)
 end
 
 function ivar2:DisableAllModules()
-	for command, modules in next, events do
+	for command, modules in next, self.events do
 		for module in next, modules do
 			if(module ~= 'core') then
 				self:Log('info', 'Disabling module: %s', module)
@@ -639,10 +443,10 @@ function ivar2:LoadModule(moduleName)
 	local moduleError
 	local endings = {'.lua', '/init.lua', '.moon', '/init.moon'}
 
-	for _,ending in pairs(endings) do
+	for _, ending in ipairs(endings) do
 		local fileName = 'modules/' .. moduleName .. ending
 		-- Check if file exist and is readable before we try to loadfile it
-		local access, errCode, accessError = nixio.fs.access(fileName, 'r')
+		local access = lfs.attributes(fileName)
 		if(access) then
 			if(fileName:match('.lua')) then
 				moduleFile, moduleError = loadfile(fileName)
@@ -654,6 +458,7 @@ function ivar2:LoadModule(moduleName)
 				-- return here.
 				return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 			end
+			break
 		end
 	end
 	if(not moduleFile) then
@@ -725,14 +530,14 @@ function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
 end
 
 function ivar2:Events()
-	return events
+	return self.events
 end
 
 -- Let modules register commands
-function ivar2:RegisterCommand(handlerName, pattern, handler, event)
-	-- Default event is PRIVMSG
-	if(not event) then
-		event = 'PRIVMSG'
+function ivar2:RegisterCommand(handlerName, pattern, handler, verb)
+	-- Default verb is PRIVMSG
+	if(not verb) then
+		verb = 'PRIVMSG'
 	end
 	local env = {
 		ivar2 = self,
@@ -742,18 +547,18 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 	setfenv(handler, env)
 	self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
 
-	if(not events[event][handlerName]) then
-		events[event][handlerName] = {}
+	if(not self.events[verb][handlerName]) then
+		self.events[verb][handlerName] = {}
 	end
-	events[event][handlerName][pattern] = handler
+	self.events[verb][handlerName][pattern] = handler
 end
 
-function ivar2:UnregisterCommand(handlerName, pattern, event)
-	-- Default event is PRIVMSG
-	if(not event) then
-		event = 'PRIVMSG'
+function ivar2:UnregisterCommand(handlerName, pattern, verb)
+	-- Default verb is PRIVMSG
+	if(not verb) then
+		verb = 'PRIVMSG'
 	end
-	events[event][handlerName][pattern] = nil
+	self.events[verb][handlerName][pattern] = nil
 	self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
 end
 
@@ -763,55 +568,97 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 		callback = repeat_interval
 		repeat_interval = nil
 	end
-	-- Construct callback
-	local callbackHandler = function(cb)
-		return function(...)
-			local success, message = pcall(cb, ...)
-			if(not success) then
-				self:Log('error', 'Error during timer callback %s: %s.', id, message)
-			end
-			-- Delete expired timer
-			if(not repeat_interval and self.timers[id]) then
-				self.timers[id] = nil
+	local func = function()
+		local success, message = pcall(callback)
+		if(not success) then
+			self:Log('error', 'Error during timer callback %s: %s.', id, message)
+		end
+		-- Delete expired timer
+		if(not repeat_interval and self.timers[id]) then
+			self.timers[id] = nil
+		end
+	end
+	-- Check for existing
+	if self.timers[id] then
+		-- Only allow one timer per id
+		-- Cancel any running
+		self:Log('info', 'Cancelling existing timer: %s', id)
+		self.timers[id]:stop()
+	end
+	local is_cancelled = function()
+		for i, t in ipairs(self.cancelled_timers) do
+			if t.id == id then
+				table.remove(self.cancelled_timers, i)
+				return true
 			end
 		end
 	end
-	local timer = ev.Timer.new(callbackHandler(callback), interval, repeat_interval)
-	timer:start(self.Loop)
-	-- Only allow one timer per id
-	-- Cancel any running
-	if(self.timers[id]) then
-		self.timers[id]:stop(self.Loop)
-	end
+	local timer = {
+		id = id,
+		cancelled = false,
+		stop = function(timer)
+			self.timers[id].cancelled = true
+			table.insert(self.cancelled_timers, self.timers[id])
+			self.timers[id] = nil
+		end,
+		run = function()
+			cqueues.sleep(interval)
+			if is_cancelled() then return end
+			func()
+			if repeat_interval then
+				while true do
+					cqueues.sleep(repeat_interval)
+					if is_cancelled() then return end
+					func()
+				end
+			end
+		end
+	}
+	local controller = cqueues.running()
+	timer.controller = controller:wrap(timer.run)
 	self.timers[id] = timer
 	return timer
 end
 
 function ivar2:Connect(config)
 	self.config = config
-
-	if(not self.control) then
-		self.control = assert(loadfile('core/control.lua'))(ivar2)
-		self.control:start(self.Loop)
+	if(not self.config.uri) then
+		self:Log('error', 'No URI defined in config, aborting.')
+		return
 	end
+
+	--if(not self.control) then
+	--	self.control = assert(loadfile('core/control.lua'))(ivar2)
+	--	self.control:start(self.Loop)
+	--end
 
 	if(not self.x0) then
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
 	end
 
 	if(not self.webserver) then
-		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
-		self.webserver.start(self.config.webserverhost, self.config.webserverport)
+		self.webserver = assert(loadfile('core/webserver.lua'))(self)
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
+			pcall(function()
+				self.webserver.start(self.config.webserverhost, self.config.webserverport, cqueue)
+			end)
+		end)
 	end
 
-	if(self.timeout) then
-		self.timeout:stop(self.Loop)
-	end
-
-	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
+	self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
-	self.socket = assert(connection.uri(self.Loop, self, self.config.uri))
+	local urip = util.uri_parse(self.config.uri)
+	self.socket = assert(socket.connect(urip.host, urip.port))
+
+	self.socket:onerror(function(err)
+		self:handle_error(err)
+	end)
+
+	if urip.scheme == 'tls' then
+		self.socket:starttls()
+	end
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -822,15 +669,20 @@ function ivar2:Connect(config)
 			clear = false
 		})
 	end
-
 	self:DisableAllModules()
 	self:LoadModules()
+
+	self:handle_connected()
+
+	for line in self.socket:lines() do
+		self:ParseInput(line)
+	end
 end
 
 function ivar2:Reconnect()
 	self:Log('info', 'Reconnecting to servers.')
 
-	-- Doesn't exsist if connection.tcp() in :Connect() fails.
+	-- Doesn't exist if connecting in :Connect() fails.
 	if(self.socket) then
 		self.socket:close()
 	end
@@ -848,9 +700,11 @@ function ivar2:Reload()
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
-		self.control:stop(self.Loop)
-		self.timeout:stop(self.Loop)
-		self.webserver:stop()
+		--self.control:stop(self.Loop)
+		--self.timeout:stop(self.Loop)
+		pcall(function()
+			self.webserver.stop()
+		end)
 
 		message.socket = self.socket
 		-- reload configuration file
@@ -859,8 +713,8 @@ function ivar2:Reload()
 			self:Log('error', 'Unable to reload config file: %s.', err)
 			message.config = self.config
 		else
-			local success, mess = pcall(config)
-			if(not success) then
+			local csuccess, mess = pcall(config)
+			if(not csuccess) then
 				self:Log('error', 'Unable to execute new config file: %s.', mess)
 			else
 				message.config = mess
@@ -870,9 +724,13 @@ function ivar2:Reload()
 		-- Store the config file name in the config so it can be accessed later
 		message.config.configFile = configFile
 		message.timers = self.timers
-		message.Loop = self.Loop
+		message.cancelled_timers = self.cancelled_timers
+		--message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
+		-- Reload IRC events
+		package.loaded.ircevents = nil
+		message.events = require'core/ircevents'
 		-- Reload utils
 		package.loaded.util = nil
 		package.loaded.simplehttp = nil
@@ -881,8 +739,15 @@ function ivar2:Reload()
 		package.loaded.irc = nil
 		irc = require'irc'
 		-- Reload webserver
+		--XXX message.webserver = assert(loadfile('core/webserver.lua'))(message)
+		--XXX message.webserver.start(message.config.webserverhost, message.config.webserverport)
 		message.webserver = assert(loadfile('core/webserver.lua'))(message)
-		message.webserver.start(message.config.webserverhost, message.config.webserverport)
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
+			pcall(function()
+				message.webserver.start(message.config.webserverhost, message.config.webserverport, cqueue)
+			end)
+		end)
 		-- Reload persist
 		package.loaded[message.config.persistbackend or 'sqlpersist'] = nil
 		message.persist = require(message.config.persistbackend or 'sqlpersist')({
@@ -902,38 +767,48 @@ function ivar2:Reload()
 		message.updated = true
 
 		self = message
-		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
-		self.socket:sethandler(message)
+		self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
-		self.control = assert(loadfile('core/control.lua'))(self)
-		self.control:start(self.Loop)
-
+		--self.control = assert(loadfile('core/control.lua'))(self)
+		--self.control:start(self.Loop)
 
 		self:Log('info', 'Successfully update core.')
 	end
 end
 
-function ivar2:ParseInput(data)
-	self.timeout:again(self.Loop)
-
-	if(self.overflow) then
-		data = self.overflow .. data
-		self.overflow = nil
+function ivar2:ParseInput(line)
+	self:Log('debug', line)
+	local command, argument, source, destination = irc.parse(line)
+	if(not self:IsIgnored(destination, source)) then
+		-- Order on wrap execution is undefined,
+		-- so do not rely on messages being processed in order
+		local cqueue = cqueues.running()
+		cqueue:wrap(function()
+			self:DispatchCommand(command, argument, source, destination)
+		end)
 	end
+end
 
-	for line in data:gmatch('[^\n]+') do
-		if(line:sub(-1) ~= '\r') then
-			self.overflow = line
+function ivar2:SignalHandle()
+	local TERM = signal.SIGTERM
+	local INT = signal.SIGINT
+	local HUP = signal.SIGHUP
+
+	while true do
+		-- NOTE: Delivered signals cannot be caught by Linux signalfd or
+		-- Solaris sigtimedwait. Works without blocking on *BSD and OS X.
+		signal.block(TERM, INT, HUP)
+
+		local signo = assert(assert(signal.listen(TERM, INT, HUP)):wait())
+
+		if signo == HUP then
+			self:Log('info', 'Got SIGHUP, reloading.')
+			self:Reload()
 		else
-			-- Strip of \r.
-			line = line:sub(1, -2)
-			self:Log('debug', line)
-			local command, argument, source, destination = irc.parse(line)
-			if(not self:IsIgnored(destination, source)) then
-				self:DispatchCommand(command, argument, source, destination)
-			end
-
+			self:Quit('Ouch. Someone handed me the '..signal[signo]..'. RIP!')
+			io.stderr:write("exiting on signal ", signal[signo], "\n")
+			os.exit(0)
 		end
 	end
 end
@@ -943,9 +818,35 @@ if(reload) then
 end
 
 -- Attempt to create the cache folder.
-nixio.fs.mkdir('cache')
-local config = assert(loadfile(configFile))()
--- Store the config file name in the config so it can be accessed later
-config.configFile = configFile
-ivar2:Connect(config)
-ivar2.Loop:loop()
+lfs.mkdir('cache')
+
+-- Load config and start the bot
+if configFile then
+	local ok, config = pcall(loadfile(configFile))
+	if not ok then
+		io.stderr:write("Unable to load config "..tostring(configFile)..': '..tostring(config)..'\n')
+		os.exit(1)
+	end
+	-- Store the config file name in the config so it can be accessed later
+	config.configFile = configFile
+	queue:wrap(function()
+			if(not ivar2:Connect(config)) then
+				os.exit(0)
+			end
+	end)
+	-- Install Linux signal handler
+	queue:wrap(function ()
+		ivar2:SignalHandle()
+	end)
+	-- Run the cqueues main loop through a stepping function to catch errors
+	while true do
+		-- luacheck: ignore obj fd
+		local stepok, err, ctx, ecode, thread, obj, fd = queue:step()
+		if(not stepok) then
+			ivar2:Log('error', 'Error in main loop: %s, %s, %s', err, ctx, ecode)
+			ivar2:Log('debug', 'Traceback: %s', debug.traceback(thread, tostring(err)))
+		end
+	end
+else
+	ivar2:Log('error', 'No config file specified')
+end

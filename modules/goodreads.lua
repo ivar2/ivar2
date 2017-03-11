@@ -12,7 +12,7 @@ local blacklistedShelves = {
 local lookup = function(self, source, destination, id)
 	simplehttp(
 		string.format(
-			"https://www.goodreads.com/book/show/%s?format=xml&key=%s",
+			"http://www.goodreads.com/book/show/%s?format=xml&key=%s",
 			id,
 			self.config.goodreadsAPIKey
 		),
@@ -72,7 +72,7 @@ local lookup = function(self, source, destination, id)
 				table.insert(out, string.format("// %s", table.concat(genres, ", ")))
 			end
 			if(id) then
-				table.insert(out, string.format("| https://www.goodreads.com/book/show/%s", id))
+				table.insert(out, string.format("| http://www.goodreads.com/book/show/%s", id))
 			end
 
 			say(table.concat(out, " "))
@@ -85,7 +85,7 @@ end
 local search = function(self, source, destination, title)
 	simplehttp(
 		string.format(
-			"https://www.goodreads.com/search.xml?key=%s&q=%s",
+			"http://www.goodreads.com/search.xml?key=%s&q=%s",
 			self.config.goodreadsAPIKey,
 			urlEncode(title)
 		),
@@ -120,7 +120,7 @@ end
 
 return {
 	PRIVMSG = {
-		['%pgr (.*)$'] = function(self, source, destination, input)
+		['^%pgr (.*)$'] = function(self, source, destination, input)
 			if(tonumber(input)) then
 				lookup(self, source, destination, input)
 			else

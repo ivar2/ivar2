@@ -1,12 +1,11 @@
+--- HTML Title resolving module
 local util = require'util'
 local simplehttp = util.simplehttp
 local trim = util.trim
+local uri_parse = util.uri_parse
 local iconv = require"iconv"
-local uri = require"handler.uri"
 local html2unicode = require'html'
-local nixio = require'nixio'
-
-local uri_parse = uri.parse
+local lfs = require'lfs'
 local DL_LIMIT = 2^17
 
 local patterns = {
@@ -133,7 +132,7 @@ local guessCharset = function(headers, data)
 end
 
 local limitOutput = function(str)
-	local limit = 100
+	local limit = 300
 	if(#str > limit) then
 		str = str:sub(1, limit)
 		if(#str == limit) then
@@ -223,8 +222,10 @@ do
 		local path = 'modules/title/sites/'
 		_PROXY.customHosts = customHosts
 
-		for fn in nixio.fs.dir(path) do
-			loadFile('custom',  path, fn)
+		for fn in lfs.dir(path) do
+			if fn:match'%.lua$' then
+				loadFile('custom',  path, fn)
+			end
 		end
 
 		_PROXY.customHosts = nil
@@ -233,40 +234,46 @@ do
 	-- Custom post processing
 	do
 		local path = 'modules/title/post/'
-		for fn in nixio.fs.dir(path) do
-			local func = loadFile('post',  path, fn)
-			if(func) then
-				table.insert(customPost, func)
+		for fn in lfs.dir(path) do
+			if fn:match'%.lua$' then
+				local func = loadFile('post',  path, fn)
+				if(func) then
+					table.insert(customPost, func)
+				end
 			end
 		end
 	end
 end
 
-local fetchInformation = function(queue)
+local fetchInformation = function(queue, lang)
 	local info = uri_parse(queue.url)
-	info.url = queue.url
-	if(info.path == '') then
-		queue.url = queue.url .. '/'
-	end
+	if(info) then
+		info.url = queue.url
+		if(info.path == '') then
+			queue.url = queue.url .. '/'
+		end
 
-	local host = info.host:gsub('^www%.', '')
-	for pattern, customHandler in next, customHosts do
-		if(host:match(pattern) and customHandler(queue, info)) then
-			-- Let the queue know it's being customhandled
-			-- Can be used in postproc to make better decisions
-			queue.customHandler = true
-			return
+		local host = info.host:gsub('^www%.', '')
+		for pattern, customHandler in next, customHosts do
+			if(host:match(pattern) and customHandler(queue, info)) then
+				-- Let the queue know it's being customhandled
+				-- Can be used in postproc to make better decisions
+				queue.customHandler = true
+				return
+			end
 		end
 	end
 
-	simplehttp(
-		parseAJAX(queue.url),
-
+	simplehttp({
+		url = parseAJAX(queue.url),
+		headers = {
+			['Accept-Language'] = lang
+		}},
 		function(data, _, response)
 			local message = handleData(response.headers, data)
 			if(#queue.url > 110 and message) then
 				ivar2.x0(queue.url, function(short)
-					queue:done(string.format('Downgraded URL: %s - %s', short, message))
+					queue:done(string.format('Shortened URL: %s - %s', short, message))
 				end)
 			else
 				queue:done(message)
@@ -289,7 +296,7 @@ return {
 			-- We don't want to pick up URLs from commands.
 			if(argument:match'^%p') then return end
 
-			-- Handle CTCTP ACTION
+			-- Handle CTCP ACTION
 			if(argument:sub(1,1) == '\001' and argument:sub(-1) == '\001') then
 				argument = argument:sub(9, -2)
 			end
@@ -325,6 +332,15 @@ return {
 				end
 			end
 
+			local lang = self:DestinationLocale(destination)
+			if (lang:match('^nn')) then
+				lang = 'nn, nb'
+			elseif(lang:match('^nb')) then
+				lang = 'nb, nn'
+			else -- The default
+				lang = 'en'
+			end
+
 			if(#tmpOrder > 0) then
 				local output = {
 					num = #tmpOrder,
@@ -338,14 +354,14 @@ return {
 					output.queue[i] = {
 						index = tmp[url],
 						url = url,
-						done = function(self, msg)
-							self.output = msg
+						done = function(myself, msg)
+							myself.output = msg
 
-							postProcess(source, destination, self, argument)
+							postProcess(source, destination, myself, argument)
 							handleOutput(output)
 						end,
 					}
-					fetchInformation(output.queue[i])
+					fetchInformation(output.queue[i], lang)
 				end
 			end
 		end,

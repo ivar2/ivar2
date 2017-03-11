@@ -27,7 +27,7 @@ local response = {
 }
 return {
 	PRIVMSG = {
-		['^%p8ball(.*)$'] = function(self, source, destination)
+		['^%p8ball(.+)$'] = function(self, source, destination)
 			local seed = math.random(1, #response)
 			say("%s: %s", source.nick, response[seed])
 		end,

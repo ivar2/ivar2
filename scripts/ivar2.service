@@ -1,0 +1,12 @@
+[Unit]
+Description=ivar2 bot
+
+[Service]
+User=lart
+WorkingDirectory=/home/ivar2/ivar2
+ExecStart=/usr/bin/luajit ivar2.lua myconfig.lua
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target

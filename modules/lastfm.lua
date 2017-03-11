@@ -41,6 +41,7 @@ local parseTopArtists = function(source, destination, data)
 		info['@attr'].user,
 		table.concat(out, ', '),
 		info['@attr'].user
+	
 end
 
 local parseRecentTracks = function(source, destination, data)
@@ -92,7 +93,6 @@ return {
 			ivar2.persist['lastfm:'..source.nick] = user
 			reply('Username set to %s', user)
 		end,
-
 		['^%plastfm (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{

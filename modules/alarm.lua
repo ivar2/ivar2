@@ -69,50 +69,47 @@ local alarm = function(self, source, destination, message)
 	end
 
 	-- 60 days or more?
-	local nick = source.nick
 	if(duration >= (60 * 60 * 24 * 60) or duration == 0) then
-		return say("%s: :'(", nick)
+		return reply("'too bold! too brazen!")
 	end
+
+	local nick = source.nick
+	local utimestamp = os.time() + duration
 
 	local id = 'Alarm: ' .. nick .. ':' .. message:gsub('%W', '')
 	local runningTimer = self.timers[id]
 	if(runningTimer) then
 		-- Send a notification if we are overriding an old timer.
-		if(runningTimer.utimestamp > os.time()) then
-			if(runningTimer.message) then
-				self:Msg(
-					'privmsg',
-					destination,
-					source,
-					'%s: Previously active timer set to trigger at %s with message "%s" has been removed.',
-					nick,
-					os.date(dateFormat, runningTimer.utimestamp),
-					runningTimer.message
-				)
-			else
-				self:Msg(
-					'privmsg',
-					destination,
-					source,
-					'%s: Previously active timer set to trigger at %s has been removed.',
-					nick,
-					os.date(dateFormat, runningTimer.utimestamp)
-				)
-			end
+		if(message) then
+			self:Msg(
+				'privmsg',
+				destination,
+				source,
+				'%s: Previously active timer set to trigger at %s with message "%s" has been removed.',
+				nick,
+				os.date(dateFormat, utimestamp),
+				message
+			)
+		else
+			self:Msg(
+				'privmsg',
+				destination,
+				source,
+				'%s: Previously active timer set to trigger at %s has been removed.',
+				nick,
+				os.date(dateFormat, utimestamp)
+			)
 		end
 	end
 
-	local timer = self:Timer(id, duration, function(loop, timer, revents)
+	self:Timer(id, duration, function()
 		self:Msg(
 			'privmsg', destination, source,
-			'%s: %s', nick, timer.message or 'Timer finished.'
+			'%s: %s', nick, message or 'Timer finished.'
 		)
 	end)
 
-	if(message ~= '') then timer.message = message end
-	timer.utimestamp = os.time() + duration
-
-	reply("I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
+	reply("I'll poke you at %s.", os.date(dateFormat, utimestamp))
 
 end
 

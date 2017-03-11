@@ -76,6 +76,9 @@ illnesses = {
   [[ireehpnf]],
   [[ivfvba gurencl]],
   [[jvaq]],
+  [[travgny tnaterar]],
+  [[ubezbany vzonynapr]]
+  [[urecrf]]
 }
 
 illness = ->
@@ -83,7 +86,7 @@ illness = ->
 
 PRIVMSG:
   '^%pillness (.+)$': (s, d, nick) =>
-    say "#{nick}, afflicted by #{illness!}"
+    say "#{ivar2.util.trim nick}, afflicted by #{illness!}"
   '^%pillness$': (s, d) =>
     say illness!
- 
+

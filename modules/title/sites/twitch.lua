@@ -3,6 +3,10 @@ local simplehttp = util.simplehttp
 local json = util.json
 
 customHosts['twitch%.tv'] = function(queue, info)
+	if not ivar2.config.twitchApiKey then
+		return
+	end
+
 	local path = info.path
 
 	if(not path) then
@@ -27,18 +31,30 @@ customHosts['twitch%.tv'] = function(queue, info)
 		url = string.format('https://api.twitch.tv/kraken/channels/%s', username)
 	end
 
-	simplehttp(
-		url,
+	simplehttp({
+		url=url,
+		headers={
+			['Client-ID'] = ivar2.config.twitchApiKey,
+		}},
 
 		function(data, url, response)
 			local resp = json.decode(data)
 
 			local out = {}
+			if(resp['error']) then
+				table.insert(out, resp['error'])
+				table.insert(out, ': ')
+				table.insert(out, resp['message'])
+				queue:done(table.concat(out))
+				return
+			end
 			if(resp.title) then
 				table.insert(out, resp.title)
 			else
 				table.insert(out, string.format('\002%s\002: ', resp.display_name))
-				table.insert(out, (resp.status:gsub('\n', ' ')))
+				if(resp.status) then
+					table.insert(out, (tostring(resp.status):gsub('\n', ' ')))
+				end
 			end
 
 			if(resp.game ~= json.null) then

@@ -20,8 +20,10 @@ local function parse(line)
                 argument.user = user
                 argument.server = server
                 argument.nick = nick
+                argument.sourcenick = sourcenick
                 argument.hopcount = hopcount
                 argument.realname = realname
+                argument.host = host
                 -- Return here. This command does not need further
                 -- parsing or checking for ignore.
                 return tcommand, argument, tsource, tdestination
@@ -105,7 +107,12 @@ local split = function(hostmask, destination, message, trail)
 	return message, extra
 end
 
+local formatCtcp = function(message, type)
+	return string.format('\001%s %s\001', type, message)
+end
+
 return {
-    parse=parse,
+	parse=parse,
 	split=split,
+	formatCtcp=formatCtcp,
 }
