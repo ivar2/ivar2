@@ -3,8 +3,8 @@
 -- NEW: https://api.spotify.com/v1/tracks/3tLAA1LA06ecIaRSRbMFbi
 local util = ivar2.util
 local simplehttp = util.simplehttp
-local decode = util.json.decode
-local null = util.json.null
+local json = util.json
+local base64 = require'base64'
 
 local spotify = ivar2.persist
 
@@ -13,6 +13,36 @@ local validType = {
 	album = true,
 	artist = true,
 }
+
+-- We could cache this, but the API is fairly speedy...
+local getToken = function()
+	local client_key = ivar2.config.spotifyApiKey
+	local client_secret = ivar2.config.spotifyApiSecret
+
+	if(not client_key or not client_secret) then
+		ivar2:Log('warn', 'spotify: Client key and secret is not set in config file')
+		return
+	end
+
+	local auth = base64.encode(
+		string.format('%s:%s', client_key, client_secret)
+	)
+
+	local data = simplehttp(
+		{
+			url = 'https://accounts.spotify.com/api/token',
+			method = 'POST',
+			headers = {
+				['Content-Type'] = 'application/x-www-form-urlencoded',
+				['Authorization'] = string.format('Basic %s', auth)
+			},
+			data = 'grant_type=client_credentials'
+		}
+	)
+
+	local info = json.decode(data)
+	return info.access_token
+end
 
 local handlers = {
 	track = function(json)
@@ -29,7 +59,7 @@ local handlers = {
 
 		local popularity = json.popularity .. '%'
 		local preview = ''
-		if json.preview_url ~= null then
+		if json.preview_url ~= json.null then
 			preview = json.preview_url .. '.mp3'
 		end
 
@@ -108,11 +138,20 @@ local fetchInformation = function(output, n, info)
 	else
 		ivar2:Log('info', string.format('spotify: Requesting information on %s.', info.uri))
 
+		local access_token = getToken()
+		if(not access_token) then return end
+
 		simplehttp(
-			('https://api.spotify.com/v1/%ss/%s'):format(info.type, info.hash),
+			{
+				url = ('https://api.spotify.com/v1/%ss/%s'):format(info.type, info.hash),
+				method = 'GET',
+				headers = {
+					['Authorization'] = string.format('Bearer %s', access_token)
+				}
+			},
 
 			function(data, url, response)
-				local message = handleData(info, decode(data))
+				local message = handleData(info, json.decode(data))
 				-- New API doesn't provide a Expires header, but they do set
 				-- cache-control public max-age 7200. If we were good citizens we
 				-- could parse this. Alas, I'm lazy.
