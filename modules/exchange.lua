@@ -264,10 +264,10 @@ local handleExchange = function(self, source, destination, value, from, to)
 		say( '%s: %s', source.nick, value)
 	else
 		local data = simplehttp(
-			('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to))
+			('http://finance.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to))
 		local message = parseData(data)
 		local timestamp = os.time() -- 86400*7
-		data = simplehttp(('http://www.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
+		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
 		local numbers = parseHistData(data)
 		if(message) then
 			if(numbers) then
