@@ -260,6 +260,7 @@ local handleExchange = function(self, source, destination, value, from, to)
 
 	local success
 	success, value = checkInput(value, from, to)
+	local numbers
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
@@ -268,7 +269,9 @@ local handleExchange = function(self, source, destination, value, from, to)
 		local message = parseData(data)
 		local timestamp = os.time() -- 86400*7
 		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
-		local numbers = parseHistData(data)
+		if(value == 1) then -- no hist for non-1-amounts
+			numbers = parseHistData(data)
+		end
 		if(message) then
 			if(numbers) then
 				message = message ..  ', 30d trend ' .. util.spark.sparkline(numbers)
