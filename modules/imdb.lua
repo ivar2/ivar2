@@ -43,7 +43,8 @@ local parseData = function(source, destination, data)
 	end
 end
 
-local urlFormat = 'http://omdbapi.com/?t=%s'
+local urlFormat = 'http://omdbapi.com/?t=%s' .. '&apikey=' .. ivar2.config.omdbkey
+
 local handler = function(self, source, destination, input)
 	local search = urlEncode(input)
 
