@@ -471,7 +471,7 @@ local function bjGameStarting(state)
 
 	tryNextBjAction(bj)
 
-	ivar2:Timer('bjtoolong', 23, function(timer)
+	ivar2:Timer('bjtoolong.' .. chan:lower(), 23, function(timer)
 		local now = os.time()
 		for k, bjg in pairs(rawBj) do
 			if bjg.state == "deal" then
@@ -971,7 +971,7 @@ botExpectChannelBotCommand("$bj ?(.*)$", function(client, source, chan, args)
 			.. " Type $bj <bet> if you want to get in on the action with " .. nick .. "!"
 			.. " Everyone starts out with a credit line of $100")
 		player = bjAddPlayer(bj, nick)
-		client:Timer('bjGameWait', wait, function()
+		client:Timer('bjGameWait.' .. chan:lower(), wait, function()
 			bjGameStarting{ what = "bj", bj = bj, chan = chan:lower() }
 		end)
 	end
