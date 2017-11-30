@@ -155,8 +155,8 @@ end
 
 function slack:Log(level, ...)
 	local message = safeFormat(...)
-	message = 'slack> ' .. message
 	if(message) then
+		message = 'slack> ' .. message
 		log[level](log, message)
 	end
 end
