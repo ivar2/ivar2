@@ -203,8 +203,6 @@ local timeUntilNextCheck = function()
   return os.time(tomorrow) - os.time(now)
 end
 
-local timeUntilNextCheck = function() return 30 end
-
 local formatHolidays = function(holidays)
   local out = {}
   for i=1, #holidays do
