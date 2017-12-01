@@ -960,6 +960,7 @@ function MatrixServer:LoadModules()
 end
 
 function MatrixServer:SimpleDispatch(command, argument, source, destination)
+    self:Log('debug', '%s %s %s %s', command, argument, source, destination)
 	-- Function that dispatches commands in the events table without
 	-- splitting arguments and setting up function environment
     local events = self.events
@@ -1162,7 +1163,7 @@ Room.create = function(obj, conn)
     -- Cache users for presence/nicklist
     room.users = {}
     -- Cache the rooms power levels state
-    room.power_levels = {users={}}
+    room.power_levels = {users={}, users_default=0}
     room.visibility = 'public'
     room.join_rule = nil
     room.roomname = nil -- m.room.name
@@ -1269,7 +1270,7 @@ function Room:SetName(name)
         --end
     elseif self.aliases then
         local alias = self.aliases[1]
-        if name then
+        if alias then
             local _
             name, _ = alias:match('(.+):(.+)')
         end
@@ -1377,7 +1378,7 @@ function Room:GetNickGroup(user_id)
 end
 
 function Room:GetPowerLevel(user_id)
-    return self.power_levels.users[user_id] or 0
+    return tonumber(self.power_levels.users[user_id] or self.power_levels.users_default or 0)
 end
 
 function Room:ClearTyping()
