@@ -8,31 +8,27 @@ customHosts['twitch%.tv'] = function(queue, info)
 	end
 
 	local path = info.path
-
 	if(not path) then
 		return
 	end
 
-	local username, kind, video
-	if(path:match('/[^/]+/[^/]+/[^/]+')) then
-		username, kind, video = path:match('/([^/]+)/([^/]+)/(%d+)')
+  local url
+	if(path:match('^/videos/(%d+)')) then
+    local video = path:match('^/videos/(%d+)')
+		url = string.format('https://api.twitch.tv/kraken/videos/%s', video)
 	elseif(path:match('/[^/]+')) then
-		username = path:match('[^/]+')
-	end
-
-	if(not username) then
-		return
-	end
-
-	local url
-	if(video) then
-		url = string.format('https://api.twitch.tv/kraken/videos/%s%s', kind, video)
-	else
+		local username = path:match('[^/]+')
 		url = string.format('https://api.twitch.tv/kraken/channels/%s', username)
+	end
+
+	if(not url) then
+		return
 	end
 
 	simplehttp({
 		url=url,
+		-- HTTP doesn't allow lowercase haeders
+		version=1.1,
 		headers={
 			['Client-ID'] = ivar2.config.twitchApiKey,
 		}},
