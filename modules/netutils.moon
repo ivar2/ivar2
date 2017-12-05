@@ -85,7 +85,18 @@ Query = (host, types='AAAA,A', timeout=15) ->
             expires = text\match('Not After : (.-)%s*Sub')
             verdict = Good!
             reason = ''
-            unless HasValue(validhosts, host)
+            -- Check for wildcard
+            for _, host in ipairs(validhosts)
+              if host\match '^*.'
+                -- replace the wildcard with a valid lua pattern
+                host = host\gsub '^%*', '%w'
+            foundValidHost = false
+            for validhost in *validhosts
+              -- use match to match wildcards
+              if host\match(validhost)
+                foundValidHost = true
+                break
+            if not foundValidHost
               verdict = Bad!
               reason = "Hostname #{host} not in list #{table.concat validhosts, ', '}"
             if after < os.time!
