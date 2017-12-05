@@ -137,7 +137,7 @@ function slack:Privmsg(destination, message)
 		id = self:_next_message_id(),
 		type = 'message',
 		channel = destination,
-		text = message
+		text = util.stripformatting(message)
 	}
 	return self:Send(payload)
 end
