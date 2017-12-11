@@ -5,6 +5,7 @@ record = require'cqueues.dns.record'
 errno = require'cqueues.errno'
 socket = require'cqueues.socket'
 context = require'openssl.ssl.context'
+monotime = cqueues.monotime
 http_tls = require'http.tls'
 pkey = require'openssl.pkey'
 auxlib = require"openssl.auxlib"
@@ -160,7 +161,10 @@ Query = (host, types='AAAA,A', timeout=15) ->
         url = args[2]
       unless url\match '^http'
         url = 'http://' .. url
+      before = monotime!
       data, uri, response = simplehttp(url)
+      after = monotime!
+      ms = (after-before)*100
       unless data
         reply 'Error: '..tostring(uri)
       unless response
@@ -172,7 +176,7 @@ Query = (host, types='AAAA,A', timeout=15) ->
           headers[#headers+1] = "#{k}:#{v}"
         table.sort(headers)
         headers = table.concat(headers, ', ')
-        say "HTTP v#{response.version} #{headers}"
+        say string.format "Time: %d ms HTTP v#{response.version} #{headers}", ms
       elseif argc == 2
         field = field\lower!
         value = response.headers[field]
