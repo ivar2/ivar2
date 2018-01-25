@@ -5,11 +5,10 @@ local html2unicode = require'html'
 local base64 = require 'base64'
 
 local access_token
-local key = ivar2.config.twitterApiKey
-local secret = ivar2.config.twitterApiSecret
 
+-- luacheck: ignore
 customHosts['twitter%.com'] = function(queue, info)
-	local query = info.query
+	-- local query = info.query
 	local path = info.path
 	local fragment = info.fragment
 	local tid
@@ -21,38 +20,42 @@ customHosts['twitter%.com'] = function(queue, info)
 		tid = path:match(pattern)
 	end
 
-	local function getStatus(tid)
+	local function getStatus(t_id)
 		simplehttp({
-			url = string.format('https://api.twitter.com/1.1/statuses/show/%s.json', tid),
+			url = string.format('https://api.twitter.com/1.1/statuses/show/%s.json?tweet_mode=extended', t_id),
 			headers = {
 				['Authorization'] = string.format("Bearer %s", access_token)
 			},
 		},
 		function(data)
-			local info = json.decode(data)
-			local name = info.user.name
-			local screen_name = html2unicode(info.user.screen_name)
+			local tweet_d = json.decode(data)
+			if tweet_d.errors then
+				queue:done(tweet_d.errors[1].message)
+				return
+			end
+			local name = tweet_d.user.name
+			local screen_name = html2unicode(tweet_d.user.screen_name)
 
 			local tweet
-			if info.retweeted_status then
-				local rter = info.retweeted_status.user.screen_name
-				tweet = 'RT @'..rter..': '..html2unicode(info.retweeted_status.text)
+			if tweet_d.retweeted_status then
+				local rter = tweet_d.retweeted_status.user.screen_name
+				tweet = 'RT @'..rter..': '..html2unicode(tweet_d.retweeted_status.full_text)
 			else
-				tweet = html2unicode(info.text)
+				tweet = html2unicode(tweet_d.full_text)
 			end
 
 			-- replace newlines with spaces
 			tweet = tweet:gsub('\n', ' ')
 
 			-- replace shortened URLs with their original
-			for _, url in pairs(info.entities.urls) do
+			for _, url in pairs(tweet_d.entities.urls) do
 				tweet = tweet:gsub(url.url, url.expanded_url)
 			end
 
 			-- replace shortened media URLs with their original
 			local counter = 0
-			if(info.extended_entities ~= nil) then
-				for _, media in pairs(info.extended_entities.media) do
+			if(tweet_d.extended_entities ~= nil) then
+				for _, media in pairs(tweet_d.extended_entities.media) do
 					if counter == 0 then
 						tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
 					else
@@ -63,11 +66,12 @@ customHosts['twitter%.com'] = function(queue, info)
 			end
 
 			local out = {}
-			if(name == screen_name) then
-				table.insert(out, string.format('\002%s\002:', name))
-			else
-				table.insert(out, string.format('\002%s\002 @%s:', name, screen_name))
-			end
+			--if(name == screen_name) then
+			--	table.insert(out, string.format('<\002%s\002>', name))
+			--else
+			--	table.insert(out, string.format('\002%s\002 <@%s>', name, screen_name))
+			--end
+			table.insert(out, string.format('<@%s>', screen_name))
 
 			table.insert(out, tweet)
 			queue:done(table.concat(out, ' '))
@@ -97,9 +101,9 @@ customHosts['twitter%.com'] = function(queue, info)
 					data = 'grant_type=client_credentials'
 				},
 				function(data)
-					local info = json.decode(data)
+					local tweet_d = json.decode(data)
 					-- Save access token for further use
-					access_token = info.access_token
+					access_token = tweet_d.access_token
 					-- And after we got token, get the status
 					getStatus(tid)
 				end
