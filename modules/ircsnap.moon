@@ -345,9 +345,70 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     background-color: #3a81f0;
     width: 0%;
   }
+  #drop-layer {
+    position: fixed;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    display: none;
+
+  }
+  .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 5px;
+    background-color: #45484f;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+  }
+  .droplabel {
+    position: relative;
+    top: 100px;
+    margin-left: 40%;
+  }
+  .over {
+    border: 2px dashed #990000 !important;
+  }
+  .box {
+    width: 300px;
+    min-height: 300px;
+    display: block;
+    width: 100%;
+  }
+  .box__dragndrop,
+    .box__uploading,
+    .box__success,
+    .box__error {
+      display: none;
+  }
+  .box {
+    background-color: white;
+    outline: 2px dashed black;
+    outline-offset: -10px;
+  }
+  .box. .box__dragndrop {
+    display: inline;
+  }
+  .box.is-dragover {
+    background-color: grey;
+  }
+  .box.is-uploading .box__input {
+    visibility: none;
+  }
+  .box.is-uploading .box__uploading {
+    display: block;
+	}
+  .box .box__file {
+    display: none;
+  }
 
   </style>
   <body>
+  <div id="drop-layer"></div>
   <header>
     <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
   </header>
@@ -381,6 +442,21 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     <!--
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
+    <section>
+      <h3>You can also drag and drop here</h3>
+      <form class="box" method="post" action="" enctype="multipart/form-data">
+        <div class="box__input">
+          <input id="box__dropi" class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+          <label class="droplabel" for="file"><span class="box__dragndrop">Drag a file here</span>.</label>
+          <!--
+          <button class="box__button" type="submit">Upload</button>
+          -->
+        </div>
+        <div class="box__uploading">Uploading&hellip;</div>
+        <div class="box__success">Done!</div>
+        <div class="box__error">Error! <span></span>.</div>
+      </form>
+    <section>
   </div>
   <div class="footer">
     <p>
@@ -503,6 +579,95 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   }
 
   document.getElementById('sender').addEventListener('change', storeName, false);
+  </script>
+
+  <script>
+    // Script for drag and drop
+    var droppedFiles = false;
+
+    function handleDragStart(e) {
+      this.style.opacity = '0.4';  // this / e.target is the source node.
+    }
+
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+      }
+
+      e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+      this.classList.add('is-dragover');
+      this.classList.add('over');
+
+      console.log('dragOver');
+      return false;
+    }
+
+    function handleDragEnter(e) {
+      // this / e.target is the current hover target.
+      this.classList.add('over');
+      this.classList.add('is-dragover');
+      console.log('dragEnter');
+    }
+
+    function handleDragLeave(e) {
+      this.classList.remove('over');  // this / e.target is previous target element.
+      this.classList.remove('is-dragover');  // this / e.target is previous target element.
+      console.log('dragLeave');
+    }
+
+    function handleDrop(e) {
+      console.log('drop');
+      if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+      }
+      droppedFiles = e.dataTransfer.files;
+      //form.submit();
+      e.target.files = droppedFiles;
+      sendMedia(e);
+    }
+
+    var cols = document.querySelectorAll('#drop-layer');
+    var col = document.querySelector('form.box');
+    col.addEventListener('dragstart', handleDragStart, false);
+    col.addEventListener('dragenter', handleDragEnter, false);
+    col.addEventListener('dragover', handleDragOver, false);
+    col.addEventListener('dragleave', handleDragLeave, false);
+    col.addEventListener('dragend', handleDragLeave, false);
+    col.addEventListener('drop', handleDrop, false);
+
+    document.getElementById('box__dropi').addEventListener('change', sendMedia, false);
+
+
+    var form = document.querySelector('form.box');
+    var input = form.children[0].children[0];
+
+    function handleSubmit(e) {
+      console.log('submit');
+      if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+      }
+      /*
+      if (!form.classList.contains('is-dragover')) {
+        return;
+      }
+      */
+
+      var ajaxData = new FormData(form.get(0));
+      form.each(function(i, file) {
+        console.log(i, file);
+        ajaxData.append( input.attr('name'), file );
+      });
+      console.log(e);
+      //cheadur
+      e.target.files = droppedFiles;
+      sendMedia(e);
+      return true;
+    }
+    form.addEventListener('submit', handleSubmit, false);
+
+
+
   </script>
   </body>
   </html>
