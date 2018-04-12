@@ -74,7 +74,7 @@ handlers = {
     number = util.bold json.pull_request.number
     "[#{repo}]: PR ##{number} <#{util.nonickalertword json.sender.login}> #{body}"
   pull_request_review: (repo, destinatino, json) ->
-    body = json.review.body
+    body = json.review.body or ''
     number = util.bold json.pull_request.number
     state = json.review.state\gsub('_', ' ')
     "[#{repo}]: PR ##{number} Review #{state} <#{util.nonickalertword json.sender.login}> #{body}"
