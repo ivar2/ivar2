@@ -108,6 +108,8 @@ local guessCharset = function(headers, data)
 		return 'utf-16be'
 	end
 
+	-- TODO: tell user if it's downloadable stuff, other mimetype, like PDF or whatever
+	
 	-- Header:
 	local contentType = headers['Content-Type']
 	if(contentType and contentType:match'charset') then
@@ -271,9 +273,13 @@ local fetchInformation = function(queue, lang)
 		}},
 		function(data, _, response)
 			local message = handleData(response.headers, data)
-			if(#queue.url > 110 and message) then
+			if(#queue.url > 80) then
 				ivar2.x0(queue.url, function(short)
-					queue:done(string.format('Shortened URL: %s - %s', short, message))
+					if message then
+						queue:done(string.format('Short URL: %s - %s', short, message))
+					else
+						queue:done(string.format('Short URL: %s', short))
+					end
 				end)
 			else
 				queue:done(message)
