@@ -273,7 +273,7 @@ local handleExchange = function(self, source, destination, value, from, to)
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
-		local data = simplehttp(('https://www.google.no/async/currency_update?yv=1&async=source_amount:%d,source_currency:%s,target_currency:%d,chart_width:270,chart_height:94,lang:en,_fmt:json'):format(value, from, to))
+		local data = simplehttp(('https://www.google.no/async/currency_update?yv=1&async=source_amount:%d,source_currency:%s,target_currency:%s,chart_width:270,chart_height:94,lang:en,_fmt:json'):format(value, from, to))
 		local message = parseData(data, value, from, to)
 		local timestamp = os.time() -- 86400*7
 		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
