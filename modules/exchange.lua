@@ -194,13 +194,21 @@ local function run(untrusted_code)
 	return pcall(untrusted_function)
 end
 
-local parseData = function(data)
-	data = data:match'<div id=currency_converter_result>(.-)</span>'
+local parseData = function(data, amount, from, to)
 	if(not data) then
 		return 'Some currency died? No exchange rates returned.'
 	end
 
-	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' '):gsub('%w+', cc)
+	-- Chomp away the garbage on the first line
+	data = data:gsub("[^\n]+\n", "")
+	data = util.json.decode(data)
+	local result = data["CurrencyUpdate"]
+	if(result["target_amount"]) then
+		local value = result["target_amount"]["value"]
+		return string.format("%s %s equals %s %s", amount, cc[from], value, cc[to])
+	else
+		return "API returned some error :("
+	end
 end
 
 local parseHistData = function(data)
@@ -264,9 +272,8 @@ local handleExchange = function(self, source, destination, value, from, to)
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
-		local data = simplehttp(
-			('http://finance.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to))
-		local message = parseData(data)
+		local data = simplehttp(('https://www.google.no/async/currency_update?yv=1&async=source_amount:%d,source_currency:%s,target_currency:%d,chart_width:270,chart_height:94,lang:en,_fmt:json'):format(value, from, to))
+		local message = parseData(data, value, from, to)
 		local timestamp = os.time() -- 86400*7
 		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
 		if(value == 1) then -- no hist for non-1-amounts
