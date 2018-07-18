@@ -25,6 +25,7 @@ local cc = {
 	["BRL"] = "Brazilian Real (R$)",
 	["BSD"] = "Bahamian Dollar (BSD)",
 	["BTC"] = "Bitcoin (฿)",
+	["BTH"] = "Bitcoin Cash",
 	["BTN"] = "Bhutanese Ngultrum (BTN)",
 	["BWP"] = "Botswanan Pula (BWP)",
 	["BYR"] = "Belarusian Ruble (BYR)",
