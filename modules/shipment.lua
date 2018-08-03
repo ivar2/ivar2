@@ -51,48 +51,49 @@ local shipmentTrack = function(self, source, destination, message)
 		self.shipmentEvents[id] = -1
 	end
 
-	self:Timer('shipment', duration,
-		function(loop, timer, revents)
-			simplehttp(string.format(apiurl, pid, getCacheBust()), function(data)
-				local info = json.decode(data)
-				local cs = info.consignmentSet
-				if not cs[1] then return else cs = cs[1] end
-				local err = cs['error']
-				if err then
-					local errmsg = err['message']
-					if self.shipmentEvents[id] == -1 then
-						say('%s: \002%s\002 %s', nick, alias, errmsg)
-					end
-					self.shipmentEvents[id] = 0
-					return
+	local shipmentPoller = function()
+		simplehttp(string.format(apiurl, pid, getCacheBust()), function(data)
+			local info = json.decode(data)
+			local cs = info.consignmentSet
+			if not cs[1] then return else cs = cs[1] end
+			local err = cs['error']
+			if err then
+				local errmsg = err['message']
+				if self.shipmentEvents[id] == -1 then
+					say('%s: \002%s\002 %s', nick, alias, errmsg)
 				end
-				local ps = cs['packageSet'][1]
-				local eventset = ps['eventSet']
-				local newEventCount = #eventset
-				local out = {}
-				--print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
-				if newEventCount < self.shipmentEvents[id]
-					then newEventCount = self.shipmentEvents[id]
-				end
-				for i=self.shipmentEvents[id]+1,newEventCount do
-					--print('loop:',i)
-					local event = eventset[i]
-					if event then
-						table.insert(out, eventHandler(event))
-						local status = event.status
-						-- Cancel event if package is delivered
-						if status == 'DELIVERED' then
-							self.timers[id]:stop(ivar2.Loop)
-							self.timers[id] = nil
-						end
+				self.shipmentEvents[id] = 0
+				return
+			end
+			local ps = cs['packageSet'][1]
+			local eventset = ps['eventSet']
+			local newEventCount = #eventset
+			local out = {}
+			--print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
+			if newEventCount < self.shipmentEvents[id]
+				then newEventCount = self.shipmentEvents[id]
+			end
+			for i=self.shipmentEvents[id]+1,newEventCount do
+				--print('loop:',i)
+				local event = eventset[i]
+				if event then
+					table.insert(out, eventHandler(event))
+					local status = event.status
+					-- Cancel event if package is delivered
+					if status == 'DELIVERED' then
+						self.timers[id]:stop(ivar2.Loop)
+						--self.timers[id] = nil
 					end
 				end
-				if #out > 0 then
-					say('%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
-				end
-				self.shipmentEvents[id] = newEventCount
-			end)
+			end
+			if #out > 0 then
+				say('%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
+			end
+			self.shipmentEvents[id] = newEventCount
 		end)
+	end
+	self:Timer(id, duration, duration, shipmentPoller)
+	shipmentPoller()
 end
 
 local shipmentLocate = function(self, source, destination, pid)
