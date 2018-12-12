@@ -203,7 +203,7 @@ local parseData = function(data, amount, from, to)
 	-- Chomp away the garbage on the first line
 	data = data:gsub("[^\n]+\n", "")
 	data = util.json.decode(data)
-	local result = data["CurrencyUpdate"]
+	local result = data["CurrencyV2Chart"]
 	if(result["target_amount"]) then
 		local value = result["target_amount"]["value"]
 		return string.format("%s %s equals %s %s", amount, cc[from], value, cc[to])
@@ -273,7 +273,7 @@ local handleExchange = function(self, source, destination, value, from, to)
 	if(not success) then
 		say( '%s: %s', source.nick, value)
 	else
-		local data = simplehttp(('https://www.google.no/async/currency_update?yv=1&async=source_amount:%d,source_currency:%s,target_currency:%s,chart_width:270,chart_height:94,lang:en,_fmt:json'):format(value, from, to))
+		local data = simplehttp(('https://www.google.no/async/currency_v2_update?async=source_amount:%s,source_currency:%s,target_currency:%s,lang:en,country:no,disclaimer_url:,period:1M,interval:86400,_fmt:json'):format(value, from, to))
 		local message = parseData(data, value, from, to)
 		local timestamp = os.time() -- 86400*7
 		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
