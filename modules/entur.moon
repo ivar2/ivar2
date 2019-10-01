@@ -21,6 +21,25 @@ access_token = 'jwt bearer token'
 --
 --	info = json.decode data
 --	acess_token = info.access_token
+--
+formatLeg = (leg) ->
+  if leg == 'foot'
+    return '👟'
+  if leg == 'bus'
+    return '🚌'
+  if leg == 'water'
+    return '🚤'
+  if leg == 'metro'
+    return '🚇'
+  if leg == 'tram'
+    return '🚊'
+  if leg == 'air'
+    return '✈'
+  if leg == 'rail'
+    return '🚄'
+  if leg == 'coach'
+    return '🚍'
+  return leg
 
 parseDate = (datestr) ->
 	year, month, day, hour, min, sec = datestr\match "([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)"
@@ -51,16 +70,23 @@ getRoutes = (s, d, frm, to) =>
   frm = getStop(frm)
   to = getStop(to)
 
-  frm_id = frm.properties.id
-  to_id = to.properties.id
+  print(json.encode(frm))
+  print(json.encode(to))
+
 
   graphql = '{
     trip(
       from: {
-        place: \\"'..frm_id..'\\",
+        coordinates: {
+          latitude: '..frm.geometry.coordinates[2]..',
+          longitude:' ..frm.geometry.coordinates[1]..',
+        }
       },
       to: {
-        place: \\"'..to_id..'\\",
+        coordinates: {
+          latitude: '..to.geometry.coordinates[2]..',
+          longitude:' ..to.geometry.coordinates[1]..',
+        }
       },
       numTripPatterns: 3,
     ) {
@@ -81,7 +107,15 @@ getRoutes = (s, d, frm, to) =>
       distance
       walkTime
       walkDistance
-      weight
+      legs {
+        mode
+        fromPlace {
+          name
+        }
+        toPlace {
+          name
+        }
+      }
     }
     }
   }
@@ -93,6 +127,7 @@ getRoutes = (s, d, frm, to) =>
     say data
   else
     out = {}
+    print data
     data = json.decode(data).data
     for i, trip in ipairs data.trip.tripPatterns
       time = parseDate trip.startTime
@@ -101,7 +136,20 @@ getRoutes = (s, d, frm, to) =>
 
       a_time = parseDate trip.endTime
       a_datetime = os.date '*t', a_time
-      out[#out+1] = "#{datetime.hour}:#{string.format('%02d', datetime.min)} (#{string.format('%d', relative)}m) -> #{a_datetime.hour}:#{string.format('%02d', a_datetime.min)}"
+      legs = {}
+      for leg in *trip.legs
+        -- don't include the walking to the station, just ugly
+        if #legs == 0 and leg.mode == 'foot'
+          continue
+        legs[#legs+1] = formatLeg(leg.mode)
+
+      -- don't include walking from the station to the destiation, just ugly
+      if legs[#legs] == formatLeg('foot') and #legs > 1
+        legs[#legs] = nil
+      if #legs == 0
+        legs[#legs+1] = formatLeg('foot')
+      legs = table.concat legs, ''
+      out[#out+1] = "#{datetime.hour}:#{string.format('%02d', datetime.min)} (#{string.format('%d', relative)}m) [#{legs}]-> #{a_datetime.hour}:#{string.format('%02d', a_datetime.min)}"
 
     say table.concat(out, ', ')
 
