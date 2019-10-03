@@ -65,10 +65,35 @@ getStop = (name) ->
     return feature
 
 
-getRoutes = (s, d, frm, to) =>
+getRoutes = (source, destination, arg) =>
+  if not arg or arg == '' or not arg\match','
+      patt = @ChannelCommandPattern('^%pentur (17:00,)<from>,<to>(, 17:00)', "entur", destination)\sub(1)
+      patt = patt\gsub('^%^%%p', '!')
+      @Msg('privmsg', destination, source, 'Usage: '..patt)
+      return
 
+  args = util.split(arg, ',')
+
+  frm_idx = 1
+  to_idx = 2
+  time_idx = 3
+  if args[1]\match '%d'
+    frm_idx = 2
+    to_idx = 3
+    time_idx = 1
+
+  frm = args[frm_idx]
+  to = args[to_idx]
   frm = getStop(frm)
   to = getStop(to)
+
+  datetime = ''
+  if args[time_idx]
+    hour, minute = args[time_idx]\match '(%d%d).*(%d%d)'
+    time = os.date("%Y-%m-%dT#{hour}:#{minute}:%S%z")
+    datetime = 'dateTime: \\"'..time..'\\" '
+    if time_idx == 3
+      datetime ..= 'arriveBy: true '
 
   print(json.encode(frm))
   print(json.encode(to))
@@ -76,6 +101,7 @@ getRoutes = (s, d, frm, to) =>
 
   graphql = '{
     trip(
+      '..datetime..'
       from: {
         coordinates: {
           latitude: '..frm.geometry.coordinates[2]..',
@@ -122,6 +148,7 @@ getRoutes = (s, d, frm, to) =>
   '
   graphql = graphql\gsub '\n', ''
   post_data = '{"query":"'..graphql..'","variables":null}'
+  print post_data
   data, uri, response = simplehttp {url:'https://api.entur.io/journey-planner/v2/graphql', method:'POST', data:post_data , headers:{['Et-Client-Name']: client_name, ['Content-Type']:'application/json'}}
   if response.status_code != 200
     say data
@@ -158,4 +185,4 @@ getRoutes = (s, d, frm, to) =>
 PRIVMSG:
   '^%pstop (.*)$': (s, d, a) =>
     say json.encode(getStop(a))
-  '^%pentur (.+),(.+)$': getRoutes
+  '^%pentur%s*(.*)$': getRoutes
