@@ -12,7 +12,7 @@ PRIVMSG:
     say table.concat([ivar2.util.nonickalert(chan.nicks, n) for n,k in pairs(chan.nicks)], ' ')
   '^%prandom (.+)$': (source, destination, arg) =>
     words = [word for word in arg\gmatch('%S+')]
-    say words[math.random(1, #words)]
+    say "%s: %s", source.nick, words[math.random(1, #words)]
   '^%pbold (.+)$': (source, destination, arg) =>
     say ivar2.util.bold(arg)
   '^%punderline (.+)$': (source, destination, arg) =>
