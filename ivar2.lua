@@ -586,11 +586,9 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 		self.timers[id]:stop()
 	end
 	local is_cancelled = function()
-		for i, t in ipairs(self.cancelled_timers) do
-			if t.id == id then
-				table.remove(self.cancelled_timers, i)
-				return true
-			end
+		if self.cancelled_timers[id] then
+			self.cancelled_timers[id] = nil
+			return true
 		end
 	end
 	local timer = {
@@ -598,7 +596,7 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 		cancelled = false,
 		stop = function(timer)
 			self.timers[id].cancelled = true
-			table.insert(self.cancelled_timers, self.timers[id])
+			self.cancelled_timers[id] = true
 			self.timers[id] = nil
 		end,
 		run = function()
@@ -767,6 +765,9 @@ function ivar2:Reload()
 		message.updated = true
 
 		self = message
+		if self.timers['_timeout'] then
+			self.timers['_timeout']:stop()
+		end
 		self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
