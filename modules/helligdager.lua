@@ -25,8 +25,6 @@ local wdayMap = {
   "Saturday"
 }
 
-local holidays = {}
-
 local createHoliday = function(name, date)
   return {
     name = name,
@@ -67,6 +65,8 @@ local easterDay = function(year)
 end
 
 local generateHolidays = function(year)
+  local holidays = {}
+
   local _insert = function(name, date)
     local holiday = createHoliday(name, date)
     table.insert(holidays, holiday)
@@ -104,9 +104,11 @@ local generateHolidays = function(year)
   _insert("andre pinsedag", addDay(easter, 50))
 
   table.sort(holidays, function(a, b) return a.timestamp < b.timestamp end)
+
+  return holidays
 end
 
-local isHoliday = function(date)
+local isHoliday = function(holidays, date)
   local timestamp = os.time({year = date.year, month = date.month, day = date.day, hour = 0})
   for i=1, #holidays do
     local holiday = holidays[i]
@@ -122,7 +124,7 @@ local isWeekend = function(date)
   return date.wday == 1 or date.wday == 7
 end
 
-local getNextHoliday = function(date)
+local getNextHoliday = function(holidays, date)
   local timestamp = os.time(date)
   for i=1, #holidays do
     local holiday = holidays[i]
@@ -132,11 +134,11 @@ local getNextHoliday = function(date)
   end
 end
 
-local getConsecutiveHolidays = function(date)
+local getConsecutiveHolidays = function(holidays, date)
   date = date or os.date('*t')
 
   local consecutiveHolidays = {}
-  local nextHoliday = getNextHoliday(date)
+  local nextHoliday = getNextHoliday(holidays, date)
 
   -- Blargh. Inject the weekend if we have to.
   if (nextHoliday.date.wday == 2) then
@@ -155,7 +157,7 @@ local getConsecutiveHolidays = function(date)
   repeat
     nextDate = addDay(nextDate, 1)
 
-    local holiday = isHoliday(nextDate)
+    local holiday = isHoliday(holidays, nextDate)
     local weekend = isWeekend(nextDate)
     if (holiday) then
       table.insert(consecutiveHolidays, holiday)
@@ -167,22 +169,15 @@ local getConsecutiveHolidays = function(date)
   return consecutiveHolidays
 end
 
--- Generate holidays for a couple of years
-do
-  local year = os.date("*t").year
-  for i=0, 3 do
-    generateHolidays(year+i)
-  end
-end
-
 local shouldAnnounce = function()
   local date = _date()
+  local holidays = generateHolidays()
 
-  if (isHoliday(date) or isWeekend(date)) then
+  if (isHoliday(holidays, date) or isWeekend(date)) then
     return false
   end
 
-  local consecutiveHolidays = getConsecutiveHolidays(date)
+  local consecutiveHolidays = getConsecutiveHolidays(holidays, date)
   local tomorrow = addDay(date, 1)
   if (consecutiveHolidays[1].timestamp == os.time(tomorrow)) then
     return true
@@ -223,14 +218,15 @@ end
 -- TODO: Make the timer set itself to announce the day before the next holiday
 -- instead of checking every day...
 local function startTime()
-  ivar2:Timer("helligdager-" .. os.time(), timeUntilNextCheck(), function()
+  ivar2:Timer("helligdager", timeUntilNextCheck(), function()
     -- Start a new timer.
     startTime()
 
     if (not shouldAnnounce()) then return end
 
-    local consecutiveHolidays = getConsecutiveHolidays(_date())
-    local holidays = {}
+    local holidays = generateHolidays()
+    local consecutiveHolidays = getConsecutiveHolidays(holidays, _date())
+    local nextHolidays = {}
     local holidayNames = {}
     local weekends = 0
     for i=1, #consecutiveHolidays do
@@ -240,7 +236,7 @@ local function startTime()
       end
 
       if (holiday.name ~= "helg") then
-        table.insert(holidays, holiday)
+        table.insert(nextHolidays, holiday)
         table.insert(holidayNames, holiday.name)
       end
     end
@@ -249,9 +245,9 @@ local function startTime()
     if (allInWeekend) then return end
 
     if(#consecutiveHolidays == 1) then
-      sendMessage(string.format("%s! Enjoy your day off", formatHolidays(holidays)))
+      sendMessage(string.format("%s! Enjoy your day off", formatHolidays(nextHolidays)))
     else
-      sendMessage(string.format("%s! Enjoy your extra long weekend", formatHolidays(holidays)))
+      sendMessage(string.format("%s! Enjoy your extra long weekend", formatHolidays(nextHolidays)))
     end
   end)
 end
