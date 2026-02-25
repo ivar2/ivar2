@@ -24,9 +24,14 @@ video_html = (video) ->
   <head>
   <meta charset="utf-8">
   <style type="text/css">
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
     video {
       width: 100%;
-      height: auto !important;
+      height: 100%;
+      object-fit: contain;
     }
     button {
       padding: 20px;
@@ -102,6 +107,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
       content_type = 'image/svg'
     if file\lower!\match '.mp4'
       content_type = 'video/mp4'
+    if file\lower!\match '.mkv'
+      content_type = 'video/mkv'
     if file\lower!\match '.mov'
       content_type = 'video/quicktime'
     if file\lower!\match '.mp3'
@@ -443,7 +450,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
     <section>
-      <h3>You can also drag and drop here</h3>
+      <h3>You can also drag and drop here, or paste clipboard data, but beware, it will not ask for confirmation before uploading!!!</h3>
       <form class="box" method="post" action="" enctype="multipart/form-data">
         <div class="box__input">
           <input id="box__dropi" class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
@@ -455,6 +462,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
         <div class="box__uploading">Uploading&hellip;</div>
         <div class="box__success">Done!</div>
         <div class="box__error">Error! <span></span>.</div>
+        <img id="container"></img>
       </form>
     <section>
   </div>
@@ -638,6 +646,21 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
 
     document.getElementById('box__dropi').addEventListener('change', sendMedia, false);
 
+    // Handle paste
+    document.onpaste = function(pasteEvent) {
+      console.log('Got paste event');
+      // consider the first item (can be easily extended for multiple items)
+      var item = pasteEvent.clipboardData.items[0];
+      console.log(pasteEvent);
+
+      if (item.type.indexOf("image") === 0) {
+        var blob = item.getAsFile();
+	pasteEvent.target.files = [blob];
+
+        sendMedia(pasteEvent);
+      }
+    }
+
 
     var form = document.querySelector('form.box');
     var input = form.children[0].children[0];
@@ -690,6 +713,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
           text = text\sub(1, 100) .. ' '
         file_or_video = 'file'
         if realfn\match '%.mp4$'
+          file_or_video = 'video'
+        if realfn\match '%.mov$'
           file_or_video = 'video'
         msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}#{file_or_video}/#{realfn}"
         ivar2\Privmsg unescaped_channel, msg
