@@ -362,18 +362,12 @@ local fetchInformation = function(queue, lang)
 			['Accept-Language'] = lang
 		}},
 		function(data, _, response)
-			local message = handleData(response.headers, data)
-			if(#queue.url > 80) then
-				ivar2.x0(queue.url, function(short)
-					if message then
-						queue:done(string.format('Short URL: %s - %s', short, message))
-					else
-						queue:done(string.format('Short URL: %s', short))
-					end
-				end)
-			else
-				queue:done(message)
+			if not data then
+				queue:done()
+				return
 			end
+			local message = handleData(response.headers, data)
+			queue:done(message)
 		end,
 		true,
 		DL_LIMIT
